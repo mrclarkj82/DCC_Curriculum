@@ -1,0 +1,377 @@
+[
+  {
+    "id": "vp-p01",
+    "programAreaId": "video-production",
+    "title": "Broadcast Desk Update Response",
+    "status": "placeholder",
+    "projectType": "broadcast-update-response",
+    "skillFocus": [
+      "production communication",
+      "media submission",
+      "reflection"
+    ],
+    "description": "Students respond to a teacher-created Broadcast Desk Update and submit required production evidence.",
+    "studentTask": "Open the assigned Broadcast Desk Update, follow the instructions, and submit the required media evidence or response.",
+    "submissionTypes": [
+      "video",
+      "link",
+      "textReflection",
+      "fileUpload"
+    ],
+    "evidenceRequired": [
+      "Submitted media link or uploaded file",
+      "Short reflection",
+      "Any required production notes"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets the production requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "reflectionPrompt": "What did you contribute, what worked, and what would you improve next time?",
+    "tags": [
+      "video-production",
+      "broadcast",
+      "submission"
+    ]
+  },
+  {
+    "id": "vp-p02",
+    "programAreaId": "video-production",
+    "title": "B-Roll Sequence",
+    "status": "placeholder",
+    "projectType": "b-roll-challenge",
+    "skillFocus": [
+      "shot variety",
+      "sequencing",
+      "visual storytelling"
+    ],
+    "description": "Students create a short B-roll sequence that shows a subject, activity, or location through intentional shot variety.",
+    "studentTask": "Capture and organize a short B-roll sequence around a teacher-approved subject.",
+    "submissionTypes": [
+      "video",
+      "link",
+      "fileUpload",
+      "textReflection"
+    ],
+    "evidenceRequired": [
+      "Exported B-roll sequence or hosted link",
+      "Shot list or production notes",
+      "Short reflection"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets the production requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "reflectionPrompt": "Which shot best helped tell the story, and why?",
+    "tags": [
+      "video-production",
+      "b-roll",
+      "sequencing"
+    ]
+  },
+  {
+    "id": "vp-p03",
+    "programAreaId": "video-production",
+    "title": "Interview Setup and Framing",
+    "status": "placeholder",
+    "projectType": "interview-package",
+    "skillFocus": [
+      "composition",
+      "audio setup",
+      "lighting",
+      "interview preparation"
+    ],
+    "description": "Students practice setting up an interview shot with appropriate framing, sound, and visual clarity.",
+    "studentTask": "Set up and record an interview sample using class framing and audio expectations.",
+    "submissionTypes": [
+      "video",
+      "link",
+      "image",
+      "textReflection"
+    ],
+    "evidenceRequired": [
+      "Interview sample clip or link",
+      "Setup photo or diagram",
+      "Short reflection"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets the production requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "reflectionPrompt": "What setup choice most improved the interview quality?",
+    "tags": [
+      "video-production",
+      "interview",
+      "framing"
+    ]
+  },
+  {
+    "id": "vp-p04",
+    "programAreaId": "video-production",
+    "title": "News Package",
+    "status": "placeholder",
+    "projectType": "news-segment",
+    "skillFocus": [
+      "reporting",
+      "script structure",
+      "B-roll",
+      "editing workflow"
+    ],
+    "description": "Students create a short news package that combines narration, interviews or natural sound, and supporting visuals.",
+    "studentTask": "Create a short news package that communicates a clear story for a school or class audience.",
+    "submissionTypes": [
+      "video",
+      "link",
+      "fileUpload",
+      "textReflection"
+    ],
+    "evidenceRequired": [
+      "Final news package export or link",
+      "Script or planning notes",
+      "Short reflection"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets the production requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "reflectionPrompt": "How did your edit make the information clear for the audience?",
+    "tags": [
+      "video-production",
+      "news-package",
+      "storytelling"
+    ]
+  },
+  {
+    "id": "vp-p05",
+    "programAreaId": "video-production",
+    "title": "Studio Role Practice",
+    "status": "placeholder",
+    "projectType": "studio-role-assignment",
+    "skillFocus": [
+      "production roles",
+      "teamwork",
+      "studio procedure"
+    ],
+    "description": "Students practice a studio production role and document the responsibilities, communication, and evidence connected to that role.",
+    "studentTask": "Practice an assigned studio role and document what the role requires during production.",
+    "submissionTypes": [
+      "textReflection",
+      "image",
+      "video",
+      "teacherObservation"
+    ],
+    "evidenceRequired": [
+      "Role checklist",
+      "Reflection",
+      "Teacher observation or media evidence"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets the production requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "reflectionPrompt": "What does this role need from the rest of the crew to succeed?",
+    "tags": [
+      "video-production",
+      "studio-roles",
+      "crew"
+    ]
+  },
+  {
+    "id": "vp-p06",
+    "programAreaId": "video-production",
+    "title": "Short Documentary Segment",
+    "status": "placeholder",
+    "projectType": "short-documentary-segment",
+    "skillFocus": [
+      "documentary planning",
+      "sequencing",
+      "interviews",
+      "story structure"
+    ],
+    "description": "Students produce a short documentary-style segment about a teacher-approved subject.",
+    "studentTask": "Plan, capture, and edit a short documentary-style segment with a clear subject and story direction.",
+    "submissionTypes": [
+      "video",
+      "link",
+      "fileUpload",
+      "textReflection"
+    ],
+    "evidenceRequired": [
+      "Final documentary segment or link",
+      "Planning notes",
+      "Short reflection"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets the production requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "reflectionPrompt": "What story choice helped the audience understand your subject?",
+    "tags": [
+      "video-production",
+      "documentary",
+      "story"
+    ]
+  },
+  {
+    "id": "vp-p07",
+    "programAreaId": "video-production",
+    "title": "Final Video Portfolio Piece",
+    "status": "placeholder",
+    "projectType": "portfolio-piece",
+    "skillFocus": [
+      "revision",
+      "export quality",
+      "portfolio presentation"
+    ],
+    "description": "Students select, revise, and submit a final video piece for portfolio or showcase consideration.",
+    "studentTask": "Choose a strong video production piece, revise it for quality, and submit it with portfolio reflection.",
+    "submissionTypes": [
+      "video",
+      "link",
+      "thumbnail",
+      "textReflection"
+    ],
+    "evidenceRequired": [
+      "Final video export or hosted link",
+      "Thumbnail or still image",
+      "Portfolio reflection"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets the production requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "reflectionPrompt": "Why does this piece represent your best production growth?",
+    "tags": [
+      "video-production",
+      "portfolio",
+      "showcase"
+    ]
+  }
+]
+

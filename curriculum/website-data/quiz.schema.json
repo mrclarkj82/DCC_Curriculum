@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Quiz Seed Data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "programAreaId",
+      "title",
+      "quarter",
+      "lessonIds",
+      "status",
+      "isPublished",
+      "questions"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "programAreaId": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "quarter": {
+        "type": "string"
+      },
+      "lessonIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "status": {
+        "type": "string"
+      },
+      "isPublished": {
+        "type": "boolean"
+      },
+      "questions": {
+        "type": "array"
+      }
+    },
+    "additionalProperties": true
+  }
+}
+

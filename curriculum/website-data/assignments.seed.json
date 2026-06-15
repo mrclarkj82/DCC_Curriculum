@@ -1,0 +1,381 @@
+[
+  {
+    "id": "ue-q1-a01",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l01",
+    "title": "First Unreal Project Setup",
+    "skillFocus": [
+      "project creation",
+      "project naming",
+      "starter content",
+      "save location"
+    ],
+    "instructions": "Create a new Unreal Engine project using the class naming convention.",
+    "requiredSteps": [
+      "Open Unreal Engine through the approved class workflow.",
+      "Create a new project using the assigned template and starter content setting.",
+      "Name the project using the class naming convention.",
+      "Open the project and confirm that it saves in the correct location."
+    ],
+    "submissionType": "screenshot",
+    "evidenceRequired": [
+      "Screenshot of the open Unreal project",
+      "Screenshot or written confirmation showing the correct project name"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create one extra saved copy or screenshot showing where your project files are located.",
+    "reflectionPrompt": "What part of project setup do you need to remember next time?"
+  },
+  {
+    "id": "ue-q1-a02",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l02",
+    "title": "Unreal Interface Map",
+    "skillFocus": [
+      "interface awareness",
+      "panel identification",
+      "workflow vocabulary"
+    ],
+    "instructions": "Create an interface map that identifies the major Unreal editor areas and what each one is used for.",
+    "requiredSteps": [
+      "Open the Unreal project from Lesson 1.",
+      "Capture a screenshot of the editor interface.",
+      "Label the Viewport, Outliner, Details panel, Content Drawer, toolbar, and play controls.",
+      "Write a short purpose statement for each labeled area."
+    ],
+    "submissionType": "annotated-screenshot",
+    "evidenceRequired": [
+      "Annotated screenshot of the Unreal interface",
+      "Short notes describing the purpose of key panels"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add one additional panel or menu that was not required and explain when you might use it.",
+    "reflectionPrompt": "Which interface area do you expect to use most often?"
+  },
+  {
+    "id": "ue-q1-a03",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l03",
+    "title": "Viewport Navigation Scavenger Hunt",
+    "skillFocus": [
+      "viewport navigation",
+      "camera control",
+      "scene orientation"
+    ],
+    "instructions": "Navigate through the starter scene and capture evidence that you can view objects from multiple useful angles.",
+    "requiredSteps": [
+      "Use orbit, pan, zoom, and focus controls.",
+      "Find the assigned objects or scene locations.",
+      "Capture screenshots from the required angles.",
+      "Write one sentence naming a shortcut or control that helped you."
+    ],
+    "submissionType": "screenshot-set",
+    "evidenceRequired": [
+      "Screenshots from required camera angles",
+      "Short note describing one navigation shortcut used"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Record a short screen capture showing smooth navigation from one object to another.",
+    "reflectionPrompt": "Which navigation movement felt most natural, and which still needs practice?"
+  },
+  {
+    "id": "ue-q1-a04",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l04",
+    "title": "Transform Practice Scene",
+    "skillFocus": [
+      "movement",
+      "rotation",
+      "scale",
+      "scene arrangement"
+    ],
+    "instructions": "Build a simple practice scene that shows control over moving, rotating, and scaling objects.",
+    "requiredSteps": [
+      "Place several starter objects in the scene.",
+      "Move, rotate, and scale objects intentionally.",
+      "Use snapping or typed transform values for at least one object.",
+      "Capture a screenshot and include one transform value example."
+    ],
+    "submissionType": "screenshot",
+    "evidenceRequired": [
+      "Screenshot of a practice scene built with transformed objects",
+      "One written example of a location, rotation, or scale value"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Arrange objects into a recognizable structure or pathway.",
+    "reflectionPrompt": "Which transform tool was easiest to control, and why?"
+  },
+  {
+    "id": "ue-q3-a01",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l01",
+    "title": "Q3 Production Project Setup",
+    "skillFocus": [
+      "production workflow",
+      "project setup",
+      "goal setting"
+    ],
+    "instructions": "Set up the Q3 Unreal production project and define a clear goal for the castle environment.",
+    "requiredSteps": [
+      "Create or open the assigned Q3 Unreal project.",
+      "Set up project folders for planning, screenshots, and production notes.",
+      "Write a short production goal for the castle environment.",
+      "Capture project setup evidence."
+    ],
+    "submissionType": "screenshot-and-text",
+    "evidenceRequired": [
+      "Screenshot of the Q3 project setup",
+      "Written production goal for the castle environment"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add a simple naming system for screenshots and production notes.",
+    "reflectionPrompt": "What production habit will help you finish a stronger capstone?"
+  },
+  {
+    "id": "ue-q3-a02",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l02",
+    "title": "Castle Environment Plan",
+    "skillFocus": [
+      "reference gathering",
+      "visual planning",
+      "environment design"
+    ],
+    "instructions": "Create a plan for a fantasy/castle environment using references, constraints, and a clear focal point.",
+    "requiredSteps": [
+      "Collect teacher-approved visual references.",
+      "Identify the environment mood and main focal point.",
+      "Sketch or describe the basic layout.",
+      "List constraints or assets you expect to use."
+    ],
+    "submissionType": "planning-document",
+    "evidenceRequired": [
+      "Reference board or planning document",
+      "Simple layout sketch or written scene plan"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add a color or mood reference and explain how it should affect lighting later.",
+    "reflectionPrompt": "What do you want the viewer to understand about this world?"
+  },
+  {
+    "id": "ue-q3-a03",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l03",
+    "title": "Third-Person Walkthrough Setup",
+    "skillFocus": [
+      "third-person template",
+      "player scale",
+      "walkthrough testing"
+    ],
+    "instructions": "Set up a third-person project or template configuration so the castle environment can be tested from player view.",
+    "requiredSteps": [
+      "Create or configure the third-person project.",
+      "Confirm the playable character can move in the level.",
+      "Check that the environment scale feels appropriate.",
+      "Capture a screenshot showing the player character."
+    ],
+    "submissionType": "screenshot",
+    "evidenceRequired": [
+      "Screenshot of the playable character in the project",
+      "Short note explaining why player scale matters"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Mark one intended player route through the future castle environment.",
+    "reflectionPrompt": "What does the player view reveal that the editor camera might hide?"
+  },
+  {
+    "id": "ue-q3-a04",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l04",
+    "title": "Castle Landscape Blockout",
+    "skillFocus": [
+      "landscape blockout",
+      "terrain planning",
+      "composition"
+    ],
+    "instructions": "Create a rough terrain blockout that supports the castle environment's focal point and playable route.",
+    "requiredSteps": [
+      "Create or open the landscape area.",
+      "Sculpt rough landforms for the castle, route, and surrounding terrain.",
+      "Check the blockout from top-down and player-view angles.",
+      "Capture screenshots showing the plan."
+    ],
+    "submissionType": "screenshot-set",
+    "evidenceRequired": [
+      "Top-down screenshot of the landscape blockout",
+      "Player-view screenshot showing the route or focal point"
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but not functional or unclear."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add one temporary marker showing where the castle entrance should be.",
+    "reflectionPrompt": "What terrain choice makes the castle feel more intentional?"
+  }
+]
+

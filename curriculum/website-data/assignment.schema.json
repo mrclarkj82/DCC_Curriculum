@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Assignment Seed Data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "programAreaId",
+      "lessonId",
+      "title",
+      "skillFocus",
+      "instructions",
+      "requiredSteps",
+      "submissionType",
+      "evidenceRequired",
+      "rubric",
+      "extensionChallenge",
+      "reflectionPrompt"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "programAreaId": {
+        "type": "string"
+      },
+      "lessonId": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "skillFocus": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "instructions": {
+        "type": "string"
+      },
+      "requiredSteps": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "submissionType": {
+        "type": "string"
+      },
+      "evidenceRequired": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "rubric": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": [
+            "score",
+            "description"
+          ],
+          "properties": {
+            "score": {
+              "type": "integer"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "extensionChallenge": {
+        "type": "string"
+      },
+      "reflectionPrompt": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  }
+}
+

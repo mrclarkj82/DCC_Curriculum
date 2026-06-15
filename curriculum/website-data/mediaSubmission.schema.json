@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Media Submission",
+  "type": "object",
+  "required": [
+    "id",
+    "programAreaId",
+    "studentId",
+    "submissionType",
+    "status",
+    "createdAt",
+    "updatedAt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "programAreaId": {
+      "type": "string"
+    },
+    "studentId": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string"
+    },
+    "assignmentId": {
+      "type": "string"
+    },
+    "broadcastUpdateId": {
+      "type": "string"
+    },
+    "submissionType": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "submitted",
+        "reviewed",
+        "returned"
+      ]
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fileName": {
+            "type": "string"
+          },
+          "fileType": {
+            "type": "string"
+          },
+          "storagePath": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "thumbnailUrl": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "reflection": {
+      "type": "string"
+    },
+    "teacherFeedback": {
+      "type": "string"
+    },
+    "createdAt": {
+      "type": "string"
+    },
+    "updatedAt": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
+

@@ -1,0 +1,387 @@
+[
+  {
+    "id": "ue-q1-l01",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 1,
+    "title": "Creating Your First Unreal Project",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "00:00:00",
+      "end": "00:03:47",
+      "url": ""
+    },
+    "learningTarget": "I can create and save a new Unreal Engine project using the correct class settings.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What kinds of digital worlds have you seen in games, movies, architecture, or VR?"
+    },
+    "vocabulary": [
+      {
+        "term": "Unreal Engine",
+        "definition": "A real-time 3D creation tool used for games, film, visualization, and interactive media."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 01 - Creating Your First Unreal Project",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a01",
+      "title": "First Unreal Project Setup",
+      "submissionType": "screenshot",
+      "evidenceRequired": [
+        "Screenshot of the open Unreal project",
+        "Screenshot or written confirmation showing the correct project name"
+      ]
+    },
+    "exitTicket": "What setting should be enabled if we want starter assets available in the project?",
+    "tags": [
+      "setup",
+      "project-creation",
+      "unreal-basics"
+    ]
+  },
+  {
+    "id": "ue-q1-l02",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 2,
+    "title": "Unreal Interface Tour",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "I can identify the main Unreal interface panels and explain what each one is used for.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "Which software interface have you used that felt complicated at first?"
+    },
+    "vocabulary": [
+      {
+        "term": "Viewport",
+        "definition": "The main window where users view and work inside a 3D scene."
+      },
+      {
+        "term": "Outliner",
+        "definition": "The panel that lists actors and objects in the current level."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 02 - Unreal Interface Tour",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a02",
+      "title": "Unreal Interface Map",
+      "submissionType": "annotated-screenshot",
+      "evidenceRequired": [
+        "Annotated screenshot of the Unreal interface",
+        "Short notes describing the purpose of key panels"
+      ]
+    },
+    "exitTicket": "Which panel shows the selected object's editable settings?",
+    "tags": [
+      "interface",
+      "panels",
+      "unreal-basics"
+    ]
+  },
+  {
+    "id": "ue-q1-l03",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 3,
+    "title": "Viewport Navigation",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "I can navigate the viewport using orbit, pan, zoom, focus, and fly controls.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "Why might navigation controls matter before building anything in a 3D scene?"
+    },
+    "vocabulary": [
+      {
+        "term": "Viewport Navigation",
+        "definition": "The controls used to move the editor camera around a 3D scene."
+      },
+      {
+        "term": "Focus",
+        "definition": "A shortcut or action that centers the view on the selected object."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 03 - Viewport Navigation",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a03",
+      "title": "Viewport Navigation Scavenger Hunt",
+      "submissionType": "screenshot-set",
+      "evidenceRequired": [
+        "Screenshots from required camera angles",
+        "Short note describing one navigation shortcut used"
+      ]
+    },
+    "exitTicket": "What shortcut helps refocus the camera on a selected object?",
+    "tags": [
+      "viewport",
+      "navigation",
+      "camera"
+    ]
+  },
+  {
+    "id": "ue-q1-l04",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 4,
+    "title": "Moving, Rotating, and Scaling Objects",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "I can use transform tools to move, rotate, and scale objects accurately.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What is the difference between moving an object and changing the camera view?"
+    },
+    "vocabulary": [
+      {
+        "term": "Transform",
+        "definition": "An object's location, rotation, and scale values."
+      },
+      {
+        "term": "Gizmo",
+        "definition": "The visual handle used to move, rotate, or scale selected objects."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 04 - Moving, Rotating, and Scaling Objects",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a04",
+      "title": "Transform Practice Scene",
+      "submissionType": "screenshot",
+      "evidenceRequired": [
+        "Screenshot of a practice scene built with transformed objects",
+        "One written example of a location, rotation, or scale value"
+      ]
+    },
+    "exitTicket": "Which transform changes an object's size?",
+    "tags": [
+      "transform",
+      "movement",
+      "scene-building"
+    ]
+  },
+  {
+    "id": "ue-q3-l01",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 1,
+    "title": "Unreal Reboot and Production Expectations",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "Review",
+      "end": "Review",
+      "url": ""
+    },
+    "learningTarget": "I can reconnect with Unreal basics and explain the expectations for a production-style environment project.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes an environment feel like a finished world instead of a practice scene?"
+    },
+    "vocabulary": [
+      {
+        "term": "Production Workflow",
+        "definition": "An organized process for planning, building, reviewing, and finishing a creative project."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 01 - Unreal Reboot and Production Expectations",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a01",
+      "title": "Q3 Production Project Setup",
+      "submissionType": "screenshot-and-text",
+      "evidenceRequired": [
+        "Screenshot of the Q3 project setup",
+        "Written production goal for the castle environment"
+      ]
+    },
+    "exitTicket": "What is one production habit you need to maintain this quarter?",
+    "tags": [
+      "q3",
+      "production",
+      "project-setup"
+    ]
+  },
+  {
+    "id": "ue-q3-l02",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 2,
+    "title": "Environment Planning",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "Planning",
+      "end": "Planning",
+      "url": ""
+    },
+    "learningTarget": "I can plan a fantasy/castle environment using references, constraints, and a clear visual goal.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What details help an audience understand where a scene takes place?"
+    },
+    "vocabulary": [
+      {
+        "term": "Reference Board",
+        "definition": "A collection of images and notes used to guide the look and direction of a project."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 02 - Environment Planning",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a02",
+      "title": "Castle Environment Plan",
+      "submissionType": "planning-document",
+      "evidenceRequired": [
+        "Reference board or planning document",
+        "Simple layout sketch or written scene plan"
+      ]
+    },
+    "exitTicket": "What is your main focal point for the castle environment?",
+    "tags": [
+      "planning",
+      "reference",
+      "castle-environment"
+    ]
+  },
+  {
+    "id": "ue-q3-l03",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 3,
+    "title": "Third-Person Project Setup",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "I can set up a third-person Unreal project for environment walkthrough testing.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "Why is it useful to test an environment from a player's point of view?"
+    },
+    "vocabulary": [
+      {
+        "term": "Third-Person Template",
+        "definition": "An Unreal project template that includes a controllable character and camera setup."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 03 - Third-Person Project Setup",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a03",
+      "title": "Third-Person Walkthrough Setup",
+      "submissionType": "screenshot",
+      "evidenceRequired": [
+        "Screenshot of the playable character in the project",
+        "Short note explaining why player scale matters"
+      ]
+    },
+    "exitTicket": "How does player scale affect environment design?",
+    "tags": [
+      "third-person",
+      "walkthrough",
+      "project-setup"
+    ]
+  },
+  {
+    "id": "ue-q3-l04",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 4,
+    "title": "Landscape Blockout",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "I can block out terrain forms that support a castle environment layout.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What terrain features could make a castle feel protected, isolated, or dramatic?"
+    },
+    "vocabulary": [
+      {
+        "term": "Blockout",
+        "definition": "An early rough version of a scene used to test layout, scale, and composition."
+      },
+      {
+        "term": "Landscape",
+        "definition": "A terrain system used to create large ground surfaces in Unreal."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 04 - Landscape Blockout",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a04",
+      "title": "Castle Landscape Blockout",
+      "submissionType": "screenshot-set",
+      "evidenceRequired": [
+        "Top-down screenshot of the landscape blockout",
+        "Player-view screenshot showing the route or focal point"
+      ]
+    },
+    "exitTicket": "What part of your blockout guides the viewer toward the castle?",
+    "tags": [
+      "landscape",
+      "blockout",
+      "castle-environment"
+    ]
+  }
+]
+

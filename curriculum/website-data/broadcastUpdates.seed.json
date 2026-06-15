@@ -1,0 +1,57 @@
+[
+  {
+    "id": "bd-update-001",
+    "programAreaId": "video-production",
+    "title": "Broadcast Desk Update 001",
+    "status": "placeholder",
+    "audience": [
+      "students"
+    ],
+    "summary": "Placeholder for a teacher-created broadcast desk production update.",
+    "studentInstructions": "Read the update, review the linked resources, and submit the required production evidence.",
+    "linkedResources": [],
+    "relatedProjectIds": [
+      "vp-p01"
+    ],
+    "submissionRequirements": [
+      "Media file, link, or production response",
+      "Short reflection or production notes"
+    ],
+    "teacherNotes": "Replace this placeholder with an actual broadcast desk update.",
+    "publishDate": "",
+    "dueDate": "",
+    "tags": [
+      "broadcast-desk",
+      "video-production",
+      "update"
+    ]
+  },
+  {
+    "id": "bd-update-002",
+    "programAreaId": "video-production",
+    "title": "Broadcast Desk Update 002",
+    "status": "placeholder",
+    "audience": [
+      "students"
+    ],
+    "summary": "Second placeholder for a teacher-created broadcast desk production update.",
+    "studentInstructions": "Open the update, check production expectations, and submit the required media evidence or response.",
+    "linkedResources": [],
+    "relatedProjectIds": [
+      "vp-p01"
+    ],
+    "submissionRequirements": [
+      "Media file, link, or production response",
+      "Short reflection or production notes"
+    ],
+    "teacherNotes": "Replace this placeholder with an actual update, linked resources, deadline, and class-specific instructions.",
+    "publishDate": "",
+    "dueDate": "",
+    "tags": [
+      "broadcast-desk",
+      "video-production",
+      "update"
+    ]
+  }
+]
+

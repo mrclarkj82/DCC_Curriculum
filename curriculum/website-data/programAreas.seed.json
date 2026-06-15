@@ -1,0 +1,36 @@
+[
+  {
+    "id": "unreal-engine",
+    "title": "Unreal Engine Studio",
+    "shortTitle": "Unreal",
+    "description": "Unreal Engine lessons, projects, and portfolio work for Digital Content Creators.",
+    "status": "active",
+    "defaultRoute": "/areas/unreal-engine",
+    "icon": "box-3d",
+    "sortOrder": 1,
+    "supportedContentTypes": [
+      "lesson",
+      "assignment",
+      "quiz",
+      "portfolioItem"
+    ]
+  },
+  {
+    "id": "video-production",
+    "title": "Video Production Studio",
+    "shortTitle": "Video Production",
+    "description": "Video production projects, broadcast updates, student media submissions, and hosted production evidence.",
+    "status": "active",
+    "defaultRoute": "/areas/video-production",
+    "icon": "video",
+    "sortOrder": 2,
+    "supportedContentTypes": [
+      "mediaProject",
+      "broadcastUpdate",
+      "assignment",
+      "mediaSubmission",
+      "portfolioItem"
+    ]
+  }
+]
+

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Media Project Seed Data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "programAreaId",
+      "title",
+      "status",
+      "projectType",
+      "skillFocus",
+      "description",
+      "studentTask",
+      "submissionTypes",
+      "evidenceRequired",
+      "rubric",
+      "reflectionPrompt",
+      "tags"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "programAreaId": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "projectType": {
+        "type": "string"
+      },
+      "skillFocus": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "description": {
+        "type": "string"
+      },
+      "studentTask": {
+        "type": "string"
+      },
+      "submissionTypes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "evidenceRequired": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "rubric": {
+        "type": "array"
+      },
+      "reflectionPrompt": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "additionalProperties": true
+  }
+}
+

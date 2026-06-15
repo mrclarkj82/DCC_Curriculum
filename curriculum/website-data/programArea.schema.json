@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Program Area Seed Data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "title",
+      "shortTitle",
+      "description",
+      "status",
+      "defaultRoute",
+      "icon",
+      "sortOrder",
+      "supportedContentTypes"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "shortTitle": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string",
+        "enum": [
+          "active",
+          "draft",
+          "archived"
+        ]
+      },
+      "defaultRoute": {
+        "type": "string"
+      },
+      "icon": {
+        "type": "string"
+      },
+      "sortOrder": {
+        "type": "integer"
+      },
+      "supportedContentTypes": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "additionalProperties": true
+  }
+}
+

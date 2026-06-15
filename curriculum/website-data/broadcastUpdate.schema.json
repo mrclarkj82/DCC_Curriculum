@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Broadcast Update Seed Data",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "programAreaId",
+      "title",
+      "status",
+      "audience",
+      "summary",
+      "studentInstructions",
+      "linkedResources",
+      "relatedProjectIds",
+      "submissionRequirements",
+      "teacherNotes",
+      "publishDate",
+      "dueDate",
+      "tags"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "programAreaId": {
+        "type": "string"
+      },
+      "title": {
+        "type": "string"
+      },
+      "status": {
+        "type": "string"
+      },
+      "audience": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "summary": {
+        "type": "string"
+      },
+      "studentInstructions": {
+        "type": "string"
+      },
+      "linkedResources": {
+        "type": "array"
+      },
+      "relatedProjectIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "submissionRequirements": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "teacherNotes": {
+        "type": "string"
+      },
+      "publishDate": {
+        "type": "string"
+      },
+      "dueDate": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "additionalProperties": true
+  }
+}
+

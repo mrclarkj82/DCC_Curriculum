@@ -1,0 +1,121 @@
+[
+  {
+    "id": "ue-q1-quiz-01",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 1: Unreal Setup, Interface, Navigation, and Transforms",
+    "quarter": "Q1",
+    "lessonIds": [
+      "ue-q1-l01",
+      "ue-q1-l02",
+      "ue-q1-l03",
+      "ue-q1-l04"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  },
+  {
+    "id": "ue-q1-quiz-02",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 2: Exposure, Materials, Texture Maps, and Material Instances",
+    "quarter": "Q1",
+    "lessonIds": [
+      "ue-q1-l06",
+      "ue-q1-l07",
+      "ue-q1-l08",
+      "ue-q1-l09"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  },
+  {
+    "id": "ue-q1-quiz-03",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 3: Master Materials, Static Meshes, Migration, and Lumen",
+    "quarter": "Q1",
+    "lessonIds": [
+      "ue-q1-l10",
+      "ue-q1-l11",
+      "ue-q1-l12",
+      "ue-q1-l13"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  },
+  {
+    "id": "ue-q1-quiz-04",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 4: Lighting, Landscapes, Foliage, and Mini-Worlds",
+    "quarter": "Q1",
+    "lessonIds": [
+      "ue-q1-l14",
+      "ue-q1-l15",
+      "ue-q1-l16"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  },
+  {
+    "id": "ue-q3-quiz-01",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 1: Production Expectations, Planning, Setup, and Blockout",
+    "quarter": "Q3",
+    "lessonIds": [
+      "ue-q3-l01",
+      "ue-q3-l02",
+      "ue-q3-l03",
+      "ue-q3-l04"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  },
+  {
+    "id": "ue-q3-quiz-02",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 2: Landscape Materials, Terrain Assets, Modular Kits, and Composition",
+    "quarter": "Q3",
+    "lessonIds": [
+      "ue-q3-l06",
+      "ue-q3-l07",
+      "ue-q3-l08",
+      "ue-q3-l09"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  },
+  {
+    "id": "ue-q3-quiz-03",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 3: Scene Framing, Foliage, Storytelling, and Lighting Mood",
+    "quarter": "Q3",
+    "lessonIds": [
+      "ue-q3-l10",
+      "ue-q3-l11",
+      "ue-q3-l12",
+      "ue-q3-l13"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  },
+  {
+    "id": "ue-q3-quiz-04",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 4: Post-Process, Walkthroughs, and Portfolio Submission",
+    "quarter": "Q3",
+    "lessonIds": [
+      "ue-q3-l14",
+      "ue-q3-l15",
+      "ue-q3-l16"
+    ],
+    "status": "placeholder",
+    "isPublished": false,
+    "questions": []
+  }
+]
+
