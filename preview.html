@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DCC Creative Studio Phase 1 Preview</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17202a;
+        --muted: #5d6978;
+        --line: #d7dee8;
+        --panel: #ffffff;
+        --wash: #f4f7fb;
+        --accent: #0f766e;
+        --accent-2: #7c2d12;
+        --accent-3: #334155;
+        --ok: #166534;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background: var(--wash);
+        line-height: 1.5;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      a:hover,
+      a:focus {
+        text-decoration: underline;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        background: #ffffff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 18px 0;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 700;
+      }
+
+      .mark {
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--accent);
+        font-size: 14px;
+        letter-spacing: 0;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px;
+        font-size: 14px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+        gap: 32px;
+        align-items: center;
+        padding: 48px 0 34px;
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        font-size: clamp(34px, 5vw, 58px);
+        line-height: 1.02;
+        letter-spacing: 0;
+      }
+
+      .lede {
+        max-width: 780px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .status-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 5px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #ffffff;
+        color: var(--accent-3);
+        font-size: 13px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .studio-map {
+        min-height: 280px;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background:
+          linear-gradient(90deg, rgba(15, 118, 110, 0.08) 1px, transparent 1px),
+          linear-gradient(rgba(15, 118, 110, 0.08) 1px, transparent 1px),
+          #ffffff;
+        background-size: 24px 24px;
+      }
+
+      .map-title {
+        margin: 0 0 14px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .map-flow {
+        display: grid;
+        gap: 12px;
+      }
+
+      .map-node {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--accent);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .map-node.video {
+        border-left-color: var(--accent-2);
+      }
+
+      .map-node.data {
+        border-left-color: var(--accent-3);
+      }
+
+      .map-node strong {
+        display: block;
+        margin-bottom: 3px;
+      }
+
+      .map-node span {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      main {
+        padding: 28px 0 56px;
+      }
+
+      section {
+        margin-top: 36px;
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        font-size: 25px;
+        letter-spacing: 0;
+      }
+
+      .section-note {
+        max-width: 860px;
+        margin: 0 0 18px;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .grid.three {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        min-height: 100%;
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        letter-spacing: 0;
+      }
+
+      .card p {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+
+      .card ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .metric {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 13px 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+      }
+
+      .metric strong {
+        font-size: 27px;
+        color: var(--accent);
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 14px;
+        text-align: right;
+      }
+
+      .link-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .file-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        min-height: 48px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        font-size: 14px;
+      }
+
+      .file-link span {
+        color: var(--muted);
+        font-size: 12px;
+        white-space: nowrap;
+      }
+
+      .callout {
+        padding: 18px;
+        border: 1px solid #b6d7d2;
+        border-left: 5px solid var(--accent);
+        border-radius: 8px;
+        background: #f0fdfa;
+      }
+
+      .callout strong {
+        color: var(--ok);
+      }
+
+      footer {
+        padding: 22px 0;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        background: #ffffff;
+        font-size: 14px;
+      }
+
+      @media (max-width: 820px) {
+        .topbar,
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .grid,
+        .grid.three,
+        .link-list {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell topbar">
+        <div class="brand">
+          <div class="mark" aria-hidden="true">DCC</div>
+          <div>DCC Creative Studio</div>
+        </div>
+        <nav class="nav" aria-label="Preview sections">
+          <a href="#program-areas">Program Areas</a>
+          <a href="#curriculum">Curriculum</a>
+          <a href="#data">Website Data</a>
+          <a href="#prompts">Prompts</a>
+          <a href="#files">Files</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="shell hero">
+      <div>
+        <h1>Phase 1 Source of Truth Preview</h1>
+        <p class="lede">
+          This is a local read-only preview of the curriculum and content infrastructure created for DCC Creative Studio. It is not the final Firebase website, student dashboard, or video upload system.
+        </p>
+        <div class="status-row" aria-label="Project status">
+          <span class="pill">Phase 1</span>
+          <span class="pill">Multiple program areas</span>
+          <span class="pill">Structured seed data</span>
+          <span class="pill">No video editor</span>
+        </div>
+      </div>
+      <aside class="studio-map" aria-label="Content structure map">
+        <p class="map-title">Content Player Model</p>
+        <div class="map-flow">
+          <div class="map-node">
+            <strong>Unreal Engine Studio</strong>
+            <span>Q1 foundations and Q3 castle environment production maps.</span>
+          </div>
+          <div class="map-node video">
+            <strong>Video Production Studio</strong>
+            <span>Projects, Broadcast Desk Updates, submissions, and hosted media evidence.</span>
+          </div>
+          <div class="map-node data">
+            <strong>Website Data</strong>
+            <span>Seed JSON and schemas for future Firebase/React rendering.</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <main class="shell">
+      <section id="program-areas">
+        <h2>Program Areas</h2>
+        <p class="section-note">The repository now describes the app as a broader Digital Content Creators class portal instead of an Unreal-only site.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Unreal Engine Studio</h3>
+            <p>Lessons, projects, and portfolio work built from the Unreal Engine 5 tutorial transcript once the full transcript is provided.</p>
+            <ul>
+              <li>Q1: Unreal Engine Foundations</li>
+              <li>Q3: Fantasy Environment Production</li>
+              <li>Evidence: screenshots, walkthroughs, reflections, and portfolio work</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Video Production Studio</h3>
+            <p>Projects, production updates, student media submissions, hosted evidence, and teacher feedback workflows.</p>
+            <ul>
+              <li>Broadcast Desk Updates</li>
+              <li>Video project bank</li>
+              <li>Media hosting and review concepts</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="curriculum">
+        <h2>Curriculum Maps</h2>
+        <p class="section-note">The Unreal maps are human-readable planning documents. Video Production has starter structure and placeholders for future teacher source material.</p>
+        <div class="grid three">
+          <article class="card">
+            <h3>Q1 Unreal</h3>
+            <p>16 lessons covering first project setup, interface, transforms, materials, assets, lighting, landscapes, foliage, and a mini-world.</p>
+            <a href="curriculum/lesson-map/unreal/q1-unreal-foundations.md">Open Q1 lesson map</a>
+          </article>
+          <article class="card">
+            <h3>Q3 Unreal</h3>
+            <p>16 lessons for a fantasy castle environment capstone, from planning and landscape blockout to critique and portfolio submission.</p>
+            <a href="curriculum/lesson-map/unreal/q3-castle-environment.md">Open Q3 lesson map</a>
+          </article>
+          <article class="card">
+            <h3>Video Production</h3>
+            <p>Starter overview, Broadcast Desk model, and project bank placeholders for future video production curriculum.</p>
+            <a href="curriculum/lesson-map/video-production/video-project-bank.md">Open project bank</a>
+          </article>
+        </div>
+      </section>
+
+      <section id="data">
+        <h2>Website Data</h2>
+        <p class="section-note">These files are the future app input layer. They are valid JSON and are meant to become Firestore-ready content later.</p>
+        <div class="grid three">
+          <div class="metric"><strong>2</strong><span>program areas</span></div>
+          <div class="metric"><strong>8</strong><span>starter lesson records</span></div>
+          <div class="metric"><strong>8</strong><span>starter assignments</span></div>
+          <div class="metric"><strong>8</strong><span>quiz placeholders</span></div>
+          <div class="metric"><strong>7</strong><span>video project placeholders</span></div>
+          <div class="metric"><strong>2</strong><span>broadcast update placeholders</span></div>
+          <div class="metric"><strong>7</strong><span>JSON schemas</span></div>
+          <div class="metric"><strong>8</strong><span>prompt templates</span></div>
+          <div class="metric"><strong>0</strong><span>student data or credentials</span></div>
+        </div>
+      </section>
+
+      <section id="prompts">
+        <h2>Prompt Templates</h2>
+        <p class="section-note">ChatGPT Pro templates are ready for generating classroom assets once teacher-approved source material is added.</p>
+        <div class="grid">
+          <article class="card">
+            <h3>Lesson Assets</h3>
+            <ul>
+              <li>Slide decks</li>
+              <li>Assignment sheets</li>
+              <li>Quizzes</li>
+              <li>Lesson page copy</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Video Production Assets</h3>
+            <ul>
+              <li>Project pages</li>
+              <li>Broadcast Desk Updates</li>
+              <li>Media submission requirements</li>
+              <li>Future Codex phase prompts</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="files">
+        <h2>Open Key Files</h2>
+        <p class="section-note">These links open the Markdown and JSON files that make up the Phase 1 source of truth.</p>
+        <div class="link-list">
+          <a class="file-link" href="README.md">Root project overview <span>README</span></a>
+          <a class="file-link" href="AGENTS.md">Codex repository instructions <span>AGENTS</span></a>
+          <a class="file-link" href="curriculum/README.md">Curriculum source overview <span>Docs</span></a>
+          <a class="file-link" href="curriculum/program-areas/unreal-engine.md">Unreal Engine Studio <span>Program</span></a>
+          <a class="file-link" href="curriculum/program-areas/video-production.md">Video Production Studio <span>Program</span></a>
+          <a class="file-link" href="curriculum/website-data/programAreas.seed.json">Program area seed data <span>JSON</span></a>
+          <a class="file-link" href="curriculum/website-data/lessons.seed.json">Lesson seed data <span>JSON</span></a>
+          <a class="file-link" href="curriculum/website-data/mediaProjects.seed.json">Media project seed data <span>JSON</span></a>
+          <a class="file-link" href="curriculum/prompts/codex-prompts.md">Future Codex phase prompts <span>Prompts</span></a>
+          <a class="file-link" href="curriculum/drive-structure.md">Google Drive structure <span>Docs</span></a>
+        </div>
+      </section>
+
+      <section>
+        <div class="callout">
+          <strong>Not built yet:</strong> Firebase Authentication, student dashboards, quizzes, uploads, portfolios, teacher dashboard, and Video Production media workflows are intentionally future phases. This preview only shows the Phase 1 content infrastructure.
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">
+        DCC Creative Studio Phase 1 preview. Open this file locally, or publish the real app in a later Firebase/React phase.
+      </div>
+    </footer>
+  </body>
+</html>
+
