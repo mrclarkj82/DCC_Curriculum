@@ -1,0 +1,54 @@
+{
+  "id": "vp-p01",
+  "programAreaId": "video-production",
+  "title": "Broadcast Desk Update Response",
+  "status": "pilot-ready",
+  "projectType": "broadcast-update-response",
+  "skillFocus": [
+    "production communication",
+    "media submission",
+    "reflection",
+    "following production updates"
+  ],
+  "description": "Students open a teacher-created Broadcast Desk Update, follow the instructions, and submit required production evidence or response.",
+  "studentTask": "Open the assigned Broadcast Desk Update, follow the instructions, and submit the required media evidence or response.",
+  "submissionTypes": [
+    "video",
+    "link",
+    "textReflection",
+    "fileUpload"
+  ],
+  "evidenceRequired": [
+    "Submitted media link or uploaded file",
+    "Short reflection",
+    "Any required production notes"
+  ],
+  "rubric": [
+    {
+      "score": 4,
+      "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+    },
+    {
+      "score": 3,
+      "description": "Complete and meets the stated requirements."
+    },
+    {
+      "score": 2,
+      "description": "Partially complete or missing required evidence."
+    },
+    {
+      "score": 1,
+      "description": "Attempted but incomplete, unclear, or not functional."
+    },
+    {
+      "score": 0,
+      "description": "Not submitted."
+    }
+  ],
+  "reflectionPrompt": "What did you contribute, what worked, and what would you improve next time?",
+  "tags": [
+    "video-production",
+    "broadcast-update-response",
+    "pilot"
+  ]
+}

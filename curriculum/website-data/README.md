@@ -25,3 +25,12 @@ This repository does not currently include a `package.json`, so Phase 1 does not
 
 Until then, use a JSON parser or editor validation before editing these files.
 
+
+## Phase 2 Relationship Checks
+
+When validation tooling is introduced, also check that:
+
+- every Unreal assignment references an existing Unreal lesson
+- quiz `lessonIds` reference existing lessons
+- broadcast update `relatedProjectIds` reference existing media projects
+- pilot batch `lesson-data.json`, `project-data.json`, `update-data.json`, and `quiz-data.json` remain aligned with the seed files

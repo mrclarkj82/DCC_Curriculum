@@ -10,9 +10,243 @@
       "ue-q1-l03",
       "ue-q1-l04"
     ],
-    "status": "placeholder",
+    "status": "pilot-ready",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q1-quiz-01-q01",
+        "type": "multiple-choice",
+        "text": "Which project template does the tutorial use to start from scratch?",
+        "choices": [
+          "First Person",
+          "Blank",
+          "Vehicle",
+          "Photo Studio"
+        ],
+        "correctAnswer": "Blank",
+        "explanation": "The tutorial chooses Games > Blank so students begin with a clean project.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l01",
+        "tag": "project-setup"
+      },
+      {
+        "id": "ue-q1-quiz-01-q02",
+        "type": "multiple-choice",
+        "text": "Why does the lesson keep the project set to Blueprint?",
+        "choices": [
+          "Blueprint is required for screenshots.",
+          "The class is starting with visual scripting instead of C++.",
+          "Blueprint prevents starter content.",
+          "Blueprint changes the project location automatically."
+        ],
+        "correctAnswer": "The class is starting with visual scripting instead of C++.",
+        "explanation": "The tutorial leaves the project on Blueprint because it is not focused on C++ code at this stage.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l01",
+        "tag": "blueprint"
+      },
+      {
+        "id": "ue-q1-quiz-01-q03",
+        "type": "multiple-choice",
+        "text": "Which panel lists the objects that make up the current world or level?",
+        "choices": [
+          "Details panel",
+          "Outliner",
+          "Content Drawer",
+          "Project Browser"
+        ],
+        "correctAnswer": "Outliner",
+        "explanation": "The Outliner lists objects in the current level and can be used to select or organize them.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l02",
+        "tag": "interface"
+      },
+      {
+        "id": "ue-q1-quiz-01-q04",
+        "type": "multiple-choice",
+        "text": "What must be held while using WASD to fly around the viewport?",
+        "choices": [
+          "Left mouse button",
+          "Right mouse button",
+          "Shift only",
+          "Ctrl only"
+        ],
+        "correctAnswer": "Right mouse button",
+        "explanation": "Viewport WASD navigation works while the right mouse button is held down.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l03",
+        "tag": "navigation"
+      },
+      {
+        "id": "ue-q1-quiz-01-q05",
+        "type": "multiple-choice",
+        "text": "Which shortcut changes the selected object to the scale gizmo?",
+        "choices": [
+          "W",
+          "E",
+          "R",
+          "G"
+        ],
+        "correctAnswer": "R",
+        "explanation": "W is move, E is rotate, and R is scale.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l04",
+        "tag": "transforms"
+      },
+      {
+        "id": "ue-q1-quiz-01-q06",
+        "type": "tool-identification",
+        "text": "Identify the tool or panel: The place where project folders and assets such as starter content props are browsed.",
+        "choices": [
+          "Content Drawer or Content Browser",
+          "Outliner",
+          "Viewport",
+          "Toolbar"
+        ],
+        "correctAnswer": "Content Drawer or Content Browser",
+        "explanation": "The Content Drawer/Browser is the asset and folder browser for the project.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l02",
+        "tag": "content-browser"
+      },
+      {
+        "id": "ue-q1-quiz-01-q07",
+        "type": "tool-identification",
+        "text": "Identify the shortcut: Press this key after selecting an object to focus the viewport camera on it.",
+        "choices": [
+          "F",
+          "G",
+          "R",
+          "Q"
+        ],
+        "correctAnswer": "F",
+        "explanation": "The F key focuses the viewport on the selected object.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l03",
+        "tag": "focus"
+      },
+      {
+        "id": "ue-q1-quiz-01-q08",
+        "type": "tool-identification",
+        "text": "Identify the setting: This makes objects move, rotate, or scale in set increments.",
+        "choices": [
+          "Game View",
+          "Snapping",
+          "World Settings",
+          "Starter Content"
+        ],
+        "correctAnswer": "Snapping",
+        "explanation": "Snapping constrains transforms to set increments such as centimeters or degrees.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l04",
+        "tag": "snapping"
+      },
+      {
+        "id": "ue-q1-quiz-01-q09",
+        "type": "tool-identification",
+        "text": "Identify the view option: This hides editor widgets so the viewport shows what the player would see.",
+        "choices": [
+          "Wireframe",
+          "Top View",
+          "Game View",
+          "Default Layout"
+        ],
+        "correctAnswer": "Game View",
+        "explanation": "Game View is toggled with G and hides editor-only widgets.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l03",
+        "tag": "game-view"
+      },
+      {
+        "id": "ue-q1-quiz-01-q10",
+        "type": "scenario-troubleshooting",
+        "text": "A student presses WASD but the viewport camera does not move. What should they check first?",
+        "choices": [
+          "Whether the right mouse button is being held",
+          "Whether Starter Content is enabled",
+          "Whether the project is named correctly",
+          "Whether the Details panel is docked"
+        ],
+        "correctAnswer": "Whether the right mouse button is being held",
+        "explanation": "The tutorial explains that WASD navigation requires holding the right mouse button.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l03",
+        "tag": "navigation-troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-01-q11",
+        "type": "scenario-troubleshooting",
+        "text": "A student duplicated a statue with Ctrl+D but does not see a new statue. What probably happened?",
+        "choices": [
+          "The duplicate is in the same location as the original",
+          "Ctrl+D deletes the original",
+          "The Outliner is hidden forever",
+          "The project changed from Blueprint to C++"
+        ],
+        "correctAnswer": "The duplicate is in the same location as the original",
+        "explanation": "Ctrl+D creates the duplicate in the same spot, so the student needs to move the copy.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l04",
+        "tag": "duplication"
+      },
+      {
+        "id": "ue-q1-quiz-01-q12",
+        "type": "scenario-troubleshooting",
+        "text": "A student moved panels around and the editor layout is hard to use. What should they try?",
+        "choices": [
+          "Window > Load Layout > Default Editor Layout",
+          "Delete the project folder",
+          "Turn on Wireframe mode",
+          "Disable all Show Flags"
+        ],
+        "correctAnswer": "Window > Load Layout > Default Editor Layout",
+        "explanation": "The tutorial shows resetting the editor layout from the Window menu.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l02",
+        "tag": "layout"
+      },
+      {
+        "id": "ue-q1-quiz-01-q13",
+        "type": "process-order",
+        "text": "Put these project setup steps in order: choose Games > Blank, set project name/location, confirm Blueprint and Starter Content, click Create.",
+        "correctAnswer": [
+          "Choose Games > Blank",
+          "Set project name/location",
+          "Confirm Blueprint and Starter Content",
+          "Click Create"
+        ],
+        "explanation": "This sequence follows the project creation workflow from the tutorial.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l01",
+        "tag": "project-setup"
+      },
+      {
+        "id": "ue-q1-quiz-01-q14",
+        "type": "process-order",
+        "text": "Put these transform actions in a sensible order for building a simple scene: add or duplicate an object, move it, rotate it, scale it, capture evidence.",
+        "correctAnswer": [
+          "Add or duplicate an object",
+          "Move it",
+          "Rotate it",
+          "Scale it",
+          "Capture evidence"
+        ],
+        "explanation": "Students should add an object, transform it intentionally, and then document the result.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l04",
+        "tag": "scene-building"
+      },
+      {
+        "id": "ue-q1-quiz-01-q15",
+        "type": "short-response",
+        "text": "Explain why the Content Drawer/Content Browser is important when building an Unreal project.",
+        "correctAnswer": "Student responses should explain that it stores and organizes project assets such as folders, maps, meshes, props, and starter content.",
+        "explanation": "The Content Drawer/Browser is the project asset area and is essential for finding and placing project content.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l02",
+        "tag": "content-browser"
+      }
+    ]
   },
   {
     "id": "ue-q1-quiz-02",
@@ -118,4 +352,3 @@
     "questions": []
   }
 ]
-

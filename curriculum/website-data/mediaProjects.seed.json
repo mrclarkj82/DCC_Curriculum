@@ -3,14 +3,15 @@
     "id": "vp-p01",
     "programAreaId": "video-production",
     "title": "Broadcast Desk Update Response",
-    "status": "placeholder",
+    "status": "pilot-ready",
     "projectType": "broadcast-update-response",
     "skillFocus": [
       "production communication",
       "media submission",
-      "reflection"
+      "reflection",
+      "following production updates"
     ],
-    "description": "Students respond to a teacher-created Broadcast Desk Update and submit required production evidence.",
+    "description": "Students open a teacher-created Broadcast Desk Update, follow the instructions, and submit required production evidence or response.",
     "studentTask": "Open the assigned Broadcast Desk Update, follow the instructions, and submit the required media evidence or response.",
     "submissionTypes": [
       "video",
@@ -26,7 +27,7 @@
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets the production requirements."
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
       },
       {
         "score": 3,
@@ -38,7 +39,7 @@
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete or unclear."
+        "description": "Attempted but incomplete, unclear, or not functional."
       },
       {
         "score": 0,
@@ -48,23 +49,24 @@
     "reflectionPrompt": "What did you contribute, what worked, and what would you improve next time?",
     "tags": [
       "video-production",
-      "broadcast",
-      "submission"
+      "broadcast-update-response",
+      "pilot"
     ]
   },
   {
     "id": "vp-p02",
     "programAreaId": "video-production",
     "title": "B-Roll Sequence",
-    "status": "placeholder",
-    "projectType": "b-roll-challenge",
+    "status": "pilot-ready",
+    "projectType": "b-roll-sequence",
     "skillFocus": [
       "shot variety",
       "sequencing",
-      "visual storytelling"
+      "visual storytelling",
+      "media export"
     ],
-    "description": "Students create a short B-roll sequence that shows a subject, activity, or location through intentional shot variety.",
-    "studentTask": "Capture and organize a short B-roll sequence around a teacher-approved subject.",
+    "description": "Students capture or collect a short sequence of B-roll clips and submit a simple edited sequence or media evidence according to teacher requirements.",
+    "studentTask": "Capture or collect a short sequence of B-roll clips and submit a simple edited sequence or media evidence according to teacher requirements.",
     "submissionTypes": [
       "video",
       "link",
@@ -79,7 +81,7 @@
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets the production requirements."
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
       },
       {
         "score": 3,
@@ -91,7 +93,7 @@
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete or unclear."
+        "description": "Attempted but incomplete, unclear, or not functional."
       },
       {
         "score": 0,
@@ -101,8 +103,8 @@
     "reflectionPrompt": "Which shot best helped tell the story, and why?",
     "tags": [
       "video-production",
-      "b-roll",
-      "sequencing"
+      "b-roll-sequence",
+      "pilot"
     ]
   },
   {
@@ -374,4 +376,3 @@
     ]
   }
 ]
-

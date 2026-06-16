@@ -1,0 +1,54 @@
+{
+  "id": "vp-p02",
+  "programAreaId": "video-production",
+  "title": "B-Roll Sequence",
+  "status": "pilot-ready",
+  "projectType": "b-roll-sequence",
+  "skillFocus": [
+    "shot variety",
+    "sequencing",
+    "visual storytelling",
+    "media export"
+  ],
+  "description": "Students capture or collect a short sequence of B-roll clips and submit a simple edited sequence or media evidence according to teacher requirements.",
+  "studentTask": "Capture or collect a short sequence of B-roll clips and submit a simple edited sequence or media evidence according to teacher requirements.",
+  "submissionTypes": [
+    "video",
+    "link",
+    "fileUpload",
+    "textReflection"
+  ],
+  "evidenceRequired": [
+    "Exported B-roll sequence or hosted link",
+    "Shot list or production notes",
+    "Short reflection"
+  ],
+  "rubric": [
+    {
+      "score": 4,
+      "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+    },
+    {
+      "score": 3,
+      "description": "Complete and meets the stated requirements."
+    },
+    {
+      "score": 2,
+      "description": "Partially complete or missing required evidence."
+    },
+    {
+      "score": 1,
+      "description": "Attempted but incomplete, unclear, or not functional."
+    },
+    {
+      "score": 0,
+      "description": "Not submitted."
+    }
+  ],
+  "reflectionPrompt": "Which shot best helped tell the story, and why?",
+  "tags": [
+    "video-production",
+    "b-roll-sequence",
+    "pilot"
+  ]
+}

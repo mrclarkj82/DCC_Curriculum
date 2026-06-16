@@ -6,14 +6,14 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 1,
     "title": "Creating Your First Unreal Project",
-    "status": "draft",
+    "status": "pilot-ready",
     "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:00:00",
       "end": "00:03:47",
       "url": ""
     },
-    "learningTarget": "I can create and save a new Unreal Engine project using the correct class settings.",
+    "learningTarget": "I can create and save a new Unreal Engine project using the correct class setup, project name, and starter content settings.",
     "bellRinger": {
       "type": "short-response",
       "prompt": "What kinds of digital worlds have you seen in games, movies, architecture, or VR?"
@@ -22,26 +22,47 @@
       {
         "term": "Unreal Engine",
         "definition": "A real-time 3D creation tool used for games, film, visualization, and interactive media."
+      },
+      {
+        "term": "Epic Games Launcher",
+        "definition": "The launcher used to install and open Unreal Engine."
+      },
+      {
+        "term": "Project Browser",
+        "definition": "The startup window where users open recent projects or create new ones."
+      },
+      {
+        "term": "Blank Project",
+        "definition": "A project template that starts with minimal prebuilt content."
+      },
+      {
+        "term": "Starter Content",
+        "definition": "Sample assets that can be added to a new project for practice."
+      },
+      {
+        "term": "Blueprint",
+        "definition": "Unreal visual scripting used instead of writing C++ for many beginner interactions."
       }
     ],
     "slides": {
       "title": "Lesson 01 - Creating Your First Unreal Project",
       "url": "",
-      "status": "not-created"
+      "status": "needs-chatgpt-pro-generation"
     },
     "assignment": {
       "id": "ue-q1-a01",
       "title": "First Unreal Project Setup",
       "submissionType": "screenshot",
       "evidenceRequired": [
-        "Screenshot of the open Unreal project",
-        "Screenshot or written confirmation showing the correct project name"
+        "Screenshot of project browser or open Unreal project",
+        "Screenshot or written confirmation showing correct project name"
       ]
     },
     "exitTicket": "What setting should be enabled if we want starter assets available in the project?",
     "tags": [
       "setup",
       "project-creation",
+      "starter-content",
       "unreal-basics"
     ]
   },
@@ -52,47 +73,63 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 2,
     "title": "Unreal Interface Tour",
-    "status": "draft",
+    "status": "pilot-ready",
     "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
-      "start": "TBD",
-      "end": "TBD",
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "00:03:47",
+      "end": "00:11:57",
       "url": ""
     },
-    "learningTarget": "I can identify the main Unreal interface panels and explain what each one is used for.",
+    "learningTarget": "I can identify the main Unreal interface panels and explain how each one supports building and organizing a 3D world.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "Which software interface have you used that felt complicated at first?"
+      "prompt": "Which software interface have you used that felt complicated at first, and what helped you learn it?"
     },
     "vocabulary": [
       {
         "term": "Viewport",
-        "definition": "The main window where users view and work inside a 3D scene."
+        "definition": "The main window that shows the 3D world and lets users select or manipulate objects."
+      },
+      {
+        "term": "Toolbar",
+        "definition": "The row of tools used to add objects, switch modes, play, and access common actions."
       },
       {
         "term": "Outliner",
-        "definition": "The panel that lists actors and objects in the current level."
+        "definition": "A list of objects in the current level, useful for selecting, organizing, hiding, and grouping."
+      },
+      {
+        "term": "Details Panel",
+        "definition": "The panel that shows editable properties for the selected object."
+      },
+      {
+        "term": "Content Drawer",
+        "definition": "The asset browser that can open from the bottom of the editor, often with Ctrl+Space."
+      },
+      {
+        "term": "Content Browser",
+        "definition": "The docked version of the Content Drawer that shows project folders and assets."
       }
     ],
     "slides": {
       "title": "Lesson 02 - Unreal Interface Tour",
       "url": "",
-      "status": "not-created"
+      "status": "needs-chatgpt-pro-generation"
     },
     "assignment": {
       "id": "ue-q1-a02",
       "title": "Unreal Interface Map",
-      "submissionType": "annotated-screenshot",
+      "submissionType": "annotated-screenshot-or-form",
       "evidenceRequired": [
-        "Annotated screenshot of the Unreal interface",
-        "Short notes describing the purpose of key panels"
+        "Annotated screenshot or form response identifying viewport, toolbar, outliner, details panel, and content drawer"
       ]
     },
     "exitTicket": "Which panel shows the selected object's editable settings?",
     "tags": [
       "interface",
-      "panels",
-      "unreal-basics"
+      "outliner",
+      "details-panel",
+      "content-browser"
     ]
   },
   {
@@ -102,14 +139,14 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 3,
     "title": "Viewport Navigation",
-    "status": "draft",
+    "status": "pilot-ready",
     "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
-      "start": "TBD",
-      "end": "TBD",
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "00:11:57",
+      "end": "00:17:31",
       "url": ""
     },
-    "learningTarget": "I can navigate the viewport using orbit, pan, zoom, focus, and fly controls.",
+    "learningTarget": "I can navigate the Unreal viewport confidently using mouse controls, keyboard movement, focus, view modes, show flags, and game view.",
     "bellRinger": {
       "type": "short-response",
       "prompt": "Why might navigation controls matter before building anything in a 3D scene?"
@@ -117,32 +154,49 @@
     "vocabulary": [
       {
         "term": "Viewport Navigation",
-        "definition": "The controls used to move the editor camera around a 3D scene."
+        "definition": "The controls used to move the editor camera around the 3D world."
+      },
+      {
+        "term": "WASD Navigation",
+        "definition": "A first-person style movement method used while holding the right mouse button."
+      },
+      {
+        "term": "Camera Speed",
+        "definition": "The setting that controls how fast the viewport camera moves."
       },
       {
         "term": "Focus",
-        "definition": "A shortcut or action that centers the view on the selected object."
+        "definition": "The F key action that snaps the viewport to the selected object."
+      },
+      {
+        "term": "View Mode",
+        "definition": "A viewport display mode such as Lit, Unlit, or Wireframe."
+      },
+      {
+        "term": "Game View",
+        "definition": "A viewport option toggled with G that hides editor-only widgets and shows what the player would see."
       }
     ],
     "slides": {
       "title": "Lesson 03 - Viewport Navigation",
       "url": "",
-      "status": "not-created"
+      "status": "needs-chatgpt-pro-generation"
     },
     "assignment": {
       "id": "ue-q1-a03",
       "title": "Viewport Navigation Scavenger Hunt",
       "submissionType": "screenshot-set",
       "evidenceRequired": [
-        "Screenshots from required camera angles",
-        "Short note describing one navigation shortcut used"
+        "Screenshots from at least three different views or camera positions",
+        "One screenshot showing game view or a different view mode"
       ]
     },
-    "exitTicket": "What shortcut helps refocus the camera on a selected object?",
+    "exitTicket": "What does pressing G toggle in the viewport?",
     "tags": [
       "viewport",
       "navigation",
-      "camera"
+      "camera-speed",
+      "game-view"
     ]
   },
   {
@@ -152,47 +206,64 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 4,
     "title": "Moving, Rotating, and Scaling Objects",
-    "status": "draft",
+    "status": "pilot-ready",
     "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
-      "start": "TBD",
-      "end": "TBD",
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "00:17:31",
+      "end": "00:27:14",
       "url": ""
     },
-    "learningTarget": "I can use transform tools to move, rotate, and scale objects accurately.",
+    "learningTarget": "I can build a simple starter scene by moving, rotating, scaling, duplicating, and placing objects from the toolbar and Content Drawer.",
     "bellRinger": {
       "type": "short-response",
       "prompt": "What is the difference between moving an object and changing the camera view?"
     },
     "vocabulary": [
       {
-        "term": "Transform",
-        "definition": "An object's location, rotation, and scale values."
+        "term": "Translate",
+        "definition": "Move an object along one or more axes."
+      },
+      {
+        "term": "Rotate",
+        "definition": "Turn an object around an axis."
+      },
+      {
+        "term": "Scale",
+        "definition": "Change the size or proportions of an object."
       },
       {
         "term": "Gizmo",
-        "definition": "The visual handle used to move, rotate, or scale selected objects."
+        "definition": "The colored handles used to move, rotate, or scale selected objects."
+      },
+      {
+        "term": "Snapping",
+        "definition": "A setting that moves, rotates, or scales objects in set increments."
+      },
+      {
+        "term": "Local Transform",
+        "definition": "Moving or rotating based on the selected object direction instead of the world direction."
       }
     ],
     "slides": {
       "title": "Lesson 04 - Moving, Rotating, and Scaling Objects",
       "url": "",
-      "status": "not-created"
+      "status": "needs-chatgpt-pro-generation"
     },
     "assignment": {
       "id": "ue-q1-a04",
-      "title": "Transform Practice Scene",
-      "submissionType": "screenshot",
+      "title": "Starter Scene Transform Challenge",
+      "submissionType": "screenshot-and-reflection",
       "evidenceRequired": [
-        "Screenshot of a practice scene built with transformed objects",
-        "One written example of a location, rotation, or scale value"
+        "Screenshot of completed simple scene",
+        "Short reflection naming at least three tools or shortcuts used"
       ]
     },
-    "exitTicket": "Which transform changes an object's size?",
+    "exitTicket": "What are the W, E, and R shortcuts used for in Unreal?",
     "tags": [
-      "transform",
-      "movement",
-      "scene-building"
+      "transforms",
+      "snapping",
+      "duplication",
+      "starter-scene"
     ]
   },
   {
@@ -382,6 +453,917 @@
       "blockout",
       "castle-environment"
     ]
+  },
+  {
+    "id": "ue-q1-l05",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 5,
+    "title": "Quiz 1 and First Scene Cleanup",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 05 - Quiz 1 and First Scene Cleanup",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a05",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l06",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 6,
+    "title": "Exposure and Post-Process",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 06 - Exposure and Post-Process",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a06",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l07",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 7,
+    "title": "Materials Basics",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 07 - Materials Basics",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a07",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l08",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 8,
+    "title": "Texture Maps and Normal Maps",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 08 - Texture Maps and Normal Maps",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a08",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l09",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 9,
+    "title": "Quiz 2 and Material Instances",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 09 - Quiz 2 and Material Instances",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a09",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l10",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 10,
+    "title": "Master Materials",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 10 - Master Materials",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a10",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l11",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 11,
+    "title": "Importing Static Meshes",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 11 - Importing Static Meshes",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a11",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l12",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 12,
+    "title": "Migrating Assets Between Projects",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 12 - Migrating Assets Between Projects",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a12",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l13",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 13,
+    "title": "Quiz 3 and Lumen Lighting",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 13 - Quiz 3 and Lumen Lighting",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a13",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l14",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 14,
+    "title": "Light Types and Scene Lighting",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 14 - Light Types and Scene Lighting",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a14",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l15",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 15,
+    "title": "Landscapes",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 15 - Landscapes",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a15",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q1-l16",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "unit": "Unreal Foundations",
+    "lessonNumber": 16,
+    "title": "Foliage, Mini-World, and Blueprint Preview",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q1 Lesson 16 - Foliage, Mini-World, and Blueprint Preview",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q1-a16",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q1"
+    ]
+  },
+  {
+    "id": "ue-q3-l05",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 5,
+    "title": "Quiz 1 and Landscape Refinement",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 05 - Quiz 1 and Landscape Refinement",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a05",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l06",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 6,
+    "title": "Landscape Materials",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 06 - Landscape Materials",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a06",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l07",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 7,
+    "title": "Megascans/Fab/Bridge Terrain Assets",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 07 - Megascans/Fab/Bridge Terrain Assets",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a07",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l08",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 8,
+    "title": "Castle Modular Kit",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 08 - Castle Modular Kit",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a08",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l09",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 9,
+    "title": "Quiz 2 and Castle Composition",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 09 - Quiz 2 and Castle Composition",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a09",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l10",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 10,
+    "title": "Rocks, Cliffs, and Scene Framing",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 10 - Rocks, Cliffs, and Scene Framing",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a10",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l11",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 11,
+    "title": "Trees and Foliage",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 11 - Trees and Foliage",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a11",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l12",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 12,
+    "title": "Environmental Storytelling",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 12 - Environmental Storytelling",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a12",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l13",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 13,
+    "title": "Quiz 3 and Lighting Mood",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 13 - Quiz 3 and Lighting Mood",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a13",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l14",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 14,
+    "title": "Post-Process and Cinematic Screenshots",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 14 - Post-Process and Cinematic Screenshots",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a14",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l15",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 15,
+    "title": "Player Walkthrough",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 15 - Player Walkthrough",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a15",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
+  },
+  {
+    "id": "ue-q3-l16",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 16,
+    "title": "Final Critique and Portfolio Submission",
+    "status": "placeholder",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "TODO: Add bell ringer after final lesson generation."
+    },
+    "vocabulary": [],
+    "slides": {
+      "title": "Q3 Lesson 16 - Final Critique and Portfolio Submission",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a16",
+      "title": "TODO: Add assignment after final lesson generation.",
+      "submissionType": "TBD",
+      "evidenceRequired": []
+    },
+    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "tags": [
+      "placeholder",
+      "unreal-engine",
+      "q3"
+    ]
   }
 ]
-

@@ -1,0 +1,66 @@
+{
+  "id": "ue-q1-l02",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 2,
+  "title": "Unreal Interface Tour",
+  "status": "pilot-ready",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "00:03:47",
+    "end": "00:11:57",
+    "url": ""
+  },
+  "learningTarget": "I can identify the main Unreal interface panels and explain how each one supports building and organizing a 3D world.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Which software interface have you used that felt complicated at first, and what helped you learn it?"
+  },
+  "vocabulary": [
+    {
+      "term": "Viewport",
+      "definition": "The main window that shows the 3D world and lets users select or manipulate objects."
+    },
+    {
+      "term": "Toolbar",
+      "definition": "The row of tools used to add objects, switch modes, play, and access common actions."
+    },
+    {
+      "term": "Outliner",
+      "definition": "A list of objects in the current level, useful for selecting, organizing, hiding, and grouping."
+    },
+    {
+      "term": "Details Panel",
+      "definition": "The panel that shows editable properties for the selected object."
+    },
+    {
+      "term": "Content Drawer",
+      "definition": "The asset browser that can open from the bottom of the editor, often with Ctrl+Space."
+    },
+    {
+      "term": "Content Browser",
+      "definition": "The docked version of the Content Drawer that shows project folders and assets."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 02 - Unreal Interface Tour",
+    "url": "",
+    "status": "needs-chatgpt-pro-generation"
+  },
+  "assignment": {
+    "id": "ue-q1-a02",
+    "title": "Unreal Interface Map",
+    "submissionType": "annotated-screenshot-or-form",
+    "evidenceRequired": [
+      "Annotated screenshot or form response identifying viewport, toolbar, outliner, details panel, and content drawer"
+    ]
+  },
+  "exitTicket": "Which panel shows the selected object's editable settings?",
+  "tags": [
+    "interface",
+    "outliner",
+    "details-panel",
+    "content-browser"
+  ]
+}

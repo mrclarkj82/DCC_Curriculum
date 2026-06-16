@@ -7,25 +7,28 @@
     "skillFocus": [
       "project creation",
       "project naming",
+      "Blueprint setting",
       "starter content",
       "save location"
     ],
-    "instructions": "Create a new Unreal Engine project using the class naming convention.",
+    "instructions": "Create your first Unreal Engine project using the class naming convention and the tutorial setup choices.",
     "requiredSteps": [
-      "Open Unreal Engine through the approved class workflow.",
-      "Create a new project using the assigned template and starter content setting.",
+      "Open Unreal Engine using the approved class workflow.",
+      "Create a new Games > Blank project.",
+      "Leave the project set to Blueprint.",
+      "Enable Starter Content.",
       "Name the project using the class naming convention.",
-      "Open the project and confirm that it saves in the correct location."
+      "Create the project and confirm it opens successfully."
     ],
     "submissionType": "screenshot",
     "evidenceRequired": [
-      "Screenshot of the open Unreal project",
-      "Screenshot or written confirmation showing the correct project name"
+      "Screenshot of project browser or open Unreal project",
+      "Screenshot or written confirmation showing correct project name"
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
       },
       {
         "score": 3,
@@ -37,15 +40,15 @@
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete, unclear, or not functional."
       },
       {
         "score": 0,
         "description": "Not submitted."
       }
     ],
-    "extensionChallenge": "Create one extra saved copy or screenshot showing where your project files are located.",
-    "reflectionPrompt": "What part of project setup do you need to remember next time?"
+    "extensionChallenge": "Create a short note showing where your project folder is saved and how you would reopen the .uproject file.",
+    "reflectionPrompt": "What project setup choice do you most need to remember next time?"
   },
   {
     "id": "ue-q1-a02",
@@ -55,24 +58,25 @@
     "skillFocus": [
       "interface awareness",
       "panel identification",
+      "project organization",
       "workflow vocabulary"
     ],
-    "instructions": "Create an interface map that identifies the major Unreal editor areas and what each one is used for.",
+    "instructions": "Identify and label the major Unreal editor panels so you can explain what each one is used for.",
     "requiredSteps": [
-      "Open the Unreal project from Lesson 1.",
-      "Capture a screenshot of the editor interface.",
-      "Label the Viewport, Outliner, Details panel, Content Drawer, toolbar, and play controls.",
-      "Write a short purpose statement for each labeled area."
+      "Open the Unreal project from Lesson 01.",
+      "Capture a clear screenshot of the editor interface.",
+      "Label the Viewport, Toolbar, Outliner, Details panel, and Content Drawer or Content Browser.",
+      "Add one short purpose note for each required interface area.",
+      "Submit the annotated screenshot or teacher-provided form response."
     ],
-    "submissionType": "annotated-screenshot",
+    "submissionType": "annotated-screenshot-or-form",
     "evidenceRequired": [
-      "Annotated screenshot of the Unreal interface",
-      "Short notes describing the purpose of key panels"
+      "Annotated screenshot or form response identifying viewport, toolbar, outliner, details panel, and content drawer"
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
       },
       {
         "score": 3,
@@ -84,15 +88,15 @@
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete, unclear, or not functional."
       },
       {
         "score": 0,
         "description": "Not submitted."
       }
     ],
-    "extensionChallenge": "Add one additional panel or menu that was not required and explain when you might use it.",
-    "reflectionPrompt": "Which interface area do you expect to use most often?"
+    "extensionChallenge": "Add two extra interface areas or shortcuts, such as World Settings, F10, Ctrl+Space, or Default Editor Layout.",
+    "reflectionPrompt": "Which editor panel do you think will help you stay most organized, and why?"
   },
   {
     "id": "ue-q1-a03",
@@ -101,25 +105,28 @@
     "title": "Viewport Navigation Scavenger Hunt",
     "skillFocus": [
       "viewport navigation",
-      "camera control",
-      "scene orientation"
+      "camera speed",
+      "focus shortcut",
+      "view modes",
+      "game view"
     ],
-    "instructions": "Navigate through the starter scene and capture evidence that you can view objects from multiple useful angles.",
+    "instructions": "Complete a viewport navigation scavenger hunt using camera movement, focus, view modes, and game view.",
     "requiredSteps": [
-      "Use orbit, pan, zoom, and focus controls.",
-      "Find the assigned objects or scene locations.",
-      "Capture screenshots from the required angles.",
-      "Write one sentence naming a shortcut or control that helped you."
+      "Open the Unreal project and use right mouse plus WASD to navigate.",
+      "Use Q and E to move vertically at least once.",
+      "Use F to focus on a selected object.",
+      "Capture screenshots from at least three different views or camera positions.",
+      "Capture one screenshot showing Game View or a different view mode such as Unlit or Wireframe."
     ],
     "submissionType": "screenshot-set",
     "evidenceRequired": [
-      "Screenshots from required camera angles",
-      "Short note describing one navigation shortcut used"
+      "Screenshots from at least three different views or camera positions",
+      "One screenshot showing game view or a different view mode"
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
       },
       {
         "score": 3,
@@ -131,43 +138,47 @@
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete, unclear, or not functional."
       },
       {
         "score": 0,
         "description": "Not submitted."
       }
     ],
-    "extensionChallenge": "Record a short screen capture showing smooth navigation from one object to another.",
-    "reflectionPrompt": "Which navigation movement felt most natural, and which still needs practice?"
+    "extensionChallenge": "Record a 20-second screen capture showing smooth movement from one object to another and ending in Game View.",
+    "reflectionPrompt": "Which navigation shortcut helped you the most today?"
   },
   {
     "id": "ue-q1-a04",
     "programAreaId": "unreal-engine",
     "lessonId": "ue-q1-l04",
-    "title": "Transform Practice Scene",
+    "title": "Starter Scene Transform Challenge",
     "skillFocus": [
-      "movement",
+      "translation",
       "rotation",
       "scale",
-      "scene arrangement"
+      "snapping",
+      "duplication",
+      "scene composition"
     ],
-    "instructions": "Build a simple practice scene that shows control over moving, rotating, and scaling objects.",
+    "instructions": "Build a simple starter scene using starter content objects and transform tools.",
     "requiredSteps": [
-      "Place several starter objects in the scene.",
-      "Move, rotate, and scale objects intentionally.",
-      "Use snapping or typed transform values for at least one object.",
-      "Capture a screenshot and include one transform value example."
+      "Use starter content objects or simple shapes to build a small scene.",
+      "Move at least three objects with the W shortcut or move gizmo.",
+      "Rotate at least two objects with the E shortcut or rotate gizmo.",
+      "Scale at least one object with the R shortcut or scale gizmo.",
+      "Duplicate at least one object using Ctrl+D or Alt-drag.",
+      "Capture a screenshot of the completed simple scene and write a short reflection naming at least three tools or shortcuts used."
     ],
-    "submissionType": "screenshot",
+    "submissionType": "screenshot-and-reflection",
     "evidenceRequired": [
-      "Screenshot of a practice scene built with transformed objects",
-      "One written example of a location, rotation, or scale value"
+      "Screenshot of completed simple scene",
+      "Short reflection naming at least three tools or shortcuts used"
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
       },
       {
         "score": 3,
@@ -179,15 +190,15 @@
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete, unclear, or not functional."
       },
       {
         "score": 0,
         "description": "Not submitted."
       }
     ],
-    "extensionChallenge": "Arrange objects into a recognizable structure or pathway.",
-    "reflectionPrompt": "Which transform tool was easiest to control, and why?"
+    "extensionChallenge": "Use snapping intentionally to align objects and add one note explaining where snapping helped your scene.",
+    "reflectionPrompt": "Name three tools or shortcuts you used, and explain which one helped your scene most."
   },
   {
     "id": "ue-q3-a01",
@@ -378,4 +389,3 @@
     "reflectionPrompt": "What terrain choice makes the castle feel more intentional?"
   }
 ]
-
