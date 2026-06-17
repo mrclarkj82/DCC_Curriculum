@@ -1,6 +1,13 @@
-import { doc, getDoc, onSnapshot, type Unsubscribe } from 'firebase/firestore';
+import {
+  doc,
+  getDoc,
+  onSnapshot,
+  serverTimestamp,
+  updateDoc,
+  type Unsubscribe,
+} from 'firebase/firestore';
 import { db } from '../firebase/client';
-import type { ActiveItemType, ClassRecord } from '../types';
+import type { ActiveClassItem, ActiveItemType, ClassRecord } from '../types';
 
 const classRecordFromData = (data: Record<string, unknown>): ClassRecord => ({
   id: String(data.id ?? ''),
@@ -44,4 +51,16 @@ export function subscribeToClass(
     },
     onError,
   );
+}
+
+export async function updateActiveClassItem(
+  classId: string,
+  activeItem: Pick<ActiveClassItem, 'programAreaId' | 'type' | 'id'>,
+): Promise<void> {
+  await updateDoc(doc(db, 'classes', classId), {
+    activeProgramAreaId: activeItem.programAreaId,
+    activeItemType: activeItem.type,
+    activeItemId: activeItem.id,
+    updatedAt: serverTimestamp(),
+  });
 }

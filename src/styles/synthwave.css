@@ -711,6 +711,23 @@
   margin-top: var(--space-5);
 }
 
+.class-active-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+  gap: var(--space-3);
+  align-items: end;
+}
+
+.class-active-form label {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--color-neon-orange);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
 .form-message,
 .local-demo-panel,
 .auth-debug-panel {
@@ -754,6 +771,10 @@
 
   .span-two {
     grid-column: auto;
+  }
+
+  .class-active-form {
+    grid-template-columns: 1fr;
   }
 }
 

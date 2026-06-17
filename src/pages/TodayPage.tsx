@@ -1,28 +1,297 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
-import { EvidenceChecklist } from '../components/EvidenceChecklist';
+import { EmptyState } from '../components/EmptyState';
 import { ErrorState } from '../components/ErrorState';
+import { EvidenceChecklist } from '../components/EvidenceChecklist';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
+import { RubricTable } from '../components/RubricTable';
 import { StatusBadge } from '../components/StatusBadge';
-import {
-  activeClassItem,
-  getAssignment,
-  getBroadcastUpdate,
-  getLesson,
-  getMediaProject,
-  getProgramArea,
-  getQuiz,
-} from '../data/seedData';
+import { VocabularyList } from '../components/VocabularyList';
+import { getActiveItem } from '../services/activeItemService';
 import { subscribeToClass } from '../services/classService';
-import type { ClassRecord } from '../types';
+import { firestoreErrorMessage } from '../services/firestoreService';
+import { getProgramAreaById } from '../services/programAreaService';
+import type {
+  ActiveClassItem,
+  Assignment,
+  BroadcastUpdate,
+  ClassRecord,
+  Lesson,
+  MediaProject,
+  ProgramArea,
+  Quiz,
+} from '../types';
+
+function LessonMission({ lesson, programArea }: { lesson: Lesson; programArea: ProgramArea | null }) {
+  return (
+    <>
+      <section className="card mission-panel neon-border span-two">
+        <p className="retro-label">Today's Mission</p>
+        <h2>{lesson.title}</h2>
+        <p>{lesson.learningTarget}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Program Area</h2>
+        <p>{programArea?.title ?? lesson.programAreaId}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Bell Ringer</h2>
+        <p>{lesson.bellRinger.prompt}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Video Segment</h2>
+        <p>{lesson.video.source}</p>
+        <p className="meta-line">
+          {lesson.video.start}-{lesson.video.end}
+        </p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Watch / Review</h2>
+        {lesson.slides.url ? (
+          <a className="secondary-button" href={lesson.slides.url} target="_blank" rel="noreferrer">
+            Open Slides
+          </a>
+        ) : (
+          <p className="muted">Slides are not linked yet. Use the teacher's in-class direction.</p>
+        )}
+        <Link to={`/lessons/${lesson.id}`}>Open full lesson</Link>
+      </section>
+
+      <section className="card mission-panel span-two">
+        <h2>Vocabulary</h2>
+        <VocabularyList terms={lesson.vocabulary} />
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Assignment Summary</h2>
+        <p>{lesson.assignment.title}</p>
+        <Link to={`/assignments/${lesson.assignment.id}`}>Open assignment</Link>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Submission Evidence Placeholder</h2>
+        <EvidenceChecklist items={lesson.assignment.evidenceRequired} />
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Exit Ticket</h2>
+        <p>{lesson.exitTicket}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Help / Common Problems</h2>
+        <p className="muted">
+          If you get stuck, ask for help by naming the exact panel, tool, shortcut, setting, or
+          evidence step that is blocking you.
+        </p>
+      </section>
+    </>
+  );
+}
+
+function AssignmentMission({
+  assignment,
+  programArea,
+}: {
+  assignment: Assignment;
+  programArea: ProgramArea | null;
+}) {
+  return (
+    <>
+      <section className="card mission-panel neon-border span-two">
+        <p className="retro-label">Assignment</p>
+        <h2>{assignment.title}</h2>
+        <p>{assignment.instructions}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Program Area</h2>
+        <p>{programArea?.title ?? assignment.programAreaId}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Skill Focus</h2>
+        <EvidenceChecklist items={assignment.skillFocus} />
+      </section>
+
+      <section className="card mission-panel span-two">
+        <h2>Required Steps</h2>
+        <ol className="ordered-list">
+          {assignment.requiredSteps.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Evidence Required</h2>
+        <EvidenceChecklist items={assignment.evidenceRequired} />
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Reflection Prompt</h2>
+        <p>{assignment.reflectionPrompt}</p>
+      </section>
+
+      <section className="card mission-panel span-two">
+        <h2>Rubric Summary</h2>
+        <RubricTable rubric={assignment.rubric} />
+      </section>
+    </>
+  );
+}
+
+function MediaProjectMission({
+  project,
+  programArea,
+}: {
+  project: MediaProject;
+  programArea: ProgramArea | null;
+}) {
+  return (
+    <>
+      <section className="card mission-panel neon-border span-two">
+        <p className="retro-label">Video Production Project</p>
+        <h2>{project.title}</h2>
+        <p>{project.description}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Program Area</h2>
+        <p>{programArea?.title ?? project.programAreaId}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Production Goal</h2>
+        <p>{project.projectType}</p>
+      </section>
+
+      <section className="card mission-panel span-two">
+        <h2>Student Task</h2>
+        <p>{project.studentTask}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Skill Focus</h2>
+        <EvidenceChecklist items={project.skillFocus} />
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Submission Types</h2>
+        <EvidenceChecklist items={project.submissionTypes} />
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Evidence Required</h2>
+        <EvidenceChecklist items={project.evidenceRequired} />
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Reflection Prompt</h2>
+        <p>{project.reflectionPrompt}</p>
+      </section>
+
+      <section className="card mission-panel span-two">
+        <h2>Rubric Summary</h2>
+        <RubricTable rubric={project.rubric} />
+      </section>
+    </>
+  );
+}
+
+function BroadcastUpdateMission({
+  update,
+  programArea,
+}: {
+  update: BroadcastUpdate;
+  programArea: ProgramArea | null;
+}) {
+  return (
+    <>
+      <section className="card mission-panel neon-border span-two">
+        <p className="retro-label">Broadcast Desk Update</p>
+        <h2>{update.title}</h2>
+        <p>{update.summary}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Program Area</h2>
+        <p>{programArea?.title ?? update.programAreaId}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Dates</h2>
+        <dl className="detail-list">
+          <div>
+            <dt>Publish Date</dt>
+            <dd>{update.publishDate || 'Not set yet'}</dd>
+          </div>
+          <div>
+            <dt>Due Date</dt>
+            <dd>{update.dueDate || 'Not set yet'}</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section className="card mission-panel span-two">
+        <h2>Student Instructions</h2>
+        <p>{update.studentInstructions}</p>
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Related Project IDs</h2>
+        <EvidenceChecklist items={update.relatedProjectIds} />
+      </section>
+
+      <section className="card mission-panel">
+        <h2>Submission Requirements</h2>
+        <EvidenceChecklist items={update.submissionRequirements} />
+      </section>
+    </>
+  );
+}
+
+function QuizMission({ quiz }: { quiz: Quiz | null }) {
+  return (
+    <section className="card mission-panel neon-border span-two">
+      <p className="retro-label">Quiz Placeholder</p>
+      <h2>{quiz?.title ?? 'Quiz support is coming in a later phase.'}</h2>
+      <p className="muted">
+        Quiz support is coming in a later phase. For now, your teacher will give quiz directions
+        outside this page.
+      </p>
+    </section>
+  );
+}
+
+function PortfolioMission() {
+  return (
+    <section className="card mission-panel neon-border span-two">
+      <p className="retro-label">Portfolio Placeholder</p>
+      <h2>Portfolio checkpoints are coming in a later phase.</h2>
+      <p className="muted">
+        Your teacher will give portfolio checkpoint instructions outside this page until that
+        workflow is built.
+      </p>
+    </section>
+  );
+}
 
 export function TodayPage() {
-  const { classIds } = useAuth();
+  const { classIds, loading: authLoading, userProfile } = useAuth();
   const [assignedClass, setAssignedClass] = useState<ClassRecord | null>(null);
   const [classLoading, setClassLoading] = useState(false);
   const [classError, setClassError] = useState<string | null>(null);
+  const [activeItem, setActiveItem] = useState<ActiveClassItem | null>(null);
+  const [programArea, setProgramArea] = useState<ProgramArea | null>(null);
+  const [activeItemLoading, setActiveItemLoading] = useState(false);
+  const [activeItemError, setActiveItemError] = useState<string | null>(null);
 
   useEffect(() => {
     if (!classIds.length) {
@@ -51,162 +320,164 @@ export function TodayPage() {
     );
   }, [classIds]);
 
-  const currentItem = assignedClass
-    ? {
-        id: assignedClass.activeItemId,
-        type: assignedClass.activeItemType,
-        programAreaId: assignedClass.activeProgramAreaId,
-        status: 'active',
-      }
-    : activeClassItem;
+  useEffect(() => {
+    if (!assignedClass) {
+      setActiveItem(null);
+      setProgramArea(null);
+      setActiveItemLoading(false);
+      setActiveItemError(null);
+      return;
+    }
 
-  const lesson = currentItem.type === 'lesson' ? getLesson(currentItem.id) : undefined;
-  const assignment =
-    currentItem.type === 'assignment'
-      ? getAssignment(currentItem.id)
-      : lesson
-        ? getAssignment(lesson.assignment.id)
-        : undefined;
-  const mediaProject =
-    currentItem.type === 'mediaProject' ? getMediaProject(currentItem.id) : undefined;
-  const broadcastUpdate =
-    currentItem.type === 'broadcastUpdate' ? getBroadcastUpdate(currentItem.id) : undefined;
-  const quiz = currentItem.type === 'quiz' ? getQuiz(currentItem.id) : undefined;
-  const programArea = getProgramArea(currentItem.programAreaId);
+    let didCancel = false;
+    setActiveItemLoading(true);
+    setActiveItemError(null);
 
-  return (
-    <PageContainer
-      eyebrow="Daily Mission Board"
-      title="Today's Mission"
-      description="A clear classroom workflow for the active class item, whether it is an Unreal lesson, a Video Production project, or a Broadcast Desk Update."
-      className="mission-board"
-    >
-      {!classIds.length && (
+    Promise.all([
+      getActiveItem(
+        assignedClass.activeItemType,
+        assignedClass.activeItemId,
+        assignedClass.activeProgramAreaId,
+      ),
+      getProgramAreaById(assignedClass.activeProgramAreaId),
+    ])
+      .then(([nextActiveItem, nextProgramArea]) => {
+        if (!didCancel) {
+          setActiveItem(nextActiveItem);
+          setProgramArea(nextProgramArea);
+          setActiveItemLoading(false);
+        }
+      })
+      .catch((error: unknown) => {
+        if (!didCancel) {
+          setActiveItem(null);
+          setProgramArea(null);
+          setActiveItemError(
+            firestoreErrorMessage(error, 'Unable to load today\'s active class item.'),
+          );
+          setActiveItemLoading(false);
+        }
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, [assignedClass]);
+
+  if (authLoading) {
+    return <LoadingState label="Loading your secure studio profile..." />;
+  }
+
+  if (!userProfile) {
+    return (
+      <PageContainer
+        eyebrow="Profile Setup"
+        title="Profile is still being prepared"
+        description="Your Google sign-in worked, but the class portal still needs a user profile record before Today's Mission can load."
+        className="mission-board"
+      >
+        <section className="card mission-panel neon-border">
+          <p className="muted">Refresh in a moment, or ask your teacher to check your profile.</p>
+        </section>
+      </PageContainer>
+    );
+  }
+
+  if (!classIds.length) {
+    return (
+      <PageContainer
+        eyebrow="Daily Mission Board"
+        title="No class assigned yet"
+        description="Your teacher or admin needs to assign your account to a class before Today's Mission can load."
+        className="mission-board"
+      >
         <section className="card mission-panel neon-border no-class-panel">
           <p className="retro-label">No Class Assigned Yet</p>
-          <h2>No class assigned yet</h2>
+          <h2>Today's Mission is waiting for a class assignment</h2>
           <p>
-            Your account is signed in, but a teacher or admin still needs to assign you to a class
-            before the daily class item can load.
+            Your teacher or admin needs to assign your account to a class before Today's Mission
+            can load.
           </p>
           <Link className="outline-button" to="/areas">
             Open Program Areas
           </Link>
         </section>
-      )}
+      </PageContainer>
+    );
+  }
 
+  const record = activeItem?.record;
+  const isMissingActiveRecord =
+    activeItem &&
+    activeItem.type !== 'portfolioCheckpoint' &&
+    activeItem.type !== 'quiz' &&
+    !record;
+
+  return (
+    <PageContainer
+      eyebrow="Daily Mission Board"
+      title="Today's Mission"
+      description="The active class item is loaded from your Firestore class record."
+      className="mission-board"
+    >
       {classLoading && <LoadingState label="Loading your assigned class..." />}
       {classError && <ErrorState message={classError} />}
+      {activeItemLoading && <LoadingState label="Resolving the active class item..." />}
+      {activeItemError && <ErrorState message={activeItemError} />}
 
-      <div className="today-grid">
+      {assignedClass && (
         <section className="card mission-panel neon-border">
           <div className="card-header">
-            <h2>Program Area</h2>
-            <StatusBadge status={currentItem.status ?? 'active'} />
+            <div>
+              <p className="retro-label">Class</p>
+              <h2>
+                {assignedClass.name} / {assignedClass.period}
+              </h2>
+            </div>
+            <StatusBadge status={activeItem?.status ?? 'active'} />
           </div>
-          <p>{programArea?.title ?? 'Program area placeholder'}</p>
-          <p className="muted">{programArea?.description}</p>
-          {assignedClass && (
-            <dl className="detail-list">
-              <div>
-                <dt>Class</dt>
-                <dd>
-                  {assignedClass.name} / {assignedClass.period}
-                </dd>
-              </div>
-              <div>
-                <dt>Active Program Area ID</dt>
-                <dd>{assignedClass.activeProgramAreaId}</dd>
-              </div>
-              <div>
-                <dt>Active Item Type</dt>
-                <dd>{assignedClass.activeItemType}</dd>
-              </div>
-              <div>
-                <dt>Active Item ID</dt>
-                <dd>{assignedClass.activeItemId}</dd>
-              </div>
-            </dl>
+          <dl className="detail-list">
+            <div>
+              <dt>Program Area</dt>
+              <dd>{programArea?.title ?? assignedClass.activeProgramAreaId}</dd>
+            </div>
+            <div>
+              <dt>Active Item Type</dt>
+              <dd>{assignedClass.activeItemType}</dd>
+            </div>
+            <div>
+              <dt>Active Item ID</dt>
+              <dd>{assignedClass.activeItemId}</dd>
+            </div>
+          </dl>
+        </section>
+      )}
+
+      {isMissingActiveRecord && (
+        <EmptyState
+          title="Active item not found"
+          message="The class record points to an active item that is not in Firestore yet. Seed curriculum content or update the class active item."
+        />
+      )}
+
+      {activeItem && (
+        <div className="today-grid">
+          {activeItem.type === 'lesson' && record && (
+            <LessonMission lesson={record as Lesson} programArea={programArea} />
           )}
-        </section>
-
-        <section className="card mission-panel">
-          <h2>Bell Ringer</h2>
-          <p>{lesson?.bellRinger.prompt ?? 'Bell ringer placeholder for active class item.'}</p>
-        </section>
-
-        <section className="card mission-panel">
-          <h2>Studio Goal</h2>
-          <p>
-            {lesson?.learningTarget ??
-              assignment?.instructions ??
-              mediaProject?.studentTask ??
-              broadcastUpdate?.studentInstructions ??
-              quiz?.title ??
-              'Today goal placeholder.'}
-          </p>
-        </section>
-
-        <section className="card mission-panel">
-          <h2>Watch / Review</h2>
-          {lesson?.slides.url ? (
-            <a className="secondary-button" href={lesson.slides.url} target="_blank" rel="noreferrer">
-              Open Slides
-            </a>
-          ) : (
-            <button className="secondary-button" type="button" disabled>
-              Slides placeholder
-            </button>
+          {activeItem.type === 'assignment' && record && (
+            <AssignmentMission assignment={record as Assignment} programArea={programArea} />
           )}
-          <p className="muted">Resource links will become data-driven in a later phase.</p>
-        </section>
-
-        <section className="card mission-panel">
-          <h2>Video Segment</h2>
-          <p>
-            {lesson
-              ? `${lesson.video.source}: ${lesson.video.start}-${lesson.video.end}`
-              : 'Video/resource placeholder for the active item when available.'}
-          </p>
-        </section>
-
-        <section className="card mission-panel">
-          <h2>Build / Produce</h2>
-          <p>
-            {lesson?.assignment.title ??
-              assignment?.title ??
-              mediaProject?.title ??
-              broadcastUpdate?.title ??
-              quiz?.title ??
-              'Task placeholder'}
-          </p>
-          {lesson && <Link to={`/assignments/${lesson.assignment.id}`}>Open assignment</Link>}
-          {assignment && currentItem.type === 'assignment' && (
-            <Link to={`/assignments/${assignment.id}`}>Open assignment</Link>
+          {activeItem.type === 'mediaProject' && record && (
+            <MediaProjectMission project={record as MediaProject} programArea={programArea} />
           )}
-        </section>
-
-        <section className="card mission-panel">
-          <h2>Submit Evidence</h2>
-          <EvidenceChecklist
-            items={
-              assignment?.evidenceRequired ??
-              lesson?.assignment.evidenceRequired ??
-              mediaProject?.evidenceRequired ??
-              broadcastUpdate?.submissionRequirements ??
-              []
-            }
-          />
-          <button className="secondary-button" type="button" disabled>
-            Submission button placeholder
-          </button>
-        </section>
-
-        <section className="card mission-panel">
-          <h2>Exit Ticket</h2>
-          <p>{lesson?.exitTicket ?? 'Exit ticket placeholder for the active item.'}</p>
-        </section>
-      </div>
+          {activeItem.type === 'broadcastUpdate' && record && (
+            <BroadcastUpdateMission update={record as BroadcastUpdate} programArea={programArea} />
+          )}
+          {activeItem.type === 'quiz' && <QuizMission quiz={(record as Quiz | null) ?? null} />}
+          {activeItem.type === 'portfolioCheckpoint' && <PortfolioMission />}
+        </div>
+      )}
     </PageContainer>
   );
 }

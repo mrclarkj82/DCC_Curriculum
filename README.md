@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 4 - Google SSO, roles, classes, and protected routes
+Phase 5 - Firestore content seeding and active Today workflow
 
 ## Local Development
 
@@ -40,6 +40,12 @@ Validate curriculum seed data:
 npm run validate:curriculum
 ```
 
+Dry-run curriculum seeding without Firebase credentials:
+
+```bash
+npm run seed:curriculum -- --dry-run
+```
+
 ## Environment Variables
 
 Create a local `.env.local` file using `.env.example` as the template:
@@ -60,7 +66,7 @@ Do not commit `.env.local` or real Firebase credentials.
 
 Firebase Hosting is configured for Vite output in `dist` with single-page app rewrites to `index.html`.
 
-For Phase 4 setup:
+For Firebase setup:
 
 1. Create a Firebase project and add a web app.
 2. Enable Authentication and turn on the Google provider.
@@ -70,7 +76,74 @@ For Phase 4 setup:
 6. Apply `storage.rules`.
 7. Copy `.env.example` to `.env.local`, paste the Firebase web config values, and set `VITE_ALLOWED_EMAIL_DOMAINS`.
 
-Firestore rules now enforce authenticated school-domain users, safe default student profile creation, role boundaries, and class membership checks. Storage remains closed until a later upload phase.
+Firestore rules now enforce authenticated school-domain users, safe default student profile creation, role boundaries, class membership checks, authenticated curriculum reads, and admin-only curriculum writes. Storage remains closed until a later upload phase.
+
+## Phase 5 Firestore Content
+
+Phase 5 adds:
+
+- Firestore-backed curriculum and project content.
+- A safe curriculum seed importer.
+- A class active item model for Today's Mission.
+- Firestore services for program areas, lessons, assignments, quizzes, media projects, Broadcast Desk Updates, classes, and users.
+
+Expected Firestore collections:
+
+- `programAreas`
+- `lessons`
+- `assignments`
+- `quizzes`
+- `mediaProjects`
+- `broadcastUpdates`
+- `classes`
+- `users`
+
+Seed files live in `curriculum/website-data/` and should remain the local source used by the importer. The live app reads Firestore route content after records are seeded.
+
+Seed dry run:
+
+```bash
+npm run seed:curriculum -- --dry-run
+```
+
+Real seed write on macOS/Linux:
+
+```bash
+CONFIRM_SEED=true npm run seed:curriculum
+```
+
+Real seed write in Windows PowerShell:
+
+```powershell
+$env:CONFIRM_SEED="true"; npm run seed:curriculum
+```
+
+Real seed write in Windows Command Prompt:
+
+```bat
+set CONFIRM_SEED=true && npm run seed:curriculum
+```
+
+The real write path uses the Firebase Admin SDK. Prefer Application Default Credentials for local admin access, such as `gcloud auth application-default login`, or set `FIREBASE_SERVICE_ACCOUNT_PATH` to a service account JSON file stored outside this repository. Never commit service account files, `.env.local`, private school links, rosters, student media, or Firebase secrets.
+
+`/today` works like this:
+
+1. The user signs in with an approved Google account.
+2. The app reads `users/{uid}` and checks `classIds`.
+3. The app loads the first assigned `classes/{classId}` record.
+4. The class record's `activeProgramAreaId`, `activeItemType`, and `activeItemId` decide what Today's Mission renders.
+5. Lessons, assignments, media projects, and Broadcast Desk Updates render as active items. Quizzes and portfolio checkpoints show polished placeholders until later phases.
+
+Not implemented yet:
+
+- Bell ringer submissions.
+- Exit ticket submissions.
+- Assignment uploads.
+- Media uploads.
+- Quiz attempts.
+- Grading workflows.
+- Portfolio workflows.
+- Full admin CMS editing.
 
 ## Routes
 
@@ -100,9 +173,9 @@ Admin route:
 
 Client route guards improve the user experience, but Firestore security rules are the real access boundary.
 
-## Demo Data
+## Local Seed Mirrors
 
-Phase 4 still imports local seed copies from `src/data/seed/` for curriculum preview content. These files mirror `curriculum/website-data/` for scaffold preview only. Authenticated user and class records are read from Firestore.
+Local seed copies in `src/data/seed/` mirror `curriculum/website-data/` for development preview and static shell helpers. Phase 5 route content should be read from Firestore after seeding.
 
 Starter class records live in `curriculum/website-data/classes.seed.json`. They contain placeholder class IDs only and do not include real student names.
 
@@ -172,7 +245,7 @@ Google Authentication must be enabled in Firebase Console for live sign-in testi
 
 The first teacher or admin must sign in once, then be manually promoted in Firestore by changing their `users/{uid}.role` to `teacher` or `admin` and assigning the correct `classIds`.
 
-## Phase 5 Preview
+## Later Phase Preview
 
-Phase 5 should build the active Today workflow, bell ringer responses, exit tickets, assignment submissions, and media submissions while preserving the multi-program-area structure.
+Later phases should build bell ringer responses, exit tickets, assignment submissions, media submissions, quiz attempts, grading, and portfolio workflows while preserving the multi-program-area structure.
 

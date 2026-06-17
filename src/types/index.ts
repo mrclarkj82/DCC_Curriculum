@@ -150,12 +150,21 @@ export type ActiveItemType =
   | 'quiz'
   | 'portfolioCheckpoint';
 
+export type ActiveItemRecord =
+  | Lesson
+  | Assignment
+  | MediaProject
+  | BroadcastUpdate
+  | Quiz
+  | null;
+
 export interface ActiveClassItem {
   id: string;
   type: ActiveItemType;
   programAreaId: string;
   title?: string;
   status?: string;
+  record?: ActiveItemRecord;
 }
 
 export interface ClassRecord {

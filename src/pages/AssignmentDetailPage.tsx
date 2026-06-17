@@ -1,25 +1,53 @@
 import { Link, useParams } from 'react-router-dom';
 import { EmptyState } from '../components/EmptyState';
 import { EvidenceChecklist } from '../components/EvidenceChecklist';
+import { ErrorState } from '../components/ErrorState';
+import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { RubricTable } from '../components/RubricTable';
-import { getAssignment, getLesson, getProgramArea } from '../data/seedData';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { getAssignmentById } from '../services/assignmentService';
+import { getLessonById } from '../services/lessonService';
+import { getProgramAreaById } from '../services/programAreaService';
 
 export function AssignmentDetailPage() {
   const { assignmentId } = useParams();
-  const assignment = assignmentId ? getAssignment(assignmentId) : undefined;
+  const { data, isLoading, error } = useAsyncData(
+    async () => {
+      if (!assignmentId) {
+        return { assignment: null, lesson: null, area: null };
+      }
 
-  if (!assignment) {
+      const assignment = await getAssignmentById(assignmentId);
+      const [lesson, area] = await Promise.all([
+        assignment?.lessonId ? getLessonById(assignment.lessonId) : Promise.resolve(null),
+        assignment ? getProgramAreaById(assignment.programAreaId) : Promise.resolve(null),
+      ]);
+
+      return { assignment, lesson, area };
+    },
+    [assignmentId],
+    'Unable to load this assignment from Firestore.',
+  );
+
+  if (isLoading) {
+    return <LoadingState label="Loading assignment from Firestore..." />;
+  }
+
+  if (error) {
+    return <ErrorState message={error} />;
+  }
+
+  if (!data?.assignment) {
     return (
       <EmptyState
         title="Assignment not found"
-        message="This scaffold could not find an assignment record for the requested ID."
+        message="Firestore does not have an assignment record for this ID yet. Run the curriculum seed importer or check the assignment link."
       />
     );
   }
 
-  const lesson = getLesson(assignment.lessonId);
-  const area = getProgramArea(assignment.programAreaId);
+  const { assignment, lesson, area } = data;
 
   return (
     <PageContainer

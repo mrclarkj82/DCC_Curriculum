@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "validate:curriculum": "node scripts/validate-curriculum.mjs"
+    "validate:curriculum": "node scripts/validate-curriculum.mjs",
+    "seed:curriculum": "node scripts/seedCurriculum.mjs"
   },
   "dependencies": {
     "firebase": "^11.0.0",
@@ -23,6 +24,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^9.0.0",
+    "firebase-admin": "^14.0.0",
     "globals": "^15.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.0.0",

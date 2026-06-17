@@ -1,25 +1,50 @@
 import { useParams } from 'react-router-dom';
 import { EmptyState } from '../components/EmptyState';
 import { EvidenceChecklist } from '../components/EvidenceChecklist';
+import { ErrorState } from '../components/ErrorState';
+import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { RubricTable } from '../components/RubricTable';
 import { StatusBadge } from '../components/StatusBadge';
-import { getMediaProject, getProgramArea } from '../data/seedData';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { getMediaProjectById } from '../services/mediaProjectService';
+import { getProgramAreaById } from '../services/programAreaService';
 
 export function MediaProjectDetailPage() {
   const { projectId } = useParams();
-  const project = projectId ? getMediaProject(projectId) : undefined;
+  const { data, isLoading, error } = useAsyncData(
+    async () => {
+      if (!projectId) {
+        return { project: null, area: null };
+      }
 
-  if (!project) {
+      const project = await getMediaProjectById(projectId);
+      const area = project ? await getProgramAreaById(project.programAreaId) : null;
+
+      return { project, area };
+    },
+    [projectId],
+    'Unable to load this media project from Firestore.',
+  );
+
+  if (isLoading) {
+    return <LoadingState label="Loading media project from Firestore..." />;
+  }
+
+  if (error) {
+    return <ErrorState message={error} />;
+  }
+
+  if (!data?.project) {
     return (
       <EmptyState
         title="Media project not found"
-        message="This scaffold could not find a media project record for the requested ID."
+        message="Firestore does not have a media project record for this ID yet. Run the curriculum seed importer or check the project link."
       />
     );
   }
 
-  const area = getProgramArea(project.programAreaId);
+  const { project, area } = data;
 
   return (
     <PageContainer

@@ -6,7 +6,7 @@ DCC Creative Studio is a Firebase web app for a high school Digital Content Crea
 
 ## Current Phase
 
-Phase 4 adds Firebase Google SSO, roles, classes, protected routes, and conservative Firebase Security Rules while preserving the source-of-truth curriculum and content infrastructure.
+Phase 5 adds Firestore content seeding, Firestore-backed content routes, and the active Today workflow while preserving Firebase Google SSO, roles, protected routes, and the source-of-truth curriculum infrastructure.
 
 ## Repository Workflow
 
@@ -41,13 +41,15 @@ Phase 4 adds Firebase Google SSO, roles, classes, protected routes, and conserva
 - Keep curriculum/content data separate from app code.
 - The app must support multiple program areas.
 - Do not assume the website is Unreal-only.
-- Lesson pages should eventually render from Firestore/seed data.
-- Video production projects and Broadcast Desk Updates should eventually render from structured data.
+- Lesson pages should render from Firestore-backed seed data.
+- Video production projects and Broadcast Desk Updates should render from structured Firestore-backed data.
 - Do not hardcode one-off lesson pages.
 - Do not build an in-browser video editor unless explicitly requested in a future phase.
 - Future video production functionality should focus on hosting, collecting, organizing, and reviewing media submissions.
 - Auth uses Google SSO through Firebase.
 - Do not weaken Firebase Auth, Firestore rules, or Storage rules to make local testing easier.
+- Do not remove Firebase Auth, Google SSO, role protection, or class-based access checks.
+- Seed imports must use local credentials only. Do not commit `.env.local`, service accounts, API secrets, rosters, private links, student names, or student media.
 - Visual design rule: DCC Creative Studio uses a colorful retro 80s synthwave design system. Future tasks must preserve neon cyan, magenta, purple, blue, and orange accents, glowing cards, synthwave gradients, and the creative media studio look. Do not regress the app into a plain dark command-center UI.
 - `src/styles/theme.css` contains the core design tokens. `src/styles/synthwave.css` contains the visual identity layer.
 - Use TypeScript when app code is introduced.

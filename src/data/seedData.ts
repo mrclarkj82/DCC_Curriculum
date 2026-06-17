@@ -16,8 +16,8 @@ import type {
   Quiz,
 } from '../types';
 
-// Phase 3 scaffold data: local JSON mirrors curriculum/website-data.
-// Firestore-backed loading should replace this helper in a later phase.
+// Local JSON mirrors curriculum/website-data for development preview and static shell helpers.
+// Phase 5 route content should prefer Firestore services as the long-term source of truth.
 export const programAreas = programAreasSeed as ProgramArea[];
 export const lessons = lessonsSeed as Lesson[];
 export const assignments = assignmentsSeed as Assignment[];

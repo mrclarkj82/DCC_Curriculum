@@ -24,15 +24,19 @@ function AccessDenied() {
 }
 
 export function ProtectedRoute({ allowedRoles }: ProtectedRouteProps) {
-  const { userProfile, role, loading } = useAuth();
+  const { firebaseUser, userProfile, role, loading } = useAuth();
   const location = useLocation();
 
   if (loading) {
     return <LoadingState label="Checking secure studio access..." />;
   }
 
-  if (!userProfile) {
+  if (!firebaseUser && !userProfile) {
     return <Navigate to="/login" replace state={{ from: location }} />;
+  }
+
+  if (!userProfile && !allowedRoles?.length) {
+    return <Outlet />;
   }
 
   if (allowedRoles?.length && (!role || !allowedRoles.includes(role))) {

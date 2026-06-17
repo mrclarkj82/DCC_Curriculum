@@ -50,6 +50,8 @@ const assertProgramAreaIds = (label, records) => {
   }
 };
 
+const warnings = [];
+
 assertUniqueIds('programAreas', programAreas);
 assertUniqueIds('lessons', lessons);
 assertUniqueIds('assignments', assignments);
@@ -111,6 +113,12 @@ for (const classRecord of classes) {
       `Class ${classRecord.id} references missing quiz ${classRecord.activeItemId}`,
     );
   }
+
+  if (classRecord.activeItemType === 'portfolioCheckpoint') {
+    warnings.push(
+      `Class ${classRecord.id} uses portfolioCheckpoint ${classRecord.activeItemId}; placeholder validation only.`,
+    );
+  }
 }
 
 for (const assignment of assignments.filter((item) => item.programAreaId === 'unreal-engine')) {
@@ -133,6 +141,10 @@ for (const update of broadcastUpdates) {
       `Broadcast update ${update.id} references missing media project ${projectId}`,
     );
   }
+}
+
+for (const warning of warnings) {
+  console.warn(`Warning: ${warning}`);
 }
 
 console.log('Curriculum validation passed.');

@@ -2,7 +2,7 @@ rules_version = '2';
 
 service firebase.storage {
   match /b/{bucket}/o {
-    // Storage remains closed in Phase 4.
+    // Storage remains closed in Phase 5.
     // Assignment uploads, media submissions, portfolio files, and teacher review artifacts
     // will be opened with tightly scoped rules in a later upload phase.
     match /{allPaths=**} {

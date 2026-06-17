@@ -51,6 +51,19 @@ service cloud.firestore {
       return isAllowedDomain() && request.auth.uid in classData.studentIds;
     }
 
+    function userHasClassId(classId) {
+      return isAllowedDomain()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && classId in userDoc().data.classIds;
+    }
+
+    function canReadClass(classId, classData) {
+      return isAdmin()
+        || isClassTeacher(classData)
+        || isClassStudent(classData)
+        || userHasClassId(classId);
+    }
+
     function safeUserCreate(userId) {
       return isAllowedDomain()
         && isSelf(userId)
@@ -117,15 +130,45 @@ service cloud.firestore {
     }
 
     match /classes/{classId} {
-      allow read: if isAdmin() || isClassTeacher(resource.data) || isClassStudent(resource.data);
+      allow read: if canReadClass(classId, resource.data);
       allow create, delete: if isAdmin();
       allow update: if isAdmin()
         || (isClassTeacher(resource.data) && teacherActiveClassItemUpdateOnly());
     }
 
+    match /programAreas/{programAreaId} {
+      allow read: if isAllowedDomain();
+      allow write: if isAdmin();
+    }
+
+    match /lessons/{lessonId} {
+      allow read: if isAllowedDomain();
+      allow write: if isAdmin();
+    }
+
+    match /assignments/{assignmentId} {
+      allow read: if isAllowedDomain();
+      allow write: if isAdmin();
+    }
+
+    match /quizzes/{quizId} {
+      allow read: if isAllowedDomain();
+      allow write: if isAdmin();
+    }
+
+    match /mediaProjects/{projectId} {
+      allow read: if isAllowedDomain();
+      allow write: if isAdmin();
+    }
+
+    match /broadcastUpdates/{updateId} {
+      allow read: if isAllowedDomain();
+      allow write: if isAdmin();
+    }
+
     // Future phases will add tightly scoped rules for classroom workflow collections:
-    // bellRingerResponses, exitTicketResponses, submissions, quizAttempts,
-    // portfolioItems, and mediaSubmissions.
+    // bellRingerResponses, exitTicketResponses, submissions, mediaSubmissions,
+    // quizAttempts, portfolioItems, and teacher feedback records.
     match /{document=**} {
       allow read, write: if false;
     }

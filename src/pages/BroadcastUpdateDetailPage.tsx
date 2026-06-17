@@ -1,24 +1,49 @@
 import { Link, useParams } from 'react-router-dom';
 import { EmptyState } from '../components/EmptyState';
 import { EvidenceChecklist } from '../components/EvidenceChecklist';
+import { ErrorState } from '../components/ErrorState';
+import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
-import { getBroadcastUpdate, getProgramArea } from '../data/seedData';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { getBroadcastUpdateById } from '../services/broadcastUpdateService';
+import { getProgramAreaById } from '../services/programAreaService';
 
 export function BroadcastUpdateDetailPage() {
   const { updateId } = useParams();
-  const update = updateId ? getBroadcastUpdate(updateId) : undefined;
+  const { data, isLoading, error } = useAsyncData(
+    async () => {
+      if (!updateId) {
+        return { update: null, area: null };
+      }
 
-  if (!update) {
+      const update = await getBroadcastUpdateById(updateId);
+      const area = update ? await getProgramAreaById(update.programAreaId) : null;
+
+      return { update, area };
+    },
+    [updateId],
+    'Unable to load this Broadcast Desk Update from Firestore.',
+  );
+
+  if (isLoading) {
+    return <LoadingState label="Loading Broadcast Desk Update from Firestore..." />;
+  }
+
+  if (error) {
+    return <ErrorState message={error} />;
+  }
+
+  if (!data?.update) {
     return (
       <EmptyState
         title="Broadcast update not found"
-        message="This scaffold could not find a Broadcast Desk Update record for the requested ID."
+        message="Firestore does not have a Broadcast Desk Update record for this ID yet. Run the curriculum seed importer or check the update link."
       />
     );
   }
 
-  const area = getProgramArea(update.programAreaId);
+  const { update, area } = data;
 
   return (
     <PageContainer
@@ -76,11 +101,6 @@ export function BroadcastUpdateDetailPage() {
               <dd>{update.dueDate || 'Due date placeholder'}</dd>
             </div>
           </dl>
-        </section>
-
-        <section className="card span-two mission-panel">
-          <h2>Teacher Notes Placeholder</h2>
-          <p>{update.teacherNotes || 'Teacher notes will be wired to protected staff tools later.'}</p>
         </section>
 
         <section className="card span-two mission-panel">

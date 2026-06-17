@@ -1,20 +1,46 @@
 import { BroadcastUpdateCard } from '../components/BroadcastUpdateCard';
+import { EmptyState } from '../components/EmptyState';
+import { ErrorState } from '../components/ErrorState';
+import { LoadingState } from '../components/LoadingState';
 import { MediaProjectCard } from '../components/MediaProjectCard';
 import { PageContainer } from '../components/PageContainer';
-import { broadcastUpdates, getProgramArea, mediaProjects } from '../data/seedData';
+import { useAsyncData } from '../hooks/useAsyncData';
+import { getBroadcastUpdatesByProgramArea } from '../services/broadcastUpdateService';
+import { getMediaProjectsByProgramArea } from '../services/mediaProjectService';
+import { getProgramAreaById } from '../services/programAreaService';
 
 export function VideoProductionAreaPage() {
-  const area = getProgramArea('video-production');
-  const projects = mediaProjects.filter((project) => project.programAreaId === 'video-production');
-  const updates = broadcastUpdates.filter((update) => update.programAreaId === 'video-production');
+  const { data, isLoading, error } = useAsyncData(
+    async () => {
+      const [area, projects, updates] = await Promise.all([
+        getProgramAreaById('video-production'),
+        getMediaProjectsByProgramArea('video-production'),
+        getBroadcastUpdatesByProgramArea('video-production'),
+      ]);
+
+      return { area, projects, updates };
+    },
+    [],
+    'Unable to load Video Production Studio content from Firestore.',
+  );
+  const projects = data?.projects ?? [];
+  const updates = data?.updates ?? [];
 
   return (
     <PageContainer
       eyebrow="Video Production Studio"
-      title={area?.title ?? 'Video Production Studio'}
-      description={area?.description}
+      title={data?.area?.title ?? 'Video Production Studio'}
+      description={data?.area?.description}
       className="studio-pink"
     >
+      {isLoading && <LoadingState label="Loading Video Production content from Firestore..." />}
+      {error && <ErrorState message={error} />}
+      {!isLoading && !error && !projects.length && !updates.length && (
+        <EmptyState
+          title="Video Production content is not seeded yet"
+          message="Firestore does not have Video Production project or Broadcast Desk Update records yet. Run the curriculum seed importer to publish this content."
+        />
+      )}
       <div className="section-stack">
         <section className="content-section neon-section">
           <p className="retro-label">Production Updates</p>
