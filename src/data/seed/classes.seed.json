@@ -1,0 +1,54 @@
+[
+  {
+    "id": "dcc-a1",
+    "name": "Digital Content Creators A1",
+    "period": "A1",
+    "teacherIds": [],
+    "studentIds": [],
+    "activeProgramAreaId": "unreal-engine",
+    "activeItemType": "lesson",
+    "activeItemId": "ue-q1-l01",
+    "schoolYear": "2026-2027",
+    "createdAt": "",
+    "updatedAt": ""
+  },
+  {
+    "id": "dcc-a2",
+    "name": "Digital Content Creators A2",
+    "period": "A2",
+    "teacherIds": [],
+    "studentIds": [],
+    "activeProgramAreaId": "unreal-engine",
+    "activeItemType": "lesson",
+    "activeItemId": "ue-q1-l01",
+    "schoolYear": "2026-2027",
+    "createdAt": "",
+    "updatedAt": ""
+  },
+  {
+    "id": "dcc-b1",
+    "name": "Digital Content Creators B1",
+    "period": "B1",
+    "teacherIds": [],
+    "studentIds": [],
+    "activeProgramAreaId": "unreal-engine",
+    "activeItemType": "lesson",
+    "activeItemId": "ue-q1-l01",
+    "schoolYear": "2026-2027",
+    "createdAt": "",
+    "updatedAt": ""
+  },
+  {
+    "id": "dcc-b2",
+    "name": "Digital Content Creators B2",
+    "period": "B2",
+    "teacherIds": [],
+    "studentIds": [],
+    "activeProgramAreaId": "unreal-engine",
+    "activeItemType": "lesson",
+    "activeItemId": "ue-q1-l01",
+    "schoolYear": "2026-2027",
+    "createdAt": "",
+    "updatedAt": ""
+  }
+]

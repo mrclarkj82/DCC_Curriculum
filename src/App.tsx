@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { ProtectedRoute } from './auth/ProtectedRoute';
 import { AppShell } from './components/AppShell';
 import { AdminPage } from './pages/AdminPage';
 import { AreasPage } from './pages/AreasPage';
@@ -13,7 +14,6 @@ import { TeacherPage } from './pages/TeacherPage';
 import { TodayPage } from './pages/TodayPage';
 import { UnrealAreaPage } from './pages/UnrealAreaPage';
 import { VideoProductionAreaPage } from './pages/VideoProductionAreaPage';
-import { RequireDemoAuth } from './routes/RequireDemoAuth';
 
 export function App() {
   return (
@@ -21,7 +21,7 @@ export function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<LoginPage />} />
 
-      <Route element={<RequireDemoAuth />}>
+      <Route element={<ProtectedRoute />}>
         <Route element={<AppShell />}>
           <Route path="/today" element={<TodayPage />} />
           <Route path="/areas" element={<AreasPage />} />
@@ -31,8 +31,12 @@ export function App() {
           <Route path="/assignments/:assignmentId" element={<AssignmentDetailPage />} />
           <Route path="/media-projects/:projectId" element={<MediaProjectDetailPage />} />
           <Route path="/broadcast-updates/:updateId" element={<BroadcastUpdateDetailPage />} />
-          <Route path="/teacher" element={<TeacherPage />} />
-          <Route path="/admin" element={<AdminPage />} />
+          <Route element={<ProtectedRoute allowedRoles={['teacher', 'admin']} />}>
+            <Route path="/teacher" element={<TeacherPage />} />
+          </Route>
+          <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+            <Route path="/admin" element={<AdminPage />} />
+          </Route>
         </Route>
       </Route>
 
@@ -40,4 +44,3 @@ export function App() {
     </Routes>
   );
 }
-

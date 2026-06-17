@@ -1,0 +1,47 @@
+import { doc, getDoc, onSnapshot, type Unsubscribe } from 'firebase/firestore';
+import { db } from '../firebase/client';
+import type { ActiveItemType, ClassRecord } from '../types';
+
+const classRecordFromData = (data: Record<string, unknown>): ClassRecord => ({
+  id: String(data.id ?? ''),
+  name: String(data.name ?? ''),
+  period: String(data.period ?? ''),
+  teacherIds: Array.isArray(data.teacherIds) ? data.teacherIds.map(String) : [],
+  studentIds: Array.isArray(data.studentIds) ? data.studentIds.map(String) : [],
+  activeProgramAreaId: String(data.activeProgramAreaId ?? ''),
+  activeItemType: (data.activeItemType as ActiveItemType) ?? 'lesson',
+  activeItemId: String(data.activeItemId ?? ''),
+  schoolYear: String(data.schoolYear ?? ''),
+  createdAt: data.createdAt,
+  updatedAt: data.updatedAt,
+});
+
+export async function getClassById(classId: string): Promise<ClassRecord | null> {
+  const snapshot = await getDoc(doc(db, 'classes', classId));
+
+  if (!snapshot.exists()) {
+    return null;
+  }
+
+  return classRecordFromData(snapshot.data());
+}
+
+export async function getClassesForUser(classIds: string[]): Promise<ClassRecord[]> {
+  const classRecords = await Promise.all(classIds.map((classId) => getClassById(classId)));
+
+  return classRecords.filter((classRecord): classRecord is ClassRecord => Boolean(classRecord));
+}
+
+export function subscribeToClass(
+  classId: string,
+  onClassRecord: (classRecord: ClassRecord | null) => void,
+  onError: (error: Error) => void,
+): Unsubscribe {
+  return onSnapshot(
+    doc(db, 'classes', classId),
+    (snapshot) => {
+      onClassRecord(snapshot.exists() ? classRecordFromData(snapshot.data()) : null);
+    },
+    onError,
+  );
+}

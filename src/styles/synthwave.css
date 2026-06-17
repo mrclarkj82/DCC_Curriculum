@@ -266,6 +266,29 @@
   font-weight: 800;
 }
 
+.user-profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.user-avatar {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 1px solid rgba(0, 229, 255, 0.48);
+  border-radius: 50%;
+  color: var(--color-neon-cyan);
+  background: rgba(0, 229, 255, 0.1);
+  box-shadow: var(--shadow-cyan);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 900;
+  object-fit: cover;
+}
+
 .demo-banner {
   padding: 10px 22px;
   border-bottom: 1px solid rgba(255, 176, 0, 0.32);
@@ -551,11 +574,24 @@
 .status-pilot-ready,
 .status-created,
 .status-active,
-.status-submitted {
+.status-submitted,
+.status-student {
   color: var(--color-success);
   border-color: rgba(55, 255, 139, 0.36);
   background: rgba(55, 255, 139, 0.08);
   box-shadow: 0 0 14px rgba(55, 255, 139, 0.12);
+}
+
+.status-teacher {
+  color: var(--color-neon-cyan);
+  border-color: rgba(0, 229, 255, 0.42);
+  background: rgba(0, 229, 255, 0.1);
+}
+
+.status-admin {
+  color: var(--color-neon-pink);
+  border-color: rgba(255, 43, 214, 0.42);
+  background: rgba(255, 43, 214, 0.1);
 }
 
 .status-needs-review,
@@ -666,6 +702,33 @@
 .error-state {
   border-color: rgba(255, 77, 109, 0.42);
   background: rgba(255, 77, 109, 0.08);
+}
+
+.form-message,
+.local-demo-panel,
+.auth-debug-panel,
+.no-class-panel {
+  margin-top: var(--space-5);
+}
+
+.form-message,
+.local-demo-panel,
+.auth-debug-panel {
+  padding: var(--space-4);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  background: rgba(9, 8, 22, 0.48);
+}
+
+.login-panel .gradient-button,
+.login-panel .outline-button {
+  margin-top: var(--space-4);
+}
+
+.auth-debug-panel {
+  max-width: 760px;
+  color: var(--color-text-muted);
+  opacity: 0.82;
 }
 
 @media (max-width: 960px) {

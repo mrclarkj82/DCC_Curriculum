@@ -1,4 +1,5 @@
 import { Outlet } from 'react-router-dom';
+import { AuthDebugPanel } from './AuthDebugPanel';
 import { DemoModeBanner } from './DemoModeBanner';
 import { Header } from './Header';
 import { ProgramAreaNav } from './ProgramAreaNav';
@@ -12,9 +13,9 @@ export function AppShell() {
         <ProgramAreaNav />
         <main className="app-main">
           <Outlet />
+          <AuthDebugPanel />
         </main>
       </div>
     </div>
   );
 }
-

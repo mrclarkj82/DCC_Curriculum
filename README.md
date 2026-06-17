@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 3 - Scaffold Firebase React App
+Phase 4 - Google SSO, roles, classes, and protected routes
 
 ## Local Development
 
@@ -51,6 +51,7 @@ VITE_FIREBASE_PROJECT_ID=
 VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
+VITE_ALLOWED_EMAIL_DOMAINS=doralacademynv.org,student.doralacademynv.org
 ```
 
 Do not commit `.env.local` or real Firebase credentials.
@@ -59,7 +60,17 @@ Do not commit `.env.local` or real Firebase credentials.
 
 Firebase Hosting is configured for Vite output in `dist` with single-page app rewrites to `index.html`.
 
-Firestore and Storage rules deny all reads and writes for now. Google SSO, roles, Firestore access, and upload rules will be implemented in later phases.
+For Phase 4 setup:
+
+1. Create a Firebase project and add a web app.
+2. Enable Authentication and turn on the Google provider.
+3. Add the production and local development authorized domains in Firebase Authentication settings.
+4. Create a Firestore database.
+5. Apply `firestore.rules`.
+6. Apply `storage.rules`.
+7. Copy `.env.example` to `.env.local`, paste the Firebase web config values, and set `VITE_ALLOWED_EMAIL_DOMAINS`.
+
+Firestore rules now enforce authenticated school-domain users, safe default student profile creation, role boundaries, and class membership checks. Storage remains closed until a later upload phase.
 
 ## Routes
 
@@ -68,7 +79,7 @@ Public:
 - `/`
 - `/login`
 
-Temporary demo-protected scaffold routes:
+Signed-in student routes:
 
 - `/today`
 - `/areas`
@@ -78,12 +89,22 @@ Temporary demo-protected scaffold routes:
 - `/assignments/:assignmentId`
 - `/media-projects/:projectId`
 - `/broadcast-updates/:updateId`
+
+Teacher/admin route:
+
 - `/teacher`
+
+Admin route:
+
 - `/admin`
+
+Client route guards improve the user experience, but Firestore security rules are the real access boundary.
 
 ## Demo Data
 
-Phase 3 imports local seed copies from `src/data/seed/`. These files mirror `curriculum/website-data/` for scaffold preview only. A later phase should replace this data loader with Firestore-backed loading.
+Phase 4 still imports local seed copies from `src/data/seed/` for curriculum preview content. These files mirror `curriculum/website-data/` for scaffold preview only. Authenticated user and class records are read from Firestore.
+
+Starter class records live in `curriculum/website-data/classes.seed.json`. They contain placeholder class IDs only and do not include real student names.
 
 ## Program Areas
 
@@ -96,7 +117,39 @@ The app uses a retro 80s synthwave-inspired design system for the Phase 3 scaffo
 
 The visual style is meant to feel like a digital media studio command center while remaining readable for classroom use. Cards, buttons, badges, tables, and route layouts use dark panels, neon accents, visible focus states, and accessible contrast. Motion is subtle, and animations are disabled automatically for users who prefer reduced motion.
 
-## Phase 4 Preview
+## Phase 4 Auth And Roles
 
-Phase 4 should add Firebase Google SSO, user roles, and real protected-route behavior while preserving the multi-program-area structure.
+Phase 4 adds Firebase Google sign-in, allowed email-domain checks, user profile records, roles, class records, protected routes, and conservative security rules.
+
+Supported roles:
+
+- `student`
+- `teacher`
+- `admin`
+
+On first approved Google sign-in, the app creates `users/{uid}` with role `student` and an empty `classIds` array. The client never assigns itself `teacher` or `admin`, and it never updates its own `classIds`.
+
+To bootstrap the first admin or teacher:
+
+1. Sign in once with an approved school Google account.
+2. Open Firebase Console.
+3. Find the created `users/{uid}` document.
+4. Manually change `role` to `admin` or `teacher`.
+5. Add class IDs to the user's `classIds` only for users who should see those class records.
+6. Add the user's UID to the matching class record's `studentIds` or `teacherIds` array.
+
+Future phases may add safer admin tooling or custom claims, but Phase 4 intentionally keeps role promotion out of the client.
+
+Local Demo Mode is available only while running the Vite dev server. It is hidden in production and does not bypass Firebase Authentication or Firebase Security Rules.
+
+## Security Notes
+
+- Client route guards are not enough by themselves.
+- Firestore rules enforce school-domain access, safe user creation, role boundaries, and class membership.
+- Storage denies all reads and writes until upload and media submission workflows are designed.
+- Do not commit `.env.local`, real Firebase credentials, real rosters, or student data.
+
+## Phase 5 Preview
+
+Phase 5 should build the active Today workflow, bell ringer responses, exit tickets, assignment submissions, and media submissions while preserving the multi-program-area structure.
 

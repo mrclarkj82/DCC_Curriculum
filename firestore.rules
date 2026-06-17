@@ -2,8 +2,130 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Placeholder rules for Phase 3.
-    // Real auth and role-based rules will be implemented in Phase 4 and later.
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAllowedDomain() {
+      return signedIn()
+        && request.auth.token.email != null
+        && (
+          request.auth.token.email.matches('.*@doralacademynv[.]org$')
+          || request.auth.token.email.matches('.*@student[.]doralacademynv[.]org$')
+        );
+    }
+
+    function isSelf(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function userRole() {
+      return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        ? userDoc().data.role
+        : null;
+    }
+
+    function isStudent() {
+      return isAllowedDomain() && userRole() == 'student';
+    }
+
+    function isTeacher() {
+      return isAllowedDomain() && userRole() == 'teacher';
+    }
+
+    function isAdmin() {
+      return isAllowedDomain() && userRole() == 'admin';
+    }
+
+    function isClassTeacher(classData) {
+      return isAllowedDomain()
+        && request.auth.uid in classData.teacherIds
+        && (isTeacher() || isAdmin());
+    }
+
+    function isClassStudent(classData) {
+      return isAllowedDomain() && request.auth.uid in classData.studentIds;
+    }
+
+    function safeUserCreate(userId) {
+      return isAllowedDomain()
+        && isSelf(userId)
+        && request.resource.data.keys().hasOnly([
+          'uid',
+          'displayName',
+          'email',
+          'photoURL',
+          'role',
+          'classIds',
+          'createdAt',
+          'updatedAt',
+          'lastLoginAt'
+        ])
+        && request.resource.data.uid == userId
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.role == 'student'
+        && request.resource.data.classIds is list
+        && request.resource.data.classIds.size() == 0
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.lastLoginAt == request.time;
+    }
+
+    function safeSelfUserUpdate() {
+      return isAllowedDomain()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'displayName',
+          'photoURL',
+          'updatedAt',
+          'lastLoginAt'
+        ])
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.email == resource.data.email
+        && request.resource.data.role == resource.data.role
+        && request.resource.data.classIds == resource.data.classIds
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.lastLoginAt == request.time;
+    }
+
+    function teacherActiveClassItemUpdateOnly() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'activeProgramAreaId',
+          'activeItemType',
+          'activeItemId',
+          'updatedAt'
+        ])
+        && request.resource.data.activeItemType in [
+          'lesson',
+          'assignment',
+          'mediaProject',
+          'broadcastUpdate',
+          'quiz',
+          'portfolioCheckpoint'
+        ]
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    match /users/{userId} {
+      allow read: if isAllowedDomain() && (isSelf(userId) || isAdmin());
+      allow create: if safeUserCreate(userId);
+      allow update: if isAdmin() || (isSelf(userId) && safeSelfUserUpdate());
+      allow delete: if isAdmin();
+    }
+
+    match /classes/{classId} {
+      allow read: if isAdmin() || isClassTeacher(resource.data) || isClassStudent(resource.data);
+      allow create, delete: if isAdmin();
+      allow update: if isAdmin()
+        || (isClassTeacher(resource.data) && teacherActiveClassItemUpdateOnly());
+    }
+
+    // Future phases will add tightly scoped rules for classroom workflow collections:
+    // bellRingerResponses, exitTicketResponses, submissions, quizAttempts,
+    // portfolioItems, and mediaSubmissions.
     match /{document=**} {
       allow read, write: if false;
     }

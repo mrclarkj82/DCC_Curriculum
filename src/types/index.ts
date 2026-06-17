@@ -128,15 +128,46 @@ export interface BroadcastUpdate {
   tags: string[];
 }
 
-export type UserRole = 'demo-student' | 'student' | 'teacher' | 'admin';
+export type UserRole = 'student' | 'teacher' | 'admin';
 
-export type ActiveClassItemType = 'lesson' | 'assignment' | 'mediaProject' | 'broadcastUpdate';
+export interface UserProfile {
+  uid: string;
+  displayName: string;
+  email: string;
+  photoURL: string;
+  role: UserRole;
+  classIds: string[];
+  createdAt?: unknown;
+  updatedAt?: unknown;
+  lastLoginAt?: unknown;
+}
+
+export type ActiveItemType =
+  | 'lesson'
+  | 'assignment'
+  | 'mediaProject'
+  | 'broadcastUpdate'
+  | 'quiz'
+  | 'portfolioCheckpoint';
 
 export interface ActiveClassItem {
   id: string;
-  type: ActiveClassItemType;
+  type: ActiveItemType;
   programAreaId: string;
-  title: string;
-  status: string;
+  title?: string;
+  status?: string;
 }
 
+export interface ClassRecord {
+  id: string;
+  name: string;
+  period: string;
+  teacherIds: string[];
+  studentIds: string[];
+  activeProgramAreaId: string;
+  activeItemType: ActiveItemType;
+  activeItemId: string;
+  schoolYear: string;
+  createdAt: unknown;
+  updatedAt: unknown;
+}

@@ -1,16 +1,16 @@
-import { useDemoAuth } from '../auth/DemoAuthContext';
+import { useAuth } from '../auth/useAuth';
 
 export function DemoModeBanner() {
-  const { isDemoMode } = useDemoAuth();
+  const { isLocalDemoMode } = useAuth();
 
-  if (!isDemoMode) {
+  if (!isLocalDemoMode) {
     return null;
   }
 
   return (
     <div className="demo-banner">
-      Demo student mode is temporary scaffold-only access. Firebase Google sign-in arrives in Phase 4.
+      Local Demo Mode is for development only. Production access requires school Google sign-in and
+      Firebase security rules.
     </div>
   );
 }
-

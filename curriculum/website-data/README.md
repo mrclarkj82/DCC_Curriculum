@@ -12,25 +12,26 @@ Seed files should stay valid JSON and should be treated as draft source data unt
 - `quizzes.seed.json`: placeholder Unreal quiz records
 - `mediaProjects.seed.json`: starter Video Production Studio project placeholders
 - `broadcastUpdates.seed.json`: starter Broadcast Desk Update placeholders
+- `classes.seed.json`: starter class records for Phase 4 auth/class routing
 
 ## Validation Notes
 
-This repository does not currently include a `package.json`, so Phase 1 does not add a Node validation script. When the app scaffold is introduced, add a `validate:curriculum` script that verifies:
+Run `npm run validate:curriculum` from the repository root to verify:
 
 - all seed files parse as valid JSON
 - IDs are unique within each collection
 - lessons, assignments, quizzes, media projects, and broadcast updates include `programAreaId`
 - every `programAreaId` matches a record in `programAreas.seed.json`
-- required lesson fields are present
+- starter class records reference valid program areas and supported active item types
+- class `teacherIds` and `studentIds` fields remain arrays
 
-Until then, use a JSON parser or editor validation before editing these files.
 
+## Relationship Checks
 
-## Phase 2 Relationship Checks
-
-When validation tooling is introduced, also check that:
+Validation also checks that:
 
 - every Unreal assignment references an existing Unreal lesson
 - quiz `lessonIds` reference existing lessons
 - broadcast update `relatedProjectIds` reference existing media projects
+- class `activeItemId` values reference existing lessons, assignments, quizzes, media projects, or broadcast updates when those active item types are used
 - pilot batch `lesson-data.json`, `project-data.json`, `update-data.json`, and `quiz-data.json` remain aligned with the seed files
