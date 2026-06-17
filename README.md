@@ -1,36 +1,96 @@
 # DCC Creative Studio
 
-DCC Creative Studio is a Firebase-based class portal for the high school Digital Content Creators course.
+DCC Creative Studio is a Firebase-based classroom portal for a high school Digital Content Creators course. It supports multiple program areas, beginning with Unreal Engine Studio and Video Production Studio.
 
-The app is designed to support multiple program areas rather than a single Unreal-only experience. The first two required areas are Unreal Engine Studio and Video Production Studio.
-
-ChatGPT Pro will help create slides, assignments, quizzes, lesson copy, video production project materials, broadcast updates, and JSON-ready content data. Codex will build the Firebase website from structured data. Firebase will later provide hosting, Google Authentication, Firestore, Storage, and Security Rules.
-
-Phase 1 is only the source-of-truth infrastructure for curriculum, content data, schemas, prompt templates, and project documentation.
+The app is intended to become a data-driven curriculum and media project player. Lessons, assignments, video production projects, Broadcast Desk Updates, submissions, quizzes, and portfolio work should render from structured data instead of hardcoded one-off pages.
 
 ## Current Phase
 
-Phase 1 - Establish Source of Truth
+Phase 3 - Scaffold Firebase React App
+
+## Local Development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the local dev server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Run linting:
+
+```bash
+npm run lint
+```
+
+Validate curriculum seed data:
+
+```bash
+npm run validate:curriculum
+```
+
+## Environment Variables
+
+Create a local `.env.local` file using `.env.example` as the template:
+
+```text
+VITE_FIREBASE_API_KEY=
+VITE_FIREBASE_AUTH_DOMAIN=
+VITE_FIREBASE_PROJECT_ID=
+VITE_FIREBASE_STORAGE_BUCKET=
+VITE_FIREBASE_MESSAGING_SENDER_ID=
+VITE_FIREBASE_APP_ID=
+```
+
+Do not commit `.env.local` or real Firebase credentials.
+
+## Firebase Setup
+
+Firebase Hosting is configured for Vite output in `dist` with single-page app rewrites to `index.html`.
+
+Firestore and Storage rules deny all reads and writes for now. Google SSO, roles, Firestore access, and upload rules will be implemented in later phases.
+
+## Routes
+
+Public:
+
+- `/`
+- `/login`
+
+Temporary demo-protected scaffold routes:
+
+- `/today`
+- `/areas`
+- `/areas/unreal-engine`
+- `/areas/video-production`
+- `/lessons/:lessonId`
+- `/assignments/:assignmentId`
+- `/media-projects/:projectId`
+- `/broadcast-updates/:updateId`
+- `/teacher`
+- `/admin`
+
+## Demo Data
+
+Phase 3 imports local seed copies from `src/data/seed/`. These files mirror `curriculum/website-data/` for scaffold preview only. A later phase should replace this data loader with Firestore-backed loading.
 
 ## Program Areas
 
 - Unreal Engine Studio
 - Video Production Studio
 
-## How This Repository Should Grow
+## Phase 4 Preview
 
-The website should become a curriculum and media project player. Lessons, assignments, quizzes, video production projects, broadcast updates, and student submission workflows should eventually render from structured data instead of hardcoded one-off pages.
-
-The Unreal Engine content should be generated from structured lesson data, using the Unreal Engine 5 tutorial transcript as the curriculum spine for the Unreal Engine Studio area. Video Production content should be generated from structured project, update, and submission data.
-
-## Next Phases
-
-- Phase 2: Firebase/React app scaffold
-- Phase 3: Google SSO and roles
-- Phase 4: Student Today Page and Program Area Navigation
-- Phase 5: Assignment and Media Evidence Uploads
-- Phase 6: Teacher Dashboard
-- Phase 7: Quiz and Checkpoint System
-- Phase 8: Portfolio and Showcase System
-- Phase 9: Video Production / Broadcast Desk workflow expansion
+Phase 4 should add Firebase Google SSO, user roles, and real protected-route behavior while preserving the multi-program-area structure.
 

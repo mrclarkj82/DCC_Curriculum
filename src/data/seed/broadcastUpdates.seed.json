@@ -1,0 +1,57 @@
+[
+  {
+    "id": "bd-update-001",
+    "programAreaId": "video-production",
+    "title": "Broadcast Desk Update 001: Production Check-In",
+    "status": "draft",
+    "audience": [
+      "students"
+    ],
+    "summary": "Students review a teacher-created production check-in and submit the required response or media evidence.",
+    "studentInstructions": "Read the update, confirm what production evidence is required, and submit the requested response, link, file, or notes.",
+    "linkedResources": [],
+    "relatedProjectIds": [
+      "vp-p01"
+    ],
+    "submissionRequirements": [
+      "Media file, link, or production response",
+      "Short reflection or production notes"
+    ],
+    "teacherNotes": "Replace this draft with the current production check-in, real classroom instructions, and teacher-approved resource links before use.",
+    "publishDate": "",
+    "dueDate": "",
+    "tags": [
+      "broadcast-desk",
+      "video-production",
+      "pilot"
+    ]
+  },
+  {
+    "id": "bd-update-002",
+    "programAreaId": "video-production",
+    "title": "Broadcast Desk Update 002: B-Roll Collection",
+    "status": "draft",
+    "audience": [
+      "students"
+    ],
+    "summary": "Students review B-roll collection expectations and submit evidence for the B-Roll Sequence pilot project.",
+    "studentInstructions": "Review the B-roll collection checklist, capture or organize the required shots, and submit the finished evidence or link.",
+    "linkedResources": [],
+    "relatedProjectIds": [
+      "vp-p02"
+    ],
+    "submissionRequirements": [
+      "B-roll sequence file or hosted link",
+      "Shot list or production notes",
+      "Short reflection"
+    ],
+    "teacherNotes": "Use this update to test how Broadcast Desk posts can point students into a specific video production project and submission workflow.",
+    "publishDate": "",
+    "dueDate": "",
+    "tags": [
+      "broadcast-desk",
+      "video-production",
+      "pilot"
+    ]
+  }
+]

@@ -6,7 +6,14 @@ DCC Creative Studio is a Firebase web app for a high school Digital Content Crea
 
 ## Current Phase
 
-Phase 1 only establishes the source-of-truth curriculum and content infrastructure.
+Phase 3 scaffolds the Firebase React app shell while preserving the source-of-truth curriculum and content infrastructure.
+
+## Repository Workflow
+
+- Codex works on branches.
+- The user reviews pull requests.
+- `main` stays stable.
+- Do not commit directly to `main` unless the user explicitly overrides this workflow.
 
 ## Required Program Areas
 
@@ -36,6 +43,7 @@ Phase 1 only establishes the source-of-truth curriculum and content infrastructu
 - Do not hardcode one-off lesson pages.
 - Do not build an in-browser video editor unless explicitly requested in a future phase.
 - Future video production functionality should focus on hosting, collecting, organizing, and reviewing media submissions.
+- Future auth will use Google SSO through Firebase.
 - Use TypeScript when app code is introduced.
 - Keep student privacy and role-based access in mind for future phases.
 - Do not expose student data across accounts.
