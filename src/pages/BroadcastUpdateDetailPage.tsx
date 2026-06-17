@@ -26,14 +26,20 @@ export function BroadcastUpdateDetailPage() {
       title={update.title}
       description={update.summary}
       actions={<StatusBadge status={update.status} />}
+      className="studio-pink"
     >
       <div className="detail-grid">
-        <section className="card span-two">
+        <section className="card span-two mission-panel neon-border">
+          <h2>Production Update</h2>
+          <p>{update.summary}</p>
+        </section>
+
+        <section className="card span-two mission-panel">
           <h2>Student Instructions</h2>
           <p>{update.studentInstructions}</p>
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Linked Resources</h2>
           {update.linkedResources.length ? (
             <EvidenceChecklist items={update.linkedResources} />
@@ -42,8 +48,8 @@ export function BroadcastUpdateDetailPage() {
           )}
         </section>
 
-        <section className="card">
-          <h2>Related Projects</h2>
+        <section className="card mission-panel">
+          <h2>Related Project</h2>
           <ul className="link-list">
             {update.relatedProjectIds.map((projectId) => (
               <li key={projectId}>
@@ -53,12 +59,12 @@ export function BroadcastUpdateDetailPage() {
           </ul>
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Submission Requirements</h2>
           <EvidenceChecklist items={update.submissionRequirements} />
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Dates</h2>
           <dl className="detail-list">
             <div>
@@ -72,7 +78,12 @@ export function BroadcastUpdateDetailPage() {
           </dl>
         </section>
 
-        <section className="card span-two">
+        <section className="card span-two mission-panel">
+          <h2>Teacher Notes Placeholder</h2>
+          <p>{update.teacherNotes || 'Teacher notes will be wired to protected staff tools later.'}</p>
+        </section>
+
+        <section className="card span-two mission-panel">
           <h2>Tags</h2>
           <div className="tag-row">
             {update.tags.map((tag) => (
@@ -84,4 +95,3 @@ export function BroadcastUpdateDetailPage() {
     </PageContainer>
   );
 }
-

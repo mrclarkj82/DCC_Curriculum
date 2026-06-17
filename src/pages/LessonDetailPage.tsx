@@ -28,10 +28,12 @@ export function LessonDetailPage() {
       title={lesson.title}
       description={lesson.learningTarget}
       actions={<StatusBadge status={lesson.status} />}
+      className={lesson.programAreaId === 'video-production' ? 'studio-pink' : 'studio-cyan'}
     >
       <div className="detail-grid">
-        <section className="card">
-          <h2>Lesson Details</h2>
+        <section className="card mission-panel">
+          <h2>Learning Target</h2>
+          <p>{lesson.learningTarget}</p>
           <dl className="detail-list">
             <div>
               <dt>Program Area</dt>
@@ -45,27 +47,24 @@ export function LessonDetailPage() {
               <dt>Unit</dt>
               <dd>{lesson.unit}</dd>
             </div>
-            <div>
-              <dt>Video Segment</dt>
-              <dd>
-                {lesson.video.start}-{lesson.video.end}
-              </dd>
-            </div>
           </dl>
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Bell Ringer</h2>
           <p>{lesson.bellRinger.prompt}</p>
         </section>
 
-        <section className="card span-two">
-          <h2>Vocabulary</h2>
-          <VocabularyList terms={lesson.vocabulary} />
+        <section className="card mission-panel">
+          <h2>Video Segment</h2>
+          <p>{lesson.video.source}</p>
+          <p className="meta-line">
+            {lesson.video.start}-{lesson.video.end}
+          </p>
         </section>
 
-        <section className="card">
-          <h2>Slides</h2>
+        <section className="card mission-panel">
+          <h2>Watch / Review</h2>
           {lesson.slides.url ? (
             <a className="secondary-button" href={lesson.slides.url} target="_blank" rel="noreferrer">
               Open {lesson.slides.title}
@@ -76,23 +75,28 @@ export function LessonDetailPage() {
           <p className="meta-line">Status: {lesson.slides.status}</p>
         </section>
 
-        <section className="card">
-          <h2>Assignment Summary</h2>
+        <section className="card span-two mission-panel">
+          <h2>Vocabulary</h2>
+          <VocabularyList terms={lesson.vocabulary} />
+        </section>
+
+        <section className="card mission-panel">
+          <h2>Assignment</h2>
           <p>{lesson.assignment.title}</p>
           {assignment && <Link to={`/assignments/${assignment.id}`}>Open assignment details</Link>}
         </section>
 
-        <section className="card">
-          <h2>Submission Evidence</h2>
+        <section className="card mission-panel">
+          <h2>Submit Evidence</h2>
           <EvidenceChecklist items={lesson.assignment.evidenceRequired} />
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Exit Ticket</h2>
           <p>{lesson.exitTicket}</p>
         </section>
 
-        <section className="card span-two">
+        <section className="card span-two mission-panel">
           <h2>Tags</h2>
           <div className="tag-row">
             {lesson.tags.map((tag) => (
@@ -104,4 +108,3 @@ export function LessonDetailPage() {
     </PageContainer>
   );
 }
-

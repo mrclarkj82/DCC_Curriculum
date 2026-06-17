@@ -26,20 +26,21 @@ export function AssignmentDetailPage() {
       eyebrow={area?.title ?? assignment.programAreaId}
       title={assignment.title}
       description={assignment.instructions}
+      className={assignment.programAreaId === 'video-production' ? 'studio-pink' : 'studio-cyan'}
     >
       <div className="detail-grid">
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Skill Focus</h2>
           <EvidenceChecklist items={assignment.skillFocus} />
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Submission Type</h2>
           <p>{assignment.submissionType}</p>
           {lesson && <Link to={`/lessons/${lesson.id}`}>Back to lesson</Link>}
         </section>
 
-        <section className="card span-two">
+        <section className="card span-two mission-panel">
           <h2>Required Steps</h2>
           <ol className="ordered-list">
             {assignment.requiredSteps.map((step) => (
@@ -48,22 +49,22 @@ export function AssignmentDetailPage() {
           </ol>
         </section>
 
-        <section className="card">
-          <h2>Evidence Required</h2>
+        <section className="card mission-panel">
+          <h2>Submit Evidence</h2>
           <EvidenceChecklist items={assignment.evidenceRequired} />
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Extension Challenge</h2>
           <p>{assignment.extensionChallenge || 'No extension challenge yet.'}</p>
         </section>
 
-        <section className="card span-two">
+        <section className="card span-two mission-panel">
           <h2>Rubric</h2>
           <RubricTable rubric={assignment.rubric} />
         </section>
 
-        <section className="card span-two">
+        <section className="card span-two mission-panel">
           <h2>Reflection Prompt</h2>
           <p>{assignment.reflectionPrompt || 'Reflection prompt placeholder.'}</p>
         </section>
@@ -71,4 +72,3 @@ export function AssignmentDetailPage() {
     </PageContainer>
   );
 }
-

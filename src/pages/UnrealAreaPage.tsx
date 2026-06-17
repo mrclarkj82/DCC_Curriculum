@@ -14,12 +14,14 @@ export function UnrealAreaPage() {
 
   return (
     <PageContainer
-      eyebrow="Program Area"
+      eyebrow="Unreal Engine Command Center"
       title={area?.title ?? 'Unreal Engine Studio'}
       description={area?.description}
+      className="studio-cyan"
     >
       <div className="section-stack">
-        <section className="content-section">
+        <section className="content-section neon-section">
+          <p className="retro-label">Pilot Lessons</p>
           <h2>Q1 Unreal Foundations</h2>
           <p className="muted">Pilot-ready Lessons 01-04 are available for scaffold preview.</p>
           <div className="card-grid two">
@@ -29,8 +31,9 @@ export function UnrealAreaPage() {
           </div>
         </section>
 
-        <section className="content-section">
-          <h2>Q1 Assignments</h2>
+        <section className="content-section neon-section">
+          <p className="retro-label">Build / Produce</p>
+          <h2>Q1 Unreal Assignments</h2>
           <div className="card-grid two">
             {pilotAssignments.map((assignment) => (
               <AssignmentCard key={assignment.id} assignment={assignment} />
@@ -38,15 +41,17 @@ export function UnrealAreaPage() {
           </div>
         </section>
 
-        <section className="content-section">
+        <section className="content-section neon-section">
+          <p className="retro-label">Future Unit</p>
           <h2>Q3 Castle Environment</h2>
           <p className="muted">
             Q3 lesson records are present as placeholders for future transcript-aligned expansion.
           </p>
         </section>
 
-        <section className="content-section">
-          <h2>Quizzes and Portfolio</h2>
+        <section className="content-section neon-section">
+          <p className="retro-label">Quizzes / Portfolio</p>
+          <h2>Assessment and Showcase</h2>
           <p className="muted">
             Quiz placeholder count: {quizzes.filter((quiz) => quiz.programAreaId === 'unreal-engine').length}.
             Portfolio workflows arrive in a later phase.
@@ -56,4 +61,3 @@ export function UnrealAreaPage() {
     </PageContainer>
   );
 }
-

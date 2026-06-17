@@ -5,12 +5,20 @@ interface PageContainerProps {
   eyebrow?: string;
   description?: string;
   actions?: ReactNode;
+  className?: string;
   children: ReactNode;
 }
 
-export function PageContainer({ title, eyebrow, description, actions, children }: PageContainerProps) {
+export function PageContainer({
+  title,
+  eyebrow,
+  description,
+  actions,
+  className,
+  children,
+}: PageContainerProps) {
   return (
-    <section className="page-container">
+    <section className={`page-container ${className ?? ''}`.trim()}>
       <div className="page-heading">
         <div>
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
@@ -23,4 +31,3 @@ export function PageContainer({ title, eyebrow, description, actions, children }
     </section>
   );
 }
-

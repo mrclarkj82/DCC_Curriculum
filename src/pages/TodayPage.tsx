@@ -20,27 +20,28 @@ export function TodayPage() {
 
   return (
     <PageContainer
-      eyebrow="Student Today"
-      title="Today"
-      description="A scaffold for the student's active class item. This layout is intentionally generic so it can support Unreal lessons, Video Production projects, or Broadcast Desk Updates."
+      eyebrow="Daily Mission Board"
+      title="Today's Mission"
+      description="A clear classroom workflow for the active class item, whether it is an Unreal lesson, a Video Production project, or a Broadcast Desk Update."
+      className="mission-board"
     >
       <div className="today-grid">
-        <section className="card">
+        <section className="card mission-panel neon-border">
           <div className="card-header">
-            <h2>Active Program Area</h2>
+            <h2>Program Area</h2>
             <StatusBadge status={activeClassItem.status} />
           </div>
           <p>{programArea?.title ?? 'Program area placeholder'}</p>
           <p className="muted">{programArea?.description}</p>
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Bell Ringer</h2>
           <p>{lesson?.bellRinger.prompt ?? 'Bell ringer placeholder for active class item.'}</p>
         </section>
 
-        <section className="card">
-          <h2>Today's Goal</h2>
+        <section className="card mission-panel">
+          <h2>Studio Goal</h2>
           <p>
             {lesson?.learningTarget ??
               mediaProject?.studentTask ??
@@ -49,8 +50,8 @@ export function TodayPage() {
           </p>
         </section>
 
-        <section className="card">
-          <h2>Slides and Resources</h2>
+        <section className="card mission-panel">
+          <h2>Watch / Review</h2>
           {lesson?.slides.url ? (
             <a className="secondary-button" href={lesson.slides.url} target="_blank" rel="noreferrer">
               Open Slides
@@ -63,8 +64,8 @@ export function TodayPage() {
           <p className="muted">Resource links will become data-driven in a later phase.</p>
         </section>
 
-        <section className="card">
-          <h2>Video or Resource Segment</h2>
+        <section className="card mission-panel">
+          <h2>Video Segment</h2>
           <p>
             {lesson
               ? `${lesson.video.source}: ${lesson.video.start}-${lesson.video.end}`
@@ -72,8 +73,8 @@ export function TodayPage() {
           </p>
         </section>
 
-        <section className="card">
-          <h2>Assignment or Project Task</h2>
+        <section className="card mission-panel">
+          <h2>Build / Produce</h2>
           <p>
             {lesson?.assignment.title ??
               mediaProject?.title ??
@@ -83,8 +84,8 @@ export function TodayPage() {
           {lesson && <Link to={`/assignments/${lesson.assignment.id}`}>Open assignment</Link>}
         </section>
 
-        <section className="card">
-          <h2>Submission</h2>
+        <section className="card mission-panel">
+          <h2>Submit Evidence</h2>
           <EvidenceChecklist
             items={
               lesson?.assignment.evidenceRequired ??
@@ -98,7 +99,7 @@ export function TodayPage() {
           </button>
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Exit Ticket</h2>
           <p>{lesson?.exitTicket ?? 'Exit ticket placeholder for the active item.'}</p>
         </section>
@@ -106,4 +107,3 @@ export function TodayPage() {
     </PageContainer>
   );
 }
-

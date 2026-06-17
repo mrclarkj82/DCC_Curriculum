@@ -90,6 +90,12 @@ Phase 3 imports local seed copies from `src/data/seed/`. These files mirror `cur
 - Unreal Engine Studio
 - Video Production Studio
 
+## Visual Design
+
+The app uses a retro 80s synthwave-inspired design system for the Phase 3 scaffold. Theme colors, typography, spacing, radius, and glow values live in CSS variables so the neon look can stay consistent across pages and components.
+
+The visual style is meant to feel like a digital media studio command center while remaining readable for classroom use. Cards, buttons, badges, tables, and route layouts use dark panels, neon accents, visible focus states, and accessible contrast. Motion is subtle, and animations are disabled automatically for users who prefer reduced motion.
+
 ## Phase 4 Preview
 
 Phase 4 should add Firebase Google SSO, user roles, and real protected-route behavior while preserving the multi-program-area structure.

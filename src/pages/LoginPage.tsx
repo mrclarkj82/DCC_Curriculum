@@ -11,10 +11,10 @@ export function LoginPage() {
   };
 
   return (
-    <main className="login-page">
+    <main className="login-page synth-grid-bg">
       <section className="login-panel">
         <p className="eyebrow">Phase 3 Login Placeholder</p>
-        <h1>Google sign-in will be implemented in Phase 4.</h1>
+        <h1>DCC Creative Studio Login</h1>
         <p>
           This scaffold uses a temporary demo student mode so the protected route layout can be
           tested locally without enabling Firebase Authentication yet.
@@ -27,4 +27,3 @@ export function LoginPage() {
     </main>
   );
 }
-
