@@ -46,7 +46,7 @@ export function TeacherPage() {
   return (
     <PageContainer
       eyebrow="Teacher Placeholder"
-      title="Teacher Mission Control"
+      title="Teacher Studio Board"
       description="Phase 3 only provides dashboard placeholders. Real teacher data, grading, and review workflows arrive later."
       className="studio-cyan"
     >

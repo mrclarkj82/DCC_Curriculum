@@ -30,21 +30,30 @@ body::after {
 body::before {
   z-index: -3;
   background:
-    radial-gradient(circle at 18% 12%, rgba(255, 43, 214, 0.18), transparent 34%),
-    radial-gradient(circle at 85% 16%, rgba(0, 229, 255, 0.16), transparent 32%),
-    linear-gradient(155deg, #070612 0%, #111031 46%, #090816 100%);
+    radial-gradient(circle at 12% 8%, rgba(var(--color-neon-pink-rgb), 0.34), transparent 30%),
+    radial-gradient(circle at 86% 10%, rgba(var(--color-neon-cyan-rgb), 0.3), transparent 32%),
+    radial-gradient(circle at 52% 88%, rgba(var(--color-neon-purple-rgb), 0.34), transparent 44%),
+    linear-gradient(155deg, var(--color-bg-deep) 0%, #16072f 44%, var(--color-bg) 100%);
   animation: synth-glow-shift var(--transition-slow) infinite alternate;
 }
 
 body::after {
   z-index: -1;
-  opacity: 0.18;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 3px,
-    rgba(246, 243, 255, 0.12) 4px
-  );
+  opacity: 0.28;
+  background:
+    linear-gradient(rgba(var(--color-neon-cyan-rgb), 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--color-neon-pink-rgb), 0.075) 1px, transparent 1px),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 4px,
+      rgba(248, 244, 255, 0.08) 5px
+    );
+  background-size:
+    88px 88px,
+    88px 88px,
+    auto;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 74%, transparent);
 }
 
 a {
@@ -56,7 +65,7 @@ a {
 
 a:hover,
 a:focus-visible {
-  color: var(--color-text-main);
+  color: var(--color-neon-pink);
   text-decoration: none;
 }
 
@@ -93,7 +102,7 @@ select {
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   color: var(--color-text-main);
-  background: rgba(9, 8, 22, 0.72);
+  background: rgba(8, 3, 18, 0.72);
 }
 
 h1,

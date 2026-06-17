@@ -48,7 +48,8 @@ Phase 4 adds Firebase Google SSO, roles, classes, protected routes, and conserva
 - Future video production functionality should focus on hosting, collecting, organizing, and reviewing media submissions.
 - Auth uses Google SSO through Firebase.
 - Do not weaken Firebase Auth, Firestore rules, or Storage rules to make local testing easier.
-- Preserve the retro synthwave visual design system unless the user explicitly requests a redesign.
+- Visual design rule: DCC Creative Studio uses a colorful retro 80s synthwave design system. Future tasks must preserve neon cyan, magenta, purple, blue, and orange accents, glowing cards, synthwave gradients, and the creative media studio look. Do not regress the app into a plain dark command-center UI.
+- `src/styles/theme.css` contains the core design tokens. `src/styles/synthwave.css` contains the visual identity layer.
 - Use TypeScript when app code is introduced.
 - Keep student privacy and role-based access in mind for future phases.
 - Do not expose student data across accounts.

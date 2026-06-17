@@ -113,9 +113,11 @@ Starter class records live in `curriculum/website-data/classes.seed.json`. They 
 
 ## Visual Design
 
-The app uses a retro 80s synthwave-inspired design system for the Phase 3 scaffold. Theme colors, typography, spacing, radius, and glow values live in CSS variables so the neon look can stay consistent across pages and components.
+The app uses a colorful retro 80s synthwave design system. Neon cyan, hot pink, electric purple, blue glow, and orange/yellow accents should remain visible across landing, login, program areas, lesson pages, Today, teacher, and admin views.
 
-The visual style is meant to feel like a digital media studio command center while remaining readable for classroom use. Cards, buttons, badges, tables, and route layouts use dark panels, neon accents, visible focus states, and accessible contrast. Motion is subtle, and animations are disabled automatically for users who prefer reduced motion.
+`src/styles/theme.css` contains the core design tokens. `src/styles/globals.css` contains base document styling and accessibility defaults. `src/styles/synthwave.css` contains the visual identity layer with gradients, glowing cards, badges, program-area accents, and synthwave grid energy.
+
+Future phases should preserve the creative media studio look and should not replace it with a plain dark command-center UI. Cards, buttons, badges, tables, and route layouts use dark purple panels, neon accents, visible focus states, and accessible contrast. Motion is subtle, and animations are disabled automatically for users who prefer reduced motion.
 
 ## Phase 4 Auth And Roles
 

@@ -14,7 +14,7 @@ export function UnrealAreaPage() {
 
   return (
     <PageContainer
-      eyebrow="Unreal Engine Command Center"
+      eyebrow="Unreal Engine Studio"
       title={area?.title ?? 'Unreal Engine Studio'}
       description={area?.description}
       className="studio-cyan"

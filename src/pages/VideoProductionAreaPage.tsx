@@ -10,7 +10,7 @@ export function VideoProductionAreaPage() {
 
   return (
     <PageContainer
-      eyebrow="Video Production Command Center"
+      eyebrow="Video Production Studio"
       title={area?.title ?? 'Video Production Studio'}
       description={area?.description}
       className="studio-pink"

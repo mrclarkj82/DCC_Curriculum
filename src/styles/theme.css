@@ -1,29 +1,40 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Orbitron:wght@500;700;800;900&family=Share+Tech+Mono&display=swap");
 
+/* Core design tokens for the DCC Creative Studio synthwave system. */
 :root {
   color-scheme: dark;
 
-  --color-bg: #090816;
-  --color-bg-elevated: #121028;
-  --color-bg-panel: #1a1738;
-  --color-bg-card: rgba(24, 20, 55, 0.82);
-  --color-bg-card-strong: rgba(32, 26, 72, 0.94);
+  --color-bg: #080312;
+  --color-bg-deep: #05020d;
+  --color-bg-elevated: rgba(20, 10, 45, 0.88);
+  --color-bg-panel: rgba(28, 12, 64, 0.78);
+  --color-bg-card: rgba(23, 10, 52, 0.82);
+  --color-bg-card-strong: rgba(35, 14, 82, 0.94);
 
   --color-neon-cyan: #00e5ff;
   --color-neon-pink: #ff2bd6;
   --color-neon-purple: #8a5cff;
   --color-neon-blue: #287cff;
   --color-neon-orange: #ffb000;
+  --color-neon-green: #37ff8b;
 
-  --color-text-main: #f6f3ff;
-  --color-text-muted: #b9b3d9;
-  --color-text-dim: #7f78a8;
+  --color-neon-cyan-rgb: 0, 229, 255;
+  --color-neon-pink-rgb: 255, 43, 214;
+  --color-neon-purple-rgb: 138, 92, 255;
+  --color-neon-blue-rgb: 40, 124, 255;
+  --color-neon-orange-rgb: 255, 176, 0;
+  --color-neon-green-rgb: 55, 255, 139;
 
-  --color-success: #37ff8b;
+  --color-text-main: #f8f4ff;
+  --color-text-soft: #efe5ff;
+  --color-text-muted: #bfb3ff;
+  --color-text-dim: #8d80c9;
+
+  --color-success: var(--color-neon-green);
   --color-warning: #ffb000;
   --color-danger: #ff4d6d;
-  --color-line: rgba(185, 179, 217, 0.22);
-  --color-line-strong: rgba(0, 229, 255, 0.48);
+  --color-line: rgba(var(--color-neon-purple-rgb), 0.28);
+  --color-line-strong: rgba(var(--color-neon-cyan-rgb), 0.58);
 
   --font-heading: "Orbitron", "Rajdhani", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -43,10 +54,41 @@
   --radius-lg: 12px;
   --radius-pill: 999px;
 
-  --shadow-panel: 0 22px 70px rgba(0, 0, 0, 0.34);
-  --shadow-cyan: 0 0 26px rgba(0, 229, 255, 0.22);
-  --shadow-pink: 0 0 26px rgba(255, 43, 214, 0.2);
-  --shadow-purple: 0 0 30px rgba(138, 92, 255, 0.18);
+  --glow-cyan: 0 0 18px rgba(var(--color-neon-cyan-rgb), 0.55);
+  --glow-pink: 0 0 18px rgba(var(--color-neon-pink-rgb), 0.55);
+  --glow-purple: 0 0 22px rgba(var(--color-neon-purple-rgb), 0.5);
+  --glow-orange: 0 0 16px rgba(var(--color-neon-orange-rgb), 0.45);
+
+  --shadow-panel: 0 24px 78px rgba(0, 0, 0, 0.46);
+  --shadow-cyan: 0 0 26px rgba(var(--color-neon-cyan-rgb), 0.34);
+  --shadow-pink: 0 0 28px rgba(var(--color-neon-pink-rgb), 0.34);
+  --shadow-purple: 0 0 34px rgba(var(--color-neon-purple-rgb), 0.3);
+  --shadow-orange: 0 0 24px rgba(var(--color-neon-orange-rgb), 0.24);
+
+  --gradient-neon-primary: linear-gradient(
+    135deg,
+    var(--color-neon-cyan) 0%,
+    var(--color-neon-purple) 48%,
+    var(--color-neon-pink) 100%
+  );
+  --gradient-neon-warm: linear-gradient(
+    135deg,
+    var(--color-neon-pink) 0%,
+    var(--color-neon-purple) 48%,
+    var(--color-neon-orange) 100%
+  );
+  --gradient-neon-panel: linear-gradient(
+    135deg,
+    rgba(var(--color-neon-cyan-rgb), 0.18),
+    rgba(var(--color-neon-purple-rgb), 0.12) 45%,
+    rgba(var(--color-neon-pink-rgb), 0.16)
+  );
+  --gradient-neon-panel-warm: linear-gradient(
+    135deg,
+    rgba(var(--color-neon-pink-rgb), 0.18),
+    rgba(var(--color-neon-purple-rgb), 0.12) 45%,
+    rgba(var(--color-neon-orange-rgb), 0.16)
+  );
 
   --transition-fast: 150ms ease;
   --transition-slow: 8000ms ease-in-out;

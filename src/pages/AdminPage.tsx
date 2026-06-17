@@ -16,7 +16,7 @@ export function AdminPage() {
   return (
     <PageContainer
       eyebrow="Admin Placeholder"
-      title="Admin Console"
+      title="Admin Studio Tools"
       description="These tools are intentionally not implemented in Phase 3."
       className="studio-pink"
     >

@@ -8,7 +8,9 @@ export function ProgramAreaCard({ area }: { area: ProgramArea }) {
   const visualLabel = isVideoStudio ? 'VID' : '3D';
 
   return (
-    <article className={`card neon-card program-area-card ${toneClass}`}>
+    <article
+      className={`card neon-card program-area-card program-area-card--${area.id} ${toneClass}`}
+    >
       <span
         className={`program-card-visual ${isVideoStudio ? 'video' : ''}`.trim()}
         aria-hidden="true"
