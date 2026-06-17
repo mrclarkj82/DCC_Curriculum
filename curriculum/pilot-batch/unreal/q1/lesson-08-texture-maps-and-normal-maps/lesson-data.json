@@ -1,0 +1,87 @@
+{
+  "id": "ue-q1-l08",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 8,
+  "title": "Texture Maps and Normal Maps",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "00:54:38",
+    "end": "01:03:02",
+    "url": "",
+    "note": "Covers importing texture maps, Base Color maps, Roughness maps, Normal maps, sRGB settings, mask/non-color texture settings, normal map compression, material connections, Texture Coordinate, Multiply, tiling/scale, and optional color tint. Ends before material instances."
+  },
+  "learningTarget": "I can import texture maps and connect base color, roughness, and normal maps correctly to build a more believable material.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What is the difference between color detail and surface depth detail?"
+  },
+  "vocabulary": [
+    {
+      "term": "Texture map",
+      "definition": "An image file used by a material to control part of the surface appearance."
+    },
+    {
+      "term": "Base color map",
+      "definition": "A color texture that provides the main visible color detail of a material."
+    },
+    {
+      "term": "Roughness map",
+      "definition": "A grayscale texture that controls which parts of a surface look shiny or rough."
+    },
+    {
+      "term": "Normal map",
+      "definition": "A texture that fakes small bumps and surface direction changes so lighting reacts with more detail."
+    },
+    {
+      "term": "sRGB",
+      "definition": "A color interpretation setting that should be on for color textures and off for non-color data maps."
+    },
+    {
+      "term": "Mask",
+      "definition": "A non-color texture that stores control information, often in black, white, or grayscale values."
+    },
+    {
+      "term": "Compression setting",
+      "definition": "An import setting that tells Unreal how to treat and optimize a texture file."
+    },
+    {
+      "term": "Texture coordinate",
+      "definition": "A node that controls how texture UVs are read by a material."
+    },
+    {
+      "term": "UVs",
+      "definition": "The 2D coordinate layout used to place a texture on a 3D surface."
+    },
+    {
+      "term": "Tiling",
+      "definition": "How often a texture repeats across a surface."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 08 - Texture Maps and Normal Maps",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a08",
+    "title": "Texture Map Material Build",
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of imported texture assets.",
+      "Screenshot of material graph connections.",
+      "Screenshot of material applied in the level.",
+      "Short reflection explaining what the normal map adds."
+    ]
+  },
+  "exitTicket": "Why should sRGB usually be turned off for roughness maps and normal maps?",
+  "tags": [
+    "texture-maps",
+    "normal-maps",
+    "srgb",
+    "uvs",
+    "tiling"
+  ]
+}

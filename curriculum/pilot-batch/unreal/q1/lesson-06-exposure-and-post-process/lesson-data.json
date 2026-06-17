@@ -1,0 +1,78 @@
+{
+  "id": "ue-q1-l06",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 6,
+  "title": "Exposure and Post-Process",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "00:27:14",
+    "end": "00:35:47",
+    "url": "",
+    "note": "Covers auto exposure, a hut/dark-space test, manual exposure, post-process volume settings, bloom, vignette, saturation, and Infinite Extent Unbound."
+  },
+  "learningTarget": "I can use a post-process volume to control exposure and camera-based visual effects in an Unreal scene.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Why does a camera or your eyes sometimes need time to adjust when moving from a bright place to a dark place?"
+  },
+  "vocabulary": [
+    {
+      "term": "Exposure",
+      "definition": "How bright or dark the rendered scene appears to the camera."
+    },
+    {
+      "term": "Auto exposure",
+      "definition": "A camera behavior that automatically adjusts brightness, similar to eyes adapting between dark and bright areas."
+    },
+    {
+      "term": "Post-process volume",
+      "definition": "An Unreal volume that applies camera and image effects after the scene is rendered."
+    },
+    {
+      "term": "Bloom",
+      "definition": "A glow effect around bright areas of the image."
+    },
+    {
+      "term": "Vignette",
+      "definition": "A darkening or shading effect around the edges of the image."
+    },
+    {
+      "term": "Saturation",
+      "definition": "The strength or intensity of colors in the image."
+    },
+    {
+      "term": "Infinite extent unbound",
+      "definition": "A Post Process Volume setting that makes the effect apply to the entire level instead of only inside the volume."
+    },
+    {
+      "term": "Metering mode",
+      "definition": "The exposure measurement mode used to decide how scene brightness should be handled."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 06 - Exposure and Post-Process",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a06",
+    "title": "Post-Process Exposure Test",
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot showing auto exposure/problem situation.",
+      "Screenshot showing manual exposure/post-process result.",
+      "Short reflection explaining what changed."
+    ]
+  },
+  "exitTicket": "What setting allows a post-process volume to affect the whole level?",
+  "tags": [
+    "post-process",
+    "exposure",
+    "bloom",
+    "vignette",
+    "saturation"
+  ]
+}

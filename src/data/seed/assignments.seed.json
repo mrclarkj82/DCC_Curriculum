@@ -201,6 +201,229 @@
     "reflectionPrompt": "Name three tools or shortcuts you used, and explain which one helped your scene most."
   },
   {
+    "id": "ue-q1-a05",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l05",
+    "title": "First Scene Cleanup and Evidence Upgrade",
+    "skillFocus": [
+      "Quiz feedback helps identify what needs review",
+      "Viewport navigation helps check the scene from useful angles",
+      "Transform tools fix placement, scale, and rotation issues",
+      "The Outliner helps select, organize, and rename visible objects",
+      "Screenshots document evidence for teacher review"
+    ],
+    "instructions": "Complete or review Quiz 01, then improve the simple scene you built in Lesson 04 with stronger organization, cleaner object placement, and clearer final evidence.",
+    "requiredSteps": [
+      "Complete or review Quiz 01 for Lessons 01-04.",
+      "Open the simple scene built in Lesson 04.",
+      "Clean up object placement.",
+      "Fix floating or intersecting objects.",
+      "Improve the camera angle for the final screenshot.",
+      "Organize visible evidence so the scene is easier to understand.",
+      "Take a stronger final screenshot.",
+      "Write a short reflection naming at least three tools or shortcuts used."
+    ],
+    "submissionType": "screenshot-and-reflection",
+    "evidenceRequired": [
+      "Before screenshot, if available.",
+      "After screenshot.",
+      "Short reflection naming at least three tools or shortcuts.",
+      "Optional quiz completion screenshot or teacher checkoff."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create one portfolio-ready screenshot with a clear camera angle, readable object placement, and no distracting editor clutter.",
+    "reflectionPrompt": "Name at least three Unreal tools or shortcuts you used, then explain how they improved the scene."
+  },
+  {
+    "id": "ue-q1-a06",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l06",
+    "title": "Post-Process Exposure Test",
+    "skillFocus": [
+      "Post Process Volume applies camera and image effects",
+      "Exposure settings control rendered brightness",
+      "Metering Mode can be set to Manual for more control",
+      "Infinite Extent Unbound lets the volume affect the whole level",
+      "Bloom, Vignette, and Saturation change the image style"
+    ],
+    "instructions": "Duplicate a simple level or create a small test area, build a hut or dark-space exposure example, then use post-process settings to control exposure and one visual effect.",
+    "requiredSteps": [
+      "Create or duplicate a level for post-process testing.",
+      "Build a simple hut or dark/bright test space.",
+      "Observe auto exposure behavior.",
+      "Add or select a post-process volume.",
+      "Set metering mode to manual.",
+      "Adjust exposure compensation.",
+      "Enable infinite extent unbound when appropriate.",
+      "Experiment with at least one effect such as bloom, vignette, or saturation."
+    ],
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot showing auto exposure/problem situation.",
+      "Screenshot showing manual exposure/post-process result.",
+      "Short reflection explaining what changed."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create two mood versions of the same view, such as neutral exposure and dramatic high-contrast exposure, and label the setting that changed.",
+    "reflectionPrompt": "Explain which post-process setting changed the scene most and how your screenshots prove it."
+  },
+  {
+    "id": "ue-q1-a07",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l07",
+    "title": "First Custom Material",
+    "skillFocus": [
+      "The Material Editor uses a node graph",
+      "Base Color controls the main visible color",
+      "Roughness controls how shiny or matte the surface feels",
+      "Metallic controls whether the surface behaves like metal",
+      "Apply and Save update the material for the level"
+    ],
+    "instructions": "Create a custom material, connect color and scalar values in the material graph, apply the material to an object, and submit evidence of both the graph and the result in the level.",
+    "requiredSteps": [
+      "Create or open a material example level.",
+      "Create a new material using naming convention M_.",
+      "Open the material graph.",
+      "Add a color/vector value to base color.",
+      "Add scalar values for roughness and metallic.",
+      "Press Apply and Save after changes.",
+      "Apply the material to an object.",
+      "Optional: add a noise/texture sample to break up roughness or color variation."
+    ],
+    "submissionType": "screenshots-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the material graph.",
+      "Screenshot of the material applied to an object.",
+      "Short reflection explaining base color, roughness, and metallic."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a comparison board with three objects using the same base color but different roughness values.",
+    "reflectionPrompt": "Explain what Base Color, Roughness, and Metallic each changed in your material."
+  },
+  {
+    "id": "ue-q1-a08",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l08",
+    "title": "Texture Map Material Build",
+    "skillFocus": [
+      "Texture assets appear in the Content Drawer",
+      "Texture samples feed image data into the material graph",
+      "Base Color maps carry color information",
+      "Roughness and Normal maps carry non-color data",
+      "Texture Coordinate and Multiply nodes can adjust tiling or scale"
+    ],
+    "instructions": "Import or use provided texture maps, check basic texture settings, create a material using base color, roughness, and normal maps, then adjust tiling or scale using texture coordinates or a multiply node.",
+    "requiredSteps": [
+      "Import or locate a base color texture.",
+      "Import or locate a roughness texture.",
+      "Import or locate a normal map.",
+      "Confirm sRGB is on for color textures.",
+      "Confirm sRGB is off for roughness/masks and normal maps.",
+      "Confirm normal map compression/settings if applicable.",
+      "Create a material using M_ naming convention.",
+      "Connect base color to Base Color.",
+      "Connect roughness to Roughness.",
+      "Connect normal map to Normal.",
+      "Use texture coordinate/multiply setup or equivalent to adjust tiling/scale.",
+      "Apply and save the material.",
+      "Apply it to a floor or object."
+    ],
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of imported texture assets.",
+      "Screenshot of material graph connections.",
+      "Screenshot of material applied in the level.",
+      "Short reflection explaining what the normal map adds."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create two versions of the same material with different tiling values and label which one feels more believable for the object scale.",
+    "reflectionPrompt": "Explain what the normal map adds to the material and why the non-color map settings matter."
+  },
+  {
     "id": "ue-q3-a01",
     "programAreaId": "unreal-engine",
     "lessonId": "ue-q3-l01",

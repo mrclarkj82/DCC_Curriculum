@@ -1,0 +1,67 @@
+{
+  "id": "ue-q1-l05",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 5,
+  "title": "Quiz 1 and First Scene Cleanup",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "00:00:00",
+    "end": "00:27:14",
+    "url": "",
+    "note": "Review range only; no new required tutorial segment."
+  },
+  "learningTarget": "I can show what I remember from Lessons 01-04 and improve my first Unreal scene using feedback, organization, and stronger evidence screenshots.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Which Unreal tool or shortcut from Lessons 01-04 helped you the most so far, and why?"
+  },
+  "vocabulary": [
+    {
+      "term": "Review",
+      "definition": "A focused check of earlier skills and vocabulary so you know what is solid and what still needs practice."
+    },
+    {
+      "term": "Feedback",
+      "definition": "Information from a teacher, peer, rubric, or self-check that helps you decide what to improve."
+    },
+    {
+      "term": "Revision",
+      "definition": "A purposeful change that makes the work clearer, stronger, or more complete."
+    },
+    {
+      "term": "Evidence",
+      "definition": "A screenshot, file, or written explanation that proves a skill was used."
+    },
+    {
+      "term": "Portfolio screenshot",
+      "definition": "A polished image of work that could be used later to show growth or achievement."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 05 - Quiz 1 and First Scene Cleanup",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a05",
+    "title": "First Scene Cleanup and Evidence Upgrade",
+    "submissionType": "screenshot-and-reflection",
+    "evidenceRequired": [
+      "Before screenshot, if available.",
+      "After screenshot.",
+      "Short reflection naming at least three tools or shortcuts.",
+      "Optional quiz completion screenshot or teacher checkoff."
+    ]
+  },
+  "exitTicket": "What is one improvement you made to your first Unreal scene today?",
+  "tags": [
+    "review",
+    "quiz-01",
+    "scene-cleanup",
+    "evidence",
+    "revision"
+  ]
+}

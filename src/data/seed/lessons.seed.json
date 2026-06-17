@@ -461,35 +461,64 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 5,
     "title": "Quiz 1 and First Scene Cleanup",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "00:00:00",
+      "end": "00:27:14",
+      "url": "",
+      "note": "Review range only; no new required tutorial segment."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can show what I remember from Lessons 01-04 and improve my first Unreal scene using feedback, organization, and stronger evidence screenshots.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "Which Unreal tool or shortcut from Lessons 01-04 helped you the most so far, and why?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Review",
+        "definition": "A focused check of earlier skills and vocabulary so you know what is solid and what still needs practice."
+      },
+      {
+        "term": "Feedback",
+        "definition": "Information from a teacher, peer, rubric, or self-check that helps you decide what to improve."
+      },
+      {
+        "term": "Revision",
+        "definition": "A purposeful change that makes the work clearer, stronger, or more complete."
+      },
+      {
+        "term": "Evidence",
+        "definition": "A screenshot, file, or written explanation that proves a skill was used."
+      },
+      {
+        "term": "Portfolio screenshot",
+        "definition": "A polished image of work that could be used later to show growth or achievement."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 05 - Quiz 1 and First Scene Cleanup",
+      "title": "Lesson 05 - Quiz 1 and First Scene Cleanup",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a05",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "First Scene Cleanup and Evidence Upgrade",
+      "submissionType": "screenshot-and-reflection",
+      "evidenceRequired": [
+        "Before screenshot, if available.",
+        "After screenshot.",
+        "Short reflection naming at least three tools or shortcuts.",
+        "Optional quiz completion screenshot or teacher checkoff."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "What is one improvement you made to your first Unreal scene today?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "review",
+      "quiz-01",
+      "scene-cleanup",
+      "evidence",
+      "revision"
     ]
   },
   {
@@ -499,35 +528,75 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 6,
     "title": "Exposure and Post-Process",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "00:27:14",
+      "end": "00:35:47",
+      "url": "",
+      "note": "Covers auto exposure, a hut/dark-space test, manual exposure, post-process volume settings, bloom, vignette, saturation, and Infinite Extent Unbound."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can use a post-process volume to control exposure and camera-based visual effects in an Unreal scene.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "Why does a camera or your eyes sometimes need time to adjust when moving from a bright place to a dark place?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Exposure",
+        "definition": "How bright or dark the rendered scene appears to the camera."
+      },
+      {
+        "term": "Auto exposure",
+        "definition": "A camera behavior that automatically adjusts brightness, similar to eyes adapting between dark and bright areas."
+      },
+      {
+        "term": "Post-process volume",
+        "definition": "An Unreal volume that applies camera and image effects after the scene is rendered."
+      },
+      {
+        "term": "Bloom",
+        "definition": "A glow effect around bright areas of the image."
+      },
+      {
+        "term": "Vignette",
+        "definition": "A darkening or shading effect around the edges of the image."
+      },
+      {
+        "term": "Saturation",
+        "definition": "The strength or intensity of colors in the image."
+      },
+      {
+        "term": "Infinite extent unbound",
+        "definition": "A Post Process Volume setting that makes the effect apply to the entire level instead of only inside the volume."
+      },
+      {
+        "term": "Metering mode",
+        "definition": "The exposure measurement mode used to decide how scene brightness should be handled."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 06 - Exposure and Post-Process",
+      "title": "Lesson 06 - Exposure and Post-Process",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a06",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Post-Process Exposure Test",
+      "submissionType": "screenshot-set-and-reflection",
+      "evidenceRequired": [
+        "Screenshot showing auto exposure/problem situation.",
+        "Screenshot showing manual exposure/post-process result.",
+        "Short reflection explaining what changed."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "What setting allows a post-process volume to affect the whole level?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "post-process",
+      "exposure",
+      "bloom",
+      "vignette",
+      "saturation"
     ]
   },
   {
@@ -537,35 +606,83 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 7,
     "title": "Materials Basics",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "00:35:47",
+      "end": "00:54:38",
+      "url": "",
+      "note": "Covers material example setup, starter materials, creating a material, the material graph, Base Color, Roughness, Metallic, PBR, Apply/Save, and simple texture-driven variation."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can create a basic Unreal material and control how it looks using base color, roughness, metallic, and simple texture-driven variation.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "How can you tell whether a surface is metal, plastic, stone, wood, or paint just by looking at it?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Material",
+        "definition": "An Unreal asset that defines how a surface looks when rendered."
+      },
+      {
+        "term": "Material graph",
+        "definition": "The node-based workspace used to build and edit a material."
+      },
+      {
+        "term": "Node",
+        "definition": "A block in the graph that stores or processes information before sending it to a material input."
+      },
+      {
+        "term": "Base color",
+        "definition": "The main visible color of a material before lighting effects are applied."
+      },
+      {
+        "term": "Roughness",
+        "definition": "A value that controls how sharp or blurry reflections appear on a surface."
+      },
+      {
+        "term": "Metallic",
+        "definition": "A value that controls whether a surface behaves like metal or a non-metal."
+      },
+      {
+        "term": "PBR",
+        "definition": "Physically based rendering, a workflow that uses realistic material values such as metallic and roughness."
+      },
+      {
+        "term": "Scalar value",
+        "definition": "A single number value, often used for settings such as Roughness or Metallic."
+      },
+      {
+        "term": "Vector/color value",
+        "definition": "A multi-number value often used to represent RGB color."
+      },
+      {
+        "term": "Apply",
+        "definition": "The material editor action that updates the material so changes appear in the level."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 07 - Materials Basics",
+      "title": "Lesson 07 - Materials Basics",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a07",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "First Custom Material",
+      "submissionType": "screenshots-and-reflection",
+      "evidenceRequired": [
+        "Screenshot of the material graph.",
+        "Screenshot of the material applied to an object.",
+        "Short reflection explaining base color, roughness, and metallic."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "What happens if you change a material but forget to press Apply?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "materials",
+      "material-graph",
+      "pbr",
+      "roughness",
+      "metallic"
     ]
   },
   {
@@ -575,35 +692,84 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 8,
     "title": "Texture Maps and Normal Maps",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "00:54:38",
+      "end": "01:03:02",
+      "url": "",
+      "note": "Covers importing texture maps, Base Color maps, Roughness maps, Normal maps, sRGB settings, mask/non-color texture settings, normal map compression, material connections, Texture Coordinate, Multiply, tiling/scale, and optional color tint. Ends before material instances."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can import texture maps and connect base color, roughness, and normal maps correctly to build a more believable material.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "What is the difference between color detail and surface depth detail?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Texture map",
+        "definition": "An image file used by a material to control part of the surface appearance."
+      },
+      {
+        "term": "Base color map",
+        "definition": "A color texture that provides the main visible color detail of a material."
+      },
+      {
+        "term": "Roughness map",
+        "definition": "A grayscale texture that controls which parts of a surface look shiny or rough."
+      },
+      {
+        "term": "Normal map",
+        "definition": "A texture that fakes small bumps and surface direction changes so lighting reacts with more detail."
+      },
+      {
+        "term": "sRGB",
+        "definition": "A color interpretation setting that should be on for color textures and off for non-color data maps."
+      },
+      {
+        "term": "Mask",
+        "definition": "A non-color texture that stores control information, often in black, white, or grayscale values."
+      },
+      {
+        "term": "Compression setting",
+        "definition": "An import setting that tells Unreal how to treat and optimize a texture file."
+      },
+      {
+        "term": "Texture coordinate",
+        "definition": "A node that controls how texture UVs are read by a material."
+      },
+      {
+        "term": "UVs",
+        "definition": "The 2D coordinate layout used to place a texture on a 3D surface."
+      },
+      {
+        "term": "Tiling",
+        "definition": "How often a texture repeats across a surface."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 08 - Texture Maps and Normal Maps",
+      "title": "Lesson 08 - Texture Maps and Normal Maps",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a08",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Texture Map Material Build",
+      "submissionType": "screenshot-set-and-reflection",
+      "evidenceRequired": [
+        "Screenshot of imported texture assets.",
+        "Screenshot of material graph connections.",
+        "Screenshot of material applied in the level.",
+        "Short reflection explaining what the normal map adds."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "Why should sRGB usually be turned off for roughness maps and normal maps?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "texture-maps",
+      "normal-maps",
+      "srgb",
+      "uvs",
+      "tiling"
     ]
   },
   {

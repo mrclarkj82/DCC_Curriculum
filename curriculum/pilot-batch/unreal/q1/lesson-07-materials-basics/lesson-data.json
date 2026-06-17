@@ -1,0 +1,86 @@
+{
+  "id": "ue-q1-l07",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 7,
+  "title": "Materials Basics",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "00:35:47",
+    "end": "00:54:38",
+    "url": "",
+    "note": "Covers material example setup, starter materials, creating a material, the material graph, Base Color, Roughness, Metallic, PBR, Apply/Save, and simple texture-driven variation."
+  },
+  "learningTarget": "I can create a basic Unreal material and control how it looks using base color, roughness, metallic, and simple texture-driven variation.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "How can you tell whether a surface is metal, plastic, stone, wood, or paint just by looking at it?"
+  },
+  "vocabulary": [
+    {
+      "term": "Material",
+      "definition": "An Unreal asset that defines how a surface looks when rendered."
+    },
+    {
+      "term": "Material graph",
+      "definition": "The node-based workspace used to build and edit a material."
+    },
+    {
+      "term": "Node",
+      "definition": "A block in the graph that stores or processes information before sending it to a material input."
+    },
+    {
+      "term": "Base color",
+      "definition": "The main visible color of a material before lighting effects are applied."
+    },
+    {
+      "term": "Roughness",
+      "definition": "A value that controls how sharp or blurry reflections appear on a surface."
+    },
+    {
+      "term": "Metallic",
+      "definition": "A value that controls whether a surface behaves like metal or a non-metal."
+    },
+    {
+      "term": "PBR",
+      "definition": "Physically based rendering, a workflow that uses realistic material values such as metallic and roughness."
+    },
+    {
+      "term": "Scalar value",
+      "definition": "A single number value, often used for settings such as Roughness or Metallic."
+    },
+    {
+      "term": "Vector/color value",
+      "definition": "A multi-number value often used to represent RGB color."
+    },
+    {
+      "term": "Apply",
+      "definition": "The material editor action that updates the material so changes appear in the level."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 07 - Materials Basics",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a07",
+    "title": "First Custom Material",
+    "submissionType": "screenshots-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the material graph.",
+      "Screenshot of the material applied to an object.",
+      "Short reflection explaining base color, roughness, and metallic."
+    ]
+  },
+  "exitTicket": "What happens if you change a material but forget to press Apply?",
+  "tags": [
+    "materials",
+    "material-graph",
+    "pbr",
+    "roughness",
+    "metallic"
+  ]
+}

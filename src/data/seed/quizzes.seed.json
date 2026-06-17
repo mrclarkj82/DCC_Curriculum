@@ -251,17 +251,197 @@
   {
     "id": "ue-q1-quiz-02",
     "programAreaId": "unreal-engine",
-    "title": "Q1 Quiz 2: Exposure, Materials, Texture Maps, and Material Instances",
+    "title": "Q1 Quiz 2 Draft: Post-Process, Materials, and Texture Maps",
     "quarter": "Q1",
     "lessonIds": [
       "ue-q1-l06",
       "ue-q1-l07",
-      "ue-q1-l08",
-      "ue-q1-l09"
+      "ue-q1-l08"
     ],
-    "status": "placeholder",
+    "status": "draft",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q1-quiz-02-q01",
+        "type": "multiple-choice",
+        "text": "What does auto exposure do in an Unreal scene?",
+        "choices": [
+          "It automatically adjusts rendered brightness as the camera views darker or brighter areas.",
+          "It changes the size of every light in the level.",
+          "It deletes shadows so the scene renders faster.",
+          "It turns all materials into glowing materials."
+        ],
+        "correctAnswer": "It automatically adjusts rendered brightness as the camera views darker or brighter areas.",
+        "explanation": "Auto exposure changes perceived brightness, similar to eyes adapting when moving between dark and bright spaces.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l06",
+        "tag": "auto-exposure"
+      },
+      {
+        "id": "ue-q1-quiz-02-q02",
+        "type": "multiple-choice",
+        "text": "What is the main purpose of a Post Process Volume?",
+        "choices": [
+          "To apply camera and image effects after the scene is rendered.",
+          "To permanently resize every mesh in the level.",
+          "To create a new project folder automatically.",
+          "To convert texture maps into 3D models."
+        ],
+        "correctAnswer": "To apply camera and image effects after the scene is rendered.",
+        "explanation": "Post-process settings affect the final rendered image, including exposure, bloom, vignette, and color changes.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l06",
+        "tag": "post-process-volume"
+      },
+      {
+        "id": "ue-q1-quiz-02-q03",
+        "type": "multiple-choice",
+        "text": "Why would you enable Infinite Extent Unbound on a Post Process Volume?",
+        "choices": [
+          "To make the post-process settings affect the entire level.",
+          "To make the volume invisible in the Outliner.",
+          "To lock every object so it cannot move.",
+          "To make all texture maps import at full resolution."
+        ],
+        "correctAnswer": "To make the post-process settings affect the entire level.",
+        "explanation": "Without Infinite Extent Unbound, the effect only applies while the camera is inside the volume bounds.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l06",
+        "tag": "infinite-extent-unbound"
+      },
+      {
+        "id": "ue-q1-quiz-02-q04",
+        "type": "multiple-choice",
+        "text": "In the material graph, which input controls the main visible color of a surface?",
+        "choices": [
+          "Base Color",
+          "Roughness",
+          "Normal",
+          "World Outliner"
+        ],
+        "correctAnswer": "Base Color",
+        "explanation": "Base Color is the material input for the main color information of a surface.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l07",
+        "tag": "material-graph"
+      },
+      {
+        "id": "ue-q1-quiz-02-q05",
+        "type": "multiple-choice",
+        "text": "Which sRGB setup is correct for a basic texture set?",
+        "choices": [
+          "sRGB on for Base Color; sRGB off for Roughness and Normal maps.",
+          "sRGB off for every texture, including Base Color.",
+          "sRGB on for Roughness and Normal maps only.",
+          "sRGB only matters for mesh scale, not textures."
+        ],
+        "correctAnswer": "sRGB on for Base Color; sRGB off for Roughness and Normal maps.",
+        "explanation": "Base Color is color data, while Roughness and Normal maps store non-color information that should not be interpreted as color.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l08",
+        "tag": "srgb"
+      },
+      {
+        "id": "ue-q1-quiz-02-q06",
+        "type": "vocabulary",
+        "text": "Identify the term: a glow effect that appears around bright parts of the rendered image.",
+        "correctAnswer": "Bloom",
+        "explanation": "Bloom adds a visible glow around bright areas.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l06",
+        "tag": "bloom"
+      },
+      {
+        "id": "ue-q1-quiz-02-q07",
+        "type": "vocabulary",
+        "text": "Identify the term: a shading or darkening effect around the edges of the image.",
+        "correctAnswer": "Vignette",
+        "explanation": "Vignette affects the edges of the frame and can change the mood or focus of an image.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l06",
+        "tag": "vignette"
+      },
+      {
+        "id": "ue-q1-quiz-02-q08",
+        "type": "vocabulary",
+        "text": "Identify the workflow term: a realistic material workflow that uses values such as metallic and roughness.",
+        "correctAnswer": "PBR",
+        "explanation": "PBR stands for physically based rendering and uses realistic material values.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l07",
+        "tag": "pbr"
+      },
+      {
+        "id": "ue-q1-quiz-02-q09",
+        "type": "vocabulary",
+        "text": "Identify the texture map: a map that fakes small bumps and surface direction changes so lighting responds with more detail.",
+        "correctAnswer": "Normal map",
+        "explanation": "A normal map does not change the actual mesh shape, but it changes how light appears to hit the surface.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l08",
+        "tag": "normal-map"
+      },
+      {
+        "id": "ue-q1-quiz-02-q10",
+        "type": "scenario",
+        "text": "A student changes exposure values in a Post Process Volume, but the scene does not look different in play mode. Name one thing they should check.",
+        "correctAnswer": "They should check that the exposure property checkbox is enabled, the volume affects the camera, and Infinite Extent Unbound is enabled if it needs to affect the whole level.",
+        "explanation": "Post-process values may not apply if the property is not enabled or if the camera is outside a bounded volume.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l06",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-02-q11",
+        "type": "scenario",
+        "text": "A student changes a material in the graph, including roughness and metallic values, but the object in the level still looks the same. What likely step did they miss?",
+        "correctAnswer": "They likely forgot to press Apply and Save, or the material is not assigned to the object.",
+        "explanation": "Material changes must be applied and saved before they reliably update in the level.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l07",
+        "tag": "apply-save"
+      },
+      {
+        "id": "ue-q1-quiz-02-q12",
+        "type": "scenario",
+        "text": "A roughness map is imported, but the material behaves strangely and the grayscale information looks interpreted like color. What setting should the student check?",
+        "correctAnswer": "They should check that sRGB is turned off for the roughness map.",
+        "explanation": "Roughness maps are data maps, so sRGB should be off.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l08",
+        "tag": "roughness-map"
+      },
+      {
+        "id": "ue-q1-quiz-02-q13",
+        "type": "process-order",
+        "text": "Put this post-process workflow in order: add a Post Process Volume, enable needed properties, make the volume affect the intended area, adjust exposure/effects, capture comparison screenshots.",
+        "correctAnswer": "1. Add a Post Process Volume. 2. Make the volume affect the intended area. 3. Enable the needed properties. 4. Adjust exposure or effects such as bloom, vignette, or saturation. 5. Capture comparison screenshots.",
+        "explanation": "Students should place and configure the volume before relying on the visual changes for evidence.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l06",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q1-quiz-02-q14",
+        "type": "process-order",
+        "text": "Put this texture material workflow in order: import texture maps, check sRGB/compression settings, create a material, connect maps to inputs, adjust tiling with Texture Coordinate or Multiply, apply the material to a surface.",
+        "correctAnswer": "1. Import texture maps. 2. Check sRGB and compression settings. 3. Create a material. 4. Connect maps to the correct inputs. 5. Adjust tiling with Texture Coordinate or Multiply if needed. 6. Apply the material to a surface.",
+        "explanation": "Correct import settings should be checked before building and judging the final material, and tiling should be adjusted before evidence screenshots.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l08",
+        "tag": "texture-coordinate-tiling"
+      },
+      {
+        "id": "ue-q1-quiz-02-q15",
+        "type": "short-response",
+        "text": "In 2-3 sentences, explain what a normal map adds to a material and why roughness or normal maps should usually have sRGB turned off.",
+        "correctAnswer": "A strong answer explains that a normal map fakes small surface bumps or direction changes so lighting looks more detailed without changing the mesh. It also explains that non-color data maps such as Roughness and Normal should have sRGB off because they store control data, not color.",
+        "explanation": "This checks conceptual understanding across normal maps and color-versus-data texture settings.",
+        "difficulty": "hard",
+        "lessonId": "ue-q1-l08",
+        "tag": "short-response"
+      }
+    ]
   },
   {
     "id": "ue-q1-quiz-03",

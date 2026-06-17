@@ -17,6 +17,19 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Lesson 04 slide brief - ready for ChatGPT Pro
 - [x] Lesson 04 assignment - needs teacher review
 - [x] Quiz 01 - needs teacher review
+- [x] Lesson 05 page - ready for seed import
+- [x] Lesson 05 slide brief - ready for ChatGPT Pro
+- [x] Lesson 05 assignment - needs teacher review
+- [x] Lesson 06 page - ready for seed import
+- [x] Lesson 06 slide brief - ready for ChatGPT Pro
+- [x] Lesson 06 assignment - needs teacher review
+- [x] Lesson 07 page - ready for seed import
+- [x] Lesson 07 slide brief - ready for ChatGPT Pro
+- [x] Lesson 07 assignment - needs teacher review
+- [x] Lesson 08 page - ready for seed import
+- [x] Lesson 08 slide brief - ready for ChatGPT Pro
+- [x] Lesson 08 assignment - needs teacher review
+- [x] Quiz 02 Draft - draft / needs teacher review
 
 ## Video Production Studio
 
