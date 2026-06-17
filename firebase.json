@@ -3,6 +3,9 @@
     "public": "dist",
     "ignore": [
       "firebase.json",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "*-debug.log",
       "**/.*",
       "**/node_modules/**"
     ],

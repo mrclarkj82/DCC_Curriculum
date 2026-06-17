@@ -149,6 +149,27 @@ Local Demo Mode is available only while running the Vite dev server. It is hidde
 - Storage denies all reads and writes until upload and media submission workflows are designed.
 - Do not commit `.env.local`, real Firebase credentials, real rosters, or student data.
 
+## Live Deployment
+
+Firebase Hosting project ID: `dcc-creative-studio`
+
+Live URLs:
+
+- `https://dcc-creative-studio.web.app`
+- `https://dcc-creative-studio.firebaseapp.com`
+
+Deploy command:
+
+```bash
+firebase deploy --only hosting,firestore:rules,storage
+```
+
+Use `npm run build`, `npm run lint`, and `npm run validate:curriculum` before deploying. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed.
+
+Google Authentication must be enabled in Firebase Console for live sign-in testing. The Firebase Hosting domains should be authorized for Authentication, including `dcc-creative-studio.web.app` and `dcc-creative-studio.firebaseapp.com`; keep `localhost` authorized for local testing.
+
+The first teacher or admin must sign in once, then be manually promoted in Firestore by changing their `users/{uid}.role` to `teacher` or `admin` and assigning the correct `classIds`.
+
 ## Phase 5 Preview
 
 Phase 5 should build the active Today workflow, bell ringer responses, exit tickets, assignment submissions, and media submissions while preserving the multi-program-area structure.

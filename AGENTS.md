@@ -10,10 +10,13 @@ Phase 4 adds Firebase Google SSO, roles, classes, protected routes, and conserva
 
 ## Repository Workflow
 
-- Codex works on branches.
-- The user reviews pull requests.
-- `main` stays stable.
-- Do not commit directly to `main` unless the user explicitly overrides this workflow.
+- Do not open pull requests unless the teacher explicitly asks.
+- Work from `main`.
+- Commit working changes directly to `main` only after build, lint, and validation pass.
+- Push `main` to GitHub.
+- Deploy live to Firebase Hosting when the task affects the website.
+- Return the live Firebase Hosting URL after deploys.
+- Never commit `.env.local`, credentials, service account keys, or student data.
 
 ## Required Program Areas
 
@@ -49,6 +52,6 @@ Phase 4 adds Firebase Google SSO, roles, classes, protected routes, and conserva
 - Use TypeScript when app code is introduced.
 - Keep student privacy and role-based access in mind for future phases.
 - Do not expose student data across accounts.
-- Add acceptance criteria to every PR.
+- Add acceptance criteria to major task summaries.
 - Preserve existing useful project instructions.
 
