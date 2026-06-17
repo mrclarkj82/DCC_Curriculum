@@ -6,8 +6,9 @@ export function AreasPage() {
   return (
     <PageContainer
       eyebrow="Program Areas"
-      title="Choose a Studio"
-      description="Program area cards are loaded from the scaffold seed copy of curriculum/website-data/programAreas.seed.json."
+      title="Program Selector"
+      description="Choose the creative studio space for today's Digital Content Creators work."
+      className="studio-selector"
     >
       <div className="card-grid two">
         {programAreas.map((area) => (
@@ -17,4 +18,3 @@ export function AreasPage() {
     </PageContainer>
   );
 }
-

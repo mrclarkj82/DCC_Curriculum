@@ -4,7 +4,7 @@ import { StatusBadge } from './StatusBadge';
 
 export function LessonCard({ lesson }: { lesson: Lesson }) {
   return (
-    <article className="card compact-card">
+    <article className="card neon-card neon-card--cyan compact-card">
       <div className="card-header">
         <h3>{lesson.title}</h3>
         <StatusBadge status={lesson.status} />
@@ -13,10 +13,9 @@ export function LessonCard({ lesson }: { lesson: Lesson }) {
       <p className="meta-line">
         {lesson.quarter} / Lesson {lesson.lessonNumber} / {lesson.video.start}-{lesson.video.end}
       </p>
-      <Link className="text-link" to={`/lessons/${lesson.id}`}>
-        View lesson
+      <Link className="outline-button" to={`/lessons/${lesson.id}`}>
+        Open Lesson
       </Link>
     </article>
   );
 }
-

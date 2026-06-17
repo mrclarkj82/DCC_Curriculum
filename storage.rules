@@ -2,8 +2,9 @@ rules_version = '2';
 
 service firebase.storage {
   match /b/{bucket}/o {
-    // Placeholder rules for Phase 3.
-    // Assignment and media upload rules will be implemented in a later phase.
+    // Storage remains closed in Phase 4.
+    // Assignment uploads, media submissions, portfolio files, and teacher review artifacts
+    // will be opened with tightly scoped rules in a later upload phase.
     match /{allPaths=**} {
       allow read, write: if false;
     }

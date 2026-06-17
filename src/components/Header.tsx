@@ -1,8 +1,12 @@
 import { Link, NavLink } from 'react-router-dom';
-import { useDemoAuth } from '../auth/DemoAuthContext';
+import { RoleGate } from '../auth/RoleGate';
+import { useAuth } from '../auth/useAuth';
+import { StatusBadge } from './StatusBadge';
 
 export function Header() {
-  const { user, isDemoMode, signOutDemo } = useDemoAuth();
+  const { userProfile, firebaseUser, role, isTeacher, isAdmin, signOut } = useAuth();
+  const displayName = userProfile?.displayName || firebaseUser?.displayName || 'Signed in user';
+  const photoURL = userProfile?.photoURL || firebaseUser?.photoURL;
 
   return (
     <header className="site-header">
@@ -16,18 +20,33 @@ export function Header() {
       <nav className="top-nav" aria-label="Primary navigation">
         <NavLink to="/today">Today</NavLink>
         <NavLink to="/areas">Program Areas</NavLink>
-        <NavLink to="/teacher">Teacher</NavLink>
-        <NavLink to="/admin">Admin</NavLink>
+        {isTeacher && <NavLink to="/teacher">Teacher</NavLink>}
+        {isAdmin && <NavLink to="/admin">Admin</NavLink>}
       </nav>
       <div className="header-actions">
-        {user ? <span className="user-chip">{user.displayName}</span> : <Link to="/login">Login</Link>}
-        {isDemoMode && (
-          <button className="ghost-button" type="button" onClick={signOutDemo}>
-            Exit Demo
-          </button>
+        {userProfile ? (
+          <div className="user-profile">
+            {photoURL ? (
+              <img className="user-avatar" src={photoURL} alt="" referrerPolicy="no-referrer" />
+            ) : (
+              <span className="user-avatar" aria-hidden="true">
+                {displayName.slice(0, 1).toUpperCase()}
+              </span>
+            )}
+            <span className="user-chip">{displayName}</span>
+            {role && <StatusBadge status={role.toUpperCase()} />}
+          </div>
+        ) : (
+          <Link className="outline-button" to="/login">
+            Login
+          </Link>
         )}
+        <RoleGate allowedRoles={['student', 'teacher', 'admin']}>
+          <button className="ghost-button" type="button" onClick={() => void signOut()}>
+            Sign Out
+          </button>
+        </RoleGate>
       </div>
     </header>
   );
 }
-

@@ -10,12 +10,14 @@ export function VideoProductionAreaPage() {
 
   return (
     <PageContainer
-      eyebrow="Program Area"
+      eyebrow="Video Production Command Center"
       title={area?.title ?? 'Video Production Studio'}
       description={area?.description}
+      className="studio-pink"
     >
       <div className="section-stack">
-        <section className="content-section">
+        <section className="content-section neon-section">
+          <p className="retro-label">Production Updates</p>
           <h2>Broadcast Desk Updates</h2>
           <div className="card-grid two">
             {updates.map((update) => (
@@ -24,7 +26,8 @@ export function VideoProductionAreaPage() {
           </div>
         </section>
 
-        <section className="content-section">
+        <section className="content-section neon-section">
+          <p className="retro-label">Build / Produce</p>
           <h2>Video Production Projects</h2>
           <div className="card-grid two">
             {projects.map((project) => (
@@ -33,7 +36,8 @@ export function VideoProductionAreaPage() {
           </div>
         </section>
 
-        <section className="content-section">
+        <section className="content-section neon-section">
+          <p className="retro-label">Media Submissions</p>
           <h2>Student Media Submissions</h2>
           <p className="muted">
             Uploads, hosted media, review states, and teacher feedback are placeholders for future
@@ -41,7 +45,8 @@ export function VideoProductionAreaPage() {
           </p>
         </section>
 
-        <section className="content-section">
+        <section className="content-section neon-section">
+          <p className="retro-label">Production Resources / Showcase</p>
           <h2>Portfolio and Showcase</h2>
           <p className="muted">Portfolio selection and showcase approval will be built later.</p>
         </section>
@@ -49,4 +54,3 @@ export function VideoProductionAreaPage() {
     </PageContainer>
   );
 }
-

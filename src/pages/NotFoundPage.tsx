@@ -3,7 +3,7 @@ import { EmptyState } from '../components/EmptyState';
 
 export function NotFoundPage() {
   return (
-    <main className="standalone-page">
+    <main className="standalone-page synth-grid-bg">
       <EmptyState
         title="Page not found"
         message="The route you opened does not exist in the Phase 3 scaffold."
@@ -14,4 +14,3 @@ export function NotFoundPage() {
     </main>
   );
 }
-

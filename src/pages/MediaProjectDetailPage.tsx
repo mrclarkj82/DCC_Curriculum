@@ -27,44 +27,45 @@ export function MediaProjectDetailPage() {
       title={project.title}
       description={project.description}
       actions={<StatusBadge status={project.status} />}
+      className="studio-pink"
     >
       <div className="detail-grid">
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Project Type</h2>
           <p>{project.projectType}</p>
         </section>
 
-        <section className="card">
-          <h2>Student Task</h2>
+        <section className="card mission-panel">
+          <h2>Build / Produce</h2>
           <p>{project.studentTask}</p>
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Skill Focus</h2>
           <EvidenceChecklist items={project.skillFocus} />
         </section>
 
-        <section className="card">
-          <h2>Submission Types</h2>
+        <section className="card mission-panel">
+          <h2>Media Submissions</h2>
           <EvidenceChecklist items={project.submissionTypes} />
         </section>
 
-        <section className="card">
-          <h2>Evidence Required</h2>
+        <section className="card mission-panel">
+          <h2>Submit Evidence</h2>
           <EvidenceChecklist items={project.evidenceRequired} />
         </section>
 
-        <section className="card">
+        <section className="card mission-panel">
           <h2>Reflection Prompt</h2>
           <p>{project.reflectionPrompt}</p>
         </section>
 
-        <section className="card span-two">
+        <section className="card span-two mission-panel">
           <h2>Rubric</h2>
           <RubricTable rubric={project.rubric} />
         </section>
 
-        <section className="card span-two">
+        <section className="card span-two mission-panel">
           <h2>Tags</h2>
           <div className="tag-row">
             {project.tags.map((tag) => (
@@ -76,4 +77,3 @@ export function MediaProjectDetailPage() {
     </PageContainer>
   );
 }
-
