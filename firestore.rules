@@ -2,7 +2,8 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Placeholder rules for Phase 1. Replace during the Firebase implementation phase.
+    // Placeholder rules for Phase 3.
+    // Real auth and role-based rules will be implemented in Phase 4 and later.
     match /{document=**} {
       allow read, write: if false;
     }
