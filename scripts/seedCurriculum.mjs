@@ -8,6 +8,11 @@ const root = process.cwd();
 const dataDir = join(root, 'curriculum', 'website-data');
 const dryRun = process.argv.includes('--dry-run');
 const confirmSeed = process.env.CONFIRM_SEED === 'true';
+const firestoreNamespace = (process.env.FIRESTORE_NAMESPACE || 'apps/dcc').replace(
+  /^\/+|\/+$/g,
+  '',
+);
+const namespacedCollection = (collectionName) => `${firestoreNamespace}/${collectionName}`;
 
 const seedTargets = [
   ['programAreas.seed.json', 'programAreas'],
@@ -169,15 +174,24 @@ function validateSeeds(data) {
       `Class ${classRecord.id} uses unsupported activeItemType ${classRecord.activeItemType}`,
     );
     assert(classRecord.activeItemId, `Class ${classRecord.id} is missing activeItemId`);
-    assert(Array.isArray(classRecord.teacherIds), `Class ${classRecord.id} teacherIds must be an array`);
-    assert(Array.isArray(classRecord.studentIds), `Class ${classRecord.id} studentIds must be an array`);
+    assert(
+      Array.isArray(classRecord.teacherIds),
+      `Class ${classRecord.id} teacherIds must be an array`,
+    );
+    assert(
+      Array.isArray(classRecord.studentIds),
+      `Class ${classRecord.id} studentIds must be an array`,
+    );
     assert(
       classRecord.teacherIds.length === 0 && classRecord.studentIds.length === 0,
       `Class ${classRecord.id} seed record must not include teacherIds or studentIds`,
     );
 
     if (classRecord.activeItemType === 'lesson') {
-      assert(lessonIds.has(classRecord.activeItemId), `Class ${classRecord.id} references missing lesson`);
+      assert(
+        lessonIds.has(classRecord.activeItemId),
+        `Class ${classRecord.id} references missing lesson`,
+      );
     }
 
     if (classRecord.activeItemType === 'assignment') {
@@ -202,7 +216,10 @@ function validateSeeds(data) {
     }
 
     if (classRecord.activeItemType === 'quiz') {
-      assert(quizIds.has(classRecord.activeItemId), `Class ${classRecord.id} references missing quiz`);
+      assert(
+        quizIds.has(classRecord.activeItemId),
+        `Class ${classRecord.id} references missing quiz`,
+      );
     }
 
     if (classRecord.activeItemType === 'portfolioCheckpoint') {
@@ -260,7 +277,7 @@ async function writeSeeds(data) {
 
     for (const record of data[fileName]) {
       try {
-        const documentRef = db.collection(collectionName).doc(record.id);
+        const documentRef = db.collection(namespacedCollection(collectionName)).doc(record.id);
         const snapshot = await documentRef.get();
         await documentRef.set(record, { merge: true });
 
@@ -273,7 +290,9 @@ async function writeSeeds(data) {
         }
       } catch (error) {
         totals.failed += 1;
-        console.error(`  failed ${record.id}: ${error instanceof Error ? error.message : String(error)}`);
+        console.error(
+          `  failed ${record.id}: ${error instanceof Error ? error.message : String(error)}`,
+        );
       }
     }
   }
@@ -297,7 +316,9 @@ async function main() {
   }
 
   if (!confirmSeed) {
-    throw new Error('Real Firestore writes require CONFIRM_SEED=true. Run with --dry-run to validate only.');
+    throw new Error(
+      'Real Firestore writes require CONFIRM_SEED=true. Run with --dry-run to validate only.',
+    );
   }
 
   const totals = await writeSeeds(data);

@@ -10,6 +10,7 @@ import {
   writeBatch,
   type Unsubscribe,
 } from 'firebase/firestore';
+import { dccCollectionPath, dccDocumentPath } from '../config/firestoreNamespace';
 import { db } from '../firebase/client';
 import type { ClassMembershipType, UserProfile, UserRole } from '../types';
 import { userProfileFromData } from './userService';
@@ -26,7 +27,7 @@ const classMemberField = (membershipType: ClassMembershipType) =>
   membershipType === 'teacher' ? 'teacherIds' : 'studentIds';
 
 export async function getAllUsers(): Promise<UserProfile[]> {
-  const snapshot = await getDocs(collection(db, 'users'));
+  const snapshot = await getDocs(collection(db, dccCollectionPath('users')));
 
   return sortUsers(
     snapshot.docs.map((documentSnapshot) => userProfileFromData(documentSnapshot.data())),
@@ -38,7 +39,7 @@ export function subscribeToUsers(
   onError: (error: Error) => void,
 ): Unsubscribe {
   return onSnapshot(
-    collection(db, 'users'),
+    collection(db, dccCollectionPath('users')),
     (snapshot) => {
       onUsers(
         sortUsers(
@@ -51,7 +52,7 @@ export function subscribeToUsers(
 }
 
 export async function updateUserRole(uid: string, role: UserRole): Promise<void> {
-  await updateDoc(doc(db, 'users', uid), {
+  await updateDoc(doc(db, dccDocumentPath('users', uid)), {
     role,
     updatedAt: serverTimestamp(),
   });
@@ -63,8 +64,8 @@ export async function assignUserToClass(
   membershipType: ClassMembershipType,
 ): Promise<void> {
   const batch = writeBatch(db);
-  const userRef = doc(db, 'users', uid);
-  const classRef = doc(db, 'classes', classId);
+  const userRef = doc(db, dccDocumentPath('users', uid));
+  const classRef = doc(db, dccDocumentPath('classes', classId));
 
   batch.update(userRef, {
     classIds: arrayUnion(classId),
@@ -84,8 +85,8 @@ export async function removeUserFromClass(
   membershipType: ClassMembershipType,
 ): Promise<void> {
   const batch = writeBatch(db);
-  const userRef = doc(db, 'users', uid);
-  const classRef = doc(db, 'classes', classId);
+  const userRef = doc(db, dccDocumentPath('users', uid));
+  const classRef = doc(db, dccDocumentPath('classes', classId));
 
   batch.update(userRef, {
     classIds: arrayRemove(classId),

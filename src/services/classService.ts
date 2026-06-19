@@ -6,6 +6,7 @@ import {
   updateDoc,
   type Unsubscribe,
 } from 'firebase/firestore';
+import { dccDocumentPath } from '../config/firestoreNamespace';
 import { db } from '../firebase/client';
 import type { ActiveClassItem, ActiveItemType, ClassRecord } from '../types';
 
@@ -24,7 +25,7 @@ export const classRecordFromData = (data: Record<string, unknown>): ClassRecord 
 });
 
 export async function getClassById(classId: string): Promise<ClassRecord | null> {
-  const snapshot = await getDoc(doc(db, 'classes', classId));
+  const snapshot = await getDoc(doc(db, dccDocumentPath('classes', classId)));
 
   if (!snapshot.exists()) {
     return null;
@@ -45,7 +46,7 @@ export function subscribeToClass(
   onError: (error: Error) => void,
 ): Unsubscribe {
   return onSnapshot(
-    doc(db, 'classes', classId),
+    doc(db, dccDocumentPath('classes', classId)),
     (snapshot) => {
       onClassRecord(snapshot.exists() ? classRecordFromData(snapshot.data()) : null);
     },
@@ -57,7 +58,7 @@ export async function updateActiveClassItem(
   classId: string,
   activeItem: Pick<ActiveClassItem, 'programAreaId' | 'type' | 'id'>,
 ): Promise<void> {
-  await updateDoc(doc(db, 'classes', classId), {
+  await updateDoc(doc(db, dccDocumentPath('classes', classId)), {
     activeProgramAreaId: activeItem.programAreaId,
     activeItemType: activeItem.type,
     activeItemId: activeItem.id,

@@ -7,6 +7,7 @@ import {
   type DocumentData,
   type QueryConstraint,
 } from 'firebase/firestore';
+import { dccCollectionPath, dccDocumentPath } from '../config/firestoreNamespace';
 import { db } from '../firebase/client';
 
 export function firestoreErrorMessage(error: unknown, fallback: string): string {
@@ -17,10 +18,7 @@ export function firestoreErrorMessage(error: unknown, fallback: string): string 
   return fallback;
 }
 
-function recordFromDocument<T extends { id: string }>(
-  fallbackId: string,
-  data: DocumentData,
-): T {
+function recordFromDocument<T extends { id: string }>(fallbackId: string, data: DocumentData): T {
   return {
     id: String(data.id ?? fallbackId),
     ...data,
@@ -31,7 +29,7 @@ export async function getCollectionRecords<T extends { id: string }>(
   collectionName: string,
   constraints: QueryConstraint[] = [],
 ): Promise<T[]> {
-  const collectionRef = collection(db, collectionName);
+  const collectionRef = collection(db, dccCollectionPath(collectionName));
   const snapshot = constraints.length
     ? await getDocs(query(collectionRef, ...constraints))
     : await getDocs(collectionRef);
@@ -45,7 +43,7 @@ export async function getDocumentRecord<T extends { id: string }>(
   collectionName: string,
   recordId: string,
 ): Promise<T | null> {
-  const snapshot = await getDoc(doc(db, collectionName, recordId));
+  const snapshot = await getDoc(doc(db, dccDocumentPath(collectionName, recordId)));
 
   if (!snapshot.exists()) {
     return null;

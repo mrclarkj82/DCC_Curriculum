@@ -8,6 +8,7 @@ import {
   updateDoc,
   type Unsubscribe,
 } from 'firebase/firestore';
+import { dccDocumentPath } from '../config/firestoreNamespace';
 import { db } from '../firebase/client';
 import type { UserProfile, UserRole } from '../types';
 
@@ -27,7 +28,7 @@ export const userProfileFromData = (data: Record<string, unknown>): UserProfile 
 });
 
 export async function getUserProfile(uid: string): Promise<UserProfile | null> {
-  const snapshot = await getDoc(doc(db, 'users', uid));
+  const snapshot = await getDoc(doc(db, dccDocumentPath('users', uid)));
 
   if (!snapshot.exists()) {
     return null;
@@ -41,7 +42,7 @@ export async function createUserProfileIfNeeded(firebaseUser: User): Promise<voi
     throw new Error('A Google account email is required to create a user profile.');
   }
 
-  const userRef = doc(db, 'users', firebaseUser.uid);
+  const userRef = doc(db, dccDocumentPath('users', firebaseUser.uid));
   const snapshot = await getDoc(userRef);
   const safeDisplayName = firebaseUser.displayName ?? '';
   const safePhotoURL = firebaseUser.photoURL ?? '';
@@ -70,7 +71,7 @@ export async function createUserProfileIfNeeded(firebaseUser: User): Promise<voi
 }
 
 export async function updateLastLogin(firebaseUser: User): Promise<void> {
-  await updateDoc(doc(db, 'users', firebaseUser.uid), {
+  await updateDoc(doc(db, dccDocumentPath('users', firebaseUser.uid)), {
     displayName: firebaseUser.displayName ?? '',
     photoURL: firebaseUser.photoURL ?? '',
     updatedAt: serverTimestamp(),
@@ -84,7 +85,7 @@ export function subscribeToUserProfile(
   onError: (error: Error) => void,
 ): Unsubscribe {
   return onSnapshot(
-    doc(db, 'users', uid),
+    doc(db, dccDocumentPath('users', uid)),
     (snapshot) => {
       onProfile(snapshot.exists() ? userProfileFromData(snapshot.data()) : null);
     },

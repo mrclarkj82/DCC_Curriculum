@@ -39,6 +39,8 @@ Phase 6.5 adds secure student class join codes while preserving teacher/admin cl
 - Do not hardcode Firebase credentials.
 - Do not build features before the requested phase.
 - Keep curriculum/content data separate from app code.
+- DCC data in the shared Firebase project must stay namespaced under `apps/dcc`.
+- Deploy DCC Hosting only to the configured `dcc` Hosting target, not the default DragonMath Hosting site.
 - The app must support multiple program areas.
 - Do not assume the website is Unreal-only.
 - Lesson pages should render from Firestore-backed seed data.

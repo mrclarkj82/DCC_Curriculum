@@ -6,6 +6,7 @@ initializeApp();
 
 const studentDomain = 'student.doralacademynv.org';
 const allowedCodePattern = /^[A-Z0-9]{6}$/;
+const dccAppRef = () => getFirestore().collection('apps').doc('dcc');
 
 const normalizeCode = (value: unknown): string =>
   typeof value === 'string' ? value.trim().replace(/\s+/g, '').toUpperCase() : '';
@@ -33,8 +34,9 @@ export const joinClassWithCode = onCall({ region: 'us-central1' }, async (reques
   }
 
   const db = getFirestore();
-  const codeRef = db.collection('classJoinCodes').doc(code);
-  const userRef = db.collection('users').doc(uid);
+  const appRef = dccAppRef();
+  const codeRef = appRef.collection('classJoinCodes').doc(code);
+  const userRef = appRef.collection('users').doc(uid);
   const now = Timestamp.now();
 
   return db.runTransaction(async (transaction) => {
@@ -63,7 +65,7 @@ export const joinClassWithCode = onCall({ region: 'us-central1' }, async (reques
     }
 
     const classId = tokenString(codeData.classId);
-    const classRef = db.collection('classes').doc(classId);
+    const classRef = appRef.collection('classes').doc(classId);
     const classSnapshot = await transaction.get(classRef);
 
     if (!classSnapshot.exists) {

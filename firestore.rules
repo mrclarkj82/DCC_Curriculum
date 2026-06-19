@@ -19,12 +19,20 @@ service cloud.firestore {
       return signedIn() && request.auth.uid == userId;
     }
 
+    function isDccApp(appId) {
+      return appId == 'dcc';
+    }
+
+    function userPath(userId) {
+      return /databases/$(database)/documents/apps/dcc/users/$(userId);
+    }
+
     function userDoc() {
-      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+      return get(userPath(request.auth.uid));
     }
 
     function userRole() {
-      return signedIn() && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+      return signedIn() && exists(userPath(request.auth.uid))
         ? userDoc().data.role
         : null;
     }
@@ -48,7 +56,7 @@ service cloud.firestore {
     }
 
     function classPath(classId) {
-      return /databases/$(database)/documents/classes/$(classId);
+      return /databases/$(database)/documents/apps/dcc/classes/$(classId);
     }
 
     function classExists(classId) {
@@ -74,7 +82,7 @@ service cloud.firestore {
 
     function userHasClassId(classId) {
       return isAllowedDomain()
-        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && exists(userPath(request.auth.uid))
         && classId in userDoc().data.classIds;
     }
 
@@ -106,11 +114,11 @@ service cloud.firestore {
 
     function activeProgramAreaExists(classData) {
       return classData.activeProgramAreaId is string
-        && exists(/databases/$(database)/documents/programAreas/$(classData.activeProgramAreaId));
+        && exists(/databases/$(database)/documents/apps/dcc/programAreas/$(classData.activeProgramAreaId));
     }
 
     function activeItemMatchesProgramArea(collectionName, classData) {
-      let activeItemPath = /databases/$(database)/documents/$(collectionName)/$(classData.activeItemId);
+      let activeItemPath = /databases/$(database)/documents/apps/dcc/$(collectionName)/$(classData.activeItemId);
       return exists(activeItemPath)
         && get(activeItemPath).data.programAreaId == classData.activeProgramAreaId;
     }
@@ -278,62 +286,73 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time;
     }
 
-    match /users/{userId} {
-      allow get: if isAllowedDomain()
-        && (isSelf(userId) || isAdmin() || teacherCanReadStudent(resource.data));
-      allow list: if isAdmin();
-      allow create: if safeUserCreate(userId);
-      allow update: if safeAdminUserUpdate() || (isSelf(userId) && safeSelfUserUpdate());
-      allow delete: if isAdmin();
-    }
+    match /apps/{appId} {
+      allow read, write: if false;
 
-    match /classes/{classId} {
-      allow read: if canReadClass(classId, resource.data);
-      allow create: if safeAdminClassCreate(classId);
-      allow delete: if isAdmin();
-      allow update: if (isAdmin() && validActiveClassItem(request.resource.data))
-        || (
-          isClassTeacher(resource.data)
-          && teacherActiveClassItemUpdateOnly()
-          && validActiveClassItem(request.resource.data)
-        );
-    }
+      match /users/{userId} {
+        allow get: if isDccApp(appId)
+          && isAllowedDomain()
+          && (isSelf(userId) || isAdmin() || teacherCanReadStudent(resource.data));
+        allow list: if isDccApp(appId) && isAdmin();
+        allow create: if isDccApp(appId) && safeUserCreate(userId);
+        allow update: if isDccApp(appId)
+          && (safeAdminUserUpdate() || (isSelf(userId) && safeSelfUserUpdate()));
+        allow delete: if isDccApp(appId) && isAdmin();
+      }
 
-    match /classJoinCodes/{code} {
-      allow get, list: if canManageJoinCode(resource.data);
-      allow create: if validJoinCodeCreate(code);
-      allow update: if canManageJoinCode(resource.data) && safeJoinCodeDisable();
-      allow delete: if isAdmin();
-    }
+      match /classes/{classId} {
+        allow read: if isDccApp(appId) && canReadClass(classId, resource.data);
+        allow create: if isDccApp(appId) && safeAdminClassCreate(classId);
+        allow delete: if isDccApp(appId) && isAdmin();
+        allow update: if isDccApp(appId)
+          && (
+            (isAdmin() && validActiveClassItem(request.resource.data))
+            || (
+              isClassTeacher(resource.data)
+              && teacherActiveClassItemUpdateOnly()
+              && validActiveClassItem(request.resource.data)
+            )
+          );
+      }
 
-    match /programAreas/{programAreaId} {
-      allow read: if isAllowedDomain();
-      allow write: if isAdmin();
-    }
+      match /classJoinCodes/{code} {
+        allow get, list: if isDccApp(appId) && canManageJoinCode(resource.data);
+        allow create: if isDccApp(appId) && validJoinCodeCreate(code);
+        allow update: if isDccApp(appId)
+          && canManageJoinCode(resource.data)
+          && safeJoinCodeDisable();
+        allow delete: if isDccApp(appId) && isAdmin();
+      }
 
-    match /lessons/{lessonId} {
-      allow read: if isAllowedDomain();
-      allow write: if isAdmin();
-    }
+      match /programAreas/{programAreaId} {
+        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow write: if isDccApp(appId) && isAdmin();
+      }
 
-    match /assignments/{assignmentId} {
-      allow read: if isAllowedDomain();
-      allow write: if isAdmin();
-    }
+      match /lessons/{lessonId} {
+        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow write: if isDccApp(appId) && isAdmin();
+      }
 
-    match /quizzes/{quizId} {
-      allow read: if isAllowedDomain();
-      allow write: if isAdmin();
-    }
+      match /assignments/{assignmentId} {
+        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow write: if isDccApp(appId) && isAdmin();
+      }
 
-    match /mediaProjects/{projectId} {
-      allow read: if isAllowedDomain();
-      allow write: if isAdmin();
-    }
+      match /quizzes/{quizId} {
+        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow write: if isDccApp(appId) && isAdmin();
+      }
 
-    match /broadcastUpdates/{updateId} {
-      allow read: if isAllowedDomain();
-      allow write: if isAdmin();
+      match /mediaProjects/{projectId} {
+        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow write: if isDccApp(appId) && isAdmin();
+      }
+
+      match /broadcastUpdates/{updateId} {
+        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow write: if isDccApp(appId) && isAdmin();
+      }
     }
 
     // Future phases will add tightly scoped rules for classroom workflow collections:

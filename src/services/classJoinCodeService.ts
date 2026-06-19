@@ -14,6 +14,7 @@ import {
   type Unsubscribe,
 } from 'firebase/firestore';
 import { httpsCallable } from 'firebase/functions';
+import { dccCollectionPath, dccDocumentPath } from '../config/firestoreNamespace';
 import { auth, cloudFunctions, db } from '../firebase/client';
 import type { ClassJoinCode, ClassRecord, JoinClassResult } from '../types';
 import { getClassById } from './classService';
@@ -69,7 +70,7 @@ const getCurrentUid = (): string => {
 async function createUniqueCode(): Promise<string> {
   for (let attempt = 0; attempt < maxCodeAttempts; attempt += 1) {
     const code = createRandomCode();
-    const snapshot = await getDoc(doc(db, 'classJoinCodes', code));
+    const snapshot = await getDoc(doc(db, dccDocumentPath('classJoinCodes', code)));
 
     if (!snapshot.exists()) {
       return code;
@@ -109,7 +110,7 @@ async function getClassOrThrow(classId: string): Promise<ClassRecord> {
 export async function getJoinCodeForClass(classId: string): Promise<ClassJoinCode | null> {
   const snapshot = await getDocs(
     query(
-      collection(db, 'classJoinCodes'),
+      collection(db, dccCollectionPath('classJoinCodes')),
       where('classId', '==', classId),
       where('isActive', '==', true),
       limit(1),
@@ -132,7 +133,7 @@ export function subscribeToJoinCodeForClass(
 ): Unsubscribe {
   return onSnapshot(
     query(
-      collection(db, 'classJoinCodes'),
+      collection(db, dccCollectionPath('classJoinCodes')),
       where('classId', '==', classId),
       where('isActive', '==', true),
       limit(1),
@@ -161,7 +162,7 @@ export async function generateJoinCodeForClass(classId: string): Promise<ClassJo
   const code = await createUniqueCode();
   const joinCode = await buildJoinCodeRecord(classRecord, code);
 
-  await setDoc(doc(db, 'classJoinCodes', code), joinCode);
+  await setDoc(doc(db, dccDocumentPath('classJoinCodes', code)), joinCode);
 
   return joinCode;
 }
@@ -174,13 +175,13 @@ export async function regenerateJoinCodeForClass(classId: string): Promise<Class
   const batch = writeBatch(db);
 
   if (existingCode) {
-    batch.update(doc(db, 'classJoinCodes', existingCode.code), {
+    batch.update(doc(db, dccDocumentPath('classJoinCodes', existingCode.code)), {
       isActive: false,
       updatedAt: serverTimestamp(),
     });
   }
 
-  batch.set(doc(db, 'classJoinCodes', code), nextJoinCode);
+  batch.set(doc(db, dccDocumentPath('classJoinCodes', code)), nextJoinCode);
 
   await batch.commit();
 
@@ -194,7 +195,7 @@ export async function disableJoinCode(code: string): Promise<void> {
     throw new Error('Choose a class code before disabling it.');
   }
 
-  await updateDoc(doc(db, 'classJoinCodes', normalizedCode), {
+  await updateDoc(doc(db, dccDocumentPath('classJoinCodes', normalizedCode)), {
     isActive: false,
     updatedAt: serverTimestamp(),
   });

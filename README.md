@@ -58,6 +58,7 @@ VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 VITE_ALLOWED_EMAIL_DOMAINS=doralacademynv.org,student.doralacademynv.org
+VITE_FIRESTORE_NAMESPACE=apps/dcc
 ```
 
 Do not commit `.env.local` or real Firebase credentials.
@@ -76,7 +77,7 @@ For Firebase setup:
 6. Apply `storage.rules`.
 7. Copy `.env.example` to `.env.local`, paste the Firebase web config values, and set `VITE_ALLOWED_EMAIL_DOMAINS`.
 
-Firestore rules now enforce authenticated school-domain users, safe default student profile creation, role boundaries, class membership checks, authenticated curriculum reads, and admin-only curriculum writes. Storage remains closed until a later upload phase.
+Firestore rules now enforce authenticated school-domain users, safe default student profile creation, role boundaries, class membership checks, authenticated curriculum reads, and admin-only curriculum writes under the DCC namespace `apps/dcc`. Storage remains closed until a later upload phase.
 
 ## Phase 5 Firestore Content
 
@@ -89,14 +90,14 @@ Phase 5 adds:
 
 Expected Firestore collections:
 
-- `programAreas`
-- `lessons`
-- `assignments`
-- `quizzes`
-- `mediaProjects`
-- `broadcastUpdates`
-- `classes`
-- `users`
+- `apps/dcc/programAreas`
+- `apps/dcc/lessons`
+- `apps/dcc/assignments`
+- `apps/dcc/quizzes`
+- `apps/dcc/mediaProjects`
+- `apps/dcc/broadcastUpdates`
+- `apps/dcc/classes`
+- `apps/dcc/users`
 
 Seed files live in `curriculum/website-data/` and should remain the local source used by the importer. The live app reads Firestore route content after records are seeded.
 
@@ -124,7 +125,7 @@ Real seed write in Windows Command Prompt:
 set CONFIRM_SEED=true && npm run seed:curriculum
 ```
 
-The real write path uses the Firebase Admin SDK. Prefer Application Default Credentials for local admin access, such as `gcloud auth application-default login`, or set `FIREBASE_SERVICE_ACCOUNT_PATH` to a service account JSON file stored outside this repository. Never commit service account files, `.env.local`, private school links, rosters, student media, or Firebase secrets.
+The real write path uses the Firebase Admin SDK and writes to `apps/dcc` by default. Prefer Application Default Credentials for local admin access, such as `gcloud auth application-default login`, or set `FIREBASE_SERVICE_ACCOUNT_PATH` to a service account JSON file stored outside this repository. Never commit service account files, `.env.local`, private school links, rosters, student media, or Firebase secrets.
 
 `/today` works like this:
 
@@ -237,6 +238,19 @@ firebase deploy --only hosting,firestore:rules,functions
 
 Phase 6.5 does not implement bell ringer submissions, exit tickets, uploads, grading, quiz attempts, or portfolios.
 
+## Shared Firebase Project And Namespacing
+
+DCC Creative Studio uses the shared Blaze Firebase project `dragonmath-f6f56`, but DCC app data is namespaced under `apps/dcc` so it does not collide with DragonMath data.
+
+Shared project services:
+
+- Firebase Authentication users are shared at the Firebase project level.
+- DCC Firestore app data lives under `apps/dcc`.
+- DCC Hosting deploys to the separate Hosting site target `dcc`.
+- DCC live site URL is `https://dcc-creative-studio-dragonmath.web.app`.
+
+Do not deploy this app to the default DragonMath Hosting site. Use the configured `dcc` Hosting target.
+
 ## Routes
 
 Public:
@@ -318,12 +332,11 @@ Local Demo Mode is available only while running the Vite dev server. It is hidde
 
 ## Live Deployment
 
-Firebase Hosting project ID: `dcc-creative-studio`
+Firebase project ID: `dragonmath-f6f56`
 
 Live URLs:
 
-- `https://dcc-creative-studio.web.app`
-- `https://dcc-creative-studio.firebaseapp.com`
+- `https://dcc-creative-studio-dragonmath.web.app`
 
 Deploy command:
 

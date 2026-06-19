@@ -9,6 +9,7 @@ import {
   updateDoc,
   type Unsubscribe,
 } from 'firebase/firestore';
+import { dccCollectionPath, dccDocumentPath } from '../config/firestoreNamespace';
 import { db } from '../firebase/client';
 import type { ActiveClassItem, ActiveItemType, ClassRecord } from '../types';
 import { classRecordFromData } from './classService';
@@ -38,7 +39,7 @@ const sortClasses = (classes: ClassRecord[]) =>
   });
 
 export async function getAllClasses(): Promise<ClassRecord[]> {
-  const snapshot = await getDocs(collection(db, 'classes'));
+  const snapshot = await getDocs(collection(db, dccCollectionPath('classes')));
 
   return sortClasses(
     snapshot.docs.map((documentSnapshot) => classRecordFromData(documentSnapshot.data())),
@@ -50,7 +51,7 @@ export function subscribeToClasses(
   onError: (error: Error) => void,
 ): Unsubscribe {
   return onSnapshot(
-    collection(db, 'classes'),
+    collection(db, dccCollectionPath('classes')),
     (snapshot) => {
       onClasses(
         sortClasses(
@@ -64,7 +65,7 @@ export function subscribeToClasses(
 
 export async function createClass(classData: CreateClassInput): Promise<void> {
   const classId = classData.id.trim();
-  const classRef = doc(db, 'classes', classId);
+  const classRef = doc(db, dccDocumentPath('classes', classId));
   const existingClass = await getDoc(classRef);
 
   if (existingClass.exists()) {
@@ -90,7 +91,7 @@ export async function updateClassBasicInfo(
   classId: string,
   updates: ClassBasicUpdates,
 ): Promise<void> {
-  await updateDoc(doc(db, 'classes', classId), {
+  await updateDoc(doc(db, dccDocumentPath('classes', classId)), {
     ...updates,
     updatedAt: serverTimestamp(),
   });
@@ -116,7 +117,7 @@ export async function updateClassActiveItem(
   classId: string,
   activeItem: ActiveItemUpdate,
 ): Promise<void> {
-  await updateDoc(doc(db, 'classes', classId), {
+  await updateDoc(doc(db, dccDocumentPath('classes', classId)), {
     activeProgramAreaId: activeItem.programAreaId,
     activeItemType: activeItem.type,
     activeItemId: activeItem.id,

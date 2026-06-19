@@ -1,5 +1,15 @@
 {
   "projects": {
-    "default": "dcc-creative-studio"
-  }
+    "default": "dragonmath-f6f56"
+  },
+  "targets": {
+    "dragonmath-f6f56": {
+      "hosting": {
+        "dcc": [
+          "dcc-creative-studio-dragonmath"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
