@@ -1,84 +1,140 @@
-import { FormEvent, useEffect, useState } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
 import { EmptyState } from '../components/EmptyState';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
-import { getActiveItem } from '../services/activeItemService';
-import { getClassesForUser, updateActiveClassItem } from '../services/classService';
+import {
+  getActiveItemOptions,
+  resolveActiveItem,
+  supportedActiveItemTypes,
+  validateActiveItem,
+  type ActiveItemOption,
+} from '../services/activeItemService';
+import { getClassesForUser } from '../services/classService';
+import { subscribeToClasses, updateClassActiveItem } from '../services/classManagementService';
 import { firestoreErrorMessage } from '../services/firestoreService';
-import type { ActiveClassItem, ActiveItemType, ClassRecord } from '../types';
+import { getProgramAreas } from '../services/programAreaService';
+import type { ActiveClassItem, ActiveItemType, ClassRecord, ProgramArea } from '../types';
+import { canSetActiveItem } from '../types';
 
-const activeItemTypes: ActiveItemType[] = [
-  'lesson',
-  'assignment',
-  'mediaProject',
-  'broadcastUpdate',
-  'quiz',
-  'portfolioCheckpoint',
-];
+const activeItemTypeLabels: Record<ActiveItemType, string> = {
+  lesson: 'Lesson',
+  assignment: 'Assignment',
+  mediaProject: 'Media Project',
+  broadcastUpdate: 'Broadcast Update',
+  quiz: 'Quiz',
+  portfolioCheckpoint: 'Portfolio Checkpoint',
+};
 
-interface ClassActiveView {
-  classRecord: ClassRecord;
-  activeItem: ActiveClassItem | null;
-  error: string | null;
+interface ActiveItemFormState {
+  classId: string;
+  activeProgramAreaId: string;
+  activeItemType: ActiveItemType;
+  activeItemId: string;
+}
+
+const emptyActiveItemForm: ActiveItemFormState = {
+  classId: '',
+  activeProgramAreaId: '',
+  activeItemType: 'lesson',
+  activeItemId: '',
+};
+
+function activeFormFromClass(classRecord: ClassRecord): ActiveItemFormState {
+  return {
+    classId: classRecord.id,
+    activeProgramAreaId: classRecord.activeProgramAreaId,
+    activeItemType: classRecord.activeItemType,
+    activeItemId: classRecord.activeItemId,
+  };
 }
 
 export function TeacherPage() {
-  const { classIds, isAdmin } = useAuth();
-  const [classViews, setClassViews] = useState<ClassActiveView[]>([]);
+  const { classIds, isAdmin, userProfile } = useAuth();
+  const [classRecords, setClassRecords] = useState<ClassRecord[]>([]);
+  const [programAreas, setProgramAreas] = useState<ProgramArea[]>([]);
+  const [activeItemsByClassId, setActiveItemsByClassId] = useState<
+    Record<string, ActiveClassItem | null>
+  >({});
+  const [activeErrorsByClassId, setActiveErrorsByClassId] = useState<Record<string, string>>({});
   const [isLoadingClasses, setIsLoadingClasses] = useState(false);
   const [classError, setClassError] = useState<string | null>(null);
-  const [selectedClassId, setSelectedClassId] = useState('');
-  const [activeItemType, setActiveItemType] = useState<ActiveItemType>('lesson');
-  const [activeItemId, setActiveItemId] = useState('');
+  const [activeForm, setActiveForm] = useState<ActiveItemFormState>(emptyActiveItemForm);
+  const [activeOptions, setActiveOptions] = useState<ActiveItemOption[]>([]);
+  const [activeOptionsLoading, setActiveOptionsLoading] = useState(false);
+  const [activeOptionsError, setActiveOptionsError] = useState<string | null>(null);
   const [formMessage, setFormMessage] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
 
   useEffect(() => {
-    if (!classIds.length) {
-      setClassViews([]);
-      setSelectedClassId('');
-      return;
+    let didCancel = false;
+
+    getProgramAreas()
+      .then((nextProgramAreas) => {
+        if (!didCancel) {
+          setProgramAreas(nextProgramAreas);
+        }
+      })
+      .catch((error: unknown) => {
+        if (!didCancel) {
+          setClassError(firestoreErrorMessage(error, 'Unable to load program areas.'));
+        }
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!userProfile) {
+      setClassRecords([]);
+      setIsLoadingClasses(false);
+      return undefined;
     }
 
-    let didCancel = false;
     setIsLoadingClasses(true);
     setClassError(null);
 
+    if (isAdmin) {
+      return subscribeToClasses(
+        (nextClasses) => {
+          setClassRecords(nextClasses);
+          setIsLoadingClasses(false);
+        },
+        (error) => {
+          setClassError(firestoreErrorMessage(error, 'Unable to load classes.'));
+          setClassRecords([]);
+          setIsLoadingClasses(false);
+        },
+      );
+    }
+
+    if (!classIds.length) {
+      setClassRecords([]);
+      setIsLoadingClasses(false);
+      return undefined;
+    }
+
+    let didCancel = false;
+
     getClassesForUser(classIds)
-      .then(async (classRecords) => {
-        const nextViews = await Promise.all(
-          classRecords.map(async (classRecord) => {
-            try {
-              const activeItem = await getActiveItem(
-                classRecord.activeItemType,
-                classRecord.activeItemId,
-                classRecord.activeProgramAreaId,
-              );
-
-              return { classRecord, activeItem, error: null };
-            } catch (error) {
-              return {
-                classRecord,
-                activeItem: null,
-                error: firestoreErrorMessage(error, 'Unable to resolve active item.'),
-              };
-            }
-          }),
-        );
-
+      .then((nextClasses) => {
         if (!didCancel) {
-          setClassViews(nextViews);
-          setSelectedClassId((current) => current || nextViews[0]?.classRecord.id || '');
+          setClassRecords(
+            nextClasses.filter((classRecord) => canSetActiveItem(userProfile, classRecord)),
+          );
           setIsLoadingClasses(false);
         }
       })
       .catch((error: unknown) => {
         if (!didCancel) {
           setClassError(firestoreErrorMessage(error, 'Unable to load assigned classes.'));
+          setClassRecords([]);
           setIsLoadingClasses(false);
         }
       });
@@ -86,140 +142,322 @@ export function TeacherPage() {
     return () => {
       didCancel = true;
     };
-  }, [classIds]);
+  }, [classIds, isAdmin, userProfile]);
 
-  const selectedClass = classViews.find((view) => view.classRecord.id === selectedClassId)
-    ?.classRecord;
+  useEffect(() => {
+    if (activeForm.classId || !classRecords.length) {
+      return;
+    }
+
+    setActiveForm(activeFormFromClass(classRecords[0]));
+  }, [activeForm.classId, classRecords]);
+
+  useEffect(() => {
+    if (!classRecords.length) {
+      setActiveItemsByClassId({});
+      setActiveErrorsByClassId({});
+      return undefined;
+    }
+
+    let didCancel = false;
+
+    Promise.all(
+      classRecords.map(async (classRecord) => {
+        try {
+          const activeItem = await resolveActiveItem(
+            classRecord.activeItemType,
+            classRecord.activeItemId,
+            classRecord.activeProgramAreaId,
+          );
+
+          return { classId: classRecord.id, activeItem, error: null };
+        } catch (error) {
+          return {
+            classId: classRecord.id,
+            activeItem: null,
+            error: firestoreErrorMessage(error, 'Unable to resolve active item.'),
+          };
+        }
+      }),
+    ).then((results) => {
+      if (didCancel) {
+        return;
+      }
+
+      setActiveItemsByClassId(
+        Object.fromEntries(results.map((result) => [result.classId, result.activeItem])),
+      );
+      setActiveErrorsByClassId(
+        Object.fromEntries(
+          results
+            .filter((result) => result.error)
+            .map((result) => [result.classId, result.error as string]),
+        ),
+      );
+    });
+
+    return () => {
+      didCancel = true;
+    };
+  }, [classRecords]);
+
+  useEffect(() => {
+    if (!activeForm.activeProgramAreaId || activeForm.activeItemType === 'portfolioCheckpoint') {
+      setActiveOptions([]);
+      setActiveOptionsLoading(false);
+      setActiveOptionsError(null);
+      return undefined;
+    }
+
+    let didCancel = false;
+    setActiveOptionsLoading(true);
+    setActiveOptionsError(null);
+    setActiveOptions([]);
+
+    getActiveItemOptions(activeForm.activeProgramAreaId, activeForm.activeItemType)
+      .then((options) => {
+        if (didCancel) {
+          return;
+        }
+
+        setActiveOptions(options);
+        setActiveOptionsLoading(false);
+
+        if (options.length && !options.some((option) => option.id === activeForm.activeItemId)) {
+          setActiveForm((current) => {
+            if (
+              current.activeProgramAreaId !== activeForm.activeProgramAreaId ||
+              current.activeItemType !== activeForm.activeItemType
+            ) {
+              return current;
+            }
+
+            return { ...current, activeItemId: options[0].id };
+          });
+        }
+      })
+      .catch((error: unknown) => {
+        if (!didCancel) {
+          setActiveOptions([]);
+          setActiveOptionsError(
+            firestoreErrorMessage(error, 'Unable to load active item options.'),
+          );
+          setActiveOptionsLoading(false);
+        }
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, [activeForm.activeItemId, activeForm.activeItemType, activeForm.activeProgramAreaId]);
+
+  const programAreaById = useMemo(
+    () => new Map(programAreas.map((programArea) => [programArea.id, programArea])),
+    [programAreas],
+  );
+
+  const overview = useMemo(
+    () => ({
+      classes: classRecords.length,
+      students: classRecords.reduce(
+        (totalStudents, classRecord) => totalStudents + classRecord.studentIds.length,
+        0,
+      ),
+      activeItems: classRecords.filter((classRecord) => classRecord.activeItemId).length,
+    }),
+    [classRecords],
+  );
+
+  const chooseActiveClass = (classId: string) => {
+    const classRecord = classRecords.find((nextClass) => nextClass.id === classId);
+
+    if (classRecord) {
+      setActiveForm(activeFormFromClass(classRecord));
+    }
+  };
 
   const handleSetActiveItem = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormMessage(null);
     setFormError(null);
 
+    const selectedClass = classRecords.find((classRecord) => classRecord.id === activeForm.classId);
+
     if (!selectedClass) {
       setFormError('Choose a class before setting an active item.');
       return;
     }
 
-    if (!activeItemTypes.includes(activeItemType)) {
-      setFormError('Choose a supported active item type.');
-      return;
-    }
-
-    if (!activeItemId.trim()) {
-      setFormError('Enter an active item ID.');
+    if (!canSetActiveItem(userProfile, selectedClass)) {
+      setFormError('You can only set active items for classes assigned to you.');
       return;
     }
 
     setIsSaving(true);
 
     try {
-      const resolvedItem = await getActiveItem(
-        activeItemType,
-        activeItemId.trim(),
-        selectedClass.activeProgramAreaId,
+      const validation = await validateActiveItem(
+        activeForm.activeProgramAreaId,
+        activeForm.activeItemType,
+        activeForm.activeItemId,
       );
 
-      if (activeItemType !== 'portfolioCheckpoint' && !resolvedItem.record) {
-        setFormError('That active item ID does not exist in Firestore yet.');
-        setIsSaving(false);
+      if (!validation.isValid || !validation.item) {
+        setFormError(validation.message);
         return;
       }
 
-      await updateActiveClassItem(selectedClass.id, {
-        id: activeItemId.trim(),
-        type: activeItemType,
-        programAreaId: resolvedItem.programAreaId || selectedClass.activeProgramAreaId,
+      await updateClassActiveItem(selectedClass.id, {
+        id: validation.item.id,
+        type: validation.item.type,
+        programAreaId: validation.item.programAreaId,
       });
 
-      setClassViews((currentViews) =>
-        currentViews.map((view) =>
-          view.classRecord.id === selectedClass.id
+      setClassRecords((currentClasses) =>
+        currentClasses.map((classRecord) =>
+          classRecord.id === selectedClass.id
             ? {
-                classRecord: {
-                  ...view.classRecord,
-                  activeProgramAreaId: resolvedItem.programAreaId || selectedClass.activeProgramAreaId,
-                  activeItemType,
-                  activeItemId: activeItemId.trim(),
-                },
-                activeItem: resolvedItem,
-                error: null,
+                ...classRecord,
+                activeProgramAreaId:
+                  validation.item?.programAreaId ?? classRecord.activeProgramAreaId,
+                activeItemType: validation.item?.type ?? classRecord.activeItemType,
+                activeItemId: validation.item?.id ?? classRecord.activeItemId,
               }
-            : view,
+            : classRecord,
         ),
       );
       setFormMessage('Active class item updated.');
-      setIsSaving(false);
     } catch (error) {
       setFormError(firestoreErrorMessage(error, 'Unable to update active class item.'));
+    } finally {
       setIsSaving(false);
     }
   };
 
   return (
     <PageContainer
-      eyebrow="Teacher Dashboard"
-      title="Teacher Studio Board"
-      description="Assigned classes and active class items are loaded from Firestore."
+      eyebrow="Teacher Control Panel"
+      title="Active Class Items"
+      description="View assigned classes and set the Firestore item students see on Today's Mission."
       className="studio-cyan"
     >
       {isLoadingClasses && <LoadingState label="Loading assigned classes from Firestore..." />}
       {classError && <ErrorState message={classError} />}
-      {!classIds.length && (
+      {formMessage && <p className="form-message">{formMessage}</p>}
+      {formError && <ErrorState message={formError} />}
+
+      {!classRecords.length && !isLoadingClasses && (
         <EmptyState
-          title={isAdmin ? 'No assigned admin classes yet' : 'No assigned classes yet'}
-          message="Class IDs must be added to your user profile before this dashboard can show assigned class records."
+          title={isAdmin ? 'No classes exist yet' : 'No assigned teacher classes yet'}
+          message={
+            isAdmin
+              ? 'Create classes from the admin page before managing active items here.'
+              : 'An admin needs to assign your account as a teacher on a class before this page can manage active items.'
+          }
         />
       )}
 
       <div className="section-stack">
         <section className="content-section neon-section">
-          <p className="retro-label">Assigned Classes</p>
-          <h2>Active Class Items</h2>
-          <div className="card-grid two">
-            {classViews.map(({ classRecord, activeItem, error }) => (
-              <article className="card neon-card compact-card" key={classRecord.id}>
-                <div className="card-header">
-                  <h3>
-                    {classRecord.name} / {classRecord.period}
-                  </h3>
-                  <StatusBadge status={activeItem?.status ?? 'active'} />
-                </div>
-                <dl className="detail-list">
-                  <div>
-                    <dt>Program Area ID</dt>
-                    <dd>{classRecord.activeProgramAreaId}</dd>
-                  </div>
-                  <div>
-                    <dt>Active Item Type</dt>
-                    <dd>{classRecord.activeItemType}</dd>
-                  </div>
-                  <div>
-                    <dt>Active Item ID</dt>
-                    <dd>{classRecord.activeItemId}</dd>
-                  </div>
-                  <div>
-                    <dt>Resolved Title</dt>
-                    <dd>{activeItem?.title ?? error ?? 'Not resolved yet'}</dd>
-                  </div>
-                </dl>
-              </article>
-            ))}
+          <div className="section-heading-row">
+            <div>
+              <p className="retro-label">Teacher Overview</p>
+              <h2>{isAdmin ? 'All Classes' : 'Assigned Classes'}</h2>
+            </div>
+            <StatusBadge status={isAdmin ? 'admin' : 'teacher'} />
+          </div>
+          <div className="metric-grid">
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Classes</p>
+              <h3>{overview.classes}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Students</p>
+              <h3>{overview.students}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Active Items</p>
+              <h3>{overview.activeItems}</h3>
+            </article>
           </div>
         </section>
 
-        {!!classViews.length && (
+        {!!classRecords.length && (
           <section className="content-section neon-section">
-            <p className="retro-label">Optional Phase 5 Control</p>
-            <h2>Set Active Item</h2>
-            <form className="class-active-form" onSubmit={handleSetActiveItem}>
+            <p className="retro-label">Assigned Class Cards</p>
+            <h2>What Students See Today</h2>
+            <div className="card-grid two">
+              {classRecords.map((classRecord) => {
+                const activeItem = activeItemsByClassId[classRecord.id];
+                const activeError = activeErrorsByClassId[classRecord.id];
+
+                return (
+                  <article className="card neon-card compact-card" key={classRecord.id}>
+                    <div className="card-header">
+                      <h3>
+                        {classRecord.name} / {classRecord.period}
+                      </h3>
+                      <StatusBadge status={activeItem?.status ?? 'active'} />
+                    </div>
+                    <dl className="detail-list">
+                      <div>
+                        <dt>Program Area</dt>
+                        <dd>
+                          {programAreaById.get(classRecord.activeProgramAreaId)?.title ??
+                            classRecord.activeProgramAreaId}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Active Item Type</dt>
+                        <dd>{activeItemTypeLabels[classRecord.activeItemType]}</dd>
+                      </div>
+                      <div>
+                        <dt>Active Item ID</dt>
+                        <dd>{classRecord.activeItemId}</dd>
+                      </div>
+                      <div>
+                        <dt>Active Item Title</dt>
+                        <dd>{activeItem?.title ?? activeError ?? 'Resolving...'}</dd>
+                      </div>
+                      <div>
+                        <dt>Student Count</dt>
+                        <dd>{classRecord.studentIds.length}</dd>
+                      </div>
+                    </dl>
+                    <div className="button-row">
+                      <button
+                        className="secondary-button"
+                        type="button"
+                        onClick={() => chooseActiveClass(classRecord.id)}
+                      >
+                        Set Active
+                      </button>
+                      <Link className="outline-button" to="/today">
+                        Open Today
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {!!classRecords.length && (
+          <section className="content-section neon-section">
+            <p className="retro-label">Set Active Item</p>
+            <h2>Teacher-Controlled Today Item</h2>
+            <form
+              className="management-form active-item-management-form"
+              onSubmit={handleSetActiveItem}
+            >
               <label>
                 Class
                 <select
-                  value={selectedClassId}
-                  onChange={(event) => setSelectedClassId(event.target.value)}
+                  value={activeForm.classId}
+                  onChange={(event) => chooseActiveClass(event.target.value)}
                 >
-                  {classViews.map(({ classRecord }) => (
+                  {classRecords.map((classRecord) => (
                     <option key={classRecord.id} value={classRecord.id}>
                       {classRecord.name} / {classRecord.period}
                     </option>
@@ -228,14 +466,40 @@ export function TeacherPage() {
               </label>
 
               <label>
+                Program area
+                <select
+                  value={activeForm.activeProgramAreaId}
+                  onChange={(event) =>
+                    setActiveForm((current) => ({
+                      ...current,
+                      activeProgramAreaId: event.target.value,
+                      activeItemId: '',
+                    }))
+                  }
+                >
+                  {programAreas.map((programArea) => (
+                    <option key={programArea.id} value={programArea.id}>
+                      {programArea.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+
+              <label>
                 Active item type
                 <select
-                  value={activeItemType}
-                  onChange={(event) => setActiveItemType(event.target.value as ActiveItemType)}
+                  value={activeForm.activeItemType}
+                  onChange={(event) =>
+                    setActiveForm((current) => ({
+                      ...current,
+                      activeItemType: event.target.value as ActiveItemType,
+                      activeItemId: '',
+                    }))
+                  }
                 >
-                  {activeItemTypes.map((type) => (
+                  {supportedActiveItemTypes.map((type) => (
                     <option key={type} value={type}>
-                      {type}
+                      {activeItemTypeLabels[type]}
                     </option>
                   ))}
                 </select>
@@ -243,19 +507,43 @@ export function TeacherPage() {
 
               <label>
                 Active item ID
-                <input
-                  value={activeItemId}
-                  onChange={(event) => setActiveItemId(event.target.value)}
-                  placeholder="ue-q1-l01"
-                />
+                {activeForm.activeItemType === 'portfolioCheckpoint' || !activeOptions.length ? (
+                  <input
+                    value={activeForm.activeItemId}
+                    onChange={(event) =>
+                      setActiveForm((current) => ({
+                        ...current,
+                        activeItemId: event.target.value,
+                      }))
+                    }
+                    placeholder="ue-q1-l01"
+                  />
+                ) : (
+                  <select
+                    value={activeForm.activeItemId}
+                    disabled={activeOptionsLoading}
+                    onChange={(event) =>
+                      setActiveForm((current) => ({
+                        ...current,
+                        activeItemId: event.target.value,
+                      }))
+                    }
+                  >
+                    {activeOptions.map((option) => (
+                      <option key={option.id} value={option.id}>
+                        {option.title} ({option.id})
+                      </option>
+                    ))}
+                  </select>
+                )}
               </label>
 
               <button className="gradient-button" type="submit" disabled={isSaving}>
                 {isSaving ? 'Saving...' : 'Set Active Item'}
               </button>
             </form>
-            {formMessage && <p className="form-message">{formMessage}</p>}
-            {formError && <ErrorState message={formError} />}
+            {activeOptionsLoading && <LoadingState label="Loading active item choices..." />}
+            {activeOptionsError && <ErrorState message={activeOptionsError} />}
           </section>
         )}
       </div>

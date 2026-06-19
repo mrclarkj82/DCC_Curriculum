@@ -11,10 +11,10 @@ import {
 import { db } from '../firebase/client';
 import type { UserProfile, UserRole } from '../types';
 
-const toUserRole = (role: unknown): UserRole =>
+export const toUserRole = (role: unknown): UserRole =>
   role === 'teacher' || role === 'admin' || role === 'student' ? role : 'student';
 
-const userProfileFromData = (data: Record<string, unknown>): UserProfile => ({
+export const userProfileFromData = (data: Record<string, unknown>): UserProfile => ({
   uid: String(data.uid ?? ''),
   displayName: String(data.displayName ?? ''),
   email: String(data.email ?? ''),

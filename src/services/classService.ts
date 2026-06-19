@@ -9,7 +9,7 @@ import {
 import { db } from '../firebase/client';
 import type { ActiveClassItem, ActiveItemType, ClassRecord } from '../types';
 
-const classRecordFromData = (data: Record<string, unknown>): ClassRecord => ({
+export const classRecordFromData = (data: Record<string, unknown>): ClassRecord => ({
   id: String(data.id ?? ''),
   name: String(data.name ?? ''),
   period: String(data.period ?? ''),

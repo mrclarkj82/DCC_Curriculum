@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 5 - Firestore content seeding and active Today workflow
+Phase 6 - Teacher/admin class management and active item controls
 
 ## Local Development
 
@@ -145,6 +145,50 @@ Not implemented yet:
 - Portfolio workflows.
 - Full admin CMS editing.
 
+## Phase 6 Teacher/Admin Management
+
+Phase 6 adds the minimum in-site controls needed to run DCC Creative Studio with real classes:
+
+- User management from the `users` collection.
+- Role management for admins.
+- Class creation and basic class info editing.
+- Student and teacher class assignment controls that keep `users/{uid}.classIds` synchronized with `classes/{classId}.studentIds` and `classes/{classId}.teacherIds`.
+- Active item controls for lessons, assignments, media projects, Broadcast Desk Updates, quizzes, and portfolio checkpoint placeholders.
+
+Admin workflow:
+
+1. Sign in with an approved school Google account.
+2. Manually promote the first trusted admin in Firestore/Firebase Console after their first login.
+3. Go to `/admin`.
+4. Assign user roles and class memberships.
+5. Create class records as needed.
+6. Set each class active item for `/today`.
+
+Teacher workflow:
+
+1. Sign in with an approved school Google account.
+2. An admin must assign the account to a class as a teacher.
+3. Go to `/teacher`.
+4. View assigned classes and current active items.
+5. Set active items only for assigned classes.
+
+Student workflow:
+
+1. Sign in with an approved school Google account.
+2. An admin must assign the account to a class as a student.
+3. Go to `/today`.
+4. The page loads the active item from the assigned class record.
+
+Phase 6 does not implement bell ringer submissions, exit ticket submissions, assignment uploads, media uploads, grading, quiz attempts, or portfolio submissions. It is management plumbing only, not a full CMS and not a video editor.
+
+Security notes:
+
+- Role and class writes are protected by Firestore rules, not only hidden by the UI.
+- Students cannot promote themselves or assign themselves to classes.
+- Teachers cannot change roles or class rosters.
+- Assigned teachers can update only active item fields for their own classes.
+- `.env.local`, service account keys, Firebase secrets, rosters, student data, private links, and student media must not be committed.
+
 ## Routes
 
 Public:
@@ -210,10 +254,9 @@ To bootstrap the first admin or teacher:
 2. Open Firebase Console.
 3. Find the created `users/{uid}` document.
 4. Manually change `role` to `admin` or `teacher`.
-5. Add class IDs to the user's `classIds` only for users who should see those class records.
-6. Add the user's UID to the matching class record's `studentIds` or `teacherIds` array.
+5. After the first admin is promoted, use `/admin` to assign roles and class memberships.
 
-Future phases may add safer admin tooling or custom claims, but Phase 4 intentionally keeps role promotion out of the client.
+There is no insecure "make me admin" client button. Self-promotion remains intentionally blocked.
 
 Local Demo Mode is available only while running the Vite dev server. It is hidden in production and does not bypass Firebase Authentication or Firebase Security Rules.
 
@@ -236,10 +279,10 @@ Live URLs:
 Deploy command:
 
 ```bash
-firebase deploy --only hosting,firestore:rules,storage
+firebase deploy --only hosting,firestore:rules
 ```
 
-Use `npm run build`, `npm run lint`, and `npm run validate:curriculum` before deploying. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed.
+Use `npm run build`, `npm run lint`, and `npm run validate:curriculum` before deploying. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed. Deploy Storage rules only in a future phase when Firebase Storage is initialized and upload workflows are designed.
 
 Google Authentication must be enabled in Firebase Console for live sign-in testing. The Firebase Hosting domains should be authorized for Authentication, including `dcc-creative-studio.web.app` and `dcc-creative-studio.firebaseapp.com`; keep `localhost` authorized for local testing.
 
@@ -248,4 +291,3 @@ The first teacher or admin must sign in once, then be manually promoted in Fires
 ## Later Phase Preview
 
 Later phases should build bell ringer responses, exit tickets, assignment submissions, media submissions, quiz attempts, grading, and portfolio workflows while preserving the multi-program-area structure.
-

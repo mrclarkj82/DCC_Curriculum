@@ -6,7 +6,7 @@ DCC Creative Studio is a Firebase web app for a high school Digital Content Crea
 
 ## Current Phase
 
-Phase 5 adds Firestore content seeding, Firestore-backed content routes, and the active Today workflow while preserving Firebase Google SSO, roles, protected routes, and the source-of-truth curriculum infrastructure.
+Phase 6 adds teacher/admin class management, role controls, class assignments, and active item controls while preserving Firebase Google SSO, roles, protected routes, Firestore-backed content, and the active Today workflow.
 
 ## Repository Workflow
 
@@ -57,4 +57,3 @@ Phase 5 adds Firestore content seeding, Firestore-backed content routes, and the
 - Do not expose student data across accounts.
 - Add acceptance criteria to major task summaries.
 - Preserve existing useful project instructions.
-

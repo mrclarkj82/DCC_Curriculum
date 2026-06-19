@@ -130,6 +130,8 @@ export interface BroadcastUpdate {
 
 export type UserRole = 'student' | 'teacher' | 'admin';
 
+export type ClassMembershipType = 'student' | 'teacher';
+
 export interface UserProfile {
   uid: string;
   displayName: string;
@@ -150,13 +152,7 @@ export type ActiveItemType =
   | 'quiz'
   | 'portfolioCheckpoint';
 
-export type ActiveItemRecord =
-  | Lesson
-  | Assignment
-  | MediaProject
-  | BroadcastUpdate
-  | Quiz
-  | null;
+export type ActiveItemRecord = Lesson | Assignment | MediaProject | BroadcastUpdate | Quiz | null;
 
 export interface ActiveClassItem {
   id: string;
@@ -180,3 +176,22 @@ export interface ClassRecord {
   createdAt: unknown;
   updatedAt: unknown;
 }
+
+export const isAdminRole = (role: UserRole | null | undefined): role is 'admin' => role === 'admin';
+
+export const isTeacherRole = (role: UserRole | null | undefined): role is 'teacher' | 'admin' =>
+  role === 'teacher' || role === 'admin';
+
+export const canManageClass = (
+  userProfile: UserProfile | null | undefined,
+  classRecord: ClassRecord,
+): boolean =>
+  Boolean(
+    userProfile &&
+    (isAdminRole(userProfile.role) || classRecord.teacherIds.includes(userProfile.uid)),
+  );
+
+export const canSetActiveItem = (
+  userProfile: UserProfile | null | undefined,
+  classRecord: ClassRecord,
+): boolean => canManageClass(userProfile, classRecord);

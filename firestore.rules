@@ -29,8 +29,8 @@ service cloud.firestore {
         : null;
     }
 
-    function isStudent() {
-      return isAllowedDomain() && userRole() == 'student';
+    function validRole(role) {
+      return role in ['student', 'teacher', 'admin'];
     }
 
     function isTeacher() {
@@ -64,6 +64,85 @@ service cloud.firestore {
         || userHasClassId(classId);
     }
 
+    function teacherCanReadStudent(userData) {
+      return isTeacher()
+        && userData.role == 'student'
+        && userData.classIds is list
+        && userDoc().data.classIds is list
+        && userData.classIds.hasAny(userDoc().data.classIds);
+    }
+
+    function activeItemTypeIsSupported(activeItemType) {
+      return activeItemType in [
+        'lesson',
+        'assignment',
+        'mediaProject',
+        'broadcastUpdate',
+        'quiz',
+        'portfolioCheckpoint'
+      ];
+    }
+
+    function activeProgramAreaExists(classData) {
+      return classData.activeProgramAreaId is string
+        && exists(/databases/$(database)/documents/programAreas/$(classData.activeProgramAreaId));
+    }
+
+    function activeItemMatchesProgramArea(collectionName, classData) {
+      let activeItemPath = /databases/$(database)/documents/$(collectionName)/$(classData.activeItemId);
+      return exists(activeItemPath)
+        && get(activeItemPath).data.programAreaId == classData.activeProgramAreaId;
+    }
+
+    function activeItemExists(classData) {
+      return classData.activeItemId is string
+        && classData.activeItemId.size() > 0
+        && (
+          (classData.activeItemType == 'lesson'
+            && activeItemMatchesProgramArea('lessons', classData))
+          || (classData.activeItemType == 'assignment'
+            && activeItemMatchesProgramArea('assignments', classData))
+          || (classData.activeItemType == 'mediaProject'
+            && activeItemMatchesProgramArea('mediaProjects', classData))
+          || (classData.activeItemType == 'broadcastUpdate'
+            && activeItemMatchesProgramArea('broadcastUpdates', classData))
+          || (classData.activeItemType == 'quiz'
+            && activeItemMatchesProgramArea('quizzes', classData))
+          || classData.activeItemType == 'portfolioCheckpoint'
+        );
+    }
+
+    function validActiveClassItem(classData) {
+      return activeItemTypeIsSupported(classData.activeItemType)
+        && activeProgramAreaExists(classData)
+        && activeItemExists(classData);
+    }
+
+    function safeAdminUserUpdate() {
+      return isAdmin()
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.email == resource.data.email
+        && validRole(request.resource.data.role)
+        && request.resource.data.classIds is list
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function safeAdminClassCreate(classId) {
+      return isAdmin()
+        && request.resource.data.id == classId
+        && request.resource.data.name is string
+        && request.resource.data.name.size() > 0
+        && request.resource.data.period is string
+        && request.resource.data.period.size() > 0
+        && request.resource.data.schoolYear is string
+        && request.resource.data.schoolYear.size() > 0
+        && request.resource.data.teacherIds is list
+        && request.resource.data.studentIds is list
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time
+        && validActiveClassItem(request.resource.data);
+    }
+
     function safeUserCreate(userId) {
       return isAllowedDomain()
         && isSelf(userId)
@@ -81,6 +160,7 @@ service cloud.firestore {
         && request.resource.data.uid == userId
         && request.resource.data.email == request.auth.token.email
         && request.resource.data.role == 'student'
+        && validRole(request.resource.data.role)
         && request.resource.data.classIds is list
         && request.resource.data.classIds.size() == 0
         && request.resource.data.createdAt == request.time
@@ -123,17 +203,24 @@ service cloud.firestore {
     }
 
     match /users/{userId} {
-      allow read: if isAllowedDomain() && (isSelf(userId) || isAdmin());
+      allow get: if isAllowedDomain()
+        && (isSelf(userId) || isAdmin() || teacherCanReadStudent(resource.data));
+      allow list: if isAdmin();
       allow create: if safeUserCreate(userId);
-      allow update: if isAdmin() || (isSelf(userId) && safeSelfUserUpdate());
+      allow update: if safeAdminUserUpdate() || (isSelf(userId) && safeSelfUserUpdate());
       allow delete: if isAdmin();
     }
 
     match /classes/{classId} {
       allow read: if canReadClass(classId, resource.data);
-      allow create, delete: if isAdmin();
-      allow update: if isAdmin()
-        || (isClassTeacher(resource.data) && teacherActiveClassItemUpdateOnly());
+      allow create: if safeAdminClassCreate(classId);
+      allow delete: if isAdmin();
+      allow update: if (isAdmin() && validActiveClassItem(request.resource.data))
+        || (
+          isClassTeacher(resource.data)
+          && teacherActiveClassItemUpdateOnly()
+          && validActiveClassItem(request.resource.data)
+        );
     }
 
     match /programAreas/{programAreaId} {
