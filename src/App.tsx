@@ -5,6 +5,7 @@ import { AdminPage } from './pages/AdminPage';
 import { AreasPage } from './pages/AreasPage';
 import { AssignmentDetailPage } from './pages/AssignmentDetailPage';
 import { BroadcastUpdateDetailPage } from './pages/BroadcastUpdateDetailPage';
+import { JoinClassPage } from './pages/JoinClassPage';
 import { LandingPage } from './pages/LandingPage';
 import { LessonDetailPage } from './pages/LessonDetailPage';
 import { LoginPage } from './pages/LoginPage';
@@ -24,6 +25,7 @@ export function App() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AppShell />}>
           <Route path="/today" element={<TodayPage />} />
+          <Route path="/join-class" element={<JoinClassPage />} />
           <Route path="/areas" element={<AreasPage />} />
           <Route path="/areas/unreal-engine" element={<UnrealAreaPage />} />
           <Route path="/areas/video-production" element={<VideoProductionAreaPage />} />

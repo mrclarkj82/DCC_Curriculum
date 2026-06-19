@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
+import { ClassJoinForm } from '../components/classes/ClassJoinForm';
 import { EmptyState } from '../components/EmptyState';
 import { ErrorState } from '../components/ErrorState';
 import { EvidenceChecklist } from '../components/EvidenceChecklist';
@@ -24,7 +25,13 @@ import type {
   Quiz,
 } from '../types';
 
-function LessonMission({ lesson, programArea }: { lesson: Lesson; programArea: ProgramArea | null }) {
+function LessonMission({
+  lesson,
+  programArea,
+}: {
+  lesson: Lesson;
+  programArea: ProgramArea | null;
+}) {
   return (
     <>
       <section className="card mission-panel neon-border span-two">
@@ -311,9 +318,7 @@ export function TodayPage() {
         setClassLoading(false);
       },
       (error) => {
-        setClassError(
-          error.message || 'Unable to load your class record. Please try again later.',
-        );
+        setClassError(error.message || 'Unable to load your class record. Please try again later.');
         setAssignedClass(null);
         setClassLoading(false);
       },
@@ -353,7 +358,7 @@ export function TodayPage() {
           setActiveItem(null);
           setProgramArea(null);
           setActiveItemError(
-            firestoreErrorMessage(error, 'Unable to load today\'s active class item.'),
+            firestoreErrorMessage(error, "Unable to load today's active class item."),
           );
           setActiveItemLoading(false);
         }
@@ -384,24 +389,35 @@ export function TodayPage() {
   }
 
   if (!classIds.length) {
+    const canJoinByCode =
+      userProfile.role === 'student' &&
+      userProfile.email.toLowerCase().endsWith('@student.doralacademynv.org');
+
     return (
       <PageContainer
         eyebrow="Daily Mission Board"
         title="No class assigned yet"
-        description="Your teacher or admin needs to assign your account to a class before Today's Mission can load."
+        description="Join your class with the code your teacher gave you, then Today's Mission can load."
         className="mission-board"
       >
-        <section className="card mission-panel neon-border no-class-panel">
-          <p className="retro-label">No Class Assigned Yet</p>
-          <h2>Today's Mission is waiting for a class assignment</h2>
-          <p>
-            Your teacher or admin needs to assign your account to a class before Today's Mission
-            can load.
-          </p>
-          <Link className="outline-button" to="/areas">
-            Open Program Areas
-          </Link>
-        </section>
+        {canJoinByCode ? (
+          <ClassJoinForm />
+        ) : (
+          <section className="card mission-panel neon-border no-class-panel">
+            <p className="retro-label">No Class Assigned Yet</p>
+            <h2>Today's Mission is waiting for a class assignment</h2>
+            <p>
+              Your teacher or admin needs to assign your account to a class before Today's Mission
+              can load.
+            </p>
+            <Link className="outline-button" to="/join-class">
+              Enter Class Code
+            </Link>
+            <Link className="outline-button" to="/areas">
+              Open Program Areas
+            </Link>
+          </section>
+        )}
       </PageContainer>
     );
   }

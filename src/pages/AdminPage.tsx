@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useAuth } from '../auth/useAuth';
+import { ClassJoinCodePanel } from '../components/classes/ClassJoinCodePanel';
 import { EmptyState } from '../components/EmptyState';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
@@ -885,6 +886,30 @@ export function AdminPage() {
               {savingKey === 'create-class' ? 'Creating...' : 'Create Class'}
             </button>
           </form>
+        </section>
+
+        <section className="content-section neon-section">
+          <div className="section-heading-row">
+            <div>
+              <p className="retro-label">Class Join Codes</p>
+              <h2>Student Enrollment Codes</h2>
+            </div>
+            <StatusBadge status="admin" />
+          </div>
+          <p className="muted">
+            Admins can manage join codes for every class. Students cannot read these code records
+            directly; they join through the secure callable function.
+          </p>
+          <div className="card-grid two">
+            {classes.map((classRecord) => (
+              <article className="card neon-card compact-card" key={classRecord.id}>
+                <h3>
+                  {classRecord.name} / {classRecord.period}
+                </h3>
+                <ClassJoinCodePanel classRecord={classRecord} compact />
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className="content-section neon-section">

@@ -47,6 +47,27 @@ service cloud.firestore {
         && (isTeacher() || isAdmin());
     }
 
+    function classPath(classId) {
+      return /databases/$(database)/documents/classes/$(classId);
+    }
+
+    function classExists(classId) {
+      return classId is string && exists(classPath(classId));
+    }
+
+    function classData(classId) {
+      return get(classPath(classId)).data;
+    }
+
+    function canManageClassById(classId) {
+      return isAdmin()
+        || (
+          isTeacher()
+          && classExists(classId)
+          && request.auth.uid in classData(classId).teacherIds
+        );
+    }
+
     function isClassStudent(classData) {
       return isAllowedDomain() && request.auth.uid in classData.studentIds;
     }
@@ -143,6 +164,61 @@ service cloud.firestore {
         && validActiveClassItem(request.resource.data);
     }
 
+    function validJoinCodeId(code) {
+      return code.matches('[A-HJ-NP-Z2-9]{6}');
+    }
+
+    function validJoinCodeCreate(code) {
+      return isAllowedDomain()
+        && request.resource.data.keys().hasOnly([
+          'code',
+          'classId',
+          'className',
+          'period',
+          'createdBy',
+          'createdAt',
+          'updatedAt',
+          'expiresAt',
+          'isActive',
+          'allowedEmailDomain',
+          'usageCount',
+          'lastUsedAt'
+        ])
+        && validJoinCodeId(code)
+        && request.resource.data.code == code
+        && request.resource.data.createdBy == request.auth.uid
+        && request.resource.data.classId is string
+        && canManageClassById(request.resource.data.classId)
+        && request.resource.data.className == classData(request.resource.data.classId).name
+        && request.resource.data.period == classData(request.resource.data.classId).period
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.updatedAt == request.time
+        && request.resource.data.expiresAt == null
+        && request.resource.data.isActive == true
+        && request.resource.data.allowedEmailDomain == 'student.doralacademynv.org'
+        && request.resource.data.usageCount == 0
+        && request.resource.data.lastUsedAt == null;
+    }
+
+    function canManageJoinCode(joinCodeData) {
+      return isAdmin()
+        || (
+          isTeacher()
+          && joinCodeData.classId is string
+          && classExists(joinCodeData.classId)
+          && request.auth.uid in classData(joinCodeData.classId).teacherIds
+        );
+    }
+
+    function safeJoinCodeDisable() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'isActive',
+          'updatedAt'
+        ])
+        && request.resource.data.isActive == false
+        && request.resource.data.updatedAt == request.time;
+    }
+
     function safeUserCreate(userId) {
       return isAllowedDomain()
         && isSelf(userId)
@@ -221,6 +297,13 @@ service cloud.firestore {
           && teacherActiveClassItemUpdateOnly()
           && validActiveClassItem(request.resource.data)
         );
+    }
+
+    match /classJoinCodes/{code} {
+      allow get, list: if canManageJoinCode(resource.data);
+      allow create: if validJoinCodeCreate(code);
+      allow update: if canManageJoinCode(resource.data) && safeJoinCodeDisable();
+      allow delete: if isAdmin();
     }
 
     match /programAreas/{programAreaId} {

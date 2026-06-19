@@ -177,6 +177,34 @@ export interface ClassRecord {
   updatedAt: unknown;
 }
 
+export type ClassJoinCodeStatus = 'active' | 'disabled' | 'expired';
+
+export interface ClassJoinCode {
+  code: string;
+  classId: string;
+  className: string;
+  period: string;
+  createdBy: string;
+  createdAt: unknown;
+  updatedAt: unknown;
+  expiresAt: unknown | null;
+  isActive: boolean;
+  allowedEmailDomain: string;
+  usageCount: number;
+  lastUsedAt: unknown | null;
+}
+
+export interface JoinClassResult {
+  classId: string;
+  className: string;
+  period: string;
+}
+
+export interface JoinClassError {
+  code: string;
+  message: string;
+}
+
 export const isAdminRole = (role: UserRole | null | undefined): role is 'admin' => role === 'admin';
 
 export const isTeacherRole = (role: UserRole | null | undefined): role is 'teacher' | 'admin' =>

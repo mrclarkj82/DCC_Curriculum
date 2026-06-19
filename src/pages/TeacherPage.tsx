@@ -1,6 +1,7 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
+import { ClassJoinCodePanel } from '../components/classes/ClassJoinCodePanel';
 import { EmptyState } from '../components/EmptyState';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
@@ -436,6 +437,7 @@ export function TeacherPage() {
                         Open Today
                       </Link>
                     </div>
+                    <ClassJoinCodePanel classRecord={classRecord} compact />
                   </article>
                 );
               })}

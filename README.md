@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 6 - Teacher/admin class management and active item controls
+Phase 6.5 - Student class join codes
 
 ## Local Development
 
@@ -189,6 +189,54 @@ Security notes:
 - Assigned teachers can update only active item fields for their own classes.
 - `.env.local`, service account keys, Firebase secrets, rosters, student data, private links, and student media must not be committed.
 
+## Phase 6.5 Student Class Join Codes
+
+Phase 6.5 adds a secure class-code enrollment workflow:
+
+- Teachers can generate, view, copy, regenerate, and disable join codes from `/teacher`.
+- Admins can manage join codes for every class from `/admin`.
+- Students can enter a teacher-provided code on `/today` when they have no class or on `/join-class`.
+- The callable Cloud Function `joinClassWithCode` verifies the student account and updates both `users/{uid}.classIds` and `classes/{classId}.studentIds`.
+
+Teacher workflow:
+
+1. Sign in with an approved teacher/admin account.
+2. Go to `/teacher`.
+3. Open an assigned class card.
+4. Generate a class code.
+5. Share the code only with students in that class.
+6. Regenerate or disable the code if needed.
+
+Student workflow:
+
+1. Sign in with an `@student.doralacademynv.org` Google account.
+2. Go to `/today` or `/join-class`.
+3. Enter the class code from the teacher.
+4. Join the class.
+5. Return to `/today` to load the class active item.
+
+Admin workflow:
+
+1. Go to `/admin`.
+2. Review which classes have active codes.
+3. Generate, copy, regenerate, or disable codes for any class.
+
+Security notes:
+
+- Students cannot read or list `classJoinCodes`.
+- Students cannot directly update class rosters or their own `classIds`.
+- Students can join only through `joinClassWithCode` and only with an `@student.doralacademynv.org` account.
+- Teacher/admin code management is protected by Firestore rules.
+- Role changes remain admin-only.
+
+Cloud Functions are required for the secure student join action. Deploy Phase 6.5 with:
+
+```bash
+firebase deploy --only hosting,firestore:rules,functions
+```
+
+Phase 6.5 does not implement bell ringer submissions, exit tickets, uploads, grading, quiz attempts, or portfolios.
+
 ## Routes
 
 Public:
@@ -199,6 +247,7 @@ Public:
 Signed-in student routes:
 
 - `/today`
+- `/join-class`
 - `/areas`
 - `/areas/unreal-engine`
 - `/areas/video-production`
@@ -279,10 +328,10 @@ Live URLs:
 Deploy command:
 
 ```bash
-firebase deploy --only hosting,firestore:rules
+firebase deploy --only hosting,firestore:rules,functions
 ```
 
-Use `npm run build`, `npm run lint`, and `npm run validate:curriculum` before deploying. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed. Deploy Storage rules only in a future phase when Firebase Storage is initialized and upload workflows are designed.
+Use `npm install`, `npm run build`, `npm run lint`, `npm run validate:curriculum`, and `npm --prefix functions run build` before deploying. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed. Deploy Storage rules only in a future phase when Firebase Storage is initialized and upload workflows are designed.
 
 Google Authentication must be enabled in Firebase Console for live sign-in testing. The Firebase Hosting domains should be authorized for Authentication, including `dcc-creative-studio.web.app` and `dcc-creative-studio.firebaseapp.com`; keep `localhost` authorized for local testing.
 

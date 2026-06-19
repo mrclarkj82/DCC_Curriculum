@@ -19,8 +19,12 @@
   "firestore": {
     "rules": "firestore.rules"
   },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs20",
+    "predeploy": ["npm --prefix functions run build"]
+  },
   "storage": {
     "rules": "storage.rules"
   }
 }
-
