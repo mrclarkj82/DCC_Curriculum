@@ -24,7 +24,7 @@ function AccessDenied() {
 }
 
 export function ProtectedRoute({ allowedRoles }: ProtectedRouteProps) {
-  const { firebaseUser, userProfile, role, loading } = useAuth();
+  const { authError, firebaseUser, userProfile, role, loading, signOut } = useAuth();
   const location = useLocation();
 
   if (loading) {
@@ -35,8 +35,20 @@ export function ProtectedRoute({ allowedRoles }: ProtectedRouteProps) {
     return <Navigate to="/login" replace state={{ from: location }} />;
   }
 
-  if (!userProfile && !allowedRoles?.length) {
-    return <Outlet />;
+  if (!userProfile) {
+    return (
+      <section className="state-box neon-card error-state">
+        <p className="eyebrow">Profile Setup</p>
+        <h2>Your Google sign-in worked, but your DCC profile is missing.</h2>
+        <p>
+          {authError ||
+            'Ask an admin to check your allowed account settings, then sign out and sign back in.'}
+        </p>
+        <button className="outline-button" type="button" onClick={() => void signOut()}>
+          Sign Out
+        </button>
+      </section>
+    );
   }
 
   if (allowedRoles?.length && (!role || !allowedRoles.includes(role))) {

@@ -58,10 +58,11 @@ VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
 VITE_ALLOWED_EMAIL_DOMAINS=doralacademynv.org,student.doralacademynv.org
+VITE_ALLOWED_EMAILS=
 VITE_FIRESTORE_NAMESPACE=apps/dcc
 ```
 
-Do not commit `.env.local` or real Firebase credentials.
+`VITE_ALLOWED_EMAILS` is for specific trusted teacher/admin bootstrap accounts that are not on the school domain. The same account must also be present in `apps/dcc/config/access.allowedAdminEmails` for Firestore rules to allow the profile. Do not commit `.env.local` or real Firebase credentials.
 
 ## Firebase Setup
 
@@ -76,8 +77,9 @@ For Firebase setup:
 5. Apply `firestore.rules`.
 6. Apply `storage.rules`.
 7. Copy `.env.example` to `.env.local`, paste the Firebase web config values, and set `VITE_ALLOWED_EMAIL_DOMAINS`.
+8. If a trusted bootstrap admin uses a non-school email, add it to `VITE_ALLOWED_EMAILS` and to `apps/dcc/config/access.allowedAdminEmails`.
 
-Firestore rules now enforce authenticated school-domain users, safe default student profile creation, role boundaries, class membership checks, authenticated curriculum reads, and admin-only curriculum writes under the DCC namespace `apps/dcc`. Storage remains closed until a later upload phase.
+Firestore rules now enforce authenticated school-domain users, a narrow bootstrap admin email allowlist, safe default student profile creation, role boundaries, class membership checks, authenticated curriculum reads, and admin-only curriculum writes under the DCC namespace `apps/dcc`. Storage remains closed until a later upload phase.
 
 ## Phase 5 Firestore Content
 
@@ -130,8 +132,8 @@ The real write path uses the Firebase Admin SDK and writes to `apps/dcc` by defa
 `/today` works like this:
 
 1. The user signs in with an approved Google account.
-2. The app reads `users/{uid}` and checks `classIds`.
-3. The app loads the first assigned `classes/{classId}` record.
+2. The app reads `apps/dcc/users/{uid}` and checks `classIds`.
+3. The app loads the first assigned `apps/dcc/classes/{classId}` record.
 4. The class record's `activeProgramAreaId`, `activeItemType`, and `activeItemId` decide what Today's Mission renders.
 5. Lessons, assignments, media projects, and Broadcast Desk Updates render as active items. Quizzes and portfolio checkpoints show polished placeholders until later phases.
 
@@ -150,10 +152,10 @@ Not implemented yet:
 
 Phase 6 adds the minimum in-site controls needed to run DCC Creative Studio with real classes:
 
-- User management from the `users` collection.
+- User management from the `apps/dcc/users` collection.
 - Role management for admins.
 - Class creation and basic class info editing.
-- Student and teacher class assignment controls that keep `users/{uid}.classIds` synchronized with `classes/{classId}.studentIds` and `classes/{classId}.teacherIds`.
+- Student and teacher class assignment controls that keep `apps/dcc/users/{uid}.classIds` synchronized with `apps/dcc/classes/{classId}.studentIds` and `apps/dcc/classes/{classId}.teacherIds`.
 - Active item controls for lessons, assignments, media projects, Broadcast Desk Updates, quizzes, and portfolio checkpoint placeholders.
 
 Admin workflow:
@@ -197,7 +199,7 @@ Phase 6.5 adds a secure class-code enrollment workflow:
 - Teachers can generate, view, copy, regenerate, and disable join codes from `/teacher`.
 - Admins can manage join codes for every class from `/admin`.
 - Students can enter a teacher-provided code on `/today` when they have no class or on `/join-class`.
-- The callable Cloud Function `joinClassWithCode` verifies the student account and updates both `users/{uid}.classIds` and `classes/{classId}.studentIds`.
+- The callable Cloud Function `joinClassWithCode` verifies the student account and updates both `apps/dcc/users/{uid}.classIds` and `apps/dcc/classes/{classId}.studentIds`.
 
 Teacher workflow:
 
@@ -246,6 +248,7 @@ Shared project services:
 
 - Firebase Authentication users are shared at the Firebase project level.
 - DCC Firestore app data lives under `apps/dcc`.
+- DCC user profiles live under `apps/dcc/users`; existing shared Authentication users are not automatically copied into DCC.
 - DCC Hosting deploys to the separate Hosting site target `dcc`.
 - DCC live site URL is `https://dcc-creative-studio-dragonmath.web.app`.
 
@@ -309,15 +312,16 @@ Supported roles:
 - `teacher`
 - `admin`
 
-On first approved Google sign-in, the app creates `users/{uid}` with role `student` and an empty `classIds` array. The client never assigns itself `teacher` or `admin`, and it never updates its own `classIds`.
+On first approved Google sign-in, the app creates `apps/dcc/users/{uid}` with role `student` and an empty `classIds` array. The client never assigns itself `teacher` or `admin`, and it never updates its own `classIds`.
 
 To bootstrap the first admin or teacher:
 
 1. Sign in once with an approved school Google account.
 2. Open Firebase Console.
-3. Find the created `users/{uid}` document.
-4. Manually change `role` to `admin` or `teacher`.
-5. After the first admin is promoted, use `/admin` to assign roles and class memberships.
+3. If the first admin uses a non-school email, add that exact email to `apps/dcc/config/access.allowedAdminEmails` and `VITE_ALLOWED_EMAILS` before building.
+4. Find the created `apps/dcc/users/{uid}` document.
+5. Manually change `role` to `admin` or `teacher`.
+6. After the first admin is promoted, use `/admin` to assign roles and class memberships.
 
 There is no insecure "make me admin" client button. Self-promotion remains intentionally blocked.
 
@@ -348,7 +352,7 @@ Use `npm install`, `npm run build`, `npm run lint`, `npm run validate:curriculum
 
 Google Authentication must be enabled in Firebase Console for live sign-in testing. The Firebase Hosting domains should be authorized for Authentication, including `dcc-creative-studio.web.app` and `dcc-creative-studio.firebaseapp.com`; keep `localhost` authorized for local testing.
 
-The first teacher or admin must sign in once, then be manually promoted in Firestore by changing their `users/{uid}.role` to `teacher` or `admin` and assigning the correct `classIds`.
+The first teacher or admin must sign in once, then be manually promoted in Firestore by changing their `apps/dcc/users/{uid}.role` to `teacher` or `admin` and assigning the correct `classIds`.
 
 ## Later Phase Preview
 

@@ -11,6 +11,14 @@ const parseAllowedDomains = (rawValue: string | undefined): string[] => {
 
 export const allowedEmailDomains = parseAllowedDomains(import.meta.env.VITE_ALLOWED_EMAIL_DOMAINS);
 
+const parseAllowedEmails = (rawValue: string | undefined): string[] =>
+  (rawValue ?? '')
+    .split(',')
+    .map((email) => email.trim().toLowerCase())
+    .filter(Boolean);
+
+export const allowedEmailAddresses = parseAllowedEmails(import.meta.env.VITE_ALLOWED_EMAILS);
+
 export function isAllowedEmailDomain(email: string | null | undefined): boolean {
   if (!email) {
     return false;
@@ -23,4 +31,14 @@ export function isAllowedEmailDomain(email: string | null | undefined): boolean 
   }
 
   return allowedEmailDomains.includes(parts[1]);
+}
+
+export function isAllowedEmailAccount(email: string | null | undefined): boolean {
+  if (!email) {
+    return false;
+  }
+
+  const normalizedEmail = email.trim().toLowerCase();
+
+  return isAllowedEmailDomain(normalizedEmail) || allowedEmailAddresses.includes(normalizedEmail);
 }

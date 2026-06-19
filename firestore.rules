@@ -6,13 +6,29 @@ service cloud.firestore {
       return request.auth != null;
     }
 
-    function isAllowedDomain() {
+    function isSchoolDomain() {
       return signedIn()
         && request.auth.token.email != null
         && (
           request.auth.token.email.matches('.*@doralacademynv[.]org$')
           || request.auth.token.email.matches('.*@student[.]doralacademynv[.]org$')
         );
+    }
+
+    function accessConfigPath() {
+      return /databases/$(database)/documents/apps/dcc/config/access;
+    }
+
+    function isBootstrapAdminEmail() {
+      return signedIn()
+        && request.auth.token.email != null
+        && exists(accessConfigPath())
+        && get(accessConfigPath()).data.allowedAdminEmails is list
+        && request.auth.token.email in get(accessConfigPath()).data.allowedAdminEmails;
+    }
+
+    function isAllowedAccount() {
+      return isSchoolDomain() || isBootstrapAdminEmail();
     }
 
     function isSelf(userId) {
@@ -42,15 +58,15 @@ service cloud.firestore {
     }
 
     function isTeacher() {
-      return isAllowedDomain() && userRole() == 'teacher';
+      return isAllowedAccount() && userRole() == 'teacher';
     }
 
     function isAdmin() {
-      return isAllowedDomain() && userRole() == 'admin';
+      return isAllowedAccount() && userRole() == 'admin';
     }
 
     function isClassTeacher(classData) {
-      return isAllowedDomain()
+      return isAllowedAccount()
         && request.auth.uid in classData.teacherIds
         && (isTeacher() || isAdmin());
     }
@@ -77,11 +93,11 @@ service cloud.firestore {
     }
 
     function isClassStudent(classData) {
-      return isAllowedDomain() && request.auth.uid in classData.studentIds;
+      return isAllowedAccount() && request.auth.uid in classData.studentIds;
     }
 
     function userHasClassId(classId) {
-      return isAllowedDomain()
+      return isAllowedAccount()
         && exists(userPath(request.auth.uid))
         && classId in userDoc().data.classIds;
     }
@@ -177,7 +193,7 @@ service cloud.firestore {
     }
 
     function validJoinCodeCreate(code) {
-      return isAllowedDomain()
+      return isAllowedAccount()
         && request.resource.data.keys().hasOnly([
           'code',
           'classId',
@@ -228,7 +244,7 @@ service cloud.firestore {
     }
 
     function safeUserCreate(userId) {
-      return isAllowedDomain()
+      return isAllowedAccount()
         && isSelf(userId)
         && request.resource.data.keys().hasOnly([
           'uid',
@@ -253,7 +269,7 @@ service cloud.firestore {
     }
 
     function safeSelfUserUpdate() {
-      return isAllowedDomain()
+      return isAllowedAccount()
         && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
           'displayName',
           'photoURL',
@@ -291,7 +307,7 @@ service cloud.firestore {
 
       match /users/{userId} {
         allow get: if isDccApp(appId)
-          && isAllowedDomain()
+          && isAllowedAccount()
           && (isSelf(userId) || isAdmin() || teacherCanReadStudent(resource.data));
         allow list: if isDccApp(appId) && isAdmin();
         allow create: if isDccApp(appId) && safeUserCreate(userId);
@@ -325,33 +341,37 @@ service cloud.firestore {
       }
 
       match /programAreas/{programAreaId} {
-        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
       }
 
       match /lessons/{lessonId} {
-        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
       }
 
       match /assignments/{assignmentId} {
-        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
       }
 
       match /quizzes/{quizId} {
-        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
       }
 
       match /mediaProjects/{projectId} {
-        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
       }
 
       match /broadcastUpdates/{updateId} {
-        allow read: if isDccApp(appId) && isAllowedDomain();
+        allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
+      }
+
+      match /config/{configId} {
+        allow read, write: if isDccApp(appId) && isAdmin();
       }
     }
 

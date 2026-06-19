@@ -11,7 +11,7 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { isAllowedEmailDomain } from '../config/authConfig';
+import { isAllowedEmailAccount } from '../config/authConfig';
 import { auth, googleProvider } from '../firebase/client';
 import { createUserProfileIfNeeded, subscribeToUserProfile } from '../services/userService';
 import type { UserProfile, UserRole } from '../types';
@@ -36,7 +36,7 @@ export const AuthContext = createContext<AuthContextValue | undefined>(undefined
 
 const localDemoStorageKey = 'dcc-local-demo-mode';
 const unauthorizedDomainMessage =
-  'This Google account is not on an approved school email domain. Please use your school Google account.';
+  'This Google account is not approved for DCC Creative Studio. Please use a school Google account or an approved admin account.';
 
 const createLocalDemoProfile = (): UserProfile => ({
   uid: 'local-demo-student',
@@ -88,7 +88,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return undefined;
     }
 
-    if (!isAllowedEmailDomain(firebaseUser.email)) {
+    if (!isAllowedEmailAccount(firebaseUser.email)) {
       setProfileLoading(false);
       setUserProfile(null);
       setAuthError(unauthorizedDomainMessage);
