@@ -250,7 +250,7 @@ Shared project services:
 - DCC Firestore app data lives under `apps/dcc`.
 - DCC user profiles live under `apps/dcc/users`; existing shared Authentication users are not automatically copied into DCC.
 - DCC Hosting deploys to the separate Hosting site target `dcc`.
-- DCC live site URL is `https://dcc-creative-studio-dragonmath.web.app`.
+- DCC live site URL is `https://dcccs.web.app`.
 
 Do not deploy this app to the default DragonMath Hosting site. Use the configured `dcc` Hosting target.
 
@@ -340,7 +340,7 @@ Firebase project ID: `dragonmath-f6f56`
 
 Live URLs:
 
-- `https://dcc-creative-studio-dragonmath.web.app`
+- `https://dcccs.web.app`
 
 Deploy command:
 
