@@ -5,12 +5,21 @@ import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
+import { SubmissionPanel } from '../components/submissions/SubmissionPanel';
 import { useAsyncData } from '../hooks/useAsyncData';
+import { usePrimaryClassRecord } from '../hooks/usePrimaryClassRecord';
 import { getBroadcastUpdateById } from '../services/broadcastUpdateService';
 import { getProgramAreaById } from '../services/programAreaService';
+import { resolveSubmissionTarget } from '../services/submissionService';
 
 export function BroadcastUpdateDetailPage() {
   const { updateId } = useParams();
+  const {
+    userProfile,
+    classRecord,
+    isLoading: classLoading,
+    error: classError,
+  } = usePrimaryClassRecord();
   const { data, isLoading, error } = useAsyncData(
     async () => {
       if (!updateId) {
@@ -44,6 +53,7 @@ export function BroadcastUpdateDetailPage() {
   }
 
   const { update, area } = data;
+  const submissionTarget = resolveSubmissionTarget('broadcastUpdate', update);
 
   return (
     <PageContainer
@@ -112,6 +122,16 @@ export function BroadcastUpdateDetailPage() {
           </div>
         </section>
       </div>
+      {classLoading && <LoadingState label="Loading your class for submissions..." />}
+      {classError && <ErrorState message={classError} />}
+      <SubmissionPanel
+        classRecord={classRecord}
+        activeItemType="broadcastUpdate"
+        activeItemId={update.id}
+        target={submissionTarget}
+        userProfile={userProfile}
+        viewerMode="student"
+      />
     </PageContainer>
   );
 }

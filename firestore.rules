@@ -383,6 +383,217 @@ service cloud.firestore {
         && request.resource.data.activeItemId == resource.data.activeItemId;
     }
 
+    function validSubmissionTargetType(targetType) {
+      return targetType in ['lesson', 'assignment', 'mediaProject', 'broadcastUpdate'];
+    }
+
+    function validSubmissionKind(submissionKind) {
+      return submissionKind in [
+        'unreal-evidence',
+        'video-production',
+        'broadcast-evidence',
+        'general'
+      ];
+    }
+
+    function validSubmissionStatus(status) {
+      return status in ['submitted', 'resubmitted', 'needs_revision', 'accepted'];
+    }
+
+    function submissionAllowedKeys(submissionData) {
+      return submissionData.keys().hasOnly([
+        'id',
+        'uid',
+        'studentName',
+        'studentEmail',
+        'classId',
+        'programAreaId',
+        'targetType',
+        'targetId',
+        'activeItemType',
+        'activeItemId',
+        'title',
+        'submissionKind',
+        'driveLinks',
+        'otherLinks',
+        'reflection',
+        'textResponse',
+        'evidenceChecklist',
+        'status',
+        'teacherFeedback',
+        'reviewedBy',
+        'reviewedAt',
+        'createdAt',
+        'updatedAt',
+        'submittedAt',
+        'resubmittedAt'
+      ]);
+    }
+
+    function targetMatchesProgramArea(collectionName, submissionData) {
+      let targetPath = /databases/$(database)/documents/apps/dcc/$(collectionName)/$(submissionData.targetId);
+      return exists(targetPath)
+        && get(targetPath).data.programAreaId == submissionData.programAreaId;
+    }
+
+    function submissionTargetExists(submissionData) {
+      return submissionData.targetId is string
+        && submissionData.targetId.size() > 0
+        && (
+          (submissionData.targetType == 'lesson'
+            && targetMatchesProgramArea('lessons', submissionData))
+          || (submissionData.targetType == 'assignment'
+            && targetMatchesProgramArea('assignments', submissionData))
+          || (submissionData.targetType == 'mediaProject'
+            && targetMatchesProgramArea('mediaProjects', submissionData))
+          || (submissionData.targetType == 'broadcastUpdate'
+            && targetMatchesProgramArea('broadcastUpdates', submissionData))
+        );
+    }
+
+    function activeSubmissionItemMatchesProgramArea(collectionName, submissionData) {
+      let activePath = /databases/$(database)/documents/apps/dcc/$(collectionName)/$(submissionData.activeItemId);
+      return exists(activePath)
+        && get(activePath).data.programAreaId == submissionData.programAreaId;
+    }
+
+    function submissionActiveItemExists(submissionData) {
+      return submissionData.activeItemId is string
+        && submissionData.activeItemId.size() > 0
+        && activeItemTypeIsSupported(submissionData.activeItemType)
+        && (
+          (submissionData.activeItemType == 'lesson'
+            && activeSubmissionItemMatchesProgramArea('lessons', submissionData))
+          || (submissionData.activeItemType == 'assignment'
+            && activeSubmissionItemMatchesProgramArea('assignments', submissionData))
+          || (submissionData.activeItemType == 'mediaProject'
+            && activeSubmissionItemMatchesProgramArea('mediaProjects', submissionData))
+          || (submissionData.activeItemType == 'broadcastUpdate'
+            && activeSubmissionItemMatchesProgramArea('broadcastUpdates', submissionData))
+          || (submissionData.activeItemType == 'quiz'
+            && activeSubmissionItemMatchesProgramArea('quizzes', submissionData))
+          || submissionData.activeItemType == 'portfolioCheckpoint'
+        );
+    }
+
+    function canReadStudentSubmission(submissionData) {
+      return isAdmin()
+        || (
+          isAllowedAccount()
+          && submissionData.uid == request.auth.uid
+          && submissionData.classId is string
+          && classExists(submissionData.classId)
+          && request.auth.uid in classData(submissionData.classId).studentIds
+        )
+        || (
+          isTeacher()
+          && submissionData.classId is string
+          && classExists(submissionData.classId)
+          && request.auth.uid in classData(submissionData.classId).teacherIds
+        );
+    }
+
+    function safeStudentSubmissionBase(submissionId) {
+      return isAllowedAccount()
+        && userRole() == 'student'
+        && submissionAllowedKeys(request.resource.data)
+        && request.resource.data.id == submissionId
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.studentEmail == request.auth.token.email
+        && request.resource.data.studentName is string
+        && request.resource.data.classId is string
+        && classExists(request.resource.data.classId)
+        && request.auth.uid in classData(request.resource.data.classId).studentIds
+        && request.resource.data.programAreaId is string
+        && request.resource.data.programAreaId == classData(request.resource.data.classId).activeProgramAreaId
+        && validSubmissionTargetType(request.resource.data.targetType)
+        && submissionTargetExists(request.resource.data)
+        && submissionActiveItemExists(request.resource.data)
+        && request.resource.data.title is string
+        && request.resource.data.title.size() > 0
+        && validSubmissionKind(request.resource.data.submissionKind)
+        && validSubmissionStatus(request.resource.data.status)
+        && request.resource.data.driveLinks is list
+        && request.resource.data.otherLinks is list
+        && request.resource.data.driveLinks.size() + request.resource.data.otherLinks.size() > 0
+        && request.resource.data.reflection is string
+        && request.resource.data.reflection.size() > 0
+        && request.resource.data.reflection.size() <= 8000
+        && request.resource.data.textResponse is string
+        && request.resource.data.textResponse.size() <= 8000
+        && request.resource.data.evidenceChecklist is list
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function safeStudentSubmissionCreate(submissionId) {
+      return safeStudentSubmissionBase(submissionId)
+        && request.resource.data.status == 'submitted'
+        && request.resource.data.teacherFeedback == ''
+        && request.resource.data.reviewedBy == ''
+        && request.resource.data.reviewedAt == null
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.submittedAt == request.time
+        && request.resource.data.resubmittedAt == null;
+    }
+
+    function safeStudentSubmissionUpdate(submissionId) {
+      return safeStudentSubmissionBase(submissionId)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.submittedAt == resource.data.submittedAt
+        && request.resource.data.teacherFeedback == resource.data.teacherFeedback
+        && request.resource.data.reviewedBy == resource.data.reviewedBy
+        && request.resource.data.reviewedAt == resource.data.reviewedAt
+        && request.resource.data.id == resource.data.id
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.classId == resource.data.classId
+        && request.resource.data.programAreaId == resource.data.programAreaId
+        && request.resource.data.targetType == resource.data.targetType
+        && request.resource.data.targetId == resource.data.targetId
+        && request.resource.data.activeItemType == resource.data.activeItemType
+        && request.resource.data.activeItemId == resource.data.activeItemId
+        && request.resource.data.title == resource.data.title
+        && request.resource.data.submissionKind == resource.data.submissionKind
+        && (
+          (
+            request.resource.data.status == 'submitted'
+            && resource.data.status in ['submitted', 'resubmitted']
+            && request.resource.data.resubmittedAt == resource.data.resubmittedAt
+          )
+          || (
+            request.resource.data.status == 'resubmitted'
+            && resource.data.status == 'needs_revision'
+            && request.resource.data.resubmittedAt == request.time
+          )
+        );
+    }
+
+    function canReviewSubmission(submissionData) {
+      return isAdmin()
+        || (
+          isTeacher()
+          && submissionData.classId is string
+          && classExists(submissionData.classId)
+          && request.auth.uid in classData(submissionData.classId).teacherIds
+        );
+    }
+
+    function safeSubmissionReviewUpdate() {
+      return canReviewSubmission(resource.data)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status',
+          'teacherFeedback',
+          'reviewedBy',
+          'reviewedAt',
+          'updatedAt'
+        ])
+        && request.resource.data.status in ['needs_revision', 'accepted']
+        && request.resource.data.teacherFeedback is string
+        && request.resource.data.teacherFeedback.size() <= 8000
+        && request.resource.data.reviewedBy == request.auth.uid
+        && request.resource.data.reviewedAt == request.time
+        && request.resource.data.updatedAt == request.time;
+    }
+
     function teacherPreviewResponseAllowedKeys(responseData) {
       return responseData.keys().hasOnly([
         'id',
@@ -509,6 +720,17 @@ service cloud.firestore {
         allow delete: if false;
       }
 
+      match /submissions/{submissionId} {
+        allow get, list: if isDccApp(appId) && canReadStudentSubmission(resource.data);
+        allow create: if isDccApp(appId) && safeStudentSubmissionCreate(submissionId);
+        allow update: if isDccApp(appId)
+          && (
+            safeStudentSubmissionUpdate(submissionId)
+            || safeSubmissionReviewUpdate()
+          );
+        allow delete: if false;
+      }
+
       match /teacherPreviewResponses/{responseId} {
         allow get, list: if isDccApp(appId) && canReadTeacherPreviewResponse(resource.data);
         allow create: if isDccApp(appId) && safeTeacherPreviewResponseCreate(responseId);
@@ -551,8 +773,8 @@ service cloud.firestore {
       }
     }
 
-    // Future phases will add tightly scoped rules for classroom workflow collections:
-    // submissions, mediaSubmissions, quizAttempts, portfolioItems, and teacher feedback records.
+    // Future phases will add tightly scoped rules for uploads and later classroom collections:
+    // mediaSubmissions, quizAttempts, portfolioItems, grading records, and raw file workflows.
     match /{document=**} {
       allow read, write: if false;
     }

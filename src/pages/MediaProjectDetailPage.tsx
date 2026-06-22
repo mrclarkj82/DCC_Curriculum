@@ -6,12 +6,21 @@ import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { RubricTable } from '../components/RubricTable';
 import { StatusBadge } from '../components/StatusBadge';
+import { SubmissionPanel } from '../components/submissions/SubmissionPanel';
 import { useAsyncData } from '../hooks/useAsyncData';
+import { usePrimaryClassRecord } from '../hooks/usePrimaryClassRecord';
 import { getMediaProjectById } from '../services/mediaProjectService';
 import { getProgramAreaById } from '../services/programAreaService';
+import { resolveSubmissionTarget } from '../services/submissionService';
 
 export function MediaProjectDetailPage() {
   const { projectId } = useParams();
+  const {
+    userProfile,
+    classRecord,
+    isLoading: classLoading,
+    error: classError,
+  } = usePrimaryClassRecord();
   const { data, isLoading, error } = useAsyncData(
     async () => {
       if (!projectId) {
@@ -45,6 +54,7 @@ export function MediaProjectDetailPage() {
   }
 
   const { project, area } = data;
+  const submissionTarget = resolveSubmissionTarget('mediaProject', project);
 
   return (
     <PageContainer
@@ -99,6 +109,16 @@ export function MediaProjectDetailPage() {
           </div>
         </section>
       </div>
+      {classLoading && <LoadingState label="Loading your class for submissions..." />}
+      {classError && <ErrorState message={classError} />}
+      <SubmissionPanel
+        classRecord={classRecord}
+        activeItemType="mediaProject"
+        activeItemId={project.id}
+        target={submissionTarget}
+        userProfile={userProfile}
+        viewerMode="student"
+      />
     </PageContainer>
   );
 }

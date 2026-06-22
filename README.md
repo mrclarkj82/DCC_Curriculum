@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 7.5 - Teacher Student Preview Mode
+Phase 8 - Google Drive Link Submissions
 
 ## Local Development
 
@@ -100,6 +100,7 @@ Expected Firestore collections:
 - `apps/dcc/broadcastUpdates`
 - `apps/dcc/classes`
 - `apps/dcc/users`
+- `apps/dcc/submissions` (Phase 8 evidence links)
 
 Seed files live in `curriculum/website-data/` and should remain the local source used by the importer. The live app reads Firestore route content after records are seeded.
 
@@ -322,6 +323,63 @@ Security notes:
 
 Phase 7.5 still does not implement assignment uploads, media uploads, grading, quiz attempts, portfolio submissions, or video editor features.
 
+## Phase 8 Google Drive Link Submissions
+
+Phase 8 adds the first student evidence submission workflow without adding raw uploads, Firebase Storage uploads, grading, quiz attempts, portfolios, video hosting, transcoding, or video editor features.
+
+What Phase 8 adds:
+
+- A reusable submission panel for `/today`, assignment detail pages, media project detail pages, and Broadcast Desk Update detail pages.
+- Google Drive, Google Docs, YouTube, and youtu.be evidence link submission.
+- Student reflection text and an evidence checklist before submission.
+- Saved submission status, teacher feedback display, and resubmission after a revision request.
+- Teacher/admin review tables on `/teacher` for assigned class active items.
+- Light submission collection status on `/admin`.
+
+Firestore collection:
+
+- `apps/dcc/submissions`
+
+Submission document IDs are deterministic in the client:
+
+```text
+{classId}_{targetType}_{targetId}_{uid}
+```
+
+Student workflow:
+
+1. Sign in with an approved Google account.
+2. Join or be assigned to a class.
+3. Open `/today` or a supported detail page.
+4. Upload evidence to Google Drive first and set sharing so the teacher can view it.
+5. Paste the Drive, Docs, or YouTube link, complete the checklist, write a reflection, and submit.
+6. If the teacher marks the submission as needing revision, update the evidence and resubmit.
+
+Teacher workflow:
+
+1. Sign in as a teacher or admin.
+2. Go to `/teacher`.
+3. Review Google Drive evidence submissions for assigned class active items.
+4. Open submitted links, read reflections, leave feedback, mark accepted, or request revision.
+
+Admin workflow:
+
+1. Go to `/admin`.
+2. Confirm the submission system is enabled.
+3. Review total and recent submission status.
+
+Security notes:
+
+- Students can create and update only their own submission documents.
+- Students cannot read classmates' submissions.
+- Assigned teachers can read and review submissions only for classes they teach.
+- Admins can read and review DCC submissions.
+- Submission deletes are closed.
+- Firebase Storage remains closed; Phase 8 stores evidence links only.
+- Teacher Student Preview Mode shows the submission panel read-only and does not write real submissions.
+
+Phase 8 still does not implement raw assignment uploads, media uploads, grading, quiz attempts, portfolio submissions, media hosting, transcoding, or video editor features.
+
 ## Shared Firebase Project And Namespacing
 
 DCC Creative Studio uses the shared Blaze Firebase project `dragonmath-f6f56`, but DCC app data is namespaced under `apps/dcc` so it does not collide with DragonMath data.
@@ -429,7 +487,7 @@ Live URLs:
 Deploy command:
 
 ```bash
-firebase deploy --only hosting,firestore:rules,functions
+firebase deploy --only hosting,firestore:rules
 ```
 
 GitHub Pages mirror build:
@@ -440,7 +498,7 @@ npm run build:github-pages
 
 The GitHub Pages mirror uses Vite base path `/dcccs/` and React Router basename `/dcccs`.
 
-Use `npm install`, `npm run build`, `npm run lint`, `npm run validate:curriculum`, and `npm --prefix functions run build` before deploying. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed. Deploy Storage rules only in a future phase when Firebase Storage is initialized and upload workflows are designed.
+Use `npm install`, `npm run build`, `npm run lint`, and `npm run validate:curriculum` before deploying. Build functions too when Cloud Functions change. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed. Deploy Storage rules only in a future phase when Firebase Storage is initialized and upload workflows are designed.
 
 Google Authentication must be enabled in Firebase Console for live sign-in testing. The Firebase Hosting domains should be authorized for Authentication, including `dcc-creative-studio.web.app` and `dcc-creative-studio.firebaseapp.com`; keep `localhost` authorized for local testing.
 
@@ -448,4 +506,4 @@ The first teacher or admin must sign in once, then be manually promoted in Fires
 
 ## Later Phase Preview
 
-Later phases should build assignment submissions, media submissions, quiz attempts, grading, and portfolio workflows while preserving the multi-program-area structure.
+Later phases should build raw upload workflows, media submission organization, quiz attempts, grading, and portfolio workflows while preserving the multi-program-area structure.

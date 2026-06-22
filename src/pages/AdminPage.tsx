@@ -26,6 +26,10 @@ import {
 import { firestoreErrorMessage } from '../services/firestoreService';
 import { getProgramAreas } from '../services/programAreaService';
 import { getResponseSystemCounts, type ResponseSystemCounts } from '../services/responseService';
+import {
+  getSubmissionSystemSummary,
+  type SubmissionSystemSummary,
+} from '../services/submissionService';
 import { subscribeToUsers, updateUserRole } from '../services/userManagementService';
 import type {
   ActiveItemType,
@@ -138,6 +142,8 @@ export function AdminPage() {
   const [activeTitlesByClassId, setActiveTitlesByClassId] = useState<Record<string, string>>({});
   const [responseCounts, setResponseCounts] = useState<ResponseSystemCounts | null>(null);
   const [responseCountsError, setResponseCountsError] = useState<string | null>(null);
+  const [submissionSummary, setSubmissionSummary] = useState<SubmissionSystemSummary | null>(null);
+  const [submissionSummaryError, setSubmissionSummaryError] = useState<string | null>(null);
   const [savingKey, setSavingKey] = useState<string | null>(null);
 
   useEffect(() => {
@@ -298,6 +304,29 @@ export function AdminPage() {
         if (!didCancel) {
           setResponseCountsError(
             firestoreErrorMessage(error, 'Unable to load response collection counts.'),
+          );
+        }
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let didCancel = false;
+
+    getSubmissionSystemSummary()
+      .then((summary) => {
+        if (!didCancel) {
+          setSubmissionSummary(summary);
+          setSubmissionSummaryError(null);
+        }
+      })
+      .catch((error: unknown) => {
+        if (!didCancel) {
+          setSubmissionSummaryError(
+            firestoreErrorMessage(error, 'Unable to load submission collection status.'),
           );
         }
       });
@@ -594,6 +623,68 @@ export function AdminPage() {
               <h3>{responseCounts?.totalResponses ?? '...'}</h3>
             </article>
           </div>
+        </section>
+
+        <section className="content-section neon-section">
+          <div className="section-heading-row">
+            <div>
+              <p className="retro-label">Submission System</p>
+              <h2>Google Drive Link Evidence Status</h2>
+            </div>
+            <StatusBadge status="enabled" />
+          </div>
+          {submissionSummaryError && <ErrorState message={submissionSummaryError} />}
+          <div className="metric-grid">
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Total Submissions</p>
+              <h3>{submissionSummary?.totalSubmissions ?? '...'}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Evidence Type</p>
+              <h3>Drive Links</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Firebase Storage</p>
+              <h3>Closed</h3>
+            </article>
+          </div>
+          <p className="muted">
+            Phase 8 stores Google Drive, Google Docs, and YouTube evidence links in Firestore.
+            Students do not upload raw files to this website, and Firebase Storage remains closed.
+          </p>
+          {!!submissionSummary?.recentSubmissions.length && (
+            <div className="table-scroll">
+              <table className="management-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Student</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Target</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Updated</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {submissionSummary.recentSubmissions.map((submission) => (
+                    <tr key={submission.id}>
+                      <td>
+                        {submission.studentName || submission.uid}
+                        <p className="meta-line">{submission.studentEmail}</p>
+                      </td>
+                      <td>{submission.classId}</td>
+                      <td>
+                        {submission.targetType} / {submission.targetId}
+                      </td>
+                      <td>
+                        <StatusBadge status={submission.status} />
+                      </td>
+                      <td>{formatTimestamp(submission.updatedAt)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </section>
 
         <section className="content-section neon-section">

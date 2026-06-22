@@ -7,6 +7,7 @@ import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
+import { SubmissionStatusBadge } from '../components/submissions/SubmissionStatusBadge';
 import {
   getActiveItemOptions,
   resolveActiveItem,
@@ -24,6 +25,11 @@ import {
   subscribeToResponsesForClassItem,
   type ClassItemResponses,
 } from '../services/responseService';
+import {
+  resolveSubmissionTargetForActiveItem,
+  subscribeToSubmissionsForClassTarget,
+  updateSubmissionReviewStatus,
+} from '../services/submissionService';
 import { getUsersByIds } from '../services/userManagementService';
 import type {
   ActiveClassItem,
@@ -31,6 +37,8 @@ import type {
   ClassRecord,
   ProgramArea,
   ResponseCompletionSummary,
+  StudentSubmission,
+  SubmissionStatus,
   UserProfile,
 } from '../types';
 import { canSetActiveItem } from '../types';
@@ -143,10 +151,16 @@ export function TeacherPage() {
   const [responsesByClassId, setResponsesByClassId] = useState<
     Record<string, ClassItemResponses>
   >({});
+  const [submissionsByClassId, setSubmissionsByClassId] = useState<
+    Record<string, StudentSubmission[]>
+  >({});
   const [activeErrorsByClassId, setActiveErrorsByClassId] = useState<Record<string, string>>({});
   const [responseErrorsByClassId, setResponseErrorsByClassId] = useState<Record<string, string>>(
     {},
   );
+  const [submissionErrorsByClassId, setSubmissionErrorsByClassId] = useState<
+    Record<string, string>
+  >({});
   const [isLoadingClasses, setIsLoadingClasses] = useState(false);
   const [classError, setClassError] = useState<string | null>(null);
   const [activeForm, setActiveForm] = useState<ActiveItemFormState>(emptyActiveItemForm);
@@ -157,6 +171,9 @@ export function TeacherPage() {
   const [formError, setFormError] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const [expandedResponseKey, setExpandedResponseKey] = useState<string | null>(null);
+  const [expandedSubmissionId, setExpandedSubmissionId] = useState<string | null>(null);
+  const [feedbackDrafts, setFeedbackDrafts] = useState<Record<string, string>>({});
+  const [reviewSavingKey, setReviewSavingKey] = useState<string | null>(null);
 
   useEffect(() => {
     let didCancel = false;
@@ -357,6 +374,65 @@ export function TeacherPage() {
   }, [classRecords]);
 
   useEffect(() => {
+    if (!classRecords.length) {
+      setSubmissionsByClassId({});
+      setSubmissionErrorsByClassId({});
+      return undefined;
+    }
+
+    const unsubscribes = classRecords
+      .map((classRecord) => {
+        const activeItem = activeItemsByClassId[classRecord.id];
+        const submissionTarget = activeItem ? resolveSubmissionTargetForActiveItem(activeItem) : null;
+
+        if (!submissionTarget) {
+          setSubmissionsByClassId((current) => ({
+            ...current,
+            [classRecord.id]: [],
+          }));
+          return null;
+        }
+
+        return subscribeToSubmissionsForClassTarget(
+          classRecord.id,
+          submissionTarget.targetType,
+          submissionTarget.targetId,
+          (submissions) => {
+            setSubmissionsByClassId((current) => ({
+              ...current,
+              [classRecord.id]: submissions,
+            }));
+            setFeedbackDrafts((current) => {
+              const next = { ...current };
+              submissions.forEach((submission) => {
+                if (next[submission.id] === undefined) {
+                  next[submission.id] = submission.teacherFeedback;
+                }
+              });
+              return next;
+            });
+            setSubmissionErrorsByClassId((current) => {
+              const next = { ...current };
+              delete next[classRecord.id];
+              return next;
+            });
+          },
+          (error) => {
+            setSubmissionErrorsByClassId((current) => ({
+              ...current,
+              [classRecord.id]: firestoreErrorMessage(error, 'Unable to load submissions.'),
+            }));
+          },
+        );
+      })
+      .filter((unsubscribe): unsubscribe is () => void => Boolean(unsubscribe));
+
+    return () => {
+      unsubscribes.forEach((unsubscribe) => unsubscribe());
+    };
+  }, [activeItemsByClassId, classRecords]);
+
+  useEffect(() => {
     if (!activeForm.activeProgramAreaId || activeForm.activeItemType === 'portfolioCheckpoint') {
       setActiveOptions([]);
       setActiveOptionsLoading(false);
@@ -501,6 +577,37 @@ export function TeacherPage() {
       setFormError(firestoreErrorMessage(error, 'Unable to update active class item.'));
     } finally {
       setIsSaving(false);
+    }
+  };
+
+  const handleReviewSubmission = async (
+    submission: StudentSubmission,
+    status: Extract<SubmissionStatus, 'needs_revision' | 'accepted'>,
+  ) => {
+    if (!userProfile) {
+      setFormError('Sign in again before reviewing submissions.');
+      return;
+    }
+
+    const savingKey = `${submission.id}-${status}`;
+    setReviewSavingKey(savingKey);
+    setFormMessage(null);
+    setFormError(null);
+
+    try {
+      await updateSubmissionReviewStatus({
+        submissionId: submission.id,
+        status,
+        teacherFeedback: feedbackDrafts[submission.id] ?? submission.teacherFeedback,
+        reviewedBy: userProfile.uid,
+      });
+      setFormMessage(
+        status === 'accepted' ? 'Submission marked accepted.' : 'Revision request saved.',
+      );
+    } catch (error) {
+      setFormError(firestoreErrorMessage(error, 'Unable to update submission review.'));
+    } finally {
+      setReviewSavingKey(null);
     }
   };
 
@@ -776,6 +883,230 @@ export function TeacherPage() {
                                               {summary.exitTicketResponse?.response ||
                                                 'No exit ticket response submitted yet.'}
                                             </p>
+                                          </section>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  )}
+                                </Fragment>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {!!classRecords.length && (
+          <section className="content-section neon-section">
+            <p className="retro-label">Student Submissions</p>
+            <h2>Google Drive Evidence Review</h2>
+            <div className="response-completion-stack">
+              {classRecords.map((classRecord) => {
+                const activeItem = activeItemsByClassId[classRecord.id];
+                const submissionTarget = activeItem
+                  ? resolveSubmissionTargetForActiveItem(activeItem)
+                  : null;
+                const submissions = submissionsByClassId[classRecord.id] ?? [];
+                const submissionError = submissionErrorsByClassId[classRecord.id];
+                const submittedUids = new Set(submissions.map((submission) => submission.uid));
+                const missingCount = Math.max(classRecord.studentIds.length - submittedUids.size, 0);
+                const needsRevisionCount = submissions.filter(
+                  (submission) => submission.status === 'needs_revision',
+                ).length;
+                const acceptedCount = submissions.filter(
+                  (submission) => submission.status === 'accepted',
+                ).length;
+
+                return (
+                  <article className="card neon-card response-completion-card" key={classRecord.id}>
+                    <div className="section-heading-row">
+                      <div>
+                        <p className="retro-label">
+                          {classRecord.name} / {classRecord.period}
+                        </p>
+                        <h3>{submissionTarget?.title ?? activeItem?.title ?? classRecord.activeItemId}</h3>
+                      </div>
+                      <StatusBadge status={`${submissions.length} submitted`} />
+                    </div>
+
+                    <dl className="detail-list response-summary-list">
+                      <div>
+                        <dt>Active Item</dt>
+                        <dd>
+                          {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
+                          {classRecord.activeItemId}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Submission Target</dt>
+                        <dd>
+                          {submissionTarget
+                            ? `${submissionTarget.targetType} / ${submissionTarget.targetId}`
+                            : 'No Drive-link target'}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Missing</dt>
+                        <dd>{missingCount}</dd>
+                      </div>
+                      <div>
+                        <dt>Needs Revision</dt>
+                        <dd>{needsRevisionCount}</dd>
+                      </div>
+                      <div>
+                        <dt>Accepted</dt>
+                        <dd>{acceptedCount}</dd>
+                      </div>
+                    </dl>
+
+                    {submissionError && <ErrorState message={submissionError} />}
+
+                    {!submissionTarget ? (
+                      <p className="muted">
+                        This active item does not have a Drive-link submission target yet. Quizzes
+                        and portfolio checkpoints stay out of scope for this phase.
+                      </p>
+                    ) : !classRecord.studentIds.length ? (
+                      <p className="muted">No students are assigned to this class yet.</p>
+                    ) : !submissions.length ? (
+                      <p className="muted">No Google Drive evidence links have been submitted yet.</p>
+                    ) : (
+                      <div className="table-scroll">
+                        <table className="management-table response-table submission-review-table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Student</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Drive Links</th>
+                              <th scope="col">Reflection</th>
+                              <th scope="col">Submitted</th>
+                              <th scope="col">Updated</th>
+                              <th scope="col">Teacher Feedback</th>
+                              <th scope="col">Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {submissions.map((submission) => {
+                              const allLinks = [
+                                ...submission.driveLinks,
+                                ...submission.otherLinks,
+                              ];
+                              const isExpanded = expandedSubmissionId === submission.id;
+
+                              return (
+                                <Fragment key={submission.id}>
+                                  <tr>
+                                    <td>
+                                      <strong>{submission.studentName || submission.uid}</strong>
+                                      {submission.studentEmail && (
+                                        <p className="meta-line">{submission.studentEmail}</p>
+                                      )}
+                                    </td>
+                                    <td>
+                                      <SubmissionStatusBadge status={submission.status} />
+                                    </td>
+                                    <td>
+                                      <ul className="submission-link-display-list compact">
+                                        {allLinks.map((link) => (
+                                          <li key={link.url}>
+                                            <a href={link.url} target="_blank" rel="noreferrer">
+                                              {link.label || 'Open evidence'}
+                                            </a>
+                                          </li>
+                                        ))}
+                                      </ul>
+                                    </td>
+                                    <td>
+                                      <p className="submission-reflection-preview">
+                                        {submission.reflection}
+                                      </p>
+                                    </td>
+                                    <td>{formatTimestamp(submission.submittedAt)}</td>
+                                    <td>{formatTimestamp(submission.updatedAt)}</td>
+                                    <td>
+                                      <label className="sr-only" htmlFor={`feedback-${submission.id}`}>
+                                        Feedback for {submission.studentName || submission.uid}
+                                      </label>
+                                      <textarea
+                                        id={`feedback-${submission.id}`}
+                                        className="submission-feedback-input"
+                                        value={
+                                          feedbackDrafts[submission.id] ??
+                                          submission.teacherFeedback
+                                        }
+                                        rows={4}
+                                        onChange={(event) =>
+                                          setFeedbackDrafts((current) => ({
+                                            ...current,
+                                            [submission.id]: event.target.value,
+                                          }))
+                                        }
+                                      />
+                                    </td>
+                                    <td>
+                                      <div className="button-row vertical">
+                                        <button
+                                          className="outline-button"
+                                          type="button"
+                                          aria-expanded={isExpanded}
+                                          onClick={() =>
+                                            setExpandedSubmissionId(
+                                              isExpanded ? null : submission.id,
+                                            )
+                                          }
+                                        >
+                                          {isExpanded ? 'Hide Details' : 'View Details'}
+                                        </button>
+                                        <button
+                                          className="secondary-button"
+                                          type="button"
+                                          disabled={
+                                            reviewSavingKey === `${submission.id}-needs_revision`
+                                          }
+                                          onClick={() =>
+                                            handleReviewSubmission(submission, 'needs_revision')
+                                          }
+                                        >
+                                          Needs Revision
+                                        </button>
+                                        <button
+                                          className="gradient-button"
+                                          type="button"
+                                          disabled={
+                                            reviewSavingKey === `${submission.id}-accepted`
+                                          }
+                                          onClick={() =>
+                                            handleReviewSubmission(submission, 'accepted')
+                                          }
+                                        >
+                                          Accept
+                                        </button>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  {isExpanded && (
+                                    <tr className="response-detail-row">
+                                      <td colSpan={8}>
+                                        <div className="response-detail-grid">
+                                          <section>
+                                            <p className="retro-label">Reflection</p>
+                                            <p>{submission.reflection}</p>
+                                          </section>
+                                          <section>
+                                            <p className="retro-label">Checklist</p>
+                                            <ul className="submission-checklist-readonly">
+                                              {submission.evidenceChecklist.map((item) => (
+                                                <li key={item.label}>
+                                                  {item.complete ? 'Complete' : 'Missing'}: {item.label}
+                                                </li>
+                                              ))}
+                                            </ul>
                                           </section>
                                         </div>
                                       </td>

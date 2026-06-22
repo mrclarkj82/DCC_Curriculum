@@ -2,9 +2,10 @@ rules_version = '2';
 
 service firebase.storage {
   match /b/{bucket}/o {
-    // Storage remains closed in Phase 5.
-    // Assignment uploads, media submissions, portfolio files, and teacher review artifacts
-    // will be opened with tightly scoped rules in a later upload phase.
+    // Storage remains closed in Phase 8.
+    // Student evidence is submitted through Google Drive / Docs / YouTube links in Firestore.
+    // Raw file uploads, media hosting, video editing, and portfolio files are intentionally
+    // unsupported until a later upload phase designs tightly scoped Storage rules.
     match /{allPaths=**} {
       allow read, write: if false;
     }

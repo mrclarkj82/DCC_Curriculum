@@ -3,10 +3,12 @@ import { EmptyState } from '../EmptyState';
 import { EvidenceChecklist } from '../EvidenceChecklist';
 import { BellRingerResponseCard } from '../responses/BellRingerResponseCard';
 import { ExitTicketResponseCard } from '../responses/ExitTicketResponseCard';
+import { SubmissionPanel } from '../submissions/SubmissionPanel';
 import { RubricTable } from '../RubricTable';
 import { StatusBadge } from '../StatusBadge';
 import { VocabularyList } from '../VocabularyList';
 import { getBellRingerPrompt, getExitTicketPrompt } from '../../services/responseService';
+import { resolveSubmissionTargetForActiveItem } from '../../services/submissionService';
 import type {
   ActiveClassItem,
   Assignment,
@@ -293,6 +295,7 @@ export function StudentTodayExperience({
 }: StudentTodayExperienceProps) {
   const record = activeItem.record;
   const showResponseCards = userProfile.role === 'student' || isTeacherPreviewMode(viewerMode);
+  const submissionTarget = resolveSubmissionTargetForActiveItem(activeItem);
   const isMissingActiveRecord =
     activeItem.type !== 'portfolioCheckpoint' && activeItem.type !== 'quiz' && !record;
 
@@ -348,6 +351,17 @@ export function StudentTodayExperience({
             viewerMode={viewerMode}
           />
         </div>
+      )}
+
+      {showResponseCards && (
+        <SubmissionPanel
+          classRecord={classRecord}
+          activeItemType={activeItem.type}
+          activeItemId={activeItem.id}
+          target={submissionTarget}
+          userProfile={userProfile}
+          viewerMode={viewerMode}
+        />
       )}
 
       <div className="today-grid">

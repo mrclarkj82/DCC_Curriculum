@@ -5,13 +5,22 @@ import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { RubricTable } from '../components/RubricTable';
+import { SubmissionPanel } from '../components/submissions/SubmissionPanel';
 import { useAsyncData } from '../hooks/useAsyncData';
+import { usePrimaryClassRecord } from '../hooks/usePrimaryClassRecord';
 import { getAssignmentById } from '../services/assignmentService';
 import { getLessonById } from '../services/lessonService';
 import { getProgramAreaById } from '../services/programAreaService';
+import { resolveSubmissionTarget } from '../services/submissionService';
 
 export function AssignmentDetailPage() {
   const { assignmentId } = useParams();
+  const {
+    userProfile,
+    classRecord,
+    isLoading: classLoading,
+    error: classError,
+  } = usePrimaryClassRecord();
   const { data, isLoading, error } = useAsyncData(
     async () => {
       if (!assignmentId) {
@@ -48,6 +57,7 @@ export function AssignmentDetailPage() {
   }
 
   const { assignment, lesson, area } = data;
+  const submissionTarget = resolveSubmissionTarget('assignment', assignment);
 
   return (
     <PageContainer
@@ -97,6 +107,16 @@ export function AssignmentDetailPage() {
           <p>{assignment.reflectionPrompt || 'Reflection prompt placeholder.'}</p>
         </section>
       </div>
+      {classLoading && <LoadingState label="Loading your class for submissions..." />}
+      {classError && <ErrorState message={classError} />}
+      <SubmissionPanel
+        classRecord={classRecord}
+        activeItemType="assignment"
+        activeItemId={assignment.id}
+        target={submissionTarget}
+        userProfile={userProfile}
+        viewerMode="student"
+      />
     </PageContainer>
   );
 }

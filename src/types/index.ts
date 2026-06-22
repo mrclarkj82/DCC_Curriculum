@@ -224,6 +224,74 @@ export type ResponseKind = 'bellRinger' | 'exitTicket';
 
 export type ViewerMode = 'student' | 'teacher-preview';
 
+export type SubmissionTargetType = 'lesson' | 'assignment' | 'mediaProject' | 'broadcastUpdate';
+
+export type SubmissionKind =
+  | 'unreal-evidence'
+  | 'video-production'
+  | 'broadcast-evidence'
+  | 'general';
+
+export type SubmissionStatus = 'submitted' | 'resubmitted' | 'needs_revision' | 'accepted';
+
+export interface SubmissionDriveLink {
+  url: string;
+  label: string;
+  type: 'google-drive' | 'google-docs' | 'youtube' | 'other-link';
+  addedAt: unknown;
+}
+
+export interface SubmissionEvidenceChecklistItem {
+  label: string;
+  complete: boolean;
+}
+
+export interface SubmissionTarget {
+  targetType: SubmissionTargetType;
+  targetId: string;
+  programAreaId: string;
+  title: string;
+  submissionKind: SubmissionKind;
+  requirements: string[];
+  evidenceChecklist: SubmissionEvidenceChecklistItem[];
+  reflectionPrompt: string;
+}
+
+export interface StudentSubmission {
+  id: string;
+  uid: string;
+  studentName: string;
+  studentEmail: string;
+  classId: string;
+  programAreaId: string;
+  targetType: SubmissionTargetType;
+  targetId: string;
+  activeItemType: ActiveItemType;
+  activeItemId: string;
+  title: string;
+  submissionKind: SubmissionKind;
+  driveLinks: SubmissionDriveLink[];
+  otherLinks: SubmissionDriveLink[];
+  reflection: string;
+  textResponse: string;
+  evidenceChecklist: SubmissionEvidenceChecklistItem[];
+  status: SubmissionStatus;
+  teacherFeedback: string;
+  reviewedBy: string;
+  reviewedAt: unknown | null;
+  createdAt?: unknown;
+  updatedAt?: unknown;
+  submittedAt?: unknown;
+  resubmittedAt?: unknown | null;
+}
+
+export interface SubmissionReviewUpdate {
+  submissionId: string;
+  status: Extract<SubmissionStatus, 'needs_revision' | 'accepted'>;
+  teacherFeedback: string;
+  reviewedBy: string;
+}
+
 export interface StudentResponseBase {
   id: string;
   uid: string;
