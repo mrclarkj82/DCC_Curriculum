@@ -12,6 +12,7 @@ import { LoginPage } from './pages/LoginPage';
 import { MediaProjectDetailPage } from './pages/MediaProjectDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 import { TeacherPage } from './pages/TeacherPage';
+import { TeacherStudentPreviewPage } from './pages/TeacherStudentPreviewPage';
 import { TodayPage } from './pages/TodayPage';
 import { UnrealAreaPage } from './pages/UnrealAreaPage';
 import { VideoProductionAreaPage } from './pages/VideoProductionAreaPage';
@@ -35,6 +36,10 @@ export function App() {
           <Route path="/broadcast-updates/:updateId" element={<BroadcastUpdateDetailPage />} />
           <Route element={<ProtectedRoute allowedRoles={['teacher', 'admin']} />}>
             <Route path="/teacher" element={<TeacherPage />} />
+            <Route
+              path="/teacher/classes/:classId/student-preview"
+              element={<TeacherStudentPreviewPage />}
+            />
           </Route>
           <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
             <Route path="/admin" element={<AdminPage />} />

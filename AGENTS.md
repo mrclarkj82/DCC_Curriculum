@@ -6,7 +6,7 @@ DCC Creative Studio is a Firebase web app for a high school Digital Content Crea
 
 ## Current Phase
 
-Phase 7 adds bell ringer and exit ticket responses while preserving teacher/admin class management, secure class join codes, Firebase Google SSO, roles, protected routes, Firestore-backed content, and the active Today workflow.
+Phase 7.5 adds Teacher Student Preview Mode while preserving bell ringer and exit ticket responses, teacher/admin class management, secure class join codes, Firebase Google SSO, roles, protected routes, Firestore-backed content, and the active Today workflow.
 
 ## Repository Workflow
 
@@ -54,6 +54,8 @@ Phase 7 adds bell ringer and exit ticket responses while preserving teacher/admi
 - Preserve class-code security: students join classes by code through the callable Cloud Function, must use `@student.doralacademynv.org`, cannot read join-code records, and cannot directly edit rosters or `classIds`.
 - Teachers may manage join codes only for assigned classes. Admins may manage all class join codes.
 - Preserve student response security: students may submit and edit only their own bell ringer and exit ticket responses for the active item in their assigned class; students cannot read classmates' responses; teachers may read responses only for classes they teach; admins may read response status across DCC.
+- Student Preview Mode is teacher/admin only. Do not implement real student impersonation, do not add teachers to student rosters, and do not let preview responses count as real student work.
+- Preview responses must stay separate from real student response collections.
 - Seed imports must use local credentials only. Do not commit `.env.local`, service accounts, API secrets, rosters, private links, student names, or student media.
 - Visual design rule: DCC Creative Studio uses a colorful retro 80s synthwave design system. Future tasks must preserve neon cyan, magenta, purple, blue, and orange accents, glowing cards, synthwave gradients, and the creative media studio look. Do not regress the app into a plain dark command-center UI.
 - `src/styles/theme.css` contains the core design tokens. `src/styles/synthwave.css` contains the visual identity layer.

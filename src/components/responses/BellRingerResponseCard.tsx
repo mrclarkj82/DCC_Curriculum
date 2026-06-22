@@ -1,4 +1,4 @@
-import type { ActiveClassItem, ClassRecord, UserProfile } from '../../types';
+import type { ActiveClassItem, ClassRecord, UserProfile, ViewerMode } from '../../types';
 import { StudentResponseCard } from './StudentResponseCard';
 
 interface BellRingerResponseCardProps {
@@ -6,6 +6,7 @@ interface BellRingerResponseCardProps {
   activeItem: ActiveClassItem;
   classRecord: ClassRecord;
   userProfile: UserProfile;
+  viewerMode?: ViewerMode;
 }
 
 export function BellRingerResponseCard({
@@ -13,6 +14,7 @@ export function BellRingerResponseCard({
   activeItem,
   classRecord,
   userProfile,
+  viewerMode = 'student',
 }: BellRingerResponseCardProps) {
   return (
     <StudentResponseCard
@@ -24,6 +26,7 @@ export function BellRingerResponseCard({
       activeItem={activeItem}
       classRecord={classRecord}
       userProfile={userProfile}
+      viewerMode={viewerMode}
     />
   );
 }

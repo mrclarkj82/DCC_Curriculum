@@ -383,6 +383,80 @@ service cloud.firestore {
         && request.resource.data.activeItemId == resource.data.activeItemId;
     }
 
+    function teacherPreviewResponseAllowedKeys(responseData) {
+      return responseData.keys().hasOnly([
+        'id',
+        'teacherUid',
+        'teacherName',
+        'teacherEmail',
+        'classId',
+        'programAreaId',
+        'activeItemType',
+        'activeItemId',
+        'responseKind',
+        'prompt',
+        'response',
+        'status',
+        'isPreview',
+        'createdAt',
+        'updatedAt'
+      ]);
+    }
+
+    function canReadTeacherPreviewResponse(responseData) {
+      return isAdmin()
+        || (
+          isTeacher()
+          && responseData.teacherUid == request.auth.uid
+          && responseData.classId is string
+          && classExists(responseData.classId)
+          && request.auth.uid in classData(responseData.classId).teacherIds
+        );
+    }
+
+    function safeTeacherPreviewResponseBase(responseId) {
+      return isAllowedAccount()
+        && (isTeacher() || isAdmin())
+        && teacherPreviewResponseAllowedKeys(request.resource.data)
+        && request.resource.data.id == responseId
+        && request.resource.data.teacherUid == request.auth.uid
+        && request.resource.data.teacherEmail == request.auth.token.email
+        && request.resource.data.teacherName is string
+        && request.resource.data.classId is string
+        && canManageClassById(request.resource.data.classId)
+        && request.resource.data.responseKind in ['bellRinger', 'exitTicket']
+        && request.resource.data.prompt is string
+        && request.resource.data.prompt.size() > 0
+        && request.resource.data.response is string
+        && request.resource.data.response.size() > 0
+        && request.resource.data.response.size() <= 4000
+        && request.resource.data.status == 'preview-submitted'
+        && request.resource.data.isPreview == true
+        && request.resource.data.programAreaId is string
+        && request.resource.data.activeItemId is string
+        && activeItemTypeIsSupported(request.resource.data.activeItemType)
+        && responseMatchesActiveClassItem(request.resource.data)
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function safeTeacherPreviewResponseCreate(responseId) {
+      return safeTeacherPreviewResponseBase(responseId)
+        && request.resource.data.createdAt == request.time;
+    }
+
+    function safeTeacherPreviewResponseUpdate(responseId) {
+      return safeTeacherPreviewResponseBase(responseId)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.id == resource.data.id
+        && request.resource.data.teacherUid == resource.data.teacherUid
+        && request.resource.data.classId == resource.data.classId
+        && request.resource.data.programAreaId == resource.data.programAreaId
+        && request.resource.data.activeItemType == resource.data.activeItemType
+        && request.resource.data.activeItemId == resource.data.activeItemId
+        && request.resource.data.responseKind == resource.data.responseKind
+        && request.resource.data.isPreview == resource.data.isPreview;
+    }
+
     match /apps/{appId} {
       allow read, write: if false;
 
@@ -432,6 +506,13 @@ service cloud.firestore {
         allow get, list: if isDccApp(appId) && canReadStudentResponse(resource.data);
         allow create: if isDccApp(appId) && safeStudentResponseCreate(responseId);
         allow update: if isDccApp(appId) && safeStudentResponseUpdate(responseId);
+        allow delete: if false;
+      }
+
+      match /teacherPreviewResponses/{responseId} {
+        allow get, list: if isDccApp(appId) && canReadTeacherPreviewResponse(resource.data);
+        allow create: if isDccApp(appId) && safeTeacherPreviewResponseCreate(responseId);
+        allow update: if isDccApp(appId) && safeTeacherPreviewResponseUpdate(responseId);
         allow delete: if false;
       }
 

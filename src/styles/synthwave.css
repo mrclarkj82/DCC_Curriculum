@@ -569,7 +569,8 @@
 }
 
 .status-draft,
-.status-placeholder {
+.status-placeholder,
+.status-preview {
   color: var(--color-warning);
   border-color: rgba(255, 176, 0, 0.36);
   background: rgba(255, 176, 0, 0.1);
@@ -958,6 +959,37 @@
       rgba(var(--color-neon-pink-rgb), 0.08)
     ),
     rgba(8, 3, 18, 0.52);
+}
+
+.teacher-preview-banner {
+  margin-bottom: var(--space-5);
+  border-color: rgba(var(--color-neon-orange-rgb), 0.72);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-orange-rgb), 0.2),
+      rgba(var(--color-neon-pink-rgb), 0.12)
+    ),
+    var(--color-bg-card);
+  box-shadow: var(--shadow-panel), var(--glow-orange), var(--glow-pink);
+}
+
+.teacher-preview-banner h2 {
+  color: var(--color-text-main);
+  text-shadow: var(--glow-orange);
+}
+
+.preview-response-note {
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid rgba(var(--color-neon-orange-rgb), 0.42);
+  border-radius: var(--radius-md);
+  color: var(--color-neon-orange);
+  background: rgba(var(--color-neon-orange-rgb), 0.09);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
 }
 
 .response-form,
@@ -1625,7 +1657,8 @@
 }
 
 .status-draft,
-.status-placeholder {
+.status-placeholder,
+.status-preview {
   color: var(--color-neon-orange);
   border-color: rgba(var(--color-neon-orange-rgb), 0.5);
   background: linear-gradient(

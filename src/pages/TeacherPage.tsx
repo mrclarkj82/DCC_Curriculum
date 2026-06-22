@@ -605,6 +605,23 @@ export function TeacherPage() {
                       <Link className="outline-button" to="/today">
                         Open Today
                       </Link>
+                      {classRecord.activeItemId ? (
+                        <Link
+                          className="secondary-button"
+                          to={`/teacher/classes/${classRecord.id}/student-preview`}
+                        >
+                          Open Student Preview
+                        </Link>
+                      ) : (
+                        <button
+                          className="secondary-button"
+                          type="button"
+                          disabled
+                          title="Set an active item before opening student preview."
+                        >
+                          Open Student Preview
+                        </button>
+                      )}
                     </div>
                     <ClassJoinCodePanel classRecord={classRecord} compact />
                   </article>

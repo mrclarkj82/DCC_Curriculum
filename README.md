@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 7 - Bell ringers and exit tickets
+Phase 7.5 - Teacher Student Preview Mode
 
 ## Local Development
 
@@ -289,6 +289,39 @@ Security notes:
 
 Phase 7 still does not implement assignment uploads, media uploads, grading, quiz attempts, portfolio submissions, or video editor features.
 
+## Phase 7.5 Teacher Student Preview Mode
+
+Phase 7.5 adds a teacher/admin-only Student Preview Mode for testing the student-facing Today workflow for a specific class.
+
+What Student Preview Mode does:
+
+- Lets teachers open an assigned class and view it like a student would.
+- Does not require a teacher to have an `@student.doralacademynv.org` account.
+- Does not add the teacher to `classes/{classId}.studentIds`.
+- Does not add the class to the teacher profile as a student membership.
+- Does not impersonate a real student account.
+- Shows a clear Teacher Student Preview Mode banner.
+- Saves preview bell ringer and exit ticket responses separately in `apps/dcc/teacherPreviewResponses`.
+
+Teacher workflow:
+
+1. Sign in as a teacher or admin.
+2. Go to `/teacher`.
+3. Find an Assigned Class Card.
+4. Click `Open Student Preview`.
+5. Review the selected class's active item using the same student-facing layout as `/today`.
+
+Security notes:
+
+- Teachers can preview only classes where their uid is in `classes/{classId}.teacherIds`.
+- Admins can preview any DCC class.
+- Students cannot access preview pages because the route is teacher/admin protected.
+- Preview responses are isolated from `bellRingerResponses` and `exitTicketResponses`.
+- Preview responses do not count toward student completion tables.
+- Firestore rules protect `teacherPreviewResponses` separately.
+
+Phase 7.5 still does not implement assignment uploads, media uploads, grading, quiz attempts, portfolio submissions, or video editor features.
+
 ## Shared Firebase Project And Namespacing
 
 DCC Creative Studio uses the shared Blaze Firebase project `dragonmath-f6f56`, but DCC app data is namespaced under `apps/dcc` so it does not collide with DragonMath data.
@@ -325,6 +358,7 @@ Signed-in student routes:
 Teacher/admin route:
 
 - `/teacher`
+- `/teacher/classes/:classId/student-preview`
 
 Admin route:
 

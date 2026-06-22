@@ -1,4 +1,4 @@
-import type { ActiveClassItem, ClassRecord, UserProfile } from '../../types';
+import type { ActiveClassItem, ClassRecord, UserProfile, ViewerMode } from '../../types';
 import { StudentResponseCard } from './StudentResponseCard';
 
 interface ExitTicketResponseCardProps {
@@ -6,6 +6,7 @@ interface ExitTicketResponseCardProps {
   activeItem: ActiveClassItem;
   classRecord: ClassRecord;
   userProfile: UserProfile;
+  viewerMode?: ViewerMode;
 }
 
 export function ExitTicketResponseCard({
@@ -13,6 +14,7 @@ export function ExitTicketResponseCard({
   activeItem,
   classRecord,
   userProfile,
+  viewerMode = 'student',
 }: ExitTicketResponseCardProps) {
   return (
     <StudentResponseCard
@@ -24,6 +26,7 @@ export function ExitTicketResponseCard({
       activeItem={activeItem}
       classRecord={classRecord}
       userProfile={userProfile}
+      viewerMode={viewerMode}
     />
   );
 }

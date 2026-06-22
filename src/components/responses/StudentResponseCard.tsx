@@ -8,18 +8,25 @@ import {
   subscribeToBellRingerResponse,
   subscribeToExitTicketResponse,
 } from '../../services/responseService';
+import {
+  submitTeacherPreviewResponse,
+  subscribeToTeacherPreviewResponse,
+} from '../../services/studentPreviewService';
 import type {
   ActiveClassItem,
   BellRingerResponse,
   ClassRecord,
   ExitTicketResponse,
   ResponseKind,
+  TeacherPreviewResponse,
   UserProfile,
+  ViewerMode,
 } from '../../types';
+import { isTeacherPreviewMode } from '../../types';
 import { CompletionBadge } from './CompletionBadge';
 import { ResponseTextArea } from './ResponseTextArea';
 
-type StudentResponse = BellRingerResponse | ExitTicketResponse;
+type StudentResponse = BellRingerResponse | ExitTicketResponse | TeacherPreviewResponse;
 
 interface StudentResponseCardProps {
   kind: ResponseKind;
@@ -30,6 +37,7 @@ interface StudentResponseCardProps {
   activeItem: ActiveClassItem;
   classRecord: ClassRecord;
   userProfile: UserProfile;
+  viewerMode?: ViewerMode;
 }
 
 function formatSavedAt(value: unknown): string {
@@ -67,6 +75,7 @@ export function StudentResponseCard({
   activeItem,
   classRecord,
   userProfile,
+  viewerMode = 'student',
 }: StudentResponseCardProps) {
   const [savedResponse, setSavedResponse] = useState<StudentResponse | null>(null);
   const [draftResponse, setDraftResponse] = useState('');
@@ -77,6 +86,7 @@ export function StudentResponseCard({
   const trimmedPrompt = prompt.trim();
   const isComplete = Boolean(savedResponse?.response.trim());
   const textareaId = `${kind}-${classRecord.id}-${activeItem.id}`;
+  const isPreviewMode = isTeacherPreviewMode(viewerMode);
 
   useEffect(() => {
     setMessage(null);
@@ -102,6 +112,17 @@ export function StudentResponseCard({
       setIsLoading(false);
     };
 
+    if (isPreviewMode) {
+      return subscribeToTeacherPreviewResponse(
+        classRecord.id,
+        activeItem.id,
+        userProfile.uid,
+        kind,
+        handleResponse,
+        handleError,
+      );
+    }
+
     return kind === 'bellRinger'
       ? subscribeToBellRingerResponse(
           classRecord.id,
@@ -117,7 +138,7 @@ export function StudentResponseCard({
           handleResponse,
           handleError,
         );
-  }, [activeItem.id, classRecord.id, kind, trimmedPrompt, userProfile.uid]);
+  }, [activeItem.id, classRecord.id, isPreviewMode, kind, trimmedPrompt, userProfile.uid]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -144,13 +165,34 @@ export function StudentResponseCard({
         response: draftResponse,
       };
 
-      if (kind === 'bellRinger') {
+      if (isPreviewMode) {
+        await submitTeacherPreviewResponse({
+          teacherUid: userProfile.uid,
+          teacherName: userProfile.displayName || userProfile.email,
+          teacherEmail: userProfile.email,
+          classId: classRecord.id,
+          programAreaId: activeItem.programAreaId,
+          activeItemType: activeItem.type,
+          activeItemId: activeItem.id,
+          responseKind: kind,
+          prompt: trimmedPrompt,
+          response: draftResponse,
+        });
+      } else if (kind === 'bellRinger') {
         await submitBellRingerResponse(input);
       } else {
         await submitExitTicketResponse(input);
       }
 
-      setMessage(savedResponse ? 'Response updated.' : 'Response submitted.');
+      setMessage(
+        isPreviewMode
+          ? savedResponse
+            ? 'Preview response updated.'
+            : 'Preview response submitted.'
+          : savedResponse
+            ? 'Response updated.'
+            : 'Response submitted.',
+      );
     } catch (saveError) {
       setError(firestoreErrorMessage(saveError, 'Unable to save your response.'));
     } finally {
@@ -169,6 +211,11 @@ export function StudentResponseCard({
           <CompletionBadge complete={false} label={title} />
         </div>
         <p className="muted">{emptyMessage}</p>
+        {isPreviewMode && (
+          <p className="preview-response-note">
+            Preview Only - this does not count as real student work.
+          </p>
+        )}
       </section>
     );
   }
@@ -183,6 +230,11 @@ export function StudentResponseCard({
         <CompletionBadge complete={isComplete} label={title} />
       </div>
       <p className="response-prompt">{trimmedPrompt}</p>
+      {isPreviewMode && (
+        <p className="preview-response-note">
+          Preview Only - saved preview responses stay separate from student completion data.
+        </p>
+      )}
 
       {isLoading ? (
         <LoadingState label="Loading your saved response..." />
@@ -197,7 +249,15 @@ export function StudentResponseCard({
           />
           <div className="button-row">
             <button className="gradient-button" type="submit" disabled={isSaving}>
-              {isSaving ? 'Saving...' : savedResponse ? 'Update Response' : 'Submit Response'}
+              {isSaving
+                ? 'Saving...'
+                : isPreviewMode
+                  ? savedResponse
+                    ? 'Update Preview Response'
+                    : 'Submit Preview Response'
+                  : savedResponse
+                    ? 'Update Response'
+                    : 'Submit Response'}
             </button>
             {Boolean(savedResponse?.updatedAt) && (
               <p className="meta-line">Saved {formatSavedAt(savedResponse?.updatedAt)}</p>

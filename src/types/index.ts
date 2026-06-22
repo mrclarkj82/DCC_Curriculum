@@ -222,6 +222,8 @@ export type ResponseStatus = 'submitted';
 
 export type ResponseKind = 'bellRinger' | 'exitTicket';
 
+export type ViewerMode = 'student' | 'teacher-preview';
+
 export interface StudentResponseBase {
   id: string;
   uid: string;
@@ -244,6 +246,30 @@ export interface BellRingerResponse extends StudentResponseBase {
 
 export interface ExitTicketResponse extends StudentResponseBase {
   kind: 'exitTicket';
+}
+
+export interface TeacherPreviewResponse {
+  id: string;
+  teacherUid: string;
+  teacherName: string;
+  teacherEmail: string;
+  classId: string;
+  programAreaId: string;
+  activeItemType: ActiveItemType;
+  activeItemId: string;
+  responseKind: ResponseKind;
+  prompt: string;
+  response: string;
+  status: 'preview-submitted';
+  isPreview: true;
+  createdAt?: unknown;
+  updatedAt?: unknown;
+}
+
+export interface TeacherPreviewContext {
+  classRecord: ClassRecord;
+  activeItem: ActiveClassItem;
+  programArea: ProgramArea | null;
 }
 
 export interface ResponseCompletionSummary {
@@ -276,3 +302,6 @@ export const canSetActiveItem = (
   userProfile: UserProfile | null | undefined,
   classRecord: ClassRecord,
 ): boolean => canManageClass(userProfile, classRecord);
+
+export const isTeacherPreviewMode = (viewerMode: ViewerMode): viewerMode is 'teacher-preview' =>
+  viewerMode === 'teacher-preview';
