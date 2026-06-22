@@ -341,12 +341,21 @@ Firebase project ID: `dragonmath-f6f56`
 Live URLs:
 
 - `https://dcccs.web.app`
+- `https://mrclarkj82.github.io/dcccs`
 
 Deploy command:
 
 ```bash
 firebase deploy --only hosting,firestore:rules,functions
 ```
+
+GitHub Pages mirror build:
+
+```bash
+npm run build:github-pages
+```
+
+The GitHub Pages mirror uses Vite base path `/dcccs/` and React Router basename `/dcccs`.
 
 Use `npm install`, `npm run build`, `npm run lint`, `npm run validate:curriculum`, and `npm --prefix functions run build` before deploying. The app builds from local `.env.local` values, but `.env.local` is ignored by git and must never be committed. Deploy Storage rules only in a future phase when Firebase Storage is initialized and upload workflows are designed.
 
