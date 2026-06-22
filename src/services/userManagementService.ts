@@ -3,6 +3,7 @@ import {
   arrayUnion,
   collection,
   doc,
+  getDoc,
   getDocs,
   onSnapshot,
   serverTimestamp,
@@ -31,6 +32,19 @@ export async function getAllUsers(): Promise<UserProfile[]> {
 
   return sortUsers(
     snapshot.docs.map((documentSnapshot) => userProfileFromData(documentSnapshot.data())),
+  );
+}
+
+export async function getUsersByIds(uids: string[]): Promise<UserProfile[]> {
+  const uniqueUids = Array.from(new Set(uids.filter(Boolean)));
+  const snapshots = await Promise.all(
+    uniqueUids.map((uid) => getDoc(doc(db, dccDocumentPath('users', uid)))),
+  );
+
+  return sortUsers(
+    snapshots
+      .filter((snapshot) => snapshot.exists())
+      .map((snapshot) => userProfileFromData(snapshot.data())),
   );
 }
 

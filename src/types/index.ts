@@ -22,6 +22,13 @@ export interface RubricItem {
   description: string;
 }
 
+export type PromptField =
+  | string
+  | {
+      type?: string;
+      prompt: string;
+    };
+
 export interface Lesson {
   id: string;
   programAreaId: string;
@@ -70,6 +77,8 @@ export interface Assignment {
   rubric: RubricItem[];
   extensionChallenge: string;
   reflectionPrompt: string;
+  bellRinger?: PromptField;
+  exitTicket?: PromptField;
 }
 
 export interface QuizQuestion {
@@ -108,6 +117,8 @@ export interface MediaProject {
   evidenceRequired: string[];
   rubric: RubricItem[];
   reflectionPrompt: string;
+  bellRinger?: PromptField;
+  exitTicket?: PromptField;
   tags: string[];
 }
 
@@ -125,6 +136,8 @@ export interface BroadcastUpdate {
   teacherNotes: string;
   publishDate: string;
   dueDate: string;
+  bellRinger?: PromptField;
+  exitTicket?: PromptField;
   tags: string[];
 }
 
@@ -203,6 +216,46 @@ export interface JoinClassResult {
 export interface JoinClassError {
   code: string;
   message: string;
+}
+
+export type ResponseStatus = 'submitted';
+
+export type ResponseKind = 'bellRinger' | 'exitTicket';
+
+export interface StudentResponseBase {
+  id: string;
+  uid: string;
+  studentName: string;
+  studentEmail: string;
+  classId: string;
+  programAreaId: string;
+  activeItemType: ActiveItemType;
+  activeItemId: string;
+  prompt: string;
+  response: string;
+  status: ResponseStatus;
+  createdAt?: unknown;
+  updatedAt?: unknown;
+}
+
+export interface BellRingerResponse extends StudentResponseBase {
+  kind: 'bellRinger';
+}
+
+export interface ExitTicketResponse extends StudentResponseBase {
+  kind: 'exitTicket';
+}
+
+export interface ResponseCompletionSummary {
+  uid: string;
+  studentName: string;
+  studentEmail: string;
+  bellRingerComplete: boolean;
+  exitTicketComplete: boolean;
+  bellRingerUpdatedAt?: unknown;
+  exitTicketUpdatedAt?: unknown;
+  bellRingerResponse?: BellRingerResponse;
+  exitTicketResponse?: ExitTicketResponse;
 }
 
 export const isAdminRole = (role: UserRole | null | undefined): role is 'admin' => role === 'admin';

@@ -302,6 +302,87 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time;
     }
 
+    function responseAllowedKeys(responseData) {
+      return responseData.keys().hasOnly([
+        'id',
+        'uid',
+        'studentName',
+        'studentEmail',
+        'classId',
+        'programAreaId',
+        'activeItemType',
+        'activeItemId',
+        'prompt',
+        'response',
+        'status',
+        'createdAt',
+        'updatedAt'
+      ]);
+    }
+
+    function responseMatchesActiveClassItem(responseData) {
+      return responseData.classId is string
+        && classExists(responseData.classId)
+        && responseData.programAreaId == classData(responseData.classId).activeProgramAreaId
+        && responseData.activeItemType == classData(responseData.classId).activeItemType
+        && responseData.activeItemId == classData(responseData.classId).activeItemId;
+    }
+
+    function canReadStudentResponse(responseData) {
+      return isAdmin()
+        || (
+          isAllowedAccount()
+          && responseData.uid == request.auth.uid
+          && responseData.classId is string
+          && classExists(responseData.classId)
+          && request.auth.uid in classData(responseData.classId).studentIds
+        )
+        || (
+          isTeacher()
+          && responseData.classId is string
+          && classExists(responseData.classId)
+          && request.auth.uid in classData(responseData.classId).teacherIds
+        );
+    }
+
+    function safeStudentResponseBase(responseId) {
+      return isAllowedAccount()
+        && userRole() == 'student'
+        && responseAllowedKeys(request.resource.data)
+        && request.resource.data.id == responseId
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.studentEmail == request.auth.token.email
+        && request.resource.data.studentName is string
+        && request.resource.data.prompt is string
+        && request.resource.data.prompt.size() > 0
+        && request.resource.data.response is string
+        && request.resource.data.response.size() > 0
+        && request.resource.data.response.size() <= 4000
+        && request.resource.data.status == 'submitted'
+        && request.resource.data.programAreaId is string
+        && request.resource.data.activeItemId is string
+        && activeItemTypeIsSupported(request.resource.data.activeItemType)
+        && responseMatchesActiveClassItem(request.resource.data)
+        && request.auth.uid in classData(request.resource.data.classId).studentIds
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function safeStudentResponseCreate(responseId) {
+      return safeStudentResponseBase(responseId)
+        && request.resource.data.createdAt == request.time;
+    }
+
+    function safeStudentResponseUpdate(responseId) {
+      return safeStudentResponseBase(responseId)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.id == resource.data.id
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.classId == resource.data.classId
+        && request.resource.data.programAreaId == resource.data.programAreaId
+        && request.resource.data.activeItemType == resource.data.activeItemType
+        && request.resource.data.activeItemId == resource.data.activeItemId;
+    }
+
     match /apps/{appId} {
       allow read, write: if false;
 
@@ -340,6 +421,20 @@ service cloud.firestore {
         allow delete: if isDccApp(appId) && isAdmin();
       }
 
+      match /bellRingerResponses/{responseId} {
+        allow get, list: if isDccApp(appId) && canReadStudentResponse(resource.data);
+        allow create: if isDccApp(appId) && safeStudentResponseCreate(responseId);
+        allow update: if isDccApp(appId) && safeStudentResponseUpdate(responseId);
+        allow delete: if false;
+      }
+
+      match /exitTicketResponses/{responseId} {
+        allow get, list: if isDccApp(appId) && canReadStudentResponse(resource.data);
+        allow create: if isDccApp(appId) && safeStudentResponseCreate(responseId);
+        allow update: if isDccApp(appId) && safeStudentResponseUpdate(responseId);
+        allow delete: if false;
+      }
+
       match /programAreas/{programAreaId} {
         allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
@@ -376,8 +471,7 @@ service cloud.firestore {
     }
 
     // Future phases will add tightly scoped rules for classroom workflow collections:
-    // bellRingerResponses, exitTicketResponses, submissions, mediaSubmissions,
-    // quizAttempts, portfolioItems, and teacher feedback records.
+    // submissions, mediaSubmissions, quizAttempts, portfolioItems, and teacher feedback records.
     match /{document=**} {
       allow read, write: if false;
     }

@@ -25,6 +25,7 @@ import {
 } from '../services/classManagementService';
 import { firestoreErrorMessage } from '../services/firestoreService';
 import { getProgramAreas } from '../services/programAreaService';
+import { getResponseSystemCounts, type ResponseSystemCounts } from '../services/responseService';
 import { subscribeToUsers, updateUserRole } from '../services/userManagementService';
 import type {
   ActiveItemType,
@@ -135,6 +136,8 @@ export function AdminPage() {
   const [activeOptionsLoading, setActiveOptionsLoading] = useState(false);
   const [activeOptionsError, setActiveOptionsError] = useState<string | null>(null);
   const [activeTitlesByClassId, setActiveTitlesByClassId] = useState<Record<string, string>>({});
+  const [responseCounts, setResponseCounts] = useState<ResponseSystemCounts | null>(null);
+  const [responseCountsError, setResponseCountsError] = useState<string | null>(null);
   const [savingKey, setSavingKey] = useState<string | null>(null);
 
   useEffect(() => {
@@ -280,6 +283,29 @@ export function AdminPage() {
       didCancel = true;
     };
   }, [classes]);
+
+  useEffect(() => {
+    let didCancel = false;
+
+    getResponseSystemCounts()
+      .then((counts) => {
+        if (!didCancel) {
+          setResponseCounts(counts);
+          setResponseCountsError(null);
+        }
+      })
+      .catch((error: unknown) => {
+        if (!didCancel) {
+          setResponseCountsError(
+            firestoreErrorMessage(error, 'Unable to load response collection counts.'),
+          );
+        }
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, []);
 
   const isLoading = usersLoading || classesLoading || programAreasLoading;
 
@@ -541,6 +567,31 @@ export function AdminPage() {
             <article className="card neon-card metric-card">
               <p className="retro-label">School Year</p>
               <h3>{overview.schoolYear}</h3>
+            </article>
+          </div>
+        </section>
+
+        <section className="content-section neon-section">
+          <div className="section-heading-row">
+            <div>
+              <p className="retro-label">Response System</p>
+              <h2>Bell Ringer And Exit Ticket Status</h2>
+            </div>
+            <StatusBadge status="enabled" />
+          </div>
+          {responseCountsError && <ErrorState message={responseCountsError} />}
+          <div className="metric-grid">
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Bell Ringers</p>
+              <h3>{responseCounts?.bellRingerResponses ?? '...'}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Exit Tickets</p>
+              <h3>{responseCounts?.exitTicketResponses ?? '...'}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Total Responses</p>
+              <h3>{responseCounts?.totalResponses ?? '...'}</h3>
             </article>
           </div>
         </section>

@@ -7,6 +7,8 @@ import { ErrorState } from '../components/ErrorState';
 import { EvidenceChecklist } from '../components/EvidenceChecklist';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
+import { BellRingerResponseCard } from '../components/responses/BellRingerResponseCard';
+import { ExitTicketResponseCard } from '../components/responses/ExitTicketResponseCard';
 import { RubricTable } from '../components/RubricTable';
 import { StatusBadge } from '../components/StatusBadge';
 import { VocabularyList } from '../components/VocabularyList';
@@ -14,6 +16,7 @@ import { getActiveItem } from '../services/activeItemService';
 import { subscribeToClass } from '../services/classService';
 import { firestoreErrorMessage } from '../services/firestoreService';
 import { getProgramAreaById } from '../services/programAreaService';
+import { getBellRingerPrompt, getExitTicketPrompt } from '../services/responseService';
 import type {
   ActiveClassItem,
   Assignment,
@@ -43,11 +46,6 @@ function LessonMission({
       <section className="card mission-panel">
         <h2>Program Area</h2>
         <p>{programArea?.title ?? lesson.programAreaId}</p>
-      </section>
-
-      <section className="card mission-panel">
-        <h2>Bell Ringer</h2>
-        <p>{lesson.bellRinger.prompt}</p>
       </section>
 
       <section className="card mission-panel">
@@ -84,11 +82,6 @@ function LessonMission({
       <section className="card mission-panel">
         <h2>Submission Evidence Placeholder</h2>
         <EvidenceChecklist items={lesson.assignment.evidenceRequired} />
-      </section>
-
-      <section className="card mission-panel">
-        <h2>Exit Ticket</h2>
-        <p>{lesson.exitTicket}</p>
       </section>
 
       <section className="card mission-panel">
@@ -423,6 +416,7 @@ export function TodayPage() {
   }
 
   const record = activeItem?.record;
+  const isStudent = userProfile.role === 'student';
   const isMissingActiveRecord =
     activeItem &&
     activeItem.type !== 'portfolioCheckpoint' &&
@@ -474,6 +468,23 @@ export function TodayPage() {
           title="Active item not found"
           message="The class record points to an active item that is not in Firestore yet. Seed curriculum content or update the class active item."
         />
+      )}
+
+      {assignedClass && activeItem && isStudent && (
+        <div className="today-grid response-grid">
+          <BellRingerResponseCard
+            prompt={getBellRingerPrompt(activeItem)}
+            activeItem={activeItem}
+            classRecord={assignedClass}
+            userProfile={userProfile}
+          />
+          <ExitTicketResponseCard
+            prompt={getExitTicketPrompt(activeItem)}
+            activeItem={activeItem}
+            classRecord={assignedClass}
+            userProfile={userProfile}
+          />
+        </div>
       )}
 
       {activeItem && (

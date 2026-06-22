@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 6.5 - Student class join codes
+Phase 7 - Bell ringers and exit tickets
 
 ## Local Development
 
@@ -139,8 +139,6 @@ The real write path uses the Firebase Admin SDK and writes to `apps/dcc` by defa
 
 Not implemented yet:
 
-- Bell ringer submissions.
-- Exit ticket submissions.
 - Assignment uploads.
 - Media uploads.
 - Quiz attempts.
@@ -238,7 +236,58 @@ Cloud Functions are required for the secure student join action. Deploy Phase 6.
 firebase deploy --only hosting,firestore:rules,functions
 ```
 
-Phase 6.5 does not implement bell ringer submissions, exit tickets, uploads, grading, quiz attempts, or portfolios.
+Phase 6.5 does not implement uploads, grading, quiz attempts, or portfolios.
+
+## Phase 7 Bell Ringers And Exit Tickets
+
+Phase 7 adds the first student response workflow while keeping assignment uploads, media uploads, grading, quiz attempts, and portfolios out of scope.
+
+What Phase 7 adds:
+
+- Student bell ringer responses on `/today`.
+- Student exit ticket responses on `/today`.
+- Saved response loading and editing for the active class item.
+- Completion badges for students.
+- Teacher/admin daily response completion tables on `/teacher`.
+- Light response collection status counts on `/admin`.
+
+Firestore collections:
+
+- `apps/dcc/bellRingerResponses`
+- `apps/dcc/exitTicketResponses`
+
+Response document IDs are deterministic in the client:
+
+```text
+{classId}_{activeItemId}_{uid}
+```
+
+Student workflow:
+
+1. Sign in with an approved Google account.
+2. Join or be assigned to a class.
+3. Go to `/today`.
+4. Submit or edit the bell ringer and exit ticket for the class active item.
+5. Refreshing `/today` reloads the saved response and completion status.
+
+Teacher workflow:
+
+1. Sign in as a teacher or admin.
+2. Go to `/teacher`.
+3. Review assigned class active items.
+4. Use Daily Response Completion to see roster counts, completion status, timestamps, and submitted text.
+
+Security notes:
+
+- Students can create and update only their own response docs.
+- Students cannot read classmates' responses.
+- Students can submit only for the active item in a class where they are on the roster.
+- Teachers can read responses only for classes they teach.
+- Admins can read response status across DCC.
+- Response deletes are closed by default.
+- Storage remains closed.
+
+Phase 7 still does not implement assignment uploads, media uploads, grading, quiz attempts, portfolio submissions, or video editor features.
 
 ## Shared Firebase Project And Namespacing
 
@@ -365,4 +414,4 @@ The first teacher or admin must sign in once, then be manually promoted in Fires
 
 ## Later Phase Preview
 
-Later phases should build bell ringer responses, exit tickets, assignment submissions, media submissions, quiz attempts, grading, and portfolio workflows while preserving the multi-program-area structure.
+Later phases should build assignment submissions, media submissions, quiz attempts, grading, and portfolio workflows while preserving the multi-program-area structure.
