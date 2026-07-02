@@ -51,6 +51,6 @@ A/B method: The source calendar does not explicitly mark A/B days, so cycle days
 
 ## Calendar Anomalies / Notes
 
-- Universal Test Day is listed as Tuesday, TBD, so no fixed date is removed yet.
+- Universal Test Day is listed as Tuesday, TBD. When announced, it should be noted, but it does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
 - October 15 conferences are listed as no school for ES/MS students only. It does not affect this Q1 Unreal L1-L16 window.
 - The source calendar states Year 173 Days, but the fixed listed no-school dates produce a different count. The schedule follows the listed date notes.

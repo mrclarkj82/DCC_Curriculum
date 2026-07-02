@@ -30,6 +30,6 @@ Each Q1 Unreal lesson runs across two valid instructional class days: one A day 
 ## Known Calendar Notes
 
 - Staff development days, structured teacher planning days, holidays, and breaks are excluded.
-- Universal Test Day is listed as Tuesday, TBD and is not assigned to a fixed date yet.
+- Universal Test Day is listed as Tuesday, TBD and is not assigned to a fixed date yet. When announced, it should be noted, but it does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
 - October 15, 2026 is listed as no school for ES/MS students only. DCC high school scheduling treats it as instructional unless the teacher changes that later.
 - The source calendar's stated summary counts do not exactly match the fixed dates listed in the PDF. Generated schedules follow the fixed date list.

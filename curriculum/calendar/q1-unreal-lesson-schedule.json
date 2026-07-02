@@ -9,8 +9,8 @@
     "lessonCount": 16,
     "scheduledDateCount": 32,
     "calendarAnomalies": [
-      "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20 before the TBD Universal Test Day is known.",
-      "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note.",
+      "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20. Contingency days and the TBD ACT testing day help explain why the official count may not reconcile from fixed dates alone.",
+      "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.",
       "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note."
     ]
   },
