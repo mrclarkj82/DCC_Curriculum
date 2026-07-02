@@ -657,6 +657,11 @@ export function TeacherPage() {
               <h3>{overview.activeItems}</h3>
             </article>
           </div>
+          <div className="button-row">
+            <Link className="secondary-button" to="/teacher/schedule">
+              Preview Q1 Unreal Schedule
+            </Link>
+          </div>
         </section>
 
         {!!classRecords.length && (

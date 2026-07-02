@@ -21,6 +21,7 @@ export function Header() {
         <NavLink to="/today">Today</NavLink>
         <NavLink to="/areas">Program Areas</NavLink>
         {isTeacher && <NavLink to="/teacher">Teacher</NavLink>}
+        {isTeacher && <NavLink to="/teacher/schedule">Schedule</NavLink>}
         {isAdmin && <NavLink to="/admin">Admin</NavLink>}
       </nav>
       <div className="header-actions">

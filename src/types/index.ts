@@ -292,6 +292,52 @@ export interface SubmissionReviewUpdate {
   reviewedBy: string;
 }
 
+export interface LessonScheduleItem {
+  id: string;
+  scheduleId: string;
+  programAreaId: string;
+  quarter: string;
+  lessonId: string;
+  lessonNumber: number;
+  lessonTitle: string;
+  aDayDate: string;
+  bDayDate: string;
+  aDayCycle: 'A';
+  bDayCycle: 'B';
+  aDayCalendarNote: string;
+  bDayCalendarNote: string;
+  activeItemType: 'lesson';
+  status: string;
+  source: string;
+  notes: string;
+}
+
+export interface LessonScheduleSkippedDate {
+  date: string;
+  dayOfWeek: string;
+  cycleDay: string | null;
+  isInstructionalDay: boolean;
+  calendarNote: string;
+  sourceNote: string;
+  excludedReason: string | null;
+}
+
+export interface LessonSchedulePayload {
+  metadata: {
+    source: string;
+    sourceFile: string;
+    programAreaId: string;
+    quarter: string;
+    startDate: string;
+    cycleInference: string;
+    lessonCount: number;
+    scheduledDateCount: number;
+    calendarAnomalies: string[];
+  };
+  lessons: LessonScheduleItem[];
+  skippedDatesDuringSchedule: LessonScheduleSkippedDate[];
+}
+
 export interface StudentResponseBase {
   id: string;
   uid: string;
