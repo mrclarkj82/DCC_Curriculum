@@ -4,7 +4,9 @@ Source: `2026-2027 Doral Calendar (List Form).pdf`
 
 Start date: **2026-08-13**
 
-A/B method: The source calendar does not explicitly mark A/B days, so cycle days are inferred. Thursday, August 13, 2026 is `A`; the next valid instructional day is `B`; the sequence alternates across valid instructional weekdays only. Weekends and no-school days are skipped.
+A/B method: The source calendar does not explicitly mark A/B days, so cycle days are inferred. Thursday, August 13, 2026 is `A`; the next valid instructional day is `B`; the sequence alternates across valid instructional weekdays only. Weekends are excluded from instructional scheduling, and actual weekday no-school dates are skipped.
+
+Weekends are not listed as skipped dates. The no-school list below contains only actual weekday non-student days from the school calendar.
 
 ## Lesson Schedule
 
@@ -27,30 +29,18 @@ A/B method: The source calendar does not explicitly mark A/B days, so cycle days
 | 15 | `ue-q1-l15` | Landscapes | 2026-09-25 (A) | 2026-09-28 (B) |  |
 | 16 | `ue-q1-l16` | Foliage, Mini-World, and Blueprint Preview | 2026-09-29 (A) | 2026-09-30 (B) |  |
 
-## Skipped Dates During This Q1 Schedule Window
+## No-School Weekdays During This Q1 Schedule Window
 
 | Date | Day | Reason | Source Note |
 | --- | --- | --- | --- |
-| 2026-08-15 | Saturday | Weekend |  |
-| 2026-08-16 | Sunday | Weekend |  |
-| 2026-08-22 | Saturday | Weekend |  |
-| 2026-08-23 | Sunday | Weekend |  |
-| 2026-08-29 | Saturday | Weekend |  |
-| 2026-08-30 | Sunday | Weekend |  |
 | 2026-09-04 | Friday | Staff Development Day #1 (No School for Students) | Staff Development Day #1 (No School for Students) |
-| 2026-09-05 | Saturday | Weekend |  |
-| 2026-09-06 | Sunday | Weekend |  |
 | 2026-09-07 | Monday | Labor Day (No School) | Labor Day (No School) |
-| 2026-09-12 | Saturday | Weekend |  |
-| 2026-09-13 | Sunday | Weekend |  |
-| 2026-09-19 | Saturday | Weekend |  |
-| 2026-09-20 | Sunday | Weekend |  |
 | 2026-09-21 | Monday | Staff Development Day #2 (No School for Students) | Staff Development Day #2 (No School for Students) |
-| 2026-09-26 | Saturday | Weekend |  |
-| 2026-09-27 | Sunday | Weekend |  |
 
 ## Calendar Anomalies / Notes
 
-- Universal Test Day is listed as Tuesday, TBD. When announced, it should be noted, but it does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
-- October 15 conferences are listed as no school for ES/MS students only. It does not affect this Q1 Unreal L1-L16 window.
-- The source calendar states Year 173 Days, but the fixed listed no-school dates produce a different count. The schedule follows the listed date notes.
+- The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20. Contingency days and the TBD ACT testing day help explain why the official count may not reconcile from fixed dates alone.
+- Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
+- October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.
+- Weekends are excluded from instructional scheduling but are not listed as no-school dates.
+- No-school dates list actual weekday non-student days only.

@@ -389,16 +389,22 @@ For the Q1 Unreal schedule:
 - Scheduling starts on August 13, 2026.
 - The source calendar does not explicitly mark A/B days, so August 13 is inferred as `A`.
 - A/B days alternate across valid instructional weekdays only.
-- Saturdays and Sundays are always skipped.
-- Holidays, breaks, staff development days, structured teacher planning days, and other no-school days in the source calendar are skipped.
+- Saturdays and Sundays are always excluded from instructional scheduling.
+- Weekends are not listed in `noSchoolDates` or skipped-date lists.
+- Holidays, breaks, staff development days, structured teacher planning days, and other weekday no-school days in the source calendar are skipped and listed as `noSchoolDates`.
 - Each Q1 Unreal lesson runs for two instructional class days: one A day and one B day.
 
 Generated files:
 
 - `curriculum/calendar/instructional-days.json`
+- `curriculum/calendar/q1-unreal-block-calendar.json`
+- `curriculum/calendar/q1-unreal-block-calendar.md`
 - `curriculum/calendar/q1-unreal-lesson-schedule.json`
 - `curriculum/calendar/q1-unreal-lesson-schedule.md`
 - `curriculum/website-data/lessonSchedule.seed.json`
+- `curriculum/website-data/blockLessonCalendar.seed.json`
+
+The teacher/admin route `/teacher/schedule` shows the Q1 Unreal schedule as a Monday-Friday block calendar. Instructional day cells use short labels such as `Q1 L1` as the main heading, with the long lesson title, lesson ID, program area, A/B day, and calendar notes inside the block. No-school weekday cells show `No School` and the reason from the source calendar.
 
 The schedule data is website-ready and can later drive or suggest class `activeItemId` values by date and cycle day. It does not replace the existing `/today` active item workflow.
 
@@ -438,6 +444,7 @@ Signed-in student routes:
 Teacher/admin route:
 
 - `/teacher`
+- `/teacher/schedule`
 - `/teacher/classes/:classId/student-preview`
 
 Admin route:

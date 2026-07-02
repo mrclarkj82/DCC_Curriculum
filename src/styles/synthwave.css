@@ -939,6 +939,180 @@
   font-size: 12px;
 }
 
+.schedule-month-section {
+  overflow-x: auto;
+}
+
+.schedule-weekday-row,
+.schedule-week-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  gap: var(--space-3);
+  min-width: 860px;
+}
+
+.schedule-weekday-row {
+  margin-bottom: var(--space-3);
+}
+
+.schedule-weekday-row span {
+  display: grid;
+  min-height: 36px;
+  place-items: center;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.32);
+  border-radius: var(--radius-md);
+  color: var(--color-neon-cyan);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-cyan-rgb), 0.14),
+      rgba(var(--color-neon-purple-rgb), 0.1)
+    ),
+    rgba(8, 3, 18, 0.62);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.schedule-month-grid {
+  display: grid;
+  gap: var(--space-3);
+  padding-bottom: var(--space-2);
+}
+
+.schedule-day-card {
+  display: flex;
+  overflow: hidden;
+  min-height: 224px;
+  flex-direction: column;
+  gap: var(--space-2);
+  border: 1px solid rgba(var(--color-neon-purple-rgb), 0.38);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 34%),
+    rgba(8, 3, 18, 0.58);
+  box-shadow:
+    inset 0 0 22px rgba(var(--color-neon-purple-rgb), 0.08),
+    0 0 18px rgba(var(--color-neon-purple-rgb), 0.12);
+  overflow-wrap: anywhere;
+}
+
+.schedule-day-card--instructional {
+  border-color: rgba(var(--color-neon-cyan-rgb), 0.54);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-cyan-rgb), 0.16),
+      rgba(var(--color-neon-blue-rgb), 0.1)
+    ),
+    rgba(8, 3, 18, 0.68);
+  box-shadow: var(--glow-cyan);
+}
+
+.schedule-day-card--no-school {
+  border-color: rgba(var(--color-neon-orange-rgb), 0.58);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-orange-rgb), 0.18),
+      rgba(var(--color-neon-pink-rgb), 0.1)
+    ),
+    rgba(8, 3, 18, 0.68);
+  box-shadow: var(--glow-orange);
+}
+
+.schedule-day-card--empty,
+.schedule-day-card--outside-month {
+  opacity: 0.72;
+  border-color: rgba(var(--color-neon-purple-rgb), 0.24);
+  background:
+    linear-gradient(135deg, rgba(var(--color-neon-purple-rgb), 0.08), transparent 50%),
+    rgba(8, 3, 18, 0.42);
+}
+
+.schedule-date-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  color: var(--color-neon-orange);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.schedule-day-card h3 {
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: 24px;
+  line-height: 1.12;
+  text-shadow: 0 0 14px rgba(var(--color-neon-cyan-rgb), 0.28);
+}
+
+.schedule-day-card--no-school h3 {
+  text-shadow: var(--glow-orange);
+}
+
+.schedule-day-card--empty h3,
+.schedule-day-card--outside-month h3 {
+  color: var(--color-text-muted);
+  font-size: 17px;
+}
+
+.schedule-lesson-title,
+.schedule-note {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.schedule-lesson-title {
+  font-weight: 800;
+}
+
+.schedule-note {
+  color: var(--color-text-muted);
+}
+
+.schedule-cell-link {
+  align-self: flex-start;
+  min-height: 34px;
+  margin-top: auto;
+  padding: 7px 10px;
+  font-size: 12px;
+}
+
+.status-a-day {
+  color: var(--color-neon-green);
+  border-color: rgba(var(--color-neon-green-rgb), 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-neon-green-rgb), 0.15),
+    rgba(var(--color-neon-cyan-rgb), 0.08)
+  );
+  box-shadow: 0 0 16px rgba(var(--color-neon-green-rgb), 0.22);
+}
+
+.status-b-day,
+.status-no-school {
+  color: var(--color-neon-orange);
+  border-color: rgba(var(--color-neon-orange-rgb), 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-neon-orange-rgb), 0.16),
+    rgba(var(--color-neon-pink-rgb), 0.08)
+  );
+  box-shadow: var(--glow-orange);
+}
+
+.status-monday-friday,
+.status-read-only {
+  color: var(--color-neon-cyan);
+}
+
 .response-grid {
   margin-bottom: var(--space-5);
 }

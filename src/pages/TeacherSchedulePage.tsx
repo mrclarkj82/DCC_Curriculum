@@ -1,31 +1,90 @@
 import { Link } from 'react-router-dom';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
-import q1UnrealScheduleSeed from '../data/seed/q1-unreal-lesson-schedule.json';
-import type { LessonSchedulePayload } from '../types';
+import blockLessonCalendarSeed from '../data/seed/blockLessonCalendar.seed.json';
+import type { BlockCalendarDay, BlockLessonCalendarPayload } from '../types';
 
-const q1UnrealSchedule = q1UnrealScheduleSeed as LessonSchedulePayload;
+const blockCalendar = blockLessonCalendarSeed as BlockLessonCalendarPayload;
 
-function formatDate(value: string): string {
+function formatShortDate(value: string): string {
   const date = new Date(`${value}T00:00:00`);
 
   return new Intl.DateTimeFormat('en-US', {
-    weekday: 'short',
     month: 'short',
     day: 'numeric',
   }).format(date);
 }
 
+function dayStatusLabel(day: BlockCalendarDay): string {
+  if (day.status === 'instructional') {
+    return `${day.cycleDay} Day`;
+  }
+
+  if (day.status === 'no-school') {
+    return 'No School';
+  }
+
+  if (day.status === 'outside-month') {
+    return 'Outside Month';
+  }
+
+  return 'Open';
+}
+
+function ScheduleDayCell({ day }: { day: BlockCalendarDay }) {
+  const note = day.calendarNote || day.sourceNote;
+
+  return (
+    <article className={`schedule-day-card schedule-day-card--${day.status}`}>
+      <div className="schedule-date-row">
+        <span>{formatShortDate(day.date)}</span>
+        <span>{day.dayOfWeek.slice(0, 3)}</span>
+      </div>
+
+      {day.status === 'instructional' && (
+        <>
+          <h3>{day.lessonLabel}</h3>
+          <div className="tag-row">
+            <StatusBadge status={dayStatusLabel(day)} />
+            <StatusBadge status={day.programAreaId} />
+          </div>
+          <p className="schedule-lesson-title">{day.lessonTitle}</p>
+          <p className="meta-line">{day.lessonId}</p>
+          {note && <p className="schedule-note">{note}</p>}
+          <Link className="outline-button schedule-cell-link" to={`/lessons/${day.lessonId}`}>
+            Open Lesson
+          </Link>
+        </>
+      )}
+
+      {day.status === 'no-school' && (
+        <>
+          <h3>No School</h3>
+          <StatusBadge status="no school" />
+          <p className="schedule-lesson-title">{day.reason}</p>
+          {note && <p className="schedule-note">{note}</p>}
+        </>
+      )}
+
+      {(day.status === 'empty' || day.status === 'outside-month') && (
+        <>
+          <h3>{day.status === 'outside-month' ? 'Outside Month' : 'No Q1 Lesson'}</h3>
+          <StatusBadge status={dayStatusLabel(day)} />
+          <p className="schedule-note">{day.reason}</p>
+        </>
+      )}
+    </article>
+  );
+}
+
 export function TeacherSchedulePage() {
-  const { metadata, lessons, skippedDatesDuringSchedule } = q1UnrealSchedule;
-  const firstLesson = lessons[0];
-  const lastLesson = lessons[lessons.length - 1];
+  const { months, noSchoolDates, summary } = blockCalendar;
 
   return (
     <PageContainer
       eyebrow="Teacher Schedule Preview"
-      title="Q1 Unreal A/B Lesson Schedule"
-      description="Read-only schedule data generated from the 2026-2027 Doral calendar. This preview does not replace the current Today active item controls."
+      title="Q1 Unreal Block Calendar"
+      description="Read-only Monday-Friday calendar view generated from the 2026-2027 Doral calendar. This visual schedule does not replace the current Today active item controls."
       actions={
         <Link className="outline-button" to="/teacher">
           Back To Teacher
@@ -38,96 +97,85 @@ export function TeacherSchedulePage() {
           <div className="section-heading-row">
             <div>
               <p className="retro-label">Schedule Source</p>
-              <h2>Calendar-Based A/B Map</h2>
+              <h2>School Week Block View</h2>
             </div>
             <StatusBadge status="read only" />
           </div>
           <div className="metric-grid">
             <article className="card neon-card metric-card">
-              <p className="retro-label">Start Date</p>
-              <h3>{metadata.startDate}</h3>
-            </article>
-            <article className="card neon-card metric-card">
-              <p className="retro-label">Lessons</p>
-              <h3>{metadata.lessonCount}</h3>
-            </article>
-            <article className="card neon-card metric-card">
-              <p className="retro-label">Class Dates</p>
-              <h3>{metadata.scheduledDateCount}</h3>
+              <p className="retro-label">School Year</p>
+              <h3>{blockCalendar.schoolYear}</h3>
             </article>
             <article className="card neon-card metric-card">
               <p className="retro-label">Window</p>
               <h3>
-                {firstLesson?.aDayDate} - {lastLesson?.bDayDate}
+                {blockCalendar.startDate} - {blockCalendar.endDate}
               </h3>
             </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Lessons</p>
+              <h3>{summary.lessonCount}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Class Days</p>
+              <h3>{summary.instructionalDateCount}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">No-School Days</p>
+              <h3>{summary.noSchoolDateCount}</h3>
+            </article>
+            <article className="card neon-card metric-card">
+              <p className="retro-label">Calendar Style</p>
+              <h3>Mon-Fri</h3>
+            </article>
           </div>
-          <p className="muted">{metadata.cycleInference}</p>
+          <p className="muted">
+            Instructional cells use short labels like Q1 L1 as the main heading. Lesson titles,
+            lesson IDs, program area, A/B day, and calendar notes appear inside the block.
+          </p>
         </section>
+
+        {months.map((month) => (
+          <section className="content-section neon-section schedule-month-section" key={`${month.month}-${month.year}`}>
+            <div className="section-heading-row">
+              <div>
+                <p className="retro-label">{blockCalendar.quarter} Unreal</p>
+                <h2>
+                  {month.month} {month.year}
+                </h2>
+              </div>
+              <StatusBadge status="Monday-Friday" />
+            </div>
+
+            <div className="schedule-weekday-row" aria-hidden="true">
+              {blockCalendar.weekdays.map((weekday) => (
+                <span key={weekday}>{weekday}</span>
+              ))}
+            </div>
+
+            <div className="schedule-month-grid" aria-label={`${month.month} ${month.year} schedule`}>
+              {month.weeks.map((week) => (
+                <div className="schedule-week-row" key={`${month.month}-${week.weekStart}`}>
+                  {week.days.map((day) => (
+                    <ScheduleDayCell key={`${month.month}-${day.date}`} day={day} />
+                  ))}
+                </div>
+              ))}
+            </div>
+          </section>
+        ))}
 
         <section className="content-section neon-section">
           <div className="section-heading-row">
             <div>
-              <p className="retro-label">Q1 Unreal</p>
-              <h2>Lesson Pairing</h2>
+              <p className="retro-label">No-School Weekdays</p>
+              <h2>Actual Weekday Calendar Exceptions</h2>
             </div>
-            <StatusBadge status="A/B pairs" />
+            <StatusBadge status={`${noSchoolDates.length} dates`} />
           </div>
-          <div className="table-scroll">
-            <table className="management-table schedule-table">
-              <thead>
-                <tr>
-                  <th scope="col">Lesson</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">A Day</th>
-                  <th scope="col">B Day</th>
-                  <th scope="col">Current Workflow</th>
-                  <th scope="col">Notes</th>
-                </tr>
-              </thead>
-              <tbody>
-                {lessons.map((lesson) => (
-                  <tr key={lesson.scheduleId}>
-                    <td>
-                      <strong>L{lesson.lessonNumber}</strong>
-                      <p className="meta-line">{lesson.lessonId}</p>
-                    </td>
-                    <td>{lesson.lessonTitle}</td>
-                    <td>
-                      <StatusBadge status={lesson.aDayCycle} />
-                      <p>{formatDate(lesson.aDayDate)}</p>
-                      {lesson.aDayCalendarNote && (
-                        <p className="meta-line">{lesson.aDayCalendarNote}</p>
-                      )}
-                    </td>
-                    <td>
-                      <StatusBadge status={lesson.bDayCycle} />
-                      <p>{formatDate(lesson.bDayDate)}</p>
-                      {lesson.bDayCalendarNote && (
-                        <p className="meta-line">{lesson.bDayCalendarNote}</p>
-                      )}
-                    </td>
-                    <td>
-                      <Link className="outline-button" to={`/lessons/${lesson.lessonId}`}>
-                        Open Lesson
-                      </Link>
-                    </td>
-                    <td>{lesson.notes || 'Ready'}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-        <section className="content-section neon-section">
-          <div className="section-heading-row">
-            <div>
-              <p className="retro-label">Skipped Dates</p>
-              <h2>Weekends And No-School Days</h2>
-            </div>
-            <StatusBadge status={`${skippedDatesDuringSchedule.length} skipped`} />
-          </div>
+          <p className="muted">
+            Saturdays and Sundays are excluded from scheduling, but they are not listed here.
+          </p>
           <div className="table-scroll">
             <table className="management-table schedule-table compact">
               <thead>
@@ -139,12 +187,12 @@ export function TeacherSchedulePage() {
                 </tr>
               </thead>
               <tbody>
-                {skippedDatesDuringSchedule.map((day) => (
+                {noSchoolDates.map((day) => (
                   <tr key={day.date}>
                     <td>{day.date}</td>
                     <td>{day.dayOfWeek}</td>
-                    <td>{day.excludedReason}</td>
-                    <td>{day.sourceNote || day.calendarNote || 'Weekend'}</td>
+                    <td>{day.reason}</td>
+                    <td>{day.sourceNote || day.calendarNote || 'No extra note'}</td>
                   </tr>
                 ))}
               </tbody>
@@ -156,14 +204,13 @@ export function TeacherSchedulePage() {
           <p className="retro-label">Calendar Notes</p>
           <h2>Important Interpretation Rules</h2>
           <ul className="ordered-list">
-            {metadata.calendarAnomalies.map((note) => (
+            {blockCalendar.notes.map((note) => (
               <li key={note}>{note}</li>
             ))}
           </ul>
           <p className="muted">
-            This schedule can later drive or suggest class active items by date and cycle day. For
-            now, teachers still control what students see from the existing Teacher page active item
-            controls.
+            Teachers still control what students see from the existing Teacher page active item
+            controls. This page is a visual planning view, not a schedule editor.
           </p>
         </section>
       </div>

@@ -9,9 +9,12 @@ The source calendar is the attached PDF `2026-2027 Doral Calendar (List Form).pd
 ## Generated Files
 
 - `instructional-days.json`: every date from 2026-08-03 through 2027-05-26 with instructional status, source notes, excluded reasons, and inferred A/B cycle days.
-- `q1-unreal-lesson-schedule.json`: machine-readable Q1 Unreal lesson schedule with metadata and skipped-date notes.
+- `q1-unreal-block-calendar.json`: machine-readable Monday-Friday block calendar for the Q1 Unreal schedule.
+- `q1-unreal-block-calendar.md`: human-readable block calendar view with lesson labels as calendar cell headings.
+- `q1-unreal-lesson-schedule.json`: machine-readable Q1 Unreal lesson schedule with metadata and weekday no-school notes.
 - `q1-unreal-lesson-schedule.md`: human-readable Q1 Unreal lesson schedule table.
 - `../website-data/lessonSchedule.seed.json`: website-ready seed data for future Firestore import.
+- `../website-data/blockLessonCalendar.seed.json`: website-ready block calendar seed used by the teacher/admin schedule preview.
 
 ## A/B Rules
 
@@ -22,6 +25,12 @@ The source calendar does not explicitly mark A/B days. For this schedule, A/B da
 3. The next valid instructional day is `B`.
 4. The sequence alternates across valid instructional weekdays only.
 5. Saturdays, Sundays, and no-school days never count in the A/B sequence.
+
+## Block Calendar Rules
+
+The website schedule view should render as a Monday-Friday block calendar. Instructional day cells use short lesson labels like `Q1 L1`, `Q1 L2`, and `Q1 L3` as the main heading. The long lesson title, lesson ID, program area, A/B day, and calendar notes appear below that heading.
+
+`noSchoolDates` means actual weekday non-student days from the source calendar only. Saturdays and Sundays are excluded from scheduling but must not appear in `noSchoolDates` or skipped-date lists. No-school weekday cells should say `No School` and include the source reason.
 
 ## Q1 Unreal Pairing Rule
 

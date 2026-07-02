@@ -49,6 +49,8 @@ Phase 8 adds Google Drive link submissions while preserving teacher/admin class 
 - Do not build an in-browser video editor unless explicitly requested in a future phase.
 - Future video production functionality should focus on hosting, collecting, organizing, and reviewing media submissions.
 - Calendar-based scheduling must respect the attached/source school calendar. Saturdays and Sundays are always off, no-school days must be skipped, and Q1 Unreal lessons should be mapped in A/B pairs starting August 13 unless the teacher changes the start date.
+- Schedule views should use a block calendar layout, not only a list/table view. Instructional day cell headings should use the short `Q1 L1`, `Q1 L2`, `Q1 L3` format, with long lesson titles beneath the short label.
+- Weekends must not appear in skipped-date or no-school lists. `noSchoolDates` should mean actual weekday non-student days from the school calendar only.
 - If a source calendar does not explicitly label A/B days, infer the alternating A/B sequence across valid instructional days only and preserve any calendar anomalies in notes. ACT testing days should be noted when known, but they do not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
 - Auth uses Google SSO through Firebase.
 - Do not weaken Firebase Auth, Firestore rules, or Storage rules to make local testing easier.

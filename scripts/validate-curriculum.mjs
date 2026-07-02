@@ -4,10 +4,12 @@ import { join } from 'node:path';
 const root = process.cwd();
 const dataDir = join(root, 'curriculum', 'website-data');
 const calendarDir = join(root, 'curriculum', 'calendar');
+const appSeedDir = join(root, 'src', 'data', 'seed');
 
 const readJson = (fileName) => JSON.parse(readFileSync(join(dataDir, fileName), 'utf8'));
 const readCalendarJson = (fileName) =>
   JSON.parse(readFileSync(join(calendarDir, fileName), 'utf8'));
+const readAppSeedJson = (fileName) => JSON.parse(readFileSync(join(appSeedDir, fileName), 'utf8'));
 
 const programAreas = readJson('programAreas.seed.json');
 const lessons = readJson('lessons.seed.json');
@@ -17,7 +19,11 @@ const mediaProjects = readJson('mediaProjects.seed.json');
 const broadcastUpdates = readJson('broadcastUpdates.seed.json');
 const classes = readJson('classes.seed.json');
 const lessonSchedule = readJson('lessonSchedule.seed.json');
+const blockLessonCalendar = readJson('blockLessonCalendar.seed.json');
+const appBlockLessonCalendar = readAppSeedJson('blockLessonCalendar.seed.json');
 const instructionalDays = readCalendarJson('instructional-days.json');
+const q1UnrealCalendarSchedule = readCalendarJson('q1-unreal-lesson-schedule.json');
+const q1UnrealBlockCalendar = readCalendarJson('q1-unreal-block-calendar.json');
 
 const programAreaIds = new Set(programAreas.map((area) => area.id));
 const lessonIds = new Set(lessons.map((lesson) => lesson.id));
@@ -68,6 +74,10 @@ const isWeekend = (value) => {
   const day = parseDate(value).getUTCDay();
   return day === 0 || day === 6;
 };
+
+const weekdayNames = new Set(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']);
+
+const isSameJson = (left, right) => JSON.stringify(left) === JSON.stringify(right);
 
 const warnings = [];
 
@@ -165,6 +175,9 @@ const q1UnrealSchedule = lessonSchedule.filter(
   (item) => item.programAreaId === 'unreal-engine' && item.quarter === 'Q1',
 );
 const q1UnrealLessonNumbers = new Set(q1UnrealSchedule.map((item) => item.lessonNumber));
+const q1UnrealScheduleByLessonId = new Map(
+  q1UnrealSchedule.map((item) => [item.lessonId, item]),
+);
 
 for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
   assert(
@@ -209,6 +222,155 @@ for (const scheduleItem of lessonSchedule) {
   assert(aDay.cycleDay === 'A', `Lesson schedule ${scheduleItem.id} A day does not match cycle A`);
   assert(bDay.cycleDay === 'B', `Lesson schedule ${scheduleItem.id} B day does not match cycle B`);
 }
+
+const assertNoWeekendDateList = (label, records) => {
+  if (!records) {
+    return;
+  }
+
+  assert(Array.isArray(records), `${label} must be an array when present`);
+
+  for (const record of records) {
+    assert(record.date, `${label} record is missing date`);
+    assert(!isWeekend(record.date), `${label} includes weekend ${record.date}`);
+    assert(
+      record.dayOfWeek !== 'Saturday' && record.dayOfWeek !== 'Sunday',
+      `${label} includes weekend day name for ${record.date}`,
+    );
+  }
+};
+
+assertNoWeekendDateList(
+  'q1-unreal-lesson-schedule skippedDatesDuringSchedule',
+  q1UnrealCalendarSchedule.skippedDatesDuringSchedule,
+);
+assertNoWeekendDateList(
+  'q1-unreal-lesson-schedule noSchoolDatesDuringSchedule',
+  q1UnrealCalendarSchedule.noSchoolDatesDuringSchedule,
+);
+
+const validateBlockLessonCalendar = (label, calendar) => {
+  assert(calendar.schoolYear, `${label} is missing schoolYear`);
+  assert(
+    programAreaIds.has(calendar.programAreaId),
+    `${label} uses unknown programAreaId ${calendar.programAreaId}`,
+  );
+  assert(calendar.quarter === 'Q1', `${label} must describe Q1`);
+  assert(Array.isArray(calendar.months), `${label} must include months`);
+  assert(Array.isArray(calendar.noSchoolDates), `${label} must include noSchoolDates`);
+  assertNoWeekendDateList(`${label} noSchoolDates`, calendar.noSchoolDates);
+
+  const noSchoolDateSet = new Set(calendar.noSchoolDates.map((day) => day.date));
+  const lessonDateCounts = new Map();
+
+  for (const noSchoolDay of calendar.noSchoolDates) {
+    const sourceDay = instructionalDayByDate.get(noSchoolDay.date);
+    assert(sourceDay, `${label} no-school date ${noSchoolDay.date} is not in instructional-days`);
+    assert(
+      sourceDay.isInstructionalDay === false,
+      `${label} no-school date ${noSchoolDay.date} is marked instructional in instructional-days`,
+    );
+    assert(
+      sourceDay.excludedReason !== 'Weekend',
+      `${label} no-school date ${noSchoolDay.date} must not use Weekend as the reason`,
+    );
+  }
+
+  for (const month of calendar.months) {
+    assert(month.month, `${label} month is missing month name`);
+    assert(month.year, `${label} month ${month.month} is missing year`);
+    assert(Array.isArray(month.weeks), `${label} ${month.month} must include weeks`);
+
+    for (const week of month.weeks) {
+      assert(week.weekStart, `${label} ${month.month} week is missing weekStart`);
+      assert(Array.isArray(week.days), `${label} ${week.weekStart} must include days`);
+      assert(week.days.length === 5, `${label} ${week.weekStart} must contain Monday-Friday only`);
+
+      for (const day of week.days) {
+        assert(day.date, `${label} ${week.weekStart} has a day without date`);
+        assert(!isWeekend(day.date), `${label} includes weekend calendar cell ${day.date}`);
+        assert(
+          weekdayNames.has(day.dayOfWeek),
+          `${label} ${day.date} must be a Monday-Friday calendar cell`,
+        );
+        assert(
+          ['instructional', 'no-school', 'empty', 'outside-month'].includes(day.status),
+          `${label} ${day.date} has unsupported status ${day.status}`,
+        );
+
+        if (day.status === 'instructional') {
+          assert(day.lessonLabel, `${label} ${day.date} instructional cell is missing lessonLabel`);
+          assert(
+            /^Q1 L\d+$/.test(day.lessonLabel),
+            `${label} ${day.date} lessonLabel must look like Q1 L1`,
+          );
+          assert(
+            day.heading === day.lessonLabel,
+            `${label} ${day.date} heading must match lessonLabel`,
+          );
+          assert(day.lessonId, `${label} ${day.date} instructional cell is missing lessonId`);
+          assert(lessonIds.has(day.lessonId), `${label} ${day.date} references missing lesson`);
+          assert(day.lessonTitle, `${label} ${day.date} instructional cell is missing lessonTitle`);
+          assert(
+            programAreaIds.has(day.programAreaId),
+            `${label} ${day.date} uses unknown programAreaId ${day.programAreaId}`,
+          );
+          assert(
+            day.cycleDay === 'A' || day.cycleDay === 'B',
+            `${label} ${day.date} instructional cell must have A/B cycleDay`,
+          );
+          assert(
+            !noSchoolDateSet.has(day.date),
+            `${label} ${day.date} is both instructional and no-school`,
+          );
+
+          const sourceDay = instructionalDayByDate.get(day.date);
+          assert(sourceDay, `${label} ${day.date} is missing from instructional-days`);
+          assert(sourceDay.isInstructionalDay, `${label} ${day.date} is not instructional`);
+          assert(
+            sourceDay.cycleDay === day.cycleDay,
+            `${label} ${day.date} cycleDay does not match instructional-days`,
+          );
+
+          lessonDateCounts.set(day.lessonId, (lessonDateCounts.get(day.lessonId) ?? 0) + 1);
+        }
+
+        if (day.status === 'no-school') {
+          assert(day.heading === 'No School', `${label} ${day.date} no-school heading mismatch`);
+          assert(day.reason, `${label} ${day.date} no-school cell is missing reason`);
+          assert(
+            noSchoolDateSet.has(day.date),
+            `${label} ${day.date} no-school cell is not listed in noSchoolDates`,
+          );
+          assert(!day.lessonId, `${label} ${day.date} no-school cell must not include lessonId`);
+        }
+      }
+    }
+  }
+
+  for (const [lessonId, scheduleItem] of q1UnrealScheduleByLessonId) {
+    assert(
+      lessonDateCounts.get(lessonId) === 2,
+      `${label} maps ${lessonId} to ${lessonDateCounts.get(lessonId) ?? 0} class dates, expected 2`,
+    );
+    assert(
+      lessonDateCounts.has(scheduleItem.lessonId),
+      `${label} is missing lesson schedule cell for ${scheduleItem.id}`,
+    );
+  }
+};
+
+validateBlockLessonCalendar('curriculum/calendar/q1-unreal-block-calendar.json', q1UnrealBlockCalendar);
+validateBlockLessonCalendar('curriculum/website-data/blockLessonCalendar.seed.json', blockLessonCalendar);
+
+assert(
+  isSameJson(q1UnrealBlockCalendar, blockLessonCalendar),
+  'blockLessonCalendar.seed.json must mirror q1-unreal-block-calendar.json',
+);
+assert(
+  isSameJson(blockLessonCalendar, appBlockLessonCalendar),
+  'src/data/seed/blockLessonCalendar.seed.json must mirror curriculum/website-data/blockLessonCalendar.seed.json',
+);
 
 for (const quiz of quizzes) {
   for (const lessonId of quiz.lessonIds) {

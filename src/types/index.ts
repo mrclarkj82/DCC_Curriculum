@@ -335,7 +335,67 @@ export interface LessonSchedulePayload {
     calendarAnomalies: string[];
   };
   lessons: LessonScheduleItem[];
-  skippedDatesDuringSchedule: LessonScheduleSkippedDate[];
+  noSchoolDatesDuringSchedule: LessonScheduleSkippedDate[];
+}
+
+export type BlockCalendarDayStatus = 'instructional' | 'no-school' | 'empty' | 'outside-month';
+
+export interface BlockCalendarDay {
+  date: string;
+  dayOfWeek: string;
+  cycleDay: 'A' | 'B' | null;
+  status: BlockCalendarDayStatus;
+  heading: string;
+  lessonLabel: string;
+  lessonId: string;
+  lessonTitle: string;
+  lessonNumber?: number;
+  programAreaId: string;
+  calendarNote: string;
+  sourceNote: string;
+  reason: string;
+  activeItemType?: 'lesson';
+}
+
+export interface BlockCalendarWeek {
+  weekStart: string;
+  weekEnd: string;
+  days: BlockCalendarDay[];
+}
+
+export interface BlockCalendarMonth {
+  month: string;
+  monthNumber: number;
+  year: number;
+  weeks: BlockCalendarWeek[];
+}
+
+export interface BlockCalendarNoSchoolDate {
+  date: string;
+  dayOfWeek: string;
+  reason: string;
+  calendarNote: string;
+  sourceNote: string;
+}
+
+export interface BlockLessonCalendarPayload {
+  schoolYear: string;
+  programAreaId: string;
+  quarter: string;
+  source: string;
+  sourceFile: string;
+  startDate: string;
+  endDate: string;
+  weekdays: string[];
+  summary: {
+    lessonCount: number;
+    instructionalDateCount: number;
+    noSchoolDateCount: number;
+    monthCount: number;
+  };
+  months: BlockCalendarMonth[];
+  noSchoolDates: BlockCalendarNoSchoolDate[];
+  notes: string[];
 }
 
 export interface StudentResponseBase {

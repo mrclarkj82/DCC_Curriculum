@@ -12,7 +12,9 @@
       "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20. Contingency days and the TBD ACT testing day help explain why the official count may not reconcile from fixed dates alone.",
       "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.",
       "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note."
-    ]
+    ],
+    "noSchoolDateCount": 3,
+    "weekendHandling": "Weekends are excluded from instructional scheduling and are not listed in noSchoolDatesDuringSchedule."
   },
   "lessons": [
     {
@@ -320,61 +322,7 @@
       "notes": ""
     }
   ],
-  "skippedDatesDuringSchedule": [
-    {
-      "date": "2026-08-15",
-      "dayOfWeek": "Saturday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-08-16",
-      "dayOfWeek": "Sunday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-08-22",
-      "dayOfWeek": "Saturday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-08-23",
-      "dayOfWeek": "Sunday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-08-29",
-      "dayOfWeek": "Saturday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-08-30",
-      "dayOfWeek": "Sunday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
+  "noSchoolDatesDuringSchedule": [
     {
       "date": "2026-09-04",
       "dayOfWeek": "Friday",
@@ -383,24 +331,6 @@
       "calendarNote": "",
       "sourceNote": "Staff Development Day #1 (No School for Students)",
       "excludedReason": "Staff Development Day #1 (No School for Students)"
-    },
-    {
-      "date": "2026-09-05",
-      "dayOfWeek": "Saturday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-09-06",
-      "dayOfWeek": "Sunday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
     },
     {
       "date": "2026-09-07",
@@ -412,42 +342,6 @@
       "excludedReason": "Labor Day (No School)"
     },
     {
-      "date": "2026-09-12",
-      "dayOfWeek": "Saturday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-09-13",
-      "dayOfWeek": "Sunday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-09-19",
-      "dayOfWeek": "Saturday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-09-20",
-      "dayOfWeek": "Sunday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
       "date": "2026-09-21",
       "dayOfWeek": "Monday",
       "cycleDay": null,
@@ -455,24 +349,6 @@
       "calendarNote": "",
       "sourceNote": "Staff Development Day #2 (No School for Students)",
       "excludedReason": "Staff Development Day #2 (No School for Students)"
-    },
-    {
-      "date": "2026-09-26",
-      "dayOfWeek": "Saturday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
-    },
-    {
-      "date": "2026-09-27",
-      "dayOfWeek": "Sunday",
-      "cycleDay": null,
-      "isInstructionalDay": false,
-      "calendarNote": "",
-      "sourceNote": "",
-      "excludedReason": "Weekend"
     }
   ]
 }

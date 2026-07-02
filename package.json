@@ -10,6 +10,7 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
+    "generate:block-calendar": "node scripts/generate-block-calendar.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs",
     "seed:curriculum": "node scripts/seedCurriculum.mjs"
   },

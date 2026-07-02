@@ -1,4 +1,5 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
 import { ClassJoinCodePanel } from '../components/classes/ClassJoinCodePanel';
 import { EmptyState } from '../components/EmptyState';
@@ -597,6 +598,11 @@ export function AdminPage() {
               <p className="retro-label">School Year</p>
               <h3>{overview.schoolYear}</h3>
             </article>
+          </div>
+          <div className="button-row">
+            <Link className="secondary-button" to="/teacher/schedule">
+              Open Schedule View
+            </Link>
           </div>
         </section>
 
