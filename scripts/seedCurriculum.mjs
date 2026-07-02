@@ -6,6 +6,7 @@ import { getFirestore } from 'firebase-admin/firestore';
 
 const root = process.cwd();
 const dataDir = join(root, 'curriculum', 'website-data');
+const calendarDir = join(root, 'curriculum', 'calendar');
 const dryRun = process.argv.includes('--dry-run');
 const confirmSeed = process.env.CONFIRM_SEED === 'true';
 const firestoreNamespace = (process.env.FIRESTORE_NAMESPACE || 'apps/dcc').replace(
@@ -22,6 +23,7 @@ const seedTargets = [
   ['mediaProjects.seed.json', 'mediaProjects'],
   ['broadcastUpdates.seed.json', 'broadcastUpdates'],
   ['classes.seed.json', 'classes'],
+  ['lessonSchedule.seed.json', 'lessonSchedule'],
 ];
 
 const activeItemTypes = new Set([
@@ -48,6 +50,11 @@ async function readJson(fileName) {
   return parsed;
 }
 
+async function readCalendarJson(fileName) {
+  const filePath = join(calendarDir, fileName);
+  return JSON.parse(await readFile(filePath, 'utf8'));
+}
+
 function assertUniqueIds(label, records) {
   const ids = records.map((record) => record.id);
   assert(new Set(ids).size === ids.length, `${label} contains duplicate IDs`);
@@ -61,6 +68,17 @@ function assertProgramAreaIds(label, records, programAreaIds) {
       `${label}/${record.id} uses unknown programAreaId ${record.programAreaId}`,
     );
   }
+}
+
+function parseDate(value) {
+  const parsed = new Date(`${value}T00:00:00Z`);
+  assert(!Number.isNaN(parsed.getTime()), `Invalid date ${value}`);
+  return parsed;
+}
+
+function isWeekend(value) {
+  const day = parseDate(value).getUTCDay();
+  return day === 0 || day === 6;
 }
 
 function loadProjectIdFromFirebaserc() {
@@ -105,6 +123,8 @@ async function loadSeeds() {
     data[fileName] = await readJson(fileName);
   }
 
+  data['instructional-days.json'] = await readCalendarJson('instructional-days.json');
+
   return data;
 }
 
@@ -116,6 +136,8 @@ function validateSeeds(data) {
   const mediaProjects = data['mediaProjects.seed.json'];
   const broadcastUpdates = data['broadcastUpdates.seed.json'];
   const classes = data['classes.seed.json'];
+  const lessonSchedule = data['lessonSchedule.seed.json'];
+  const instructionalDays = data['instructional-days.json'];
 
   assertUniqueIds('programAreas', programAreas);
   assertUniqueIds('lessons', lessons);
@@ -124,6 +146,7 @@ function validateSeeds(data) {
   assertUniqueIds('mediaProjects', mediaProjects);
   assertUniqueIds('broadcastUpdates', broadcastUpdates);
   assertUniqueIds('classes', classes);
+  assertUniqueIds('lessonSchedule', lessonSchedule);
 
   const programAreaIds = new Set(programAreas.map((record) => record.id));
   const lessonIds = new Set(lessons.map((record) => record.id));
@@ -131,6 +154,9 @@ function validateSeeds(data) {
   const quizIds = new Set(quizzes.map((record) => record.id));
   const mediaProjectIds = new Set(mediaProjects.map((record) => record.id));
   const broadcastUpdateIds = new Set(broadcastUpdates.map((record) => record.id));
+  const instructionalDayByDate = new Map(
+    instructionalDays.days.map((instructionalDay) => [instructionalDay.date, instructionalDay]),
+  );
 
   assertProgramAreaIds('lessons', lessons, programAreaIds);
   assertProgramAreaIds('assignments', assignments, programAreaIds);
@@ -160,6 +186,80 @@ function validateSeeds(data) {
         `Broadcast update ${update.id} references missing media project ${projectId}`,
       );
     }
+  }
+
+  assert(
+    Array.isArray(instructionalDays.days),
+    'instructional-days.json must include a days array',
+  );
+
+  for (const instructionalDay of instructionalDays.days) {
+    assert(instructionalDay.date, 'Instructional day record is missing date');
+    assert(
+      !isWeekend(instructionalDay.date) || instructionalDay.isInstructionalDay === false,
+      `Weekend ${instructionalDay.date} must not be instructional`,
+    );
+  }
+
+  const q1UnrealSchedule = lessonSchedule.filter(
+    (item) => item.programAreaId === 'unreal-engine' && item.quarter === 'Q1',
+  );
+  const q1UnrealLessonNumbers = new Set(q1UnrealSchedule.map((item) => item.lessonNumber));
+
+  for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
+    assert(
+      q1UnrealLessonNumbers.has(lessonNumber),
+      `Q1 Unreal lesson schedule is missing lesson ${lessonNumber}`,
+    );
+  }
+
+  for (const scheduleItem of lessonSchedule) {
+    assert(
+      programAreaIds.has(scheduleItem.programAreaId),
+      `Lesson schedule ${scheduleItem.id} uses unknown programAreaId ${scheduleItem.programAreaId}`,
+    );
+    assert(
+      scheduleItem.activeItemType === 'lesson',
+      `Lesson schedule ${scheduleItem.id} must use activeItemType lesson`,
+    );
+    assert(
+      lessonIds.has(scheduleItem.lessonId),
+      `Lesson schedule ${scheduleItem.id} references missing lesson ${scheduleItem.lessonId}`,
+    );
+    assert(scheduleItem.aDayDate, `Lesson schedule ${scheduleItem.id} is missing aDayDate`);
+    assert(scheduleItem.bDayDate, `Lesson schedule ${scheduleItem.id} is missing bDayDate`);
+    assert(
+      scheduleItem.aDayCycle === 'A',
+      `Lesson schedule ${scheduleItem.id} aDayCycle must be A`,
+    );
+    assert(
+      scheduleItem.bDayCycle === 'B',
+      `Lesson schedule ${scheduleItem.id} bDayCycle must be B`,
+    );
+    assert(
+      !isWeekend(scheduleItem.aDayDate),
+      `Lesson schedule ${scheduleItem.id} A day falls on a weekend`,
+    );
+    assert(
+      !isWeekend(scheduleItem.bDayDate),
+      `Lesson schedule ${scheduleItem.id} B day falls on a weekend`,
+    );
+
+    const aDay = instructionalDayByDate.get(scheduleItem.aDayDate);
+    const bDay = instructionalDayByDate.get(scheduleItem.bDayDate);
+
+    assert(aDay, `Lesson schedule ${scheduleItem.id} A day is not in instructional-days.json`);
+    assert(bDay, `Lesson schedule ${scheduleItem.id} B day is not in instructional-days.json`);
+    assert(aDay.isInstructionalDay, `Lesson schedule ${scheduleItem.id} A day is not instructional`);
+    assert(bDay.isInstructionalDay, `Lesson schedule ${scheduleItem.id} B day is not instructional`);
+    assert(
+      aDay.cycleDay === 'A',
+      `Lesson schedule ${scheduleItem.id} A day does not match cycle A`,
+    );
+    assert(
+      bDay.cycleDay === 'B',
+      `Lesson schedule ${scheduleItem.id} B day does not match cycle B`,
+    );
   }
 
   const warnings = [];

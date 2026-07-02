@@ -1,0 +1,2696 @@
+{
+  "metadata": {
+    "source": "attached-school-calendar",
+    "sourceFile": "2026-2027 Doral Calendar (List Form).pdf",
+    "schoolYear": "2026-2027",
+    "classesBegin": "2026-08-12",
+    "lastStudentDay": "2027-05-20",
+    "scheduleStartDate": "2026-08-13",
+    "cycleInference": "No A/B labels appear in the source calendar. A/B days are inferred across valid instructional weekdays beginning 2026-08-13 as A.",
+    "validInstructionalDaysFromScheduleStart": 168,
+    "validInstructionalDaysInSchoolYearFixedDates": 169,
+    "calendarAnomalies": [
+      "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20 before the TBD Universal Test Day is known.",
+      "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note.",
+      "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note."
+    ],
+    "tbdNotes": [
+      "Universal Test Day - ACT Exam: date TBD; no-school for grades 9, 10, and 12; grade 11 takes ACT; grades K-8 attend school."
+    ]
+  },
+  "days": [
+    {
+      "date": "2026-08-03",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "All Teachers New to Doral Report to Work",
+      "excludedReason": "Teacher report day before classes begin"
+    },
+    {
+      "date": "2026-08-04",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Before classes begin"
+    },
+    {
+      "date": "2026-08-05",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Before classes begin"
+    },
+    {
+      "date": "2026-08-06",
+      "dayOfWeek": "Thursday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Before classes begin"
+    },
+    {
+      "date": "2026-08-07",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Before classes begin"
+    },
+    {
+      "date": "2026-08-08",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-09",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-10",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Before classes begin"
+    },
+    {
+      "date": "2026-08-11",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Informal Open House (Tentative)",
+      "excludedReason": "Informal open house before classes begin"
+    },
+    {
+      "date": "2026-08-12",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": true,
+      "calendarNote": "Classes Begin",
+      "sourceNote": "Classes Begin",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-13",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "Q1 Unreal A/B lesson schedule starts here.",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-14",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-15",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-16",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-17",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-18",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-19",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-20",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-21",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-22",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-23",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-24",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-25",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-26",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-27",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-28",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-08-29",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-30",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-08-31",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-01",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-02",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-03",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-04",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Staff Development Day #1 (No School for Students)",
+      "excludedReason": "Staff Development Day #1 (No School for Students)"
+    },
+    {
+      "date": "2026-09-05",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-06",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-07",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Labor Day (No School)",
+      "excludedReason": "Labor Day (No School)"
+    },
+    {
+      "date": "2026-09-08",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-09",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-10",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-11",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-12",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-13",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-14",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-15",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-16",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-17",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-18",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-19",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-20",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-21",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Staff Development Day #2 (No School for Students)",
+      "excludedReason": "Staff Development Day #2 (No School for Students)"
+    },
+    {
+      "date": "2026-09-22",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-23",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-24",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-25",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-26",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-27",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-09-28",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-29",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-09-30",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-01",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-02",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-03",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-04",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-05",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-06",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-07",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-08",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-09",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "End of 1st Grading Period (42 Days)",
+      "sourceNote": "End of 1st Grading Period (42 Days)",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-10",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-11",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-12",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-13",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-14",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-15",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "Conference day note applies to ES/MS students only in the source calendar; treated as instructional for DCC high school scheduling.",
+      "sourceNote": "Conferences (No School for all ES or MS Students)",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-16",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Staff Development Day #3 (No School for Students)",
+      "excludedReason": "Staff Development Day #3 (No School for Students)"
+    },
+    {
+      "date": "2026-10-17",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-18",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-19",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-20",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-21",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-22",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-23",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-24",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-25",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-10-26",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-27",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-28",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-29",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-10-30",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Nevada Day Observed (No School)",
+      "excludedReason": "Nevada Day Observed (No School)"
+    },
+    {
+      "date": "2026-10-31",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-01",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-02",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-03",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-04",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-05",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-06",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-07",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-08",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-09",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-10",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Veterans Day Observed (No School)",
+      "excludedReason": "Veterans Day Observed (No School)"
+    },
+    {
+      "date": "2026-11-12",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-13",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-14",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-15",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-16",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-17",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-18",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-19",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-20",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-11-21",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-22",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-23",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-24",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-25",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-26",
+      "dayOfWeek": "Thursday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-27",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-28",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-29",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-11-30",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-01",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-02",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-03",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-04",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-05",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-06",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-07",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-08",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-09",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-10",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-11",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-12",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-13",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-14",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-15",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-16",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-17",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-18",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "End of 2nd Grading Period (42 Days/Semester 84 Days)",
+      "sourceNote": "End of 2nd Grading Period (42 Days/Semester 84 Days)",
+      "excludedReason": null
+    },
+    {
+      "date": "2026-12-19",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-20",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-21",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-22",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-23",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-24",
+      "dayOfWeek": "Thursday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-25",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-26",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-27",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2026-12-28",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-29",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-30",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2026-12-31",
+      "dayOfWeek": "Thursday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break (No School for Students)",
+      "excludedReason": "Winter Break (No School for Students)"
+    },
+    {
+      "date": "2027-01-01",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Winter Break; New Year's Day Observed (No School)",
+      "excludedReason": "Winter Break; New Year's Day Observed (No School)"
+    },
+    {
+      "date": "2027-01-02",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-03",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-04",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Structured Teacher Planning Day (No School for Students)",
+      "excludedReason": "Structured Teacher Planning Day (No School for Students)"
+    },
+    {
+      "date": "2027-01-05",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "Classes Resume",
+      "sourceNote": "Classes Resume",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-06",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-07",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-08",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-09",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-10",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-11",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-12",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-13",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-14",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-15",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-16",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-17",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-18",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Martin Luther King Jr. Day (No School)",
+      "excludedReason": "Martin Luther King Jr. Day (No School)"
+    },
+    {
+      "date": "2027-01-19",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-20",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-21",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-22",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-23",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-24",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-25",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-26",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-27",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-28",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-29",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-01-30",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-01-31",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-01",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-02",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-03",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-04",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-05",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-06",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-07",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-08",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-09",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-10",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-11",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-12",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Staff Development Day #4 (No School for Students)",
+      "excludedReason": "Staff Development Day #4 (No School for Students)"
+    },
+    {
+      "date": "2027-02-13",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-14",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-15",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Presidents' Day Observed (No School)",
+      "excludedReason": "Presidents' Day Observed (No School)"
+    },
+    {
+      "date": "2027-02-16",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-17",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-18",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-19",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-20",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-21",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-22",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-23",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-24",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-25",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-26",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-02-27",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-02-28",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-01",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-02",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-03",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-04",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-05",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-06",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-07",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-08",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-09",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-10",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-11",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-12",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "End of 3rd Grading Period (47 Days); Staff Development Day #5 (No School for Students)",
+      "excludedReason": "Staff Development Day #5 (No School for Students)"
+    },
+    {
+      "date": "2027-03-13",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-14",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-15",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Spring Break (No school)",
+      "excludedReason": "Spring Break (No school)"
+    },
+    {
+      "date": "2027-03-16",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Spring Break (No school)",
+      "excludedReason": "Spring Break (No school)"
+    },
+    {
+      "date": "2027-03-17",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Spring Break (No school)",
+      "excludedReason": "Spring Break (No school)"
+    },
+    {
+      "date": "2027-03-18",
+      "dayOfWeek": "Thursday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Spring Break (No school)",
+      "excludedReason": "Spring Break (No school)"
+    },
+    {
+      "date": "2027-03-19",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Spring Break (No school)",
+      "excludedReason": "Spring Break (No school)"
+    },
+    {
+      "date": "2027-03-20",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-21",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-22",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "Classes Resume",
+      "sourceNote": "Classes Resume",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-23",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-24",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-25",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-26",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-27",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-28",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-03-29",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "No School",
+      "excludedReason": "No School"
+    },
+    {
+      "date": "2027-03-30",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-03-31",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-01",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-02",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-03",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-04",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-05",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-06",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-07",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-08",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-09",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-10",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-11",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-12",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-13",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-14",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-15",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-16",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-17",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-18",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-19",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-20",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-21",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-22",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-23",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Structured Teacher Planning Day (No School for Students)",
+      "excludedReason": "Structured Teacher Planning Day (No School for Students)"
+    },
+    {
+      "date": "2027-04-24",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-25",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-04-26",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-27",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-28",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-29",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-04-30",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-01",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-02",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-03",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-04",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-05",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-06",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-07",
+      "dayOfWeek": "Friday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-08",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-09",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-10",
+      "dayOfWeek": "Monday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-11",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-12",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-13",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-14",
+      "dayOfWeek": "Friday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-15",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-16",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-17",
+      "dayOfWeek": "Monday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-18",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-19",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": "A",
+      "isInstructionalDay": true,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-20",
+      "dayOfWeek": "Thursday",
+      "cycleDay": "B",
+      "isInstructionalDay": true,
+      "calendarNote": "Last Day of School for Students (Early Dismissal); End of 4th Grading Period (42 Days/Semester 89 Days/Year 173 Days)",
+      "sourceNote": "Last Day of School for Students (Early Dismissal); End of 4th Grading Period (42 Days/Semester 89 Days/Year 173 Days)",
+      "excludedReason": null
+    },
+    {
+      "date": "2027-05-21",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Teacher Check-Out Day",
+      "excludedReason": "Teacher Check-Out Day after last student day"
+    },
+    {
+      "date": "2027-05-22",
+      "dayOfWeek": "Saturday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-23",
+      "dayOfWeek": "Sunday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "",
+      "excludedReason": "Weekend"
+    },
+    {
+      "date": "2027-05-24",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Contingency Day #1",
+      "excludedReason": "Contingency day after last scheduled student day"
+    },
+    {
+      "date": "2027-05-25",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Contingency Day #2",
+      "excludedReason": "Contingency day after last scheduled student day"
+    },
+    {
+      "date": "2027-05-26",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Contingency Day #3",
+      "excludedReason": "Contingency day after last scheduled student day"
+    }
+  ]
+}

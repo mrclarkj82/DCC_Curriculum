@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DCC Lesson Schedule Seed",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "scheduleId",
+      "programAreaId",
+      "quarter",
+      "lessonId",
+      "lessonNumber",
+      "lessonTitle",
+      "aDayDate",
+      "bDayDate",
+      "aDayCycle",
+      "bDayCycle",
+      "activeItemType",
+      "status",
+      "source",
+      "notes"
+    ],
+    "properties": {
+      "id": {
+        "type": "string"
+      },
+      "scheduleId": {
+        "type": "string"
+      },
+      "programAreaId": {
+        "type": "string"
+      },
+      "quarter": {
+        "type": "string"
+      },
+      "lessonId": {
+        "type": "string"
+      },
+      "lessonNumber": {
+        "type": "integer"
+      },
+      "lessonTitle": {
+        "type": "string"
+      },
+      "aDayDate": {
+        "type": "string",
+        "format": "date"
+      },
+      "bDayDate": {
+        "type": "string",
+        "format": "date"
+      },
+      "aDayCycle": {
+        "enum": [
+          "A"
+        ]
+      },
+      "bDayCycle": {
+        "enum": [
+          "B"
+        ]
+      },
+      "aDayCalendarNote": {
+        "type": "string"
+      },
+      "bDayCalendarNote": {
+        "type": "string"
+      },
+      "activeItemType": {
+        "const": "lesson"
+      },
+      "status": {
+        "type": "string"
+      },
+      "source": {
+        "type": "string"
+      },
+      "notes": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": true
+  }
+}

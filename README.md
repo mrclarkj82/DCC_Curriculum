@@ -380,6 +380,28 @@ Security notes:
 
 Phase 8 still does not implement raw assignment uploads, media uploads, grading, quiz attempts, portfolio submissions, media hosting, transcoding, or video editor features.
 
+## Calendar-Based Lesson Scheduling
+
+The 2026-2027 Doral list-form calendar is used as the source of truth for A/B lesson scheduling data in `curriculum/calendar/`.
+
+For the Q1 Unreal schedule:
+
+- Scheduling starts on August 13, 2026.
+- The source calendar does not explicitly mark A/B days, so August 13 is inferred as `A`.
+- A/B days alternate across valid instructional weekdays only.
+- Saturdays and Sundays are always skipped.
+- Holidays, breaks, staff development days, structured teacher planning days, and other no-school days in the source calendar are skipped.
+- Each Q1 Unreal lesson runs for two instructional class days: one A day and one B day.
+
+Generated files:
+
+- `curriculum/calendar/instructional-days.json`
+- `curriculum/calendar/q1-unreal-lesson-schedule.json`
+- `curriculum/calendar/q1-unreal-lesson-schedule.md`
+- `curriculum/website-data/lessonSchedule.seed.json`
+
+The schedule data is website-ready and can later drive or suggest class `activeItemId` values by date and cycle day. It does not replace the existing `/today` active item workflow.
+
 ## Shared Firebase Project And Namespacing
 
 DCC Creative Studio uses the shared Blaze Firebase project `dragonmath-f6f56`, but DCC app data is namespaced under `apps/dcc` so it does not collide with DragonMath data.
