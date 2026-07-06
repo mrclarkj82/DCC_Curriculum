@@ -15,6 +15,7 @@ Seed files should stay valid JSON and should be treated as draft source data unt
 - `classes.seed.json`: starter class records for Phase 4 auth/class routing
 - `lessonSchedule.seed.json`: website-ready A/B lesson schedule records generated from the school calendar
 - `blockLessonCalendar.seed.json`: website-ready Monday-Friday block calendar data for the teacher/admin schedule view
+- `blockLessonCalendars.seed.json`: combined teacher/admin schedule preview data for Q1 Unreal and Q2 DaVinci Resolve
 
 ## Validation Notes
 

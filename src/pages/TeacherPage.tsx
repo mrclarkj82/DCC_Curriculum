@@ -860,7 +860,7 @@ export function TeacherPage() {
               </div>
               <div className="button-row">
                 <Link className="secondary-button" to="/teacher/schedule">
-                  Preview Q1 Unreal Schedule
+                  Preview Curriculum Schedule
                 </Link>
               </div>
             </section>

@@ -21,7 +21,9 @@ const broadcastUpdates = readJson('broadcastUpdates.seed.json');
 const classes = readJson('classes.seed.json');
 const lessonSchedule = readJson('lessonSchedule.seed.json');
 const blockLessonCalendar = readJson('blockLessonCalendar.seed.json');
+const blockLessonCalendars = readJson('blockLessonCalendars.seed.json');
 const appBlockLessonCalendar = readAppSeedJson('blockLessonCalendar.seed.json');
+const appBlockLessonCalendars = readAppSeedJson('blockLessonCalendars.seed.json');
 const instructionalDays = readCalendarJson('instructional-days.json');
 const q1UnrealCalendarSchedule = readCalendarJson('q1-unreal-lesson-schedule.json');
 const q1UnrealBlockCalendar = readCalendarJson('q1-unreal-block-calendar.json');
@@ -81,6 +83,7 @@ const isWeekend = (value) => {
 const weekdayNames = new Set(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']);
 
 const isSameJson = (left, right) => JSON.stringify(left) === JSON.stringify(right);
+const blockCalendarKey = (calendar) => `${calendar.quarter}:${calendar.programAreaId}`;
 
 const warnings = [];
 
@@ -400,12 +403,69 @@ validateBlockLessonCalendar(
 );
 
 assert(
+  Array.isArray(blockLessonCalendars),
+  'blockLessonCalendars.seed.json must contain an array of block calendars',
+);
+assert(
+  Array.isArray(appBlockLessonCalendars),
+  'src/data/seed/blockLessonCalendars.seed.json must contain an array of block calendars',
+);
+assertUniqueIds(
+  'blockLessonCalendars',
+  blockLessonCalendars.map((calendar) => ({
+    id: blockCalendarKey(calendar),
+  })),
+);
+
+const combinedBlockCalendarsByKey = new Map(
+  blockLessonCalendars.map((calendar) => [blockCalendarKey(calendar), calendar]),
+);
+const combinedQ1UnrealBlockCalendar = combinedBlockCalendarsByKey.get(
+  blockCalendarKey(q1UnrealBlockCalendar),
+);
+const combinedQ2DaVinciBlockCalendar = combinedBlockCalendarsByKey.get(
+  blockCalendarKey(q2DaVinciBlockCalendar),
+);
+
+assert(
+  combinedQ1UnrealBlockCalendar,
+  'blockLessonCalendars.seed.json must include the Q1 Unreal block calendar',
+);
+assert(
+  combinedQ2DaVinciBlockCalendar,
+  'blockLessonCalendars.seed.json must include the Q2 DaVinci Resolve block calendar',
+);
+
+validateBlockLessonCalendar(
+  'curriculum/website-data/blockLessonCalendars.seed.json Q1 Unreal',
+  combinedQ1UnrealBlockCalendar,
+  q1UnrealScheduleByLessonId,
+);
+validateBlockLessonCalendar(
+  'curriculum/website-data/blockLessonCalendars.seed.json Q2 DaVinci Resolve',
+  combinedQ2DaVinciBlockCalendar,
+  q2DaVinciScheduleByLessonId,
+);
+
+assert(
   isSameJson(q1UnrealBlockCalendar, blockLessonCalendar),
   'blockLessonCalendar.seed.json must mirror q1-unreal-block-calendar.json',
 );
 assert(
+  isSameJson(q1UnrealBlockCalendar, combinedQ1UnrealBlockCalendar),
+  'blockLessonCalendars.seed.json Q1 entry must mirror q1-unreal-block-calendar.json',
+);
+assert(
+  isSameJson(q2DaVinciBlockCalendar, combinedQ2DaVinciBlockCalendar),
+  'blockLessonCalendars.seed.json Q2 entry must mirror q2-davinci-resolve-block-calendar.json',
+);
+assert(
   isSameJson(blockLessonCalendar, appBlockLessonCalendar),
   'src/data/seed/blockLessonCalendar.seed.json must mirror curriculum/website-data/blockLessonCalendar.seed.json',
+);
+assert(
+  isSameJson(blockLessonCalendars, appBlockLessonCalendars),
+  'src/data/seed/blockLessonCalendars.seed.json must mirror curriculum/website-data/blockLessonCalendars.seed.json',
 );
 
 const assertCalendarScheduleMirror = (label, calendarLessons, seedItems) => {

@@ -1,10 +1,39 @@
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
-import blockLessonCalendarSeed from '../data/seed/blockLessonCalendar.seed.json';
+import blockLessonCalendarsSeed from '../data/seed/blockLessonCalendars.seed.json';
 import type { BlockCalendarDay, BlockLessonCalendarPayload } from '../types';
 
-const blockCalendar = blockLessonCalendarSeed as BlockLessonCalendarPayload;
+const blockCalendars = blockLessonCalendarsSeed as BlockLessonCalendarPayload[];
+
+const programAreaLabels: Record<string, string> = {
+  'unreal-engine': 'Unreal Engine',
+  'video-production': 'Video Production',
+};
+
+const scheduleTitles: Record<string, string> = {
+  'Q1:unreal-engine': 'Q1 Unreal Engine',
+  'Q2:video-production': 'Q2 DaVinci Resolve',
+};
+
+function scheduleKey(calendar: BlockLessonCalendarPayload): string {
+  return `${calendar.quarter}:${calendar.programAreaId}`;
+}
+
+function scheduleTitle(calendar: BlockLessonCalendarPayload): string {
+  return (
+    scheduleTitles[scheduleKey(calendar)] ??
+    `${calendar.quarter} ${programAreaLabels[calendar.programAreaId] ?? calendar.programAreaId}`
+  );
+}
+
+const defaultCalendar =
+  blockCalendars.find(
+    (calendar) => calendar.quarter === 'Q2' && calendar.programAreaId === 'video-production',
+  ) ?? blockCalendars[0];
+
+const defaultScheduleKey = defaultCalendar ? scheduleKey(defaultCalendar) : '';
 
 function formatShortDate(value: string): string {
   const date = new Date(`${value}T00:00:00`);
@@ -31,7 +60,7 @@ function dayStatusLabel(day: BlockCalendarDay): string {
   return 'Open';
 }
 
-function ScheduleDayCell({ day }: { day: BlockCalendarDay }) {
+function ScheduleDayCell({ day, quarter }: { day: BlockCalendarDay; quarter: string }) {
   const note = day.calendarNote || day.sourceNote;
 
   return (
@@ -68,7 +97,7 @@ function ScheduleDayCell({ day }: { day: BlockCalendarDay }) {
 
       {(day.status === 'empty' || day.status === 'outside-month') && (
         <>
-          <h3>{day.status === 'outside-month' ? 'Outside Month' : 'No Q1 Lesson'}</h3>
+          <h3>{day.status === 'outside-month' ? 'Outside Month' : `No ${quarter} Lesson`}</h3>
           <StatusBadge status={dayStatusLabel(day)} />
           <p className="schedule-note">{day.reason}</p>
         </>
@@ -78,13 +107,42 @@ function ScheduleDayCell({ day }: { day: BlockCalendarDay }) {
 }
 
 export function TeacherSchedulePage() {
+  const [selectedScheduleKey, setSelectedScheduleKey] = useState(defaultScheduleKey);
+  const blockCalendar = useMemo(
+    () =>
+      blockCalendars.find((calendar) => scheduleKey(calendar) === selectedScheduleKey) ??
+      blockCalendars[0],
+    [selectedScheduleKey],
+  );
+
+  if (!blockCalendar) {
+    return (
+      <PageContainer
+        eyebrow="Teacher Schedule Preview"
+        title="Curriculum Block Calendars"
+        description="No schedule preview data is bundled with this build yet."
+        actions={
+          <Link className="outline-button" to="/teacher">
+            Back To Teacher
+          </Link>
+        }
+        className="studio-cyan"
+      >
+        <section className="content-section neon-section">
+          <p className="muted">Add a block calendar seed to show the macro schedule here.</p>
+        </section>
+      </PageContainer>
+    );
+  }
+
   const { months, noSchoolDates, summary } = blockCalendar;
+  const selectedScheduleTitle = scheduleTitle(blockCalendar);
 
   return (
     <PageContainer
       eyebrow="Teacher Schedule Preview"
-      title="Q1 Unreal Block Calendar"
-      description="Read-only Monday-Friday calendar view generated from the 2026-2027 Doral calendar. This visual schedule does not replace the current Today active item controls."
+      title="Curriculum Block Calendars"
+      description="Read-only Monday-Friday macro views generated from the 2026-2027 Doral calendar. These visual schedules do not replace the current Today active item controls."
       actions={
         <Link className="outline-button" to="/teacher">
           Back To Teacher
@@ -97,10 +155,27 @@ export function TeacherSchedulePage() {
           <div className="section-heading-row">
             <div>
               <p className="retro-label">Schedule Source</p>
-              <h2>School Week Block View</h2>
+              <h2>{selectedScheduleTitle} Block View</h2>
             </div>
             <StatusBadge status="read only" />
           </div>
+          <nav className="teacher-tab-list" aria-label="Curriculum schedule views">
+            {blockCalendars.map((calendar) => {
+              const key = scheduleKey(calendar);
+
+              return (
+                <button
+                  className={selectedScheduleKey === key ? 'teacher-tab active' : 'teacher-tab'}
+                  type="button"
+                  aria-pressed={selectedScheduleKey === key}
+                  key={key}
+                  onClick={() => setSelectedScheduleKey(key)}
+                >
+                  {scheduleTitle(calendar)}
+                </button>
+              );
+            })}
+          </nav>
           <div className="metric-grid">
             <article className="card neon-card metric-card">
               <p className="retro-label">School Year</p>
@@ -125,13 +200,18 @@ export function TeacherSchedulePage() {
               <h3>{summary.noSchoolDateCount}</h3>
             </article>
             <article className="card neon-card metric-card">
+              <p className="retro-label">Program</p>
+              <h3>{programAreaLabels[blockCalendar.programAreaId] ?? blockCalendar.programAreaId}</h3>
+            </article>
+            <article className="card neon-card metric-card">
               <p className="retro-label">Calendar Style</p>
               <h3>Mon-Fri</h3>
             </article>
           </div>
           <p className="muted">
-            Instructional cells use short labels like Q1 L1 as the main heading. Lesson titles,
-            lesson IDs, program area, A/B day, and calendar notes appear inside the block.
+            Instructional cells use short labels like {blockCalendar.quarter} L1 as the main
+            heading. Lesson titles, lesson IDs, program area, A/B day, and calendar notes appear
+            inside the block.
           </p>
         </section>
 
@@ -139,7 +219,7 @@ export function TeacherSchedulePage() {
           <section className="content-section neon-section schedule-month-section" key={`${month.month}-${month.year}`}>
             <div className="section-heading-row">
               <div>
-                <p className="retro-label">{blockCalendar.quarter} Unreal</p>
+                <p className="retro-label">{selectedScheduleTitle}</p>
                 <h2>
                   {month.month} {month.year}
                 </h2>
@@ -157,7 +237,11 @@ export function TeacherSchedulePage() {
               {month.weeks.map((week) => (
                 <div className="schedule-week-row" key={`${month.month}-${week.weekStart}`}>
                   {week.days.map((day) => (
-                    <ScheduleDayCell key={`${month.month}-${day.date}`} day={day} />
+                    <ScheduleDayCell
+                      key={`${month.month}-${day.date}`}
+                      day={day}
+                      quarter={blockCalendar.quarter}
+                    />
                   ))}
                 </div>
               ))}
