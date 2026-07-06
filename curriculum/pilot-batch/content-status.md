@@ -1,6 +1,6 @@
 # Pilot Content Status
 
-Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready for seed import, created, needs revision.
+Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready for seed import, pilot-ready, created, needs revision.
 
 ## Unreal Engine Studio
 
@@ -20,13 +20,13 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Lesson 05 page - ready for seed import
 - [x] Lesson 05 slide brief - ready for ChatGPT Pro
 - [x] Lesson 05 assignment - needs teacher review
-- [x] Lesson 06 page - ready for seed import
+- [x] Lesson 06 page - pilot-ready
 - [x] Lesson 06 slide deck - created
 - [x] Lesson 06 assignment - needs teacher review
-- [x] Lesson 07 page - ready for seed import
+- [x] Lesson 07 page - pilot-ready
 - [x] Lesson 07 slide deck - created
 - [x] Lesson 07 assignment - needs teacher review
-- [x] Lesson 08 page - ready for seed import
+- [x] Lesson 08 page - pilot-ready
 - [x] Lesson 08 slide deck - created
 - [x] Lesson 08 assignment - needs teacher review
 - [x] Quiz 02 Draft - draft / needs teacher review

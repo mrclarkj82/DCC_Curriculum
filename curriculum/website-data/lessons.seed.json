@@ -340,7 +340,7 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 6,
     "title": "Exposure and Post-Process",
-    "status": "draft-pilot",
+    "status": "pilot-ready",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:27:14",
@@ -418,7 +418,7 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 7,
     "title": "Materials Basics",
-    "status": "draft-pilot",
+    "status": "pilot-ready",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:35:47",
@@ -504,7 +504,7 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 8,
     "title": "Texture Maps and Normal Maps",
-    "status": "draft-pilot",
+    "status": "pilot-ready",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:54:38",

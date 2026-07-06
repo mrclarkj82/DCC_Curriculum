@@ -4,7 +4,7 @@
 - Quarter: Q1
 - Lesson number: 6
 - Lesson ID: ue-q1-l06
-- Status: draft-pilot
+- Status: pilot-ready
 
 ## Today's Goal
 
