@@ -1,23 +1,23 @@
-# Presentation Brief: Color Correction and Shot Matching
+# Presentation Brief: Titles, Transitions, and Simple Motion
 
 This premium brief is for creating a 15-20 slide teacher-led PowerPoint. It is intentionally deeper than the 9-slide automation brief.
 
 ## Lesson Overview
 
 - Program area: Video Production Studio
-- Lesson ID: vp-q2-l08
+- Lesson ID: vp-q2-l06
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
 - Class length: 90 minutes
-- Learning target: I can make a basic color correction pass that improves exposure, contrast, white balance, and consistency between shots.
-- Bell ringer: What makes two shots feel like they belong in the same scene?
-- Assignment: Color Correction Comparison
-- Video transcript range: 02:51:04-03:16:57
+- Learning target: I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.
+- Bell ringer: When does a title help a video, and when can it distract from the video?
+- Assignment: Title and Transition Polish Pass
+- Video transcript range: 01:20:08-01:30:41
 - Timestamp note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the demo if class time is tight.
 
 ## Big Idea
 
-Video editing is not one magic button. It is a sequence of organized post-production passes: media, edit, audio, graphics, color, and delivery.
+Video editing is not one magic button. It is a sequence of organized post-production passes: media, edit, basic audio checks, graphics, and delivery.
 
 ## Classroom Hook
 
@@ -36,47 +36,47 @@ Students who can manage footage, make clean edits, and export correctly can cont
 - Sign in to the classroom portal and locate the active Today item.
 - Open DaVinci Resolve on the assigned computer.
 - Use Google Drive, Google Docs, or YouTube links for evidence submission.
-- color page navigation
-- primary color wheels
-- contrast and saturation
-- white balance
-- before after evidence
+- title design
+- transition restraint
+- inspector controls
+- simple keyframes
+- readability
 
 ## Misconception Warnings
 
-- Students may treat color correction as random filters instead of controlled adjustment.
-- Students may over-saturate footage and lose natural skin tones or detail.
-- Students may skip before/after evidence and rely only on taste.
+- Students may use flashy transitions instead of motivated cuts.
+- Students may make titles too small, too fast, or low contrast.
+- Students may add motion without checking if it improves communication.
 
 ## Teacher Demo Sequence
 
-1. Open a timeline with at least three shots.
-2. Switch to the Color page and identify the viewer, node area, and primary color controls.
-3. Use basic controls such as lift, gamma, gain, offset, contrast, saturation, temperature, or tint.
-4. Correct at least two shots so they feel more consistent.
-5. Capture before and after evidence from the same shot or same sequence.
-6. Write a reflection explaining which correction improved the image most.
+1. Open the edited sequence from earlier lessons.
+2. Add one readable title card or lower third using text controls.
+3. Adjust font size, placement, duration, and contrast so the title is readable.
+4. Add one transition only if it supports the edit.
+5. Optional: animate one title or graphic with a simple position keyframe.
+6. Capture before/after evidence and explain the design choice.
 
 ## Suggested 15-20 Slide Structure
 
 1. Title and learning target: establish the workflow and evidence goal.
-2. Bell ringer: What makes two shots feel like they belong in the same scene?
+2. Bell ringer: When does a title help a video, and when can it distract from the video?
 3. Big idea: Resolve work happens in passes, not all at once.
 4. Why creators care: connect the workflow to broadcast, YouTube, interviews, or client-style work.
-5. Transcript anchor: use 02:51:04-03:16:57 from the stored tutorial source.
-6. Key vocabulary: Color page, Color management, Input color space, Node, Lift, Gamma.
+5. Transcript anchor: use 01:20:08-01:30:41 from the stored tutorial source.
+6. Key vocabulary: Effects panel, Transition, Title, Lower third, Generator, Keyframe.
 7. Interface map: show the Resolve page, panel, or tool students need today.
 8. Teacher demo part 1: model the first half of the workflow slowly.
 9. Teacher demo part 2: model the evidence or quality check.
 10. Common mistakes: show one broken example and one fixed example.
 11. Guided checkpoint: students point to the correct panel/tool before independent work.
-12. Assignment launch: Color Correction Comparison.
+12. Assignment launch: Title and Transition Polish Pass.
 13. Evidence checklist: show exactly what link-based evidence is required.
 14. Work time checkpoint 1: teacher checks setup and naming.
 15. Work time checkpoint 2: teacher checks the visible Resolve result.
-16. Extension challenge: Create a warm version and a cool version of the same shot, then explain which better fits the story.
-17. Studio challenge: Match three shots so exposure and color feel like one continuous scene.
-18. Reflection and exit ticket: Which color control changed your image most today, and what visual evidence proves it?
+16. Extension challenge: Create a simple lower-third style guide with font, size, color, placement, and duration rules.
+17. Studio challenge: Make two title versions, then choose the one that is easier to read and less distracting.
+18. Reflection and exit ticket: What title, transition, or motion choice did you add, and why does it belong in the edit?
 
 ## Slide-By-Slide Teaching Purpose
 
@@ -95,7 +95,7 @@ Students who can manage footage, make clean edits, and export correctly can cont
 
 ## Diagram Ideas
 
-- Workflow timeline: media, edit, audio, titles, color, deliver.
+- Workflow timeline: media, edit, basic audio checks, titles, deliver.
 - Mistake/fix diagram pairing a common student error with the corrected workflow.
 - A/B class schedule mini-map showing the same lesson delivered to both cycle days.
 - Evidence flow diagram: Resolve result, Drive/YouTube link, DCC Creative Studio submission.
@@ -113,7 +113,7 @@ Students who can manage footage, make clean edits, and export correctly can cont
 
 ## Formative Checks
 
-- Students can explain: I can make a basic color correction pass that improves exposure, contrast, white balance, and consistency between shots.
+- Students can explain: I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.
 - Students can point to the Resolve page or panel used in the workflow.
 - Students can submit evidence that shows the actual workflow result, not only a written claim.
 
@@ -128,38 +128,38 @@ Students who can manage footage, make clean edits, and export correctly can cont
 
 ## Independent Work Expectations
 
-1. Open a timeline with at least three shots.
-2. Switch to the Color page and identify the viewer, node area, and primary color controls.
-3. Use basic controls such as lift, gamma, gain, offset, contrast, saturation, temperature, or tint.
-4. Correct at least two shots so they feel more consistent.
-5. Capture before and after evidence from the same shot or same sequence.
-6. Write a reflection explaining which correction improved the image most.
+1. Open the edited sequence from earlier lessons.
+2. Add one readable title card or lower third using text controls.
+3. Adjust font size, placement, duration, and contrast so the title is readable.
+4. Add one transition only if it supports the edit.
+5. Optional: animate one title or graphic with a simple position keyframe.
+6. Capture before/after evidence and explain the design choice.
 
 ## Extension Challenge
 
-Create a warm version and a cool version of the same shot, then explain which better fits the story.
+Create a simple lower-third style guide with font, size, color, placement, and duration rules.
 
 ## Studio Challenge
 
-Match three shots so exposure and color feel like one continuous scene.
+Make two title versions, then choose the one that is easier to read and less distracting.
 
 ## Reflection Support
 
 Students can use this sentence frame: "My strongest evidence is ___ because it shows ___. The Resolve tool or workflow that mattered most was ___ because ___."
 
-Reflection prompt: Which color correction helped the sequence feel more professional?
+Reflection prompt: How did you make sure your title was readable and not just decorative?
 
 ## Exit Ticket
 
-Which color control changed your image most today, and what visual evidence proves it?
+What title, transition, or motion choice did you add, and why does it belong in the edit?
 
 ## Citations To Include
 
-- DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source, timestamp range 02:51:04-03:16:57.
+- DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source, timestamp range 01:20:08-01:30:41.
 - Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve
 - Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training
 - Blackmagic Design, DaVinci Resolve Edit Page: https://www.blackmagicdesign.com/products/davinciresolve/edit
-- Blackmagic Design, DaVinci Resolve Color: https://www.blackmagicdesign.com/products/davinciresolve/color
+- Blackmagic Design, DaVinci Resolve Fusion: https://www.blackmagicdesign.com/products/davinciresolve/fusion
 
 ## Accessibility Guidance
 
@@ -175,17 +175,17 @@ Which color control changed your image most today, and what visual evidence prov
 ```text
 Create a downloadable .pptx PowerPoint for a high school Digital Content Creators class.
 
-Deck topic: Color Correction and Shot Matching
+Deck topic: Titles, Transitions, and Simple Motion
 Program area: Video Production Studio
 Quarter: Q2
 Class length: 90 minutes
 Visual style: colorful retro 80s synthwave classroom design with neon cyan, magenta, purple, blue, and orange accents. Keep slides readable and professional.
 
 Use this lesson target:
-I can make a basic color correction pass that improves exposure, contrast, white balance, and consistency between shots.
+I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.
 
 Use this transcript anchor:
-DaVinci Resolve Q2 Tutorial Transcript, 02:51:04-03:16:57. Introduces the Color page, color nodes as correction containers, color management, input color space awareness, primaries, lift, gamma, gain, offset, contrast, saturation, temperature, tint, reset habits, and before/after comparison evidence.
+DaVinci Resolve Q2 Tutorial Transcript, 01:20:08-01:30:41. Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit.
 
 Build a 15-20 slide deck with:
 - hook
@@ -200,12 +200,12 @@ Build a 15-20 slide deck with:
 - speaker notes for teacher pacing
 
 Required assignment:
-Color Correction Comparison
+Title and Transition Polish Pass
 
 Required evidence:
-Google Drive link to a before screenshot.
-Google Drive link to an after screenshot from the same shot or sequence.
-Short reflection naming at least three color controls tested.
+Google Drive link to a screenshot showing the title or lower third selected in the timeline.
+Google Drive or YouTube link to a short clip preview if teacher requests export.
+Short reflection explaining why the title or transition supports the story.
 
 Do not create a generic marketing deck. Make it classroom-ready for students using DaVinci Resolve.
 ```

@@ -1,9 +1,9 @@
 {
-  "id": "vp-q2-l07",
+  "id": "vp-q2-l06",
   "programAreaId": "video-production",
   "quarter": "Q2",
   "unit": "DaVinci Resolve Foundations",
-  "lessonNumber": 7,
+  "lessonNumber": 6,
   "title": "Titles, Transitions, and Simple Motion",
   "status": "draft-pilot",
   "video": {
@@ -49,12 +49,12 @@
     }
   ],
   "slides": {
-    "title": "Lesson 07 - Titles, Transitions, and Simple Motion",
+    "title": "Lesson 06 - Titles, Transitions, and Simple Motion",
     "url": "",
     "status": "not-created"
   },
   "assignment": {
-    "id": "vp-q2-a07",
+    "id": "vp-q2-a06",
     "title": "Title and Transition Polish Pass",
     "submissionType": "google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
@@ -69,6 +69,6 @@
     "davinci-resolve",
     "q2",
     "resolve-foundations",
-    "lesson-07"
+    "lesson-06"
   ]
 }

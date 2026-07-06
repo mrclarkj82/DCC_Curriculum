@@ -24,11 +24,11 @@ What is one problem that can happen if an editor starts cutting video before nam
 
 ## Vocabulary
 
-- DaVinci Resolve: A video post-production application used for editing, color, visual effects, audio, and delivery.
+- DaVinci Resolve: A video post-production application used for editing, visual effects, graphics, and delivery.
 - Project Manager: The startup area used to create, open, back up, and organize Resolve projects.
 - Project Library: The database or location where Resolve stores project files and timelines.
-- Resolve page: A dedicated workspace inside Resolve, such as Media, Edit, Fusion, Color, Fairlight, or Deliver.
-- Post-production: The work that happens after footage is recorded, including editing, sound, color, graphics, and export.
+- Resolve page: A dedicated workspace inside Resolve, such as Media, Edit, Fusion, or Deliver.
+- Post-production: The work that happens after footage is recorded, including editing, sound, graphics, and export.
 - Workspace: The visible panels and tools arranged for a specific editing task.
 
 ## Teacher Slides Placeholder
@@ -49,7 +49,7 @@ Resolve Project Setup Proof: complete the Resolve workflow for this lesson and s
 
 ## Extension Challenge
 
-Create a one-page Resolve workflow map showing which page you would use for media, editing, color, audio, and export.
+Create a one-page Resolve workflow map showing which page you would use for media, editing, titles, and export.
 
 ## Exit Ticket
 

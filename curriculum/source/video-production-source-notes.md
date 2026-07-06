@@ -15,6 +15,7 @@ Do not invent detailed video production curriculum beyond starter placeholders u
 
 - Curriculum folder: `curriculum/pilot-batch/video-production/q2/davinci-resolve/`
 - Calendar files: `curriculum/calendar/q2-davinci-resolve-lesson-schedule.*` and `curriculum/calendar/q2-davinci-resolve-block-calendar.*`
-- Lesson count: 9 A/B lessons from October 12, 2026 through November 6, 2026.
+- Lesson count: 7 A/B lessons from October 12, 2026 through November 2, 2026.
 - Quiz count: 2 draft self-grading quiz records with private answer-key seed data.
+- Excluded source span: Color page and Fairlight page material from approximately 02:50:00-04:53:05 is not part of the active Q2 plan.
 - Status: generated for teacher review before live classroom publication.

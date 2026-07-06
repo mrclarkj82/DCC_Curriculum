@@ -2,7 +2,7 @@
 
 ## Lesson Snapshot
 
-- Lesson ID: vp-q2-l09
+- Lesson ID: vp-q2-l07
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
 - Transcript range: 04:53:29-05:06:57
@@ -25,7 +25,7 @@ This lesson is designed for one A/B block meeting. Keep the demo tight and prior
 1. Complete or review Quiz 2 for Lessons 06-08 and export basics.
 2. Open the polished mini-edit timeline.
 3. Check that the edit has a beginning, middle, and end.
-4. Check basic audio, title readability, and color consistency.
+4. Check basic audio, title readability, timeline gaps, and export settings.
 5. Use the Deliver page or teacher-approved quick export workflow.
 6. Name the export using the class naming convention and submit a share link or teacher-approved evidence.
 
@@ -40,7 +40,7 @@ This lesson is designed for one A/B block meeting. Keep the demo tight and prior
 - Quiz 2 completion record or teacher checkoff.
 - Google Drive or YouTube link to the final exported mini-edit.
 - Google Drive link to a screenshot of the Deliver page or render queue.
-- Short reflection explaining the most important editing, audio, title, or color decision.
+- Short reflection explaining the most important editing, audio, title, or export decision.
 
 ## Differentiation
 

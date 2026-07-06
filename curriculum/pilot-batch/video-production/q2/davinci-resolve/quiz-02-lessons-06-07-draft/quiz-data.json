@@ -1,0 +1,236 @@
+{
+  "id": "vp-q2-quiz-02",
+  "programAreaId": "video-production",
+  "title": "Q2 Quiz 2 Draft: Titles, Transitions, and Final Export",
+  "quarter": "Q2",
+  "lessonIds": [
+    "vp-q2-l06",
+    "vp-q2-l07"
+  ],
+  "status": "draft-pilot",
+  "isPublished": false,
+  "questions": [
+    {
+      "id": "vp-q2-quiz-02-q01",
+      "type": "multiple-choice",
+      "text": "What is a title used for in an edit?",
+      "choices": [
+        "Readable text such as a title card, name label, or lower third.",
+        "A raw camera file.",
+        "A no-school calendar note.",
+        "A timeline backup folder."
+      ],
+      "correctAnswer": "Readable text such as a title card, name label, or lower third.",
+      "explanation": "Titles communicate text information inside the video.",
+      "difficulty": "easy",
+      "lessonId": "vp-q2-l06",
+      "tag": "titles"
+    },
+    {
+      "id": "vp-q2-quiz-02-q02",
+      "type": "multiple-choice",
+      "text": "Which panel is commonly used to adjust title text, position, and selected effect settings?",
+      "choices": [
+        "Inspector",
+        "Project Manager",
+        "Render Queue",
+        "Media Storage"
+      ],
+      "correctAnswer": "Inspector",
+      "explanation": "The Inspector exposes controls for selected clips, titles, transitions, and effects.",
+      "difficulty": "easy",
+      "lessonId": "vp-q2-l06",
+      "tag": "inspector"
+    },
+    {
+      "id": "vp-q2-quiz-02-q03",
+      "type": "multiple-choice",
+      "text": "What is a keyframe?",
+      "choices": [
+        "A point in time that stores a value so a property can change over time.",
+        "The final exported file.",
+        "A folder inside the Media Pool.",
+        "The first day of the grading period."
+      ],
+      "correctAnswer": "A point in time that stores a value so a property can change over time.",
+      "explanation": "Keyframes make motion or property changes happen over time.",
+      "difficulty": "easy",
+      "lessonId": "vp-q2-l06",
+      "tag": "keyframes"
+    },
+    {
+      "id": "vp-q2-quiz-02-q04",
+      "type": "multiple-choice",
+      "text": "When should a transition be used?",
+      "choices": [
+        "When it supports the edit and does not distract from the story.",
+        "Between every single clip no matter what.",
+        "Only before importing footage.",
+        "Only after the final file is exported."
+      ],
+      "correctAnswer": "When it supports the edit and does not distract from the story.",
+      "explanation": "Transitions should serve clarity, pacing, or tone instead of becoming decoration.",
+      "difficulty": "easy",
+      "lessonId": "vp-q2-l06",
+      "tag": "transitions"
+    },
+    {
+      "id": "vp-q2-quiz-02-q05",
+      "type": "multiple-choice",
+      "text": "What makes a lower third or title card classroom-ready?",
+      "choices": [
+        "It is readable, spelled correctly, timed well, and supports the viewer.",
+        "It is as small as possible.",
+        "It covers the entire edit for the whole video.",
+        "It replaces the need to organize clips."
+      ],
+      "correctAnswer": "It is readable, spelled correctly, timed well, and supports the viewer.",
+      "explanation": "Student titles should improve communication without hiding the video.",
+      "difficulty": "medium",
+      "lessonId": "vp-q2-l06",
+      "tag": "title-readability"
+    },
+    {
+      "id": "vp-q2-quiz-02-q06",
+      "type": "multiple-choice",
+      "text": "Which page is used to render or export the finished timeline?",
+      "choices": [
+        "Deliver",
+        "Media",
+        "Edit",
+        "Project Manager"
+      ],
+      "correctAnswer": "Deliver",
+      "explanation": "The Deliver page is used to render the timeline into a finished video file.",
+      "difficulty": "easy",
+      "lessonId": "vp-q2-l07",
+      "tag": "deliver"
+    },
+    {
+      "id": "vp-q2-quiz-02-q07",
+      "type": "multiple-choice",
+      "text": "What is the render queue?",
+      "choices": [
+        "A list of export jobs waiting to render.",
+        "A list of raw clips not imported.",
+        "A folder of quiz answers.",
+        "A set of A/B class periods."
+      ],
+      "correctAnswer": "A list of export jobs waiting to render.",
+      "explanation": "Resolve adds export jobs to the render queue before rendering.",
+      "difficulty": "easy",
+      "lessonId": "vp-q2-l07",
+      "tag": "render-queue"
+    },
+    {
+      "id": "vp-q2-quiz-02-q08",
+      "type": "multiple-choice",
+      "text": "Why should the file name and save location be checked before rendering?",
+      "choices": [
+        "So the exported file can be found and submitted correctly.",
+        "So the project deletes unused clips.",
+        "So the timeline automatically rewrites itself.",
+        "So the grading period changes."
+      ],
+      "correctAnswer": "So the exported file can be found and submitted correctly.",
+      "explanation": "Naming and location checks prevent lost exports and confusing submissions.",
+      "difficulty": "easy",
+      "lessonId": "vp-q2-l07",
+      "tag": "file-management"
+    },
+    {
+      "id": "vp-q2-quiz-02-q09",
+      "type": "multiple-choice",
+      "text": "What is a codec?",
+      "choices": [
+        "A method used to encode and compress video or audio data.",
+        "A title animation preset only.",
+        "A class join code.",
+        "A type of bin folder."
+      ],
+      "correctAnswer": "A method used to encode and compress video or audio data.",
+      "explanation": "Codecs such as H.264 and H.265 affect how a video file is encoded.",
+      "difficulty": "medium",
+      "lessonId": "vp-q2-l07",
+      "tag": "codec"
+    },
+    {
+      "id": "vp-q2-quiz-02-q10",
+      "type": "multiple-choice",
+      "text": "Which export setting is commonly used for a web-friendly class submission?",
+      "choices": [
+        "H.264 in an MP4 container.",
+        "A missing file path.",
+        "A project file with no rendered video.",
+        "A timeline with no title or final check."
+      ],
+      "correctAnswer": "H.264 in an MP4 container.",
+      "explanation": "H.264 MP4 files are widely playable and practical for class review.",
+      "difficulty": "medium",
+      "lessonId": "vp-q2-l07",
+      "tag": "export-settings"
+    },
+    {
+      "id": "vp-q2-quiz-02-q11",
+      "type": "multiple-choice",
+      "text": "Why should an editor watch the final timeline before exporting?",
+      "choices": [
+        "To catch gaps, unreadable titles, timing problems, or other mistakes.",
+        "To skip the render queue.",
+        "To delete the project manager.",
+        "To avoid saving the file."
+      ],
+      "correctAnswer": "To catch gaps, unreadable titles, timing problems, or other mistakes.",
+      "explanation": "A final playback check catches issues before a file is submitted.",
+      "difficulty": "medium",
+      "lessonId": "vp-q2-l07",
+      "tag": "quality-check"
+    },
+    {
+      "id": "vp-q2-quiz-02-q12",
+      "type": "multiple-choice",
+      "text": "What should a simple motion effect do in a school edit?",
+      "choices": [
+        "Guide attention or polish the communication without distracting.",
+        "Move randomly for the whole video.",
+        "Replace the need for a rough cut.",
+        "Hide all required evidence."
+      ],
+      "correctAnswer": "Guide attention or polish the communication without distracting.",
+      "explanation": "Motion should be intentional and support the edit.",
+      "difficulty": "medium",
+      "lessonId": "vp-q2-l06",
+      "tag": "motion"
+    },
+    {
+      "id": "vp-q2-quiz-02-q13",
+      "type": "vocabulary",
+      "text": "Identify the term: a visual change used between two clips, such as a dissolve or wipe.",
+      "correctAnswer": "Transition",
+      "explanation": "Transitions control how one clip changes into another.",
+      "difficulty": "medium",
+      "lessonId": "vp-q2-l06",
+      "tag": "vocabulary"
+    },
+    {
+      "id": "vp-q2-quiz-02-q14",
+      "type": "vocabulary",
+      "text": "Identify the term: a list of export jobs waiting to be rendered.",
+      "correctAnswer": "Render queue",
+      "explanation": "The render queue stores export jobs before rendering begins.",
+      "difficulty": "short-response",
+      "lessonId": "vp-q2-l07",
+      "tag": "vocabulary"
+    },
+    {
+      "id": "vp-q2-quiz-02-q15",
+      "type": "short-response",
+      "text": "Name two final quality checks an editor should make before exporting.",
+      "correctAnswer": "A strong answer can include title readability, spelling, timing, timeline gaps, final playback, file name, save location, or export settings.",
+      "explanation": "This checks whether students can name real pre-export checks that affect the viewer or submission workflow.",
+      "difficulty": "short-response",
+      "lessonId": "vp-q2-l07",
+      "tag": "workflow"
+    }
+  ]
+}

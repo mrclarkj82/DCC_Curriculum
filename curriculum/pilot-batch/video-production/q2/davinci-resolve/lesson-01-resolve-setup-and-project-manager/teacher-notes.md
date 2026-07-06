@@ -24,7 +24,7 @@ This lesson is designed for one A/B block meeting. Keep the demo tight and prior
 
 1. Open DaVinci Resolve and locate the Project Manager.
 2. Create a new project using the class naming convention.
-3. Identify the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver pages.
+3. Identify the Media, Cut, Edit, Fusion, and Deliver pages.
 4. Write a one-sentence job description for at least four Resolve pages.
 5. Export or screenshot proof of the project setup according to teacher directions.
 6. Save and close the project cleanly.

@@ -26,9 +26,9 @@ This quiz is stored as draft-pilot content. Public website seed records remove c
 ### 2. Which Resolve page is mainly used to import and organize footage?
 
 - Media
-- Fairlight
+- Cut
+- Edit
 - Deliver
-- Color
 
 - Correct answer: Media
 - Explanation: The Media page is designed for finding, importing, previewing, and organizing clips.
@@ -87,8 +87,8 @@ This quiz is stored as draft-pilot content. Public website seed records remove c
 
 - The edited sequence at the current playhead position.
 - Only files that are not imported.
-- Only color palettes.
-- Only audio meters.
+- Only toolbar icons.
+- Only marker names.
 
 - Correct answer: The edited sequence at the current playhead position.
 - Explanation: The timeline viewer shows what the active edit looks like at the playhead.
@@ -111,8 +111,8 @@ This quiz is stored as draft-pilot content. Public website seed records remove c
 
 - The selected end of the usable part of a source clip.
 - The project backup file.
-- A color correction node.
-- The main audio bus.
+- A timeline marker.
+- The timeline ruler.
 
 - Correct answer: The selected end of the usable part of a source clip.
 - Explanation: An out point marks where the selected range ends.
@@ -146,7 +146,7 @@ This quiz is stored as draft-pilot content. Public website seed records remove c
 ### 12. What does ripple trimming help prevent?
 
 - Unwanted gaps after shortening or extending edits.
-- All color correction.
+- Project settings.
 - Project Manager backups.
 - Using the Media page.
 

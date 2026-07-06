@@ -17,7 +17,7 @@ This premium brief is for creating a 15-20 slide teacher-led PowerPoint. It is i
 
 ## Big Idea
 
-Video editing is not one magic button. It is a sequence of organized post-production passes: media, edit, audio, graphics, color, and delivery.
+Video editing is not one magic button. It is a sequence of organized post-production passes: media, edit, basic audio checks, graphics, and delivery.
 
 ## Classroom Hook
 
@@ -52,7 +52,7 @@ Students who can manage footage, make clean edits, and export correctly can cont
 
 1. Open DaVinci Resolve and locate the Project Manager.
 2. Create a new project using the class naming convention.
-3. Identify the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver pages.
+3. Identify the Media, Cut, Edit, Fusion, and Deliver pages.
 4. Write a one-sentence job description for at least four Resolve pages.
 5. Export or screenshot proof of the project setup according to teacher directions.
 6. Save and close the project cleanly.
@@ -74,7 +74,7 @@ Students who can manage footage, make clean edits, and export correctly can cont
 13. Evidence checklist: show exactly what link-based evidence is required.
 14. Work time checkpoint 1: teacher checks setup and naming.
 15. Work time checkpoint 2: teacher checks the visible Resolve result.
-16. Extension challenge: Create a one-page Resolve workflow map showing which page you would use for media, editing, color, audio, and export.
+16. Extension challenge: Create a one-page Resolve workflow map showing which page you would use for media, editing, titles, and export.
 17. Studio challenge: Design a naming convention for a class editing project and explain how it prevents lost work.
 18. Reflection and exit ticket: Which Resolve page or startup area did you use today, and what job does it help an editor do?
 
@@ -95,7 +95,7 @@ Students who can manage footage, make clean edits, and export correctly can cont
 
 ## Diagram Ideas
 
-- Workflow timeline: media, edit, audio, titles, color, deliver.
+- Workflow timeline: media, edit, basic audio checks, titles, deliver.
 - Mistake/fix diagram pairing a common student error with the corrected workflow.
 - A/B class schedule mini-map showing the same lesson delivered to both cycle days.
 - Evidence flow diagram: Resolve result, Drive/YouTube link, DCC Creative Studio submission.
@@ -130,14 +130,14 @@ Students who can manage footage, make clean edits, and export correctly can cont
 
 1. Open DaVinci Resolve and locate the Project Manager.
 2. Create a new project using the class naming convention.
-3. Identify the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver pages.
+3. Identify the Media, Cut, Edit, Fusion, and Deliver pages.
 4. Write a one-sentence job description for at least four Resolve pages.
 5. Export or screenshot proof of the project setup according to teacher directions.
 6. Save and close the project cleanly.
 
 ## Extension Challenge
 
-Create a one-page Resolve workflow map showing which page you would use for media, editing, color, audio, and export.
+Create a one-page Resolve workflow map showing which page you would use for media, editing, titles, and export.
 
 ## Studio Challenge
 

@@ -17,7 +17,7 @@ This premium brief is for creating a 15-20 slide teacher-led PowerPoint. It is i
 
 ## Big Idea
 
-Video editing is not one magic button. It is a sequence of organized post-production passes: media, edit, audio, graphics, color, and delivery.
+Video editing is not one magic button. It is a sequence of organized post-production passes: media, edit, basic audio checks, graphics, and delivery.
 
 ## Classroom Hook
 
@@ -75,7 +75,7 @@ Students who can manage footage, make clean edits, and export correctly can cont
 14. Work time checkpoint 1: teacher checks setup and naming.
 15. Work time checkpoint 2: teacher checks the visible Resolve result.
 16. Extension challenge: Add one intentional fade only where it improves clarity, then explain why it belongs there.
-17. Studio challenge: Make the rough cut understandable with no titles, music, or color changes yet.
+17. Studio challenge: Make the rough cut understandable with no titles or extra effects yet.
 18. Reflection and exit ticket: What did you clean up today, and how does the rough cut communicate more clearly now?
 
 ## Slide-By-Slide Teaching Purpose
@@ -95,7 +95,7 @@ Students who can manage footage, make clean edits, and export correctly can cont
 
 ## Diagram Ideas
 
-- Workflow timeline: media, edit, audio, titles, color, deliver.
+- Workflow timeline: media, edit, basic audio checks, titles, deliver.
 - Mistake/fix diagram pairing a common student error with the corrected workflow.
 - A/B class schedule mini-map showing the same lesson delivered to both cycle days.
 - Evidence flow diagram: Resolve result, Drive/YouTube link, DCC Creative Studio submission.
@@ -141,7 +141,7 @@ Add one intentional fade only where it improves clarity, then explain why it bel
 
 ## Studio Challenge
 
-Make the rough cut understandable with no titles, music, or color changes yet.
+Make the rough cut understandable with no titles or extra effects yet.
 
 ## Reflection Support
 

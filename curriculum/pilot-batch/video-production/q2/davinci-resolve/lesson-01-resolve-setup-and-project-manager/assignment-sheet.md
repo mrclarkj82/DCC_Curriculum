@@ -16,7 +16,7 @@ I can create a DaVinci Resolve project, identify the main Resolve pages, and exp
 
 1. Open DaVinci Resolve and locate the Project Manager.
 2. Create a new project using the class naming convention.
-3. Identify the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver pages.
+3. Identify the Media, Cut, Edit, Fusion, and Deliver pages.
 4. Write a one-sentence job description for at least four Resolve pages.
 5. Export or screenshot proof of the project setup according to teacher directions.
 6. Save and close the project cleanly.
@@ -37,7 +37,7 @@ Upload screenshots, short screen recordings, exported review files, or written e
 
 - Check that the correct Resolve project is open.
 - Use the correct Resolve page for the task before changing random settings.
-- Ask whether the issue is media organization, timeline editing, audio, title, color, or export.
+- Ask whether the issue is media organization, timeline editing, audio, title, or export.
 - Capture evidence from the actual Resolve workspace, not only the desktop.
 
 ## 4-Point Rubric
@@ -50,7 +50,7 @@ Upload screenshots, short screen recordings, exported review files, or written e
 
 ## Extension Challenge
 
-Create a one-page Resolve workflow map showing which page you would use for media, editing, color, audio, and export.
+Create a one-page Resolve workflow map showing which page you would use for media, editing, titles, and export.
 
 ## Studio Challenge
 

@@ -34,9 +34,9 @@
       "text": "Which Resolve page is mainly used to import and organize footage?",
       "choices": [
         "Media",
-        "Fairlight",
-        "Deliver",
-        "Color"
+        "Cut",
+        "Edit",
+        "Deliver"
       ],
       "correctAnswer": "Media",
       "explanation": "The Media page is designed for finding, importing, previewing, and organizing clips.",
@@ -115,8 +115,8 @@
       "choices": [
         "The edited sequence at the current playhead position.",
         "Only files that are not imported.",
-        "Only color palettes.",
-        "Only audio meters."
+        "Only toolbar icons.",
+        "Only marker names."
       ],
       "correctAnswer": "The edited sequence at the current playhead position.",
       "explanation": "The timeline viewer shows what the active edit looks like at the playhead.",
@@ -147,8 +147,8 @@
       "choices": [
         "The selected end of the usable part of a source clip.",
         "The project backup file.",
-        "A color correction node.",
-        "The main audio bus."
+        "A timeline marker.",
+        "The timeline ruler."
       ],
       "correctAnswer": "The selected end of the usable part of a source clip.",
       "explanation": "An out point marks where the selected range ends.",
@@ -194,7 +194,7 @@
       "text": "What does ripple trimming help prevent?",
       "choices": [
         "Unwanted gaps after shortening or extending edits.",
-        "All color correction.",
+        "Project settings.",
         "Project Manager backups.",
         "Using the Media page."
       ],

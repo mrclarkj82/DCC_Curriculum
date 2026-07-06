@@ -38,7 +38,7 @@ Upload screenshots, short screen recordings, exported review files, or written e
 
 - Check that the correct Resolve project is open.
 - Use the correct Resolve page for the task before changing random settings.
-- Ask whether the issue is media organization, timeline editing, audio, title, color, or export.
+- Ask whether the issue is media organization, timeline editing, audio, title, or export.
 - Capture evidence from the actual Resolve workspace, not only the desktop.
 
 ## 4-Point Rubric

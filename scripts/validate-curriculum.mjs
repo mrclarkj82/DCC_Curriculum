@@ -200,7 +200,7 @@ for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
   );
 }
 
-for (let lessonNumber = 1; lessonNumber <= 9; lessonNumber += 1) {
+for (let lessonNumber = 1; lessonNumber <= 7; lessonNumber += 1) {
   assert(
     q2DaVinciLessonNumbers.has(lessonNumber),
     `Q2 DaVinci Resolve lesson schedule is missing lesson ${lessonNumber}`,

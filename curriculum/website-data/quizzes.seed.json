@@ -814,9 +814,9 @@
         "text": "Which Resolve page is mainly used to import and organize footage?",
         "choices": [
           "Media",
-          "Fairlight",
-          "Deliver",
-          "Color"
+          "Cut",
+          "Edit",
+          "Deliver"
         ],
         "difficulty": "easy",
         "lessonId": "vp-q2-l02",
@@ -885,8 +885,8 @@
         "choices": [
           "The edited sequence at the current playhead position.",
           "Only files that are not imported.",
-          "Only color palettes.",
-          "Only audio meters."
+          "Only toolbar icons.",
+          "Only marker names."
         ],
         "difficulty": "easy",
         "lessonId": "vp-q2-l03",
@@ -913,8 +913,8 @@
         "choices": [
           "The selected end of the usable part of a source clip.",
           "The project backup file.",
-          "A color correction node.",
-          "The main audio bus."
+          "A timeline marker.",
+          "The timeline ruler."
         ],
         "difficulty": "medium",
         "lessonId": "vp-q2-l04",
@@ -954,7 +954,7 @@
         "text": "What does ripple trimming help prevent?",
         "choices": [
           "Unwanted gaps after shortening or extending edits.",
-          "All color correction.",
+          "Project settings.",
           "Project Manager backups.",
           "Using the Media page."
         ],
@@ -991,13 +991,11 @@
   {
     "id": "vp-q2-quiz-02",
     "programAreaId": "video-production",
-    "title": "Q2 Quiz 2 Draft: Audio, Titles, Color, and Final Export",
+    "title": "Q2 Quiz 2 Draft: Titles, Transitions, and Final Export",
     "quarter": "Q2",
     "lessonIds": [
       "vp-q2-l06",
-      "vp-q2-l07",
-      "vp-q2-l08",
-      "vp-q2-l09"
+      "vp-q2-l07"
     ],
     "status": "draft-pilot",
     "isPublished": false,
@@ -1005,75 +1003,19 @@
       {
         "id": "vp-q2-quiz-02-q01",
         "type": "multiple-choice",
-        "text": "Which Resolve page is designed for audio editing and mixing?",
-        "choices": [
-          "Fairlight",
-          "Media",
-          "Deliver",
-          "Project Manager"
-        ],
-        "difficulty": "easy",
-        "lessonId": "vp-q2-l06",
-        "tag": "fairlight"
-      },
-      {
-        "id": "vp-q2-quiz-02-q02",
-        "type": "multiple-choice",
-        "text": "What does solo do on an audio track?",
-        "choices": [
-          "Plays that track while temporarily muting others.",
-          "Deletes all other tracks.",
-          "Exports the project.",
-          "Changes the clip color to blue."
-        ],
-        "difficulty": "easy",
-        "lessonId": "vp-q2-l06",
-        "tag": "solo"
-      },
-      {
-        "id": "vp-q2-quiz-02-q03",
-        "type": "multiple-choice",
-        "text": "What does mute do on an audio track?",
-        "choices": [
-          "Turns that track off during playback.",
-          "Makes the track louder.",
-          "Adds a title.",
-          "Creates a color node."
-        ],
-        "difficulty": "easy",
-        "lessonId": "vp-q2-l06",
-        "tag": "mute"
-      },
-      {
-        "id": "vp-q2-quiz-02-q04",
-        "type": "multiple-choice",
-        "text": "Why should audio tracks be named or colored?",
-        "choices": [
-          "To keep dialogue, music, ambience, and effects organized.",
-          "To make the export render faster every time.",
-          "To publish quiz answers.",
-          "To remove the need for a timeline."
-        ],
-        "difficulty": "easy",
-        "lessonId": "vp-q2-l06",
-        "tag": "track-organization"
-      },
-      {
-        "id": "vp-q2-quiz-02-q05",
-        "type": "multiple-choice",
         "text": "What is a title used for in an edit?",
         "choices": [
           "Readable text such as a title card, name label, or lower third.",
           "A raw camera file.",
           "A no-school calendar note.",
-          "An audio waveform."
+          "A timeline backup folder."
         ],
         "difficulty": "easy",
-        "lessonId": "vp-q2-l07",
+        "lessonId": "vp-q2-l06",
         "tag": "titles"
       },
       {
-        "id": "vp-q2-quiz-02-q06",
+        "id": "vp-q2-quiz-02-q02",
         "type": "multiple-choice",
         "text": "Which panel is commonly used to adjust title text, position, and selected effect settings?",
         "choices": [
@@ -1083,11 +1025,11 @@
           "Media Storage"
         ],
         "difficulty": "easy",
-        "lessonId": "vp-q2-l07",
+        "lessonId": "vp-q2-l06",
         "tag": "inspector"
       },
       {
-        "id": "vp-q2-quiz-02-q07",
+        "id": "vp-q2-quiz-02-q03",
         "type": "multiple-choice",
         "text": "What is a keyframe?",
         "choices": [
@@ -1097,67 +1039,53 @@
           "The first day of the grading period."
         ],
         "difficulty": "easy",
-        "lessonId": "vp-q2-l07",
+        "lessonId": "vp-q2-l06",
         "tag": "keyframes"
       },
       {
-        "id": "vp-q2-quiz-02-q08",
+        "id": "vp-q2-quiz-02-q04",
         "type": "multiple-choice",
-        "text": "What is the Color page used for?",
+        "text": "When should a transition be used?",
         "choices": [
-          "Color correction and grading.",
-          "Only class join codes.",
-          "Only importing media.",
-          "Only audio routing."
+          "When it supports the edit and does not distract from the story.",
+          "Between every single clip no matter what.",
+          "Only before importing footage.",
+          "Only after the final file is exported."
         ],
         "difficulty": "easy",
-        "lessonId": "vp-q2-l08",
-        "tag": "color-page"
+        "lessonId": "vp-q2-l06",
+        "tag": "transitions"
       },
       {
-        "id": "vp-q2-quiz-02-q09",
+        "id": "vp-q2-quiz-02-q05",
         "type": "multiple-choice",
-        "text": "What does saturation control?",
+        "text": "What makes a lower third or title card classroom-ready?",
         "choices": [
-          "The strength or intensity of colors.",
-          "The length of the render queue.",
-          "The number of bins.",
-          "The loudness of dialogue only."
+          "It is readable, spelled correctly, timed well, and supports the viewer.",
+          "It is as small as possible.",
+          "It covers the entire edit for the whole video.",
+          "It replaces the need to organize clips."
         ],
         "difficulty": "medium",
-        "lessonId": "vp-q2-l08",
-        "tag": "saturation"
+        "lessonId": "vp-q2-l06",
+        "tag": "title-readability"
       },
       {
-        "id": "vp-q2-quiz-02-q10",
-        "type": "multiple-choice",
-        "text": "Which controls mainly affect dark, middle, and bright parts of an image?",
-        "choices": [
-          "Lift, gamma, and gain.",
-          "Mute, solo, and bus.",
-          "In, out, and append.",
-          "Media, cut, and deliver."
-        ],
-        "difficulty": "medium",
-        "lessonId": "vp-q2-l08",
-        "tag": "lift-gamma-gain"
-      },
-      {
-        "id": "vp-q2-quiz-02-q11",
+        "id": "vp-q2-quiz-02-q06",
         "type": "multiple-choice",
         "text": "Which page is used to render or export the finished timeline?",
         "choices": [
           "Deliver",
           "Media",
-          "Fairlight",
-          "Fusion"
+          "Edit",
+          "Project Manager"
         ],
-        "difficulty": "medium",
-        "lessonId": "vp-q2-l09",
+        "difficulty": "easy",
+        "lessonId": "vp-q2-l07",
         "tag": "deliver"
       },
       {
-        "id": "vp-q2-quiz-02-q12",
+        "id": "vp-q2-quiz-02-q07",
         "type": "multiple-choice",
         "text": "What is the render queue?",
         "choices": [
@@ -1166,32 +1094,102 @@
           "A folder of quiz answers.",
           "A set of A/B class periods."
         ],
-        "difficulty": "medium",
-        "lessonId": "vp-q2-l09",
+        "difficulty": "easy",
+        "lessonId": "vp-q2-l07",
         "tag": "render-queue"
+      },
+      {
+        "id": "vp-q2-quiz-02-q08",
+        "type": "multiple-choice",
+        "text": "Why should the file name and save location be checked before rendering?",
+        "choices": [
+          "So the exported file can be found and submitted correctly.",
+          "So the project deletes unused clips.",
+          "So the timeline automatically rewrites itself.",
+          "So the grading period changes."
+        ],
+        "difficulty": "easy",
+        "lessonId": "vp-q2-l07",
+        "tag": "file-management"
+      },
+      {
+        "id": "vp-q2-quiz-02-q09",
+        "type": "multiple-choice",
+        "text": "What is a codec?",
+        "choices": [
+          "A method used to encode and compress video or audio data.",
+          "A title animation preset only.",
+          "A class join code.",
+          "A type of bin folder."
+        ],
+        "difficulty": "medium",
+        "lessonId": "vp-q2-l07",
+        "tag": "codec"
+      },
+      {
+        "id": "vp-q2-quiz-02-q10",
+        "type": "multiple-choice",
+        "text": "Which export setting is commonly used for a web-friendly class submission?",
+        "choices": [
+          "H.264 in an MP4 container.",
+          "A missing file path.",
+          "A project file with no rendered video.",
+          "A timeline with no title or final check."
+        ],
+        "difficulty": "medium",
+        "lessonId": "vp-q2-l07",
+        "tag": "export-settings"
+      },
+      {
+        "id": "vp-q2-quiz-02-q11",
+        "type": "multiple-choice",
+        "text": "Why should an editor watch the final timeline before exporting?",
+        "choices": [
+          "To catch gaps, unreadable titles, timing problems, or other mistakes.",
+          "To skip the render queue.",
+          "To delete the project manager.",
+          "To avoid saving the file."
+        ],
+        "difficulty": "medium",
+        "lessonId": "vp-q2-l07",
+        "tag": "quality-check"
+      },
+      {
+        "id": "vp-q2-quiz-02-q12",
+        "type": "multiple-choice",
+        "text": "What should a simple motion effect do in a school edit?",
+        "choices": [
+          "Guide attention or polish the communication without distracting.",
+          "Move randomly for the whole video.",
+          "Replace the need for a rough cut.",
+          "Hide all required evidence."
+        ],
+        "difficulty": "medium",
+        "lessonId": "vp-q2-l06",
+        "tag": "motion"
       },
       {
         "id": "vp-q2-quiz-02-q13",
         "type": "vocabulary",
-        "text": "Identify the term: the method used to compress and store video or audio data, such as H.264 or H.265.",
+        "text": "Identify the term: a visual change used between two clips, such as a dissolve or wipe.",
         "difficulty": "medium",
-        "lessonId": "vp-q2-l09",
+        "lessonId": "vp-q2-l06",
         "tag": "vocabulary"
       },
       {
         "id": "vp-q2-quiz-02-q14",
         "type": "vocabulary",
-        "text": "Identify the term: background room tone or environmental sound that helps a scene feel present.",
+        "text": "Identify the term: a list of export jobs waiting to be rendered.",
         "difficulty": "short-response",
-        "lessonId": "vp-q2-l06",
+        "lessonId": "vp-q2-l07",
         "tag": "vocabulary"
       },
       {
         "id": "vp-q2-quiz-02-q15",
         "type": "short-response",
-        "text": "Name one final quality check an editor should make before exporting.",
+        "text": "Name two final quality checks an editor should make before exporting.",
         "difficulty": "short-response",
-        "lessonId": "vp-q2-l09",
+        "lessonId": "vp-q2-l07",
         "tag": "workflow"
       }
     ]

@@ -21,7 +21,7 @@
   "vocabulary": [
     {
       "term": "DaVinci Resolve",
-      "definition": "A video post-production application used for editing, color, visual effects, audio, and delivery."
+      "definition": "A video post-production application used for editing, visual effects, graphics, and delivery."
     },
     {
       "term": "Project Manager",
@@ -33,11 +33,11 @@
     },
     {
       "term": "Resolve page",
-      "definition": "A dedicated workspace inside Resolve, such as Media, Edit, Fusion, Color, Fairlight, or Deliver."
+      "definition": "A dedicated workspace inside Resolve, such as Media, Edit, Fusion, or Deliver."
     },
     {
       "term": "Post-production",
-      "definition": "The work that happens after footage is recorded, including editing, sound, color, graphics, and export."
+      "definition": "The work that happens after footage is recorded, including editing, sound, graphics, and export."
     },
     {
       "term": "Workspace",

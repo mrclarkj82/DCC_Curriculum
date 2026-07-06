@@ -5,9 +5,9 @@ This folder contains the Quarter 2 Video Production Studio DaVinci Resolve mini-
 ## Source
 
 - Raw transcript: `curriculum/source/davinci-resolve-q2-tutorial-transcript.md`
-- Pacing target: roughly four weeks before later group projects.
+- Pacing target: a trimmed DaVinci Resolve foundations block before later group projects.
 - School year: 2026-2027
-- Q2 schedule window: October 12, 2026 through November 6, 2026
+- Q2 schedule window: October 12, 2026 through November 2, 2026
 
 ## Lesson Sequence
 
@@ -16,15 +16,17 @@ This folder contains the Quarter 2 Video Production Studio DaVinci Resolve mini-
 - vp-q2-l03: Syncing Audio and Timeline Basics
 - vp-q2-l04: Trimming Clips and Building a Rough Cut
 - vp-q2-l05: Quiz 1 and Rough Cut Cleanup
-- vp-q2-l06: Audio Mix Basics in Fairlight
-- vp-q2-l07: Titles, Transitions, and Simple Motion
-- vp-q2-l08: Color Correction and Shot Matching
-- vp-q2-l09: Quiz 2 and Final Export
+- vp-q2-l06: Titles, Transitions, and Simple Motion
+- vp-q2-l07: Quiz 2 and Final Export
+
+## Trimmed Transcript Span
+
+The Color page and Fairlight page portion of the source transcript, approximately `02:50:00-04:53:05`, is intentionally excluded from this plan.
 
 ## Quizzes
 
 - vp-q2-quiz-01: covers lessons 01-04 and opens Lesson 05.
-- vp-q2-quiz-02: covers lessons 06-08 plus export readiness and opens Lesson 09.
+- vp-q2-quiz-02: covers Lesson 06 plus final export readiness and opens Lesson 07.
 
 ## Classroom Boundary
 

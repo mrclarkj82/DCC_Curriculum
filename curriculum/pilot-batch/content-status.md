@@ -83,6 +83,7 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Reflection template - needs teacher review
 
 - [x] Q2 DaVinci Resolve README - source overview
+- [x] Q2 DaVinci Resolve trim note - Color and Fairlight span excluded from planning
 - [x] Q2 DaVinci Resolve Lesson 01 page - ready for seed import
 - [x] Q2 DaVinci Resolve Lesson 01 slide brief - ready for ChatGPT Pro
 - [x] Q2 DaVinci Resolve Lesson 01 presentation brief - ready for ChatGPT Pro
@@ -132,20 +133,6 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Q2 DaVinci Resolve Lesson 07 bell ringer / exit ticket - needs teacher review
 - [x] Q2 DaVinci Resolve Lesson 07 teacher notes - needs teacher review
 - [x] Q2 DaVinci Resolve Lesson 07 lesson-data.json - ready for seed import
-- [x] Q2 DaVinci Resolve Lesson 08 page - ready for seed import
-- [x] Q2 DaVinci Resolve Lesson 08 slide brief - ready for ChatGPT Pro
-- [x] Q2 DaVinci Resolve Lesson 08 presentation brief - ready for ChatGPT Pro
-- [x] Q2 DaVinci Resolve Lesson 08 assignment - needs teacher review
-- [x] Q2 DaVinci Resolve Lesson 08 bell ringer / exit ticket - needs teacher review
-- [x] Q2 DaVinci Resolve Lesson 08 teacher notes - needs teacher review
-- [x] Q2 DaVinci Resolve Lesson 08 lesson-data.json - ready for seed import
-- [x] Q2 DaVinci Resolve Lesson 09 page - ready for seed import
-- [x] Q2 DaVinci Resolve Lesson 09 slide brief - ready for ChatGPT Pro
-- [x] Q2 DaVinci Resolve Lesson 09 presentation brief - ready for ChatGPT Pro
-- [x] Q2 DaVinci Resolve Lesson 09 assignment - needs teacher review
-- [x] Q2 DaVinci Resolve Lesson 09 bell ringer / exit ticket - needs teacher review
-- [x] Q2 DaVinci Resolve Lesson 09 teacher notes - needs teacher review
-- [x] Q2 DaVinci Resolve Lesson 09 lesson-data.json - ready for seed import
 - [x] Q2 DaVinci Resolve Quiz 01 Draft - draft / needs teacher review
 - [x] Q2 DaVinci Resolve Quiz 02 Draft - draft / needs teacher review
 - [x] Q2 DaVinci Resolve A/B schedule - generated from 2026-2027 calendar

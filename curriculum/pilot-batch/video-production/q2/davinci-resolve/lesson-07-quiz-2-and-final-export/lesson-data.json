@@ -1,9 +1,9 @@
 {
-  "id": "vp-q2-l09",
+  "id": "vp-q2-l07",
   "programAreaId": "video-production",
   "quarter": "Q2",
   "unit": "DaVinci Resolve Foundations",
-  "lessonNumber": 9,
+  "lessonNumber": 7,
   "title": "Quiz 2 and Final Export",
   "status": "draft-pilot",
   "video": {
@@ -53,19 +53,19 @@
     }
   ],
   "slides": {
-    "title": "Lesson 09 - Quiz 2 and Final Export",
+    "title": "Lesson 07 - Quiz 2 and Final Export",
     "url": "",
     "status": "not-created"
   },
   "assignment": {
-    "id": "vp-q2-a09",
+    "id": "vp-q2-a07",
     "title": "Final Resolve Mini-Edit Export",
     "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
       "Quiz 2 completion record or teacher checkoff.",
       "Google Drive or YouTube link to the final exported mini-edit.",
       "Google Drive link to a screenshot of the Deliver page or render queue.",
-      "Short reflection explaining the most important editing, audio, title, or color decision."
+      "Short reflection explaining the most important editing, audio, title, or export decision."
     ]
   },
   "exitTicket": "What export setting or file naming choice do you need to remember for future video projects?",
@@ -74,6 +74,6 @@
     "davinci-resolve",
     "q2",
     "resolve-foundations",
-    "lesson-09"
+    "lesson-07"
   ]
 }

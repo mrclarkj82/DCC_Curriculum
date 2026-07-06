@@ -4,7 +4,7 @@
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
 - Lesson number: 7
-- Lesson ID: vp-q2-l07
+- Lesson ID: vp-q2-l06
 - Status: draft-pilot
 
 ## Today's Goal
@@ -34,7 +34,7 @@ When does a title help a video, and when can it distract from the video?
 
 ## Teacher Slides Placeholder
 
-- Slide deck title: Lesson 07 - Titles, Transitions, and Simple Motion
+- Slide deck title: Lesson 06 - Titles, Transitions, and Simple Motion
 - Slide status: not-created
 - Slide URL: to be added after deck creation
 

@@ -4,9 +4,11 @@ Source: `2026-2027 Doral Calendar (List Form).pdf`
 
 Start date: **2026-10-12**
 
-A/B method: The source calendar does not explicitly mark A/B days, so cycle days are inferred. Thursday, August 13, 2026 is `A`; the next valid instructional day is `B`; the sequence alternates across valid instructional weekdays only. This Q2 unit begins on Monday, October 12, 2026, which is an inferred `B` day.
+End date: **2026-11-02**
 
-Weekends are not listed as skipped dates. The no-school list below contains only actual weekday non-student days from the school calendar.
+A/B method: The source calendar does not explicitly mark A/B days, so cycle days are inferred. Thursday, August 13, 2026 is `A`; the next valid instructional day is `B`; the sequence alternates across valid instructional weekdays only. Weekends are excluded from instructional scheduling, and actual weekday no-school dates are skipped.
+
+Trim note: The Color page and Fairlight page transcript span, approximately `02:50:00-04:53:05`, is excluded from this Q2 plan.
 
 ## Lesson Schedule
 
@@ -17,10 +19,8 @@ Weekends are not listed as skipped dates. The no-school list below contains only
 | 3 | `vp-q2-l03` | Syncing Audio and Timeline Basics | 2026-10-20 (A) | 2026-10-19 (B) |  |
 | 4 | `vp-q2-l04` | Trimming Clips and Building a Rough Cut | 2026-10-22 (A) | 2026-10-21 (B) |  |
 | 5 | `vp-q2-l05` | Quiz 1 and Rough Cut Cleanup | 2026-10-26 (A) | 2026-10-23 (B) |  |
-| 6 | `vp-q2-l06` | Audio Mix Basics in Fairlight | 2026-10-28 (A) | 2026-10-27 (B) |  |
-| 7 | `vp-q2-l07` | Titles, Transitions, and Simple Motion | 2026-11-02 (A) | 2026-10-29 (B) |  |
-| 8 | `vp-q2-l08` | Color Correction and Shot Matching | 2026-11-04 (A) | 2026-11-03 (B) |  |
-| 9 | `vp-q2-l09` | Quiz 2 and Final Export | 2026-11-06 (A) | 2026-11-05 (B) |  |
+| 6 | `vp-q2-l06` | Titles, Transitions, and Simple Motion | 2026-10-28 (A) | 2026-10-27 (B) | Renumbered after removing the Color page and Fairlight page transcript span from the Q2 plan. |
+| 7 | `vp-q2-l07` | Quiz 2 and Final Export | 2026-11-02 (A) | 2026-10-29 (B) | Closing checkpoint now follows titles/transitions and final export only; Color and Fairlight are excluded. |
 
 ## No-School Weekdays During This Q2 Schedule Window
 
@@ -35,5 +35,6 @@ Weekends are not listed as skipped dates. The no-school list below contains only
 - Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher changes that rule.
 - October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.
 - This Q2 DaVinci Resolve unit begins on an inferred B day, so each lesson record stores the A-day and B-day dates separately rather than assuming chronological A then B order.
+- The Color page and Fairlight page transcript span, approximately 02:50:00-04:53:05, is intentionally excluded from this Q2 plan.
 - Weekends are excluded from instructional scheduling but are not listed as no-school dates.
 - No-school dates list actual weekday non-student days only.

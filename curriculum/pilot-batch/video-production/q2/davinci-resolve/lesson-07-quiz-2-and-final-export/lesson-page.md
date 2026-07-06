@@ -4,7 +4,7 @@
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
 - Lesson number: 9
-- Lesson ID: vp-q2-l09
+- Lesson ID: vp-q2-l07
 - Status: draft-pilot
 
 ## Today's Goal
@@ -35,7 +35,7 @@ What needs to be true before a project is ready to export for someone else to wa
 
 ## Teacher Slides Placeholder
 
-- Slide deck title: Lesson 09 - Quiz 2 and Final Export
+- Slide deck title: Lesson 07 - Quiz 2 and Final Export
 - Slide status: not-created
 - Slide URL: to be added after deck creation
 
@@ -48,7 +48,7 @@ Final Resolve Mini-Edit Export: complete the Resolve workflow for this lesson an
 - Quiz 2 completion record or teacher checkoff.
 - Google Drive or YouTube link to the final exported mini-edit.
 - Google Drive link to a screenshot of the Deliver page or render queue.
-- Short reflection explaining the most important editing, audio, title, or color decision.
+- Short reflection explaining the most important editing, audio, title, or export decision.
 
 ## Extension Challenge
 

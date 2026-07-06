@@ -455,83 +455,83 @@
     "id": "vp-q2-quiz-02",
     "quizId": "vp-q2-quiz-02",
     "programAreaId": "video-production",
-    "title": "Q2 Quiz 2 Draft: Audio, Titles, Color, and Final Export",
+    "title": "Q2 Quiz 2 Draft: Titles, Transitions, and Final Export",
     "questionCount": 15,
     "answers": [
       {
         "questionId": "vp-q2-quiz-02-q01",
-        "correctAnswer": "Fairlight",
-        "explanation": "Fairlight is the audio-focused page in Resolve."
-      },
-      {
-        "questionId": "vp-q2-quiz-02-q02",
-        "correctAnswer": "Plays that track while temporarily muting others.",
-        "explanation": "Solo is useful for hearing one track clearly while mixing."
-      },
-      {
-        "questionId": "vp-q2-quiz-02-q03",
-        "correctAnswer": "Turns that track off during playback.",
-        "explanation": "Mute disables playback from that track until it is turned back on."
-      },
-      {
-        "questionId": "vp-q2-quiz-02-q04",
-        "correctAnswer": "To keep dialogue, music, ambience, and effects organized.",
-        "explanation": "Track organization helps editors find and balance layers quickly."
-      },
-      {
-        "questionId": "vp-q2-quiz-02-q05",
         "correctAnswer": "Readable text such as a title card, name label, or lower third.",
         "explanation": "Titles communicate text information inside the video."
       },
       {
-        "questionId": "vp-q2-quiz-02-q06",
+        "questionId": "vp-q2-quiz-02-q02",
         "correctAnswer": "Inspector",
         "explanation": "The Inspector exposes controls for selected clips, titles, transitions, and effects."
       },
       {
-        "questionId": "vp-q2-quiz-02-q07",
+        "questionId": "vp-q2-quiz-02-q03",
         "correctAnswer": "A point in time that stores a value so a property can change over time.",
         "explanation": "Keyframes make motion or property changes happen over time."
       },
       {
-        "questionId": "vp-q2-quiz-02-q08",
-        "correctAnswer": "Color correction and grading.",
-        "explanation": "The Color page is where Resolve handles shot color, contrast, exposure, and grading work."
+        "questionId": "vp-q2-quiz-02-q04",
+        "correctAnswer": "When it supports the edit and does not distract from the story.",
+        "explanation": "Transitions should serve clarity, pacing, or tone instead of becoming decoration."
       },
       {
-        "questionId": "vp-q2-quiz-02-q09",
-        "correctAnswer": "The strength or intensity of colors.",
-        "explanation": "Saturation controls how strong or muted colors appear."
+        "questionId": "vp-q2-quiz-02-q05",
+        "correctAnswer": "It is readable, spelled correctly, timed well, and supports the viewer.",
+        "explanation": "Student titles should improve communication without hiding the video."
       },
       {
-        "questionId": "vp-q2-quiz-02-q10",
-        "correctAnswer": "Lift, gamma, and gain.",
-        "explanation": "Lift affects darker tones, gamma affects midtones, and gain affects brighter tones."
-      },
-      {
-        "questionId": "vp-q2-quiz-02-q11",
+        "questionId": "vp-q2-quiz-02-q06",
         "correctAnswer": "Deliver",
         "explanation": "The Deliver page is used to render the timeline into a finished video file."
       },
       {
-        "questionId": "vp-q2-quiz-02-q12",
+        "questionId": "vp-q2-quiz-02-q07",
         "correctAnswer": "A list of export jobs waiting to render.",
         "explanation": "Resolve adds export jobs to the render queue before rendering."
       },
       {
+        "questionId": "vp-q2-quiz-02-q08",
+        "correctAnswer": "So the exported file can be found and submitted correctly.",
+        "explanation": "Naming and location checks prevent lost exports and confusing submissions."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q09",
+        "correctAnswer": "A method used to encode and compress video or audio data.",
+        "explanation": "Codecs such as H.264 and H.265 affect how a video file is encoded."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q10",
+        "correctAnswer": "H.264 in an MP4 container.",
+        "explanation": "H.264 MP4 files are widely playable and practical for class review."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q11",
+        "correctAnswer": "To catch gaps, unreadable titles, timing problems, or other mistakes.",
+        "explanation": "A final playback check catches issues before a file is submitted."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q12",
+        "correctAnswer": "Guide attention or polish the communication without distracting.",
+        "explanation": "Motion should be intentional and support the edit."
+      },
+      {
         "questionId": "vp-q2-quiz-02-q13",
-        "correctAnswer": "Codec",
-        "explanation": "A codec controls how video/audio is encoded and compressed."
+        "correctAnswer": "Transition",
+        "explanation": "Transitions control how one clip changes into another."
       },
       {
         "questionId": "vp-q2-quiz-02-q14",
-        "correctAnswer": "Ambience",
-        "explanation": "Ambience fills the scene with realistic background sound."
+        "correctAnswer": "Render queue",
+        "explanation": "The render queue stores export jobs before rendering begins."
       },
       {
         "questionId": "vp-q2-quiz-02-q15",
-        "correctAnswer": "A final check could include audio clarity, title readability, color consistency, timeline gaps, file name, or export settings.",
-        "explanation": "A strong answer names a real pre-export check that affects viewer experience or file management."
+        "correctAnswer": "A strong answer can include title readability, spelling, timing, timeline gaps, final playback, file name, save location, or export settings.",
+        "explanation": "This checks whether students can name real pre-export checks that affect the viewer or submission workflow."
       }
     ]
   }

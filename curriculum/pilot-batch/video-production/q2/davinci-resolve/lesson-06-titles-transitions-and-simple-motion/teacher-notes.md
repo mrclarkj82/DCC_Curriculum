@@ -1,11 +1,11 @@
-# Teacher Notes: Color Correction and Shot Matching
+# Teacher Notes: Titles, Transitions, and Simple Motion
 
 ## Lesson Snapshot
 
-- Lesson ID: vp-q2-l08
+- Lesson ID: vp-q2-l06
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
-- Transcript range: 02:51:04-03:16:57
+- Transcript range: 01:20:08-01:30:41
 - Source file: curriculum/source/davinci-resolve-q2-tutorial-transcript.md
 - Status: draft-pilot
 
@@ -22,24 +22,24 @@ This lesson is designed for one A/B block meeting. Keep the demo tight and prior
 
 ## Demo Checklist
 
-1. Open a timeline with at least three shots.
-2. Switch to the Color page and identify the viewer, node area, and primary color controls.
-3. Use basic controls such as lift, gamma, gain, offset, contrast, saturation, temperature, or tint.
-4. Correct at least two shots so they feel more consistent.
-5. Capture before and after evidence from the same shot or same sequence.
-6. Write a reflection explaining which correction improved the image most.
+1. Open the edited sequence from earlier lessons.
+2. Add one readable title card or lower third using text controls.
+3. Adjust font size, placement, duration, and contrast so the title is readable.
+4. Add one transition only if it supports the edit.
+5. Optional: animate one title or graphic with a simple position keyframe.
+6. Capture before/after evidence and explain the design choice.
 
 ## Watch For
 
-- Students may treat color correction as random filters instead of controlled adjustment.
-- Students may over-saturate footage and lose natural skin tones or detail.
-- Students may skip before/after evidence and rely only on taste.
+- Students may use flashy transitions instead of motivated cuts.
+- Students may make titles too small, too fast, or low contrast.
+- Students may add motion without checking if it improves communication.
 
 ## Evidence Review
 
-- Google Drive link to a before screenshot.
-- Google Drive link to an after screenshot from the same shot or sequence.
-- Short reflection naming at least three color controls tested.
+- Google Drive link to a screenshot showing the title or lower third selected in the timeline.
+- Google Drive or YouTube link to a short clip preview if teacher requests export.
+- Short reflection explaining why the title or transition supports the story.
 
 ## Differentiation
 

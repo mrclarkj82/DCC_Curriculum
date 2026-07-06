@@ -1956,7 +1956,7 @@
     "vocabulary": [
       {
         "term": "DaVinci Resolve",
-        "definition": "A video post-production application used for editing, color, visual effects, audio, and delivery."
+        "definition": "A video post-production application used for editing, visual effects, graphics, and delivery."
       },
       {
         "term": "Project Manager",
@@ -1968,11 +1968,11 @@
       },
       {
         "term": "Resolve page",
-        "definition": "A dedicated workspace inside Resolve, such as Media, Edit, Fusion, Color, Fairlight, or Deliver."
+        "definition": "A dedicated workspace inside Resolve, such as Media, Edit, Fusion, or Deliver."
       },
       {
         "term": "Post-production",
-        "definition": "The work that happens after footage is recorded, including editing, sound, color, graphics, and export."
+        "definition": "The work that happens after footage is recorded, including editing, sound, graphics, and export."
       },
       {
         "term": "Workspace",
@@ -2298,84 +2298,6 @@
     "quarter": "Q2",
     "unit": "DaVinci Resolve Foundations",
     "lessonNumber": 6,
-    "title": "Audio Mix Basics in Fairlight",
-    "status": "draft-pilot",
-    "video": {
-      "source": "DaVinci Resolve Q2 Tutorial Transcript",
-      "start": "04:17:55",
-      "end": "04:52:57",
-      "url": "",
-      "note": "Covers the Fairlight page, timeline continuity between pages, tracks, mute/solo, mixer, meters, dialogue tracks, clip attributes, selecting audio regions, ambience, music, track naming, track colors, sound effects, buses, effects, EQ, compression, and doing audio in passes."
-    },
-    "learningTarget": "I can organize audio tracks and make a basic sound pass that balances dialogue, music, ambience, and effects.",
-    "bellRinger": {
-      "type": "short-response",
-      "prompt": "What makes video audio feel messy or hard to understand?"
-    },
-    "vocabulary": [
-      {
-        "term": "Fairlight",
-        "definition": "The Resolve page designed for audio editing, mixing, and sound design."
-      },
-      {
-        "term": "Mixer",
-        "definition": "The panel used to adjust track volume, pan, EQ, effects, and routing."
-      },
-      {
-        "term": "Meter",
-        "definition": "A visual display showing audio level during playback."
-      },
-      {
-        "term": "Mute",
-        "definition": "A control that turns a track off."
-      },
-      {
-        "term": "Solo",
-        "definition": "A control that plays one track while temporarily muting others."
-      },
-      {
-        "term": "Ambience",
-        "definition": "Background room tone or environmental sound that makes a scene feel present."
-      },
-      {
-        "term": "Bus",
-        "definition": "A routing path that groups tracks into a shared mix or effects chain."
-      },
-      {
-        "term": "EQ",
-        "definition": "Equalization, used to adjust frequency ranges in sound."
-      }
-    ],
-    "slides": {
-      "title": "Lesson 06 - Audio Mix Basics in Fairlight",
-      "url": "",
-      "status": "not-created"
-    },
-    "assignment": {
-      "id": "vp-q2-a06",
-      "title": "Dialogue, Music, and Sound Pass",
-      "submissionType": "google-drive-or-youtube-link-and-reflection",
-      "evidenceRequired": [
-        "Google Drive link to a screenshot of organized Fairlight tracks or mixer.",
-        "Google Drive or YouTube link to an exported audio-improved rough cut if teacher requests export.",
-        "Short reflection explaining one audio problem and how you fixed it."
-      ]
-    },
-    "exitTicket": "Which audio layer mattered most in your mix today: dialogue, music, ambience, or sound effects?",
-    "tags": [
-      "video-production",
-      "davinci-resolve",
-      "q2",
-      "resolve-foundations",
-      "lesson-06"
-    ]
-  },
-  {
-    "id": "vp-q2-l07",
-    "programAreaId": "video-production",
-    "quarter": "Q2",
-    "unit": "DaVinci Resolve Foundations",
-    "lessonNumber": 7,
     "title": "Titles, Transitions, and Simple Motion",
     "status": "draft-pilot",
     "video": {
@@ -2421,12 +2343,12 @@
       }
     ],
     "slides": {
-      "title": "Lesson 07 - Titles, Transitions, and Simple Motion",
+      "title": "Lesson 06 - Titles, Transitions, and Simple Motion",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
-      "id": "vp-q2-a07",
+      "id": "vp-q2-a06",
       "title": "Title and Transition Polish Pass",
       "submissionType": "google-drive-or-youtube-link-and-reflection",
       "evidenceRequired": [
@@ -2441,97 +2363,15 @@
       "davinci-resolve",
       "q2",
       "resolve-foundations",
-      "lesson-07"
+      "lesson-06"
     ]
   },
   {
-    "id": "vp-q2-l08",
+    "id": "vp-q2-l07",
     "programAreaId": "video-production",
     "quarter": "Q2",
     "unit": "DaVinci Resolve Foundations",
-    "lessonNumber": 8,
-    "title": "Color Correction and Shot Matching",
-    "status": "draft-pilot",
-    "video": {
-      "source": "DaVinci Resolve Q2 Tutorial Transcript",
-      "start": "02:51:04",
-      "end": "03:16:57",
-      "url": "",
-      "note": "Introduces the Color page, color nodes as correction containers, color management, input color space awareness, primaries, lift, gamma, gain, offset, contrast, saturation, temperature, tint, reset habits, and before/after comparison evidence."
-    },
-    "learningTarget": "I can make a basic color correction pass that improves exposure, contrast, white balance, and consistency between shots.",
-    "bellRinger": {
-      "type": "short-response",
-      "prompt": "What makes two shots feel like they belong in the same scene?"
-    },
-    "vocabulary": [
-      {
-        "term": "Color page",
-        "definition": "The Resolve page used for color correction and grading."
-      },
-      {
-        "term": "Color management",
-        "definition": "Settings that help convert footage from the camera color space into a useful editing and viewing space."
-      },
-      {
-        "term": "Input color space",
-        "definition": "The camera or recording color profile assigned to footage so Resolve interprets it correctly."
-      },
-      {
-        "term": "Node",
-        "definition": "A container for color corrections that can be enabled, disabled, reset, or organized in order."
-      },
-      {
-        "term": "Lift",
-        "definition": "A primary color wheel control that mostly affects darker parts of the image."
-      },
-      {
-        "term": "Gamma",
-        "definition": "A primary color wheel control that mostly affects midtones."
-      },
-      {
-        "term": "Gain",
-        "definition": "A primary color wheel control that mostly affects brighter parts of the image."
-      },
-      {
-        "term": "Saturation",
-        "definition": "The strength or intensity of color in the image."
-      },
-      {
-        "term": "White balance",
-        "definition": "Adjusting color temperature and tint so neutral areas look natural."
-      }
-    ],
-    "slides": {
-      "title": "Lesson 08 - Color Correction and Shot Matching",
-      "url": "",
-      "status": "not-created"
-    },
-    "assignment": {
-      "id": "vp-q2-a08",
-      "title": "Color Correction Comparison",
-      "submissionType": "google-drive-or-youtube-link-and-reflection",
-      "evidenceRequired": [
-        "Google Drive link to a before screenshot.",
-        "Google Drive link to an after screenshot from the same shot or sequence.",
-        "Short reflection naming at least three color controls tested."
-      ]
-    },
-    "exitTicket": "Which color control changed your image most today, and what visual evidence proves it?",
-    "tags": [
-      "video-production",
-      "davinci-resolve",
-      "q2",
-      "resolve-foundations",
-      "lesson-08"
-    ]
-  },
-  {
-    "id": "vp-q2-l09",
-    "programAreaId": "video-production",
-    "quarter": "Q2",
-    "unit": "DaVinci Resolve Foundations",
-    "lessonNumber": 9,
+    "lessonNumber": 7,
     "title": "Quiz 2 and Final Export",
     "status": "draft-pilot",
     "video": {
@@ -2581,19 +2421,19 @@
       }
     ],
     "slides": {
-      "title": "Lesson 09 - Quiz 2 and Final Export",
+      "title": "Lesson 07 - Quiz 2 and Final Export",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
-      "id": "vp-q2-a09",
+      "id": "vp-q2-a07",
       "title": "Final Resolve Mini-Edit Export",
       "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
       "evidenceRequired": [
         "Quiz 2 completion record or teacher checkoff.",
         "Google Drive or YouTube link to the final exported mini-edit.",
         "Google Drive link to a screenshot of the Deliver page or render queue.",
-        "Short reflection explaining the most important editing, audio, title, or color decision."
+        "Short reflection explaining the most important editing, audio, title, or export decision."
       ]
     },
     "exitTicket": "What export setting or file naming choice do you need to remember for future video projects?",
@@ -2602,7 +2442,7 @@
       "davinci-resolve",
       "q2",
       "resolve-foundations",
-      "lesson-09"
+      "lesson-07"
     ]
   }
 ]

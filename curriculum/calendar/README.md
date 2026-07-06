@@ -13,9 +13,9 @@ The source calendar is the attached PDF `2026-2027 Doral Calendar (List Form).pd
 - `q1-unreal-block-calendar.md`: human-readable block calendar view with lesson labels as calendar cell headings.
 - `q1-unreal-lesson-schedule.json`: machine-readable Q1 Unreal lesson schedule with metadata and weekday no-school notes.
 - `q1-unreal-lesson-schedule.md`: human-readable Q1 Unreal lesson schedule table.
-- `q2-davinci-resolve-block-calendar.json`: machine-readable Monday-Friday block calendar for the Q2 DaVinci Resolve schedule.
+- `q2-davinci-resolve-block-calendar.json`: machine-readable Monday-Friday block calendar for the trimmed Q2 DaVinci Resolve schedule.
 - `q2-davinci-resolve-block-calendar.md`: human-readable block calendar view for the Q2 DaVinci Resolve schedule.
-- `q2-davinci-resolve-lesson-schedule.json`: machine-readable Q2 DaVinci Resolve lesson schedule with metadata and weekday no-school notes.
+- `q2-davinci-resolve-lesson-schedule.json`: machine-readable trimmed Q2 DaVinci Resolve lesson schedule with metadata and weekday no-school notes.
 - `q2-davinci-resolve-lesson-schedule.md`: human-readable Q2 DaVinci Resolve lesson schedule table.
 - `../website-data/lessonSchedule.seed.json`: website-ready seed data for future Firestore import.
 - `../website-data/blockLessonCalendar.seed.json`: website-ready block calendar seed used by the teacher/admin schedule preview.
@@ -50,3 +50,7 @@ The Q2 DaVinci Resolve mini-unit begins on Monday, October 12, 2026, the first i
 - Universal Test Day is listed as Tuesday, TBD and is not assigned to a fixed date yet. When announced, it should be noted, but it does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
 - October 15, 2026 is listed as no school for ES/MS students only. DCC high school scheduling treats it as instructional unless the teacher changes that later.
 - The source calendar's stated summary counts do not exactly match the fixed dates listed in the PDF. Generated schedules follow the fixed date list.
+
+## Q2 DaVinci Trim Note
+
+The Color page and Fairlight page transcript span, approximately `02:50:00-04:53:05`, is excluded from the active Q2 DaVinci Resolve plan and website schedule preview.
