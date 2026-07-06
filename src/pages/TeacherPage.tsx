@@ -25,6 +25,7 @@ import {
   subscribeToResponsesForClassItem,
   type ClassItemResponses,
 } from '../services/responseService';
+import { subscribeToQuizAttemptsForClassQuiz } from '../services/quizService';
 import {
   resolveSubmissionTargetForActiveItem,
   subscribeToSubmissionsForClassTarget,
@@ -36,6 +37,7 @@ import type {
   ActiveItemType,
   ClassRecord,
   ProgramArea,
+  QuizAttempt,
   ResponseCompletionSummary,
   StudentSubmission,
   SubmissionStatus,
@@ -65,6 +67,16 @@ const emptyActiveItemForm: ActiveItemFormState = {
   activeItemType: 'lesson',
   activeItemId: '',
 };
+
+type TeacherTab = 'overview' | 'responses' | 'submissions' | 'grades' | 'controls';
+
+const teacherTabs: Array<{ id: TeacherTab; label: string }> = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'responses', label: 'Responses' },
+  { id: 'submissions', label: 'Submissions' },
+  { id: 'grades', label: 'Grades' },
+  { id: 'controls', label: 'Controls' },
+];
 
 const emptyResponses: ClassItemResponses = {
   bellRingerResponses: [],
@@ -131,6 +143,14 @@ function buildCompletionSummaries(
   });
 }
 
+function formatQuizScore(attempt: QuizAttempt | undefined): string {
+  if (!attempt) {
+    return 'Not submitted';
+  }
+
+  return `${attempt.score}/${attempt.questionCount} (${Math.round(attempt.percentage)}%)`;
+}
+
 function activeFormFromClass(classRecord: ClassRecord): ActiveItemFormState {
   return {
     classId: classRecord.id,
@@ -142,6 +162,7 @@ function activeFormFromClass(classRecord: ClassRecord): ActiveItemFormState {
 
 export function TeacherPage() {
   const { classIds, isAdmin, userProfile } = useAuth();
+  const [activeTeacherTab, setActiveTeacherTab] = useState<TeacherTab>('overview');
   const [classRecords, setClassRecords] = useState<ClassRecord[]>([]);
   const [programAreas, setProgramAreas] = useState<ProgramArea[]>([]);
   const [activeItemsByClassId, setActiveItemsByClassId] = useState<
@@ -154,6 +175,9 @@ export function TeacherPage() {
   const [submissionsByClassId, setSubmissionsByClassId] = useState<
     Record<string, StudentSubmission[]>
   >({});
+  const [quizAttemptsByClassId, setQuizAttemptsByClassId] = useState<
+    Record<string, QuizAttempt[]>
+  >({});
   const [activeErrorsByClassId, setActiveErrorsByClassId] = useState<Record<string, string>>({});
   const [responseErrorsByClassId, setResponseErrorsByClassId] = useState<Record<string, string>>(
     {},
@@ -161,6 +185,7 @@ export function TeacherPage() {
   const [submissionErrorsByClassId, setSubmissionErrorsByClassId] = useState<
     Record<string, string>
   >({});
+  const [quizErrorsByClassId, setQuizErrorsByClassId] = useState<Record<string, string>>({});
   const [isLoadingClasses, setIsLoadingClasses] = useState(false);
   const [classError, setClassError] = useState<string | null>(null);
   const [activeForm, setActiveForm] = useState<ActiveItemFormState>(emptyActiveItemForm);
@@ -433,6 +458,52 @@ export function TeacherPage() {
   }, [activeItemsByClassId, classRecords]);
 
   useEffect(() => {
+    if (!classRecords.length) {
+      setQuizAttemptsByClassId({});
+      setQuizErrorsByClassId({});
+      return undefined;
+    }
+
+    const unsubscribes = classRecords
+      .map((classRecord) => {
+        if (classRecord.activeItemType !== 'quiz') {
+          setQuizAttemptsByClassId((current) => ({
+            ...current,
+            [classRecord.id]: [],
+          }));
+          return null;
+        }
+
+        return subscribeToQuizAttemptsForClassQuiz(
+          classRecord.id,
+          classRecord.activeItemId,
+          (attempts) => {
+            setQuizAttemptsByClassId((current) => ({
+              ...current,
+              [classRecord.id]: attempts,
+            }));
+            setQuizErrorsByClassId((current) => {
+              const next = { ...current };
+              delete next[classRecord.id];
+              return next;
+            });
+          },
+          (error) => {
+            setQuizErrorsByClassId((current) => ({
+              ...current,
+              [classRecord.id]: firestoreErrorMessage(error, 'Unable to load quiz grades.'),
+            }));
+          },
+        );
+      })
+      .filter((unsubscribe): unsubscribe is () => void => Boolean(unsubscribe));
+
+    return () => {
+      unsubscribes.forEach((unsubscribe) => unsubscribe());
+    };
+  }, [classRecords]);
+
+  useEffect(() => {
     if (!activeForm.activeProgramAreaId || activeForm.activeItemType === 'portfolioCheckpoint') {
       setActiveOptions([]);
       setActiveOptionsLoading(false);
@@ -634,116 +705,139 @@ export function TeacherPage() {
         />
       )}
 
+      {!!classRecords.length && (
+        <nav className="teacher-tab-list" aria-label="Teacher page sections">
+          {teacherTabs.map((tab) => (
+            <button
+              className={activeTeacherTab === tab.id ? 'teacher-tab active' : 'teacher-tab'}
+              type="button"
+              aria-pressed={activeTeacherTab === tab.id}
+              key={tab.id}
+              onClick={() => setActiveTeacherTab(tab.id)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </nav>
+      )}
+
       <div className="section-stack">
-        <section className="content-section neon-section">
-          <div className="section-heading-row">
-            <div>
-              <p className="retro-label">Teacher Overview</p>
-              <h2>{isAdmin ? 'All Classes' : 'Assigned Classes'}</h2>
-            </div>
-            <StatusBadge status={isAdmin ? 'admin' : 'teacher'} />
-          </div>
-          <div className="metric-grid">
-            <article className="card neon-card metric-card">
-              <p className="retro-label">Classes</p>
-              <h3>{overview.classes}</h3>
-            </article>
-            <article className="card neon-card metric-card">
-              <p className="retro-label">Students</p>
-              <h3>{overview.students}</h3>
-            </article>
-            <article className="card neon-card metric-card">
-              <p className="retro-label">Active Items</p>
-              <h3>{overview.activeItems}</h3>
-            </article>
-          </div>
-          <div className="button-row">
-            <Link className="secondary-button" to="/teacher/schedule">
-              Preview Q1 Unreal Schedule
-            </Link>
-          </div>
-        </section>
+        {activeTeacherTab === 'overview' && (
+          <>
+            <section className="content-section neon-section">
+              <div className="section-heading-row">
+                <div>
+                  <p className="retro-label">Teacher Overview</p>
+                  <h2>{isAdmin ? 'All Classes' : 'Assigned Classes'}</h2>
+                </div>
+                <StatusBadge status={isAdmin ? 'admin' : 'teacher'} />
+              </div>
+              <div className="metric-grid">
+                <article className="card neon-card metric-card">
+                  <p className="retro-label">Classes</p>
+                  <h3>{overview.classes}</h3>
+                </article>
+                <article className="card neon-card metric-card">
+                  <p className="retro-label">Students</p>
+                  <h3>{overview.students}</h3>
+                </article>
+                <article className="card neon-card metric-card">
+                  <p className="retro-label">Active Items</p>
+                  <h3>{overview.activeItems}</h3>
+                </article>
+              </div>
+              <div className="button-row">
+                <Link className="secondary-button" to="/teacher/schedule">
+                  Preview Q1 Unreal Schedule
+                </Link>
+              </div>
+            </section>
 
-        {!!classRecords.length && (
-          <section className="content-section neon-section">
-            <p className="retro-label">Assigned Class Cards</p>
-            <h2>What Students See Today</h2>
-            <div className="card-grid two">
-              {classRecords.map((classRecord) => {
-                const activeItem = activeItemsByClassId[classRecord.id];
-                const activeError = activeErrorsByClassId[classRecord.id];
+            {!!classRecords.length && (
+              <section className="content-section neon-section">
+                <p className="retro-label">Assigned Class Cards</p>
+                <h2>What Students See Today</h2>
+                <div className="card-grid two">
+                  {classRecords.map((classRecord) => {
+                    const activeItem = activeItemsByClassId[classRecord.id];
+                    const activeError = activeErrorsByClassId[classRecord.id];
 
-                return (
-                  <article className="card neon-card compact-card" key={classRecord.id}>
-                    <div className="card-header">
-                      <h3>
-                        {classRecord.name} / {classRecord.period}
-                      </h3>
-                      <StatusBadge status={activeItem?.status ?? 'active'} />
-                    </div>
-                    <dl className="detail-list">
-                      <div>
-                        <dt>Program Area</dt>
-                        <dd>
-                          {programAreaById.get(classRecord.activeProgramAreaId)?.title ??
-                            classRecord.activeProgramAreaId}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>Active Item Type</dt>
-                        <dd>{activeItemTypeLabels[classRecord.activeItemType]}</dd>
-                      </div>
-                      <div>
-                        <dt>Active Item ID</dt>
-                        <dd>{classRecord.activeItemId}</dd>
-                      </div>
-                      <div>
-                        <dt>Active Item Title</dt>
-                        <dd>{activeItem?.title ?? activeError ?? 'Resolving...'}</dd>
-                      </div>
-                      <div>
-                        <dt>Student Count</dt>
-                        <dd>{classRecord.studentIds.length}</dd>
-                      </div>
-                    </dl>
-                    <div className="button-row">
-                      <button
-                        className="secondary-button"
-                        type="button"
-                        onClick={() => chooseActiveClass(classRecord.id)}
-                      >
-                        Set Active
-                      </button>
-                      <Link className="outline-button" to="/today">
-                        Open Today
-                      </Link>
-                      {classRecord.activeItemId ? (
-                        <Link
-                          className="secondary-button"
-                          to={`/teacher/classes/${classRecord.id}/student-preview`}
-                        >
-                          Open Student Preview
-                        </Link>
-                      ) : (
-                        <button
-                          className="secondary-button"
-                          type="button"
-                          disabled
-                          title="Set an active item before opening student preview."
-                        >
-                          Open Student Preview
-                        </button>
-                      )}
-                    </div>
-                    <ClassJoinCodePanel classRecord={classRecord} compact />
-                  </article>
-                );
-              })}
-            </div>
-          </section>
+                    return (
+                      <article className="card neon-card compact-card" key={classRecord.id}>
+                        <div className="card-header">
+                          <h3>
+                            {classRecord.name} / {classRecord.period}
+                          </h3>
+                          <StatusBadge status={activeItem?.status ?? 'active'} />
+                        </div>
+                        <dl className="detail-list">
+                          <div>
+                            <dt>Program Area</dt>
+                            <dd>
+                              {programAreaById.get(classRecord.activeProgramAreaId)?.title ??
+                                classRecord.activeProgramAreaId}
+                            </dd>
+                          </div>
+                          <div>
+                            <dt>Active Item Type</dt>
+                            <dd>{activeItemTypeLabels[classRecord.activeItemType]}</dd>
+                          </div>
+                          <div>
+                            <dt>Active Item ID</dt>
+                            <dd>{classRecord.activeItemId}</dd>
+                          </div>
+                          <div>
+                            <dt>Active Item Title</dt>
+                            <dd>{activeItem?.title ?? activeError ?? 'Resolving...'}</dd>
+                          </div>
+                          <div>
+                            <dt>Student Count</dt>
+                            <dd>{classRecord.studentIds.length}</dd>
+                          </div>
+                        </dl>
+                        <div className="button-row">
+                          <button
+                            className="secondary-button"
+                            type="button"
+                            onClick={() => {
+                              chooseActiveClass(classRecord.id);
+                              setActiveTeacherTab('controls');
+                            }}
+                          >
+                            Set Active
+                          </button>
+                          <Link className="outline-button" to="/today">
+                            Open Today
+                          </Link>
+                          {classRecord.activeItemId ? (
+                            <Link
+                              className="secondary-button"
+                              to={`/teacher/classes/${classRecord.id}/student-preview`}
+                            >
+                              Open Student Preview
+                            </Link>
+                          ) : (
+                            <button
+                              className="secondary-button"
+                              type="button"
+                              disabled
+                              title="Set an active item before opening student preview."
+                            >
+                              Open Student Preview
+                            </button>
+                          )}
+                        </div>
+                        <ClassJoinCodePanel classRecord={classRecord} compact />
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            )}
+          </>
         )}
 
-        {!!classRecords.length && (
+        {activeTeacherTab === 'responses' && !!classRecords.length && (
           <section className="content-section neon-section">
             <p className="retro-label">Daily Response Completion</p>
             <h2>Bell Ringers And Exit Tickets</h2>
@@ -907,7 +1001,7 @@ export function TeacherPage() {
           </section>
         )}
 
-        {!!classRecords.length && (
+        {activeTeacherTab === 'submissions' && !!classRecords.length && (
           <section className="content-section neon-section">
             <p className="retro-label">Student Submissions</p>
             <h2>Google Drive Evidence Review</h2>
@@ -974,8 +1068,8 @@ export function TeacherPage() {
 
                     {!submissionTarget ? (
                       <p className="muted">
-                        This active item does not have a Drive-link submission target yet. Quizzes
-                        and portfolio checkpoints stay out of scope for this phase.
+                        This active item does not have a Drive-link submission target. Quiz scores
+                        appear in the Grades tab.
                       </p>
                     ) : !classRecord.studentIds.length ? (
                       <p className="muted">No students are assigned to this class yet.</p>
@@ -1131,7 +1225,117 @@ export function TeacherPage() {
           </section>
         )}
 
-        {!!classRecords.length && (
+        {activeTeacherTab === 'grades' && !!classRecords.length && (
+          <section className="content-section neon-section">
+            <p className="retro-label">Grades</p>
+            <h2>Quiz Scores</h2>
+            <div className="response-completion-stack">
+              {classRecords.map((classRecord) => {
+                const activeItem = activeItemsByClassId[classRecord.id];
+                const students = studentsByClassId[classRecord.id] ?? [];
+                const attempts = quizAttemptsByClassId[classRecord.id] ?? [];
+                const quizError = quizErrorsByClassId[classRecord.id];
+                const attemptsByUid = new Map(attempts.map((attempt) => [attempt.uid, attempt]));
+                const submittedCount = attempts.length;
+                const averagePercentage = attempts.length
+                  ? Math.round(
+                      attempts.reduce((total, attempt) => total + attempt.percentage, 0) /
+                        attempts.length,
+                    )
+                  : null;
+
+                return (
+                  <article className="card neon-card response-completion-card" key={classRecord.id}>
+                    <div className="section-heading-row">
+                      <div>
+                        <p className="retro-label">
+                          {classRecord.name} / {classRecord.period}
+                        </p>
+                        <h3>{activeItem?.title ?? classRecord.activeItemId}</h3>
+                      </div>
+                      <StatusBadge
+                        status={
+                          classRecord.activeItemType === 'quiz'
+                            ? `${submittedCount}/${classRecord.studentIds.length} submitted`
+                            : 'no active quiz'
+                        }
+                      />
+                    </div>
+
+                    <dl className="detail-list response-summary-list">
+                      <div>
+                        <dt>Active Item</dt>
+                        <dd>
+                          {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
+                          {classRecord.activeItemId}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt>Average</dt>
+                        <dd>{averagePercentage === null ? 'Not enough scores' : `${averagePercentage}%`}</dd>
+                      </div>
+                      <div>
+                        <dt>Answer Visibility</dt>
+                        <dd>Scores only</dd>
+                      </div>
+                    </dl>
+
+                    {quizError && <ErrorState message={quizError} />}
+
+                    {classRecord.activeItemType !== 'quiz' ? (
+                      <p className="muted">
+                        Set this class active item type to Quiz to collect scores here.
+                      </p>
+                    ) : !classRecord.studentIds.length ? (
+                      <p className="muted">No students are assigned to this class yet.</p>
+                    ) : (
+                      <div className="table-scroll">
+                        <table className="management-table response-table grade-table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Student</th>
+                              <th scope="col">Quiz</th>
+                              <th scope="col">Score</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Submitted</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {classRecord.studentIds.map((uid) => {
+                              const student = students.find((nextStudent) => nextStudent.uid === uid);
+                              const attempt = attemptsByUid.get(uid);
+
+                              return (
+                                <tr key={`${classRecord.id}-${uid}`}>
+                                  <td>
+                                    <strong>{student?.displayName || attempt?.studentName || uid}</strong>
+                                    {(student?.email || attempt?.studentEmail) && (
+                                      <p className="meta-line">
+                                        {student?.email || attempt?.studentEmail}
+                                      </p>
+                                    )}
+                                  </td>
+                                  <td>{activeItem?.title ?? classRecord.activeItemId}</td>
+                                  <td>{formatQuizScore(attempt)}</td>
+                                  <td>
+                                    <StatusBadge status={attempt ? 'submitted' : 'missing'} />
+                                  </td>
+                                  <td>{formatTimestamp(attempt?.submittedAt)}</td>
+                                </tr>
+                              );
+                            })}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                  </article>
+                );
+              })}
+            </div>
+          </section>
+        )}
+
+        {activeTeacherTab === 'controls' && !!classRecords.length && (
           <section className="content-section neon-section">
             <p className="retro-label">Set Active Item</p>
             <h2>Teacher-Controlled Today Item</h2>

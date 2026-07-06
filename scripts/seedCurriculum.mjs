@@ -20,6 +20,7 @@ const seedTargets = [
   ['lessons.seed.json', 'lessons'],
   ['assignments.seed.json', 'assignments'],
   ['quizzes.seed.json', 'quizzes'],
+  ['quizAnswerKeys.seed.json', 'quizAnswerKeys'],
   ['mediaProjects.seed.json', 'mediaProjects'],
   ['broadcastUpdates.seed.json', 'broadcastUpdates'],
   ['classes.seed.json', 'classes'],
@@ -133,6 +134,7 @@ function validateSeeds(data) {
   const lessons = data['lessons.seed.json'];
   const assignments = data['assignments.seed.json'];
   const quizzes = data['quizzes.seed.json'];
+  const quizAnswerKeys = data['quizAnswerKeys.seed.json'];
   const mediaProjects = data['mediaProjects.seed.json'];
   const broadcastUpdates = data['broadcastUpdates.seed.json'];
   const classes = data['classes.seed.json'];
@@ -143,6 +145,7 @@ function validateSeeds(data) {
   assertUniqueIds('lessons', lessons);
   assertUniqueIds('assignments', assignments);
   assertUniqueIds('quizzes', quizzes);
+  assertUniqueIds('quizAnswerKeys', quizAnswerKeys);
   assertUniqueIds('mediaProjects', mediaProjects);
   assertUniqueIds('broadcastUpdates', broadcastUpdates);
   assertUniqueIds('classes', classes);
@@ -177,6 +180,29 @@ function validateSeeds(data) {
     for (const lessonId of quiz.lessonIds ?? []) {
       assert(lessonIds.has(lessonId), `Quiz ${quiz.id} references missing lesson ${lessonId}`);
     }
+
+    for (const question of quiz.questions ?? []) {
+      assert(
+        question.correctAnswer === undefined,
+        `Public quiz ${quiz.id}/${question.id} must not include correctAnswer`,
+      );
+      assert(
+        question.explanation === undefined,
+        `Public quiz ${quiz.id}/${question.id} must not include explanation`,
+      );
+    }
+  }
+
+  for (const answerKey of quizAnswerKeys) {
+    assert(quizIds.has(answerKey.quizId), `Answer key ${answerKey.id} references missing quiz`);
+    assert(
+      answerKey.id === answerKey.quizId,
+      `Answer key ${answerKey.id} must use the same document ID as quizId`,
+    );
+    assert(
+      Array.isArray(answerKey.answers),
+      `Answer key ${answerKey.id} must include an answers array`,
+    );
   }
 
   for (const update of broadcastUpdates) {
@@ -379,7 +405,12 @@ async function writeSeeds(data) {
       try {
         const documentRef = db.collection(namespacedCollection(collectionName)).doc(record.id);
         const snapshot = await documentRef.get();
-        await documentRef.set(record, { merge: true });
+
+        if (collectionName === 'quizzes') {
+          await documentRef.set(record);
+        } else {
+          await documentRef.set(record, { merge: true });
+        }
 
         if (snapshot.exists) {
           totals.updated += 1;

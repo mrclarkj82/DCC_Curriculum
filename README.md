@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 8 - Google Drive Link Submissions
+Phase 8 + Quiz 1 Self-Grading Pilot
 
 ## Local Development
 
@@ -101,6 +101,8 @@ Expected Firestore collections:
 - `apps/dcc/classes`
 - `apps/dcc/users`
 - `apps/dcc/submissions` (Phase 8 evidence links)
+- `apps/dcc/quizAttempts` (Quiz 1 self-grading scores)
+- `apps/dcc/quizAnswerKeys` (private answer keys used by Cloud Functions)
 
 Seed files live in `curriculum/website-data/` and should remain the local source used by the importer. The live app reads Firestore route content after records are seeded.
 
@@ -136,14 +138,13 @@ The real write path uses the Firebase Admin SDK and writes to `apps/dcc` by defa
 2. The app reads `apps/dcc/users/{uid}` and checks `classIds`.
 3. The app loads the first assigned `apps/dcc/classes/{classId}` record.
 4. The class record's `activeProgramAreaId`, `activeItemType`, and `activeItemId` decide what Today's Mission renders.
-5. Lessons, assignments, media projects, and Broadcast Desk Updates render as active items. Quizzes and portfolio checkpoints show polished placeholders until later phases.
+5. Lessons, assignments, media projects, Broadcast Desk Updates, and published quizzes render as active items. Portfolio checkpoints show polished placeholders until later phases.
 
 Not implemented yet:
 
 - Assignment uploads.
 - Media uploads.
-- Quiz attempts.
-- Grading workflows.
+- Full gradebook workflows beyond quiz score collection.
 - Portfolio workflows.
 - Full admin CMS editing.
 
@@ -378,7 +379,57 @@ Security notes:
 - Firebase Storage remains closed; Phase 8 stores evidence links only.
 - Teacher Student Preview Mode shows the submission panel read-only and does not write real submissions.
 
-Phase 8 still does not implement raw assignment uploads, media uploads, grading, quiz attempts, portfolio submissions, media hosting, transcoding, or video editor features.
+Phase 8 still does not implement raw assignment uploads, media uploads, portfolio submissions, media hosting, transcoding, or video editor features. The Quiz 1 pilot below adds narrow quiz score collection only, not a full gradebook.
+
+## Quiz 1 Self-Grading Pilot
+
+The Quiz 1 pilot turns published quiz records into a real student workflow on `/today`.
+
+What it adds:
+
+- A student-facing quiz panel for active quiz items.
+- Server-side quiz grading through the callable Cloud Function `submitQuizAttempt`.
+- Score-only student results after submission.
+- A `Grades` tab on `/teacher` showing quiz scores by class roster.
+- Private answer keys in `apps/dcc/quizAnswerKeys`, separate from public quiz question records.
+
+Student workflow:
+
+1. Sign in and join or be assigned to a class.
+2. The teacher sets the class active item to `quiz / ue-q1-quiz-01`.
+3. Go to `/today`.
+4. Answer every question and submit once.
+5. View the score only; answer keys are not shown.
+
+Teacher workflow:
+
+1. Sign in as a teacher or admin.
+2. Go to `/teacher`.
+3. Use `Controls` to set the class active item to a published quiz.
+4. Open the `Grades` tab to see submitted scores, missing students, and class averages.
+
+Security notes:
+
+- Students cannot write `quizAttempts` directly from the client.
+- Students can read only their own score document.
+- Teachers can read quiz scores only for classes they teach.
+- Admins can read DCC quiz scores.
+- Public quiz records must not contain `correctAnswer` or `explanation`.
+- Private answer keys are used only by Cloud Functions.
+
+Quiz-only seeding avoids touching live class rosters:
+
+```bash
+npm run seed:quizzes -- --dry-run
+```
+
+Windows PowerShell real quiz seed:
+
+```powershell
+$env:CONFIRM_SEED="true"; npm run seed:quizzes
+```
+
+This pilot does not add full gradebook categories, grade exports, retake management, item analysis, portfolio scoring, raw uploads, media uploads, or quiz answer review pages.
 
 ## Calendar-Based Lesson Scheduling
 

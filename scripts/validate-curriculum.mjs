@@ -15,6 +15,7 @@ const programAreas = readJson('programAreas.seed.json');
 const lessons = readJson('lessons.seed.json');
 const assignments = readJson('assignments.seed.json');
 const quizzes = readJson('quizzes.seed.json');
+const quizAnswerKeys = readJson('quizAnswerKeys.seed.json');
 const mediaProjects = readJson('mediaProjects.seed.json');
 const broadcastUpdates = readJson('broadcastUpdates.seed.json');
 const classes = readJson('classes.seed.json');
@@ -85,6 +86,7 @@ assertUniqueIds('programAreas', programAreas);
 assertUniqueIds('lessons', lessons);
 assertUniqueIds('assignments', assignments);
 assertUniqueIds('quizzes', quizzes);
+assertUniqueIds('quizAnswerKeys', quizAnswerKeys);
 assertUniqueIds('mediaProjects', mediaProjects);
 assertUniqueIds('broadcastUpdates', broadcastUpdates);
 assertUniqueIds('classes', classes);
@@ -376,6 +378,30 @@ for (const quiz of quizzes) {
   for (const lessonId of quiz.lessonIds) {
     assert(lessonIds.has(lessonId), `Quiz ${quiz.id} references missing lesson ${lessonId}`);
   }
+
+  assert(Array.isArray(quiz.questions), `Quiz ${quiz.id} must include questions`);
+
+  for (const question of quiz.questions) {
+    assert(question.id, `Quiz ${quiz.id} has a question without an id`);
+    assert(question.text, `Quiz ${quiz.id}/${question.id} is missing question text`);
+    assert(
+      question.correctAnswer === undefined,
+      `Public quiz ${quiz.id}/${question.id} must not include correctAnswer`,
+    );
+    assert(
+      question.explanation === undefined,
+      `Public quiz ${quiz.id}/${question.id} must not include explanation`,
+    );
+  }
+}
+
+for (const answerKey of quizAnswerKeys) {
+  assert(quizIds.has(answerKey.quizId), `Answer key ${answerKey.id} references missing quiz`);
+  assert(
+    answerKey.id === answerKey.quizId,
+    `Answer key ${answerKey.id} must use the same document ID as quizId`,
+  );
+  assert(Array.isArray(answerKey.answers), `Answer key ${answerKey.id} must include answers`);
 }
 
 for (const update of broadcastUpdates) {

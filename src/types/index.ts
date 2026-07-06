@@ -86,8 +86,8 @@ export interface QuizQuestion {
   type: string;
   text: string;
   choices?: string[];
-  correctAnswer: string | string[];
-  explanation: string;
+  correctAnswer?: string | string[];
+  explanation?: string;
   difficulty: string;
   lessonId: string;
   tag: string;
@@ -102,6 +102,30 @@ export interface Quiz {
   status: string;
   isPublished: boolean;
   questions: QuizQuestion[];
+}
+
+export interface QuizAttemptAnswerInput {
+  questionId: string;
+  selectedAnswer: string | string[];
+}
+
+export interface QuizAttempt {
+  id: string;
+  uid: string;
+  studentName: string;
+  studentEmail: string;
+  classId: string;
+  programAreaId: string;
+  quizId: string;
+  quizTitle: string;
+  questionCount: number;
+  answeredCount: number;
+  score: number;
+  percentage: number;
+  status: 'submitted';
+  createdAt?: unknown;
+  updatedAt?: unknown;
+  submittedAt?: unknown;
 }
 
 export interface MediaProject {

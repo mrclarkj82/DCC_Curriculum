@@ -493,6 +493,23 @@ service cloud.firestore {
         );
     }
 
+    function canReadQuizAttempt(attemptData) {
+      return isAdmin()
+        || (
+          isAllowedAccount()
+          && attemptData.uid == request.auth.uid
+          && attemptData.classId is string
+          && classExists(attemptData.classId)
+          && request.auth.uid in classData(attemptData.classId).studentIds
+        )
+        || (
+          isTeacher()
+          && attemptData.classId is string
+          && classExists(attemptData.classId)
+          && request.auth.uid in classData(attemptData.classId).teacherIds
+        );
+    }
+
     function safeStudentSubmissionBase(submissionId) {
       return isAllowedAccount()
         && userRole() == 'student'
@@ -731,6 +748,11 @@ service cloud.firestore {
         allow delete: if false;
       }
 
+      match /quizAttempts/{attemptId} {
+        allow get, list: if isDccApp(appId) && canReadQuizAttempt(resource.data);
+        allow create, update, delete: if false;
+      }
+
       match /teacherPreviewResponses/{responseId} {
         allow get, list: if isDccApp(appId) && canReadTeacherPreviewResponse(resource.data);
         allow create: if isDccApp(appId) && safeTeacherPreviewResponseCreate(responseId);
@@ -758,6 +780,11 @@ service cloud.firestore {
         allow write: if isDccApp(appId) && isAdmin();
       }
 
+      match /quizAnswerKeys/{quizId} {
+        allow read: if false;
+        allow write: if isDccApp(appId) && isAdmin();
+      }
+
       match /mediaProjects/{projectId} {
         allow read: if isDccApp(appId) && isAllowedAccount();
         allow write: if isDccApp(appId) && isAdmin();
@@ -774,7 +801,7 @@ service cloud.firestore {
     }
 
     // Future phases will add tightly scoped rules for uploads and later classroom collections:
-    // mediaSubmissions, quizAttempts, portfolioItems, grading records, and raw file workflows.
+    // mediaSubmissions, portfolioItems, grading records, and raw file workflows.
     match /{document=**} {
       allow read, write: if false;
     }

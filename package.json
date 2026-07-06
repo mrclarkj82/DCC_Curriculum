@@ -12,7 +12,8 @@
     "format": "prettier --write .",
     "generate:block-calendar": "node scripts/generate-block-calendar.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs",
-    "seed:curriculum": "node scripts/seedCurriculum.mjs"
+    "seed:curriculum": "node scripts/seedCurriculum.mjs",
+    "seed:quizzes": "node scripts/seedQuizData.mjs"
   },
   "dependencies": {
     "firebase": "^11.0.0",

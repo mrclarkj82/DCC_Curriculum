@@ -1,0 +1,218 @@
+[
+  {
+    "id": "ue-q1-quiz-01",
+    "quizId": "ue-q1-quiz-01",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 1: Unreal Setup, Interface, Navigation, and Transforms",
+    "questionCount": 15,
+    "answers": [
+      {
+        "questionId": "ue-q1-quiz-01-q01",
+        "correctAnswer": "Blank",
+        "explanation": "The tutorial chooses Games > Blank so students begin with a clean project."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q02",
+        "correctAnswer": "The class is starting with visual scripting instead of C++.",
+        "explanation": "The tutorial leaves the project on Blueprint because it is not focused on C++ code at this stage."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q03",
+        "correctAnswer": "Outliner",
+        "explanation": "The Outliner lists objects in the current level and can be used to select or organize them."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q04",
+        "correctAnswer": "Right mouse button",
+        "explanation": "Viewport WASD navigation works while the right mouse button is held down."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q05",
+        "correctAnswer": "R",
+        "explanation": "W is move, E is rotate, and R is scale."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q06",
+        "correctAnswer": "Content Drawer or Content Browser",
+        "explanation": "The Content Drawer/Browser is the asset and folder browser for the project."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q07",
+        "correctAnswer": "F",
+        "explanation": "The F key focuses the viewport on the selected object."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q08",
+        "correctAnswer": "Snapping",
+        "explanation": "Snapping constrains transforms to set increments such as centimeters or degrees."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q09",
+        "correctAnswer": "Game View",
+        "explanation": "Game View is toggled with G and hides editor-only widgets."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q10",
+        "correctAnswer": "Whether the right mouse button is being held",
+        "explanation": "The tutorial explains that WASD navigation requires holding the right mouse button."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q11",
+        "correctAnswer": "The duplicate is in the same location as the original",
+        "explanation": "Ctrl+D creates the duplicate in the same spot, so the student needs to move the copy."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q12",
+        "correctAnswer": "Window > Load Layout > Default Editor Layout",
+        "explanation": "The tutorial shows resetting the editor layout from the Window menu."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q13",
+        "correctAnswer": "Choose Games > Blank; set project name/location; confirm Blueprint and Starter Content; click Create",
+        "explanation": "This follows the project creation workflow from the first Unreal setup lesson."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q14",
+        "correctAnswer": "Add or duplicate an object; move it; rotate it; scale it; capture evidence",
+        "explanation": "Students should build or duplicate an object, transform it intentionally, and then document the result."
+      },
+      {
+        "questionId": "ue-q1-quiz-01-q15",
+        "correctAnswer": "It stores and organizes project assets such as folders, maps, meshes, props, and starter content.",
+        "explanation": "The Content Drawer/Browser is the project asset area and is essential for finding and placing project content."
+      }
+    ]
+  },
+  {
+    "id": "ue-q1-quiz-02",
+    "quizId": "ue-q1-quiz-02",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 2 Draft: Post-Process, Materials, and Texture Maps",
+    "questionCount": 15,
+    "answers": [
+      {
+        "questionId": "ue-q1-quiz-02-q01",
+        "correctAnswer": "It automatically adjusts rendered brightness as the camera views darker or brighter areas.",
+        "explanation": "Auto exposure changes perceived brightness, similar to eyes adapting when moving between dark and bright spaces."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q02",
+        "correctAnswer": "To apply camera and image effects after the scene is rendered.",
+        "explanation": "Post-process settings affect the final rendered image, including exposure, bloom, vignette, and color changes."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q03",
+        "correctAnswer": "To make the post-process settings affect the entire level.",
+        "explanation": "Without Infinite Extent Unbound, the effect only applies while the camera is inside the volume bounds."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q04",
+        "correctAnswer": "Base Color",
+        "explanation": "Base Color is the material input for the main color information of a surface."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q05",
+        "correctAnswer": "sRGB on for Base Color; sRGB off for Roughness and Normal maps.",
+        "explanation": "Base Color is color data, while Roughness and Normal maps store non-color information that should not be interpreted as color."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q06",
+        "correctAnswer": "Bloom",
+        "explanation": "Bloom adds a visible glow around bright areas."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q07",
+        "correctAnswer": "Vignette",
+        "explanation": "Vignette affects the edges of the frame and can change the mood or focus of an image."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q08",
+        "correctAnswer": "PBR",
+        "explanation": "PBR stands for physically based rendering and uses realistic material values."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q09",
+        "correctAnswer": "Normal map",
+        "explanation": "A normal map does not change the actual mesh shape, but it changes how light appears to hit the surface."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q10",
+        "correctAnswer": "They should check that the exposure property checkbox is enabled, the volume affects the camera, and Infinite Extent Unbound is enabled if it needs to affect the whole level.",
+        "explanation": "Post-process values may not apply if the property is not enabled or if the camera is outside a bounded volume."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q11",
+        "correctAnswer": "They likely forgot to press Apply and Save, or the material is not assigned to the object.",
+        "explanation": "Material changes must be applied and saved before they reliably update in the level."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q12",
+        "correctAnswer": "They should check that sRGB is turned off for the roughness map.",
+        "explanation": "Roughness maps are data maps, so sRGB should be off."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q13",
+        "correctAnswer": "1. Add a Post Process Volume. 2. Make the volume affect the intended area. 3. Enable the needed properties. 4. Adjust exposure or effects such as bloom, vignette, or saturation. 5. Capture comparison screenshots.",
+        "explanation": "Students should place and configure the volume before relying on the visual changes for evidence."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q14",
+        "correctAnswer": "1. Import texture maps. 2. Check sRGB and compression settings. 3. Create a material. 4. Connect maps to the correct inputs. 5. Adjust tiling with Texture Coordinate or Multiply if needed. 6. Apply the material to a surface.",
+        "explanation": "Correct import settings should be checked before building and judging the final material, and tiling should be adjusted before evidence screenshots."
+      },
+      {
+        "questionId": "ue-q1-quiz-02-q15",
+        "correctAnswer": "A strong answer explains that a normal map fakes small surface bumps or direction changes so lighting looks more detailed without changing the mesh. It also explains that non-color data maps such as Roughness and Normal should have sRGB off because they store control data, not color.",
+        "explanation": "This checks conceptual understanding across normal maps and color-versus-data texture settings."
+      }
+    ]
+  },
+  {
+    "id": "ue-q1-quiz-03",
+    "quizId": "ue-q1-quiz-03",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 3: Master Materials, Static Meshes, Migration, and Lumen",
+    "questionCount": 0,
+    "answers": []
+  },
+  {
+    "id": "ue-q1-quiz-04",
+    "quizId": "ue-q1-quiz-04",
+    "programAreaId": "unreal-engine",
+    "title": "Q1 Quiz 4: Lighting, Landscapes, Foliage, and Mini-Worlds",
+    "questionCount": 0,
+    "answers": []
+  },
+  {
+    "id": "ue-q3-quiz-01",
+    "quizId": "ue-q3-quiz-01",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 1: Production Expectations, Planning, Setup, and Blockout",
+    "questionCount": 0,
+    "answers": []
+  },
+  {
+    "id": "ue-q3-quiz-02",
+    "quizId": "ue-q3-quiz-02",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 2: Landscape Materials, Terrain Assets, Modular Kits, and Composition",
+    "questionCount": 0,
+    "answers": []
+  },
+  {
+    "id": "ue-q3-quiz-03",
+    "quizId": "ue-q3-quiz-03",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 3: Scene Framing, Foliage, Storytelling, and Lighting Mood",
+    "questionCount": 0,
+    "answers": []
+  },
+  {
+    "id": "ue-q3-quiz-04",
+    "quizId": "ue-q3-quiz-04",
+    "programAreaId": "unreal-engine",
+    "title": "Q3 Quiz 4: Post-Process, Walkthroughs, and Portfolio Submission",
+    "questionCount": 0,
+    "answers": []
+  }
+]

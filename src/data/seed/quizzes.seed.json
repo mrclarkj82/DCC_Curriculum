@@ -11,7 +11,7 @@
       "ue-q1-l04"
     ],
     "status": "pilot-ready",
-    "isPublished": false,
+    "isPublished": true,
     "questions": [
       {
         "id": "ue-q1-quiz-01-q01",
@@ -23,8 +23,6 @@
           "Vehicle",
           "Photo Studio"
         ],
-        "correctAnswer": "Blank",
-        "explanation": "The tutorial chooses Games > Blank so students begin with a clean project.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l01",
         "tag": "project-setup"
@@ -39,8 +37,6 @@
           "Blueprint prevents starter content.",
           "Blueprint changes the project location automatically."
         ],
-        "correctAnswer": "The class is starting with visual scripting instead of C++.",
-        "explanation": "The tutorial leaves the project on Blueprint because it is not focused on C++ code at this stage.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l01",
         "tag": "blueprint"
@@ -55,8 +51,6 @@
           "Content Drawer",
           "Project Browser"
         ],
-        "correctAnswer": "Outliner",
-        "explanation": "The Outliner lists objects in the current level and can be used to select or organize them.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l02",
         "tag": "interface"
@@ -71,8 +65,6 @@
           "Shift only",
           "Ctrl only"
         ],
-        "correctAnswer": "Right mouse button",
-        "explanation": "Viewport WASD navigation works while the right mouse button is held down.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l03",
         "tag": "navigation"
@@ -87,8 +79,6 @@
           "R",
           "G"
         ],
-        "correctAnswer": "R",
-        "explanation": "W is move, E is rotate, and R is scale.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l04",
         "tag": "transforms"
@@ -103,8 +93,6 @@
           "Viewport",
           "Toolbar"
         ],
-        "correctAnswer": "Content Drawer or Content Browser",
-        "explanation": "The Content Drawer/Browser is the asset and folder browser for the project.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l02",
         "tag": "content-browser"
@@ -119,8 +107,6 @@
           "R",
           "Q"
         ],
-        "correctAnswer": "F",
-        "explanation": "The F key focuses the viewport on the selected object.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l03",
         "tag": "focus"
@@ -135,8 +121,6 @@
           "World Settings",
           "Starter Content"
         ],
-        "correctAnswer": "Snapping",
-        "explanation": "Snapping constrains transforms to set increments such as centimeters or degrees.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l04",
         "tag": "snapping"
@@ -151,8 +135,6 @@
           "Game View",
           "Default Layout"
         ],
-        "correctAnswer": "Game View",
-        "explanation": "Game View is toggled with G and hides editor-only widgets.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l03",
         "tag": "game-view"
@@ -167,8 +149,6 @@
           "Whether the project is named correctly",
           "Whether the Details panel is docked"
         ],
-        "correctAnswer": "Whether the right mouse button is being held",
-        "explanation": "The tutorial explains that WASD navigation requires holding the right mouse button.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l03",
         "tag": "navigation-troubleshooting"
@@ -183,8 +163,6 @@
           "The Outliner is hidden forever",
           "The project changed from Blueprint to C++"
         ],
-        "correctAnswer": "The duplicate is in the same location as the original",
-        "explanation": "Ctrl+D creates the duplicate in the same spot, so the student needs to move the copy.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l04",
         "tag": "duplication"
@@ -199,52 +177,51 @@
           "Turn on Wireframe mode",
           "Disable all Show Flags"
         ],
-        "correctAnswer": "Window > Load Layout > Default Editor Layout",
-        "explanation": "The tutorial shows resetting the editor layout from the Window menu.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l02",
         "tag": "layout"
       },
       {
         "id": "ue-q1-quiz-01-q13",
-        "type": "process-order",
-        "text": "Put these project setup steps in order: choose Games > Blank, set project name/location, confirm Blueprint and Starter Content, click Create.",
-        "correctAnswer": [
-          "Choose Games > Blank",
-          "Set project name/location",
-          "Confirm Blueprint and Starter Content",
-          "Click Create"
-        ],
-        "explanation": "This sequence follows the project creation workflow from the tutorial.",
+        "type": "multiple-choice",
+        "text": "Which sequence correctly describes the basic project setup workflow?",
         "difficulty": "medium",
         "lessonId": "ue-q1-l01",
-        "tag": "project-setup"
+        "tag": "project-setup",
+        "choices": [
+          "Choose Games > Blank; set project name/location; confirm Blueprint and Starter Content; click Create",
+          "Click Create; choose Games > Blank; set project name/location; confirm Blueprint and Starter Content",
+          "Choose Vehicle; turn off Blueprint; click Create; rename the project later",
+          "Open Content Drawer; add objects; save map; choose project template"
+        ]
       },
       {
         "id": "ue-q1-quiz-01-q14",
-        "type": "process-order",
-        "text": "Put these transform actions in a sensible order for building a simple scene: add or duplicate an object, move it, rotate it, scale it, capture evidence.",
-        "correctAnswer": [
-          "Add or duplicate an object",
-          "Move it",
-          "Rotate it",
-          "Scale it",
-          "Capture evidence"
-        ],
-        "explanation": "Students should add an object, transform it intentionally, and then document the result.",
+        "type": "multiple-choice",
+        "text": "Which sequence makes the most sense when building and documenting a simple scene?",
         "difficulty": "medium",
         "lessonId": "ue-q1-l04",
-        "tag": "scene-building"
+        "tag": "scene-building",
+        "choices": [
+          "Add or duplicate an object; move it; rotate it; scale it; capture evidence",
+          "Capture evidence; scale it; choose a template; delete the object; save nothing",
+          "Rotate the camera; close Unreal; duplicate the project; move the monitor",
+          "Scale the scene first; import a texture; ignore placement; capture evidence"
+        ]
       },
       {
         "id": "ue-q1-quiz-01-q15",
-        "type": "short-response",
-        "text": "Explain why the Content Drawer/Content Browser is important when building an Unreal project.",
-        "correctAnswer": "Student responses should explain that it stores and organizes project assets such as folders, maps, meshes, props, and starter content.",
-        "explanation": "The Content Drawer/Browser is the project asset area and is essential for finding and placing project content.",
+        "type": "multiple-choice",
+        "text": "Why is the Content Drawer or Content Browser important when building an Unreal project?",
         "difficulty": "medium",
         "lessonId": "ue-q1-l02",
-        "tag": "content-browser"
+        "tag": "content-browser",
+        "choices": [
+          "It stores and organizes project assets such as folders, maps, meshes, props, and starter content.",
+          "It is only used to change the monitor brightness.",
+          "It replaces the viewport camera controls.",
+          "It automatically grades student screenshots."
+        ]
       }
     ]
   },
@@ -271,8 +248,6 @@
           "It deletes shadows so the scene renders faster.",
           "It turns all materials into glowing materials."
         ],
-        "correctAnswer": "It automatically adjusts rendered brightness as the camera views darker or brighter areas.",
-        "explanation": "Auto exposure changes perceived brightness, similar to eyes adapting when moving between dark and bright spaces.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l06",
         "tag": "auto-exposure"
@@ -287,8 +262,6 @@
           "To create a new project folder automatically.",
           "To convert texture maps into 3D models."
         ],
-        "correctAnswer": "To apply camera and image effects after the scene is rendered.",
-        "explanation": "Post-process settings affect the final rendered image, including exposure, bloom, vignette, and color changes.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l06",
         "tag": "post-process-volume"
@@ -303,8 +276,6 @@
           "To lock every object so it cannot move.",
           "To make all texture maps import at full resolution."
         ],
-        "correctAnswer": "To make the post-process settings affect the entire level.",
-        "explanation": "Without Infinite Extent Unbound, the effect only applies while the camera is inside the volume bounds.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l06",
         "tag": "infinite-extent-unbound"
@@ -319,8 +290,6 @@
           "Normal",
           "World Outliner"
         ],
-        "correctAnswer": "Base Color",
-        "explanation": "Base Color is the material input for the main color information of a surface.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l07",
         "tag": "material-graph"
@@ -335,8 +304,6 @@
           "sRGB on for Roughness and Normal maps only.",
           "sRGB only matters for mesh scale, not textures."
         ],
-        "correctAnswer": "sRGB on for Base Color; sRGB off for Roughness and Normal maps.",
-        "explanation": "Base Color is color data, while Roughness and Normal maps store non-color information that should not be interpreted as color.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l08",
         "tag": "srgb"
@@ -345,8 +312,6 @@
         "id": "ue-q1-quiz-02-q06",
         "type": "vocabulary",
         "text": "Identify the term: a glow effect that appears around bright parts of the rendered image.",
-        "correctAnswer": "Bloom",
-        "explanation": "Bloom adds a visible glow around bright areas.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l06",
         "tag": "bloom"
@@ -355,8 +320,6 @@
         "id": "ue-q1-quiz-02-q07",
         "type": "vocabulary",
         "text": "Identify the term: a shading or darkening effect around the edges of the image.",
-        "correctAnswer": "Vignette",
-        "explanation": "Vignette affects the edges of the frame and can change the mood or focus of an image.",
         "difficulty": "easy",
         "lessonId": "ue-q1-l06",
         "tag": "vignette"
@@ -365,8 +328,6 @@
         "id": "ue-q1-quiz-02-q08",
         "type": "vocabulary",
         "text": "Identify the workflow term: a realistic material workflow that uses values such as metallic and roughness.",
-        "correctAnswer": "PBR",
-        "explanation": "PBR stands for physically based rendering and uses realistic material values.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l07",
         "tag": "pbr"
@@ -375,8 +336,6 @@
         "id": "ue-q1-quiz-02-q09",
         "type": "vocabulary",
         "text": "Identify the texture map: a map that fakes small bumps and surface direction changes so lighting responds with more detail.",
-        "correctAnswer": "Normal map",
-        "explanation": "A normal map does not change the actual mesh shape, but it changes how light appears to hit the surface.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l08",
         "tag": "normal-map"
@@ -385,8 +344,6 @@
         "id": "ue-q1-quiz-02-q10",
         "type": "scenario",
         "text": "A student changes exposure values in a Post Process Volume, but the scene does not look different in play mode. Name one thing they should check.",
-        "correctAnswer": "They should check that the exposure property checkbox is enabled, the volume affects the camera, and Infinite Extent Unbound is enabled if it needs to affect the whole level.",
-        "explanation": "Post-process values may not apply if the property is not enabled or if the camera is outside a bounded volume.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l06",
         "tag": "troubleshooting"
@@ -395,8 +352,6 @@
         "id": "ue-q1-quiz-02-q11",
         "type": "scenario",
         "text": "A student changes a material in the graph, including roughness and metallic values, but the object in the level still looks the same. What likely step did they miss?",
-        "correctAnswer": "They likely forgot to press Apply and Save, or the material is not assigned to the object.",
-        "explanation": "Material changes must be applied and saved before they reliably update in the level.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l07",
         "tag": "apply-save"
@@ -405,8 +360,6 @@
         "id": "ue-q1-quiz-02-q12",
         "type": "scenario",
         "text": "A roughness map is imported, but the material behaves strangely and the grayscale information looks interpreted like color. What setting should the student check?",
-        "correctAnswer": "They should check that sRGB is turned off for the roughness map.",
-        "explanation": "Roughness maps are data maps, so sRGB should be off.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l08",
         "tag": "roughness-map"
@@ -415,8 +368,6 @@
         "id": "ue-q1-quiz-02-q13",
         "type": "process-order",
         "text": "Put this post-process workflow in order: add a Post Process Volume, enable needed properties, make the volume affect the intended area, adjust exposure/effects, capture comparison screenshots.",
-        "correctAnswer": "1. Add a Post Process Volume. 2. Make the volume affect the intended area. 3. Enable the needed properties. 4. Adjust exposure or effects such as bloom, vignette, or saturation. 5. Capture comparison screenshots.",
-        "explanation": "Students should place and configure the volume before relying on the visual changes for evidence.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l06",
         "tag": "workflow"
@@ -425,8 +376,6 @@
         "id": "ue-q1-quiz-02-q14",
         "type": "process-order",
         "text": "Put this texture material workflow in order: import texture maps, check sRGB/compression settings, create a material, connect maps to inputs, adjust tiling with Texture Coordinate or Multiply, apply the material to a surface.",
-        "correctAnswer": "1. Import texture maps. 2. Check sRGB and compression settings. 3. Create a material. 4. Connect maps to the correct inputs. 5. Adjust tiling with Texture Coordinate or Multiply if needed. 6. Apply the material to a surface.",
-        "explanation": "Correct import settings should be checked before building and judging the final material, and tiling should be adjusted before evidence screenshots.",
         "difficulty": "medium",
         "lessonId": "ue-q1-l08",
         "tag": "texture-coordinate-tiling"
@@ -435,8 +384,6 @@
         "id": "ue-q1-quiz-02-q15",
         "type": "short-response",
         "text": "In 2-3 sentences, explain what a normal map adds to a material and why roughness or normal maps should usually have sRGB turned off.",
-        "correctAnswer": "A strong answer explains that a normal map fakes small surface bumps or direction changes so lighting looks more detailed without changing the mesh. It also explains that non-color data maps such as Roughness and Normal should have sRGB off because they store control data, not color.",
-        "explanation": "This checks conceptual understanding across normal maps and color-versus-data texture settings.",
         "difficulty": "hard",
         "lessonId": "ue-q1-l08",
         "tag": "short-response"

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { EmptyState } from '../EmptyState';
 import { EvidenceChecklist } from '../EvidenceChecklist';
+import { QuizTakingPanel } from '../quizzes/QuizTakingPanel';
 import { BellRingerResponseCard } from '../responses/BellRingerResponseCard';
 import { ExitTicketResponseCard } from '../responses/ExitTicketResponseCard';
 import { SubmissionPanel } from '../submissions/SubmissionPanel';
@@ -260,14 +261,35 @@ function BroadcastUpdateMission({
   );
 }
 
-function QuizMission({ quiz }: { quiz: Quiz | null }) {
+function QuizMission({
+  quiz,
+  classRecord,
+  userProfile,
+  viewerMode,
+}: {
+  quiz: Quiz | null;
+  classRecord: ClassRecord;
+  userProfile: UserProfile;
+  viewerMode: ViewerMode;
+}) {
+  if (quiz) {
+    return (
+      <QuizTakingPanel
+        quiz={quiz}
+        classRecord={classRecord}
+        userProfile={userProfile}
+        viewerMode={viewerMode}
+      />
+    );
+  }
+
   return (
     <section className="card mission-panel neon-border span-two">
-      <p className="retro-label">Quiz Placeholder</p>
-      <h2>{quiz?.title ?? 'Quiz support is coming in a later phase.'}</h2>
+      <p className="retro-label">Quiz</p>
+      <h2>Quiz record not found</h2>
       <p className="muted">
-        Quiz support is coming in a later phase. For now, your teacher will give quiz directions
-        outside this page.
+        This class points to a quiz that is not available in Firestore yet. Ask your teacher to
+        confirm the active quiz item.
       </p>
     </section>
   );
@@ -294,10 +316,13 @@ export function StudentTodayExperience({
   viewerMode,
 }: StudentTodayExperienceProps) {
   const record = activeItem.record;
-  const showResponseCards = userProfile.role === 'student' || isTeacherPreviewMode(viewerMode);
+  const isQuizOrPortfolio =
+    activeItem.type === 'quiz' || activeItem.type === 'portfolioCheckpoint';
+  const showResponseCards =
+    !isQuizOrPortfolio && (userProfile.role === 'student' || isTeacherPreviewMode(viewerMode));
   const submissionTarget = resolveSubmissionTargetForActiveItem(activeItem);
   const isMissingActiveRecord =
-    activeItem.type !== 'portfolioCheckpoint' && activeItem.type !== 'quiz' && !record;
+    activeItem.type !== 'portfolioCheckpoint' && !record;
 
   return (
     <>
@@ -377,7 +402,14 @@ export function StudentTodayExperience({
         {activeItem.type === 'broadcastUpdate' && record && (
           <BroadcastUpdateMission update={record as BroadcastUpdate} programArea={programArea} />
         )}
-        {activeItem.type === 'quiz' && <QuizMission quiz={(record as Quiz | null) ?? null} />}
+        {activeItem.type === 'quiz' && (
+          <QuizMission
+            quiz={(record as Quiz | null) ?? null}
+            classRecord={classRecord}
+            userProfile={userProfile}
+            viewerMode={viewerMode}
+          />
+        )}
         {activeItem.type === 'portfolioCheckpoint' && <PortfolioMission />}
       </div>
     </>
