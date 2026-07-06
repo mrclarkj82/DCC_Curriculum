@@ -33,11 +33,11 @@ How can you tell whether a surface is metal, plastic, stone, wood, or paint just
 - Vector/color value: A multi-number value often used to represent RGB color.
 - Apply: The material editor action that updates the material so changes appear in the level.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 07 - Materials Basics
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1UD-bWyWvbL9SccNVW55rUgq1n9-BQP6U/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

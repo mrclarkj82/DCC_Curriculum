@@ -31,11 +31,11 @@ Why does a camera or your eyes sometimes need time to adjust when moving from a 
 - Infinite extent unbound: A Post Process Volume setting that makes the effect apply to the entire level instead of only inside the volume.
 - Metering mode: The exposure measurement mode used to decide how scene brightness should be handled.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 06 - Exposure and Post-Process
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1wS32UIlGa0JEf1phUz4JnKGvJPHnauGx/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

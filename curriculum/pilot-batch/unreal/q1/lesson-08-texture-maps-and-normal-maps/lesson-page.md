@@ -33,11 +33,11 @@ What is the difference between color detail and surface depth detail?
 - UVs: The 2D coordinate layout used to place a texture on a 3D surface.
 - Tiling: How often a texture repeats across a surface.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 08 - Texture Maps and Normal Maps
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/13Vz9agA9hyv7wrxRqyTQs3dccfHU1Pz4/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 
