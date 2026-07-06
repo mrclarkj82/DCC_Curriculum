@@ -1,0 +1,74 @@
+{
+  "id": "vp-q2-l03",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 3,
+  "title": "Syncing Audio and Timeline Basics",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "00:25:47",
+    "end": "00:35:30",
+    "url": "",
+    "note": "Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness."
+  },
+  "learningTarget": "I can create a simple Resolve timeline, place clips in order, and explain the difference between source clips and the timeline edit.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Why might camera audio and separate microphone audio need to be matched before editing?"
+  },
+  "vocabulary": [
+    {
+      "term": "Audio sync",
+      "definition": "The process of matching separate audio and video so dialogue or sound lines up correctly."
+    },
+    {
+      "term": "Waveform",
+      "definition": "A visual shape that shows the loud and quiet parts of audio."
+    },
+    {
+      "term": "Edit page",
+      "definition": "The Resolve page used to build and refine a story in a timeline."
+    },
+    {
+      "term": "Source viewer",
+      "definition": "The viewer used to preview a clip before adding it to the timeline."
+    },
+    {
+      "term": "Timeline viewer",
+      "definition": "The viewer that shows the edited sequence at the playhead."
+    },
+    {
+      "term": "Playhead",
+      "definition": "The marker that shows the current time position in a clip or timeline."
+    },
+    {
+      "term": "Track",
+      "definition": "A horizontal lane in the timeline that holds video or audio clips."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 03 - Syncing Audio and Timeline Basics",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a03",
+    "title": "First Timeline Assembly",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of a timeline with at least four clips.",
+      "Google Drive or Docs link labeling source viewer, timeline viewer, playhead, and tracks.",
+      "Short reflection explaining one timeline decision."
+    ]
+  },
+  "exitTicket": "How do the source viewer and timeline viewer help with different editing decisions?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-03"
+  ]
+}

@@ -1932,5 +1932,677 @@
       "unreal-engine",
       "q3"
     ]
+  },
+  {
+    "id": "vp-q2-l01",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 1,
+    "title": "DaVinci Resolve Setup and Project Manager",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "00:00:00",
+      "end": "00:13:16",
+      "url": "",
+      "note": "Introduces DaVinci Resolve as an all-in-one post-production tool, system expectations, free versus Studio awareness, Resolve pages, Project Manager, new project creation, project backup/export habits, and first workspace orientation."
+    },
+    "learningTarget": "I can create a DaVinci Resolve project, identify the main Resolve pages, and explain why project organization matters before editing begins.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What is one problem that can happen if an editor starts cutting video before naming, saving, and organizing the project?"
+    },
+    "vocabulary": [
+      {
+        "term": "DaVinci Resolve",
+        "definition": "A video post-production application used for editing, color, visual effects, audio, and delivery."
+      },
+      {
+        "term": "Project Manager",
+        "definition": "The startup area used to create, open, back up, and organize Resolve projects."
+      },
+      {
+        "term": "Project Library",
+        "definition": "The database or location where Resolve stores project files and timelines."
+      },
+      {
+        "term": "Resolve page",
+        "definition": "A dedicated workspace inside Resolve, such as Media, Edit, Fusion, Color, Fairlight, or Deliver."
+      },
+      {
+        "term": "Post-production",
+        "definition": "The work that happens after footage is recorded, including editing, sound, color, graphics, and export."
+      },
+      {
+        "term": "Workspace",
+        "definition": "The visible panels and tools arranged for a specific editing task."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 01 - DaVinci Resolve Setup and Project Manager",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a01",
+      "title": "Resolve Project Setup Proof",
+      "submissionType": "google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot of the named Resolve project or Project Manager entry.",
+        "Google Drive or Docs link showing four Resolve pages with short purpose notes.",
+        "Short reflection explaining why project setup matters before editing."
+      ]
+    },
+    "exitTicket": "Which Resolve page or startup area did you use today, and what job does it help an editor do?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-01"
+    ]
+  },
+  {
+    "id": "vp-q2-l02",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 2,
+    "title": "Media Page, Imports, and Bins",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "00:13:16",
+      "end": "00:25:47",
+      "url": "",
+      "note": "Covers the Media page, media storage, Media Pool, importing clips, changing frame-rate prompts, bins, folder structure, list and thumbnail views, metadata, keywords, and smart-bin awareness."
+    },
+    "learningTarget": "I can import footage into the Media Pool and organize it with bins so my edit can be built from clean source material.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "When you have a folder full of random clips, what information helps you find the right shot quickly?"
+    },
+    "vocabulary": [
+      {
+        "term": "Media page",
+        "definition": "The Resolve workspace focused on finding, previewing, importing, and organizing media."
+      },
+      {
+        "term": "Media Storage",
+        "definition": "The panel used to browse files on the computer or connected drives."
+      },
+      {
+        "term": "Media Pool",
+        "definition": "The project area that contains clips, audio, timelines, and bins available to the edit."
+      },
+      {
+        "term": "Bin",
+        "definition": "A folder inside the Resolve project used to organize media."
+      },
+      {
+        "term": "Metadata",
+        "definition": "Information about a clip, such as shot, scene, take, comments, or technical details."
+      },
+      {
+        "term": "Smart bin",
+        "definition": "A bin that gathers clips automatically based on rules or metadata filters."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 02 - Media Page, Imports, and Bins",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a02",
+      "title": "Organized Media Pool",
+      "submissionType": "google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot of the Media Pool with organized bins.",
+        "Google Drive or Docs link showing at least two metadata or note entries.",
+        "Short reflection explaining one organization choice that will speed up editing."
+      ]
+    },
+    "exitTicket": "What is the difference between media sitting on the computer and media imported into the Resolve Media Pool?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-02"
+    ]
+  },
+  {
+    "id": "vp-q2-l03",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 3,
+    "title": "Syncing Audio and Timeline Basics",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "00:25:47",
+      "end": "00:35:30",
+      "url": "",
+      "note": "Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness."
+    },
+    "learningTarget": "I can create a simple Resolve timeline, place clips in order, and explain the difference between source clips and the timeline edit.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "Why might camera audio and separate microphone audio need to be matched before editing?"
+    },
+    "vocabulary": [
+      {
+        "term": "Audio sync",
+        "definition": "The process of matching separate audio and video so dialogue or sound lines up correctly."
+      },
+      {
+        "term": "Waveform",
+        "definition": "A visual shape that shows the loud and quiet parts of audio."
+      },
+      {
+        "term": "Edit page",
+        "definition": "The Resolve page used to build and refine a story in a timeline."
+      },
+      {
+        "term": "Source viewer",
+        "definition": "The viewer used to preview a clip before adding it to the timeline."
+      },
+      {
+        "term": "Timeline viewer",
+        "definition": "The viewer that shows the edited sequence at the playhead."
+      },
+      {
+        "term": "Playhead",
+        "definition": "The marker that shows the current time position in a clip or timeline."
+      },
+      {
+        "term": "Track",
+        "definition": "A horizontal lane in the timeline that holds video or audio clips."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 03 - Syncing Audio and Timeline Basics",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a03",
+      "title": "First Timeline Assembly",
+      "submissionType": "google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot of a timeline with at least four clips.",
+        "Google Drive or Docs link labeling source viewer, timeline viewer, playhead, and tracks.",
+        "Short reflection explaining one timeline decision."
+      ]
+    },
+    "exitTicket": "How do the source viewer and timeline viewer help with different editing decisions?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-03"
+    ]
+  },
+  {
+    "id": "vp-q2-l04",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 4,
+    "title": "Trimming Clips and Building a Rough Cut",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "00:35:30",
+      "end": "01:07:04",
+      "url": "",
+      "note": "Covers trimming clip edges, removing excess slate or dead time, choosing story moments, setting in and out points, adding selected ranges to a timeline, insert and append edits, trim mode, ripple trimming, split edits, and keyboard shortcut awareness."
+    },
+    "learningTarget": "I can trim clips, set in and out points, and build a rough cut that communicates a simple story without unnecessary dead space.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes a video clip feel too long, even if the shot itself is useful?"
+    },
+    "vocabulary": [
+      {
+        "term": "Trim",
+        "definition": "To shorten or extend a clip by adjusting where it starts or ends."
+      },
+      {
+        "term": "In point",
+        "definition": "The selected start of the part of a source clip that will be used."
+      },
+      {
+        "term": "Out point",
+        "definition": "The selected end of the part of a source clip that will be used."
+      },
+      {
+        "term": "Rough cut",
+        "definition": "An early version of an edit focused on order, timing, and story instead of polish."
+      },
+      {
+        "term": "Insert edit",
+        "definition": "An edit that places a clip and pushes later material down the timeline."
+      },
+      {
+        "term": "Ripple trim",
+        "definition": "A trim that closes or opens timeline space so clips stay connected."
+      },
+      {
+        "term": "Blade or split",
+        "definition": "A cut that divides one clip into separate pieces."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 04 - Trimming Clips and Building a Rough Cut",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a04",
+      "title": "Rough Cut Story Sequence",
+      "submissionType": "google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot of the rough cut timeline.",
+        "Google Drive or YouTube link to a short exported rough cut if teacher requests export.",
+        "Short reflection naming at least three tools or shortcuts used."
+      ]
+    },
+    "exitTicket": "Name one trimming tool or shortcut you used today and explain what it changed in your rough cut.",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-04"
+    ]
+  },
+  {
+    "id": "vp-q2-l05",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 5,
+    "title": "Quiz 1 and Rough Cut Cleanup",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "01:07:04",
+      "end": "01:20:08",
+      "url": "",
+      "note": "Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut."
+    },
+    "learningTarget": "I can show what I know from the first Resolve lessons and clean up a rough cut so it is easier to understand.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What is one issue in your rough cut that a viewer would notice immediately?"
+    },
+    "vocabulary": [
+      {
+        "term": "Checkpoint quiz",
+        "definition": "A short assessment used to check core vocabulary and workflow understanding."
+      },
+      {
+        "term": "Audio level",
+        "definition": "The loudness of a clip or track."
+      },
+      {
+        "term": "Fade",
+        "definition": "A gradual change into or out of video or audio."
+      },
+      {
+        "term": "Inspector",
+        "definition": "The panel used to adjust properties of a selected clip, title, effect, or audio item."
+      },
+      {
+        "term": "Linked clips",
+        "definition": "Video and audio that stay selected or moved together unless unlinked."
+      },
+      {
+        "term": "Cleanup pass",
+        "definition": "A focused editing pass that removes obvious problems before adding polish."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 05 - Quiz 1 and Rough Cut Cleanup",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a05",
+      "title": "Rough Cut Cleanup and Quiz 1 Checkpoint",
+      "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Quiz 1 completion record or teacher checkoff.",
+        "Google Drive link to a screenshot of the cleaned rough cut timeline.",
+        "Google Drive or YouTube link to the rough cut if teacher requests export.",
+        "Short reflection naming at least three tools or shortcuts used."
+      ]
+    },
+    "exitTicket": "What did you clean up today, and how does the rough cut communicate more clearly now?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-05"
+    ]
+  },
+  {
+    "id": "vp-q2-l06",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 6,
+    "title": "Audio Mix Basics in Fairlight",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "04:17:55",
+      "end": "04:52:57",
+      "url": "",
+      "note": "Covers the Fairlight page, timeline continuity between pages, tracks, mute/solo, mixer, meters, dialogue tracks, clip attributes, selecting audio regions, ambience, music, track naming, track colors, sound effects, buses, effects, EQ, compression, and doing audio in passes."
+    },
+    "learningTarget": "I can organize audio tracks and make a basic sound pass that balances dialogue, music, ambience, and effects.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes video audio feel messy or hard to understand?"
+    },
+    "vocabulary": [
+      {
+        "term": "Fairlight",
+        "definition": "The Resolve page designed for audio editing, mixing, and sound design."
+      },
+      {
+        "term": "Mixer",
+        "definition": "The panel used to adjust track volume, pan, EQ, effects, and routing."
+      },
+      {
+        "term": "Meter",
+        "definition": "A visual display showing audio level during playback."
+      },
+      {
+        "term": "Mute",
+        "definition": "A control that turns a track off."
+      },
+      {
+        "term": "Solo",
+        "definition": "A control that plays one track while temporarily muting others."
+      },
+      {
+        "term": "Ambience",
+        "definition": "Background room tone or environmental sound that makes a scene feel present."
+      },
+      {
+        "term": "Bus",
+        "definition": "A routing path that groups tracks into a shared mix or effects chain."
+      },
+      {
+        "term": "EQ",
+        "definition": "Equalization, used to adjust frequency ranges in sound."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 06 - Audio Mix Basics in Fairlight",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a06",
+      "title": "Dialogue, Music, and Sound Pass",
+      "submissionType": "google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot of organized Fairlight tracks or mixer.",
+        "Google Drive or YouTube link to an exported audio-improved rough cut if teacher requests export.",
+        "Short reflection explaining one audio problem and how you fixed it."
+      ]
+    },
+    "exitTicket": "Which audio layer mattered most in your mix today: dialogue, music, ambience, or sound effects?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-06"
+    ]
+  },
+  {
+    "id": "vp-q2-l07",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 7,
+    "title": "Titles, Transitions, and Simple Motion",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "01:20:08",
+      "end": "01:30:41",
+      "url": "",
+      "note": "Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit."
+    },
+    "learningTarget": "I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "When does a title help a video, and when can it distract from the video?"
+    },
+    "vocabulary": [
+      {
+        "term": "Effects panel",
+        "definition": "The panel that contains transitions, titles, generators, and other edit-page effects."
+      },
+      {
+        "term": "Transition",
+        "definition": "A visual change between two clips, such as a dissolve or wipe."
+      },
+      {
+        "term": "Title",
+        "definition": "Generated text placed over or between video clips."
+      },
+      {
+        "term": "Lower third",
+        "definition": "A title placed in the lower part of the screen, often used for names or labels."
+      },
+      {
+        "term": "Generator",
+        "definition": "A generated visual element such as a color or gradient."
+      },
+      {
+        "term": "Keyframe",
+        "definition": "A point in time that stores a value so an effect or property can change over time."
+      },
+      {
+        "term": "Inspector",
+        "definition": "The panel used to adjust selected titles, clips, transitions, and effects."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 07 - Titles, Transitions, and Simple Motion",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a07",
+      "title": "Title and Transition Polish Pass",
+      "submissionType": "google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot showing the title or lower third selected in the timeline.",
+        "Google Drive or YouTube link to a short clip preview if teacher requests export.",
+        "Short reflection explaining why the title or transition supports the story."
+      ]
+    },
+    "exitTicket": "What title, transition, or motion choice did you add, and why does it belong in the edit?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-07"
+    ]
+  },
+  {
+    "id": "vp-q2-l08",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 8,
+    "title": "Color Correction and Shot Matching",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "02:51:04",
+      "end": "03:16:57",
+      "url": "",
+      "note": "Introduces the Color page, color nodes as correction containers, color management, input color space awareness, primaries, lift, gamma, gain, offset, contrast, saturation, temperature, tint, reset habits, and before/after comparison evidence."
+    },
+    "learningTarget": "I can make a basic color correction pass that improves exposure, contrast, white balance, and consistency between shots.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes two shots feel like they belong in the same scene?"
+    },
+    "vocabulary": [
+      {
+        "term": "Color page",
+        "definition": "The Resolve page used for color correction and grading."
+      },
+      {
+        "term": "Color management",
+        "definition": "Settings that help convert footage from the camera color space into a useful editing and viewing space."
+      },
+      {
+        "term": "Input color space",
+        "definition": "The camera or recording color profile assigned to footage so Resolve interprets it correctly."
+      },
+      {
+        "term": "Node",
+        "definition": "A container for color corrections that can be enabled, disabled, reset, or organized in order."
+      },
+      {
+        "term": "Lift",
+        "definition": "A primary color wheel control that mostly affects darker parts of the image."
+      },
+      {
+        "term": "Gamma",
+        "definition": "A primary color wheel control that mostly affects midtones."
+      },
+      {
+        "term": "Gain",
+        "definition": "A primary color wheel control that mostly affects brighter parts of the image."
+      },
+      {
+        "term": "Saturation",
+        "definition": "The strength or intensity of color in the image."
+      },
+      {
+        "term": "White balance",
+        "definition": "Adjusting color temperature and tint so neutral areas look natural."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 08 - Color Correction and Shot Matching",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a08",
+      "title": "Color Correction Comparison",
+      "submissionType": "google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a before screenshot.",
+        "Google Drive link to an after screenshot from the same shot or sequence.",
+        "Short reflection naming at least three color controls tested."
+      ]
+    },
+    "exitTicket": "Which color control changed your image most today, and what visual evidence proves it?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-08"
+    ]
+  },
+  {
+    "id": "vp-q2-l09",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 9,
+    "title": "Quiz 2 and Final Export",
+    "status": "draft-pilot",
+    "video": {
+      "source": "DaVinci Resolve Q2 Tutorial Transcript",
+      "start": "04:53:29",
+      "end": "05:06:57",
+      "url": "",
+      "note": "Uses Quiz 2 as the closing checkpoint, then covers the Deliver page, render settings, single clip export, codec awareness, H.264/H.265/ProRes comparison, file naming, render queue, multiple versions, and final reflection."
+    },
+    "learningTarget": "I can complete a final checkpoint and export a small edited video with clear naming, useful render settings, and a reflection on my post-production workflow.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What needs to be true before a project is ready to export for someone else to watch?"
+    },
+    "vocabulary": [
+      {
+        "term": "Deliver page",
+        "definition": "The Resolve page used to render or export a timeline into a video file."
+      },
+      {
+        "term": "Render",
+        "definition": "To convert the timeline into a finished video file."
+      },
+      {
+        "term": "Codec",
+        "definition": "A method for compressing and storing video or audio data."
+      },
+      {
+        "term": "H.264",
+        "definition": "A common delivery codec that is widely compatible for online video."
+      },
+      {
+        "term": "H.265",
+        "definition": "A newer efficient codec that can make smaller high-quality files but may have compatibility limits."
+      },
+      {
+        "term": "ProRes",
+        "definition": "A high-quality editing and mastering codec that usually creates larger files."
+      },
+      {
+        "term": "Render queue",
+        "definition": "The list of export jobs waiting to render in Resolve."
+      },
+      {
+        "term": "Single clip export",
+        "definition": "Rendering the whole timeline as one video file."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 09 - Quiz 2 and Final Export",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-a09",
+      "title": "Final Resolve Mini-Edit Export",
+      "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+      "evidenceRequired": [
+        "Quiz 2 completion record or teacher checkoff.",
+        "Google Drive or YouTube link to the final exported mini-edit.",
+        "Google Drive link to a screenshot of the Deliver page or render queue.",
+        "Short reflection explaining the most important editing, audio, title, or color decision."
+      ]
+    },
+    "exitTicket": "What export setting or file naming choice do you need to remember for future video projects?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "lesson-09"
+    ]
   }
 ]

@@ -25,12 +25,13 @@
     "icon": "video",
     "sortOrder": 2,
     "supportedContentTypes": [
+      "lesson",
+      "assignment",
+      "quiz",
       "mediaProject",
       "broadcastUpdate",
-      "assignment",
       "mediaSubmission",
       "portfolioItem"
     ]
   }
 ]
-

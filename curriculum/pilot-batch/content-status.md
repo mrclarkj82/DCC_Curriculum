@@ -82,6 +82,75 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Media submission guidelines - needs teacher review
 - [x] Reflection template - needs teacher review
 
+- [x] Q2 DaVinci Resolve README - source overview
+- [x] Q2 DaVinci Resolve Lesson 01 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 01 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 01 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 01 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 01 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 01 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 01 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 02 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 02 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 02 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 02 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 02 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 02 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 02 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 03 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 03 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 03 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 03 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 03 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 03 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 03 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 04 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 04 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 04 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 04 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 04 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 04 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 04 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 05 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 05 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 05 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 05 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 05 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 05 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 05 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 06 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 06 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 06 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 06 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 06 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 06 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 06 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 07 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 07 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 07 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 07 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 07 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 07 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 07 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 08 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 08 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 08 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 08 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 08 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 08 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 08 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 09 page - ready for seed import
+- [x] Q2 DaVinci Resolve Lesson 09 slide brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 09 presentation brief - ready for ChatGPT Pro
+- [x] Q2 DaVinci Resolve Lesson 09 assignment - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 09 bell ringer / exit ticket - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 09 teacher notes - needs teacher review
+- [x] Q2 DaVinci Resolve Lesson 09 lesson-data.json - ready for seed import
+- [x] Q2 DaVinci Resolve Quiz 01 Draft - draft / needs teacher review
+- [x] Q2 DaVinci Resolve Quiz 02 Draft - draft / needs teacher review
+- [x] Q2 DaVinci Resolve A/B schedule - generated from 2026-2027 calendar
+- [x] Q2 DaVinci Resolve block calendar - generated from 2026-2027 calendar
+
 ## Notes
 
 - Unreal slide briefs are ready for ChatGPT Pro PowerPoint generation.

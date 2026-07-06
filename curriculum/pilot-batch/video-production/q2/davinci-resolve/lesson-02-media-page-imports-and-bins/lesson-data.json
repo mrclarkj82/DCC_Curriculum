@@ -1,0 +1,70 @@
+{
+  "id": "vp-q2-l02",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 2,
+  "title": "Media Page, Imports, and Bins",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "00:13:16",
+    "end": "00:25:47",
+    "url": "",
+    "note": "Covers the Media page, media storage, Media Pool, importing clips, changing frame-rate prompts, bins, folder structure, list and thumbnail views, metadata, keywords, and smart-bin awareness."
+  },
+  "learningTarget": "I can import footage into the Media Pool and organize it with bins so my edit can be built from clean source material.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "When you have a folder full of random clips, what information helps you find the right shot quickly?"
+  },
+  "vocabulary": [
+    {
+      "term": "Media page",
+      "definition": "The Resolve workspace focused on finding, previewing, importing, and organizing media."
+    },
+    {
+      "term": "Media Storage",
+      "definition": "The panel used to browse files on the computer or connected drives."
+    },
+    {
+      "term": "Media Pool",
+      "definition": "The project area that contains clips, audio, timelines, and bins available to the edit."
+    },
+    {
+      "term": "Bin",
+      "definition": "A folder inside the Resolve project used to organize media."
+    },
+    {
+      "term": "Metadata",
+      "definition": "Information about a clip, such as shot, scene, take, comments, or technical details."
+    },
+    {
+      "term": "Smart bin",
+      "definition": "A bin that gathers clips automatically based on rules or metadata filters."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 02 - Media Page, Imports, and Bins",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a02",
+    "title": "Organized Media Pool",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of the Media Pool with organized bins.",
+      "Google Drive or Docs link showing at least two metadata or note entries.",
+      "Short reflection explaining one organization choice that will speed up editing."
+    ]
+  },
+  "exitTicket": "What is the difference between media sitting on the computer and media imported into the Resolve Media Pool?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-02"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "vp-q2-l01",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 1,
+  "title": "DaVinci Resolve Setup and Project Manager",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "00:00:00",
+    "end": "00:13:16",
+    "url": "",
+    "note": "Introduces DaVinci Resolve as an all-in-one post-production tool, system expectations, free versus Studio awareness, Resolve pages, Project Manager, new project creation, project backup/export habits, and first workspace orientation."
+  },
+  "learningTarget": "I can create a DaVinci Resolve project, identify the main Resolve pages, and explain why project organization matters before editing begins.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What is one problem that can happen if an editor starts cutting video before naming, saving, and organizing the project?"
+  },
+  "vocabulary": [
+    {
+      "term": "DaVinci Resolve",
+      "definition": "A video post-production application used for editing, color, visual effects, audio, and delivery."
+    },
+    {
+      "term": "Project Manager",
+      "definition": "The startup area used to create, open, back up, and organize Resolve projects."
+    },
+    {
+      "term": "Project Library",
+      "definition": "The database or location where Resolve stores project files and timelines."
+    },
+    {
+      "term": "Resolve page",
+      "definition": "A dedicated workspace inside Resolve, such as Media, Edit, Fusion, Color, Fairlight, or Deliver."
+    },
+    {
+      "term": "Post-production",
+      "definition": "The work that happens after footage is recorded, including editing, sound, color, graphics, and export."
+    },
+    {
+      "term": "Workspace",
+      "definition": "The visible panels and tools arranged for a specific editing task."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 01 - DaVinci Resolve Setup and Project Manager",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a01",
+    "title": "Resolve Project Setup Proof",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of the named Resolve project or Project Manager entry.",
+      "Google Drive or Docs link showing four Resolve pages with short purpose notes.",
+      "Short reflection explaining why project setup matters before editing."
+    ]
+  },
+  "exitTicket": "Which Resolve page or startup area did you use today, and what job does it help an editor do?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-01"
+  ]
+}

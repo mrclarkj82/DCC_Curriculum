@@ -13,6 +13,10 @@ The source calendar is the attached PDF `2026-2027 Doral Calendar (List Form).pd
 - `q1-unreal-block-calendar.md`: human-readable block calendar view with lesson labels as calendar cell headings.
 - `q1-unreal-lesson-schedule.json`: machine-readable Q1 Unreal lesson schedule with metadata and weekday no-school notes.
 - `q1-unreal-lesson-schedule.md`: human-readable Q1 Unreal lesson schedule table.
+- `q2-davinci-resolve-block-calendar.json`: machine-readable Monday-Friday block calendar for the Q2 DaVinci Resolve schedule.
+- `q2-davinci-resolve-block-calendar.md`: human-readable block calendar view for the Q2 DaVinci Resolve schedule.
+- `q2-davinci-resolve-lesson-schedule.json`: machine-readable Q2 DaVinci Resolve lesson schedule with metadata and weekday no-school notes.
+- `q2-davinci-resolve-lesson-schedule.md`: human-readable Q2 DaVinci Resolve lesson schedule table.
 - `../website-data/lessonSchedule.seed.json`: website-ready seed data for future Firestore import.
 - `../website-data/blockLessonCalendar.seed.json`: website-ready block calendar seed used by the teacher/admin schedule preview.
 
@@ -35,6 +39,10 @@ The website schedule view should render as a Monday-Friday block calendar. Instr
 ## Q1 Unreal Pairing Rule
 
 Each Q1 Unreal lesson runs across two valid instructional class days: one A day and one B day. `ue-q1-l01` starts on the first valid A/B pair beginning 2026-08-13. `ue-q1-l02` uses the next valid A/B pair, and so on through `ue-q1-l16`.
+
+## Q2 DaVinci Resolve Pairing Rule
+
+The Q2 DaVinci Resolve mini-unit begins on Monday, October 12, 2026, the first instructional weekday after the Q1 grading period ends on Friday, October 9, 2026. That date is an inferred `B` day, so each lesson stores its A-day and B-day dates separately. The nine-lesson sequence runs through Friday, November 6, 2026, skips October 16 and October 30 no-school days, and continues the existing A/B cycle without resetting it.
 
 ## Known Calendar Notes
 

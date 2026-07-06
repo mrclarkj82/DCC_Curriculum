@@ -1,0 +1,79 @@
+{
+  "id": "vp-q2-l09",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 9,
+  "title": "Quiz 2 and Final Export",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "04:53:29",
+    "end": "05:06:57",
+    "url": "",
+    "note": "Uses Quiz 2 as the closing checkpoint, then covers the Deliver page, render settings, single clip export, codec awareness, H.264/H.265/ProRes comparison, file naming, render queue, multiple versions, and final reflection."
+  },
+  "learningTarget": "I can complete a final checkpoint and export a small edited video with clear naming, useful render settings, and a reflection on my post-production workflow.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What needs to be true before a project is ready to export for someone else to watch?"
+  },
+  "vocabulary": [
+    {
+      "term": "Deliver page",
+      "definition": "The Resolve page used to render or export a timeline into a video file."
+    },
+    {
+      "term": "Render",
+      "definition": "To convert the timeline into a finished video file."
+    },
+    {
+      "term": "Codec",
+      "definition": "A method for compressing and storing video or audio data."
+    },
+    {
+      "term": "H.264",
+      "definition": "A common delivery codec that is widely compatible for online video."
+    },
+    {
+      "term": "H.265",
+      "definition": "A newer efficient codec that can make smaller high-quality files but may have compatibility limits."
+    },
+    {
+      "term": "ProRes",
+      "definition": "A high-quality editing and mastering codec that usually creates larger files."
+    },
+    {
+      "term": "Render queue",
+      "definition": "The list of export jobs waiting to render in Resolve."
+    },
+    {
+      "term": "Single clip export",
+      "definition": "Rendering the whole timeline as one video file."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 09 - Quiz 2 and Final Export",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a09",
+    "title": "Final Resolve Mini-Edit Export",
+    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Quiz 2 completion record or teacher checkoff.",
+      "Google Drive or YouTube link to the final exported mini-edit.",
+      "Google Drive link to a screenshot of the Deliver page or render queue.",
+      "Short reflection explaining the most important editing, audio, title, or color decision."
+    ]
+  },
+  "exitTicket": "What export setting or file naming choice do you need to remember for future video projects?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-09"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "vp-q2-l08",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 8,
+  "title": "Color Correction and Shot Matching",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "02:51:04",
+    "end": "03:16:57",
+    "url": "",
+    "note": "Introduces the Color page, color nodes as correction containers, color management, input color space awareness, primaries, lift, gamma, gain, offset, contrast, saturation, temperature, tint, reset habits, and before/after comparison evidence."
+  },
+  "learningTarget": "I can make a basic color correction pass that improves exposure, contrast, white balance, and consistency between shots.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What makes two shots feel like they belong in the same scene?"
+  },
+  "vocabulary": [
+    {
+      "term": "Color page",
+      "definition": "The Resolve page used for color correction and grading."
+    },
+    {
+      "term": "Color management",
+      "definition": "Settings that help convert footage from the camera color space into a useful editing and viewing space."
+    },
+    {
+      "term": "Input color space",
+      "definition": "The camera or recording color profile assigned to footage so Resolve interprets it correctly."
+    },
+    {
+      "term": "Node",
+      "definition": "A container for color corrections that can be enabled, disabled, reset, or organized in order."
+    },
+    {
+      "term": "Lift",
+      "definition": "A primary color wheel control that mostly affects darker parts of the image."
+    },
+    {
+      "term": "Gamma",
+      "definition": "A primary color wheel control that mostly affects midtones."
+    },
+    {
+      "term": "Gain",
+      "definition": "A primary color wheel control that mostly affects brighter parts of the image."
+    },
+    {
+      "term": "Saturation",
+      "definition": "The strength or intensity of color in the image."
+    },
+    {
+      "term": "White balance",
+      "definition": "Adjusting color temperature and tint so neutral areas look natural."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 08 - Color Correction and Shot Matching",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a08",
+    "title": "Color Correction Comparison",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a before screenshot.",
+      "Google Drive link to an after screenshot from the same shot or sequence.",
+      "Short reflection naming at least three color controls tested."
+    ]
+  },
+  "exitTicket": "Which color control changed your image most today, and what visual evidence proves it?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-08"
+  ]
+}

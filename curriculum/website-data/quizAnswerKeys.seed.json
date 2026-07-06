@@ -366,5 +366,173 @@
     "title": "Q3 Quiz 4: Post-Process, Walkthroughs, and Portfolio Submission",
     "questionCount": 0,
     "answers": []
+  },
+  {
+    "id": "vp-q2-quiz-01",
+    "quizId": "vp-q2-quiz-01",
+    "programAreaId": "video-production",
+    "title": "Q2 Quiz 1 Draft: Resolve Setup, Media, Timelines, and Rough Cuts",
+    "questionCount": 15,
+    "answers": [
+      {
+        "questionId": "vp-q2-quiz-01-q01",
+        "correctAnswer": "Creating, opening, backing up, and organizing Resolve projects.",
+        "explanation": "The Project Manager is where Resolve projects are created, opened, exported, and organized."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q02",
+        "correctAnswer": "Media",
+        "explanation": "The Media page is designed for finding, importing, previewing, and organizing clips."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q03",
+        "correctAnswer": "Clips, bins, timelines, and other media that live in the project.",
+        "explanation": "The Media Pool is the project area that contains imported media and project assets."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q04",
+        "correctAnswer": "They organize clips into meaningful project folders.",
+        "explanation": "Bins keep footage grouped so editors can find clips faster."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q05",
+        "correctAnswer": "Matching separate audio and video so sound lines up correctly.",
+        "explanation": "Audio sync aligns separately recorded sound with video, often using waveforms."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q06",
+        "correctAnswer": "A clip before it is edited into the timeline.",
+        "explanation": "The source viewer previews source media before it becomes part of the edit."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q07",
+        "correctAnswer": "The edited sequence at the current playhead position.",
+        "explanation": "The timeline viewer shows what the active edit looks like at the playhead."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q08",
+        "correctAnswer": "The selected start of the usable part of a source clip.",
+        "explanation": "An in point marks where the selected range begins."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q09",
+        "correctAnswer": "The selected end of the usable part of a source clip.",
+        "explanation": "An out point marks where the selected range ends."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q10",
+        "correctAnswer": "An early edit focused on order, timing, and story.",
+        "explanation": "A rough cut gets the story working before polish passes."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q11",
+        "correctAnswer": "Removing or restoring clip edges to control timing.",
+        "explanation": "Trimming adjusts where a clip starts or ends in the edit."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q12",
+        "correctAnswer": "Unwanted gaps after shortening or extending edits.",
+        "explanation": "Ripple edits move timeline material so timing stays connected."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q13",
+        "correctAnswer": "Track",
+        "explanation": "Tracks organize timeline media into video or audio lanes."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q14",
+        "correctAnswer": "Metadata",
+        "explanation": "Metadata helps editors identify and filter clips."
+      },
+      {
+        "questionId": "vp-q2-quiz-01-q15",
+        "correctAnswer": "Organizing footage makes clips easier to find, reduces confusion, and speeds up editing decisions.",
+        "explanation": "A strong answer connects organization to faster, clearer editing."
+      }
+    ]
+  },
+  {
+    "id": "vp-q2-quiz-02",
+    "quizId": "vp-q2-quiz-02",
+    "programAreaId": "video-production",
+    "title": "Q2 Quiz 2 Draft: Audio, Titles, Color, and Final Export",
+    "questionCount": 15,
+    "answers": [
+      {
+        "questionId": "vp-q2-quiz-02-q01",
+        "correctAnswer": "Fairlight",
+        "explanation": "Fairlight is the audio-focused page in Resolve."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q02",
+        "correctAnswer": "Plays that track while temporarily muting others.",
+        "explanation": "Solo is useful for hearing one track clearly while mixing."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q03",
+        "correctAnswer": "Turns that track off during playback.",
+        "explanation": "Mute disables playback from that track until it is turned back on."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q04",
+        "correctAnswer": "To keep dialogue, music, ambience, and effects organized.",
+        "explanation": "Track organization helps editors find and balance layers quickly."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q05",
+        "correctAnswer": "Readable text such as a title card, name label, or lower third.",
+        "explanation": "Titles communicate text information inside the video."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q06",
+        "correctAnswer": "Inspector",
+        "explanation": "The Inspector exposes controls for selected clips, titles, transitions, and effects."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q07",
+        "correctAnswer": "A point in time that stores a value so a property can change over time.",
+        "explanation": "Keyframes make motion or property changes happen over time."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q08",
+        "correctAnswer": "Color correction and grading.",
+        "explanation": "The Color page is where Resolve handles shot color, contrast, exposure, and grading work."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q09",
+        "correctAnswer": "The strength or intensity of colors.",
+        "explanation": "Saturation controls how strong or muted colors appear."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q10",
+        "correctAnswer": "Lift, gamma, and gain.",
+        "explanation": "Lift affects darker tones, gamma affects midtones, and gain affects brighter tones."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q11",
+        "correctAnswer": "Deliver",
+        "explanation": "The Deliver page is used to render the timeline into a finished video file."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q12",
+        "correctAnswer": "A list of export jobs waiting to render.",
+        "explanation": "Resolve adds export jobs to the render queue before rendering."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q13",
+        "correctAnswer": "Codec",
+        "explanation": "A codec controls how video/audio is encoded and compressed."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q14",
+        "correctAnswer": "Ambience",
+        "explanation": "Ambience fills the scene with realistic background sound."
+      },
+      {
+        "questionId": "vp-q2-quiz-02-q15",
+        "correctAnswer": "A final check could include audio clarity, title readability, color consistency, timeline gaps, file name, or export settings.",
+        "explanation": "A strong answer names a real pre-export check that affects viewer experience or file management."
+      }
+    ]
   }
 ]

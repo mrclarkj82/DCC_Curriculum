@@ -25,6 +25,8 @@ const appBlockLessonCalendar = readAppSeedJson('blockLessonCalendar.seed.json');
 const instructionalDays = readCalendarJson('instructional-days.json');
 const q1UnrealCalendarSchedule = readCalendarJson('q1-unreal-lesson-schedule.json');
 const q1UnrealBlockCalendar = readCalendarJson('q1-unreal-block-calendar.json');
+const q2DaVinciCalendarSchedule = readCalendarJson('q2-davinci-resolve-lesson-schedule.json');
+const q2DaVinciBlockCalendar = readCalendarJson('q2-davinci-resolve-block-calendar.json');
 
 const programAreaIds = new Set(programAreas.map((area) => area.id));
 const lessonIds = new Set(lessons.map((lesson) => lesson.id));
@@ -180,11 +182,25 @@ const q1UnrealLessonNumbers = new Set(q1UnrealSchedule.map((item) => item.lesson
 const q1UnrealScheduleByLessonId = new Map(
   q1UnrealSchedule.map((item) => [item.lessonId, item]),
 );
+const q2DaVinciSchedule = lessonSchedule.filter(
+  (item) => item.programAreaId === 'video-production' && item.quarter === 'Q2',
+);
+const q2DaVinciLessonNumbers = new Set(q2DaVinciSchedule.map((item) => item.lessonNumber));
+const q2DaVinciScheduleByLessonId = new Map(
+  q2DaVinciSchedule.map((item) => [item.lessonId, item]),
+);
 
 for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
   assert(
     q1UnrealLessonNumbers.has(lessonNumber),
     `Q1 Unreal lesson schedule is missing lesson ${lessonNumber}`,
+  );
+}
+
+for (let lessonNumber = 1; lessonNumber <= 9; lessonNumber += 1) {
+  assert(
+    q2DaVinciLessonNumbers.has(lessonNumber),
+    `Q2 DaVinci Resolve lesson schedule is missing lesson ${lessonNumber}`,
   );
 }
 
@@ -250,17 +266,22 @@ assertNoWeekendDateList(
   'q1-unreal-lesson-schedule noSchoolDatesDuringSchedule',
   q1UnrealCalendarSchedule.noSchoolDatesDuringSchedule,
 );
+assertNoWeekendDateList(
+  'q2-davinci-resolve-lesson-schedule noSchoolDatesDuringSchedule',
+  q2DaVinciCalendarSchedule.noSchoolDatesDuringSchedule,
+);
 
-const validateBlockLessonCalendar = (label, calendar) => {
+const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId) => {
   assert(calendar.schoolYear, `${label} is missing schoolYear`);
   assert(
     programAreaIds.has(calendar.programAreaId),
     `${label} uses unknown programAreaId ${calendar.programAreaId}`,
   );
-  assert(calendar.quarter === 'Q1', `${label} must describe Q1`);
+  assert(calendar.quarter, `${label} is missing quarter`);
   assert(Array.isArray(calendar.months), `${label} must include months`);
   assert(Array.isArray(calendar.noSchoolDates), `${label} must include noSchoolDates`);
   assertNoWeekendDateList(`${label} noSchoolDates`, calendar.noSchoolDates);
+  const lessonLabelPattern = new RegExp(`^${calendar.quarter} L\\d+$`);
 
   const noSchoolDateSet = new Set(calendar.noSchoolDates.map((day) => day.date));
   const lessonDateCounts = new Map();
@@ -303,8 +324,8 @@ const validateBlockLessonCalendar = (label, calendar) => {
         if (day.status === 'instructional') {
           assert(day.lessonLabel, `${label} ${day.date} instructional cell is missing lessonLabel`);
           assert(
-            /^Q1 L\d+$/.test(day.lessonLabel),
-            `${label} ${day.date} lessonLabel must look like Q1 L1`,
+            lessonLabelPattern.test(day.lessonLabel),
+            `${label} ${day.date} lessonLabel must look like ${calendar.quarter} L1`,
           );
           assert(
             day.heading === day.lessonLabel,
@@ -350,7 +371,7 @@ const validateBlockLessonCalendar = (label, calendar) => {
     }
   }
 
-  for (const [lessonId, scheduleItem] of q1UnrealScheduleByLessonId) {
+  for (const [lessonId, scheduleItem] of expectedScheduleByLessonId) {
     assert(
       lessonDateCounts.get(lessonId) === 2,
       `${label} maps ${lessonId} to ${lessonDateCounts.get(lessonId) ?? 0} class dates, expected 2`,
@@ -362,8 +383,21 @@ const validateBlockLessonCalendar = (label, calendar) => {
   }
 };
 
-validateBlockLessonCalendar('curriculum/calendar/q1-unreal-block-calendar.json', q1UnrealBlockCalendar);
-validateBlockLessonCalendar('curriculum/website-data/blockLessonCalendar.seed.json', blockLessonCalendar);
+validateBlockLessonCalendar(
+  'curriculum/calendar/q1-unreal-block-calendar.json',
+  q1UnrealBlockCalendar,
+  q1UnrealScheduleByLessonId,
+);
+validateBlockLessonCalendar(
+  'curriculum/website-data/blockLessonCalendar.seed.json',
+  blockLessonCalendar,
+  q1UnrealScheduleByLessonId,
+);
+validateBlockLessonCalendar(
+  'curriculum/calendar/q2-davinci-resolve-block-calendar.json',
+  q2DaVinciBlockCalendar,
+  q2DaVinciScheduleByLessonId,
+);
 
 assert(
   isSameJson(q1UnrealBlockCalendar, blockLessonCalendar),
@@ -372,6 +406,35 @@ assert(
 assert(
   isSameJson(blockLessonCalendar, appBlockLessonCalendar),
   'src/data/seed/blockLessonCalendar.seed.json must mirror curriculum/website-data/blockLessonCalendar.seed.json',
+);
+
+const assertCalendarScheduleMirror = (label, calendarLessons, seedItems) => {
+  assert(
+    calendarLessons.length === seedItems.length,
+    `${label} calendar lesson count must match lessonSchedule.seed.json entries`,
+  );
+
+  const seedById = new Map(seedItems.map((item) => [item.id, item]));
+
+  for (const calendarLesson of calendarLessons) {
+    const seedLesson = seedById.get(calendarLesson.id);
+    assert(seedLesson, `${label} is missing seed schedule item ${calendarLesson.id}`);
+    assert(
+      isSameJson(calendarLesson, seedLesson),
+      `${label} schedule item ${calendarLesson.id} must mirror lessonSchedule.seed.json`,
+    );
+  }
+};
+
+assertCalendarScheduleMirror(
+  'q1-unreal-lesson-schedule',
+  q1UnrealCalendarSchedule.lessons,
+  q1UnrealSchedule,
+);
+assertCalendarScheduleMirror(
+  'q2-davinci-resolve-lesson-schedule',
+  q2DaVinciCalendarSchedule.lessons,
+  q2DaVinciSchedule,
 );
 
 for (const quiz of quizzes) {

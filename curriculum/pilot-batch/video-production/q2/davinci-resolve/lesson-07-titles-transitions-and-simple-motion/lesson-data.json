@@ -1,0 +1,74 @@
+{
+  "id": "vp-q2-l07",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 7,
+  "title": "Titles, Transitions, and Simple Motion",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "01:20:08",
+    "end": "01:30:41",
+    "url": "",
+    "note": "Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit."
+  },
+  "learningTarget": "I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "When does a title help a video, and when can it distract from the video?"
+  },
+  "vocabulary": [
+    {
+      "term": "Effects panel",
+      "definition": "The panel that contains transitions, titles, generators, and other edit-page effects."
+    },
+    {
+      "term": "Transition",
+      "definition": "A visual change between two clips, such as a dissolve or wipe."
+    },
+    {
+      "term": "Title",
+      "definition": "Generated text placed over or between video clips."
+    },
+    {
+      "term": "Lower third",
+      "definition": "A title placed in the lower part of the screen, often used for names or labels."
+    },
+    {
+      "term": "Generator",
+      "definition": "A generated visual element such as a color or gradient."
+    },
+    {
+      "term": "Keyframe",
+      "definition": "A point in time that stores a value so an effect or property can change over time."
+    },
+    {
+      "term": "Inspector",
+      "definition": "The panel used to adjust selected titles, clips, transitions, and effects."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 07 - Titles, Transitions, and Simple Motion",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a07",
+    "title": "Title and Transition Polish Pass",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot showing the title or lower third selected in the timeline.",
+      "Google Drive or YouTube link to a short clip preview if teacher requests export.",
+      "Short reflection explaining why the title or transition supports the story."
+    ]
+  },
+  "exitTicket": "What title, transition, or motion choice did you add, and why does it belong in the edit?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-07"
+  ]
+}

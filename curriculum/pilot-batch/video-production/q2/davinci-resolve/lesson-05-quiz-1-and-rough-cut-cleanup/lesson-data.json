@@ -1,0 +1,71 @@
+{
+  "id": "vp-q2-l05",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 5,
+  "title": "Quiz 1 and Rough Cut Cleanup",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "01:07:04",
+    "end": "01:20:08",
+    "url": "",
+    "note": "Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut."
+  },
+  "learningTarget": "I can show what I know from the first Resolve lessons and clean up a rough cut so it is easier to understand.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What is one issue in your rough cut that a viewer would notice immediately?"
+  },
+  "vocabulary": [
+    {
+      "term": "Checkpoint quiz",
+      "definition": "A short assessment used to check core vocabulary and workflow understanding."
+    },
+    {
+      "term": "Audio level",
+      "definition": "The loudness of a clip or track."
+    },
+    {
+      "term": "Fade",
+      "definition": "A gradual change into or out of video or audio."
+    },
+    {
+      "term": "Inspector",
+      "definition": "The panel used to adjust properties of a selected clip, title, effect, or audio item."
+    },
+    {
+      "term": "Linked clips",
+      "definition": "Video and audio that stay selected or moved together unless unlinked."
+    },
+    {
+      "term": "Cleanup pass",
+      "definition": "A focused editing pass that removes obvious problems before adding polish."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 05 - Quiz 1 and Rough Cut Cleanup",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a05",
+    "title": "Rough Cut Cleanup and Quiz 1 Checkpoint",
+    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Quiz 1 completion record or teacher checkoff.",
+      "Google Drive link to a screenshot of the cleaned rough cut timeline.",
+      "Google Drive or YouTube link to the rough cut if teacher requests export.",
+      "Short reflection naming at least three tools or shortcuts used."
+    ]
+  },
+  "exitTicket": "What did you clean up today, and how does the rough cut communicate more clearly now?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-05"
+  ]
+}

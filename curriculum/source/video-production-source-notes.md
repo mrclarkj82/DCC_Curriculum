@@ -11,3 +11,10 @@ Do not invent detailed video production curriculum beyond starter placeholders u
 - Pacing note: this tutorial block should be adapted into roughly four weeks of instruction before later group projects.
 - Status: stored as source material only; not yet converted into student-facing lesson pages, seed data, or website content.
 
+## Generated Q2 DaVinci Resolve Curriculum Batch
+
+- Curriculum folder: `curriculum/pilot-batch/video-production/q2/davinci-resolve/`
+- Calendar files: `curriculum/calendar/q2-davinci-resolve-lesson-schedule.*` and `curriculum/calendar/q2-davinci-resolve-block-calendar.*`
+- Lesson count: 9 A/B lessons from October 12, 2026 through November 6, 2026.
+- Quiz count: 2 draft self-grading quiz records with private answer-key seed data.
+- Status: generated for teacher review before live classroom publication.

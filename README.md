@@ -445,6 +445,14 @@ For the Q1 Unreal schedule:
 - Holidays, breaks, staff development days, structured teacher planning days, and other weekday no-school days in the source calendar are skipped and listed as `noSchoolDates`.
 - Each Q1 Unreal lesson runs for two instructional class days: one A day and one B day.
 
+For the Q2 DaVinci Resolve schedule:
+
+- Scheduling starts on October 12, 2026, the first instructional weekday after the Q1 grading period ends on October 9, 2026.
+- October 12, 2026 is an inferred `B` day, so Q2 DaVinci Resolve lesson records store A-day and B-day dates separately.
+- The four-week mini-unit runs through November 6, 2026.
+- October 16 and October 30 are skipped as weekday no-school dates.
+- The unit contains nine A/B lessons and two draft quiz checkpoints before later group projects.
+
 Generated files:
 
 - `curriculum/calendar/instructional-days.json`
@@ -452,12 +460,27 @@ Generated files:
 - `curriculum/calendar/q1-unreal-block-calendar.md`
 - `curriculum/calendar/q1-unreal-lesson-schedule.json`
 - `curriculum/calendar/q1-unreal-lesson-schedule.md`
+- `curriculum/calendar/q2-davinci-resolve-block-calendar.json`
+- `curriculum/calendar/q2-davinci-resolve-block-calendar.md`
+- `curriculum/calendar/q2-davinci-resolve-lesson-schedule.json`
+- `curriculum/calendar/q2-davinci-resolve-lesson-schedule.md`
 - `curriculum/website-data/lessonSchedule.seed.json`
 - `curriculum/website-data/blockLessonCalendar.seed.json`
 
 The teacher/admin route `/teacher/schedule` shows the Q1 Unreal schedule as a Monday-Friday block calendar. Instructional day cells use short labels such as `Q1 L1` as the main heading, with the long lesson title, lesson ID, program area, A/B day, and calendar notes inside the block. No-school weekday cells show `No School` and the reason from the source calendar.
 
 The schedule data is website-ready and can later drive or suggest class `activeItemId` values by date and cycle day. It does not replace the existing `/today` active item workflow.
+
+## Q2 DaVinci Resolve Curriculum
+
+The Q2 Video Production Studio DaVinci Resolve mini-unit lives in `curriculum/pilot-batch/video-production/q2/davinci-resolve/`.
+
+It includes:
+
+- 9 lesson folders with lesson pages, slide briefs, premium presentation briefs, assignment sheets, bell ringer/exit tickets, teacher notes, and `lesson-data.json`.
+- 2 draft quiz folders with public quiz seed records and private answer-key seed records.
+- A/B lesson schedule records in `curriculum/website-data/lessonSchedule.seed.json`.
+- Link-based evidence expectations only. Raw uploads, in-browser video editing, portfolio workflows, and group project workflows are not part of this batch.
 
 ## Shared Firebase Project And Namespacing
 

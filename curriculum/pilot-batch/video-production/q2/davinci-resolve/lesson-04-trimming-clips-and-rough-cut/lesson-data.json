@@ -1,0 +1,74 @@
+{
+  "id": "vp-q2-l04",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 4,
+  "title": "Trimming Clips and Building a Rough Cut",
+  "status": "draft-pilot",
+  "video": {
+    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "start": "00:35:30",
+    "end": "01:07:04",
+    "url": "",
+    "note": "Covers trimming clip edges, removing excess slate or dead time, choosing story moments, setting in and out points, adding selected ranges to a timeline, insert and append edits, trim mode, ripple trimming, split edits, and keyboard shortcut awareness."
+  },
+  "learningTarget": "I can trim clips, set in and out points, and build a rough cut that communicates a simple story without unnecessary dead space.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What makes a video clip feel too long, even if the shot itself is useful?"
+  },
+  "vocabulary": [
+    {
+      "term": "Trim",
+      "definition": "To shorten or extend a clip by adjusting where it starts or ends."
+    },
+    {
+      "term": "In point",
+      "definition": "The selected start of the part of a source clip that will be used."
+    },
+    {
+      "term": "Out point",
+      "definition": "The selected end of the part of a source clip that will be used."
+    },
+    {
+      "term": "Rough cut",
+      "definition": "An early version of an edit focused on order, timing, and story instead of polish."
+    },
+    {
+      "term": "Insert edit",
+      "definition": "An edit that places a clip and pushes later material down the timeline."
+    },
+    {
+      "term": "Ripple trim",
+      "definition": "A trim that closes or opens timeline space so clips stay connected."
+    },
+    {
+      "term": "Blade or split",
+      "definition": "A cut that divides one clip into separate pieces."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 04 - Trimming Clips and Building a Rough Cut",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-a04",
+    "title": "Rough Cut Story Sequence",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of the rough cut timeline.",
+      "Google Drive or YouTube link to a short exported rough cut if teacher requests export.",
+      "Short reflection naming at least three tools or shortcuts used."
+    ]
+  },
+  "exitTicket": "Name one trimming tool or shortcut you used today and explain what it changed in your rough cut.",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "lesson-04"
+  ]
+}

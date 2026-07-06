@@ -1061,5 +1061,475 @@
     ],
     "extensionChallenge": "Add one temporary marker showing where the castle entrance should be.",
     "reflectionPrompt": "What terrain choice makes the castle feel more intentional?"
+  },
+  {
+    "id": "vp-q2-a01",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l01",
+    "title": "Resolve Project Setup Proof",
+    "skillFocus": [
+      "project setup",
+      "workspace orientation",
+      "page navigation",
+      "project naming",
+      "backup awareness"
+    ],
+    "instructions": "I can create a DaVinci Resolve project, identify the main Resolve pages, and explain why project organization matters before editing begins. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Open DaVinci Resolve and locate the Project Manager.",
+      "Create a new project using the class naming convention.",
+      "Identify the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver pages.",
+      "Write a one-sentence job description for at least four Resolve pages.",
+      "Export or screenshot proof of the project setup according to teacher directions.",
+      "Save and close the project cleanly."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of the named Resolve project or Project Manager entry.",
+      "Google Drive or Docs link showing four Resolve pages with short purpose notes.",
+      "Short reflection explaining why project setup matters before editing."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a one-page Resolve workflow map showing which page you would use for media, editing, color, audio, and export.",
+    "reflectionPrompt": "Which Resolve page seems most important for your first edit, and why?"
+  },
+  {
+    "id": "vp-q2-a02",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l02",
+    "title": "Organized Media Pool",
+    "skillFocus": [
+      "media import",
+      "bin organization",
+      "metadata awareness",
+      "footage preview",
+      "project structure"
+    ],
+    "instructions": "I can import footage into the Media Pool and organize it with bins so my edit can be built from clean source material. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Open the project from Lesson 01.",
+      "Use the Media page or direct import to bring practice footage into the Media Pool.",
+      "Create bins for at least three useful categories, such as A-roll, B-roll, audio, graphics, or selects.",
+      "Move clips into the correct bins without flattening the folder structure.",
+      "Add at least two notes, keywords, or descriptions to help identify clips.",
+      "Capture evidence showing the organized Media Pool."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of the Media Pool with organized bins.",
+      "Google Drive or Docs link showing at least two metadata or note entries.",
+      "Short reflection explaining one organization choice that will speed up editing."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a smart-bin plan for finding video clips, audio-only clips, interviews, or best takes.",
+    "reflectionPrompt": "Which bin or metadata choice will make your edit easier next class?"
+  },
+  {
+    "id": "vp-q2-a03",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l03",
+    "title": "First Timeline Assembly",
+    "skillFocus": [
+      "timeline creation",
+      "clip placement",
+      "audio sync awareness",
+      "viewer identification",
+      "track awareness"
+    ],
+    "instructions": "I can create a simple Resolve timeline, place clips in order, and explain the difference between source clips and the timeline edit. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Open the organized Resolve project.",
+      "Confirm the needed practice clips are in the Media Pool.",
+      "Create a new timeline or let Resolve create one from the first clip.",
+      "Add at least four clips to the timeline in a rough story order.",
+      "Identify the source viewer, timeline viewer, playhead, video track, and audio track.",
+      "If audio sync practice media is available, attempt waveform audio sync or document why it is not needed."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of a timeline with at least four clips.",
+      "Google Drive or Docs link labeling source viewer, timeline viewer, playhead, and tracks.",
+      "Short reflection explaining one timeline decision."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Use waveforms to identify a clap, slate, or loud sound that could help sync audio.",
+    "reflectionPrompt": "What changed when your clips moved from the Media Pool into the timeline?"
+  },
+  {
+    "id": "vp-q2-a04",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l04",
+    "title": "Rough Cut Story Sequence",
+    "skillFocus": [
+      "trimming",
+      "in and out points",
+      "rough cut sequencing",
+      "ripple awareness",
+      "keyboard shortcut practice"
+    ],
+    "instructions": "I can trim clips, set in and out points, and build a rough cut that communicates a simple story without unnecessary dead space. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Open the timeline from Lesson 03.",
+      "Trim the beginning and end of clips to remove dead space, slates, or unusable moments.",
+      "Use in and out points on at least two source clips before adding them to the timeline.",
+      "Build a 30-60 second rough cut with a clear order.",
+      "Remove unintended gaps unless there is an intentional pause.",
+      "Capture evidence of the rough cut timeline and write a short editing rationale."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of the rough cut timeline.",
+      "Google Drive or YouTube link to a short exported rough cut if teacher requests export.",
+      "Short reflection naming at least three tools or shortcuts used."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create two versions of the same rough cut with different pacing: one calm and one energetic.",
+    "reflectionPrompt": "Which trim made the biggest improvement to the story or pacing?"
+  },
+  {
+    "id": "vp-q2-a05",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l05",
+    "title": "Rough Cut Cleanup and Quiz 1 Checkpoint",
+    "skillFocus": [
+      "checkpoint review",
+      "timeline cleanup",
+      "audio level awareness",
+      "inspector basics",
+      "rough cut evidence"
+    ],
+    "instructions": "I can show what I know from the first Resolve lessons and clean up a rough cut so it is easier to understand. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Complete or review Quiz 1 for Lessons 01-04.",
+      "Open the rough cut from Lesson 04.",
+      "Remove accidental gaps, unusable starts, and extra dead time.",
+      "Adjust at least one audio level or fade if the cut needs it.",
+      "Use the inspector to inspect or adjust one selected clip.",
+      "Submit updated rough cut evidence and a short reflection."
+    ],
+    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Quiz 1 completion record or teacher checkoff.",
+      "Google Drive link to a screenshot of the cleaned rough cut timeline.",
+      "Google Drive or YouTube link to the rough cut if teacher requests export.",
+      "Short reflection naming at least three tools or shortcuts used."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add one intentional fade only where it improves clarity, then explain why it belongs there.",
+    "reflectionPrompt": "What is the strongest improvement you made to the rough cut today?"
+  },
+  {
+    "id": "vp-q2-a06",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l06",
+    "title": "Dialogue, Music, and Sound Pass",
+    "skillFocus": [
+      "track organization",
+      "audio balancing",
+      "Fairlight navigation",
+      "sound layering",
+      "basic EQ awareness"
+    ],
+    "instructions": "I can organize audio tracks and make a basic sound pass that balances dialogue, music, ambience, and effects. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Open the rough cut or teacher-provided audio practice timeline.",
+      "Switch to the Fairlight page and identify the timeline, mixer, meters, mute, and solo controls.",
+      "Name or color at least three audio tracks or layers.",
+      "Balance dialogue or main sound so it is easy to hear.",
+      "Add or adjust one ambience, music, or sound effect layer.",
+      "Capture evidence of the Fairlight timeline or mixer and explain the mix choice."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of organized Fairlight tracks or mixer.",
+      "Google Drive or YouTube link to an exported audio-improved rough cut if teacher requests export.",
+      "Short reflection explaining one audio problem and how you fixed it."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Route similar sound effects through a bus and apply a shared volume or EQ adjustment.",
+    "reflectionPrompt": "What audio change made the biggest difference for the audience?"
+  },
+  {
+    "id": "vp-q2-a07",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l07",
+    "title": "Title and Transition Polish Pass",
+    "skillFocus": [
+      "title design",
+      "transition restraint",
+      "inspector controls",
+      "simple keyframes",
+      "readability"
+    ],
+    "instructions": "I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Open the edited sequence from earlier lessons.",
+      "Add one readable title card or lower third using text controls.",
+      "Adjust font size, placement, duration, and contrast so the title is readable.",
+      "Add one transition only if it supports the edit.",
+      "Optional: animate one title or graphic with a simple position keyframe.",
+      "Capture before/after evidence and explain the design choice."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot showing the title or lower third selected in the timeline.",
+      "Google Drive or YouTube link to a short clip preview if teacher requests export.",
+      "Short reflection explaining why the title or transition supports the story."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a simple lower-third style guide with font, size, color, placement, and duration rules.",
+    "reflectionPrompt": "How did you make sure your title was readable and not just decorative?"
+  },
+  {
+    "id": "vp-q2-a08",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l08",
+    "title": "Color Correction Comparison",
+    "skillFocus": [
+      "color page navigation",
+      "primary color wheels",
+      "contrast and saturation",
+      "white balance",
+      "before after evidence"
+    ],
+    "instructions": "I can make a basic color correction pass that improves exposure, contrast, white balance, and consistency between shots. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Open a timeline with at least three shots.",
+      "Switch to the Color page and identify the viewer, node area, and primary color controls.",
+      "Use basic controls such as lift, gamma, gain, offset, contrast, saturation, temperature, or tint.",
+      "Correct at least two shots so they feel more consistent.",
+      "Capture before and after evidence from the same shot or same sequence.",
+      "Write a reflection explaining which correction improved the image most."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a before screenshot.",
+      "Google Drive link to an after screenshot from the same shot or sequence.",
+      "Short reflection naming at least three color controls tested."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a warm version and a cool version of the same shot, then explain which better fits the story.",
+    "reflectionPrompt": "Which color correction helped the sequence feel more professional?"
+  },
+  {
+    "id": "vp-q2-a09",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-l09",
+    "title": "Final Resolve Mini-Edit Export",
+    "skillFocus": [
+      "checkpoint review",
+      "deliver page settings",
+      "file naming",
+      "codec awareness",
+      "final export reflection"
+    ],
+    "instructions": "I can complete a final checkpoint and export a small edited video with clear naming, useful render settings, and a reflection on my post-production workflow. Complete the required Resolve workflow and submit link-based evidence only.",
+    "requiredSteps": [
+      "Complete or review Quiz 2 for Lessons 06-08 and export basics.",
+      "Open the polished mini-edit timeline.",
+      "Check that the edit has a beginning, middle, and end.",
+      "Check basic audio, title readability, and color consistency.",
+      "Use the Deliver page or teacher-approved quick export workflow.",
+      "Name the export using the class naming convention and submit a share link or teacher-approved evidence."
+    ],
+    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Quiz 2 completion record or teacher checkoff.",
+      "Google Drive or YouTube link to the final exported mini-edit.",
+      "Google Drive link to a screenshot of the Deliver page or render queue.",
+      "Short reflection explaining the most important editing, audio, title, or color decision."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Export two versions: one small review copy and one higher-quality archive copy, then compare the purpose of each.",
+    "reflectionPrompt": "Which post-production pass changed your video most: editing, audio, titles, color, or export?"
   }
 ]

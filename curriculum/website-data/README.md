@@ -7,9 +7,9 @@ Seed files should stay valid JSON and should be treated as draft source data unt
 ## Current Seed Files
 
 - `programAreas.seed.json`: major areas of the DCC Creative Studio portal
-- `lessons.seed.json`: starter Unreal Engine lesson records
-- `assignments.seed.json`: starter Unreal Engine assignment records
-- `quizzes.seed.json`: placeholder Unreal quiz records
+- `lessons.seed.json`: starter Unreal Engine and Video Production lesson records
+- `assignments.seed.json`: starter Unreal Engine and Video Production assignment records
+- `quizzes.seed.json`: Unreal and Video Production quiz records
 - `mediaProjects.seed.json`: starter Video Production Studio project placeholders
 - `broadcastUpdates.seed.json`: starter Broadcast Desk Update placeholders
 - `classes.seed.json`: starter class records for Phase 4 auth/class routing
@@ -27,7 +27,7 @@ Run `npm run validate:curriculum` from the repository root to verify:
 - starter class records reference valid program areas and supported active item types
 - class `teacherIds` and `studentIds` fields remain arrays
 - lesson schedule records reference existing lessons and valid instructional days
-- block calendar records use Monday-Friday cells, `Q1 L#` instructional headings, and weekday-only no-school dates
+- block calendar records use Monday-Friday cells, quarter lesson headings such as `Q1 L#` or `Q2 L#`, and weekday-only no-school dates
 
 
 ## Relationship Checks
