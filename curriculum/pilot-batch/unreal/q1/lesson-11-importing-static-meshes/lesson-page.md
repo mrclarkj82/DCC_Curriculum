@@ -33,11 +33,11 @@ What makes an asset ready or not ready to use in a project?
 - Packed mask: A texture that stores multiple masks in separate RGB channels.
 - Scale check: A quick review to see whether an imported mesh is sized correctly in the scene.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 11 - Importing Static Meshes
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1AFLye3sb5EzZ-CvEZBV9-gc92XcIUrFx/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

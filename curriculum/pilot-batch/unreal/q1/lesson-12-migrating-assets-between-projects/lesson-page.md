@@ -33,11 +33,11 @@ Why might copying only one file fail when moving assets between projects?
 - Verification: Checking that migrated assets appear and function correctly in the destination project.
 - Broken reference: A missing connection that can happen when an asset is copied without its dependencies.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 12 - Migrating Assets Between Projects
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1rkXJkv-2a4Xwh3mhoDNEN5zWqfVT_twi/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

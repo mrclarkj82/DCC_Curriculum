@@ -30,6 +30,18 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Lesson 08 slide deck - created
 - [x] Lesson 08 assignment - needs teacher review
 - [x] Quiz 02 Draft - draft / needs teacher review
+- [x] Lesson 09 page - ready for seed import
+- [x] Lesson 09 slide deck - created
+- [x] Lesson 09 assignment - needs teacher review
+- [x] Lesson 10 page - ready for seed import
+- [x] Lesson 10 slide deck - created
+- [x] Lesson 10 assignment - needs teacher review
+- [x] Lesson 11 page - ready for seed import
+- [x] Lesson 11 slide deck - created
+- [x] Lesson 11 assignment - needs teacher review
+- [x] Lesson 12 page - ready for seed import
+- [x] Lesson 12 slide deck - created
+- [x] Lesson 12 assignment - needs teacher review
 
 ## Video Production Studio
 

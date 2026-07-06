@@ -33,11 +33,11 @@ Why might a studio want many variations of one material?
 - Reset to default: Returning an overridden material instance value back to the parent material value.
 - Apply: The material editor action that updates the parent material so new parameters appear in instances.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 09 - Quiz 2 and Material Instances
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1PjnpBmD40XT6MRZIceMQidXOcYN0EWA3/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

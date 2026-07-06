@@ -33,11 +33,11 @@ What kinds of settings would be useful to reuse across many objects?
 - Reusable workflow: A setup that saves time because the same structure can support many assets.
 - Naming convention: A consistent naming pattern such as M_ for materials and MI_ for material instances.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 10 - Master Materials
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/10Bgf3W5KdmpRa99hkYkgGDNtnZxagmx5/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 
