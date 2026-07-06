@@ -393,7 +393,7 @@
   {
     "id": "ue-q1-quiz-03",
     "programAreaId": "unreal-engine",
-    "title": "Q1 Quiz 3: Master Materials, Static Meshes, Migration, and Lumen",
+    "title": "Q1 Quiz 3 Draft: Master Materials, Static Meshes, Migration, and Lumen",
     "quarter": "Q1",
     "lessonIds": [
       "ue-q1-l10",
@@ -401,23 +401,325 @@
       "ue-q1-l12",
       "ue-q1-l13"
     ],
-    "status": "placeholder",
+    "status": "draft",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q1-quiz-03-q01",
+        "type": "multiple-choice",
+        "text": "Why do master materials help a production workflow?",
+        "choices": [
+          "They let creators reuse one parent setup while changing exposed values in instances.",
+          "They delete all material instances from the project.",
+          "They make imported meshes ignore scale.",
+          "They replace the need for lighting."
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l10",
+        "tag": "master-material"
+      },
+      {
+        "id": "ue-q1-quiz-03-q02",
+        "type": "multiple-choice",
+        "text": "What should you check soon after importing a static mesh?",
+        "choices": [
+          "Scale, orientation, materials, and whether the asset appears correctly in the Content Drawer.",
+          "Only the color of the viewport grid.",
+          "Whether every light in the scene is static.",
+          "Whether the mesh has a quiz attached."
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l11",
+        "tag": "static-mesh-import"
+      },
+      {
+        "id": "ue-q1-quiz-03-q03",
+        "type": "multiple-choice",
+        "text": "Why is Unreal migration safer than copying a single visible asset file?",
+        "choices": [
+          "Migration includes dependencies such as materials and textures.",
+          "Migration automatically creates a final screenshot.",
+          "Migration makes every asset a Blueprint.",
+          "Migration removes the need for a Content folder."
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l12",
+        "tag": "migration"
+      },
+      {
+        "id": "ue-q1-quiz-03-q04",
+        "type": "multiple-choice",
+        "text": "What does global illumination describe in the Lumen lesson?",
+        "choices": [
+          "Light bouncing around a scene and filling areas indirectly.",
+          "The keyboard shortcut for scaling objects.",
+          "The list of folders in a project.",
+          "A texture import setting for normal maps."
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l13",
+        "tag": "global-illumination"
+      },
+      {
+        "id": "ue-q1-quiz-03-q05",
+        "type": "multiple-choice",
+        "text": "Which evidence best proves a Lumen lighting improvement?",
+        "choices": [
+          "Before and after screenshots from the same camera angle showing changed bounce light, shadow fill, or realism.",
+          "A screenshot of the login page.",
+          "A reflection that says \"it looks better\" with no visual evidence.",
+          "A screenshot with every light hidden."
+        ],
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l13",
+        "tag": "lighting-evidence"
+      },
+      {
+        "id": "ue-q1-quiz-03-q06",
+        "type": "vocabulary",
+        "text": "Identify the term: the original reusable material that controls the structure and available settings for its instances.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l10",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-03-q07",
+        "type": "vocabulary",
+        "text": "Identify the term: a related asset that another asset needs in order to work correctly.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l12",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-03-q08",
+        "type": "vocabulary",
+        "text": "Identify the term: an Unreal asset representing imported 3D geometry that can be placed in a level.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l11",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-03-q09",
+        "type": "vocabulary",
+        "text": "Identify the term: lighting that updates while lights or objects move instead of relying only on baked light maps.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l13",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-03-q10",
+        "type": "scenario",
+        "text": "A student creates a material instance but no useful controls appear in the instance. What should they check?",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l10",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-03-q11",
+        "type": "scenario",
+        "text": "A migrated object appears in the destination project but its material is missing. What likely went wrong?",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l12",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-03-q12",
+        "type": "scenario",
+        "text": "A lighting screenshot looks brighter after an exposure change, but the shadows still look flat. What should the student explain or test next?",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l13",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-03-q13",
+        "type": "process-order",
+        "text": "Put this migration workflow in order: choose asset/folder, choose Migrate, review asset report, select destination Content folder, verify in destination project.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l12",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q1-quiz-03-q14",
+        "type": "process-order",
+        "text": "Put this lighting comparison workflow in order: frame a camera angle, capture before screenshot, adjust lighting/Lumen-related setting, capture after screenshot, write reflection.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l13",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q1-quiz-03-q15",
+        "type": "short-response",
+        "text": "In 2-3 sentences, explain why reusable material workflows and asset migration both help a studio work faster.",
+        "difficulty": "hard",
+        "lessonId": "ue-q1-l12",
+        "tag": "short-response"
+      }
+    ]
   },
   {
     "id": "ue-q1-quiz-04",
     "programAreaId": "unreal-engine",
-    "title": "Q1 Quiz 4: Lighting, Landscapes, Foliage, and Mini-Worlds",
+    "title": "Q1 Quiz 4 Draft: Lighting, Landscapes, Foliage, and Mini-Worlds",
     "quarter": "Q1",
     "lessonIds": [
       "ue-q1-l14",
       "ue-q1-l15",
       "ue-q1-l16"
     ],
-    "status": "placeholder",
+    "status": "draft",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q1-quiz-04-q01",
+        "type": "multiple-choice",
+        "text": "Which light type emits light in all directions from one point?",
+        "choices": [
+          "Point light",
+          "Spotlight",
+          "Rectangle light",
+          "Landscape light"
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l14",
+        "tag": "light-types"
+      },
+      {
+        "id": "ue-q1-quiz-04-q02",
+        "type": "multiple-choice",
+        "text": "Which light type is most like sunlight coming from far away?",
+        "choices": [
+          "Directional light",
+          "Point light",
+          "Trigger volume",
+          "Foliage light"
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l14",
+        "tag": "directional-light"
+      },
+      {
+        "id": "ue-q1-quiz-04-q03",
+        "type": "multiple-choice",
+        "text": "What is the main purpose of the Smooth tool in Landscape mode?",
+        "choices": [
+          "To soften harsh terrain bumps or sharp artifacts.",
+          "To delete all foliage from the map.",
+          "To turn every light into a skylight.",
+          "To export the project to Google Drive."
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l15",
+        "tag": "smooth-tool"
+      },
+      {
+        "id": "ue-q1-quiz-04-q04",
+        "type": "multiple-choice",
+        "text": "Why should foliage density be adjusted instead of always left high?",
+        "choices": [
+          "Too much foliage can hide the path, hurt readability, or affect performance.",
+          "Density only changes the color of the sky.",
+          "High density automatically creates Blueprints.",
+          "Low density deletes the landscape."
+        ],
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l16",
+        "tag": "foliage-density"
+      },
+      {
+        "id": "ue-q1-quiz-04-q05",
+        "type": "multiple-choice",
+        "text": "What does a Blueprint preview help students understand in the mini-world lesson?",
+        "choices": [
+          "How a scene could become interactive or playable.",
+          "How to replace Google Drive submissions.",
+          "How to make every mesh static.",
+          "How to remove all lighting from a level."
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l16",
+        "tag": "blueprint-preview"
+      },
+      {
+        "id": "ue-q1-quiz-04-q06",
+        "type": "vocabulary",
+        "text": "Identify the term: a light that shines in one direction inside a cone shape.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l14",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-04-q07",
+        "type": "vocabulary",
+        "text": "Identify the term: the outdoor ground surface that can be sculpted into hills, valleys, and platforms.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l15",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-04-q08",
+        "type": "vocabulary",
+        "text": "Identify the term: the route a player is encouraged to follow through a space.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l16",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-04-q09",
+        "type": "vocabulary",
+        "text": "Identify the term: a visual scripting asset used to create behavior or interaction in Unreal.",
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l16",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q1-quiz-04-q10",
+        "type": "scenario",
+        "text": "A student lights a scene with three lights, but the viewer does not know where to look. What should they adjust?",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l14",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-04-q11",
+        "type": "scenario",
+        "text": "A landscape has sharp spikes and rough artifacts after sculpting. What tool or workflow should the student use?",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l15",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-04-q12",
+        "type": "scenario",
+        "text": "Trees painted with Foliage mode are leaning sideways on a slope. What setting should the student check?",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l16",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q1-quiz-04-q13",
+        "type": "process-order",
+        "text": "Put this landscape workflow in order: create landscape, sculpt broad forms, flatten a usable area, smooth harsh edges, capture evidence.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l15",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q1-quiz-04-q14",
+        "type": "process-order",
+        "text": "Put this mini-world workflow in order: create terrain, add main path/focal point, paint foliage, adjust density/scale, play or camera test, submit evidence.",
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l16",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q1-quiz-04-q15",
+        "type": "short-response",
+        "text": "In 2-3 sentences, explain how lighting, terrain, and foliage work together to make a mini-world feel intentional.",
+        "difficulty": "hard",
+        "lessonId": "ue-q1-l16",
+        "tag": "short-response"
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-01",

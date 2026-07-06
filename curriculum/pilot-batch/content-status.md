@@ -42,6 +42,36 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Lesson 12 page - ready for seed import
 - [x] Lesson 12 slide deck - created
 - [x] Lesson 12 assignment - needs teacher review
+- [x] Lesson 13 page - ready for seed import
+- [x] Lesson 13 slide brief - ready for ChatGPT Pro
+- [x] Lesson 13 presentation brief - ready for ChatGPT Pro
+- [x] Lesson 13 assignment - needs teacher review
+- [x] Lesson 13 bell ringer / exit ticket - needs teacher review
+- [x] Lesson 13 teacher notes - needs teacher review
+- [x] Lesson 13 lesson-data.json - ready for seed import
+- [x] Lesson 14 page - ready for seed import
+- [x] Lesson 14 slide brief - ready for ChatGPT Pro
+- [x] Lesson 14 presentation brief - ready for ChatGPT Pro
+- [x] Lesson 14 assignment - needs teacher review
+- [x] Lesson 14 bell ringer / exit ticket - needs teacher review
+- [x] Lesson 14 teacher notes - needs teacher review
+- [x] Lesson 14 lesson-data.json - ready for seed import
+- [x] Lesson 15 page - ready for seed import
+- [x] Lesson 15 slide brief - ready for ChatGPT Pro
+- [x] Lesson 15 presentation brief - ready for ChatGPT Pro
+- [x] Lesson 15 assignment - needs teacher review
+- [x] Lesson 15 bell ringer / exit ticket - needs teacher review
+- [x] Lesson 15 teacher notes - needs teacher review
+- [x] Lesson 15 lesson-data.json - ready for seed import
+- [x] Lesson 16 page - ready for seed import
+- [x] Lesson 16 slide brief - ready for ChatGPT Pro
+- [x] Lesson 16 presentation brief - ready for ChatGPT Pro
+- [x] Lesson 16 assignment - needs teacher review
+- [x] Lesson 16 bell ringer / exit ticket - needs teacher review
+- [x] Lesson 16 teacher notes - needs teacher review
+- [x] Lesson 16 lesson-data.json - ready for seed import
+- [x] Quiz 03 Draft - draft / needs teacher review
+- [x] Quiz 04 Draft - draft / needs teacher review
 
 ## Video Production Studio
 

@@ -1,0 +1,89 @@
+{
+  "id": "ue-q1-l14",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 14,
+  "title": "Light Types and Scene Lighting",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "01:32:47",
+    "end": "01:41:19",
+    "url": "",
+    "note": "Covers point lights, intensity, source radius, temperature, light color, indirect lighting intensity, spotlights, inner and outer cone angles, rectangle lights, directional lights as sunlight, source angle, skylights, sky atmosphere, and Lumen settings in a post-process volume."
+  },
+  "learningTarget": "I can use different Unreal light types to create a clear mood and visual focus in a scene.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Where do you see different types of light in real life, and how do they change the mood of a space?"
+  },
+  "vocabulary": [
+    {
+      "term": "Point light",
+      "definition": "A light that emits from one point in all directions, like a bulb."
+    },
+    {
+      "term": "Spotlight",
+      "definition": "A light that shines in one direction inside a cone shape."
+    },
+    {
+      "term": "Rectangle light",
+      "definition": "A light that emits from a rectangular surface in one direction."
+    },
+    {
+      "term": "Directional light",
+      "definition": "A light used for sun-like light from a far distance."
+    },
+    {
+      "term": "Skylight",
+      "definition": "A light that captures the sky or distant scene and applies it to the world."
+    },
+    {
+      "term": "Intensity",
+      "definition": "The strength or power of a light."
+    },
+    {
+      "term": "Color temperature",
+      "definition": "A warm or cool color quality of light."
+    },
+    {
+      "term": "Shadow",
+      "definition": "A darker area created when light is blocked."
+    },
+    {
+      "term": "Mood",
+      "definition": "The feeling created by lighting, color, contrast, and focus."
+    },
+    {
+      "term": "Focal point",
+      "definition": "The part of the scene the viewer should notice first."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 14 - Light Types and Scene Lighting",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a14",
+    "title": "Three-Light Mood Study",
+    "submissionType": "google-drive-screenshot-links-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of setup using point light.",
+      "Google Drive link to a screenshot of setup using spotlight or rectangle light.",
+      "Google Drive link to a screenshot of setup using directional light, skylight, or environment lighting.",
+      "Short reflection explaining which setup created the strongest mood and why."
+    ]
+  },
+  "exitTicket": "Which light type helped your scene most today, and what did it change visually?",
+  "tags": [
+    "lesson-14",
+    "unreal-engine",
+    "q1",
+    "unreal-foundations",
+    "point-light-setup",
+    "spotlight-or-rectangle-light-control",
+    "directional-light-and-skylight-awareness"
+  ]
+}

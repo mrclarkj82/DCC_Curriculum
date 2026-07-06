@@ -940,35 +940,86 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 13,
     "title": "Quiz 3 and Lumen Lighting",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "01:26:33",
+      "end": "01:32:47",
+      "url": "",
+      "note": "Covers Lumen as Unreal Engine 5 dynamic global illumination, light bounce, color bleed, static baked light maps, broken static lighting when objects move, movable lights, Lumen on/off comparison, source radius, softer shadows, and emissive material lighting. Includes Quiz 3 as the opening checkpoint."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can explain the basic purpose of Lumen and use lighting evidence to show how global illumination changes an Unreal scene.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "What makes lighting in a 3D scene feel realistic instead of flat?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Lumen",
+        "definition": "Unreal Engine 5 system for dynamic global illumination and reflections."
+      },
+      {
+        "term": "Global illumination",
+        "definition": "Light that bounces around a scene instead of stopping after one hit."
+      },
+      {
+        "term": "Reflection",
+        "definition": "Light or scene information that appears on a shiny surface."
+      },
+      {
+        "term": "Indirect light",
+        "definition": "Light that reaches an area after bouncing from another surface."
+      },
+      {
+        "term": "Real-time lighting",
+        "definition": "Lighting that updates while objects or lights move."
+      },
+      {
+        "term": "Exposure",
+        "definition": "Camera brightness control that changes how light or dark a scene appears."
+      },
+      {
+        "term": "Shadow",
+        "definition": "A darker area created when light is blocked."
+      },
+      {
+        "term": "Lighting evidence",
+        "definition": "Screenshots or notes that prove how lighting changed the scene."
+      },
+      {
+        "term": "Light map",
+        "definition": "A baked texture that stores static lighting information."
+      },
+      {
+        "term": "Movable light",
+        "definition": "A light that can update dynamically instead of relying on baked lighting."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 13 - Quiz 3 and Lumen Lighting",
+      "title": "Lesson 13 - Quiz 3 and Lumen Lighting",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a13",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Lumen Lighting Comparison",
+      "submissionType": "quiz-record-google-drive-links-and-reflection",
+      "evidenceRequired": [
+        "Quiz 3 completion record or teacher checkoff.",
+        "Google Drive link to a screenshot showing a lighting setup before adjustment.",
+        "Google Drive link to a screenshot showing improved Lumen or global illumination result.",
+        "Short reflection explaining how lighting changed the scene."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "What is one thing Lumen helps simulate, and how can you prove it with evidence?",
     "tags": [
-      "placeholder",
+      "lesson-13",
       "unreal-engine",
-      "q1"
+      "q1",
+      "unreal-foundations",
+      "quiz-3-opening-checkpoint",
+      "lumen-purpose",
+      "global-illumination-evidence"
     ]
   },
   {
@@ -978,35 +1029,86 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 14,
     "title": "Light Types and Scene Lighting",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "01:32:47",
+      "end": "01:41:19",
+      "url": "",
+      "note": "Covers point lights, intensity, source radius, temperature, light color, indirect lighting intensity, spotlights, inner and outer cone angles, rectangle lights, directional lights as sunlight, source angle, skylights, sky atmosphere, and Lumen settings in a post-process volume."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can use different Unreal light types to create a clear mood and visual focus in a scene.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "Where do you see different types of light in real life, and how do they change the mood of a space?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Point light",
+        "definition": "A light that emits from one point in all directions, like a bulb."
+      },
+      {
+        "term": "Spotlight",
+        "definition": "A light that shines in one direction inside a cone shape."
+      },
+      {
+        "term": "Rectangle light",
+        "definition": "A light that emits from a rectangular surface in one direction."
+      },
+      {
+        "term": "Directional light",
+        "definition": "A light used for sun-like light from a far distance."
+      },
+      {
+        "term": "Skylight",
+        "definition": "A light that captures the sky or distant scene and applies it to the world."
+      },
+      {
+        "term": "Intensity",
+        "definition": "The strength or power of a light."
+      },
+      {
+        "term": "Color temperature",
+        "definition": "A warm or cool color quality of light."
+      },
+      {
+        "term": "Shadow",
+        "definition": "A darker area created when light is blocked."
+      },
+      {
+        "term": "Mood",
+        "definition": "The feeling created by lighting, color, contrast, and focus."
+      },
+      {
+        "term": "Focal point",
+        "definition": "The part of the scene the viewer should notice first."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 14 - Light Types and Scene Lighting",
+      "title": "Lesson 14 - Light Types and Scene Lighting",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a14",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Three-Light Mood Study",
+      "submissionType": "google-drive-screenshot-links-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot of setup using point light.",
+        "Google Drive link to a screenshot of setup using spotlight or rectangle light.",
+        "Google Drive link to a screenshot of setup using directional light, skylight, or environment lighting.",
+        "Short reflection explaining which setup created the strongest mood and why."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "Which light type helped your scene most today, and what did it change visually?",
     "tags": [
-      "placeholder",
+      "lesson-14",
       "unreal-engine",
-      "q1"
+      "q1",
+      "unreal-foundations",
+      "point-light-setup",
+      "spotlight-or-rectangle-light-control",
+      "directional-light-and-skylight-awareness"
     ]
   },
   {
@@ -1016,35 +1118,86 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 15,
     "title": "Landscapes",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "01:56:25",
+      "end": "02:03:19",
+      "url": "",
+      "note": "Covers creating a new map for landscapes, entering Landscape mode, creating a landscape, sculpting terrain, raising and lowering with mouse/Shift, brush size, falloff, smooth brush, and flatten brush for terraces or playable areas."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can create, sculpt, and shape a basic Unreal landscape with intentional terrain forms.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "What makes outdoor terrain look natural instead of flat or artificial?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Landscape",
+        "definition": "A terrain surface used to build outdoor ground in Unreal."
+      },
+      {
+        "term": "Terrain",
+        "definition": "The shape and surface of outdoor ground such as hills, valleys, and cliffs."
+      },
+      {
+        "term": "Sculpt",
+        "definition": "A landscape tool action that raises or lowers terrain."
+      },
+      {
+        "term": "Smooth",
+        "definition": "A tool that softens sharp or bumpy terrain changes."
+      },
+      {
+        "term": "Flatten",
+        "definition": "A tool that creates a more level area from a chosen height."
+      },
+      {
+        "term": "Erosion",
+        "definition": "A natural wearing-down effect or terrain idea used to make landforms feel less artificial."
+      },
+      {
+        "term": "Elevation",
+        "definition": "The height of terrain compared with nearby areas."
+      },
+      {
+        "term": "Brush size",
+        "definition": "How wide the landscape tool affects the terrain."
+      },
+      {
+        "term": "Brush strength",
+        "definition": "How strongly the tool changes terrain."
+      },
+      {
+        "term": "Scale",
+        "definition": "How large the terrain feels compared with the player or objects."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 15 - Landscapes",
+      "title": "Lesson 15 - Landscapes",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a15",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Sculpted Terrain Study",
+      "submissionType": "google-drive-screenshot-links-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot of Landscape mode or landscape setup.",
+        "Google Drive link to a wide shot of sculpted terrain.",
+        "Google Drive link to a close-up showing terrain shaping or refinement.",
+        "Short reflection naming the landscape tools used."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "Which landscape tool changed your terrain most clearly, and how?",
     "tags": [
-      "placeholder",
+      "lesson-15",
       "unreal-engine",
-      "q1"
+      "q1",
+      "unreal-foundations",
+      "landscape-creation",
+      "terrain-sculpting",
+      "smooth-and-flatten-tools"
     ]
   },
   {
@@ -1054,35 +1207,86 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 16,
     "title": "Foliage, Mini-World, and Blueprint Preview",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "04:19:04",
+      "end": "04:33:12",
+      "url": "",
+      "note": "Primary range covers adding trees to Foliage mode, density adjustment, Align to Normal, mobility, scale checks with the mannequin, paint and single instance placement, moving selected foliage, LOD/performance awareness, and play testing the world. Blueprint preview connection references 02:56:37-03:20:24, and final playable-space detailing references 04:57:25-04:59:31."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can add environmental detail to a small Unreal scene and explain how foliage, props, and simple interaction prepare a scene for a playable mini-world.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "What details make an environment feel alive or intentionally designed?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Foliage",
+        "definition": "Trees, grass, plants, and similar environment detail placed across a scene."
+      },
+      {
+        "term": "Prop",
+        "definition": "A placed object that adds detail, function, or story to a scene."
+      },
+      {
+        "term": "Environment pass",
+        "definition": "A focused improvement pass that adds believable detail to an environment."
+      },
+      {
+        "term": "Player path",
+        "definition": "The route a player is encouraged to follow through a space."
+      },
+      {
+        "term": "Focal point",
+        "definition": "The area the viewer or player should notice first."
+      },
+      {
+        "term": "Density",
+        "definition": "How many foliage instances appear in an area."
+      },
+      {
+        "term": "Variation",
+        "definition": "Differences in scale, rotation, color, or placement that make repeated assets feel natural."
+      },
+      {
+        "term": "Blueprint",
+        "definition": "A visual scripting asset used to create behavior or interaction in Unreal."
+      },
+      {
+        "term": "Trigger",
+        "definition": "A volume or event that starts an action when something overlaps or activates it."
+      },
+      {
+        "term": "Playable space",
+        "definition": "An area designed to be explored or used by a player."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 16 - Foliage, Mini-World, and Blueprint Preview",
+      "title": "Lesson 16 - Foliage, Mini-World, and Blueprint Preview",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a16",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Mini-World Environment Pass",
+      "submissionType": "google-drive-screenshot-links-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a wide screenshot of mini-world environment.",
+        "Google Drive link to a close-up screenshot showing foliage or prop detail.",
+        "Google Drive link to a screenshot or written description of simple interaction or Blueprint preview.",
+        "Short reflection explaining how the scene became more believable or playable."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "What one detail made your mini-world feel more believable or playable?",
     "tags": [
-      "placeholder",
+      "lesson-16",
       "unreal-engine",
-      "q1"
+      "q1",
+      "unreal-foundations",
+      "foliage-mode-setup",
+      "density-and-scale-control",
+      "mini-world-composition"
     ]
   },
   {

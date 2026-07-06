@@ -1,0 +1,89 @@
+{
+  "id": "ue-q1-l15",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 15,
+  "title": "Landscapes",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "01:56:25",
+    "end": "02:03:19",
+    "url": "",
+    "note": "Covers creating a new map for landscapes, entering Landscape mode, creating a landscape, sculpting terrain, raising and lowering with mouse/Shift, brush size, falloff, smooth brush, and flatten brush for terraces or playable areas."
+  },
+  "learningTarget": "I can create, sculpt, and shape a basic Unreal landscape with intentional terrain forms.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What makes outdoor terrain look natural instead of flat or artificial?"
+  },
+  "vocabulary": [
+    {
+      "term": "Landscape",
+      "definition": "A terrain surface used to build outdoor ground in Unreal."
+    },
+    {
+      "term": "Terrain",
+      "definition": "The shape and surface of outdoor ground such as hills, valleys, and cliffs."
+    },
+    {
+      "term": "Sculpt",
+      "definition": "A landscape tool action that raises or lowers terrain."
+    },
+    {
+      "term": "Smooth",
+      "definition": "A tool that softens sharp or bumpy terrain changes."
+    },
+    {
+      "term": "Flatten",
+      "definition": "A tool that creates a more level area from a chosen height."
+    },
+    {
+      "term": "Erosion",
+      "definition": "A natural wearing-down effect or terrain idea used to make landforms feel less artificial."
+    },
+    {
+      "term": "Elevation",
+      "definition": "The height of terrain compared with nearby areas."
+    },
+    {
+      "term": "Brush size",
+      "definition": "How wide the landscape tool affects the terrain."
+    },
+    {
+      "term": "Brush strength",
+      "definition": "How strongly the tool changes terrain."
+    },
+    {
+      "term": "Scale",
+      "definition": "How large the terrain feels compared with the player or objects."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 15 - Landscapes",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a15",
+    "title": "Sculpted Terrain Study",
+    "submissionType": "google-drive-screenshot-links-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of Landscape mode or landscape setup.",
+      "Google Drive link to a wide shot of sculpted terrain.",
+      "Google Drive link to a close-up showing terrain shaping or refinement.",
+      "Short reflection naming the landscape tools used."
+    ]
+  },
+  "exitTicket": "Which landscape tool changed your terrain most clearly, and how?",
+  "tags": [
+    "lesson-15",
+    "unreal-engine",
+    "q1",
+    "unreal-foundations",
+    "landscape-creation",
+    "terrain-sculpting",
+    "smooth-and-flatten-tools"
+  ]
+}

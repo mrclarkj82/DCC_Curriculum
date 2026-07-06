@@ -655,6 +655,226 @@
     "reflectionPrompt": "Explain why Unreal migrates dependencies with an asset and why the destination Content folder matters."
   },
   {
+    "id": "ue-q1-a13",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l13",
+    "title": "Lumen Lighting Comparison",
+    "skillFocus": [
+      "Quiz 3 opening checkpoint",
+      "Lumen purpose",
+      "global illumination evidence",
+      "before and after lighting comparison",
+      "lighting reflection language"
+    ],
+    "instructions": "Complete or review Quiz 3, then create or use a simple test scene to compare lighting behavior with clear evidence screenshots.",
+    "requiredSteps": [
+      "Complete or review Quiz 3 using the teacher-approved workflow.",
+      "Open a simple lighting test scene, migrated lighting example, or teacher-provided scene.",
+      "Capture a before screenshot where lighting looks flat, too dark, or not yet improved.",
+      "Identify where Lumen or global illumination settings affect the scene.",
+      "Adjust the lighting setup, movable light, source radius, exposure, or Lumen-related setting as directed.",
+      "Capture an improved screenshot showing clearer bounce light, softer shadow, or more believable lighting.",
+      "Upload evidence screenshots to Google Drive and paste share links into DCC Creative Studio.",
+      "Write a short reflection explaining how lighting changed the scene."
+    ],
+    "submissionType": "quiz-record-google-drive-links-and-reflection",
+    "evidenceRequired": [
+      "Quiz 3 completion record or teacher checkoff.",
+      "Google Drive link to a screenshot showing a lighting setup before adjustment.",
+      "Google Drive link to a screenshot showing improved Lumen or global illumination result.",
+      "Short reflection explaining how lighting changed the scene."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a three-image lighting comparison: no Lumen or weak bounce light, improved Lumen/global illumination, and a dramatic mood version.",
+    "reflectionPrompt": "Explain how Lumen or global illumination changed the mood, realism, or readability of your scene."
+  },
+  {
+    "id": "ue-q1-a14",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l14",
+    "title": "Three-Light Mood Study",
+    "skillFocus": [
+      "point light setup",
+      "spotlight or rectangle light control",
+      "directional light and skylight awareness",
+      "mood and focal point",
+      "lighting evidence screenshots"
+    ],
+    "instructions": "Build or open a small scene and create three different lighting setups using at least three light types.",
+    "requiredSteps": [
+      "Open a small scene with at least one object, wall, prop, or focal area.",
+      "Create a first lighting setup using a point light.",
+      "Create a second lighting setup using a spotlight or rectangle light.",
+      "Create a third lighting setup using a directional light, skylight, or environment lighting.",
+      "Adjust intensity, color temperature, color, angle, or shadow softness intentionally.",
+      "Capture one screenshot for each lighting setup.",
+      "Upload screenshots to Google Drive and paste share links into DCC Creative Studio.",
+      "Write a reflection explaining which setup created the strongest mood and why."
+    ],
+    "submissionType": "google-drive-screenshot-links-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of setup using point light.",
+      "Google Drive link to a screenshot of setup using spotlight or rectangle light.",
+      "Google Drive link to a screenshot of setup using directional light, skylight, or environment lighting.",
+      "Short reflection explaining which setup created the strongest mood and why."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a fourth lighting setup inspired by a real place such as a stage, hallway, sunset, studio desk, or game checkpoint.",
+    "reflectionPrompt": "Which light type made the biggest difference in mood, and which setting caused that change?"
+  },
+  {
+    "id": "ue-q1-a15",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l15",
+    "title": "Sculpted Terrain Study",
+    "skillFocus": [
+      "landscape creation",
+      "terrain sculpting",
+      "smooth and flatten tools",
+      "elevation zones",
+      "scale-aware screenshot evidence"
+    ],
+    "instructions": "Create a landscape, sculpt at least three elevation zones, smooth or refine terrain, and frame a useful screenshot of the result.",
+    "requiredSteps": [
+      "Create or open a clean Unreal map for the terrain study.",
+      "Enter Landscape mode and create a basic landscape.",
+      "Sculpt at least three elevation zones such as low area, hill, ridge, valley, or platform.",
+      "Use Smooth to reduce harsh artifacts or unrealistic bumps.",
+      "Use Flatten to create one intentional playable or focal area.",
+      "Check the scene from a wide camera angle and a closer terrain angle.",
+      "Upload evidence screenshots to Google Drive and paste links into DCC Creative Studio.",
+      "Write a reflection naming the landscape tools you used."
+    ],
+    "submissionType": "google-drive-screenshot-links-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot of Landscape mode or landscape setup.",
+      "Google Drive link to a wide shot of sculpted terrain.",
+      "Google Drive link to a close-up showing terrain shaping or refinement.",
+      "Short reflection naming the landscape tools used."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add a clear path, overlook, valley, or buildable platform that could support a future mini-world.",
+    "reflectionPrompt": "Name at least three landscape tools or settings you used and explain what each one changed."
+  },
+  {
+    "id": "ue-q1-a16",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l16",
+    "title": "Mini-World Environment Pass",
+    "skillFocus": [
+      "foliage mode setup",
+      "density and scale control",
+      "mini-world composition",
+      "player path or focal area",
+      "Blueprint preview concept"
+    ],
+    "instructions": "Add foliage or environmental props to a landscape or scene, create a clear player path or focal area, and include a simple Blueprint preview or interaction concept if appropriate.",
+    "requiredSteps": [
+      "Open the landscape or small scene from the previous lesson.",
+      "Add foliage or environmental props using Foliage mode, placed static meshes, or teacher-approved assets.",
+      "Adjust density, scale, or placement so the scene is detailed but readable.",
+      "Create or clarify a player path, focal area, or mini-world destination.",
+      "Include a simple Blueprint preview screenshot or written interaction concept if your setup supports it.",
+      "Play test or camera test the mini-world from a student/player viewpoint.",
+      "Upload evidence screenshots to Google Drive and paste links into DCC Creative Studio.",
+      "Write a reflection explaining how the scene became more believable or playable."
+    ],
+    "submissionType": "google-drive-screenshot-links-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a wide screenshot of mini-world environment.",
+      "Google Drive link to a close-up screenshot showing foliage or prop detail.",
+      "Google Drive link to a screenshot or written description of simple interaction or Blueprint preview.",
+      "Short reflection explaining how the scene became more believable or playable."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add one optional interaction concept, such as a trigger area, checkpoint, collectable, or simple win condition, and describe how it would work.",
+    "reflectionPrompt": "Explain how foliage, props, path design, or Blueprint preview changed your scene from a terrain study into a mini-world."
+  },
+  {
     "id": "ue-q3-a01",
     "programAreaId": "unreal-engine",
     "lessonId": "ue-q3-l01",

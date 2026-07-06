@@ -171,17 +171,169 @@
     "id": "ue-q1-quiz-03",
     "quizId": "ue-q1-quiz-03",
     "programAreaId": "unreal-engine",
-    "title": "Q1 Quiz 3: Master Materials, Static Meshes, Migration, and Lumen",
-    "questionCount": 0,
-    "answers": []
+    "title": "Q1 Quiz 3 Draft: Master Materials, Static Meshes, Migration, and Lumen",
+    "questionCount": 15,
+    "answers": [
+      {
+        "questionId": "ue-q1-quiz-03-q01",
+        "correctAnswer": "They let creators reuse one parent setup while changing exposed values in instances.",
+        "explanation": "A master material provides the reusable structure, while instances expose controlled settings for variation."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q02",
+        "correctAnswer": "Scale, orientation, materials, and whether the asset appears correctly in the Content Drawer.",
+        "explanation": "Imported meshes should be verified for scale, placement, and missing material issues before evidence is submitted."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q03",
+        "correctAnswer": "Migration includes dependencies such as materials and textures.",
+        "explanation": "Migration uses the asset report to copy related dependencies that the visible asset needs."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q04",
+        "correctAnswer": "Light bouncing around a scene and filling areas indirectly.",
+        "explanation": "The transcript describes global illumination as light bounce that can also carry surface color into nearby areas."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q05",
+        "correctAnswer": "Before and after screenshots from the same camera angle showing changed bounce light, shadow fill, or realism.",
+        "explanation": "Lighting comparison evidence is strongest when the camera angle stays controlled and the visual change is clear."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q06",
+        "correctAnswer": "Master material or parent material",
+        "explanation": "A master or parent material holds the reusable graph that instances inherit from."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q07",
+        "correctAnswer": "Dependency",
+        "explanation": "Dependencies can include materials, textures, meshes, or other linked project assets."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q08",
+        "correctAnswer": "Static mesh",
+        "explanation": "A static mesh is a 3D model asset used for props, environment pieces, and other non-skeletal objects."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q09",
+        "correctAnswer": "Real-time lighting or dynamic lighting",
+        "explanation": "The Lumen section focuses on dynamic global illumination that can respond as scene elements move."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q10",
+        "correctAnswer": "They should check that values in the parent or master material were converted to named parameters and that Apply and Save were used.",
+        "explanation": "Material instances can only edit exposed parameters from the parent setup."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q11",
+        "correctAnswer": "The student may have copied only the visible mesh or selected the wrong destination instead of using Migrate with dependencies into the Content folder.",
+        "explanation": "Missing materials often mean dependencies were not copied correctly or the destination workflow was wrong."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q12",
+        "correctAnswer": "They should explain that exposure changes brightness, then test bounce light, indirect light, movable light behavior, or Lumen/global illumination evidence.",
+        "explanation": "Exposure and global illumination are related visually but are not the same concept."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q13",
+        "correctAnswer": "1. Choose the asset or folder. 2. Choose Migrate. 3. Review the asset report. 4. Select the destination project Content folder. 5. Verify the migrated assets in the destination project.",
+        "explanation": "Students should use the migration workflow and verify the destination result before submitting evidence."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q14",
+        "correctAnswer": "1. Frame a camera angle. 2. Capture the before screenshot. 3. Adjust the lighting or Lumen-related setting. 4. Capture the after screenshot from the same angle. 5. Write a reflection explaining the visual change.",
+        "explanation": "A controlled comparison makes lighting evidence clearer and easier to grade."
+      },
+      {
+        "questionId": "ue-q1-quiz-03-q15",
+        "correctAnswer": "A strong answer explains that reusable materials let artists create controlled variations without rebuilding graphs, while migration brings needed dependencies together so assets work in another project. Both reduce repeated work and prevent broken results.",
+        "explanation": "This checks cross-lesson understanding of reuse, dependencies, and efficient production workflow."
+      }
+    ]
   },
   {
     "id": "ue-q1-quiz-04",
     "quizId": "ue-q1-quiz-04",
     "programAreaId": "unreal-engine",
-    "title": "Q1 Quiz 4: Lighting, Landscapes, Foliage, and Mini-Worlds",
-    "questionCount": 0,
-    "answers": []
+    "title": "Q1 Quiz 4 Draft: Lighting, Landscapes, Foliage, and Mini-Worlds",
+    "questionCount": 15,
+    "answers": [
+      {
+        "questionId": "ue-q1-quiz-04-q01",
+        "correctAnswer": "Point light",
+        "explanation": "A point light acts like a bulb and emits light outward in all directions."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q02",
+        "correctAnswer": "Directional light",
+        "explanation": "Directional lights are used for sun-like light from an extremely far distance."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q03",
+        "correctAnswer": "To soften harsh terrain bumps or sharp artifacts.",
+        "explanation": "Smooth reduces harsh changes in the landscape heightmap."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q04",
+        "correctAnswer": "Too much foliage can hide the path, hurt readability, or affect performance.",
+        "explanation": "The transcript shows density being reduced repeatedly so trees and foliage do not overwhelm the scene."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q05",
+        "correctAnswer": "How a scene could become interactive or playable.",
+        "explanation": "The Blueprint preview connects the environment to simple player interaction without requiring a full game system."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q06",
+        "correctAnswer": "Spotlight",
+        "explanation": "Spotlights use cone angles to control the beam and falloff."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q07",
+        "correctAnswer": "Landscape",
+        "explanation": "The Landscape system is used to create and edit terrain."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q08",
+        "correctAnswer": "Player path",
+        "explanation": "A player path helps make a mini-world readable and playable."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q09",
+        "correctAnswer": "Blueprint",
+        "explanation": "Blueprints use nodes and visual scripting to create behavior without writing traditional code."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q10",
+        "correctAnswer": "They should adjust lighting direction, intensity, color, shadow, or placement to create a clear focal point.",
+        "explanation": "Lighting should guide attention, not just make the whole scene equally bright."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q11",
+        "correctAnswer": "They should use Smooth to soften harsh shapes and adjust brush size or strength for more controlled sculpting.",
+        "explanation": "The transcript shows Smooth as the fix for harsh landscapes after aggressive sculpting."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q12",
+        "correctAnswer": "They should check Align to Normal and turn it off if trees should grow straight up.",
+        "explanation": "The transcript specifically notes unchecking Align to Normal so trees do not tilt with the landscape slope."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q13",
+        "correctAnswer": "1. Create the landscape. 2. Sculpt broad forms. 3. Flatten a usable area. 4. Smooth harsh edges. 5. Capture evidence screenshots.",
+        "explanation": "Landscape work should move from broad terrain creation into refinement and evidence capture."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q14",
+        "correctAnswer": "1. Create terrain. 2. Add the main path or focal point. 3. Paint foliage. 4. Adjust density and scale. 5. Play or camera test. 6. Submit evidence.",
+        "explanation": "The mini-world process should keep readability and player experience ahead of random decoration."
+      },
+      {
+        "questionId": "ue-q1-quiz-04-q15",
+        "correctAnswer": "A strong answer explains that lighting creates mood and focus, terrain creates readable forms or paths, and foliage/props add believable detail without hiding the design. It should mention evidence such as screenshots, path readability, or focal point.",
+        "explanation": "This checks synthesis across scene lighting, landscape shaping, and mini-world finishing."
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-01",

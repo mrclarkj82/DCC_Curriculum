@@ -1,0 +1,89 @@
+{
+  "id": "ue-q1-l13",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 13,
+  "title": "Quiz 3 and Lumen Lighting",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "01:26:33",
+    "end": "01:32:47",
+    "url": "",
+    "note": "Covers Lumen as Unreal Engine 5 dynamic global illumination, light bounce, color bleed, static baked light maps, broken static lighting when objects move, movable lights, Lumen on/off comparison, source radius, softer shadows, and emissive material lighting. Includes Quiz 3 as the opening checkpoint."
+  },
+  "learningTarget": "I can explain the basic purpose of Lumen and use lighting evidence to show how global illumination changes an Unreal scene.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What makes lighting in a 3D scene feel realistic instead of flat?"
+  },
+  "vocabulary": [
+    {
+      "term": "Lumen",
+      "definition": "Unreal Engine 5 system for dynamic global illumination and reflections."
+    },
+    {
+      "term": "Global illumination",
+      "definition": "Light that bounces around a scene instead of stopping after one hit."
+    },
+    {
+      "term": "Reflection",
+      "definition": "Light or scene information that appears on a shiny surface."
+    },
+    {
+      "term": "Indirect light",
+      "definition": "Light that reaches an area after bouncing from another surface."
+    },
+    {
+      "term": "Real-time lighting",
+      "definition": "Lighting that updates while objects or lights move."
+    },
+    {
+      "term": "Exposure",
+      "definition": "Camera brightness control that changes how light or dark a scene appears."
+    },
+    {
+      "term": "Shadow",
+      "definition": "A darker area created when light is blocked."
+    },
+    {
+      "term": "Lighting evidence",
+      "definition": "Screenshots or notes that prove how lighting changed the scene."
+    },
+    {
+      "term": "Light map",
+      "definition": "A baked texture that stores static lighting information."
+    },
+    {
+      "term": "Movable light",
+      "definition": "A light that can update dynamically instead of relying on baked lighting."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 13 - Quiz 3 and Lumen Lighting",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a13",
+    "title": "Lumen Lighting Comparison",
+    "submissionType": "quiz-record-google-drive-links-and-reflection",
+    "evidenceRequired": [
+      "Quiz 3 completion record or teacher checkoff.",
+      "Google Drive link to a screenshot showing a lighting setup before adjustment.",
+      "Google Drive link to a screenshot showing improved Lumen or global illumination result.",
+      "Short reflection explaining how lighting changed the scene."
+    ]
+  },
+  "exitTicket": "What is one thing Lumen helps simulate, and how can you prove it with evidence?",
+  "tags": [
+    "lesson-13",
+    "unreal-engine",
+    "q1",
+    "unreal-foundations",
+    "quiz-3-opening-checkpoint",
+    "lumen-purpose",
+    "global-illumination-evidence"
+  ]
+}
