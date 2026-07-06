@@ -424,6 +424,237 @@
     "reflectionPrompt": "Explain what the normal map adds to the material and why the non-color map settings matter."
   },
   {
+    "id": "ue-q1-a09",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l09",
+    "title": "Material Instance Variation Set",
+    "skillFocus": [
+      "Material instances inherit from parent materials",
+      "Parameters expose safe values for editing",
+      "Scalar and vector parameters control different kinds of material data",
+      "Material instances update faster than rebuilding separate materials",
+      "Apply and Save make new parent-material parameters available to instances"
+    ],
+    "instructions": "Students complete Quiz 2, convert useful material values into parameters, create material instances, and produce at least two controlled material variations in the level.",
+    "requiredSteps": [
+      "Complete Quiz 2 or record teacher checkoff.",
+      "Open the parent material from the previous texture-map workflow.",
+      "Convert a scalar value, such as size or roughness strength, into a parameter.",
+      "Convert a color value into a vector parameter.",
+      "Press Apply and Save so the instance can access the new parameters.",
+      "Create a material instance using the MI_ naming convention.",
+      "Apply the material instance to an object or floor surface.",
+      "Enable and adjust at least two exposed parameters.",
+      "Create a second variation with a different readable look.",
+      "Capture evidence showing the parent material and the two variations."
+    ],
+    "submissionType": "quiz-record-screenshots-and-reflection",
+    "evidenceRequired": [
+      "Quiz 2 completion record or teacher checkoff.",
+      "Screenshot of the parent material showing at least two exposed parameters.",
+      "Screenshot of at least two material instance variations applied in the level.",
+      "Short reflection explaining how a material instance is different from a separate new material."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create three named variations that could belong to one environment set, such as clean, worn, and stylized.",
+    "reflectionPrompt": "Explain how a material instance changes workflow speed compared with creating a brand-new material every time."
+  },
+  {
+    "id": "ue-q1-a10",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l10",
+    "title": "Starter Master Material Variations",
+    "skillFocus": [
+      "Master materials organize reusable material logic",
+      "Neutral default values keep instances predictable",
+      "Texture parameters allow instances to swap maps",
+      "Static switch parameters can enable optional features",
+      "Clear naming keeps materials and material instances readable"
+    ],
+    "instructions": "Students build or inspect a starter master material, identify reusable parameters, and create controlled material variations from that shared parent workflow.",
+    "requiredSteps": [
+      "Open or create the starter master material.",
+      "Check that default values are neutral and predictable.",
+      "Expose texture inputs for Base Color, Roughness, and Normal where appropriate.",
+      "Add or inspect a Metallic texture option.",
+      "Use or identify a Static Switch Parameter for optional metallic behavior.",
+      "Press Apply and Save.",
+      "Create at least two material instances from the master material.",
+      "Change parameters or texture slots to create controlled variations.",
+      "Apply the variations to objects in the level.",
+      "Capture screenshots that show both the setup and the visible results."
+    ],
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the master material or teacher-provided master material parameters.",
+      "Screenshot of a material instance with texture or value parameters enabled.",
+      "Screenshot of at least two applied material variations in the level.",
+      "Short reflection explaining one benefit of a master material."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Design a naming system for a small material library and label which instances would be used for floor, wall, prop, or metal objects.",
+    "reflectionPrompt": "Explain one way a master material saves time or reduces mistakes in a larger Unreal project."
+  },
+  {
+    "id": "ue-q1-a11",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l11",
+    "title": "Static Mesh Import and Material Setup",
+    "skillFocus": [
+      "Static meshes are Unreal 3D object assets",
+      "Import options affect how an FBX enters the project",
+      "Folder organization keeps asset sets readable",
+      "Static meshes need materials to look finished",
+      "Default material slots make repeated placements easier"
+    ],
+    "instructions": "Students import a static mesh, organize its folder, apply or assign a material instance, place the mesh in the scene, and verify that it behaves like a usable Unreal asset.",
+    "requiredSteps": [
+      "Create a folder for the imported asset set.",
+      "Import the FBX static mesh into the correct folder.",
+      "Review import options and reset to default if needed.",
+      "Choose not to auto-create materials if the class workflow uses a master material.",
+      "Place the imported mesh in the scene.",
+      "Import or locate the needed texture maps.",
+      "Create a material instance from the master material.",
+      "Assign the correct texture maps to the material instance.",
+      "Apply the material instance to the mesh.",
+      "Open the Static Mesh Editor and set the default material slot if appropriate.",
+      "Capture screenshots of the imported asset and scene result."
+    ],
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the imported static mesh in the Content Drawer.",
+      "Screenshot of the mesh placed in the scene.",
+      "Screenshot of the material instance or default material slot used on the mesh.",
+      "Short reflection explaining what to check when an imported mesh looks wrong."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a small prop arrangement using at least three duplicates of the imported mesh with different transforms.",
+    "reflectionPrompt": "Explain what you should check if an imported mesh is the wrong size, has the wrong material, or appears unfinished."
+  },
+  {
+    "id": "ue-q1-a12",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q1-l12",
+    "title": "Asset Migration Verification",
+    "skillFocus": [
+      "Migration preserves dependencies better than manual file copying",
+      "The destination must be the Unreal project Content folder",
+      "The Asset Report shows what Unreal plans to copy",
+      "Verification prevents hidden missing-reference problems",
+      "Project folders and .uproject files help locate the correct destination"
+    ],
+    "instructions": "Students migrate a small asset set from a source Unreal project into the class project, verify that the assets arrived in the destination Content folder, and prove one migrated asset works.",
+    "requiredSteps": [
+      "Open the source project that contains the asset set.",
+      "Locate the asset or folder to migrate.",
+      "Right-click and choose Migrate.",
+      "Review the Asset Report and confirm the listed dependencies.",
+      "Find the destination project Content folder.",
+      "Select the destination Content folder, not the project root.",
+      "Confirm the migration.",
+      "Open the destination project.",
+      "Locate the migrated folder or assets in the Content Drawer.",
+      "Place or open at least one migrated asset to verify it works.",
+      "Capture screenshots of the source, migration step, destination, and verification."
+    ],
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the source project asset or folder selected for migration.",
+      "Screenshot of the migration asset list or confirmation step.",
+      "Screenshot of the migrated folder or assets in the destination project.",
+      "Screenshot of at least one migrated object placed or opened successfully.",
+      "Short reflection explaining why dependencies matter."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+      },
+      {
+        "score": 3,
+        "description": "Complete and meets the stated requirements."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete or missing required evidence."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, unclear, or not functional."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a small before-and-after note showing what would likely break if only the visible mesh file were copied without dependencies.",
+    "reflectionPrompt": "Explain why Unreal migrates dependencies with an asset and why the destination Content folder matters."
+  },
+  {
     "id": "ue-q3-a01",
     "programAreaId": "unreal-engine",
     "lessonId": "ue-q3-l01",

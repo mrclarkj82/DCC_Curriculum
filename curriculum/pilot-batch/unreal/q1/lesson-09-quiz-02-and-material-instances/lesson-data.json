@@ -1,0 +1,87 @@
+{
+  "id": "ue-q1-l09",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 9,
+  "title": "Quiz 2 and Material Instances",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "01:03:02",
+    "end": "01:09:01",
+    "url": "",
+    "note": "Covers creating material instances from parent materials, exposing scalar/vector parameters, Apply/Save behavior, real-time material instance adjustments, normal flatness, roughness strength, color tint, resetting defaults, and efficient material variation. Includes Quiz 2 as the opening checkpoint."
+  },
+  "learningTarget": "I can explain core material concepts and create an editable material instance.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Why might a studio want many variations of one material?"
+  },
+  "vocabulary": [
+    {
+      "term": "Material instance",
+      "definition": "A child version of a material that can expose editable settings without rebuilding the whole material graph."
+    },
+    {
+      "term": "Parent material",
+      "definition": "The original material that controls the structure and available parameters for its instances."
+    },
+    {
+      "term": "Parameter",
+      "definition": "A material value exposed so it can be edited from a material instance."
+    },
+    {
+      "term": "Scalar parameter",
+      "definition": "A single-number parameter, often used for values such as size, roughness strength, or normal flatness."
+    },
+    {
+      "term": "Vector parameter",
+      "definition": "A multi-value parameter often used for color tint or RGB values."
+    },
+    {
+      "term": "Texture parameter",
+      "definition": "A texture slot exposed so a material instance can swap a texture map."
+    },
+    {
+      "term": "Override",
+      "definition": "An enabled material instance value that replaces the parent material default."
+    },
+    {
+      "term": "Real-time update",
+      "definition": "A change that appears immediately in the viewport without recompiling the full material."
+    },
+    {
+      "term": "Reset to default",
+      "definition": "Returning an overridden material instance value back to the parent material value."
+    },
+    {
+      "term": "Apply",
+      "definition": "The material editor action that updates the parent material so new parameters appear in instances."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 09 - Quiz 2 and Material Instances",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a09",
+    "title": "Material Instance Variation Set",
+    "submissionType": "quiz-record-screenshots-and-reflection",
+    "evidenceRequired": [
+      "Quiz 2 completion record or teacher checkoff.",
+      "Screenshot of the parent material showing at least two exposed parameters.",
+      "Screenshot of at least two material instance variations applied in the level.",
+      "Short reflection explaining how a material instance is different from a separate new material."
+    ]
+  },
+  "exitTicket": "How is a material instance different from a separate new material?",
+  "tags": [
+    "quiz-2",
+    "material-instances",
+    "parameters",
+    "parent-material",
+    "variations"
+  ]
+}

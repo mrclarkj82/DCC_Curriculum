@@ -1,0 +1,87 @@
+{
+  "id": "ue-q1-l11",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 11,
+  "title": "Importing Static Meshes",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "01:14:47",
+    "end": "01:23:23",
+    "url": "",
+    "note": "Covers static meshes as 3D objects, FBX import workflow, folder organization, import options, importing textures manually, checking sRGB/compression settings, creating a material instance from the master material, assigning a default material slot in the Static Mesh Editor, and introducing packed mask channel use."
+  },
+  "learningTarget": "I can import a static mesh and place it correctly in an Unreal scene.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What makes an asset ready or not ready to use in a project?"
+  },
+  "vocabulary": [
+    {
+      "term": "Static mesh",
+      "definition": "A 3D object asset made of vertices and faces that can be placed in an Unreal level."
+    },
+    {
+      "term": "FBX",
+      "definition": "A common 3D model file format used to move static meshes between tools and Unreal."
+    },
+    {
+      "term": "Import options",
+      "definition": "Settings Unreal shows when bringing a file such as an FBX into the project."
+    },
+    {
+      "term": "Content Drawer",
+      "definition": "The panel where imported assets, folders, materials, textures, and meshes are organized."
+    },
+    {
+      "term": "Static Mesh Editor",
+      "definition": "The editor used to inspect a static mesh and set options such as material slots."
+    },
+    {
+      "term": "Material slot",
+      "definition": "A place on a mesh where a material can be assigned."
+    },
+    {
+      "term": "Default material",
+      "definition": "The material assigned to the mesh asset so new placed copies use that material automatically."
+    },
+    {
+      "term": "Texture set",
+      "definition": "A group of related texture maps used together on one material or asset."
+    },
+    {
+      "term": "Packed mask",
+      "definition": "A texture that stores multiple masks in separate RGB channels."
+    },
+    {
+      "term": "Scale check",
+      "definition": "A quick review to see whether an imported mesh is sized correctly in the scene."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 11 - Importing Static Meshes",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a11",
+    "title": "Static Mesh Import and Material Setup",
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the imported static mesh in the Content Drawer.",
+      "Screenshot of the mesh placed in the scene.",
+      "Screenshot of the material instance or default material slot used on the mesh.",
+      "Short reflection explaining what to check when an imported mesh looks wrong."
+    ]
+  },
+  "exitTicket": "What should you check if an imported mesh looks too large or too small?",
+  "tags": [
+    "static-meshes",
+    "fbx",
+    "import-options",
+    "material-slots",
+    "asset-organization"
+  ]
+}

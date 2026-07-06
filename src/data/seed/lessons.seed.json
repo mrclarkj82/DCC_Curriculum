@@ -267,194 +267,6 @@
     ]
   },
   {
-    "id": "ue-q3-l01",
-    "programAreaId": "unreal-engine",
-    "quarter": "Q3",
-    "unit": "Castle Environment Production",
-    "lessonNumber": 1,
-    "title": "Unreal Reboot and Production Expectations",
-    "status": "draft",
-    "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
-      "start": "Review",
-      "end": "Review",
-      "url": ""
-    },
-    "learningTarget": "I can reconnect with Unreal basics and explain the expectations for a production-style environment project.",
-    "bellRinger": {
-      "type": "short-response",
-      "prompt": "What makes an environment feel like a finished world instead of a practice scene?"
-    },
-    "vocabulary": [
-      {
-        "term": "Production Workflow",
-        "definition": "An organized process for planning, building, reviewing, and finishing a creative project."
-      }
-    ],
-    "slides": {
-      "title": "Q3 Lesson 01 - Unreal Reboot and Production Expectations",
-      "url": "",
-      "status": "not-created"
-    },
-    "assignment": {
-      "id": "ue-q3-a01",
-      "title": "Q3 Production Project Setup",
-      "submissionType": "screenshot-and-text",
-      "evidenceRequired": [
-        "Screenshot of the Q3 project setup",
-        "Written production goal for the castle environment"
-      ]
-    },
-    "exitTicket": "What is one production habit you need to maintain this quarter?",
-    "tags": [
-      "q3",
-      "production",
-      "project-setup"
-    ]
-  },
-  {
-    "id": "ue-q3-l02",
-    "programAreaId": "unreal-engine",
-    "quarter": "Q3",
-    "unit": "Castle Environment Production",
-    "lessonNumber": 2,
-    "title": "Environment Planning",
-    "status": "draft",
-    "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
-      "start": "Planning",
-      "end": "Planning",
-      "url": ""
-    },
-    "learningTarget": "I can plan a fantasy/castle environment using references, constraints, and a clear visual goal.",
-    "bellRinger": {
-      "type": "short-response",
-      "prompt": "What details help an audience understand where a scene takes place?"
-    },
-    "vocabulary": [
-      {
-        "term": "Reference Board",
-        "definition": "A collection of images and notes used to guide the look and direction of a project."
-      }
-    ],
-    "slides": {
-      "title": "Q3 Lesson 02 - Environment Planning",
-      "url": "",
-      "status": "not-created"
-    },
-    "assignment": {
-      "id": "ue-q3-a02",
-      "title": "Castle Environment Plan",
-      "submissionType": "planning-document",
-      "evidenceRequired": [
-        "Reference board or planning document",
-        "Simple layout sketch or written scene plan"
-      ]
-    },
-    "exitTicket": "What is your main focal point for the castle environment?",
-    "tags": [
-      "planning",
-      "reference",
-      "castle-environment"
-    ]
-  },
-  {
-    "id": "ue-q3-l03",
-    "programAreaId": "unreal-engine",
-    "quarter": "Q3",
-    "unit": "Castle Environment Production",
-    "lessonNumber": 3,
-    "title": "Third-Person Project Setup",
-    "status": "draft",
-    "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
-    },
-    "learningTarget": "I can set up a third-person Unreal project for environment walkthrough testing.",
-    "bellRinger": {
-      "type": "short-response",
-      "prompt": "Why is it useful to test an environment from a player's point of view?"
-    },
-    "vocabulary": [
-      {
-        "term": "Third-Person Template",
-        "definition": "An Unreal project template that includes a controllable character and camera setup."
-      }
-    ],
-    "slides": {
-      "title": "Q3 Lesson 03 - Third-Person Project Setup",
-      "url": "",
-      "status": "not-created"
-    },
-    "assignment": {
-      "id": "ue-q3-a03",
-      "title": "Third-Person Walkthrough Setup",
-      "submissionType": "screenshot",
-      "evidenceRequired": [
-        "Screenshot of the playable character in the project",
-        "Short note explaining why player scale matters"
-      ]
-    },
-    "exitTicket": "How does player scale affect environment design?",
-    "tags": [
-      "third-person",
-      "walkthrough",
-      "project-setup"
-    ]
-  },
-  {
-    "id": "ue-q3-l04",
-    "programAreaId": "unreal-engine",
-    "quarter": "Q3",
-    "unit": "Castle Environment Production",
-    "lessonNumber": 4,
-    "title": "Landscape Blockout",
-    "status": "draft",
-    "video": {
-      "source": "Unreal Engine 5 Beginner Tutorial",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
-    },
-    "learningTarget": "I can block out terrain forms that support a castle environment layout.",
-    "bellRinger": {
-      "type": "short-response",
-      "prompt": "What terrain features could make a castle feel protected, isolated, or dramatic?"
-    },
-    "vocabulary": [
-      {
-        "term": "Blockout",
-        "definition": "An early rough version of a scene used to test layout, scale, and composition."
-      },
-      {
-        "term": "Landscape",
-        "definition": "A terrain system used to create large ground surfaces in Unreal."
-      }
-    ],
-    "slides": {
-      "title": "Q3 Lesson 04 - Landscape Blockout",
-      "url": "",
-      "status": "not-created"
-    },
-    "assignment": {
-      "id": "ue-q3-a04",
-      "title": "Castle Landscape Blockout",
-      "submissionType": "screenshot-set",
-      "evidenceRequired": [
-        "Top-down screenshot of the landscape blockout",
-        "Player-view screenshot showing the route or focal point"
-      ]
-    },
-    "exitTicket": "What part of your blockout guides the viewer toward the castle?",
-    "tags": [
-      "landscape",
-      "blockout",
-      "castle-environment"
-    ]
-  },
-  {
     "id": "ue-q1-l05",
     "programAreaId": "unreal-engine",
     "quarter": "Q1",
@@ -779,35 +591,84 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 9,
     "title": "Quiz 2 and Material Instances",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "01:03:02",
+      "end": "01:09:01",
+      "url": "",
+      "note": "Covers creating material instances from parent materials, exposing scalar/vector parameters, Apply/Save behavior, real-time material instance adjustments, normal flatness, roughness strength, color tint, resetting defaults, and efficient material variation. Includes Quiz 2 as the opening checkpoint."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can explain core material concepts and create an editable material instance.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "Why might a studio want many variations of one material?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Material instance",
+        "definition": "A child version of a material that can expose editable settings without rebuilding the whole material graph."
+      },
+      {
+        "term": "Parent material",
+        "definition": "The original material that controls the structure and available parameters for its instances."
+      },
+      {
+        "term": "Parameter",
+        "definition": "A material value exposed so it can be edited from a material instance."
+      },
+      {
+        "term": "Scalar parameter",
+        "definition": "A single-number parameter, often used for values such as size, roughness strength, or normal flatness."
+      },
+      {
+        "term": "Vector parameter",
+        "definition": "A multi-value parameter often used for color tint or RGB values."
+      },
+      {
+        "term": "Texture parameter",
+        "definition": "A texture slot exposed so a material instance can swap a texture map."
+      },
+      {
+        "term": "Override",
+        "definition": "An enabled material instance value that replaces the parent material default."
+      },
+      {
+        "term": "Real-time update",
+        "definition": "A change that appears immediately in the viewport without recompiling the full material."
+      },
+      {
+        "term": "Reset to default",
+        "definition": "Returning an overridden material instance value back to the parent material value."
+      },
+      {
+        "term": "Apply",
+        "definition": "The material editor action that updates the parent material so new parameters appear in instances."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 09 - Quiz 2 and Material Instances",
+      "title": "Lesson 09 - Quiz 2 and Material Instances",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a09",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Material Instance Variation Set",
+      "submissionType": "quiz-record-screenshots-and-reflection",
+      "evidenceRequired": [
+        "Quiz 2 completion record or teacher checkoff.",
+        "Screenshot of the parent material showing at least two exposed parameters.",
+        "Screenshot of at least two material instance variations applied in the level.",
+        "Short reflection explaining how a material instance is different from a separate new material."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "How is a material instance different from a separate new material?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "quiz-2",
+      "material-instances",
+      "parameters",
+      "parent-material",
+      "variations"
     ]
   },
   {
@@ -817,35 +678,84 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 10,
     "title": "Master Materials",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "01:09:01",
+      "end": "01:14:43",
+      "url": "",
+      "note": "Covers the master material concept, neutral default values, exposing texture parameters, swapping Base Color/Roughness/Normal textures in instances, adding a Metallic map, using a Static Switch Parameter for metallic behavior, and building a reusable material workflow."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can describe why master materials help organize reusable material workflows.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "What kinds of settings would be useful to reuse across many objects?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Master material",
+        "definition": "A reusable parent material designed to drive many material instances."
+      },
+      {
+        "term": "Material instance",
+        "definition": "A child material variation that uses exposed parameters from a parent or master material."
+      },
+      {
+        "term": "Default value",
+        "definition": "The value a parameter uses before an instance overrides it."
+      },
+      {
+        "term": "Texture parameter",
+        "definition": "A texture input exposed so instances can swap maps without editing the parent graph."
+      },
+      {
+        "term": "Static switch parameter",
+        "definition": "A parameter that turns a material branch on or off, such as using a metallic map only when needed."
+      },
+      {
+        "term": "Metallic map",
+        "definition": "A grayscale or mask texture that controls which parts of a material behave like metal."
+      },
+      {
+        "term": "Mask",
+        "definition": "A non-color texture that stores control data for a material."
+      },
+      {
+        "term": "Packed mask",
+        "definition": "One texture that stores multiple masks in separate red, green, and blue channels."
+      },
+      {
+        "term": "Reusable workflow",
+        "definition": "A setup that saves time because the same structure can support many assets."
+      },
+      {
+        "term": "Naming convention",
+        "definition": "A consistent naming pattern such as M_ for materials and MI_ for material instances."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 10 - Master Materials",
+      "title": "Lesson 10 - Master Materials",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a10",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Starter Master Material Variations",
+      "submissionType": "screenshot-set-and-reflection",
+      "evidenceRequired": [
+        "Screenshot of the master material or teacher-provided master material parameters.",
+        "Screenshot of a material instance with texture or value parameters enabled.",
+        "Screenshot of at least two applied material variations in the level.",
+        "Short reflection explaining one benefit of a master material."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "What is one benefit of using a master material?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "master-materials",
+      "parameters",
+      "static-switch",
+      "texture-parameters",
+      "material-library"
     ]
   },
   {
@@ -855,35 +765,84 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 11,
     "title": "Importing Static Meshes",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "01:14:47",
+      "end": "01:23:23",
+      "url": "",
+      "note": "Covers static meshes as 3D objects, FBX import workflow, folder organization, import options, importing textures manually, checking sRGB/compression settings, creating a material instance from the master material, assigning a default material slot in the Static Mesh Editor, and introducing packed mask channel use."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can import a static mesh and place it correctly in an Unreal scene.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "What makes an asset ready or not ready to use in a project?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Static mesh",
+        "definition": "A 3D object asset made of vertices and faces that can be placed in an Unreal level."
+      },
+      {
+        "term": "FBX",
+        "definition": "A common 3D model file format used to move static meshes between tools and Unreal."
+      },
+      {
+        "term": "Import options",
+        "definition": "Settings Unreal shows when bringing a file such as an FBX into the project."
+      },
+      {
+        "term": "Content Drawer",
+        "definition": "The panel where imported assets, folders, materials, textures, and meshes are organized."
+      },
+      {
+        "term": "Static Mesh Editor",
+        "definition": "The editor used to inspect a static mesh and set options such as material slots."
+      },
+      {
+        "term": "Material slot",
+        "definition": "A place on a mesh where a material can be assigned."
+      },
+      {
+        "term": "Default material",
+        "definition": "The material assigned to the mesh asset so new placed copies use that material automatically."
+      },
+      {
+        "term": "Texture set",
+        "definition": "A group of related texture maps used together on one material or asset."
+      },
+      {
+        "term": "Packed mask",
+        "definition": "A texture that stores multiple masks in separate RGB channels."
+      },
+      {
+        "term": "Scale check",
+        "definition": "A quick review to see whether an imported mesh is sized correctly in the scene."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 11 - Importing Static Meshes",
+      "title": "Lesson 11 - Importing Static Meshes",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a11",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Static Mesh Import and Material Setup",
+      "submissionType": "screenshot-set-and-reflection",
+      "evidenceRequired": [
+        "Screenshot of the imported static mesh in the Content Drawer.",
+        "Screenshot of the mesh placed in the scene.",
+        "Screenshot of the material instance or default material slot used on the mesh.",
+        "Short reflection explaining what to check when an imported mesh looks wrong."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "What should you check if an imported mesh looks too large or too small?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "static-meshes",
+      "fbx",
+      "import-options",
+      "material-slots",
+      "asset-organization"
     ]
   },
   {
@@ -893,35 +852,85 @@
     "unit": "Unreal Foundations",
     "lessonNumber": 12,
     "title": "Migrating Assets Between Projects",
-    "status": "placeholder",
+    "status": "draft-pilot",
     "video": {
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
-      "start": "TBD",
-      "end": "TBD",
-      "url": ""
+      "start": "01:23:39",
+      "end": "01:26:30",
+      "url": "",
+      "note": "Covers opening a source project, identifying a folder of assets, using the Migrate command, reviewing the asset dependency list, choosing the destination project Content folder, confirming migration success, locating the migrated folder in the destination project, and using Show in Explorer as an alternate way to find the Content folder. Ends before the Lumen lighting explanation."
     },
-    "learningTarget": "TODO: Generate this lesson from the Unreal transcript and teacher review notes.",
+    "learningTarget": "I can migrate assets between Unreal projects while preserving dependencies.",
     "bellRinger": {
       "type": "short-response",
-      "prompt": "TODO: Add bell ringer after final lesson generation."
+      "prompt": "Why might copying only one file fail when moving assets between projects?"
     },
-    "vocabulary": [],
+    "vocabulary": [
+      {
+        "term": "Migration",
+        "definition": "The Unreal workflow for moving assets from one project to another while including needed dependencies."
+      },
+      {
+        "term": "Dependency",
+        "definition": "A related asset that another asset needs in order to work correctly, such as a material or texture."
+      },
+      {
+        "term": "Source project",
+        "definition": "The project that currently contains the assets being moved."
+      },
+      {
+        "term": "Destination project",
+        "definition": "The project receiving the migrated assets."
+      },
+      {
+        "term": "Content folder",
+        "definition": "The Unreal project folder where migrated assets must be placed."
+      },
+      {
+        "term": "Asset Report",
+        "definition": "The migration window that lists assets and dependencies Unreal will copy."
+      },
+      {
+        "term": "Show in Explorer",
+        "definition": "A command that opens the selected project folder location in Windows File Explorer."
+      },
+      {
+        "term": "Project file",
+        "definition": "The .uproject file used to open an Unreal project and locate its folders."
+      },
+      {
+        "term": "Verification",
+        "definition": "Checking that migrated assets appear and function correctly in the destination project."
+      },
+      {
+        "term": "Broken reference",
+        "definition": "A missing connection that can happen when an asset is copied without its dependencies."
+      }
+    ],
     "slides": {
-      "title": "Q1 Lesson 12 - Migrating Assets Between Projects",
+      "title": "Lesson 12 - Migrating Assets Between Projects",
       "url": "",
       "status": "not-created"
     },
     "assignment": {
       "id": "ue-q1-a12",
-      "title": "TODO: Add assignment after final lesson generation.",
-      "submissionType": "TBD",
-      "evidenceRequired": []
+      "title": "Asset Migration Verification",
+      "submissionType": "screenshot-set-and-reflection",
+      "evidenceRequired": [
+        "Screenshot of the source project asset or folder selected for migration.",
+        "Screenshot of the migration asset list or confirmation step.",
+        "Screenshot of the migrated folder or assets in the destination project.",
+        "Screenshot of at least one migrated object placed or opened successfully.",
+        "Short reflection explaining why dependencies matter."
+      ]
     },
-    "exitTicket": "TODO: Add exit ticket after final lesson generation.",
+    "exitTicket": "Why does Unreal migrate dependencies with an asset?",
     "tags": [
-      "placeholder",
-      "unreal-engine",
-      "q1"
+      "migration",
+      "dependencies",
+      "content-folder",
+      "asset-report",
+      "project-workflow"
     ]
   },
   {
@@ -1074,6 +1083,194 @@
       "placeholder",
       "unreal-engine",
       "q1"
+    ]
+  },
+  {
+    "id": "ue-q3-l01",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 1,
+    "title": "Unreal Reboot and Production Expectations",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "Review",
+      "end": "Review",
+      "url": ""
+    },
+    "learningTarget": "I can reconnect with Unreal basics and explain the expectations for a production-style environment project.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes an environment feel like a finished world instead of a practice scene?"
+    },
+    "vocabulary": [
+      {
+        "term": "Production Workflow",
+        "definition": "An organized process for planning, building, reviewing, and finishing a creative project."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 01 - Unreal Reboot and Production Expectations",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a01",
+      "title": "Q3 Production Project Setup",
+      "submissionType": "screenshot-and-text",
+      "evidenceRequired": [
+        "Screenshot of the Q3 project setup",
+        "Written production goal for the castle environment"
+      ]
+    },
+    "exitTicket": "What is one production habit you need to maintain this quarter?",
+    "tags": [
+      "q3",
+      "production",
+      "project-setup"
+    ]
+  },
+  {
+    "id": "ue-q3-l02",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 2,
+    "title": "Environment Planning",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "Planning",
+      "end": "Planning",
+      "url": ""
+    },
+    "learningTarget": "I can plan a fantasy/castle environment using references, constraints, and a clear visual goal.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What details help an audience understand where a scene takes place?"
+    },
+    "vocabulary": [
+      {
+        "term": "Reference Board",
+        "definition": "A collection of images and notes used to guide the look and direction of a project."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 02 - Environment Planning",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a02",
+      "title": "Castle Environment Plan",
+      "submissionType": "planning-document",
+      "evidenceRequired": [
+        "Reference board or planning document",
+        "Simple layout sketch or written scene plan"
+      ]
+    },
+    "exitTicket": "What is your main focal point for the castle environment?",
+    "tags": [
+      "planning",
+      "reference",
+      "castle-environment"
+    ]
+  },
+  {
+    "id": "ue-q3-l03",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 3,
+    "title": "Third-Person Project Setup",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "I can set up a third-person Unreal project for environment walkthrough testing.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "Why is it useful to test an environment from a player's point of view?"
+    },
+    "vocabulary": [
+      {
+        "term": "Third-Person Template",
+        "definition": "An Unreal project template that includes a controllable character and camera setup."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 03 - Third-Person Project Setup",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a03",
+      "title": "Third-Person Walkthrough Setup",
+      "submissionType": "screenshot",
+      "evidenceRequired": [
+        "Screenshot of the playable character in the project",
+        "Short note explaining why player scale matters"
+      ]
+    },
+    "exitTicket": "How does player scale affect environment design?",
+    "tags": [
+      "third-person",
+      "walkthrough",
+      "project-setup"
+    ]
+  },
+  {
+    "id": "ue-q3-l04",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "unit": "Castle Environment Production",
+    "lessonNumber": 4,
+    "title": "Landscape Blockout",
+    "status": "draft",
+    "video": {
+      "source": "Unreal Engine 5 Beginner Tutorial",
+      "start": "TBD",
+      "end": "TBD",
+      "url": ""
+    },
+    "learningTarget": "I can block out terrain forms that support a castle environment layout.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What terrain features could make a castle feel protected, isolated, or dramatic?"
+    },
+    "vocabulary": [
+      {
+        "term": "Blockout",
+        "definition": "An early rough version of a scene used to test layout, scale, and composition."
+      },
+      {
+        "term": "Landscape",
+        "definition": "A terrain system used to create large ground surfaces in Unreal."
+      }
+    ],
+    "slides": {
+      "title": "Q3 Lesson 04 - Landscape Blockout",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q3-a04",
+      "title": "Castle Landscape Blockout",
+      "submissionType": "screenshot-set",
+      "evidenceRequired": [
+        "Top-down screenshot of the landscape blockout",
+        "Player-view screenshot showing the route or focal point"
+      ]
+    },
+    "exitTicket": "What part of your blockout guides the viewer toward the castle?",
+    "tags": [
+      "landscape",
+      "blockout",
+      "castle-environment"
     ]
   },
   {

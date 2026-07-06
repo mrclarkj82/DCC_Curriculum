@@ -110,7 +110,7 @@ Theme: Unreal Engine Foundations: From First Project to Interactive Mini-World
 
 - Program Area ID: unreal-engine
 - Lesson ID: ue-q1-l09
-- Approximate video focus or timestamp placeholder: Transcript segment TBD
+- Approximate video focus or timestamp placeholder: 01:03:02-01:09:01
 - Learning target: I can explain core material concepts and create an editable material instance.
 - Bell ringer: Why might a studio want many variations of one material?
 - Teacher mini-lesson focus: Parent materials, material instances, editable parameters, and efficient variations.
@@ -123,7 +123,7 @@ Theme: Unreal Engine Foundations: From First Project to Interactive Mini-World
 
 - Program Area ID: unreal-engine
 - Lesson ID: ue-q1-l10
-- Approximate video focus or timestamp placeholder: Transcript segment TBD
+- Approximate video focus or timestamp placeholder: 01:09:01-01:14:43
 - Learning target: I can describe why master materials help organize reusable material workflows.
 - Bell ringer: What kinds of settings would be useful to reuse across many objects?
 - Teacher mini-lesson focus: Master material concept, parameters, instances, organization, and naming.
@@ -136,7 +136,7 @@ Theme: Unreal Engine Foundations: From First Project to Interactive Mini-World
 
 - Program Area ID: unreal-engine
 - Lesson ID: ue-q1-l11
-- Approximate video focus or timestamp placeholder: Transcript segment TBD
+- Approximate video focus or timestamp placeholder: 01:14:47-01:23:23
 - Learning target: I can import a static mesh and place it correctly in an Unreal scene.
 - Bell ringer: What makes an asset ready or not ready to use in a project?
 - Teacher mini-lesson focus: Static mesh import, asset folders, scale checks, placement, and missing material issues.
@@ -149,7 +149,7 @@ Theme: Unreal Engine Foundations: From First Project to Interactive Mini-World
 
 - Program Area ID: unreal-engine
 - Lesson ID: ue-q1-l12
-- Approximate video focus or timestamp placeholder: Transcript segment TBD
+- Approximate video focus or timestamp placeholder: 01:23:39-01:26:30
 - Learning target: I can migrate assets between Unreal projects while preserving dependencies.
 - Bell ringer: Why might copying only one file fail when moving assets between projects?
 - Teacher mini-lesson focus: Asset dependencies, migrate workflow, target Content folder, and verification.

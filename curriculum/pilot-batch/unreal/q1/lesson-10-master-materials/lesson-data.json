@@ -1,0 +1,87 @@
+{
+  "id": "ue-q1-l10",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 10,
+  "title": "Master Materials",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "01:09:01",
+    "end": "01:14:43",
+    "url": "",
+    "note": "Covers the master material concept, neutral default values, exposing texture parameters, swapping Base Color/Roughness/Normal textures in instances, adding a Metallic map, using a Static Switch Parameter for metallic behavior, and building a reusable material workflow."
+  },
+  "learningTarget": "I can describe why master materials help organize reusable material workflows.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What kinds of settings would be useful to reuse across many objects?"
+  },
+  "vocabulary": [
+    {
+      "term": "Master material",
+      "definition": "A reusable parent material designed to drive many material instances."
+    },
+    {
+      "term": "Material instance",
+      "definition": "A child material variation that uses exposed parameters from a parent or master material."
+    },
+    {
+      "term": "Default value",
+      "definition": "The value a parameter uses before an instance overrides it."
+    },
+    {
+      "term": "Texture parameter",
+      "definition": "A texture input exposed so instances can swap maps without editing the parent graph."
+    },
+    {
+      "term": "Static switch parameter",
+      "definition": "A parameter that turns a material branch on or off, such as using a metallic map only when needed."
+    },
+    {
+      "term": "Metallic map",
+      "definition": "A grayscale or mask texture that controls which parts of a material behave like metal."
+    },
+    {
+      "term": "Mask",
+      "definition": "A non-color texture that stores control data for a material."
+    },
+    {
+      "term": "Packed mask",
+      "definition": "One texture that stores multiple masks in separate red, green, and blue channels."
+    },
+    {
+      "term": "Reusable workflow",
+      "definition": "A setup that saves time because the same structure can support many assets."
+    },
+    {
+      "term": "Naming convention",
+      "definition": "A consistent naming pattern such as M_ for materials and MI_ for material instances."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 10 - Master Materials",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a10",
+    "title": "Starter Master Material Variations",
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the master material or teacher-provided master material parameters.",
+      "Screenshot of a material instance with texture or value parameters enabled.",
+      "Screenshot of at least two applied material variations in the level.",
+      "Short reflection explaining one benefit of a master material."
+    ]
+  },
+  "exitTicket": "What is one benefit of using a master material?",
+  "tags": [
+    "master-materials",
+    "parameters",
+    "static-switch",
+    "texture-parameters",
+    "material-library"
+  ]
+}

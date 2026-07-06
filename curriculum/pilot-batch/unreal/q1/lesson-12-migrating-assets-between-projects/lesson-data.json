@@ -1,0 +1,88 @@
+{
+  "id": "ue-q1-l12",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q1",
+  "unit": "Unreal Foundations",
+  "lessonNumber": 12,
+  "title": "Migrating Assets Between Projects",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Unreal Engine 5 Beginner Tutorial Transcript",
+    "start": "01:23:39",
+    "end": "01:26:30",
+    "url": "",
+    "note": "Covers opening a source project, identifying a folder of assets, using the Migrate command, reviewing the asset dependency list, choosing the destination project Content folder, confirming migration success, locating the migrated folder in the destination project, and using Show in Explorer as an alternate way to find the Content folder. Ends before the Lumen lighting explanation."
+  },
+  "learningTarget": "I can migrate assets between Unreal projects while preserving dependencies.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Why might copying only one file fail when moving assets between projects?"
+  },
+  "vocabulary": [
+    {
+      "term": "Migration",
+      "definition": "The Unreal workflow for moving assets from one project to another while including needed dependencies."
+    },
+    {
+      "term": "Dependency",
+      "definition": "A related asset that another asset needs in order to work correctly, such as a material or texture."
+    },
+    {
+      "term": "Source project",
+      "definition": "The project that currently contains the assets being moved."
+    },
+    {
+      "term": "Destination project",
+      "definition": "The project receiving the migrated assets."
+    },
+    {
+      "term": "Content folder",
+      "definition": "The Unreal project folder where migrated assets must be placed."
+    },
+    {
+      "term": "Asset Report",
+      "definition": "The migration window that lists assets and dependencies Unreal will copy."
+    },
+    {
+      "term": "Show in Explorer",
+      "definition": "A command that opens the selected project folder location in Windows File Explorer."
+    },
+    {
+      "term": "Project file",
+      "definition": "The .uproject file used to open an Unreal project and locate its folders."
+    },
+    {
+      "term": "Verification",
+      "definition": "Checking that migrated assets appear and function correctly in the destination project."
+    },
+    {
+      "term": "Broken reference",
+      "definition": "A missing connection that can happen when an asset is copied without its dependencies."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 12 - Migrating Assets Between Projects",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "ue-q1-a12",
+    "title": "Asset Migration Verification",
+    "submissionType": "screenshot-set-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the source project asset or folder selected for migration.",
+      "Screenshot of the migration asset list or confirmation step.",
+      "Screenshot of the migrated folder or assets in the destination project.",
+      "Screenshot of at least one migrated object placed or opened successfully.",
+      "Short reflection explaining why dependencies matter."
+    ]
+  },
+  "exitTicket": "Why does Unreal migrate dependencies with an asset?",
+  "tags": [
+    "migration",
+    "dependencies",
+    "content-folder",
+    "asset-report",
+    "project-workflow"
+  ]
+}

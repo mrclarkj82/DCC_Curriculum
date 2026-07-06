@@ -6,7 +6,7 @@ This pilot batch prepares the first classroom-ready content set for testing the 
 
 ## Included Content
 
-- Unreal Engine Studio Q1 Lessons 01-04
+- Unreal Engine Studio Q1 Lessons 01-12
 - Unreal Engine Studio Q1 Quiz 01 covering Lessons 01-04
 - Video Production Studio VP Project 01 and VP Project 02
 - Broadcast Desk Update 001 and Broadcast Desk Update 002
@@ -29,7 +29,7 @@ Future app phases should load this content from structured data and Firestore-re
 
 ## Validation Instructions
 
-This repository does not currently include a `package.json`, so Phase 2 does not add an npm validation script. Before import tooling exists, validate manually by checking that:
+Run `npm run validate:curriculum` from the repository root to validate current seed and curriculum data. The validator checks that:
 
 - seed JSON files parse successfully
 - IDs are unique within each seed file
