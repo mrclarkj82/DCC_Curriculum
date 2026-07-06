@@ -83,6 +83,9 @@ const emptyResponses: ClassItemResponses = {
   exitTicketResponses: [],
 };
 
+const aDayPeriods = new Set(['1', '5']);
+const bDayPeriods = new Set(['2', '8']);
+
 function formatTimestamp(value: unknown): string {
   if (!value) {
     return 'Not submitted';
@@ -151,8 +154,50 @@ function formatQuizScore(attempt: QuizAttempt | undefined): string {
   return `${attempt.score}/${attempt.questionCount} (${Math.round(attempt.percentage)}%)`;
 }
 
+function normalizedPeriodToken(period: string): string {
+  return period.trim().toUpperCase().replace(/^PERIOD\s*/, '');
+}
+
+function hasDaySectionLabel(value: string, day: 'A' | 'B'): boolean {
+  return new RegExp(`(^|[^A-Z0-9])${day}\\d*($|[^A-Z0-9])`).test(value.toUpperCase());
+}
+
+function classDayForRecord(classRecord: ClassRecord): 'A' | 'B' | null {
+  const period = normalizedPeriodToken(classRecord.period);
+
+  if (period.startsWith('A')) {
+    return 'A';
+  }
+
+  if (period.startsWith('B')) {
+    return 'B';
+  }
+
+  const numericPeriod = period.match(/\d+/)?.[0];
+
+  if (numericPeriod && aDayPeriods.has(numericPeriod)) {
+    return 'A';
+  }
+
+  if (numericPeriod && bDayPeriods.has(numericPeriod)) {
+    return 'B';
+  }
+
+  const classLabel = `${classRecord.id} ${classRecord.name}`;
+
+  if (hasDaySectionLabel(classLabel, 'A')) {
+    return 'A';
+  }
+
+  if (hasDaySectionLabel(classLabel, 'B')) {
+    return 'B';
+  }
+
+  return null;
+}
+
 function classMatchesDay(classRecord: ClassRecord, day: 'A' | 'B'): boolean {
-  return classRecord.period.trim().toUpperCase().startsWith(day);
+  return classDayForRecord(classRecord) === day;
 }
 
 function sameStringSet(left: string[], right: string[]): boolean {
