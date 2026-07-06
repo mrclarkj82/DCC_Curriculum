@@ -908,7 +908,88 @@
 }
 
 .active-item-management-form {
-  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+}
+
+.active-target-picker {
+  display: grid;
+  grid-column: 1 / -1;
+  gap: var(--space-3);
+  min-width: 0;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.34);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-cyan-rgb), 0.08),
+      rgba(var(--color-neon-purple-rgb), 0.1)
+    ),
+    rgba(8, 3, 18, 0.62);
+}
+
+.active-target-picker legend {
+  padding: 0 var(--space-2);
+  color: var(--color-neon-orange);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.active-target-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.active-target-option {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-2);
+  align-items: start;
+  min-width: 0;
+  border: 1px solid rgba(var(--color-neon-purple-rgb), 0.32);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  color: var(--color-text-main);
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+}
+
+.active-target-option.shortcut {
+  border-color: rgba(var(--color-neon-orange-rgb), 0.38);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-orange-rgb), 0.08),
+      rgba(var(--color-neon-pink-rgb), 0.06)
+    ),
+    rgba(8, 3, 18, 0.64);
+}
+
+.active-target-option:focus-within,
+.active-target-option:hover {
+  border-color: rgba(var(--color-neon-cyan-rgb), 0.72);
+  box-shadow: var(--glow-cyan);
+}
+
+.active-target-option input {
+  margin-top: 2px;
+  accent-color: var(--color-neon-cyan);
+}
+
+.active-target-option span {
+  display: grid;
+  gap: 2px;
+  overflow-wrap: anywhere;
+}
+
+.active-target-option strong {
+  color: var(--color-neon-cyan);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
 }
 
 .management-form label,
@@ -1505,6 +1586,10 @@
   }
 
   .class-active-form {
+    grid-template-columns: 1fr;
+  }
+
+  .active-target-grid {
     grid-template-columns: 1fr;
   }
 

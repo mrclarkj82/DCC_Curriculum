@@ -55,14 +55,14 @@ const activeItemTypeLabels: Record<ActiveItemType, string> = {
 };
 
 interface ActiveItemFormState {
-  classId: string;
+  classIds: string[];
   activeProgramAreaId: string;
   activeItemType: ActiveItemType;
   activeItemId: string;
 }
 
 const emptyActiveItemForm: ActiveItemFormState = {
-  classId: '',
+  classIds: [],
   activeProgramAreaId: '',
   activeItemType: 'lesson',
   activeItemId: '',
@@ -151,9 +151,22 @@ function formatQuizScore(attempt: QuizAttempt | undefined): string {
   return `${attempt.score}/${attempt.questionCount} (${Math.round(attempt.percentage)}%)`;
 }
 
+function classMatchesDay(classRecord: ClassRecord, day: 'A' | 'B'): boolean {
+  return classRecord.period.trim().toUpperCase().startsWith(day);
+}
+
+function sameStringSet(left: string[], right: string[]): boolean {
+  if (left.length !== right.length) {
+    return false;
+  }
+
+  const rightSet = new Set(right);
+  return left.every((value) => rightSet.has(value));
+}
+
 function activeFormFromClass(classRecord: ClassRecord): ActiveItemFormState {
   return {
-    classId: classRecord.id,
+    classIds: [classRecord.id],
     activeProgramAreaId: classRecord.activeProgramAreaId,
     activeItemType: classRecord.activeItemType,
     activeItemId: classRecord.activeItemId,
@@ -275,12 +288,12 @@ export function TeacherPage() {
   }, [classIds, isAdmin, userProfile]);
 
   useEffect(() => {
-    if (activeForm.classId || !classRecords.length) {
+    if (activeForm.classIds.length || !classRecords.length) {
       return;
     }
 
     setActiveForm(activeFormFromClass(classRecords[0]));
-  }, [activeForm.classId, classRecords]);
+  }, [activeForm.classIds.length, classRecords]);
 
   useEffect(() => {
     if (!classRecords.length) {
@@ -585,6 +598,27 @@ export function TeacherPage() {
     [classRecords, responsesByClassId, studentsByClassId],
   );
 
+  const aDayClassIds = useMemo(
+    () =>
+      classRecords
+        .filter((classRecord) => classMatchesDay(classRecord, 'A'))
+        .map((classRecord) => classRecord.id),
+    [classRecords],
+  );
+
+  const bDayClassIds = useMemo(
+    () =>
+      classRecords
+        .filter((classRecord) => classMatchesDay(classRecord, 'B'))
+        .map((classRecord) => classRecord.id),
+    [classRecords],
+  );
+
+  const onlyADayChecked =
+    aDayClassIds.length > 0 && sameStringSet(activeForm.classIds, aDayClassIds);
+  const onlyBDayChecked =
+    bDayClassIds.length > 0 && sameStringSet(activeForm.classIds, bDayClassIds);
+
   const chooseActiveClass = (classId: string) => {
     const classRecord = classRecords.find((nextClass) => nextClass.id === classId);
 
@@ -593,19 +627,43 @@ export function TeacherPage() {
     }
   };
 
+  const toggleActiveClassTarget = (classId: string, isChecked: boolean) => {
+    setActiveForm((current) => {
+      const nextClassIds = isChecked
+        ? Array.from(new Set([...current.classIds, classId]))
+        : current.classIds.filter((currentClassId) => currentClassId !== classId);
+
+      return {
+        ...current,
+        classIds: nextClassIds,
+      };
+    });
+  };
+
+  const chooseDayTargets = (day: 'A' | 'B', isChecked: boolean) => {
+    const dayClassIds = day === 'A' ? aDayClassIds : bDayClassIds;
+
+    setActiveForm((current) => ({
+      ...current,
+      classIds: isChecked ? dayClassIds : [],
+    }));
+  };
+
   const handleSetActiveItem = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormMessage(null);
     setFormError(null);
 
-    const selectedClass = classRecords.find((classRecord) => classRecord.id === activeForm.classId);
+    const selectedClasses = classRecords.filter((classRecord) =>
+      activeForm.classIds.includes(classRecord.id),
+    );
 
-    if (!selectedClass) {
-      setFormError('Choose a class before setting an active item.');
+    if (!selectedClasses.length) {
+      setFormError('Choose at least one class before setting an active item.');
       return;
     }
 
-    if (!canSetActiveItem(userProfile, selectedClass)) {
+    if (selectedClasses.some((classRecord) => !canSetActiveItem(userProfile, classRecord))) {
       setFormError('You can only set active items for classes assigned to you.');
       return;
     }
@@ -624,26 +682,35 @@ export function TeacherPage() {
         return;
       }
 
-      await updateClassActiveItem(selectedClass.id, {
-        id: validation.item.id,
-        type: validation.item.type,
-        programAreaId: validation.item.programAreaId,
-      });
+      const validatedItem = validation.item;
+
+      await Promise.all(
+        selectedClasses.map((classRecord) =>
+          updateClassActiveItem(classRecord.id, {
+            id: validatedItem.id,
+            type: validatedItem.type,
+            programAreaId: validatedItem.programAreaId,
+          }),
+        ),
+      );
 
       setClassRecords((currentClasses) =>
         currentClasses.map((classRecord) =>
-          classRecord.id === selectedClass.id
+          activeForm.classIds.includes(classRecord.id)
             ? {
                 ...classRecord,
-                activeProgramAreaId:
-                  validation.item?.programAreaId ?? classRecord.activeProgramAreaId,
-                activeItemType: validation.item?.type ?? classRecord.activeItemType,
-                activeItemId: validation.item?.id ?? classRecord.activeItemId,
+                activeProgramAreaId: validatedItem.programAreaId,
+                activeItemType: validatedItem.type,
+                activeItemId: validatedItem.id,
               }
             : classRecord,
         ),
       );
-      setFormMessage('Active class item updated.');
+      setFormMessage(
+        `Active class item updated for ${selectedClasses.length} ${
+          selectedClasses.length === 1 ? 'class' : 'classes'
+        }.`,
+      );
     } catch (error) {
       setFormError(firestoreErrorMessage(error, 'Unable to update active class item.'));
     } finally {
@@ -1343,19 +1410,50 @@ export function TeacherPage() {
               className="management-form active-item-management-form"
               onSubmit={handleSetActiveItem}
             >
-              <label>
-                Class
-                <select
-                  value={activeForm.classId}
-                  onChange={(event) => chooseActiveClass(event.target.value)}
-                >
+              <fieldset className="active-target-picker">
+                <legend>Class Targets</legend>
+                <div className="active-target-grid">
                   {classRecords.map((classRecord) => (
-                    <option key={classRecord.id} value={classRecord.id}>
-                      {classRecord.name} / {classRecord.period}
-                    </option>
+                    <label className="active-target-option" key={classRecord.id}>
+                      <input
+                        type="checkbox"
+                        checked={activeForm.classIds.includes(classRecord.id)}
+                        onChange={(event) =>
+                          toggleActiveClassTarget(classRecord.id, event.currentTarget.checked)
+                        }
+                      />
+                      <span>
+                        <strong>{classRecord.period}</strong>
+                        {classRecord.name}
+                      </span>
+                    </label>
                   ))}
-                </select>
-              </label>
+                  <label className="active-target-option shortcut">
+                    <input
+                      type="checkbox"
+                      checked={onlyADayChecked}
+                      disabled={!aDayClassIds.length}
+                      onChange={(event) => chooseDayTargets('A', event.currentTarget.checked)}
+                    />
+                    <span>
+                      <strong>ONLY A day</strong>
+                      Select A-period classes
+                    </span>
+                  </label>
+                  <label className="active-target-option shortcut">
+                    <input
+                      type="checkbox"
+                      checked={onlyBDayChecked}
+                      disabled={!bDayClassIds.length}
+                      onChange={(event) => chooseDayTargets('B', event.currentTarget.checked)}
+                    />
+                    <span>
+                      <strong>ONLY B day</strong>
+                      Select B-period classes
+                    </span>
+                  </label>
+                </div>
+              </fieldset>
 
               <label>
                 Program area
