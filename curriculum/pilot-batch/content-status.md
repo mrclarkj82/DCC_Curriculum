@@ -72,6 +72,13 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Lesson 16 lesson-data.json - ready for seed import
 - [x] Quiz 03 Draft - draft / needs teacher review
 - [x] Quiz 04 Draft - draft / needs teacher review
+- [x] Q2 Video Game Development File Organization page - ready for seed import
+- [x] Q2 Video Game Development File Organization slide brief - ready for ChatGPT Pro
+- [x] Q2 Video Game Development File Organization presentation brief - ready for ChatGPT Pro
+- [x] Q2 Video Game Development File Organization assignment - needs teacher review
+- [x] Q2 Video Game Development File Organization bell ringer / exit ticket - needs teacher review
+- [x] Q2 Video Game Development File Organization teacher notes - needs teacher review
+- [x] Q2 Video Game Development File Organization lesson-data.json - ready for seed import
 
 ## Video Production Studio
 
@@ -82,6 +89,13 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Media submission guidelines - needs teacher review
 - [x] Reflection template - needs teacher review
 
+- [x] Q2 Video Production File Organization page - ready for seed import
+- [x] Q2 Video Production File Organization slide brief - ready for ChatGPT Pro
+- [x] Q2 Video Production File Organization presentation brief - ready for ChatGPT Pro
+- [x] Q2 Video Production File Organization assignment - needs teacher review
+- [x] Q2 Video Production File Organization bell ringer / exit ticket - needs teacher review
+- [x] Q2 Video Production File Organization teacher notes - needs teacher review
+- [x] Q2 Video Production File Organization lesson-data.json - ready for seed import
 - [x] Q2 DaVinci Resolve README - source overview
 - [x] Q2 DaVinci Resolve trim note - Color and Fairlight span excluded from planning
 - [x] Q2 DaVinci Resolve Lesson 01 page - ready for seed import

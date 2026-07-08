@@ -1,0 +1,70 @@
+{
+  "id": "vp-q2-file-org-01",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "Q2 Studio File Organization",
+  "lessonNumber": 1,
+  "title": "Video Production File Organization",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Teacher-created Video Production File Organization Assignment",
+    "start": "N/A",
+    "end": "N/A",
+    "url": "https://docs.google.com/document/d/1fAgKFFECPnBWXnh4G7CgksESe9JTRV4OOTtsUKeDPjw/edit?usp=sharing",
+    "note": "Students organize a messy video production file set into a professional folder structure before beginning DaVinci Resolve work."
+  },
+  "learningTarget": "I can organize video production files into a professional project folder structure so footage, audio, graphics, documents, assets, and exports are easy to find.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What is one problem that can happen when a video editor keeps footage, audio, graphics, and exports all in one messy folder?"
+  },
+  "vocabulary": [
+    {
+      "term": "Project folder",
+      "definition": "The main folder that contains every file needed for a production."
+    },
+    {
+      "term": "Footage",
+      "definition": "Recorded video clips captured by a camera, phone, drone, or other source."
+    },
+    {
+      "term": "Project file",
+      "definition": "The editable file created by software such as DaVinci Resolve, Premiere Pro, Final Cut Pro, or After Effects."
+    },
+    {
+      "term": "Export",
+      "definition": "A rendered video file made from the editing project, often shared as a draft or final version."
+    },
+    {
+      "term": "Asset",
+      "definition": "A reusable production file such as a stock clip, template, texture, logo, or graphic."
+    },
+    {
+      "term": "Naming convention",
+      "definition": "A consistent naming system that makes files easier to identify, sort, and recover."
+    }
+  ],
+  "slides": {
+    "title": "Lesson 01 - Video Production File Organization",
+    "url": "",
+    "status": "not-created"
+  },
+  "assignment": {
+    "id": "vp-q2-file-org-a01",
+    "title": "Video Production Folder Organization",
+    "submissionType": "google-drive-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot showing the completed video production folder tree.",
+      "Google Drive or Docs link listing where at least twelve sample files were placed and why.",
+      "Short reflection explaining two organization decisions that would help an editor work faster."
+    ]
+  },
+  "exitTicket": "Which file category was easiest to identify today, and which category required the most careful thinking?",
+  "tags": [
+    "video-production",
+    "q2",
+    "file-organization",
+    "project-structure",
+    "lesson-01"
+  ]
+}

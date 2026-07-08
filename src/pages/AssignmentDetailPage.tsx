@@ -79,6 +79,34 @@ export function AssignmentDetailPage() {
           {lesson && <Link to={`/lessons/${lesson.id}`}>Back to lesson</Link>}
         </section>
 
+        {assignment.resources?.length ? (
+          <section className="card span-two mission-panel">
+            <h2>Assignment Resources</h2>
+            <div className="resource-link-list">
+              {assignment.resources.map((resource) => (
+                <a
+                  className="secondary-button"
+                  href={resource.url}
+                  key={resource.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {resource.label}
+                </a>
+              ))}
+            </div>
+            {assignment.resources.some((resource) => resource.description) && (
+              <ul className="ordered-list">
+                {assignment.resources
+                  .filter((resource) => resource.description)
+                  .map((resource) => (
+                    <li key={`${resource.url}-description`}>{resource.description}</li>
+                  ))}
+              </ul>
+            )}
+          </section>
+        ) : null}
+
         <section className="card span-two mission-panel">
           <h2>Required Steps</h2>
           <ol className="ordered-list">

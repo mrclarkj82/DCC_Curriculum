@@ -1934,6 +1934,147 @@
     ]
   },
   {
+    "id": "vp-q2-file-org-01",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "Q2 Studio File Organization",
+    "lessonNumber": 1,
+    "title": "Video Production File Organization",
+    "status": "draft-pilot",
+    "video": {
+      "source": "Teacher-created Video Production File Organization Assignment",
+      "start": "N/A",
+      "end": "N/A",
+      "url": "https://docs.google.com/document/d/1fAgKFFECPnBWXnh4G7CgksESe9JTRV4OOTtsUKeDPjw/edit?usp=sharing",
+      "note": "Students organize a messy video production file set into a professional folder structure before beginning DaVinci Resolve work."
+    },
+    "learningTarget": "I can organize video production files into a professional project folder structure so footage, audio, graphics, documents, assets, and exports are easy to find.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What is one problem that can happen when a video editor keeps footage, audio, graphics, and exports all in one messy folder?"
+    },
+    "vocabulary": [
+      {
+        "term": "Project folder",
+        "definition": "The main folder that contains every file needed for a production."
+      },
+      {
+        "term": "Footage",
+        "definition": "Recorded video clips captured by a camera, phone, drone, or other source."
+      },
+      {
+        "term": "Project file",
+        "definition": "The editable file created by software such as DaVinci Resolve, Premiere Pro, Final Cut Pro, or After Effects."
+      },
+      {
+        "term": "Export",
+        "definition": "A rendered video file made from the editing project, often shared as a draft or final version."
+      },
+      {
+        "term": "Asset",
+        "definition": "A reusable production file such as a stock clip, template, texture, logo, or graphic."
+      },
+      {
+        "term": "Naming convention",
+        "definition": "A consistent naming system that makes files easier to identify, sort, and recover."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 01 - Video Production File Organization",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "vp-q2-file-org-a01",
+      "title": "Video Production Folder Organization",
+      "submissionType": "google-drive-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot showing the completed video production folder tree.",
+        "Google Drive or Docs link listing where at least twelve sample files were placed and why.",
+        "Short reflection explaining two organization decisions that would help an editor work faster."
+      ]
+    },
+    "exitTicket": "Which file category was easiest to identify today, and which category required the most careful thinking?",
+    "tags": [
+      "video-production",
+      "q2",
+      "file-organization",
+      "project-structure",
+      "lesson-01"
+    ]
+  },
+  {
+    "id": "ue-q2-file-org-01",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q2",
+    "unit": "Q2 Studio File Organization",
+    "lessonNumber": 2,
+    "title": "Video Game Development File Organization",
+    "status": "draft-pilot",
+    "video": {
+      "source": "Teacher-created Video Game Development File Organization Assignment",
+      "start": "N/A",
+      "end": "N/A",
+      "url": "https://docs.google.com/document/d/1C2Po4zkeuFMmcJfTPx2OvCsmSl5mBu4GIZcFj7XMR1M/edit?usp=sharing",
+      "note": "Students organize a messy game development file set into a professional game project folder structure."
+    },
+    "learningTarget": "I can organize game development files into a professional project folder structure so art, audio, code, levels, documents, exports, plugins, and prefabs are easy to find.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What could go wrong in a game project if code, levels, art, audio, plugins, and builds are all mixed together?"
+    },
+    "vocabulary": [
+      {
+        "term": "Game project folder",
+        "definition": "The main folder that contains the files needed to build and manage a game project."
+      },
+      {
+        "term": "Art asset",
+        "definition": "A visual file used in a game, such as a model, texture, UI image, or environment object."
+      },
+      {
+        "term": "Prefab",
+        "definition": "A reusable game object or asset setup that can be placed into a level."
+      },
+      {
+        "term": "Level file",
+        "definition": "A file that stores a game map, scene, or playable area."
+      },
+      {
+        "term": "Build",
+        "definition": "An exported playable version of a game, such as a Windows executable or Android package."
+      },
+      {
+        "term": "Plugin",
+        "definition": "An add-on that extends the game engine or project with extra features."
+      }
+    ],
+    "slides": {
+      "title": "Lesson 02 - Video Game Development File Organization",
+      "url": "",
+      "status": "not-created"
+    },
+    "assignment": {
+      "id": "ue-q2-file-org-a01",
+      "title": "Video Game Development Folder Organization",
+      "submissionType": "google-drive-link-and-reflection",
+      "evidenceRequired": [
+        "Google Drive link to a screenshot showing the completed game development folder tree.",
+        "Google Drive or Docs link listing where at least twelve sample files were placed and why.",
+        "Short reflection explaining two organization decisions that would help a game team work faster."
+      ]
+    },
+    "exitTicket": "Which file type gave you the clearest clue about where it belonged, and which file was most ambiguous?",
+    "tags": [
+      "unreal-engine",
+      "video-game-development",
+      "q2",
+      "file-organization",
+      "project-structure",
+      "lesson-02"
+    ]
+  },
+  {
     "id": "vp-q2-l01",
     "programAreaId": "video-production",
     "quarter": "Q2",

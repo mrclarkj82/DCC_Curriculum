@@ -118,7 +118,8 @@
 
 .hero-actions,
 .header-actions,
-.page-actions {
+.page-actions,
+.resource-link-list {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);

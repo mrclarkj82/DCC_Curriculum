@@ -5,7 +5,7 @@
   "source": "attached-school-calendar",
   "sourceFile": "2026-2027 Doral Calendar (List Form).pdf",
   "startDate": "2026-10-12",
-  "endDate": "2026-11-02",
+  "endDate": "2026-11-06",
   "weekdays": [
     "Monday",
     "Tuesday",
@@ -14,9 +14,9 @@
     "Friday"
   ],
   "summary": {
-    "lessonCount": 7,
-    "instructionalDateCount": 14,
-    "noSchoolDateCount": 2,
+    "lessonCount": 9,
+    "instructionalDateCount": 18,
+    "noSchoolDateCount": 8,
     "monthCount": 2
   },
   "months": [
@@ -26,86 +26,151 @@
       "year": 2026,
       "weeks": [
         {
+          "weekStart": "2026-09-28",
+          "weekEnd": "2026-10-02",
+          "days": [
+            {
+              "date": "2026-09-28",
+              "dayOfWeek": "Monday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-09-29",
+              "dayOfWeek": "Tuesday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-09-30",
+              "dayOfWeek": "Wednesday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-10-01",
+              "dayOfWeek": "Thursday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-10-02",
+              "dayOfWeek": "Friday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            }
+          ]
+        },
+        {
+          "weekStart": "2026-10-05",
+          "weekEnd": "2026-10-09",
+          "days": [
+            {
+              "date": "2026-10-05",
+              "dayOfWeek": "Monday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-10-06",
+              "dayOfWeek": "Tuesday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-10-07",
+              "dayOfWeek": "Wednesday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-10-08",
+              "dayOfWeek": "Thursday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-10-09",
+              "dayOfWeek": "Friday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            }
+          ]
+        },
+        {
           "weekStart": "2026-10-12",
           "weekEnd": "2026-10-16",
           "days": [
             {
               "date": "2026-10-12",
               "dayOfWeek": "Monday",
-              "cycleDay": "B",
               "status": "instructional",
               "heading": "Q2 L1",
               "lessonLabel": "Q2 L1",
-              "lessonId": "vp-q2-l01",
-              "lessonTitle": "DaVinci Resolve Setup and Project Manager",
-              "lessonNumber": 1,
+              "lessonId": "vp-q2-file-org-01",
+              "lessonTitle": "Video Production File Organization",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-13",
               "dayOfWeek": "Tuesday",
-              "cycleDay": "A",
               "status": "instructional",
               "heading": "Q2 L1",
               "lessonLabel": "Q2 L1",
-              "lessonId": "vp-q2-l01",
-              "lessonTitle": "DaVinci Resolve Setup and Project Manager",
-              "lessonNumber": 1,
+              "lessonId": "vp-q2-file-org-01",
+              "lessonTitle": "Video Production File Organization",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-14",
               "dayOfWeek": "Wednesday",
-              "cycleDay": "B",
               "status": "instructional",
               "heading": "Q2 L2",
               "lessonLabel": "Q2 L2",
-              "lessonId": "vp-q2-l02",
-              "lessonTitle": "Media Page, Imports, and Bins",
-              "lessonNumber": 2,
-              "programAreaId": "video-production",
+              "lessonId": "ue-q2-file-org-01",
+              "lessonTitle": "Video Game Development File Organization",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-15",
               "dayOfWeek": "Thursday",
-              "cycleDay": "A",
               "status": "instructional",
               "heading": "Q2 L2",
               "lessonLabel": "Q2 L2",
-              "lessonId": "vp-q2-l02",
-              "lessonTitle": "Media Page, Imports, and Bins",
-              "lessonNumber": 2,
-              "programAreaId": "video-production",
+              "lessonId": "ue-q2-file-org-01",
+              "lessonTitle": "Video Game Development File Organization",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
               "calendarNote": "Conferences (No School for all ES or MS Students)",
-              "sourceNote": "Conferences (No School for all ES or MS Students)",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": "Conferences (No School for all ES or MS Students)"
             },
             {
               "date": "2026-10-16",
               "dayOfWeek": "Friday",
-              "cycleDay": null,
               "status": "no-school",
               "heading": "No School",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
-              "programAreaId": "video-production",
-              "calendarNote": "",
+              "reason": "Staff Development Day #3 (No School for Students)",
               "sourceNote": "Staff Development Day #3 (No School for Students)",
-              "reason": "Staff Development Day #3 (No School for Students)"
+              "calendarNote": ""
             }
           ]
         },
@@ -116,82 +181,67 @@
             {
               "date": "2026-10-19",
               "dayOfWeek": "Monday",
-              "cycleDay": "B",
               "status": "instructional",
               "heading": "Q2 L3",
               "lessonLabel": "Q2 L3",
-              "lessonId": "vp-q2-l03",
-              "lessonTitle": "Syncing Audio and Timeline Basics",
-              "lessonNumber": 3,
+              "lessonId": "vp-q2-l01",
+              "lessonTitle": "DaVinci Resolve Setup and Project Manager",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-20",
               "dayOfWeek": "Tuesday",
-              "cycleDay": "A",
               "status": "instructional",
               "heading": "Q2 L3",
               "lessonLabel": "Q2 L3",
-              "lessonId": "vp-q2-l03",
-              "lessonTitle": "Syncing Audio and Timeline Basics",
-              "lessonNumber": 3,
+              "lessonId": "vp-q2-l01",
+              "lessonTitle": "DaVinci Resolve Setup and Project Manager",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-21",
               "dayOfWeek": "Wednesday",
-              "cycleDay": "B",
               "status": "instructional",
               "heading": "Q2 L4",
               "lessonLabel": "Q2 L4",
-              "lessonId": "vp-q2-l04",
-              "lessonTitle": "Trimming Clips and Building a Rough Cut",
-              "lessonNumber": 4,
+              "lessonId": "vp-q2-l02",
+              "lessonTitle": "Media Page, Imports, and Bins",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-22",
               "dayOfWeek": "Thursday",
-              "cycleDay": "A",
               "status": "instructional",
               "heading": "Q2 L4",
               "lessonLabel": "Q2 L4",
-              "lessonId": "vp-q2-l04",
-              "lessonTitle": "Trimming Clips and Building a Rough Cut",
-              "lessonNumber": 4,
+              "lessonId": "vp-q2-l02",
+              "lessonTitle": "Media Page, Imports, and Bins",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-23",
               "dayOfWeek": "Friday",
-              "cycleDay": "B",
               "status": "instructional",
               "heading": "Q2 L5",
               "lessonLabel": "Q2 L5",
-              "lessonId": "vp-q2-l05",
-              "lessonTitle": "Quiz 1 and Rough Cut Cleanup",
-              "lessonNumber": 5,
+              "lessonId": "vp-q2-l03",
+              "lessonTitle": "Syncing Audio and Timeline Basics",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             }
           ]
         },
@@ -202,80 +252,63 @@
             {
               "date": "2026-10-26",
               "dayOfWeek": "Monday",
-              "cycleDay": "A",
               "status": "instructional",
               "heading": "Q2 L5",
               "lessonLabel": "Q2 L5",
-              "lessonId": "vp-q2-l05",
-              "lessonTitle": "Quiz 1 and Rough Cut Cleanup",
-              "lessonNumber": 5,
+              "lessonId": "vp-q2-l03",
+              "lessonTitle": "Syncing Audio and Timeline Basics",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-27",
               "dayOfWeek": "Tuesday",
-              "cycleDay": "B",
               "status": "instructional",
               "heading": "Q2 L6",
               "lessonLabel": "Q2 L6",
-              "lessonId": "vp-q2-l06",
-              "lessonTitle": "Titles, Transitions, and Simple Motion",
-              "lessonNumber": 6,
+              "lessonId": "vp-q2-l04",
+              "lessonTitle": "Trimming Clips and Building a Rough Cut",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-28",
               "dayOfWeek": "Wednesday",
-              "cycleDay": "A",
               "status": "instructional",
               "heading": "Q2 L6",
               "lessonLabel": "Q2 L6",
-              "lessonId": "vp-q2-l06",
-              "lessonTitle": "Titles, Transitions, and Simple Motion",
-              "lessonNumber": 6,
+              "lessonId": "vp-q2-l04",
+              "lessonTitle": "Trimming Clips and Building a Rough Cut",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-29",
               "dayOfWeek": "Thursday",
-              "cycleDay": "B",
               "status": "instructional",
               "heading": "Q2 L7",
               "lessonLabel": "Q2 L7",
-              "lessonId": "vp-q2-l07",
-              "lessonTitle": "Quiz 2 and Final Export",
-              "lessonNumber": 7,
+              "lessonId": "vp-q2-l05",
+              "lessonTitle": "Quiz 1 and Rough Cut Cleanup",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-10-30",
               "dayOfWeek": "Friday",
-              "cycleDay": null,
               "status": "no-school",
               "heading": "No School",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
-              "programAreaId": "video-production",
-              "calendarNote": "",
+              "reason": "Nevada Day Observed (No School)",
               "sourceNote": "Nevada Day Observed (No School)",
-              "reason": "Nevada Day Observed (No School)"
+              "calendarNote": ""
             }
           ]
         }
@@ -293,72 +326,37 @@
             {
               "date": "2026-10-26",
               "dayOfWeek": "Monday",
-              "cycleDay": null,
               "status": "outside-month",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
-              "programAreaId": "video-production",
-              "calendarNote": "",
-              "sourceNote": "",
-              "reason": "Outside November 2026"
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
             },
             {
               "date": "2026-10-27",
               "dayOfWeek": "Tuesday",
-              "cycleDay": null,
               "status": "outside-month",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
-              "programAreaId": "video-production",
-              "calendarNote": "",
-              "sourceNote": "",
-              "reason": "Outside November 2026"
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
             },
             {
               "date": "2026-10-28",
               "dayOfWeek": "Wednesday",
-              "cycleDay": null,
               "status": "outside-month",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
-              "programAreaId": "video-production",
-              "calendarNote": "",
-              "sourceNote": "",
-              "reason": "Outside November 2026"
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
             },
             {
               "date": "2026-10-29",
               "dayOfWeek": "Thursday",
-              "cycleDay": null,
               "status": "outside-month",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
-              "programAreaId": "video-production",
-              "calendarNote": "",
-              "sourceNote": "",
-              "reason": "Outside November 2026"
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
             },
             {
               "date": "2026-10-30",
               "dayOfWeek": "Friday",
-              "cycleDay": null,
               "status": "outside-month",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
-              "programAreaId": "video-production",
-              "calendarNote": "",
-              "sourceNote": "",
-              "reason": "Outside November 2026"
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
             }
           ]
         },
@@ -369,74 +367,243 @@
             {
               "date": "2026-11-02",
               "dayOfWeek": "Monday",
-              "cycleDay": "A",
               "status": "instructional",
               "heading": "Q2 L7",
               "lessonLabel": "Q2 L7",
-              "lessonId": "vp-q2-l07",
-              "lessonTitle": "Quiz 2 and Final Export",
-              "lessonNumber": 7,
+              "lessonId": "vp-q2-l05",
+              "lessonTitle": "Quiz 1 and Rough Cut Cleanup",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "",
-              "activeItemType": "lesson"
+              "sourceNote": ""
             },
             {
               "date": "2026-11-03",
               "dayOfWeek": "Tuesday",
-              "cycleDay": null,
-              "status": "empty",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
+              "status": "instructional",
+              "heading": "Q2 L8",
+              "lessonLabel": "Q2 L8",
+              "lessonId": "vp-q2-l06",
+              "lessonTitle": "Titles, Transitions, and Simple Motion",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "No Q2 DaVinci Resolve lesson scheduled"
+              "sourceNote": ""
             },
             {
               "date": "2026-11-04",
               "dayOfWeek": "Wednesday",
-              "cycleDay": null,
-              "status": "empty",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
+              "status": "instructional",
+              "heading": "Q2 L8",
+              "lessonLabel": "Q2 L8",
+              "lessonId": "vp-q2-l06",
+              "lessonTitle": "Titles, Transitions, and Simple Motion",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "No Q2 DaVinci Resolve lesson scheduled"
+              "sourceNote": ""
             },
             {
               "date": "2026-11-05",
               "dayOfWeek": "Thursday",
-              "cycleDay": null,
-              "status": "empty",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
+              "status": "instructional",
+              "heading": "Q2 L9",
+              "lessonLabel": "Q2 L9",
+              "lessonId": "vp-q2-l07",
+              "lessonTitle": "Quiz 2 and Final Export",
               "programAreaId": "video-production",
+              "cycleDay": "B",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "No Q2 DaVinci Resolve lesson scheduled"
+              "sourceNote": ""
             },
             {
               "date": "2026-11-06",
               "dayOfWeek": "Friday",
-              "cycleDay": null,
-              "status": "empty",
-              "heading": "",
-              "lessonLabel": "",
-              "lessonId": "",
-              "lessonTitle": "",
+              "status": "instructional",
+              "heading": "Q2 L9",
+              "lessonLabel": "Q2 L9",
+              "lessonId": "vp-q2-l07",
+              "lessonTitle": "Quiz 2 and Final Export",
               "programAreaId": "video-production",
+              "cycleDay": "A",
               "calendarNote": "",
-              "sourceNote": "",
-              "reason": "No Q2 DaVinci Resolve lesson scheduled"
+              "sourceNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2026-11-09",
+          "weekEnd": "2026-11-13",
+          "days": [
+            {
+              "date": "2026-11-09",
+              "dayOfWeek": "Monday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-11-10",
+              "dayOfWeek": "Tuesday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-11-11",
+              "dayOfWeek": "Wednesday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Veterans Day Observed (No School)",
+              "sourceNote": "Veterans Day Observed (No School)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2026-11-12",
+              "dayOfWeek": "Thursday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-11-13",
+              "dayOfWeek": "Friday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            }
+          ]
+        },
+        {
+          "weekStart": "2026-11-16",
+          "weekEnd": "2026-11-20",
+          "days": [
+            {
+              "date": "2026-11-16",
+              "dayOfWeek": "Monday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-11-17",
+              "dayOfWeek": "Tuesday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-11-18",
+              "dayOfWeek": "Wednesday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-11-19",
+              "dayOfWeek": "Thursday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-11-20",
+              "dayOfWeek": "Friday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            }
+          ]
+        },
+        {
+          "weekStart": "2026-11-23",
+          "weekEnd": "2026-11-27",
+          "days": [
+            {
+              "date": "2026-11-23",
+              "dayOfWeek": "Monday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Thanksgiving Break (No School)",
+              "sourceNote": "Thanksgiving Break (No School)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2026-11-24",
+              "dayOfWeek": "Tuesday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Thanksgiving Break (No School)",
+              "sourceNote": "Thanksgiving Break (No School)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2026-11-25",
+              "dayOfWeek": "Wednesday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Thanksgiving Break (No School)",
+              "sourceNote": "Thanksgiving Break (No School)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2026-11-26",
+              "dayOfWeek": "Thursday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Thanksgiving Break (No School)",
+              "sourceNote": "Thanksgiving Break (No School)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2026-11-27",
+              "dayOfWeek": "Friday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Thanksgiving Break (No School)",
+              "sourceNote": "Thanksgiving Break (No School)",
+              "calendarNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2026-11-30",
+          "weekEnd": "2026-12-04",
+          "days": [
+            {
+              "date": "2026-11-30",
+              "dayOfWeek": "Monday",
+              "status": "empty",
+              "heading": "No Q2 Lesson",
+              "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+            },
+            {
+              "date": "2026-12-01",
+              "dayOfWeek": "Tuesday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-12-02",
+              "dayOfWeek": "Wednesday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-12-03",
+              "dayOfWeek": "Thursday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-12-04",
+              "dayOfWeek": "Friday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
             }
           ]
         }
@@ -448,24 +615,64 @@
       "date": "2026-10-16",
       "dayOfWeek": "Friday",
       "reason": "Staff Development Day #3 (No School for Students)",
-      "calendarNote": "",
-      "sourceNote": "Staff Development Day #3 (No School for Students)"
+      "sourceNote": "Staff Development Day #3 (No School for Students)",
+      "calendarNote": ""
     },
     {
       "date": "2026-10-30",
       "dayOfWeek": "Friday",
       "reason": "Nevada Day Observed (No School)",
-      "calendarNote": "",
-      "sourceNote": "Nevada Day Observed (No School)"
+      "sourceNote": "Nevada Day Observed (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "reason": "Veterans Day Observed (No School)",
+      "sourceNote": "Veterans Day Observed (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2026-11-23",
+      "dayOfWeek": "Monday",
+      "reason": "Thanksgiving Break (No School)",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2026-11-24",
+      "dayOfWeek": "Tuesday",
+      "reason": "Thanksgiving Break (No School)",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2026-11-25",
+      "dayOfWeek": "Wednesday",
+      "reason": "Thanksgiving Break (No School)",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2026-11-26",
+      "dayOfWeek": "Thursday",
+      "reason": "Thanksgiving Break (No School)",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2026-11-27",
+      "dayOfWeek": "Friday",
+      "reason": "Thanksgiving Break (No School)",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "calendarNote": ""
     }
   ],
   "notes": [
-    "The source calendar states Year 173 Days, but fixed listed student no-school dates do not reconcile exactly with summary counts. Generated data follows listed dates and notes.",
+    "Saturdays and Sundays are excluded from scheduling and are not listed as no-school dates.",
+    "Q2 begins with two file organization openers before the DaVinci Resolve sequence starts.",
     "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher changes that rule.",
     "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.",
-    "This Q2 DaVinci Resolve unit begins on an inferred B day, so each lesson record stores the A-day and B-day dates separately rather than assuming chronological A then B order.",
-    "The Color page and Fairlight page transcript span, approximately 02:50:00-04:53:05, is intentionally excluded from this Q2 plan.",
-    "Weekends are excluded from instructional scheduling but are not listed as no-school dates.",
-    "No-school dates list actual weekday non-student days only."
+    "The Color page and Fairlight page transcript span, approximately 02:50:00-04:53:05, is intentionally excluded from this Q2 plan."
   ]
 }

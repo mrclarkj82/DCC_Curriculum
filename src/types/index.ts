@@ -22,6 +22,12 @@ export interface RubricItem {
   description: string;
 }
 
+export interface ResourceLink {
+  label: string;
+  url: string;
+  description?: string;
+}
+
 export type PromptField =
   | string
   | {
@@ -79,6 +85,7 @@ export interface Assignment {
   reflectionPrompt: string;
   bellRinger?: PromptField;
   exitTicket?: PromptField;
+  resources?: ResourceLink[];
 }
 
 export interface QuizQuestion {

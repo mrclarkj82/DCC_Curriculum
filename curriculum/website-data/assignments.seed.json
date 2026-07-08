@@ -1063,6 +1063,142 @@
     "reflectionPrompt": "What terrain choice makes the castle feel more intentional?"
   },
   {
+    "id": "vp-q2-file-org-a01",
+    "programAreaId": "video-production",
+    "lessonId": "vp-q2-file-org-01",
+    "title": "Video Production Folder Organization",
+    "skillFocus": [
+      "project folder structure",
+      "media organization",
+      "file type recognition",
+      "production workflow",
+      "evidence documentation"
+    ],
+    "instructions": "Organize File 1 into a professional video production project folder. Use file names and file extensions to sort footage, audio, graphics, documents, assets, project files, and exports.",
+    "resources": [
+      {
+        "label": "Download File 1 ZIP",
+        "url": "https://drive.google.com/file/d/1lawbe-dxszgGbAr6d5zx4nFPOuU6j4Sk/view?usp=sharing",
+        "description": "Use this ZIP as the messy video production file set."
+      },
+      {
+        "label": "Open File 1 Instructions",
+        "url": "https://docs.google.com/document/d/1fAgKFFECPnBWXnh4G7CgksESe9JTRV4OOTtsUKeDPjw/edit?usp=sharing",
+        "description": "Use this document as the official folder structure and sorting guide."
+      }
+    ],
+    "requiredSteps": [
+      "Open the File 1 instructions.",
+      "Download File 1 and unzip it on your computer.",
+      "Create a new main project folder using the class naming convention.",
+      "Build the required video production folder structure exactly.",
+      "Sort project files, footage, audio, graphics, exports, documents, and assets into the correct folders.",
+      "Use file names and file extensions as clues when sorting.",
+      "Check that no files are left loose in the main project folder.",
+      "Capture a screenshot of the completed folder tree.",
+      "Create a short placement map listing at least twelve files and where you placed them.",
+      "Upload evidence to Google Drive or Google Docs and submit the share links in DCC Creative Studio."
+    ],
+    "submissionType": "google-drive-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot showing the completed video production folder tree.",
+      "Google Drive or Docs link listing where at least twelve sample files were placed and why.",
+      "Short reflection explaining two organization decisions that would help an editor work faster."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete folder structure, all files sorted accurately, evidence is clear, and reflection explains thoughtful production workflow decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete folder structure, most files sorted accurately, and all required evidence is submitted."
+      },
+      {
+        "score": 2,
+        "description": "Folder structure or sorting is partially complete, or required evidence is missing detail."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, hard to verify, or many files remain misplaced."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a one-page production handoff guide explaining how another editor should use your organized folder.",
+    "reflectionPrompt": "Which two sorting decisions would save the most time during a real video edit, and why?"
+  },
+  {
+    "id": "ue-q2-file-org-a01",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q2-file-org-01",
+    "title": "Video Game Development Folder Organization",
+    "skillFocus": [
+      "game project structure",
+      "asset organization",
+      "file type recognition",
+      "development workflow",
+      "evidence documentation"
+    ],
+    "instructions": "Organize File 2 into a professional game development project folder. Use file names and file extensions to sort art, audio, code, levels, documents, exports, plugins, prefabs, and project files.",
+    "resources": [
+      {
+        "label": "Download File 2 ZIP",
+        "url": "https://drive.google.com/file/d/1X1vAIX0L7c5dvFrtmAZhQbz9XuRP7Kee/view?usp=sharing",
+        "description": "Use this ZIP as the messy game development file set."
+      },
+      {
+        "label": "Open File 2 Instructions",
+        "url": "https://docs.google.com/document/d/1C2Po4zkeuFMmcJfTPx2OvCsmSl5mBu4GIZcFj7XMR1M/edit?usp=sharing",
+        "description": "Use this document as the official folder structure and sorting guide."
+      }
+    ],
+    "requiredSteps": [
+      "Open the File 2 instructions.",
+      "Download File 2 and unzip it on your computer.",
+      "Create a new main game project folder using the class naming convention.",
+      "Build the required game development folder structure exactly.",
+      "Sort project files, art, audio, code, levels, documents, exports, and reusable assets into the correct folders.",
+      "Use file names and file extensions as clues when sorting.",
+      "Check that no files are left loose in the main project folder.",
+      "Capture a screenshot of the completed folder tree.",
+      "Create a short placement map listing at least twelve files and where you placed them.",
+      "Upload evidence to Google Drive or Google Docs and submit the share links in DCC Creative Studio."
+    ],
+    "submissionType": "google-drive-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive link to a screenshot showing the completed game development folder tree.",
+      "Google Drive or Docs link listing where at least twelve sample files were placed and why.",
+      "Short reflection explaining two organization decisions that would help a game team work faster."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete folder structure, all files sorted accurately, evidence is clear, and reflection explains thoughtful game development workflow decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete folder structure, most files sorted accurately, and all required evidence is submitted."
+      },
+      {
+        "score": 2,
+        "description": "Folder structure or sorting is partially complete, or required evidence is missing detail."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete, hard to verify, or many files remain misplaced."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a one-page handoff guide explaining how another game developer should find art, code, levels, and builds in your organized folder.",
+    "reflectionPrompt": "Which two sorting decisions would save the most time during a real game development project, and why?"
+  },
+  {
     "id": "vp-q2-a01",
     "programAreaId": "video-production",
     "lessonId": "vp-q2-l01",

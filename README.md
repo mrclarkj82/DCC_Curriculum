@@ -445,13 +445,15 @@ For the Q1 Unreal schedule:
 - Holidays, breaks, staff development days, structured teacher planning days, and other weekday no-school days in the source calendar are skipped and listed as `noSchoolDates`.
 - Each Q1 Unreal lesson runs for two instructional class days: one A day and one B day.
 
-For the Q2 DaVinci Resolve schedule:
+For the Q2 Studio Organization + DaVinci Resolve schedule:
 
 - Scheduling starts on October 12, 2026, the first instructional weekday after the Q1 grading period ends on October 9, 2026.
-- October 12, 2026 is an inferred `B` day, so Q2 DaVinci Resolve lesson records store A-day and B-day dates separately.
-- The trimmed mini-unit runs through November 2, 2026.
+- October 12, 2026 is an inferred `B` day, so Q2 lesson records store A-day and B-day dates separately.
+- Q2 now opens with two file organization lessons: Video Production File Organization and Video Game Development File Organization.
+- The trimmed DaVinci Resolve sequence starts after those two openers.
+- The full nine-lesson Q2 schedule runs through November 6, 2026.
 - October 16 and October 30 are skipped as weekday no-school dates.
-- The unit contains seven A/B lessons and two draft quiz checkpoints before later group projects.
+- The DaVinci portion still contains seven A/B lessons and two draft quiz checkpoints before later group projects.
 
 Generated files:
 
@@ -467,7 +469,7 @@ Generated files:
 - `curriculum/website-data/lessonSchedule.seed.json`
 - `curriculum/website-data/blockLessonCalendar.seed.json`
 
-The teacher/admin route `/teacher/schedule` shows Q1 Unreal and Q2 DaVinci Resolve schedules as Monday-Friday block calendars. Instructional day cells use short labels such as `Q1 L1` as the main heading, with the long lesson title, lesson ID, program area, A/B day, and calendar notes inside the block. No-school weekday cells show `No School` and the reason from the source calendar.
+The teacher/admin route `/teacher/schedule` shows Q1 Unreal and Q2 Studio Organization + DaVinci schedules as Monday-Friday block calendars. Instructional day cells use short labels such as `Q1 L1` as the main heading, with the long lesson title, lesson ID, program area, A/B day, and calendar notes inside the block. No-school weekday cells show `No School` and the reason from the source calendar.
 
 The schedule data is website-ready and can later drive or suggest class `activeItemId` values by date and cycle day. It does not replace the existing `/today` active item workflow.
 
@@ -478,6 +480,9 @@ The Q2 Video Production Studio DaVinci Resolve mini-unit lives in `curriculum/pi
 It includes:
 
 - 7 lesson folders with lesson pages, slide briefs, premium presentation briefs, assignment sheets, bell ringer/exit tickets, teacher notes, and `lesson-data.json`.
+- 2 Q2 file organization opener lessons:
+  - Video Production File Organization in `curriculum/pilot-batch/video-production/q2/file-organization/`.
+  - Video Game Development File Organization in `curriculum/pilot-batch/unreal/q2/file-organization/`.
 - 2 draft quiz folders with public quiz seed records and private answer-key seed records. The Color page and Fairlight page transcript span, approximately `02:50:00-04:53:05`, is excluded from this plan.
 - A/B lesson schedule records in `curriculum/website-data/lessonSchedule.seed.json`.
 - Link-based evidence expectations only. Raw uploads, in-browser video editing, portfolio workflows, and group project workflows are not part of this batch.
