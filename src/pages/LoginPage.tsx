@@ -1,8 +1,23 @@
 import { useState } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation, type Location } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
 
+const getPostLoginRedirectPath = (state: unknown): string => {
+  if (!state || typeof state !== 'object' || !('from' in state)) {
+    return '/today';
+  }
+
+  const from = (state as { from?: Location }).from;
+
+  if (!from?.pathname || from.pathname === '/login') {
+    return '/today';
+  }
+
+  return `${from.pathname}${from.search}${from.hash}`;
+};
+
 export function LoginPage() {
+  const location = useLocation();
   const {
     authError,
     isLocalDemoMode,
@@ -14,7 +29,7 @@ export function LoginPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   if (!loading && userProfile) {
-    return <Navigate to="/today" replace />;
+    return <Navigate to={getPostLoginRedirectPath(location.state)} replace />;
   }
 
   const handleGoogleSignIn = async () => {

@@ -6,6 +6,7 @@ import { App } from './App';
 import './styles/theme.css';
 import './styles/globals.css';
 import './styles/synthwave.css';
+import './styles/hidden-frame.css';
 
 const routerBasename =
   import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL.replace(/\/$/, '');

@@ -15,7 +15,9 @@ Keep this document separate from `docs/hidden-frame-spec.md`. The specification 
 
 ## Characters
 
-No fully defined characters are canon in Phase 0.
+### The Archivist
+
+The Archivist is introduced in Phase 1 as the voice attached to File 001, "The Edge of the Page." The Archivist rewards careful observation and points students back toward the frame, page border, and media composition. No identity, biography, or real-world role is canon yet.
 
 The Compression is named by the Phase 0 visual language as an antagonist or antagonist-state concept. Its identity, motive, rules, voice, and story role are not yet established.
 
@@ -24,6 +26,10 @@ The Compression is named by the Phase 0 visual language as an antagonist or anta
 ### 2026-07-08 - Phase 0
 
 The official visual foundation is imported. No in-world story events are established.
+
+### 2026-07-08 - Phase 1
+
+The first public-facing Hidden Frame entry point appears inside the DCC site. The Archive becomes accessible, File 001 becomes available, and the Archivist's first message is recoverable with the signal word `LUMEN`.
 
 ## Locations
 
@@ -49,7 +55,13 @@ A visual language for video production, broadcast, timeline, and media artifact 
 
 ## Archive Entries
 
-No archive entries are canon in Phase 0.
+### HF-ARCHIVE-PHASE-1
+
+Title: Recovered Files
+
+First appearance: `/hidden-frame/archive`
+
+Summary: The first archive hub. File 001 is available, while Files 002 through 005 are locked placeholders for future phases.
 
 Future entries should record:
 
@@ -63,7 +75,21 @@ Future entries should record:
 
 ## Recovered Files
 
-No recovered files are canon in Phase 0.
+### HF-FILE-001
+
+File ID: `001`
+
+Filename: The Edge of the Page
+
+Media type: recovered text
+
+First appearance: `/hidden-frame/file/001`
+
+In-world source: Archive hub
+
+Canon summary: File 001 establishes that the first clue is close to the frame and rewards looking at the border of the page rather than searching outside the DCC site.
+
+Related puzzle or archive ID: `HF-ARCHIVE-PHASE-1`
 
 Future files should record:
 
@@ -91,7 +117,9 @@ Future cards should record:
 
 ## Compression Logs
 
-No Compression logs are canon in Phase 0.
+No antagonist Compression logs are canon in Phase 1.
+
+Phase 1 includes light system messages such as "Archive initialized" and "Observation recorded. The archive remembers careful edges." These are interface atmosphere, not threats or story escalation.
 
 Future logs should record:
 
@@ -120,7 +148,9 @@ Scanlines and timecode represent media artifacts, recovered recordings, and clos
 
 ## Dialogue
 
-No character dialogue is canon in Phase 0.
+### The Archivist - File 001
+
+"You found the edge of the page. Most people never check the border. The first clue is not hidden far away. It is hidden in what the frame chooses to show."
 
 ## Recurring Phrases
 
@@ -130,15 +160,32 @@ The Phase 0 token file establishes these phrases:
 - The first frame was never missing.
 - Originality leaves artifacts.
 
-Do not assign a speaker, event, or puzzle solution to these phrases until a future phase documents it.
+Phase 1 adds:
+
+- The edge of the page.
+- What the frame chooses to show.
+
+Do not assign extra speakers, events, or puzzle solutions to these phrases until a future phase documents them.
 
 ## Puzzle Solutions
 
-No puzzle solutions are canon in Phase 0.
+### File 001
+
+Prompt type: signal word gate
+
+Canonical answer: `LUMEN`
+
+Accepted input behavior: case-insensitive and trims surrounding whitespace.
+
+Hint: The answer points toward Unreal lighting and the system that helps a scene carry bounced light instead of staying flat.
 
 ## Passwords
 
-No passwords are canon in Phase 0.
+### File 001
+
+Password: `LUMEN`
+
+Meaning: A signal word connected to Unreal lighting and visual observation.
 
 Do not store future active passwords in client code unless they are intentionally public, purely narrative, and documented as safe to expose.
 
@@ -149,6 +196,8 @@ Do not store future active passwords in client code unless they are intentionall
 - What is the first recovered file?
 - What is the Render Room?
 - How do Unreal, Blender, cinematography, and video clues connect?
+- Why did the Archivist choose File 001 as the first public entry point?
+- What makes the edge of the page important?
 
 These questions are prompts for future phases, not canon answers.
 
@@ -166,13 +215,15 @@ Potential future threads:
 
 ## Student Discoveries
 
-No student discoveries are recorded in Phase 0.
+No student discoveries are recorded in Phase 1.
 
 Future entries should avoid naming students unless the teacher explicitly approves a privacy-safe classroom convention.
 
 ## Developer Notes
 
-Phase 0 intentionally contains no story implementation. It establishes symbols, atmosphere, phrase seeds, and canon boundaries so later phases can expand without contradiction.
+Phase 0 intentionally contained no story implementation. It established symbols, atmosphere, phrase seeds, and canon boundaries so later phases could expand without contradiction.
+
+Phase 1 is only the first public-facing entry point. It should not be treated as the full mystery, a complete puzzle chain, or evidence that later files must follow the exact same interaction pattern.
 
 If future story additions risk contradicting existing lore, consult this document first. Preserve continuity whenever possible. If continuity must change, document the retcon and the reasoning here.
 

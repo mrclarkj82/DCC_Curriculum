@@ -5,6 +5,9 @@ import { AdminPage } from './pages/AdminPage';
 import { AreasPage } from './pages/AreasPage';
 import { AssignmentDetailPage } from './pages/AssignmentDetailPage';
 import { BroadcastUpdateDetailPage } from './pages/BroadcastUpdateDetailPage';
+import { HiddenFrameArchivePage } from './hidden-frame/pages/HiddenFrameArchivePage';
+import { HiddenFrameFilePage } from './hidden-frame/pages/HiddenFrameFilePage';
+import { HiddenFrameLandingPage } from './hidden-frame/pages/HiddenFrameLandingPage';
 import { JoinClassPage } from './pages/JoinClassPage';
 import { LandingPage } from './pages/LandingPage';
 import { LessonDetailPage } from './pages/LessonDetailPage';
@@ -31,6 +34,9 @@ export function App() {
           <Route path="/areas" element={<AreasPage />} />
           <Route path="/areas/unreal-engine" element={<UnrealAreaPage />} />
           <Route path="/areas/video-production" element={<VideoProductionAreaPage />} />
+          <Route path="/hidden-frame" element={<HiddenFrameLandingPage />} />
+          <Route path="/hidden-frame/archive" element={<HiddenFrameArchivePage />} />
+          <Route path="/hidden-frame/file/001" element={<HiddenFrameFilePage />} />
           <Route path="/lessons/:lessonId" element={<LessonDetailPage />} />
           <Route path="/assignments/:assignmentId" element={<AssignmentDetailPage />} />
           <Route path="/media-projects/:projectId" element={<MediaProjectDetailPage />} />

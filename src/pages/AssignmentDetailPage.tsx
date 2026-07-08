@@ -6,6 +6,7 @@ import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { RubricTable } from '../components/RubricTable';
 import { SubmissionPanel } from '../components/submissions/SubmissionPanel';
+import { HiddenFrameIcon } from '../hidden-frame/components/HiddenFrameIcon';
 import { useAsyncData } from '../hooks/useAsyncData';
 import { usePrimaryClassRecord } from '../hooks/usePrimaryClassRecord';
 import { getAssignmentById } from '../services/assignmentService';
@@ -95,6 +96,9 @@ export function AssignmentDetailPage() {
         <section className="card mission-panel">
           <h2>Extension Challenge</h2>
           <p>{assignment.extensionChallenge || 'No extension challenge yet.'}</p>
+          <div className="hidden-frame-assignment-marker">
+            <HiddenFrameIcon />
+          </div>
         </section>
 
         <section className="card span-two mission-panel">
