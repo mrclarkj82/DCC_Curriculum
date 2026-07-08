@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { AssignmentGameEntryCard } from '../components/assignmentGame/AssignmentGameEntryCard';
 import { EmptyState } from '../components/EmptyState';
 import { EvidenceChecklist } from '../components/EvidenceChecklist';
 import { ErrorState } from '../components/ErrorState';
@@ -12,6 +13,7 @@ import { getAssignmentById } from '../services/assignmentService';
 import { getLessonById } from '../services/lessonService';
 import { getProgramAreaById } from '../services/programAreaService';
 import { resolveSubmissionTarget } from '../services/submissionService';
+import type { ActiveClassItem } from '../types';
 
 export function AssignmentDetailPage() {
   const { assignmentId } = useParams();
@@ -58,6 +60,24 @@ export function AssignmentDetailPage() {
 
   const { assignment, lesson, area } = data;
   const submissionTarget = resolveSubmissionTarget('assignment', assignment);
+  const activeItem: ActiveClassItem =
+    classRecord?.activeItemType === 'lesson' && lesson?.id === classRecord.activeItemId
+      ? {
+          id: lesson.id,
+          type: 'lesson',
+          programAreaId: lesson.programAreaId,
+          title: lesson.title,
+          status: lesson.status,
+          record: lesson,
+        }
+      : {
+          id: assignment.id,
+          type: 'assignment',
+          programAreaId: assignment.programAreaId,
+          title: assignment.title,
+          status: 'active',
+          record: assignment,
+        };
 
   return (
     <PageContainer
@@ -116,6 +136,12 @@ export function AssignmentDetailPage() {
         target={submissionTarget}
         userProfile={userProfile}
         viewerMode="student"
+      />
+      <AssignmentGameEntryCard
+        classRecord={classRecord}
+        activeItem={activeItem}
+        target={submissionTarget}
+        userProfile={userProfile}
       />
     </PageContainer>
   );

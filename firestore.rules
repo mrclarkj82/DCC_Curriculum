@@ -611,6 +611,118 @@ service cloud.firestore {
         && request.resource.data.updatedAt == request.time;
     }
 
+    function assignmentGameSaveAllowedKeys(saveData) {
+      return saveData.keys().hasOnly([
+        'id',
+        'uid',
+        'classId',
+        'programAreaId',
+        'activeItemType',
+        'activeItemId',
+        'targetType',
+        'targetId',
+        'unlockSubmissionId',
+        'currentLevelId',
+        'checkpointId',
+        'playerPosition',
+        'health',
+        'energy',
+        'inventory',
+        'defeatedEnemyIds',
+        'collectedItemIds',
+        'progressionFlags',
+        'createdAt',
+        'updatedAt'
+      ]);
+    }
+
+    function assignmentGameUnlockSubmissionPath(saveData) {
+      return /databases/$(database)/documents/apps/dcc/submissions/$(saveData.unlockSubmissionId);
+    }
+
+    function assignmentGameUnlockSubmissionIsComplete(saveData) {
+      let unlockPath = assignmentGameUnlockSubmissionPath(saveData);
+      let unlockData = get(unlockPath).data;
+      return saveData.unlockSubmissionId is string
+        && saveData.unlockSubmissionId.size() > 0
+        && exists(unlockPath)
+        && unlockData.uid == request.auth.uid
+        && unlockData.classId == saveData.classId
+        && unlockData.targetType == saveData.targetType
+        && unlockData.targetId == saveData.targetId
+        && unlockData.status in ['submitted', 'resubmitted', 'accepted']
+        && unlockData.driveLinks is list
+        && unlockData.otherLinks is list
+        && unlockData.driveLinks.size() + unlockData.otherLinks.size() > 0
+        && unlockData.reflection is string
+        && unlockData.reflection.size() > 0;
+    }
+
+    function canReadAssignmentGameSave(saveData) {
+      return isAdmin()
+        || (
+          isAllowedAccount()
+          && saveData.uid == request.auth.uid
+          && saveData.classId is string
+          && classExists(saveData.classId)
+          && request.auth.uid in classData(saveData.classId).studentIds
+        );
+    }
+
+    function safeAssignmentGameSaveBase(saveId) {
+      return isAllowedAccount()
+        && userRole() == 'student'
+        && assignmentGameSaveAllowedKeys(request.resource.data)
+        && request.resource.data.id == saveId
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.classId is string
+        && classExists(request.resource.data.classId)
+        && request.auth.uid in classData(request.resource.data.classId).studentIds
+        && request.resource.data.programAreaId is string
+        && request.resource.data.programAreaId == classData(request.resource.data.classId).activeProgramAreaId
+        && request.resource.data.activeItemType == classData(request.resource.data.classId).activeItemType
+        && request.resource.data.activeItemId == classData(request.resource.data.classId).activeItemId
+        && activeItemTypeIsSupported(request.resource.data.activeItemType)
+        && validSubmissionTargetType(request.resource.data.targetType)
+        && submissionTargetExists(request.resource.data)
+        && submissionActiveItemExists(request.resource.data)
+        && assignmentGameUnlockSubmissionIsComplete(request.resource.data)
+        && request.resource.data.currentLevelId is string
+        && request.resource.data.currentLevelId.size() > 0
+        && request.resource.data.checkpointId is string
+        && request.resource.data.checkpointId.size() > 0
+        && request.resource.data.playerPosition is map
+        && request.resource.data.playerPosition.x >= 0
+        && request.resource.data.playerPosition.x <= 2000
+        && request.resource.data.playerPosition.y >= 0
+        && request.resource.data.playerPosition.y <= 2000
+        && request.resource.data.health >= 0
+        && request.resource.data.health <= 100
+        && request.resource.data.energy >= 0
+        && request.resource.data.energy <= 100
+        && request.resource.data.inventory is list
+        && request.resource.data.inventory.size() <= 20
+        && request.resource.data.defeatedEnemyIds is list
+        && request.resource.data.defeatedEnemyIds.size() <= 40
+        && request.resource.data.collectedItemIds is list
+        && request.resource.data.collectedItemIds.size() <= 40
+        && request.resource.data.progressionFlags is map
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function safeAssignmentGameSaveCreate(saveId) {
+      return safeAssignmentGameSaveBase(saveId)
+        && request.resource.data.createdAt == request.time;
+    }
+
+    function safeAssignmentGameSaveUpdate(saveId) {
+      return safeAssignmentGameSaveBase(saveId)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.id == resource.data.id
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.classId == resource.data.classId;
+    }
+
     function teacherPreviewResponseAllowedKeys(responseData) {
       return responseData.keys().hasOnly([
         'id',
@@ -745,6 +857,13 @@ service cloud.firestore {
             safeStudentSubmissionUpdate(submissionId)
             || safeSubmissionReviewUpdate()
           );
+        allow delete: if false;
+      }
+
+      match /assignmentGameSaves/{saveId} {
+        allow get, list: if isDccApp(appId) && canReadAssignmentGameSave(resource.data);
+        allow create: if isDccApp(appId) && safeAssignmentGameSaveCreate(saveId);
+        allow update: if isDccApp(appId) && safeAssignmentGameSaveUpdate(saveId);
         allow delete: if false;
       }
 
