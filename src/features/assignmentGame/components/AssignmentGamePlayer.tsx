@@ -5,6 +5,8 @@ interface AssignmentGamePlayerProps {
 }
 
 export function AssignmentGamePlayer({ playerState }: AssignmentGamePlayerProps) {
+  const movementLabel = playerState.isMoving ? 'moving' : 'idle';
+
   return (
     <div
       className={`assignment-game-player assignment-game-player--${playerState.facingDirection}${
@@ -14,10 +16,10 @@ export function AssignmentGamePlayer({ playerState }: AssignmentGamePlayerProps)
         left: `${playerState.position.x}%`,
         top: `${playerState.position.y}%`,
       }}
-      aria-label={`Player facing ${playerState.facingDirection}`}
+      aria-label={`Player ${movementLabel}, facing ${playerState.facingDirection}`}
       role="img"
     >
-      <span className="assignment-game-player-core">EG</span>
+      <span className="assignment-game-player-sprite" aria-hidden="true" />
       <span className="assignment-game-player-shadow" aria-hidden="true" />
     </div>
   );
