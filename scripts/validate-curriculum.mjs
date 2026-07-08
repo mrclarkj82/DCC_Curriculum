@@ -29,6 +29,8 @@ const q1UnrealCalendarSchedule = readCalendarJson('q1-unreal-lesson-schedule.jso
 const q1UnrealBlockCalendar = readCalendarJson('q1-unreal-block-calendar.json');
 const q2DaVinciCalendarSchedule = readCalendarJson('q2-davinci-resolve-lesson-schedule.json');
 const q2DaVinciBlockCalendar = readCalendarJson('q2-davinci-resolve-block-calendar.json');
+const q3UnrealCalendarSchedule = readCalendarJson('q3-unreal-castle-documentary-lesson-schedule.json');
+const q3UnrealBlockCalendar = readCalendarJson('q3-unreal-castle-documentary-block-calendar.json');
 
 const programAreaIds = new Set(programAreas.map((area) => area.id));
 const lessonIds = new Set(lessons.map((lesson) => lesson.id));
@@ -194,6 +196,13 @@ const q2DaVinciLessonNumbers = new Set(q2DaVinciSchedule.map((item) => item.less
 const q2DaVinciScheduleByLessonId = new Map(
   q2DaVinciSchedule.map((item) => [item.lessonId, item]),
 );
+const q3UnrealSchedule = lessonSchedule.filter(
+  (item) => item.programAreaId === 'unreal-engine' && item.quarter === 'Q3',
+);
+const q3UnrealLessonNumbers = new Set(q3UnrealSchedule.map((item) => item.lessonNumber));
+const q3UnrealScheduleByLessonId = new Map(
+  q3UnrealSchedule.map((item) => [item.lessonId, item]),
+);
 
 for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
   assert(
@@ -206,6 +215,13 @@ for (let lessonNumber = 1; lessonNumber <= 9; lessonNumber += 1) {
   assert(
     q2DaVinciLessonNumbers.has(lessonNumber),
     `Q2 DaVinci Resolve lesson schedule is missing lesson ${lessonNumber}`,
+  );
+}
+
+for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
+  assert(
+    q3UnrealLessonNumbers.has(lessonNumber),
+    `Q3 Unreal Castle Documentary lesson schedule is missing lesson ${lessonNumber}`,
   );
 }
 
@@ -274,6 +290,10 @@ assertNoWeekendDateList(
 assertNoWeekendDateList(
   'q2-davinci-resolve-lesson-schedule noSchoolDatesDuringSchedule',
   q2DaVinciCalendarSchedule.noSchoolDatesDuringSchedule,
+);
+assertNoWeekendDateList(
+  'q3-unreal-castle-documentary-lesson-schedule noSchoolDatesDuringSchedule',
+  q3UnrealCalendarSchedule.noSchoolDatesDuringSchedule,
 );
 
 const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId) => {
@@ -403,6 +423,11 @@ validateBlockLessonCalendar(
   q2DaVinciBlockCalendar,
   q2DaVinciScheduleByLessonId,
 );
+validateBlockLessonCalendar(
+  'curriculum/calendar/q3-unreal-castle-documentary-block-calendar.json',
+  q3UnrealBlockCalendar,
+  q3UnrealScheduleByLessonId,
+);
 
 assert(
   Array.isArray(blockLessonCalendars),
@@ -428,6 +453,9 @@ const combinedQ1UnrealBlockCalendar = combinedBlockCalendarsByKey.get(
 const combinedQ2DaVinciBlockCalendar = combinedBlockCalendarsByKey.get(
   blockCalendarKey(q2DaVinciBlockCalendar),
 );
+const combinedQ3UnrealBlockCalendar = combinedBlockCalendarsByKey.get(
+  blockCalendarKey(q3UnrealBlockCalendar),
+);
 
 assert(
   combinedQ1UnrealBlockCalendar,
@@ -436,6 +464,10 @@ assert(
 assert(
   combinedQ2DaVinciBlockCalendar,
   'blockLessonCalendars.seed.json must include the Q2 DaVinci Resolve block calendar',
+);
+assert(
+  combinedQ3UnrealBlockCalendar,
+  'blockLessonCalendars.seed.json must include the Q3 Unreal Castle Documentary block calendar',
 );
 
 validateBlockLessonCalendar(
@@ -447,6 +479,11 @@ validateBlockLessonCalendar(
   'curriculum/website-data/blockLessonCalendars.seed.json Q2 DaVinci Resolve',
   combinedQ2DaVinciBlockCalendar,
   q2DaVinciScheduleByLessonId,
+);
+validateBlockLessonCalendar(
+  'curriculum/website-data/blockLessonCalendars.seed.json Q3 Unreal Castle Documentary',
+  combinedQ3UnrealBlockCalendar,
+  q3UnrealScheduleByLessonId,
 );
 
 assert(
@@ -460,6 +497,10 @@ assert(
 assert(
   isSameJson(q2DaVinciBlockCalendar, combinedQ2DaVinciBlockCalendar),
   'blockLessonCalendars.seed.json Q2 entry must mirror q2-davinci-resolve-block-calendar.json',
+);
+assert(
+  isSameJson(q3UnrealBlockCalendar, combinedQ3UnrealBlockCalendar),
+  'blockLessonCalendars.seed.json Q3 entry must mirror q3-unreal-castle-documentary-block-calendar.json',
 );
 assert(
   isSameJson(blockLessonCalendar, appBlockLessonCalendar),
@@ -497,6 +538,11 @@ assertCalendarScheduleMirror(
   'q2-davinci-resolve-lesson-schedule',
   q2DaVinciCalendarSchedule.lessons,
   q2DaVinciSchedule,
+);
+assertCalendarScheduleMirror(
+  'q3-unreal-castle-documentary-lesson-schedule',
+  q3UnrealCalendarSchedule.lessons,
+  q3UnrealSchedule,
 );
 
 for (const quiz of quizzes) {

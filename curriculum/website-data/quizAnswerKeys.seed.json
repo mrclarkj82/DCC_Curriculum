@@ -339,7 +339,7 @@
     "id": "ue-q3-quiz-01",
     "quizId": "ue-q3-quiz-01",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 1: Production Expectations, Planning, Setup, and Blockout",
+    "title": "Q3 Quiz 1: Production Expectations, Documentation, Planning, Setup, and Blockout",
     "questionCount": 0,
     "answers": []
   },
@@ -347,7 +347,7 @@
     "id": "ue-q3-quiz-02",
     "quizId": "ue-q3-quiz-02",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 2: Landscape Materials, Terrain Assets, Modular Kits, and Composition",
+    "title": "Q3 Quiz 2: Landscape Materials, Terrain Assets, Modular Kits, Composition, and Process Evidence",
     "questionCount": 0,
     "answers": []
   },
@@ -355,7 +355,7 @@
     "id": "ue-q3-quiz-03",
     "quizId": "ue-q3-quiz-03",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 3: Scene Framing, Foliage, Storytelling, and Lighting Mood",
+    "title": "Q3 Quiz 3: Scene Framing, Foliage, Storytelling, Lighting Mood, and Documentary Capture",
     "questionCount": 0,
     "answers": []
   },
@@ -363,7 +363,7 @@
     "id": "ue-q3-quiz-04",
     "quizId": "ue-q3-quiz-04",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 4: Post-Process, Walkthroughs, and Portfolio Submission",
+    "title": "Q3 Quiz 4: Post-Process, Walkthroughs, Documentary Evidence, and Portfolio Submission",
     "questionCount": 0,
     "answers": []
   },

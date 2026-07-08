@@ -15,6 +15,7 @@ const programAreaLabels: Record<string, string> = {
 const scheduleTitles: Record<string, string> = {
   'Q1:unreal-engine': 'Q1 Unreal Engine',
   'Q2:video-production': 'Q2 Studio Organization + DaVinci',
+  'Q3:unreal-engine': 'Q3 Castle Documentary',
 };
 
 function scheduleKey(calendar: BlockLessonCalendarPayload): string {

@@ -880,46 +880,59 @@
     "lessonId": "ue-q3-l01",
     "title": "Q3 Production Project Setup",
     "skillFocus": [
-      "production workflow",
-      "project setup",
-      "goal setting"
+      "production setup",
+      "project goals",
+      "screen recording",
+      "camera evidence",
+      "production log"
     ],
-    "instructions": "Set up the Q3 Unreal production project and define a clear goal for the castle environment.",
+    "instructions": "I can restart my Unreal workflow, set up my Q3 castle project, and begin documenting the production process with camera or screen-recorded evidence. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
     "requiredSteps": [
-      "Create or open the assigned Q3 Unreal project.",
-      "Set up project folders for planning, screenshots, and production notes.",
+      "Create or open the assigned Q3 Unreal castle project.",
+      "Set up a clean project folder and naming convention for Unreal files and documentary evidence.",
       "Write a short production goal for the castle environment.",
-      "Capture project setup evidence."
+      "Record a short screen capture or camera clip showing the project setup process.",
+      "Start a production log with the date, what you worked on, what you captured, and what you need next."
     ],
-    "submissionType": "screenshot-and-text",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
-      "Screenshot of the Q3 project setup",
-      "Written production goal for the castle environment"
+      "Screenshot of the Q3 project setup.",
+      "Written production goal for the castle environment.",
+      "Daily documentary clip or screen recording showing the setup process.",
+      "Production log entry for today."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished q3 production project setup; daily documentary evidence is clear, organized, and strongly explains process decisions."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Complete q3 production project setup; daily documentary evidence and production log are present."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Partially complete q3 production project setup; documentary evidence or production log is incomplete or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete; little process evidence is visible."
       },
       {
         "score": 0,
         "description": "Not submitted."
       }
     ],
-    "extensionChallenge": "Add a simple naming system for screenshots and production notes.",
-    "reflectionPrompt": "What production habit will help you finish a stronger capstone?"
+    "extensionChallenge": "Create a documentary folder structure with subfolders for screen recordings, camera footage, voiceover notes, music, and exports.",
+    "reflectionPrompt": "What part of today would be useful in a future documentary about how the castle was made?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What should a behind-the-scenes documentary show that a final screenshot cannot show?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What did you capture today that would help someone understand the beginning of your castle project?"
+    }
   },
   {
     "id": "ue-q3-a02",
@@ -928,45 +941,58 @@
     "title": "Castle Environment Plan",
     "skillFocus": [
       "reference gathering",
-      "visual planning",
-      "environment design"
+      "environment planning",
+      "visual goals",
+      "camera evidence",
+      "production log"
     ],
-    "instructions": "Create a plan for a fantasy/castle environment using references, constraints, and a clear focal point.",
+    "instructions": "I can plan a fantasy/castle environment and capture planning evidence that explains the intended story and visual direction. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
     "requiredSteps": [
-      "Collect teacher-approved visual references.",
-      "Identify the environment mood and main focal point.",
-      "Sketch or describe the basic layout.",
-      "List constraints or assets you expect to use."
+      "Create or update a reference board for the castle environment.",
+      "Define the castle focal point, route, and mood.",
+      "Create a simple layout sketch or written scene plan.",
+      "Record a screen capture or camera clip explaining one planning decision.",
+      "Update the production log with today's plan, capture notes, and next step."
     ],
-    "submissionType": "planning-document",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
-      "Reference board or planning document",
-      "Simple layout sketch or written scene plan"
+      "Reference board or planning document.",
+      "Simple layout sketch or written scene plan.",
+      "Daily documentary clip explaining one planning decision.",
+      "Production log entry for today."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished castle environment plan; daily documentary evidence is clear, organized, and strongly explains process decisions."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Complete castle environment plan; daily documentary evidence and production log are present."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Partially complete castle environment plan; documentary evidence or production log is incomplete or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete; little process evidence is visible."
       },
       {
         "score": 0,
         "description": "Not submitted."
       }
     ],
-    "extensionChallenge": "Add a color or mood reference and explain how it should affect lighting later.",
-    "reflectionPrompt": "What do you want the viewer to understand about this world?"
+    "extensionChallenge": "Record a short voice memo explaining the intended mood and story of the castle environment.",
+    "reflectionPrompt": "What planning choice will matter most once you start building?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What planning evidence would help a viewer understand the castle you are about to build?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What planning choice did you record or photograph today for the documentary?"
+    }
   },
   {
     "id": "ue-q3-a03",
@@ -974,38 +1000,43 @@
     "lessonId": "ue-q3-l03",
     "title": "Third-Person Walkthrough Setup",
     "skillFocus": [
-      "third-person template",
+      "third-person setup",
       "player scale",
-      "walkthrough testing"
+      "testing",
+      "screen recording",
+      "production log"
     ],
-    "instructions": "Set up a third-person project or template configuration so the castle environment can be tested from player view.",
+    "instructions": "I can set up a playable third-person Unreal project and document why player scale matters for a castle walkthrough. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
     "requiredSteps": [
-      "Create or configure the third-person project.",
-      "Confirm the playable character can move in the level.",
-      "Check that the environment scale feels appropriate.",
-      "Capture a screenshot showing the player character."
+      "Set up or confirm a third-person project/template configuration.",
+      "Place or test the player character in the castle environment workspace.",
+      "Check player scale against temporary terrain or blockout objects.",
+      "Record a short walkthrough clip from the player perspective.",
+      "Update the production log with what the player test revealed."
     ],
-    "submissionType": "screenshot",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
-      "Screenshot of the playable character in the project",
-      "Short note explaining why player scale matters"
+      "Screenshot of the playable character in the project.",
+      "Short note explaining why player scale matters.",
+      "Daily screen recording of a player-view test.",
+      "Production log entry for today."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished third-person walkthrough setup; daily documentary evidence is clear, organized, and strongly explains process decisions."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Complete third-person walkthrough setup; daily documentary evidence and production log are present."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Partially complete third-person walkthrough setup; documentary evidence or production log is incomplete or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete; little process evidence is visible."
       },
       {
         "score": 0,
@@ -1013,7 +1044,15 @@
       }
     ],
     "extensionChallenge": "Mark one intended player route through the future castle environment.",
-    "reflectionPrompt": "What does the player view reveal that the editor camera might hide?"
+    "reflectionPrompt": "What changed when you evaluated the scene from player view instead of editor view?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "Why might a castle look different when viewed from a player camera instead of the editor camera?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What did your recording show about player scale or movement?"
+    }
   },
   {
     "id": "ue-q3-a04",
@@ -1022,37 +1061,42 @@
     "title": "Castle Landscape Blockout",
     "skillFocus": [
       "landscape blockout",
-      "terrain planning",
-      "composition"
+      "terrain form",
+      "focal point",
+      "screen recording",
+      "production log"
     ],
-    "instructions": "Create a rough terrain blockout that supports the castle environment's focal point and playable route.",
+    "instructions": "I can block out terrain forms for a castle environment and document how the terrain supports the route, focal point, and story. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
     "requiredSteps": [
-      "Create or open the landscape area.",
-      "Sculpt rough landforms for the castle, route, and surrounding terrain.",
-      "Check the blockout from top-down and player-view angles.",
-      "Capture screenshots showing the plan."
+      "Create or refine rough terrain forms for the castle, route, and surrounding area.",
+      "Place temporary markers for the castle entrance, focal point, or path.",
+      "Test the blockout from editor and player perspectives.",
+      "Record a short screen capture showing before/after terrain decisions.",
+      "Update the production log with what terrain choice helped the castle read better."
     ],
-    "submissionType": "screenshot-set",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
-      "Top-down screenshot of the landscape blockout",
-      "Player-view screenshot showing the route or focal point"
+      "Top-down screenshot of the landscape blockout.",
+      "Player-view screenshot showing the route or focal point.",
+      "Daily screen recording showing a terrain/blockout decision.",
+      "Production log entry for today."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, and shows strong attention to naming, setup, and evidence."
+        "description": "Complete, polished castle landscape blockout; daily documentary evidence is clear, organized, and strongly explains process decisions."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Complete castle landscape blockout; daily documentary evidence and production log are present."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Partially complete castle landscape blockout; documentary evidence or production log is incomplete or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but not functional or unclear."
+        "description": "Attempted but incomplete; little process evidence is visible."
       },
       {
         "score": 0,
@@ -1060,7 +1104,15 @@
       }
     ],
     "extensionChallenge": "Add one temporary marker showing where the castle entrance should be.",
-    "reflectionPrompt": "What terrain choice makes the castle feel more intentional?"
+    "reflectionPrompt": "What terrain choice makes the castle feel more intentional?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What terrain features could make a castle feel protected, isolated, or dramatic?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What part of your blockout did you capture that guides the viewer toward the castle?"
+    }
   },
   {
     "id": "vp-q2-file-org-a01",
@@ -1563,5 +1615,715 @@
     ],
     "extensionChallenge": "Export two versions: one small review copy and one higher-quality archive copy, then compare the purpose of each.",
     "reflectionPrompt": "Which post-production pass changed your video most: editing, audio, titles, or export?"
+  },
+  {
+    "id": "ue-q3-a05",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l05",
+    "title": "Landscape Refinement Pass",
+    "skillFocus": [
+      "quiz review",
+      "landscape refinement",
+      "before-after evidence",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can review early Q3 production expectations and refine the castle landscape while documenting visible progress. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Complete or review Q3 Quiz 1 when assigned.",
+      "Choose one landscape problem to improve.",
+      "Refine terrain shape, scale, or route readability.",
+      "Capture before/after screenshots or a short screen recording of the refinement.",
+      "Update the production log with the improvement and remaining issue."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot or clip showing the refined landscape.",
+      "Before/after evidence of one improvement.",
+      "Daily documentary clip or screen recording showing refinement work.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished landscape refinement pass; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete landscape refinement pass; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete landscape refinement pass; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Add temporary labels or markers that explain the landscape improvement.",
+    "reflectionPrompt": "Which refinement made the biggest difference, and why?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What is one change that can make a rough landscape feel more believable?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What landscape improvement did today's footage capture clearly?"
+    }
+  },
+  {
+    "id": "ue-q3-a06",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l06",
+    "title": "Landscape Material Test",
+    "skillFocus": [
+      "landscape materials",
+      "surface readability",
+      "mood",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can apply and evaluate landscape materials while documenting how material choices change the castle environment mood. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Apply or adjust at least two landscape material areas.",
+      "Compare how the material choices affect the castle mood and readability.",
+      "Capture screenshots from the same camera angle before and after material changes.",
+      "Record a short clip explaining one material choice.",
+      "Update the production log with the material decision and next improvement."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Before/after screenshots of landscape material changes.",
+      "Daily documentary clip explaining one material choice.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished landscape material test; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete landscape material test; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete landscape material test; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a small material test zone with three labeled surface options.",
+    "reflectionPrompt": "Which material choice best supports your castle environment mood?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "How can a material change the story or mood of a place?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What material decision did your recording make easier to explain?"
+    }
+  },
+  {
+    "id": "ue-q3-a07",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l07",
+    "title": "Terrain Asset Import and Placement",
+    "skillFocus": [
+      "asset import",
+      "asset placement",
+      "scene consistency",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can import and place terrain assets responsibly while documenting how assets support the castle environment. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Import or choose terrain assets appropriate for the castle environment.",
+      "Place assets to support the route, silhouette, or story.",
+      "Adjust scale, rotation, and placement so assets feel intentional.",
+      "Record a clip showing one asset before and after placement.",
+      "Update the production log with why the asset was chosen."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of imported terrain assets placed in the scene.",
+      "Daily documentary clip showing an asset placement decision.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished terrain asset import and placement; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete terrain asset import and placement; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete terrain asset import and placement; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Make a mini asset list explaining which assets are decorative, navigational, or story-based.",
+    "reflectionPrompt": "How did one asset make the scene feel more complete?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes an imported asset feel like it belongs in a scene instead of looking randomly placed?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "Which imported asset did you document, and why did it belong in your scene?"
+    }
+  },
+  {
+    "id": "ue-q3-a08",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l08",
+    "title": "Castle Modular Kit Assembly",
+    "skillFocus": [
+      "modular design",
+      "castle assembly",
+      "scale",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can assemble modular castle pieces into a readable structure while documenting construction choices for the final documentary. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Select or create modular pieces for walls, towers, gates, or platforms.",
+      "Assemble a readable castle structure or section.",
+      "Check scale and alignment from editor and player viewpoints.",
+      "Record a construction clip showing how the castle section changed.",
+      "Update the production log with the modular pieces used and what still needs work."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the castle modular section.",
+      "Daily documentary clip showing castle construction progress.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished castle modular kit assembly; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete castle modular kit assembly; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete castle modular kit assembly; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a labeled modular kit preview showing the pieces used in your castle.",
+    "reflectionPrompt": "Which modular piece had the biggest effect on the castle silhouette?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "Why are modular pieces useful when building a castle or game environment?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What construction choice did your footage capture today?"
+    }
+  },
+  {
+    "id": "ue-q3-a09",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l09",
+    "title": "Castle Composition Checkpoint",
+    "skillFocus": [
+      "quiz review",
+      "composition",
+      "focal point",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can review mid-unit concepts and improve the castle composition while capturing evidence of visual decision-making. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Complete or review Q3 Quiz 2 when assigned.",
+      "Choose a camera/player angle to evaluate castle composition.",
+      "Adjust placement, height, route, or silhouette to improve readability.",
+      "Capture before/after screenshots or video from the same angle.",
+      "Update the production log with the composition decision."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Before/after composition screenshots.",
+      "Daily documentary clip showing a composition decision.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished castle composition checkpoint; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete castle composition checkpoint; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete castle composition checkpoint; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create three labeled camera angles and choose the strongest documentary shot.",
+    "reflectionPrompt": "What change helped the castle read more clearly?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes a castle scene visually readable from a distance?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What composition change did your recording or screenshot make clear?"
+    }
+  },
+  {
+    "id": "ue-q3-a10",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l10",
+    "title": "Rocks, Cliffs, and Framing Pass",
+    "skillFocus": [
+      "scene framing",
+      "rocks and cliffs",
+      "visual guidance",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can use rocks, cliffs, or terrain props to frame the castle environment and document how framing guides the viewer. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Add or refine rocks, cliffs, or terrain features around the castle.",
+      "Use placement to frame the route, entrance, or focal point.",
+      "Test at least one player-view or camera-view angle.",
+      "Record a clip showing how framing changed the scene.",
+      "Update the production log with the framing choice."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot showing rocks, cliffs, or terrain framing.",
+      "Daily documentary clip showing a framing decision.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished rocks, cliffs, and framing pass; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete rocks, cliffs, and framing pass; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete rocks, cliffs, and framing pass; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create one cinematic still that uses foreground, middle ground, and background.",
+    "reflectionPrompt": "How did framing affect where the viewer looks first?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "How can foreground or background objects guide attention in a scene?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What framing element did you capture today, and how does it guide the viewer?"
+    }
+  },
+  {
+    "id": "ue-q3-a11",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l11",
+    "title": "Foliage Placement Pass",
+    "skillFocus": [
+      "foliage placement",
+      "environment detail",
+      "performance awareness",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can place trees and foliage intentionally while documenting how natural details support the castle environment. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Add or refine trees, grass, or foliage around the castle environment.",
+      "Use density and placement to support story, route, or scale.",
+      "Avoid blocking important views or player movement.",
+      "Record a clip showing one foliage area before and after improvement.",
+      "Update the production log with what the foliage adds to the scene."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of foliage placed intentionally.",
+      "Daily documentary clip showing foliage improvement.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished foliage placement pass; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete foliage placement pass; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete foliage placement pass; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create two versions of one area: sparse and dense, then compare the mood.",
+    "reflectionPrompt": "Where did foliage help the environment, and where could it become distracting?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "When can too much foliage make a scene worse instead of better?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What foliage choice did your recording explain today?"
+    }
+  },
+  {
+    "id": "ue-q3-a12",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l12",
+    "title": "Environmental Storytelling Details",
+    "skillFocus": [
+      "environmental storytelling",
+      "set dressing",
+      "visual narrative",
+      "camera footage",
+      "production log"
+    ],
+    "instructions": "I can add environmental storytelling details and document how those choices communicate the castle's history or purpose. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Choose a small story idea for the castle environment.",
+      "Add or arrange details that communicate that idea visually.",
+      "Capture screenshots or footage from a viewer/player perspective.",
+      "Record a short explanation of one story detail.",
+      "Update the production log with the story choice and next detail."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of at least one environmental storytelling detail.",
+      "Daily documentary clip explaining the story detail.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished environmental storytelling details; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete environmental storytelling details; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete environmental storytelling details; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Write a three-sentence backstory for the castle and match three scene details to it.",
+    "reflectionPrompt": "How can a viewer understand your story without text?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What object or detail could tell a viewer something happened in this castle before they arrived?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What story detail did you document today?"
+    }
+  },
+  {
+    "id": "ue-q3-a13",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l13",
+    "title": "Lighting Mood Pass",
+    "skillFocus": [
+      "quiz review",
+      "lighting mood",
+      "atmosphere",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can review scene-building concepts and improve lighting mood while documenting how lighting changes the castle environment. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Complete or review Q3 Quiz 3 when assigned.",
+      "Choose a lighting mood for the castle environment.",
+      "Adjust lighting direction, intensity, color, or time-of-day feel.",
+      "Capture before/after evidence from the same view.",
+      "Update the production log with the lighting mood decision."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Before/after screenshots showing lighting mood.",
+      "Daily documentary clip showing lighting adjustment.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished lighting mood pass; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete lighting mood pass; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete lighting mood pass; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create two lighting looks and label the mood of each.",
+    "reflectionPrompt": "Which lighting change most affected the emotional tone of the castle?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "How can lighting make the same castle feel safe, mysterious, or dangerous?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What lighting change did your documentary evidence capture today?"
+    }
+  },
+  {
+    "id": "ue-q3-a14",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l14",
+    "title": "Cinematic Screenshot and Post-Process Pass",
+    "skillFocus": [
+      "post-process",
+      "cinematic screenshots",
+      "camera framing",
+      "screen recording",
+      "production log"
+    ],
+    "instructions": "I can use post-process and cinematic framing to capture polished castle visuals for the final documentary. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Set up or refine post-process settings for the castle environment.",
+      "Choose at least two cinematic camera angles.",
+      "Capture polished screenshots or short cinematic clips.",
+      "Record a short screen capture showing how one shot was composed.",
+      "Update the production log with which shot may appear in the final documentary."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Two cinematic screenshots of the castle environment.",
+      "Daily documentary clip showing shot setup or post-process adjustment.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished cinematic screenshot and post-process pass; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete cinematic screenshot and post-process pass; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete cinematic screenshot and post-process pass; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a three-shot sequence: establishing shot, detail shot, and player-view shot.",
+    "reflectionPrompt": "What makes your strongest shot work?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What makes a screenshot feel cinematic instead of accidental?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "Which cinematic shot might belong in your final documentary?"
+    }
+  },
+  {
+    "id": "ue-q3-a15",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l15",
+    "title": "Castle Player Walkthrough Recording",
+    "skillFocus": [
+      "player walkthrough",
+      "recording",
+      "route readability",
+      "critique",
+      "production log"
+    ],
+    "instructions": "I can record a player walkthrough of the castle environment and evaluate what the walkthrough communicates about the build. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Plan a short player route through or around the castle.",
+      "Record a screen capture walkthrough from player view.",
+      "Review the recording for pacing, readability, and visual issues.",
+      "Identify at least one final improvement based on the recording.",
+      "Update the production log with what the walkthrough revealed."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Google Drive or YouTube link to a player walkthrough recording.",
+      "Screenshot or note identifying one final improvement.",
+      "Production log entry for today."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished castle player walkthrough recording; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete castle player walkthrough recording; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete castle player walkthrough recording; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Record a second walkthrough after making one improvement and compare the two clips.",
+    "reflectionPrompt": "What did the walkthrough reveal that screenshots did not?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What should a viewer understand after watching a walkthrough of your castle?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What part of the walkthrough needs improvement before final submission?"
+    }
+  },
+  {
+    "id": "ue-q3-a16",
+    "programAreaId": "unreal-engine",
+    "lessonId": "ue-q3-l16",
+    "title": "Castle Documentary and Portfolio Submission",
+    "skillFocus": [
+      "final critique",
+      "portfolio evidence",
+      "documentary organization",
+      "reflection",
+      "submission"
+    ],
+    "instructions": "I can prepare final castle evidence and organize documentary footage into a clear making-of story. Capture daily screen recording or camera footage as part of the Q3 castle making-of documentary. Submit link-based evidence only.",
+    "requiredSteps": [
+      "Review the castle environment from player and cinematic views.",
+      "Select the strongest screenshots, recordings, and production log entries.",
+      "Organize documentary evidence into a clear beginning, middle, and end.",
+      "Prepare the final link-based submission according to teacher directions.",
+      "Write a final reflection explaining what changed from the first Q3 recording to the final castle."
+    ],
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Final castle screenshots or walkthrough link.",
+      "Organized documentary evidence folder or edited documentary draft link.",
+      "Final production reflection describing the castle build process.",
+      "Production log summary for the Q3 project."
+    ],
+    "rubric": [
+      {
+        "score": 4,
+        "description": "Complete, polished castle documentary and portfolio submission; daily documentary evidence is clear, organized, and strongly explains process decisions."
+      },
+      {
+        "score": 3,
+        "description": "Complete castle documentary and portfolio submission; daily documentary evidence and production log are present."
+      },
+      {
+        "score": 2,
+        "description": "Partially complete castle documentary and portfolio submission; documentary evidence or production log is incomplete or unclear."
+      },
+      {
+        "score": 1,
+        "description": "Attempted but incomplete; little process evidence is visible."
+      },
+      {
+        "score": 0,
+        "description": "Not submitted."
+      }
+    ],
+    "extensionChallenge": "Create a 60-90 second making-of documentary edit using the best screen recordings, camera clips, and voiceover notes.",
+    "reflectionPrompt": "How does your documentary evidence show the castle being made over time?",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What should the final documentary prove about your process, not just your finished castle?"
+    },
+    "exitTicket": {
+      "type": "short-response",
+      "prompt": "What is the strongest evidence that shows your growth during this project?"
+    }
   }
 ]

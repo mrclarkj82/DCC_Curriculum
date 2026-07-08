@@ -79,6 +79,13 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Q2 Video Game Development File Organization bell ringer / exit ticket - needs teacher review
 - [x] Q2 Video Game Development File Organization teacher notes - needs teacher review
 - [x] Q2 Video Game Development File Organization lesson-data.json - ready for seed import
+- [x] Q3 Unreal Castle Documentary lesson seeds 01-16 - draft-pilot / needs teacher review
+- [x] Q3 Unreal Castle Documentary assignment seeds 01-16 - needs teacher review
+- [x] Q3 Unreal Castle Documentary daily screen/camera recording focus - built into lesson and assignment evidence
+- [x] Q3 Unreal Castle Documentary production log focus - built into lesson and assignment evidence
+- [x] Q3 Unreal Castle Documentary A/B schedule - generated from 2026-2027 calendar
+- [x] Q3 Unreal Castle Documentary block calendar - generated from 2026-2027 calendar
+- [x] Q3 Unreal Castle Documentary quizzes 01-04 - placeholder drafts / needs question writing
 
 ## Video Production Studio
 
@@ -155,5 +162,6 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 ## Notes
 
 - Unreal slide briefs are ready for ChatGPT Pro PowerPoint generation.
+- Q3 Unreal Castle Documentary is seed-ready for macro schedule preview, but lesson slide briefs and quiz questions still need authoring before classroom pilot.
 - Video Production project placeholders need teacher-specific equipment, software, and submission details.
 - Broadcast Desk Updates need real publish dates, due dates, and approved resource links before classroom use.

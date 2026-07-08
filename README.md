@@ -455,6 +455,15 @@ For the Q2 Studio Organization + DaVinci Resolve schedule:
 - October 16 and October 30 are skipped as weekday no-school dates.
 - The DaVinci portion still contains seven A/B lessons and two draft quiz checkpoints before later group projects.
 
+For the Q3 Unreal Castle Documentary schedule:
+
+- Scheduling starts on January 5, 2027, the first instructional weekday after winter break and the January 4 structured teacher planning day.
+- January 5, 2027 is an inferred `B` day, so Q3 lesson records store A-day and B-day dates separately.
+- The formal sixteen-lesson Q3 sequence runs through February 22, 2027.
+- January 18, February 12, and February 15 are skipped as weekday no-school dates during the formal lesson sequence.
+- The Q3 grading period continues through March 11, 2027 for open Unreal production, critique, documentary editing, final polish, and export/submission work.
+- Every Q3 instructional day should include Unreal castle project work, camera or screen recording, and a production log update so students can build a documentary about the castle being made.
+
 Generated files:
 
 - `curriculum/calendar/instructional-days.json`
@@ -466,10 +475,14 @@ Generated files:
 - `curriculum/calendar/q2-davinci-resolve-block-calendar.md`
 - `curriculum/calendar/q2-davinci-resolve-lesson-schedule.json`
 - `curriculum/calendar/q2-davinci-resolve-lesson-schedule.md`
+- `curriculum/calendar/q3-unreal-castle-documentary-block-calendar.json`
+- `curriculum/calendar/q3-unreal-castle-documentary-block-calendar.md`
+- `curriculum/calendar/q3-unreal-castle-documentary-lesson-schedule.json`
+- `curriculum/calendar/q3-unreal-castle-documentary-lesson-schedule.md`
 - `curriculum/website-data/lessonSchedule.seed.json`
-- `curriculum/website-data/blockLessonCalendar.seed.json`
+- `curriculum/website-data/blockLessonCalendars.seed.json`
 
-The teacher/admin route `/teacher/schedule` shows Q1 Unreal and Q2 Studio Organization + DaVinci schedules as Monday-Friday block calendars. Instructional day cells use short labels such as `Q1 L1` as the main heading, with the long lesson title, lesson ID, program area, A/B day, and calendar notes inside the block. No-school weekday cells show `No School` and the reason from the source calendar.
+The teacher/admin route `/teacher/schedule` shows Q1 Unreal, Q2 Studio Organization + DaVinci, and Q3 Castle Documentary schedules as Monday-Friday block calendars. Instructional day cells use short labels such as `Q1 L1` as the main heading, with the long lesson title, lesson ID, program area, A/B day, and calendar notes inside the block. No-school weekday cells show `No School` and the reason from the source calendar.
 
 The schedule data is website-ready and can later drive or suggest class `activeItemId` values by date and cycle day. It does not replace the existing `/today` active item workflow.
 
@@ -486,6 +499,21 @@ It includes:
 - 2 draft quiz folders with public quiz seed records and private answer-key seed records. The Color page and Fairlight page transcript span, approximately `02:50:00-04:53:05`, is excluded from this plan.
 - A/B lesson schedule records in `curriculum/website-data/lessonSchedule.seed.json`.
 - Link-based evidence expectations only. Raw uploads, in-browser video editing, portfolio workflows, and group project workflows are not part of this batch.
+
+## Q3 Unreal Castle Documentary Curriculum
+
+The Q3 Unreal Engine Studio sequence is represented in the Firestore seed data and generated calendar files. It focuses on a sustained Unreal castle environment project paired with daily process documentation.
+
+It includes:
+
+- 16 draft-pilot Unreal lesson records in `curriculum/website-data/lessons.seed.json`.
+- 16 matching assignment records in `curriculum/website-data/assignments.seed.json`.
+- 4 draft quiz checkpoints in `curriculum/website-data/quizzes.seed.json`.
+- A/B lesson schedule records in `curriculum/website-data/lessonSchedule.seed.json`.
+- A teacher schedule block calendar in `curriculum/website-data/blockLessonCalendars.seed.json`.
+- Daily evidence expectations for screen recording, camera footage, behind-the-scenes clips, and production log updates.
+
+Students should treat the Q3 castle build as both a game environment project and a documentary production. As castles move from blockout to materials, lighting, walkthroughs, and final polish, the daily captured evidence becomes the source material for the making-of documentary.
 
 ## Shared Firebase Project And Namespacing
 

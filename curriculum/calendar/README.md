@@ -17,8 +17,12 @@ The source calendar is the attached PDF `2026-2027 Doral Calendar (List Form).pd
 - `q2-davinci-resolve-block-calendar.md`: human-readable block calendar view for the Q2 file organization plus DaVinci Resolve schedule.
 - `q2-davinci-resolve-lesson-schedule.json`: machine-readable Q2 file organization plus trimmed DaVinci Resolve lesson schedule with metadata and weekday no-school notes.
 - `q2-davinci-resolve-lesson-schedule.md`: human-readable Q2 file organization plus DaVinci Resolve lesson schedule table.
+- `q3-unreal-castle-documentary-block-calendar.json`: machine-readable Monday-Friday block calendar for the Q3 Unreal castle documentary schedule.
+- `q3-unreal-castle-documentary-block-calendar.md`: human-readable block calendar view for the Q3 Unreal castle documentary schedule.
+- `q3-unreal-castle-documentary-lesson-schedule.json`: machine-readable Q3 Unreal castle documentary lesson schedule with metadata and weekday no-school notes.
+- `q3-unreal-castle-documentary-lesson-schedule.md`: human-readable Q3 Unreal castle documentary lesson schedule table.
 - `../website-data/lessonSchedule.seed.json`: website-ready seed data for future Firestore import.
-- `../website-data/blockLessonCalendar.seed.json`: website-ready block calendar seed used by the teacher/admin schedule preview.
+- `../website-data/blockLessonCalendars.seed.json`: website-ready block calendar seed used by the teacher/admin schedule preview.
 
 ## A/B Rules
 
@@ -43,6 +47,12 @@ Each Q1 Unreal lesson runs across two valid instructional class days: one A day 
 ## Q2 File Organization + DaVinci Resolve Pairing Rule
 
 The Q2 schedule begins on Monday, October 12, 2026, the first instructional weekday after the Q1 grading period ends on Friday, October 9, 2026. That date is an inferred `B` day, so each lesson stores its A-day and B-day dates separately. The first two Q2 lesson blocks are file organization openers, and the DaVinci Resolve sequence starts after those openers. The nine-lesson sequence runs through Friday, November 6, 2026, skips October 16 and October 30 no-school days, and continues the existing A/B cycle without resetting it.
+
+## Q3 Unreal Castle Documentary Pairing Rule
+
+The Q3 Unreal Castle Documentary schedule begins on Tuesday, January 5, 2027, the first instructional weekday after winter break and the January 4 structured teacher planning day. That date is an inferred `B` day, so each lesson stores its A-day and B-day dates separately. The formal sixteen-lesson sequence runs through Monday, February 22, 2027, skips January 18, February 12, and February 15 no-school days, and continues the existing A/B cycle without resetting it.
+
+Every Q3 instructional day should keep the dual focus: students build their Unreal castle project while also recording screen capture, camera footage, production log notes, and behind-the-scenes evidence for a making-of documentary about the castle being created. After the formal sixteen-lesson sequence, the rest of Q3 remains open Unreal production, critique, documentary editing, final polish, and export/submission time through March 11, 2027.
 
 ## Known Calendar Notes
 

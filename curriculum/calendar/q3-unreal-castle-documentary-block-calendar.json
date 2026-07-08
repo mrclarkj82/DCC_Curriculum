@@ -1,0 +1,654 @@
+{
+  "schoolYear": "2026-2027",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q3",
+  "source": "attached-school-calendar",
+  "sourceFile": "2026-2027 Doral Calendar (List Form).pdf",
+  "startDate": "2027-01-05",
+  "endDate": "2027-02-22",
+  "gradingPeriodEndDate": "2027-03-11",
+  "weekdays": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+  ],
+  "summary": {
+    "lessonCount": 16,
+    "instructionalDateCount": 32,
+    "noSchoolDateCount": 5,
+    "monthCount": 2
+  },
+  "months": [
+    {
+      "month": "January",
+      "monthNumber": 1,
+      "year": 2027,
+      "weeks": [
+        {
+          "weekStart": "2026-12-28",
+          "weekEnd": "2027-01-01",
+          "days": [
+            {
+              "date": "2026-12-28",
+              "dayOfWeek": "Monday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-12-29",
+              "dayOfWeek": "Tuesday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-12-30",
+              "dayOfWeek": "Wednesday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2026-12-31",
+              "dayOfWeek": "Thursday",
+              "status": "outside-month",
+              "heading": "Outside Month",
+              "reason": "Outside displayed month"
+            },
+            {
+              "date": "2027-01-01",
+              "dayOfWeek": "Friday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Winter Break; New Year's Day Observed (No School)",
+              "sourceNote": "Winter Break; New Year's Day Observed (No School)",
+              "calendarNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2027-01-04",
+          "weekEnd": "2027-01-08",
+          "days": [
+            {
+              "date": "2027-01-04",
+              "dayOfWeek": "Monday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Structured Teacher Planning Day (No School for Students)",
+              "sourceNote": "Structured Teacher Planning Day (No School for Students)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2027-01-05",
+              "dayOfWeek": "Tuesday",
+              "status": "instructional",
+              "heading": "Q3 L1",
+              "lessonLabel": "Q3 L1",
+              "lessonId": "ue-q3-l01",
+              "lessonTitle": "Unreal Reboot and Production Expectations",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "Classes Resume",
+              "sourceNote": "Classes Resume"
+            },
+            {
+              "date": "2027-01-06",
+              "dayOfWeek": "Wednesday",
+              "status": "instructional",
+              "heading": "Q3 L1",
+              "lessonLabel": "Q3 L1",
+              "lessonId": "ue-q3-l01",
+              "lessonTitle": "Unreal Reboot and Production Expectations",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-07",
+              "dayOfWeek": "Thursday",
+              "status": "instructional",
+              "heading": "Q3 L2",
+              "lessonLabel": "Q3 L2",
+              "lessonId": "ue-q3-l02",
+              "lessonTitle": "Environment Planning",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-08",
+              "dayOfWeek": "Friday",
+              "status": "instructional",
+              "heading": "Q3 L2",
+              "lessonLabel": "Q3 L2",
+              "lessonId": "ue-q3-l02",
+              "lessonTitle": "Environment Planning",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2027-01-11",
+          "weekEnd": "2027-01-15",
+          "days": [
+            {
+              "date": "2027-01-11",
+              "dayOfWeek": "Monday",
+              "status": "instructional",
+              "heading": "Q3 L3",
+              "lessonLabel": "Q3 L3",
+              "lessonId": "ue-q3-l03",
+              "lessonTitle": "Third-Person Project Setup",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-12",
+              "dayOfWeek": "Tuesday",
+              "status": "instructional",
+              "heading": "Q3 L3",
+              "lessonLabel": "Q3 L3",
+              "lessonId": "ue-q3-l03",
+              "lessonTitle": "Third-Person Project Setup",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-13",
+              "dayOfWeek": "Wednesday",
+              "status": "instructional",
+              "heading": "Q3 L4",
+              "lessonLabel": "Q3 L4",
+              "lessonId": "ue-q3-l04",
+              "lessonTitle": "Landscape Blockout",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-14",
+              "dayOfWeek": "Thursday",
+              "status": "instructional",
+              "heading": "Q3 L4",
+              "lessonLabel": "Q3 L4",
+              "lessonId": "ue-q3-l04",
+              "lessonTitle": "Landscape Blockout",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-15",
+              "dayOfWeek": "Friday",
+              "status": "instructional",
+              "heading": "Q3 L5",
+              "lessonLabel": "Q3 L5",
+              "lessonId": "ue-q3-l05",
+              "lessonTitle": "Quiz 1 and Landscape Refinement",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2027-01-18",
+          "weekEnd": "2027-01-22",
+          "days": [
+            {
+              "date": "2027-01-18",
+              "dayOfWeek": "Monday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Martin Luther King Jr. Day (No School)",
+              "sourceNote": "Martin Luther King Jr. Day (No School)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2027-01-19",
+              "dayOfWeek": "Tuesday",
+              "status": "instructional",
+              "heading": "Q3 L5",
+              "lessonLabel": "Q3 L5",
+              "lessonId": "ue-q3-l05",
+              "lessonTitle": "Quiz 1 and Landscape Refinement",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-20",
+              "dayOfWeek": "Wednesday",
+              "status": "instructional",
+              "heading": "Q3 L6",
+              "lessonLabel": "Q3 L6",
+              "lessonId": "ue-q3-l06",
+              "lessonTitle": "Landscape Materials",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-21",
+              "dayOfWeek": "Thursday",
+              "status": "instructional",
+              "heading": "Q3 L6",
+              "lessonLabel": "Q3 L6",
+              "lessonId": "ue-q3-l06",
+              "lessonTitle": "Landscape Materials",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-22",
+              "dayOfWeek": "Friday",
+              "status": "instructional",
+              "heading": "Q3 L7",
+              "lessonLabel": "Q3 L7",
+              "lessonId": "ue-q3-l07",
+              "lessonTitle": "Megascans/Fab/Bridge Terrain Assets",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2027-01-25",
+          "weekEnd": "2027-01-29",
+          "days": [
+            {
+              "date": "2027-01-25",
+              "dayOfWeek": "Monday",
+              "status": "instructional",
+              "heading": "Q3 L7",
+              "lessonLabel": "Q3 L7",
+              "lessonId": "ue-q3-l07",
+              "lessonTitle": "Megascans/Fab/Bridge Terrain Assets",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-26",
+              "dayOfWeek": "Tuesday",
+              "status": "instructional",
+              "heading": "Q3 L8",
+              "lessonLabel": "Q3 L8",
+              "lessonId": "ue-q3-l08",
+              "lessonTitle": "Castle Modular Kit",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-27",
+              "dayOfWeek": "Wednesday",
+              "status": "instructional",
+              "heading": "Q3 L8",
+              "lessonLabel": "Q3 L8",
+              "lessonId": "ue-q3-l08",
+              "lessonTitle": "Castle Modular Kit",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-28",
+              "dayOfWeek": "Thursday",
+              "status": "instructional",
+              "heading": "Q3 L9",
+              "lessonLabel": "Q3 L9",
+              "lessonId": "ue-q3-l09",
+              "lessonTitle": "Quiz 2 and Castle Composition",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-01-29",
+              "dayOfWeek": "Friday",
+              "status": "instructional",
+              "heading": "Q3 L9",
+              "lessonLabel": "Q3 L9",
+              "lessonId": "ue-q3-l09",
+              "lessonTitle": "Quiz 2 and Castle Composition",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "month": "February",
+      "monthNumber": 2,
+      "year": 2027,
+      "weeks": [
+        {
+          "weekStart": "2027-02-01",
+          "weekEnd": "2027-02-05",
+          "days": [
+            {
+              "date": "2027-02-01",
+              "dayOfWeek": "Monday",
+              "status": "instructional",
+              "heading": "Q3 L10",
+              "lessonLabel": "Q3 L10",
+              "lessonId": "ue-q3-l10",
+              "lessonTitle": "Rocks, Cliffs, and Scene Framing",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-02",
+              "dayOfWeek": "Tuesday",
+              "status": "instructional",
+              "heading": "Q3 L10",
+              "lessonLabel": "Q3 L10",
+              "lessonId": "ue-q3-l10",
+              "lessonTitle": "Rocks, Cliffs, and Scene Framing",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-03",
+              "dayOfWeek": "Wednesday",
+              "status": "instructional",
+              "heading": "Q3 L11",
+              "lessonLabel": "Q3 L11",
+              "lessonId": "ue-q3-l11",
+              "lessonTitle": "Trees and Foliage",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-04",
+              "dayOfWeek": "Thursday",
+              "status": "instructional",
+              "heading": "Q3 L11",
+              "lessonLabel": "Q3 L11",
+              "lessonId": "ue-q3-l11",
+              "lessonTitle": "Trees and Foliage",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-05",
+              "dayOfWeek": "Friday",
+              "status": "instructional",
+              "heading": "Q3 L12",
+              "lessonLabel": "Q3 L12",
+              "lessonId": "ue-q3-l12",
+              "lessonTitle": "Environmental Storytelling",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2027-02-08",
+          "weekEnd": "2027-02-12",
+          "days": [
+            {
+              "date": "2027-02-08",
+              "dayOfWeek": "Monday",
+              "status": "instructional",
+              "heading": "Q3 L12",
+              "lessonLabel": "Q3 L12",
+              "lessonId": "ue-q3-l12",
+              "lessonTitle": "Environmental Storytelling",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-09",
+              "dayOfWeek": "Tuesday",
+              "status": "instructional",
+              "heading": "Q3 L13",
+              "lessonLabel": "Q3 L13",
+              "lessonId": "ue-q3-l13",
+              "lessonTitle": "Quiz 3 and Lighting Mood",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-10",
+              "dayOfWeek": "Wednesday",
+              "status": "instructional",
+              "heading": "Q3 L13",
+              "lessonLabel": "Q3 L13",
+              "lessonId": "ue-q3-l13",
+              "lessonTitle": "Quiz 3 and Lighting Mood",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-11",
+              "dayOfWeek": "Thursday",
+              "status": "instructional",
+              "heading": "Q3 L14",
+              "lessonLabel": "Q3 L14",
+              "lessonId": "ue-q3-l14",
+              "lessonTitle": "Post-Process and Cinematic Screenshots",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-12",
+              "dayOfWeek": "Friday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Staff Development Day #4 (No School for Students)",
+              "sourceNote": "Staff Development Day #4 (No School for Students)",
+              "calendarNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2027-02-15",
+          "weekEnd": "2027-02-19",
+          "days": [
+            {
+              "date": "2027-02-15",
+              "dayOfWeek": "Monday",
+              "status": "no-school",
+              "heading": "No School",
+              "reason": "Presidents' Day Observed (No School)",
+              "sourceNote": "Presidents' Day Observed (No School)",
+              "calendarNote": ""
+            },
+            {
+              "date": "2027-02-16",
+              "dayOfWeek": "Tuesday",
+              "status": "instructional",
+              "heading": "Q3 L14",
+              "lessonLabel": "Q3 L14",
+              "lessonId": "ue-q3-l14",
+              "lessonTitle": "Post-Process and Cinematic Screenshots",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-17",
+              "dayOfWeek": "Wednesday",
+              "status": "instructional",
+              "heading": "Q3 L15",
+              "lessonLabel": "Q3 L15",
+              "lessonId": "ue-q3-l15",
+              "lessonTitle": "Player Walkthrough",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-18",
+              "dayOfWeek": "Thursday",
+              "status": "instructional",
+              "heading": "Q3 L15",
+              "lessonLabel": "Q3 L15",
+              "lessonId": "ue-q3-l15",
+              "lessonTitle": "Player Walkthrough",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-19",
+              "dayOfWeek": "Friday",
+              "status": "instructional",
+              "heading": "Q3 L16",
+              "lessonLabel": "Q3 L16",
+              "lessonId": "ue-q3-l16",
+              "lessonTitle": "Final Critique and Portfolio Submission",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "B",
+              "calendarNote": "",
+              "sourceNote": ""
+            }
+          ]
+        },
+        {
+          "weekStart": "2027-02-22",
+          "weekEnd": "2027-02-26",
+          "days": [
+            {
+              "date": "2027-02-22",
+              "dayOfWeek": "Monday",
+              "status": "instructional",
+              "heading": "Q3 L16",
+              "lessonLabel": "Q3 L16",
+              "lessonId": "ue-q3-l16",
+              "lessonTitle": "Final Critique and Portfolio Submission",
+              "programAreaId": "unreal-engine",
+              "cycleDay": "A",
+              "calendarNote": "",
+              "sourceNote": ""
+            },
+            {
+              "date": "2027-02-23",
+              "dayOfWeek": "Tuesday",
+              "status": "empty",
+              "heading": "Q3 Production Day",
+              "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+            },
+            {
+              "date": "2027-02-24",
+              "dayOfWeek": "Wednesday",
+              "status": "empty",
+              "heading": "Q3 Production Day",
+              "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+            },
+            {
+              "date": "2027-02-25",
+              "dayOfWeek": "Thursday",
+              "status": "empty",
+              "heading": "Q3 Production Day",
+              "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+            },
+            {
+              "date": "2027-02-26",
+              "dayOfWeek": "Friday",
+              "status": "empty",
+              "heading": "Q3 Production Day",
+              "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "noSchoolDates": [
+    {
+      "date": "2027-01-01",
+      "dayOfWeek": "Friday",
+      "reason": "Winter Break; New Year's Day Observed (No School)",
+      "sourceNote": "Winter Break; New Year's Day Observed (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2027-01-04",
+      "dayOfWeek": "Monday",
+      "reason": "Structured Teacher Planning Day (No School for Students)",
+      "sourceNote": "Structured Teacher Planning Day (No School for Students)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2027-01-18",
+      "dayOfWeek": "Monday",
+      "reason": "Martin Luther King Jr. Day (No School)",
+      "sourceNote": "Martin Luther King Jr. Day (No School)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2027-02-12",
+      "dayOfWeek": "Friday",
+      "reason": "Staff Development Day #4 (No School for Students)",
+      "sourceNote": "Staff Development Day #4 (No School for Students)",
+      "calendarNote": ""
+    },
+    {
+      "date": "2027-02-15",
+      "dayOfWeek": "Monday",
+      "reason": "Presidents' Day Observed (No School)",
+      "sourceNote": "Presidents' Day Observed (No School)",
+      "calendarNote": ""
+    }
+  ],
+  "notes": [
+    "Q3 begins after Winter Break and a Structured Teacher Planning Day; classes resume Tuesday, January 5, 2027.",
+    "Q3 Unreal is a castle environment production project and a making-of documentary project at the same time.",
+    "Students should capture screen recording or camera footage and update a production log every Q3 class day, including open production days after the formal 16-lesson sequence.",
+    "The formal 16-lesson sequence is scheduled through February 22, 2027. Remaining Q3 days should continue castle polish, pickup footage, documentary editing, critique, and final export routines.",
+    "ACT or other testing notes do not pause or renumber the A/B cycle unless the teacher changes that rule."
+  ]
+}
