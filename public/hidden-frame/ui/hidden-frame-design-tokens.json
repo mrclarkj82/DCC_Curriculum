@@ -1,0 +1,34 @@
+{
+  "colors": {
+    "ink": "#05070B",
+    "deep_archive": "#08111F",
+    "archive_blue": "#0B1F36",
+    "cold_blue": "#6CEAFF",
+    "signal_cyan": "#8DF7FF",
+    "ghost_white": "#EAFBFF",
+    "dim_text": "#8BA8B7",
+    "compression_red": "#FF3155",
+    "warning_amber": "#FFB84D",
+    "grid_blue": "#214B68",
+    "void_black": "#000000",
+    "flat_gray": "#8E969B"
+  },
+  "typography": {
+    "display": "Use bold geometric/sans display; shipped images use system rendering only, no font files included.",
+    "mono": "Use monospace for file IDs, timestamps, logs, and compression text."
+  },
+  "motifs": [
+    "broken frame",
+    "timecode",
+    "scanlines",
+    "archive cards",
+    "viewport grid",
+    "compression blocks",
+    "export 99%"
+  ],
+  "phrases": [
+    "Check the frame.",
+    "The first frame was never missing.",
+    "Originality leaves artifacts."
+  ]
+}

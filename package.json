@@ -12,6 +12,7 @@
     "format": "prettier --write .",
     "generate:block-calendar": "node scripts/generate-block-calendar.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs",
+    "validate:hidden-frame": "node scripts/validate-hidden-frame-assets.mjs",
     "seed:curriculum": "node scripts/seedCurriculum.mjs",
     "seed:quizzes": "node scripts/seedQuizData.mjs"
   },

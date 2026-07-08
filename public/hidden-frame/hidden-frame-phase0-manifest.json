@@ -1,0 +1,50 @@
+{
+  "name": "The Hidden Frame \u2014 Phase 0 Asset Kit",
+  "version": "0.1.0",
+  "created_for": "DCC curriculum ARG / Easter egg foundation",
+  "recommended_public_base_path": "/hidden-frame",
+  "asset_root": "/public/hidden-frame",
+  "symbols": [
+    "public/hidden-frame/symbols/hidden-frame-symbol-black.png",
+    "public/hidden-frame/symbols/hidden-frame-symbol-black.svg",
+    "public/hidden-frame/symbols/hidden-frame-symbol-glitch.png",
+    "public/hidden-frame/symbols/hidden-frame-symbol-small.svg",
+    "public/hidden-frame/symbols/hidden-frame-symbol-transparent.png",
+    "public/hidden-frame/symbols/hidden-frame-symbol-white.png",
+    "public/hidden-frame/symbols/hidden-frame-symbol-white.svg"
+  ],
+  "backgrounds": [
+    "public/hidden-frame/backgrounds/archive-bg-compression.png",
+    "public/hidden-frame/backgrounds/archive-bg-dark.png",
+    "public/hidden-frame/backgrounds/archive-bg-grid.png",
+    "public/hidden-frame/backgrounds/archive-bg-render-room.png",
+    "public/hidden-frame/backgrounds/archive-bg-vhs-static.png"
+  ],
+  "ui": [
+    "public/hidden-frame/ui/hidden-frame-style-board.png",
+    "public/hidden-frame/ui/hidden-frame-title-card.png"
+  ],
+  "previews": [
+    "previews/phase0-contact-sheet.png"
+  ],
+  "palette": {
+    "ink": "#05070B",
+    "deep_archive": "#08111F",
+    "archive_blue": "#0B1F36",
+    "cold_blue": "#6CEAFF",
+    "signal_cyan": "#8DF7FF",
+    "ghost_white": "#EAFBFF",
+    "dim_text": "#8BA8B7",
+    "compression_red": "#FF3155",
+    "warning_amber": "#FFB84D",
+    "grid_blue": "#214B68",
+    "void_black": "#000000",
+    "flat_gray": "#8E969B"
+  },
+  "usage_notes": {
+    "symbol": "Use the broken-frame icon as the hidden clickable marker, watermark, archive logo, and unlock indicator.",
+    "backgrounds": "Use archive-bg-dark for landing/archive, archive-bg-grid for Unreal/viewport pages, archive-bg-vhs-static for video pages, archive-bg-compression for antagonist/system states, archive-bg-render-room for the future Render Room hub.",
+    "accessibility": "Keep hidden icons subtle but discoverable via cursor/hover/focus states. Provide keyboard focus and aria-labels for clickable mystery icons.",
+    "safety": "ARG should remain contained inside DCC pages/materials and never direct students to investigate real people, accounts, or off-site locations."
+  }
+}

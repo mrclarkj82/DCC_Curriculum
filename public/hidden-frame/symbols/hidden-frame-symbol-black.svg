@@ -1,0 +1,11 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+<title id="title">The Hidden Frame symbol</title>
+<desc id="desc">A broken square frame with the bottom-right corner missing.</desc>
+<path d="M52 52H204" stroke="#000000" stroke-width="16" stroke-linecap="square"/>
+<path d="M52 52V204" stroke="#000000" stroke-width="16" stroke-linecap="square"/>
+<path d="M204 52V156" stroke="#000000" stroke-width="16" stroke-linecap="square"/>
+<path d="M52 204H156" stroke="#000000" stroke-width="16" stroke-linecap="square"/>
+<path d="M176 204H194" stroke="#0B1F36" stroke-width="6" stroke-linecap="square"/>
+<path d="M204 176V194" stroke="#0B1F36" stroke-width="6" stroke-linecap="square"/>
+<rect x="79" y="79" width="19" height="5" fill="#0B1F36"/>
+</svg>
