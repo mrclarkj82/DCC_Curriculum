@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { AssignmentGameEntryCard } from '../assignmentGame/AssignmentGameEntryCard';
 import { EmptyState } from '../EmptyState';
 import { EvidenceChecklist } from '../EvidenceChecklist';
 import { QuizTakingPanel } from '../quizzes/QuizTakingPanel';
@@ -316,13 +317,11 @@ export function StudentTodayExperience({
   viewerMode,
 }: StudentTodayExperienceProps) {
   const record = activeItem.record;
-  const isQuizOrPortfolio =
-    activeItem.type === 'quiz' || activeItem.type === 'portfolioCheckpoint';
+  const isQuizOrPortfolio = activeItem.type === 'quiz' || activeItem.type === 'portfolioCheckpoint';
   const showResponseCards =
     !isQuizOrPortfolio && (userProfile.role === 'student' || isTeacherPreviewMode(viewerMode));
   const submissionTarget = resolveSubmissionTargetForActiveItem(activeItem);
-  const isMissingActiveRecord =
-    activeItem.type !== 'portfolioCheckpoint' && !record;
+  const isMissingActiveRecord = activeItem.type !== 'portfolioCheckpoint' && !record;
 
   return (
     <>
@@ -386,6 +385,15 @@ export function StudentTodayExperience({
           target={submissionTarget}
           userProfile={userProfile}
           viewerMode={viewerMode}
+        />
+      )}
+
+      {viewerMode === 'student' && userProfile.role === 'student' && submissionTarget && (
+        <AssignmentGameEntryCard
+          classRecord={classRecord}
+          activeItem={activeItem}
+          target={submissionTarget}
+          userProfile={userProfile}
         />
       )}
 
