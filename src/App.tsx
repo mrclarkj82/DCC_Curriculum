@@ -4,6 +4,7 @@ import { AppShell } from './components/AppShell';
 import { AdminPage } from './pages/AdminPage';
 import { AreasPage } from './pages/AreasPage';
 import { AssignmentDetailPage } from './pages/AssignmentDetailPage';
+import { AssignmentGamePage } from './pages/AssignmentGamePage';
 import { BroadcastUpdateDetailPage } from './pages/BroadcastUpdateDetailPage';
 import { JoinClassPage } from './pages/JoinClassPage';
 import { LandingPage } from './pages/LandingPage';
@@ -27,6 +28,7 @@ export function App() {
       <Route element={<ProtectedRoute />}>
         <Route element={<AppShell />}>
           <Route path="/today" element={<TodayPage />} />
+          <Route path="/student/game" element={<AssignmentGamePage />} />
           <Route path="/join-class" element={<JoinClassPage />} />
           <Route path="/areas" element={<AreasPage />} />
           <Route path="/areas/unreal-engine" element={<UnrealAreaPage />} />

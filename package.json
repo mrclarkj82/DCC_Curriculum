@@ -9,6 +9,7 @@
     "build:github-pages": "tsc -b && vite build --base=/dcccs/ && node scripts/prepare-github-pages.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
+    "test": "vitest run",
     "format": "prettier --write .",
     "generate:block-calendar": "node scripts/generate-block-calendar.mjs",
     "validate:curriculum": "node scripts/validate-curriculum.mjs",
@@ -32,6 +33,7 @@
     "prettier": "^3.0.0",
     "typescript": "^5.0.0",
     "typescript-eslint": "^8.0.0",
-    "vite": "^8.0.16"
+    "vite": "^8.0.16",
+    "vitest": "^4.1.10"
   }
 }
