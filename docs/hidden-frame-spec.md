@@ -8,7 +8,7 @@ Before implementing any future Hidden Frame feature, read this specification fir
 
 The Hidden Frame should add curiosity, observation, media literacy, and creative problem solving to the DCC site without distracting from class workflows or compromising student privacy. It must stay inside the DCC website, approved class materials, and future approved project files.
 
-Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking.
+Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page.
 
 ## Core Principles
 
@@ -139,11 +139,14 @@ src/
   hidden-frame/
     components/
       CompressionLog.tsx
+      FrameCard.tsx
+      FrameCollectionGrid.tsx
       HiddenFrameIcon.tsx
       HiddenFrameProgress.tsx
       PasswordGate.tsx
       RecoveredFileCard.tsx
     data/
+      hiddenFrameFrames.ts
       hiddenFrameFiles.ts
     hooks/
       useHiddenFrameProgress.ts
@@ -151,10 +154,12 @@ src/
     index.ts
     pages/
       HiddenFrameArchivePage.tsx
+      HiddenFrameCollectionPage.tsx
       HiddenFrameFilePage.tsx
       HiddenFrameLandingPage.tsx
     progress/
       hiddenFrameProgress.ts
+      hiddenFrameProgressCore.ts
     utils/
       passwordGate.ts
   styles/
@@ -165,20 +170,23 @@ Update this section whenever new Hidden Frame directories are introduced.
 
 ## Routing Conventions
 
-Implemented Phase 1 routes:
+Implemented routes:
 
 - `/hidden-frame`
 - `/hidden-frame/archive`
 - `/hidden-frame/file/001`
+- `/hidden-frame/file/:fileId`
+- `/hidden-frame/collection`
 
 Reserved future routes:
 
-- `/hidden-frame/file/:id`
 - `/hidden-frame/frame/:id`
 - `/hidden-frame/progress`
 - `/hidden-frame/render-room`
 
-The Phase 1 routes live inside the existing authenticated app shell so they remain contained inside DCC Creative Studio and preserve normal access controls. They are intentionally not added to the normal public student navigation menu.
+The Hidden Frame routes live inside the existing authenticated app shell so they remain contained inside DCC Creative Studio and preserve normal access controls. They are intentionally not added to the normal public student navigation menu.
+
+`/hidden-frame/file/001` remains registered for backwards compatibility. `/hidden-frame/file/:fileId` is the data-driven route used for Files 001 through 005.
 
 Routes must be protected or public according to the learning purpose and privacy implications. Do not expose student data or teacher/admin data through Hidden Frame routes.
 
@@ -191,6 +199,8 @@ Future components should be modular, reusable, and data-driven. Phase 1 created 
 - `PasswordGate`
 - `HiddenFrameProgress`
 - `CompressionLog`
+- `FrameCard`
+- `FrameCollectionGrid`
 
 Document every reusable component in the Component Library section when it is created.
 
@@ -292,7 +302,7 @@ Run `npm run validate:curriculum` when a change touches curriculum, seed data, l
 
 Future interactive routes should include manual accessibility checks for keyboard focus, reduced motion, readable contrast, and discoverable hidden controls.
 
-`npm run validate:hidden-frame` currently runs both the Phase 0 asset resolver and the Phase 1 route/data/password validation script.
+`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, and the Phase 2 puzzle-chain validation script.
 
 ## Future Expansion
 
@@ -336,17 +346,17 @@ Extension strategy: expand `HiddenFrameFileRecord` before adding bespoke card br
 
 ### PasswordGate
 
-Purpose: provides a simple password-gated reveal for optional, ungraded Phase 1 content.
+Purpose: provides a simple password-gated reveal for optional, ungraded Hidden Frame content.
 
-Inputs: `correctAnswer`, `successContent`, optional `hintText`, optional `failureFeedback`, optional `initiallyUnlocked`, and optional `onUnlock`.
+Inputs: `correctAnswer`, `successContent`, optional `acceptedAnswers`, optional `hintText`, optional `failureFeedback`, optional `initiallyUnlocked`, and optional `onUnlock`.
 
-Outputs: a semantic form while locked and success content after the answer matches.
+Outputs: a semantic form while locked, a hidden-by-default hint reveal when available, accessible feedback, and success content after the answer matches.
 
 Dependencies: `isHiddenFrameAnswerCorrect` from `utils/passwordGate.ts`.
 
 Intended reuse: future low-stakes recovered files and training gates.
 
-Accessibility notes: uses a label, submit button, status feedback, and keyboard-friendly form behavior.
+Accessibility notes: uses a label, submit button, status feedback, `aria-invalid`, `aria-describedby`, and keyboard-friendly form behavior. Hint reveal is a real button and does not affect grades or scoring.
 
 Extension strategy: replace or wrap the validation source if future phases need authenticated persistence or server-side checks.
 
@@ -382,6 +392,38 @@ Accessibility notes: uses a labeled `aside` and avoids content that implies dang
 
 Extension strategy: add tone variants through the typed `tone` prop and CSS.
 
+### FrameCard
+
+Purpose: displays one collectible frame in the local collection route.
+
+Inputs: a `HiddenFrameRewardFrame` and `isRecovered`.
+
+Outputs: an article that shows recovered frame art/copy or a locked silhouette placeholder.
+
+Dependencies: `hiddenFrameFrames.ts` and Hidden Frame CSS.
+
+Intended reuse: collection pages, future progress views, and frame reward summaries.
+
+Accessibility notes: uses an article with an accessible label and keeps decorative thumbnail art hidden from assistive technology.
+
+Extension strategy: add new frame metadata to `hiddenFrameFrames.ts` before branching component logic.
+
+### FrameCollectionGrid
+
+Purpose: renders a data-driven grid of collectible frame cards.
+
+Inputs: `recoveredFrameIds`.
+
+Outputs: a responsive frame collection grid for Frames 001 through 005 and future frames.
+
+Dependencies: `FrameCard`, `hiddenFrameFrames.ts`, and Hidden Frame CSS.
+
+Intended reuse: collection route, future progress routes, and post-unlock reward panels.
+
+Accessibility notes: provides an `aria-label` for the collection grid and delegates card labels to `FrameCard`.
+
+Extension strategy: the grid maps over `hiddenFrameRewardFrames`, so future phases can add more frames without changing the component.
+
 ## Design Decisions
 
 Phase 0 imports the asset kit without student-facing UI so the visual foundation is stable before gameplay, story, or progression work begins.
@@ -398,14 +440,22 @@ Phase 1 uses a localStorage progress adapter with a small summary interface so f
 
 Phase 1 uses client-side password validation because File 001 is optional, ungraded, non-sensitive content. The answer is therefore visible to anyone inspecting bundled client code. This is acceptable for Phase 1 but should not be used for graded, private, or security-sensitive gates.
 
+Phase 2 keeps client-side password validation and localStorage progress because the chain is optional, ungraded, and non-sensitive. Passwords and accepted variants are intentionally documented in canon and visible in bundled code. This remains inappropriate for graded, private, or security-sensitive content.
+
+Phase 2 keeps the existing `dcc.hiddenFrame.phase1Progress` localStorage key to preserve prior local progress. The stored payload now has schema version `2` and migrates legacy Phase 1 `unlockedFileIds` into completed file and recovered frame state when appropriate.
+
+Phase 2 uses CSS-driven placeholders and existing Phase 0 backgrounds for frame cards and recovered file art. No new image assets were generated.
+
 ## Technical Debt & TODO
 
-- Define structured data schemas for archive entries, recovered files, frame cards, puzzles, achievements, and progression before adding content at scale.
+- Expand structured data schemas for archive entries, recovered files, frame cards, puzzles, achievements, and progression before adding content at larger scale.
 - Decide whether future Hidden Frame content should stay static, move to Firestore under `apps/dcc`, or use a hybrid content pack model.
 - Replace localStorage progress with authenticated persistence only if future phases need cross-device continuity.
 - Replace client-side password validation if future gates become sensitive, graded, or tied to authenticated progression.
 - Add automated route/component tests when Hidden Frame has interactive screens.
 - Add visual QA snapshots after future pages are introduced.
+- Add a developer-only reset utility only after a safe, hidden pattern is designed. Phase 2 intentionally does not expose destructive reset controls to students.
+- Video-production integration, Unreal integration, admin tools, account sync, and larger media assets remain postponed.
 
 ## Version History
 
@@ -416,6 +466,10 @@ Imported the official Phase 0 Asset Kit, established `public/hidden-frame` stati
 ### Phase 1 - 2026-07-08
 
 Implemented the Hidden Page MVP with authenticated hidden routes for `/hidden-frame`, `/hidden-frame/archive`, and `/hidden-frame/file/001`; added reusable `HiddenFrameIcon`, `RecoveredFileCard`, `PasswordGate`, `HiddenFrameProgress`, and `CompressionLog` components; added `hiddenFrameFiles.ts`; added a localStorage progress adapter; placed the first subtle `HiddenFrameIcon` on assignment detail pages; documented File 001 and the Phase 1 password in canon; and expanded `npm run validate:hidden-frame` to include Phase 1 route, data, state, and password checks.
+
+### Phase 2 - 2026-07-08
+
+Implemented the First Puzzle Chain with Files 001 through 005, dynamic recovered file routing, data-driven clue/hint/password/reward metadata, local unlock sequencing, collectible Frames 001 through 005, a `/hidden-frame/collection` page, hidden-by-default hints, accessible password feedback, a schema-versioned localStorage progress adapter with Phase 1 migration, `FrameCard` and `FrameCollectionGrid`, and a Phase 2 validation script. Firestore persistence, account sync, grades, leaderboards, admin tools, public navigation links, external scavenger hunts, Unreal gameplay, video-production integration, and new media assets were intentionally postponed.
 
 ## Acceptance Criteria
 
@@ -428,3 +482,7 @@ Implemented the Hidden Page MVP with authenticated hidden routes for `/hidden-fr
 - Phase 1 hidden routes are direct-addressable for authenticated users without appearing in the standard navigation.
 - File 001 can be unlocked with a trimmed, case-insensitive answer.
 - Progress is local-only and does not affect grades, class records, Firestore, submissions, or student response data.
+- Files 001 through 005 are structured in `hiddenFrameFiles.ts`.
+- Completing each active file unlocks the next file in the chain and adds the matching recovered frame.
+- `/hidden-frame/collection` shows recovered and locked frame states from local progress.
+- Phase 2 remains optional, ungraded, localStorage-based, and contained inside the DCC website.

@@ -15,7 +15,9 @@ export function RecoveredFileCard({ file, state = file.state }: RecoveredFileCar
         ? 'Recovered'
         : state === 'locked'
           ? 'Locked'
-          : file.statusLabel;
+          : state === 'future'
+            ? 'Future'
+            : file.statusLabel;
 
   const content = (
     <>
@@ -44,7 +46,11 @@ export function RecoveredFileCard({ file, state = file.state }: RecoveredFileCar
   }
 
   return (
-    <article className={`recovered-file-card recovered-file-card--${state}`} aria-disabled="true">
+    <article
+      className={`recovered-file-card recovered-file-card--${state}`}
+      aria-disabled="true"
+      aria-label={`Recovered file ${file.fileNumber}: ${file.title}. ${statusLabel}.`}
+    >
       {content}
     </article>
   );

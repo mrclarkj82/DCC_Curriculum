@@ -1,24 +1,59 @@
+import { hiddenFrameRewardFrames } from '../data/hiddenFrameFrames';
+import { hiddenFrameFiles, hiddenFramePuzzleFiles } from '../data/hiddenFrameFiles';
+import {
+  completeHiddenFrameFileProgress,
+  getHiddenFrameFileProgressState,
+  uniqueStrings,
+} from './hiddenFrameProgressCore';
+import type { HiddenFrameFileRecord, HiddenFrameFileState } from '../data/hiddenFrameFiles';
+
 export interface HiddenFrameProgressSnapshot {
+  schemaVersion: 2;
   archiveVisited: boolean;
   unlockedFileIds: string[];
+  completedFileIds: string[];
+  recoveredFrameIds: string[];
+  firstVisitedAt: string | null;
+  chainCompletedAt: string | null;
   updatedAt: string | null;
 }
 
 export interface HiddenFrameProgressSummary {
   archiveInitialized: boolean;
   unlockedFileCount: number;
+  completedFileCount: number;
+  recoveredFrameCount: number;
+  totalFrameCount: number;
+  chainComplete: boolean;
 }
 
 export const HIDDEN_FRAME_PROGRESS_STORAGE_KEY = 'dcc.hiddenFrame.phase1Progress';
+export const HIDDEN_FRAME_PROGRESS_SCHEMA_VERSION = 2;
+
+const DEFAULT_UNLOCKED_FILE_IDS = ['001'];
 
 export const createInitialHiddenFrameProgress = (): HiddenFrameProgressSnapshot => ({
+  schemaVersion: HIDDEN_FRAME_PROGRESS_SCHEMA_VERSION,
   archiveVisited: false,
-  unlockedFileIds: [],
+  unlockedFileIds: [...DEFAULT_UNLOCKED_FILE_IDS],
+  completedFileIds: [],
+  recoveredFrameIds: [],
+  firstVisitedAt: null,
+  chainCompletedAt: null,
   updatedAt: null,
 });
 
 const canUseLocalStorage = (): boolean =>
   typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+
+const knownFileIds = hiddenFrameFiles.map((file) => file.id);
+const knownFrameIds = hiddenFrameRewardFrames.map((frame) => frame.id);
+
+const onlyKnownIds = (values: string[], knownIds: string[]): string[] =>
+  uniqueStrings(values).filter((value) => knownIds.includes(value));
+
+const getStringArray = (value: unknown): string[] =>
+  Array.isArray(value) ? value.filter((item): item is string => typeof item === 'string') : [];
 
 const normalizeProgress = (value: unknown): HiddenFrameProgressSnapshot => {
   if (!value || typeof value !== 'object') {
@@ -26,12 +61,44 @@ const normalizeProgress = (value: unknown): HiddenFrameProgressSnapshot => {
   }
 
   const progress = value as Partial<HiddenFrameProgressSnapshot>;
+  const isLegacyPhaseOneProgress = progress.schemaVersion !== HIDDEN_FRAME_PROGRESS_SCHEMA_VERSION;
+  const rawUnlockedFileIds = getStringArray(progress.unlockedFileIds);
+  const legacyCompletedFileIds = isLegacyPhaseOneProgress ? rawUnlockedFileIds : [];
+  const completedFileIds = onlyKnownIds(
+    [...getStringArray(progress.completedFileIds), ...legacyCompletedFileIds],
+    knownFileIds,
+  );
+  const unlockedFromCompleted = completedFileIds.flatMap((fileId) => {
+    const file = hiddenFrameFiles.find((candidate) => candidate.id === fileId);
+    return [fileId, file?.unlocksFileId].filter((candidate): candidate is string =>
+      Boolean(candidate),
+    );
+  });
+  const recoveredFromCompleted = completedFileIds.flatMap((fileId) => {
+    const file = hiddenFrameFiles.find((candidate) => candidate.id === fileId);
+    return file?.rewardFrameId ? [file.rewardFrameId] : [];
+  });
+  const unlockedFileIds = onlyKnownIds(
+    [...DEFAULT_UNLOCKED_FILE_IDS, ...rawUnlockedFileIds, ...unlockedFromCompleted],
+    knownFileIds,
+  );
+  const recoveredFrameIds = onlyKnownIds(
+    [...getStringArray(progress.recoveredFrameIds), ...recoveredFromCompleted],
+    knownFrameIds,
+  );
+  const chainComplete = hiddenFramePuzzleFiles.every((file) => completedFileIds.includes(file.id));
 
   return {
+    schemaVersion: HIDDEN_FRAME_PROGRESS_SCHEMA_VERSION,
     archiveVisited: Boolean(progress.archiveVisited),
-    unlockedFileIds: Array.isArray(progress.unlockedFileIds)
-      ? progress.unlockedFileIds.filter((fileId): fileId is string => typeof fileId === 'string')
-      : [],
+    unlockedFileIds,
+    completedFileIds,
+    recoveredFrameIds,
+    firstVisitedAt: typeof progress.firstVisitedAt === 'string' ? progress.firstVisitedAt : null,
+    chainCompletedAt:
+      chainComplete && typeof progress.chainCompletedAt === 'string'
+        ? progress.chainCompletedAt
+        : null,
     updatedAt: typeof progress.updatedAt === 'string' ? progress.updatedAt : null,
   };
 };
@@ -79,9 +146,12 @@ export const markHiddenFrameArchiveVisited = (): HiddenFrameProgressSnapshot => 
     return progress;
   }
 
+  const visitedAt = new Date().toISOString();
+
   return writeHiddenFrameProgress({
     ...progress,
     archiveVisited: true,
+    firstVisitedAt: progress.firstVisitedAt ?? visitedAt,
   });
 };
 
@@ -98,9 +168,48 @@ export const markHiddenFrameFileUnlocked = (fileId: string): HiddenFrameProgress
   });
 };
 
+export const markHiddenFrameFileCompleted = (fileId: string): HiddenFrameProgressSnapshot => {
+  const progress = readHiddenFrameProgress();
+  const completedAt = new Date().toISOString();
+  const nextProgress = completeHiddenFrameFileProgress(
+    progress,
+    fileId,
+    hiddenFrameFiles,
+    completedAt,
+  );
+
+  if (nextProgress === progress) {
+    return progress;
+  }
+
+  return writeHiddenFrameProgress({
+    ...progress,
+    ...nextProgress,
+  });
+};
+
+export const getResolvedHiddenFrameFileState = (
+  file: HiddenFrameFileRecord,
+  progress: HiddenFrameProgressSnapshot,
+): HiddenFrameFileState => getHiddenFrameFileProgressState(file, progress);
+
+export const isHiddenFrameFileAccessible = (
+  file: HiddenFrameFileRecord,
+  progress: HiddenFrameProgressSnapshot,
+): boolean => {
+  const state = getResolvedHiddenFrameFileState(file, progress);
+  return state === 'available' || state === 'unlocked' || state === 'completed';
+};
+
 export const getHiddenFrameProgressSummary = (
   progress: HiddenFrameProgressSnapshot,
 ): HiddenFrameProgressSummary => ({
   archiveInitialized: progress.archiveVisited,
   unlockedFileCount: progress.unlockedFileIds.length,
+  completedFileCount: progress.completedFileIds.length,
+  recoveredFrameCount: progress.recoveredFrameIds.length,
+  totalFrameCount: hiddenFrameRewardFrames.length,
+  chainComplete: hiddenFramePuzzleFiles.every((file) =>
+    progress.completedFileIds.includes(file.id),
+  ),
 });

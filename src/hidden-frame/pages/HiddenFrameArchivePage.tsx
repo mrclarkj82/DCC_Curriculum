@@ -9,7 +9,7 @@ import { useHiddenFrameProgress } from '../hooks/useHiddenFrameProgress';
 import { hiddenFramePhase0AssetRoles } from '../hiddenFramePhase0Assets';
 
 export function HiddenFrameArchivePage() {
-  const { summary, visitArchive, isFileUnlocked } = useHiddenFrameProgress();
+  const { summary, visitArchive, getFileState } = useHiddenFrameProgress();
 
   useEffect(() => {
     visitArchive();
@@ -27,12 +27,15 @@ export function HiddenFrameArchivePage() {
             <p className="hidden-frame-kicker">Archive hub</p>
             <h1>Recovered Files</h1>
             <p>
-              File 001 is available. The remaining records are placeholders for later phases and do
-              not contain active puzzle content.
+              File 001 is available. Recover each signal word to unlock the next file and collect
+              the first five frames.
             </p>
           </div>
           <div className="hidden-frame-header-actions">
             <HiddenFrameProgress summary={summary} />
+            <Link className="hidden-frame-secondary-link" to="/hidden-frame/collection">
+              Frame collection
+            </Link>
             <Link className="hidden-frame-secondary-link" to="/hidden-frame">
               Return to signal
             </Link>
@@ -40,16 +43,14 @@ export function HiddenFrameArchivePage() {
         </header>
 
         <CompressionLog title="Archive initialized">
-          <p>Index visible. Locked records remain inactive until a future release.</p>
+          <p>
+            First chain visible. Locked records open only when the previous file has been recovered.
+          </p>
         </CompressionLog>
 
         <div className="recovered-file-grid" aria-label="Recovered file list">
           {hiddenFrameFiles.map((file) => (
-            <RecoveredFileCard
-              key={file.id}
-              file={file}
-              state={isFileUnlocked(file.id) ? 'unlocked' : file.state}
-            />
+            <RecoveredFileCard key={file.id} file={file} state={getFileState(file)} />
           ))}
         </div>
       </div>

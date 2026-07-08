@@ -28,6 +28,9 @@ export function HiddenFrameLandingPage() {
               <Link className="hidden-frame-button" to="/hidden-frame/archive">
                 Open Archive
               </Link>
+              <Link className="hidden-frame-secondary-link" to="/hidden-frame/collection">
+                View Frames
+              </Link>
               <HiddenFrameIcon
                 destinationPath="/hidden-frame/archive"
                 label="Open hidden frame archive"

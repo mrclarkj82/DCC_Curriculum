@@ -1,11 +1,15 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   getHiddenFrameProgressSummary,
+  getResolvedHiddenFrameFileState,
+  isHiddenFrameFileAccessible,
   markHiddenFrameArchiveVisited,
+  markHiddenFrameFileCompleted,
   markHiddenFrameFileUnlocked,
   readHiddenFrameProgress,
   type HiddenFrameProgressSnapshot,
 } from '../progress/hiddenFrameProgress';
+import type { HiddenFrameFileRecord } from '../data/hiddenFrameFiles';
 
 export function useHiddenFrameProgress() {
   const [progress, setProgress] = useState<HiddenFrameProgressSnapshot>(() =>
@@ -24,9 +28,33 @@ export function useHiddenFrameProgress() {
     setProgress(markHiddenFrameFileUnlocked(fileId));
   }, []);
 
+  const completeFile = useCallback((fileId: string) => {
+    setProgress(markHiddenFrameFileCompleted(fileId));
+  }, []);
+
   const isFileUnlocked = useCallback(
     (fileId: string) => progress.unlockedFileIds.includes(fileId),
     [progress.unlockedFileIds],
+  );
+
+  const isFileCompleted = useCallback(
+    (fileId: string) => progress.completedFileIds.includes(fileId),
+    [progress.completedFileIds],
+  );
+
+  const hasRecoveredFrame = useCallback(
+    (frameId: string) => progress.recoveredFrameIds.includes(frameId),
+    [progress.recoveredFrameIds],
+  );
+
+  const getFileState = useCallback(
+    (file: HiddenFrameFileRecord) => getResolvedHiddenFrameFileState(file, progress),
+    [progress],
+  );
+
+  const canOpenFile = useCallback(
+    (file: HiddenFrameFileRecord) => isHiddenFrameFileAccessible(file, progress),
+    [progress],
   );
 
   const summary = useMemo(() => getHiddenFrameProgressSummary(progress), [progress]);
@@ -36,6 +64,11 @@ export function useHiddenFrameProgress() {
     summary,
     visitArchive,
     unlockFile,
+    completeFile,
     isFileUnlocked,
+    isFileCompleted,
+    hasRecoveredFrame,
+    getFileState,
+    canOpenFile,
   };
 }
