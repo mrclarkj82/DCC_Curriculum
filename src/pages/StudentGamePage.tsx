@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
+import { AssignmentGameShell } from '../features/assignmentGame/AssignmentGameShell';
 import { PageContainer } from '../components/PageContainer';
 import { usePrimaryClassRecord } from '../hooks/usePrimaryClassRecord';
 import { useAssignmentGameAccess } from '../hooks/useAssignmentGameAccess';
@@ -50,31 +51,6 @@ function ErrorGameGate({ message }: { message: string }) {
       <Link className="outline-button" to="/today">
         Return to Today's Mission
       </Link>
-    </section>
-  );
-}
-
-function UnlockedGamePlaceholder() {
-  return (
-    <section className="card mission-panel neon-border assignment-game-gate-card assignment-game-gate-card--unlocked">
-      <p className="retro-label">Unlocked</p>
-      <h2>{assignmentGameTitle}</h2>
-      <p>
-        You have opened the first gate. The game will appear here in a future phase. For now, your
-        completion unlock has been verified.
-      </p>
-      <div className="assignment-game-placeholder-panel" aria-hidden="true">
-        <span className="assignment-game-gate-mark">Gate 01</span>
-        <span className="assignment-game-gate-line" />
-      </div>
-      <div className="hero-actions">
-        <Link className="gradient-button" to="/today">
-          Back to Today's Mission
-        </Link>
-        <Link className="outline-button" to="/areas">
-          Browse Program Areas
-        </Link>
-      </div>
     </section>
   );
 }
@@ -175,7 +151,7 @@ export function StudentGamePage() {
         !activeItemLoading &&
         !classError &&
         !activeItemError &&
-        access.allowed && <UnlockedGamePlaceholder />}
+        access.allowed && <AssignmentGameShell />}
     </PageContainer>
   );
 }
