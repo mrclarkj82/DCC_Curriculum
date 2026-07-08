@@ -128,12 +128,23 @@ export function StudentGamePage() {
     () => (activeItem ? resolveSubmissionTargetForActiveItem(activeItem) : null),
     [activeItem],
   );
-  const access = useAssignmentGameAccess(userProfile?.uid ?? '', target?.targetId ?? '', {
-    activeItem,
-    classRecord,
-    target,
-    userProfile,
-  });
+  const classRecordPending = Boolean(userProfile?.classIds.length && !classRecord && !classError);
+  const activeItemPending = Boolean(classRecord && !activeItem && !activeItemError);
+  const accessContextPending =
+    authLoading || classLoading || activeItemLoading || classRecordPending || activeItemPending;
+  const access = useAssignmentGameAccess(
+    userProfile?.uid ?? '',
+    target?.targetId ?? '',
+    {
+      activeItem,
+      classRecord,
+      target,
+      userProfile,
+    },
+    {
+      isPending: accessContextPending,
+    },
+  );
 
   return (
     <PageContainer
@@ -142,7 +153,7 @@ export function StudentGamePage() {
       description="A future assignment-unlocked game space. Phase 1 verifies access only."
       className="mission-board assignment-game-page"
     >
-      {(authLoading || classLoading || activeItemLoading || access.state === 'loading') && (
+      {(accessContextPending || access.state === 'loading') && (
         <LoadingState label="Checking assignment progress..." />
       )}
       {classError && <ErrorState message={classError} />}

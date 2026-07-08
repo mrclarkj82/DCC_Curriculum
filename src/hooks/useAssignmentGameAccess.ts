@@ -9,16 +9,31 @@ import {
 } from '../services/assignmentGameAccessService';
 import { subscribeToSubmission } from '../services/submissionService';
 
+interface UseAssignmentGameAccessOptions {
+  isPending?: boolean;
+}
+
 export function useAssignmentGameAccess(
   studentId: string,
   assignmentId: string,
   context: AssignmentGameAccessContext,
+  options: UseAssignmentGameAccessOptions = {},
 ): AssignmentGameAccessResult {
   const [access, setAccess] = useState<AssignmentGameAccessResult>(
     loadingAssignmentGameAccessResult,
   );
+  const isPending = options.isPending ?? false;
 
   useEffect(() => {
+    if (isPending) {
+      setAccess({
+        ...loadingAssignmentGameAccessResult,
+        classId: context.classRecord?.id,
+        assignmentId: assignmentId || context.target?.targetId,
+      });
+      return undefined;
+    }
+
     const contextResult = validateAssignmentGameAccessContext(studentId, assignmentId, context);
 
     if (contextResult) {
@@ -110,6 +125,7 @@ export function useAssignmentGameAccess(
     context.target?.targetType,
     context.userProfile?.role,
     context.userProfile?.uid,
+    isPending,
     studentId,
   ]);
 
