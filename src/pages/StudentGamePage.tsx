@@ -126,7 +126,7 @@ export function StudentGamePage() {
     <PageContainer
       eyebrow="Student Game Gate"
       title={assignmentGameTitle}
-      description="A future assignment-unlocked game space. Phase 1 verifies access only."
+      description="A gated Phase 2 shell and start menu for the future assignment-unlocked game."
       className="mission-board assignment-game-page"
     >
       {(accessContextPending || access.state === 'loading') && (

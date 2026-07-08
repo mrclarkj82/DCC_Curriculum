@@ -12,6 +12,7 @@ Phase 2 adds the first reusable UI shell for the assignment-unlocked student gam
 - Non-playable medieval viewport mockup.
 - HUD placeholders for Health, Energy, Inventory, and Objective.
 - Pause menu with Resume, Restart Preview, and Back to Start Menu.
+- Escape-key pause/resume support inside the shell preview.
 
 ## Intentionally Not Implemented
 

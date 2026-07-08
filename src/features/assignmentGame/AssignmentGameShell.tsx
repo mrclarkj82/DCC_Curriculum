@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AssignmentGameHud } from './components/AssignmentGameHud';
 import { AssignmentGamePauseMenu } from './components/AssignmentGamePauseMenu';
 import { AssignmentGameStartMenu } from './components/AssignmentGameStartMenu';
@@ -25,6 +25,36 @@ export function AssignmentGameShell() {
   };
 
   const isPreviewVisible = shellState === 'shellPreview' || shellState === 'paused';
+
+  useEffect(() => {
+    if (!isPreviewVisible) {
+      return undefined;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') {
+        return;
+      }
+
+      setShellState((currentState) => {
+        if (currentState === 'shellPreview') {
+          return 'paused';
+        }
+
+        if (currentState === 'paused') {
+          return 'shellPreview';
+        }
+
+        return currentState;
+      });
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isPreviewVisible]);
 
   return (
     <section className="assignment-game-shell card mission-panel neon-border">

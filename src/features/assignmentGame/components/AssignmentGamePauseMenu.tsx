@@ -24,7 +24,7 @@ export function AssignmentGamePauseMenu({
           loaded.
         </p>
         <div className="assignment-game-menu-actions">
-          <button className="gradient-button" type="button" onClick={onResume}>
+          <button className="gradient-button" type="button" onClick={onResume} autoFocus>
             Resume
           </button>
           <button className="outline-button" type="button" onClick={onRestartPreview}>
