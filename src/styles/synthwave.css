@@ -2502,15 +2502,29 @@
 }
 
 .assignment-game-player-sprite {
+  --assignment-game-player-fallback: radial-gradient(
+    circle,
+    rgba(var(--color-neon-cyan-rgb), 0.42) 0%,
+    rgba(var(--color-neon-pink-rgb), 0.24) 48%,
+    rgba(var(--color-neon-purple-rgb), 0.08) 68%,
+    transparent 72%
+  );
+
   position: relative;
   z-index: 2;
   display: block;
   width: var(--assignment-game-player-size);
   height: var(--assignment-game-player-size);
-  background-image: url('/assignment-game/player/player_idle_up.png');
+  background-image:
+    url('/assets/assignment-game/player/player_idle_up.png'),
+    var(--assignment-game-player-fallback);
   background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 100% 100%;
+  background-position:
+    0 0,
+    center;
+  background-size:
+    100% 100%,
+    100% 100%;
   filter:
     drop-shadow(0 0 8px rgba(var(--color-neon-cyan-rgb), 0.36))
     drop-shadow(0 8px 10px rgba(0, 0, 0, 0.3));
@@ -2518,40 +2532,58 @@
 }
 
 .assignment-game-player--north .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_idle_up.png');
+  background-image:
+    url('/assets/assignment-game/player/player_idle_up.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player--south .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_idle_down.png');
+  background-image:
+    url('/assets/assignment-game/player/player_idle_down.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player--east .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_idle_right.png');
+  background-image:
+    url('/assets/assignment-game/player/player_idle_right.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player--west .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_idle_left.png');
+  background-image:
+    url('/assets/assignment-game/player/player_idle_left.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player.is-moving .assignment-game-player-sprite {
   animation: assignment-game-player-walk 0.46s steps(4) infinite;
-  background-size: 400% 100%;
+  background-size:
+    400% 100%,
+    100% 100%;
 }
 
 .assignment-game-player--north.is-moving .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_walk_up_spritesheet.png');
+  background-image:
+    url('/assets/assignment-game/player/player_walk_up_spritesheet.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player--south.is-moving .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_walk_down_spritesheet.png');
+  background-image:
+    url('/assets/assignment-game/player/player_walk_down_spritesheet.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player--east.is-moving .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_walk_right_spritesheet.png');
+  background-image:
+    url('/assets/assignment-game/player/player_walk_right_spritesheet.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player--west.is-moving .assignment-game-player-sprite {
-  background-image: url('/assignment-game/player/player_walk_left_spritesheet.png');
+  background-image:
+    url('/assets/assignment-game/player/player_walk_left_spritesheet.png'),
+    var(--assignment-game-player-fallback);
 }
 
 .assignment-game-player::after {
@@ -2600,7 +2632,9 @@
 
 @keyframes assignment-game-player-walk {
   to {
-    background-position: calc(var(--assignment-game-player-size) * -4) 0;
+    background-position:
+      calc(var(--assignment-game-player-size) * -4) 0,
+      center;
   }
 }
 

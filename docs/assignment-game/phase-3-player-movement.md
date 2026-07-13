@@ -18,7 +18,7 @@ Movement uses React state and browser keyboard events only. `useKeyboardMovement
 
 ## Player Sprite Assets
 
-Player art lives in `public/assignment-game/player/`. Idle sprites are 128x128 PNGs. Walking spritesheets are 512x128 PNGs with four horizontal 128x128 frames. The Phase 3 renderer switches idle and walking artwork by facing direction with CSS classes; it does not create any save state or backend dependency.
+Player art lives in `public/assets/assignment-game/player/`. Idle sprites are 128x128 PNGs. Walking spritesheets are 512x128 PNGs with four horizontal 128x128 frames. The Phase 3 renderer switches idle and walking artwork by facing direction with CSS classes; it does not create any save state or backend dependency.
 
 ## Intentionally Not Implemented
 
