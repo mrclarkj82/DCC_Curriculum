@@ -79,7 +79,7 @@ export const ruinedCourtyardLevel = {
   id: 'ruined-courtyard',
   name: 'Ruined Courtyard',
   objectiveText:
-    'Survey the Ruined Courtyard and find the sealed Ember Gate. Combat, dialogue, inventory, and saves are not active yet.',
+    'Defeat the courtyard sentries, then speak with the Lantern Keeper near the sealed Ember Gate.',
   dimensions: {
     columns: 12,
     rows: 8,
