@@ -21,6 +21,127 @@ Do not make the project Unreal-only.
 - Phase 9 is a curriculum production, repository organization, website-data integration, and slide-handoff phase.
 - Phase 9 does not include creating PowerPoint files, slide images, generated presentation backgrounds, or slide artwork.
 
+## Assignment Game: The Ember Gate
+
+The repository also contains an assignment-unlocked student game project called **The Ember Gate**.
+The game lives inside the DCC Creative Studio app and must preserve the classroom workflow: students
+complete required DCC assignment work first, then unlock the game from the student Today experience.
+
+The Ember Gate is a top-down 2D medieval action-adventure game, not a side-scrolling platformer.
+The intended game direction includes:
+
+- Up, down, left, and right player movement.
+- A short-range sword attack.
+- A weaker ranged energy attack.
+- NPC dialogue.
+- Collectible items and inventory.
+- Student-specific save/load progress.
+- New areas unlocked by later assignment completion.
+- Hidden Frame / Easter egg clue integration.
+
+### Assignment Game Non-Negotiable Rules
+
+- Do not work directly on `main` for assignment-game phases.
+- Use small, reviewable branches and PRs, one branch and one PR per phase.
+- Preserve the existing assignment access gate.
+- Locked students must not reach gameplay by manually navigating to `/student/game`.
+- Do not weaken Firebase Auth, role checks, class roster checks, assignment completion checks, Firestore rules, or Storage rules.
+- Do not add Phaser, Pixi, Matter.js, or another heavy game engine.
+- Do not add new dependencies unless absolutely necessary and justified in the PR.
+- Keep gameplay modular and data-driven.
+- Do not create Firestore game saves until the save-system phase.
+- Do not create Firestore save rules until the save-system phase.
+- Do not use Firebase Storage for saves.
+- Do not hide failing checks.
+- Update `docs/assignment-game/PROGRESS.md` after each meaningful assignment-game step.
+- Classroom safety matters: the game unlocks only after required work and must always provide a clear Back to Today path.
+
+### Assignment Game Stack And Routing
+
+Known app stack:
+
+- React
+- Vite
+- TypeScript
+- Firebase Authentication
+- Cloud Firestore
+- React Router
+- Existing CSS styling through `src/styles/theme.css`, `src/styles/synthwave.css`, and `src/styles/globals.css`
+
+Relevant files and folders to inspect before assignment-game work:
+
+- `docs/assignment-game/`
+- `src/App.tsx`
+- `src/pages/StudentGamePage.tsx`
+- `src/hooks/useAssignmentGameAccess.ts`
+- `src/services/assignmentGameAccessService.ts`
+- `src/components/assignmentGame/AssignmentGameEntryCard.tsx`
+- `src/components/today/StudentTodayExperience.tsx`
+- `src/features/assignmentGame/`
+- `src/styles/theme.css`
+- `src/styles/synthwave.css`
+- `src/styles/globals.css`
+- `firestore.rules`
+- `storage.rules`
+
+The current route is `/student/game`. It must remain protected by the existing authenticated app shell,
+the student-role `ProtectedRoute`, and the page-level assignment access gate unless a later approved
+phase explicitly changes the route model while preserving equivalent or stronger protections.
+
+### Assignment Game Assets
+
+Use provided asset zips only when they are available in the Codex workspace. Read the asset manifests
+before integrating files.
+
+Expected zips:
+
+- `assignment-game-player-sprites.zip`
+- `assignment-game-tileset.zip`
+
+Expected public asset locations:
+
+- Player sprites: `public/assets/assignment-game/player/`
+- Tiles: `public/assets/assignment-game/tiles/`
+
+Use game-ready folders from the zips:
+
+- Player pack: `game_ready_128/`
+- Tileset pack: `game_ready_64/`
+
+The game must not crash if an optional image asset is missing. Implement graceful fallback rendering
+for missing images, missing manifests, or incomplete asset sets.
+
+### Assignment Game PR Requirements
+
+Every assignment-game PR description must include:
+
+- Summary
+- What changed
+- Files added or modified
+- Route behavior
+- Access gate safety
+- What is intentionally not implemented
+- Testing notes
+- Manual verification checklist
+- Known limitations
+- Next recommended phase
+
+Before marking an assignment-game PR ready, run available checks:
+
+- `npm run lint`
+- `npm run build`
+- `npm run validate:curriculum`
+- `npm run validate:hidden-frame`
+
+If a command does not exist, document that. If a command fails, document the exact failure.
+
+### Future Save Security
+
+Future persisted game saves must use Firestore, not Firebase Storage. Client-side checks are not
+enough for persisted save data. The save-system phase must include reviewed Firestore rules that
+prove students can read/write only their own game progress, teachers/admins have only approved
+visibility, and assignment unlock/progression state cannot be forged by editing client data.
+
 ## Source-Of-Truth Priority
 
 When sources disagree, use this priority:
