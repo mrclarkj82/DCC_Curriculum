@@ -2414,7 +2414,8 @@
 
 .assignment-game-hud-item--movement,
 .assignment-game-hud-item--combat,
-.assignment-game-hud-item--enemies {
+.assignment-game-hud-item--enemies,
+.assignment-game-hud-item--dialogue {
   grid-column: span 2;
 }
 
@@ -2766,6 +2767,108 @@
   }
 }
 
+.assignment-game-npc-layer {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  pointer-events: none;
+}
+
+.assignment-game-npc {
+  --assignment-game-npc-size: 68px;
+
+  position: absolute;
+  display: grid;
+  width: var(--assignment-game-npc-size);
+  min-height: calc(var(--assignment-game-npc-size) + 40px);
+  justify-items: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    filter var(--transition-fast),
+    scale var(--transition-fast);
+}
+
+.assignment-game-npc-sprite {
+  position: relative;
+  display: block;
+  width: var(--assignment-game-npc-size);
+  height: var(--assignment-game-npc-size);
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.58);
+  border-radius: 50% 50% 42% 42%;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 244, 196, 0.95) 0 8%, transparent 9%),
+    linear-gradient(
+      90deg,
+      transparent 0 39%,
+      rgba(var(--color-neon-orange-rgb), 0.72) 40% 58%,
+      transparent 59%
+    ),
+    radial-gradient(circle at 50% 52%, rgba(var(--color-neon-cyan-rgb), 0.62), transparent 18%),
+    linear-gradient(
+      180deg,
+      rgba(51, 35, 91, 0.92),
+      rgba(16, 13, 38, 0.96) 62%,
+      rgba(var(--color-neon-purple-rgb), 0.4)
+    );
+  box-shadow:
+    0 0 18px rgba(var(--color-neon-cyan-rgb), 0.36),
+    0 0 24px rgba(var(--color-neon-orange-rgb), 0.22),
+    inset 0 -16px 18px rgba(0, 0, 0, 0.24);
+  image-rendering: pixelated;
+}
+
+.assignment-game-npc-sprite::after {
+  position: absolute;
+  right: 9px;
+  bottom: 6px;
+  width: 13px;
+  height: 34px;
+  border-radius: var(--radius-pill);
+  background:
+    radial-gradient(circle at 50% 15%, var(--color-neon-orange), transparent 42%),
+    linear-gradient(180deg, rgba(var(--color-neon-cyan-rgb), 0.72), rgba(8, 3, 18, 0.84));
+  box-shadow:
+    0 0 14px rgba(var(--color-neon-orange-rgb), 0.52),
+    0 0 18px rgba(var(--color-neon-cyan-rgb), 0.32);
+  content: '';
+}
+
+.assignment-game-npc.is-nearby,
+.assignment-game-npc.is-active {
+  filter: brightness(1.18) saturate(1.18);
+  scale: 1.04;
+}
+
+.assignment-game-npc-name,
+.assignment-game-npc-prompt {
+  font-family: var(--font-mono);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.assignment-game-npc-name {
+  max-width: 112px;
+  margin-top: 2px;
+  color: var(--color-text-main);
+  font-size: 10px;
+  text-shadow:
+    0 0 8px rgba(var(--color-neon-cyan-rgb), 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.72);
+}
+
+.assignment-game-npc-prompt {
+  margin-top: 4px;
+  border: 1px solid rgba(var(--color-neon-orange-rgb), 0.62);
+  border-radius: var(--radius-pill);
+  padding: 3px 8px;
+  color: var(--color-neon-orange);
+  background: rgba(8, 3, 18, 0.78);
+  box-shadow: var(--glow-orange);
+  font-size: 10px;
+}
+
 .assignment-game-sword-arc {
   position: absolute;
   width: 86px;
@@ -2984,6 +3087,71 @@
       calc(var(--assignment-game-player-size) * -4) 0,
       center;
   }
+}
+
+.assignment-game-dialogue-panel {
+  position: absolute;
+  z-index: 7;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  left: var(--space-4);
+  display: grid;
+  grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: start;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.56);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-cyan-rgb), 0.14),
+      rgba(var(--color-neon-purple-rgb), 0.2)
+    ),
+    rgba(8, 3, 18, 0.9);
+  box-shadow:
+    var(--shadow-panel),
+    var(--glow-cyan),
+    0 0 24px rgba(var(--color-neon-purple-rgb), 0.24);
+  backdrop-filter: blur(12px);
+}
+
+.assignment-game-dialogue-speaker h3 {
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: 24px;
+}
+
+.assignment-game-dialogue-speaker span,
+.assignment-game-dialogue-footer {
+  color: var(--color-text-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.assignment-game-dialogue-line {
+  min-height: 66px;
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.assignment-game-dialogue-footer {
+  display: flex;
+  grid-column: 1 / -1;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.assignment-game-dialogue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
 }
 
 .assignment-game-paused-ribbon {
@@ -3318,7 +3486,8 @@
 
   .assignment-game-hud-item--movement,
   .assignment-game-hud-item--combat,
-  .assignment-game-hud-item--enemies {
+  .assignment-game-hud-item--enemies,
+  .assignment-game-hud-item--dialogue {
     grid-column: auto;
   }
 
@@ -3343,6 +3512,10 @@
   .assignment-game-level-meta div {
     min-width: 0;
     flex: 1 1 88px;
+  }
+
+  .assignment-game-dialogue-panel {
+    grid-template-columns: 1fr;
   }
 
   .landing-hero h1,

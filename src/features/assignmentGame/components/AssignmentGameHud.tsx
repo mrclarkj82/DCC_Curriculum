@@ -1,22 +1,40 @@
 import { assignmentGameHudPlaceholders } from '../gameShellConstants';
 import type { AssignmentGameCombatState } from '../combatTypes';
+import type { AssignmentGameDialogueState } from '../dialogueTypes';
 import type { AssignmentGameEnemiesState } from '../enemyTypes';
 import type { AssignmentGamePlayerState } from '../playerMovementTypes';
 
 interface AssignmentGameHudProps {
   combatState: AssignmentGameCombatState;
+  dialogueState: AssignmentGameDialogueState;
   enemiesState: AssignmentGameEnemiesState;
   playerState: AssignmentGamePlayerState;
 }
 
+function dialogueStatusText(dialogueState: AssignmentGameDialogueState): string {
+  if (dialogueState.isOpen) {
+    return `${dialogueState.activeNpc?.name}: ${dialogueState.activeLineIndex + 1}/${
+      dialogueState.lineCount
+    }`;
+  }
+
+  if (dialogueState.nearbyNpc) {
+    return `Talk to ${dialogueState.nearbyNpc.name}`;
+  }
+
+  return 'Find the Lantern Keeper';
+}
+
 export function AssignmentGameHud({
   combatState,
+  dialogueState,
   enemiesState,
   playerState,
 }: AssignmentGameHudProps) {
   const roundedX = Math.round(playerState.position.x);
   const roundedY = Math.round(playerState.position.y);
   const contactDamage = enemiesState.enemies[0]?.contactDamage ?? 0;
+  const dialogueStatus = dialogueStatusText(dialogueState);
 
   return (
     <aside className="assignment-game-hud" aria-label="Game HUD">
@@ -62,6 +80,10 @@ export function AssignmentGameHud({
       <div className="assignment-game-hud-item assignment-game-hud-item--enemies">
         <span>Enemy Status</span>
         <strong>{enemiesState.lastEnemyEvent}</strong>
+      </div>
+      <div className="assignment-game-hud-item assignment-game-hud-item--dialogue">
+        <span>Dialogue</span>
+        <strong>{dialogueStatus}</strong>
       </div>
     </aside>
   );

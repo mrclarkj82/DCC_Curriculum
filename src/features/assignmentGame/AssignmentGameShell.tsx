@@ -4,6 +4,7 @@ import { AssignmentGamePauseMenu } from './components/AssignmentGamePauseMenu';
 import { AssignmentGameStartMenu } from './components/AssignmentGameStartMenu';
 import { AssignmentGameViewport } from './components/AssignmentGameViewport';
 import { assignmentGameWorkingTitle } from './gameShellConstants';
+import { useAssignmentGameDialogue } from './hooks/useAssignmentGameDialogue';
 import { useAssignmentGameEnemies } from './hooks/useAssignmentGameEnemies';
 import { usePlayerCombat } from './hooks/usePlayerCombat';
 import { usePlayerMovement } from './hooks/usePlayerMovement';
@@ -12,28 +13,41 @@ import type { AssignmentGameShellState } from './gameShellTypes';
 export function AssignmentGameShell() {
   const [shellState, setShellState] = useState<AssignmentGameShellState>('startMenu');
   const [previewKey, setPreviewKey] = useState(0);
+  const [isDialogueOpen, setIsDialogueOpen] = useState(false);
   const isPreviewVisible = shellState === 'shellPreview' || shellState === 'paused';
-  const isMovementEnabled = shellState === 'shellPreview';
-  const playerState = usePlayerMovement(isMovementEnabled, previewKey);
-  const combatState = usePlayerCombat(isMovementEnabled, previewKey, playerState);
+  const isPreviewActive = shellState === 'shellPreview';
+  const isGameInputEnabled = isPreviewActive && !isDialogueOpen;
+  const playerState = usePlayerMovement(isGameInputEnabled, previewKey);
+  const combatState = usePlayerCombat(isGameInputEnabled, previewKey, playerState);
   const enemiesState = useAssignmentGameEnemies(
-    isMovementEnabled,
+    isGameInputEnabled,
     previewKey,
     combatState,
     playerState,
   );
+  const { advanceDialogue, closeDialogue, dialogueState } = useAssignmentGameDialogue(
+    isPreviewActive,
+    previewKey,
+    playerState,
+    {
+      onDialogueOpenChange: setIsDialogueOpen,
+    },
+  );
 
   const startNewGame = () => {
+    setIsDialogueOpen(false);
     setPreviewKey((currentKey) => currentKey + 1);
     setShellState('shellPreview');
   };
 
   const restartPreview = () => {
+    setIsDialogueOpen(false);
     setPreviewKey((currentKey) => currentKey + 1);
     setShellState('shellPreview');
   };
 
   const backToStartMenu = () => {
+    setIsDialogueOpen(false);
     setPreviewKey(0);
     setShellState('startMenu');
   };
@@ -44,6 +58,10 @@ export function AssignmentGameShell() {
     }
 
     const handleKeyDown = (event: KeyboardEvent) => {
+      if (dialogueState.isOpen) {
+        return;
+      }
+
       if (event.key !== 'Escape') {
         return;
       }
@@ -66,7 +84,7 @@ export function AssignmentGameShell() {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isPreviewVisible]);
+  }, [dialogueState.isOpen, isPreviewVisible]);
 
   return (
     <section className="assignment-game-shell card mission-panel neon-border">
@@ -83,7 +101,7 @@ export function AssignmentGameShell() {
               className="outline-button"
               type="button"
               onClick={() => setShellState('paused')}
-              disabled={shellState === 'paused'}
+              disabled={shellState === 'paused' || dialogueState.isOpen}
             >
               Pause
             </button>
@@ -91,20 +109,24 @@ export function AssignmentGameShell() {
 
           <AssignmentGameHud
             combatState={combatState}
+            dialogueState={dialogueState}
             enemiesState={enemiesState}
             playerState={playerState}
           />
           <AssignmentGameViewport
             combatState={combatState}
+            dialogueState={dialogueState}
             enemiesState={enemiesState}
             isPaused={shellState === 'paused'}
+            onAdvanceDialogue={advanceDialogue}
+            onCloseDialogue={closeDialogue}
             playerState={playerState}
             previewKey={previewKey}
           />
 
           <p className="muted">
-            Phase 6 adds local-only Hollow Squire and Ash Wisp enemies. Inventory data, dialogue,
-            progression, and saves are intentionally not active yet.
+            Phase 7 adds local-only Lantern Keeper dialogue. Inventory data, progression, and saves
+            are intentionally not active yet.
           </p>
 
           {shellState === 'paused' && (
