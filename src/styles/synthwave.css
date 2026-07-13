@@ -2413,7 +2413,8 @@
 }
 
 .assignment-game-hud-item--movement,
-.assignment-game-hud-item--combat {
+.assignment-game-hud-item--combat,
+.assignment-game-hud-item--enemies {
   grid-column: span 2;
 }
 
@@ -2640,6 +2641,131 @@
   pointer-events: none;
 }
 
+.assignment-game-enemy-layer {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  pointer-events: none;
+}
+
+.assignment-game-enemy {
+  --assignment-game-enemy-size: 62px;
+
+  position: absolute;
+  display: grid;
+  width: var(--assignment-game-enemy-size);
+  min-height: calc(var(--assignment-game-enemy-size) + 32px);
+  justify-items: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    filter var(--transition-fast),
+    opacity var(--transition-fast),
+    scale var(--transition-fast);
+}
+
+.assignment-game-enemy-sprite {
+  display: block;
+  width: var(--assignment-game-enemy-size);
+  height: var(--assignment-game-enemy-size);
+  image-rendering: pixelated;
+}
+
+.assignment-game-enemy--hollowSquire .assignment-game-enemy-sprite {
+  border: 2px solid rgba(var(--color-neon-orange-rgb), 0.64);
+  border-radius: 18px 18px 14px 14px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0 15%,
+      rgba(var(--color-neon-cyan-rgb), 0.45) 16% 22%,
+      transparent 23% 77%,
+      rgba(var(--color-neon-cyan-rgb), 0.45) 78% 84%,
+      transparent 85%
+    ),
+    radial-gradient(circle at 50% 34%, rgba(255, 255, 255, 0.86) 0 7%, transparent 8%),
+    linear-gradient(
+      180deg,
+      rgba(242, 232, 202, 0.72),
+      rgba(108, 117, 148, 0.84) 48%,
+      rgba(41, 36, 68, 0.92)
+    );
+  box-shadow:
+    0 0 16px rgba(var(--color-neon-orange-rgb), 0.32),
+    inset 0 -12px 18px rgba(0, 0, 0, 0.22);
+}
+
+.assignment-game-enemy--ashWisp .assignment-game-enemy-sprite {
+  border: 1px solid rgba(var(--color-neon-pink-rgb), 0.62);
+  border-radius: 50% 50% 44% 44%;
+  background:
+    radial-gradient(circle at 45% 36%, rgba(255, 255, 255, 0.9) 0 9%, transparent 10%),
+    radial-gradient(circle at 50% 50%, var(--color-neon-orange) 0 18%, transparent 19%),
+    radial-gradient(
+      circle,
+      rgba(var(--color-neon-pink-rgb), 0.82),
+      rgba(var(--color-neon-purple-rgb), 0.32) 62%,
+      transparent 70%
+    );
+  box-shadow:
+    0 0 20px rgba(var(--color-neon-orange-rgb), 0.44),
+    0 0 28px rgba(var(--color-neon-pink-rgb), 0.32);
+  animation: assignment-game-enemy-float 1.2s ease-in-out infinite alternate;
+}
+
+.assignment-game-enemy-name {
+  max-width: 106px;
+  margin-top: 2px;
+  color: var(--color-text-main);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 900;
+  text-align: center;
+  text-shadow:
+    0 0 8px rgba(var(--color-neon-cyan-rgb), 0.48),
+    0 2px 4px rgba(0, 0, 0, 0.72);
+  text-transform: uppercase;
+}
+
+.assignment-game-enemy-health {
+  display: block;
+  width: 58px;
+  height: 7px;
+  margin-top: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(var(--color-neon-orange-rgb), 0.72);
+  border-radius: var(--radius-pill);
+  background: rgba(8, 3, 18, 0.78);
+  box-shadow: 0 0 10px rgba(var(--color-neon-orange-rgb), 0.18);
+}
+
+.assignment-game-enemy-health-fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-neon-orange), var(--color-neon-pink));
+  box-shadow: 0 0 10px rgba(var(--color-neon-pink-rgb), 0.34);
+}
+
+.assignment-game-enemy--defeated {
+  opacity: 0.42;
+  filter: grayscale(0.72) saturate(0.58);
+  scale: 0.9;
+}
+
+.assignment-game-enemy--defeated .assignment-game-enemy-sprite {
+  animation: none;
+}
+
+@keyframes assignment-game-enemy-float {
+  from {
+    transform: translateY(-3px);
+  }
+
+  to {
+    transform: translateY(4px);
+  }
+}
+
 .assignment-game-sword-arc {
   position: absolute;
   width: 86px;
@@ -2862,7 +2988,7 @@
 
 .assignment-game-paused-ribbon {
   position: absolute;
-  z-index: 4;
+  z-index: 7;
   top: var(--space-4);
   right: var(--space-4);
   border: 1px solid rgba(var(--color-neon-orange-rgb), 0.58);
@@ -2932,7 +3058,7 @@
 
 .assignment-game-pause-menu {
   position: absolute;
-  z-index: 5;
+  z-index: 8;
   inset: 0;
   display: grid;
   place-items: center;
@@ -3191,7 +3317,8 @@
   }
 
   .assignment-game-hud-item--movement,
-  .assignment-game-hud-item--combat {
+  .assignment-game-hud-item--combat,
+  .assignment-game-hud-item--enemies {
     grid-column: auto;
   }
 

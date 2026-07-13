@@ -4,20 +4,21 @@
 
 The Ember Gate is the assignment-unlocked student game inside DCC Creative Studio. The current
 verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
-Phase 3 player movement, and Phase 4 Ruined Courtyard level. Phase 5 combat foundation is in
-progress.
+Phase 3 player movement, Phase 4 Ruined Courtyard level, and Phase 5 combat foundation. Phase 6
+enemies are implemented on `feature/assignment-game-enemies` and ready for review after validation.
 
 Verified on 2026-07-13:
 
-- `origin/main`: `65b7ad5` (`Merge pull request #11 from mrclarkj82/feature/assignment-game-level-one`).
+- `origin/main`: `37dbdc3` (`Merge pull request #12 from mrclarkj82/feature/assignment-game-combat`).
 - Phase 0 architecture PR #6: merged.
 - Phase 1 access gate PR #7: merged.
 - Phase 2 shell/start menu PR #8: merged.
 - Phase 3 player movement PR #9: merged.
 - Phase 4 Ruined Courtyard PR #11: merged.
-- Phase 5 combat foundation branch: `feature/assignment-game-combat`.
+- Phase 5 combat foundation PR #12: merged.
+- Phase 6 enemies branch: `feature/assignment-game-enemies`.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
-- `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, control, acceptance, and progress docs.
+- `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
 - `StudentGamePage` performs a page-level assignment-game access check before rendering `AssignmentGameShell`.
 - `AssignmentGameEntryCard` appears in the student Today experience when a submission target exists.
@@ -50,8 +51,8 @@ Verified on 2026-07-13:
 | Phase 2 | Game Shell and Start Menu | Merged | PR #8 / `feature/assignment-game-shell` | Mainline shell/start menu is available after access gate unlock. |
 | Phase 3 | Player Movement | Merged | PR #9 / `feature/assignment-game-player-movement` | Includes local movement and player sprites. |
 | Phase 4 | First Medieval Level | Merged | PR #11 / `feature/assignment-game-level-one` | Builds Ruined Courtyard as a data-driven top-down level. |
-| Phase 5 | Combat Foundation | Ready for review after latest push | `feature/assignment-game-combat` | Adds local-only sword and energy attack foundations. |
-| Phase 6 | Enemies | Pending | Recommended: `feature/assignment-game-enemies` | Add Hollow Squire and Ash Wisp only after combat foundation. |
+| Phase 5 | Combat Foundation | Merged | PR #12 / `feature/assignment-game-combat` | Adds local-only sword and energy attack foundations. |
+| Phase 6 | Enemies | Ready for review after latest validation | `feature/assignment-game-enemies` | Adds local-only Hollow Squire and Ash Wisp enemies. |
 | Phase 7 | Dialogue | Pending | Recommended: `feature/assignment-game-dialogue` | Add Lantern Keeper NPC and data-driven dialogue. |
 | Phase 8 | Inventory and Collectibles | Pending | Recommended: `feature/assignment-game-inventory` | Add Ember Shard, Rusty Key, and Lantern Oil. |
 | Phase 9 | Save and Continue System | Pending | Recommended: `feature/assignment-game-save-system` | Add Firestore saves and reviewed rules in the same phase. |
@@ -71,6 +72,7 @@ Verified on 2026-07-13:
 | #9 | `[Phase 3] Assignment Game Player Movement` | Merged | Adds local movement, player state, and player sprites. |
 | #10 | `[Goal] Assignment Game Project Control Docs` | Merged | Added root assignment-game rules, full-game acceptance criteria, and this progress log. |
 | #11 | `[Phase 4] Assignment Game Ruined Courtyard Level` | Merged | Added data-driven Ruined Courtyard level and tileset assets. |
+| #12 | `[Phase 5] Assignment Game Combat Foundation` | Merged | Added local-only sword and energy bolt combat foundation. |
 
 ## Validation Log
 
@@ -116,6 +118,15 @@ Verified on 2026-07-13:
 - 2026-07-13: Phase 5 `npm.cmd run validate:hidden-frame` passed.
 - 2026-07-13: Phase 5 `git diff --check` passed with Git line-ending normalization warnings only.
 - 2026-07-13: Verified local Vite served `/student/game` and `/assets/assignment-game/player/player_idle_down.png` with HTTP 200 on port 5179.
+- 2026-07-13: PR #12 merged into `main`.
+- 2026-07-13: Phase 6 branch `feature/assignment-game-enemies` created from current `origin/main`.
+- 2026-07-13: Phase 6 `npm.cmd install` passed. npm reported 6 moderate audit vulnerabilities and deprecation warnings for `node-domexception`, `glob`, and `uuid`.
+- 2026-07-13: Phase 6 `npm.cmd run lint` passed.
+- 2026-07-13: Phase 6 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Phase 6 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Phase 6 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Phase 6 `git diff --check` passed with Git line-ending normalization warnings only.
+- 2026-07-13: Verified local Vite served `/student/game` with HTTP 200 on port 5180.
 
 ## Asset Notes
 
@@ -128,14 +139,14 @@ Verified on 2026-07-13:
 ## Current Open Questions
 
 - Should `useAssignmentGameAccess(studentId, assignmentId, ...)` rename the second parameter to `targetId` in a later cleanup so missions, assignments, media projects, and broadcast updates all fit the name?
-- Should Phase 4 use CSS grid/DOM tiles first, or canvas rendering with the same data model? Keep the choice lightweight and avoid heavy engines either way.
+- Should future combat-health work subtract enemy contact damage from player health, use invulnerability windows, or keep contact as a warning-only interaction for classroom play?
 - What exact assignment progression model should unlock areas after the first gate: current active item only, completed historical targets, or teacher-selected milestones?
 - Are teacher/admin troubleshooting controls needed, or should Phase 12 remain skipped unless classroom use proves the need?
 
 ## Next Step
 
-Finish Phase 5 PR:
+Finish Phase 6 PR:
 
-1. Commit and push `feature/assignment-game-combat`.
-2. Open PR `[Phase 5] Assignment Game Combat Foundation`.
-3. After PR #12 merges, start Phase 6 enemies on `feature/assignment-game-enemies`.
+1. Commit and push `feature/assignment-game-enemies`.
+2. Open PR `[Phase 6] Assignment Game Enemies`.
+3. After the Phase 6 PR merges, start Phase 7 dialogue on `feature/assignment-game-dialogue`.

@@ -23,7 +23,7 @@ const energyBoltSpeed = 52;
 const maxEnergyBolts = 4;
 
 const initialCombatMessage =
-  'Combat ready. Sword and energy attacks are local-only previews in this phase.';
+  'Combat ready. Sword and energy attacks can damage local-only enemies in this phase.';
 
 type AssignmentGameCombatInternalState = Omit<AssignmentGameCombatState, 'isAttacking'>;
 
@@ -124,7 +124,7 @@ export function usePlayerCombat(
         setCombatState((currentState) => ({
           ...currentState,
           activeSwordAttack: swordAttack,
-          lastAction: `Sword swing: ${currentState.stats.swordDamage} damage preview. No enemies are active yet.`,
+          lastAction: `Sword swing: ${currentState.stats.swordDamage} damage.`,
         }));
         return;
       }
@@ -139,7 +139,7 @@ export function usePlayerCombat(
       setCombatState((currentState) => ({
         ...currentState,
         energyBolts: [...currentState.energyBolts, energyBolt].slice(-maxEnergyBolts),
-        lastAction: `Energy bolt: ${currentState.stats.energyBoltDamage} damage preview. No enemies are active yet.`,
+        lastAction: `Energy bolt: ${currentState.stats.energyBoltDamage} damage.`,
       }));
     };
 
