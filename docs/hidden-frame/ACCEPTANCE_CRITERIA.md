@@ -137,6 +137,8 @@ Phase 3 is complete when:
 
 ## Phase 4 Acceptance Criteria: Cinematography Mystery Arc
 
+Status: Complete.
+
 Phase 4 is complete when:
 
 - `/hidden-frame/camera` exists.

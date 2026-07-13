@@ -39,6 +39,10 @@ The Archive reveals the First Puzzle Chain. Files 001 through 005 can be recover
 
 The first video-production signal appears in the Timeline. Files 006 through 008 extend the archive through timecode, lower thirds, and sound bridges. Frames 006 through 008 become local optional collectibles.
 
+### 2026-07-13 - Phase 4
+
+The first camera signal appears in the Cinematography Index. Files 009 through 011 extend the archive through rule of thirds, leading lines, and look space. Frames 009 through 011 become local optional collectibles.
+
 ## Locations
 
 ### Archive
@@ -55,7 +59,7 @@ A future Unreal Engine themed space suggested by Phase 0 art. Phase 2 references
 
 ### Viewport Grid
 
-A visual language for Unreal Engine or spatial clue contexts. Phase 2 uses viewport ideas for File 005 and the ROTATION signal.
+A visual language for Unreal Engine, camera, composition, or spatial clue contexts. Phase 2 uses viewport ideas for File 005 and the ROTATION signal. Phase 4 uses grid overlays for composition clues.
 
 ### VHS / Signal Space
 
@@ -94,6 +98,18 @@ Summary: The first video-production expansion route. It contains in-app timeline
 Related files: `HF-FILE-006`, `HF-FILE-007`, `HF-FILE-008`
 
 Related frames: `HF-FRAME-006`, `HF-FRAME-007`, `HF-FRAME-008`
+
+### HF-ARCHIVE-PHASE-4
+
+Title: Camera Signal
+
+First appearance: `/hidden-frame/camera`
+
+Summary: The first cinematography expansion route. It contains in-app composition clues for rule of thirds, leading lines, symmetry, headroom, look space, repetition, and central framing, and links to Files 009 through 011.
+
+Related files: `HF-FILE-009`, `HF-FILE-010`, `HF-FILE-011`
+
+Related frames: `HF-FRAME-009`, `HF-FRAME-010`, `HF-FRAME-011`
 
 ## Recovered Files
 
@@ -315,6 +331,90 @@ Unlocks: First video-production signal complete
 
 Archivist message: "The Archivist hears the bridge before the picture changes. The timeline remembers that sound can lead the eye."
 
+### HF-FILE-009
+
+File ID: `009`
+
+Filename: The Third Line
+
+Media type: recovered cinematography text
+
+First appearance: `/hidden-frame/file/009`
+
+In-world source: Camera Signal
+
+Canon summary: File 009 connects the rule of thirds to intentional attention inside the frame.
+
+Clue text: "The subject did not move. The frame moved around them. Two vertical lines and two horizontal lines quietly divided the image into choices."
+
+Hint: "Many camera guides divide a frame into three columns and three rows."
+
+Password: `THIRDS`
+
+Accepted variants: `RULE OF THIRDS`, `THE RULE OF THIRDS`
+
+Reward frame: `HF-FRAME-009`
+
+Unlocks: File 010
+
+Archivist message: "The Archivist draws the guide lines. Attention shifts when the frame is divided with intention."
+
+### HF-FILE-010
+
+File ID: `010`
+
+Filename: The Line That Leads
+
+Media type: recovered cinematography text
+
+First appearance: `/hidden-frame/file/010`
+
+In-world source: Camera Signal
+
+Canon summary: File 010 connects leading lines to visual direction and image flow.
+
+Clue text: "The hallway did not speak, but it pointed. Rails, shadows, and edges all leaned toward the same place in the frame."
+
+Hint: "What do cinematographers call lines that guide the viewer through an image?"
+
+Password: `LEADING LINES`
+
+Accepted variants: `LEADING`, `LINES`
+
+Reward frame: `HF-FRAME-010`
+
+Unlocks: File 011
+
+Archivist message: "The Archivist follows the path through the image. The frame was pointing before anyone noticed."
+
+### HF-FILE-011
+
+File ID: `011`
+
+Filename: The Space Ahead
+
+Media type: recovered cinematography text
+
+First appearance: `/hidden-frame/file/011`
+
+In-world source: Camera Signal
+
+Canon summary: File 011 connects look space and lead room to story direction.
+
+Clue text: "The character looked toward an empty part of the image. The empty space was not empty at all. It was the direction of the story."
+
+Hint: "This is the space left in front of a subject who is looking or moving."
+
+Password: `LOOK SPACE`
+
+Accepted variants: `LOOKSPACE`, `LEAD ROOM`, `LEADROOM`
+
+Reward frame: `HF-FRAME-011`
+
+Unlocks: First camera signal complete
+
+Archivist message: "The Archivist leaves room for the gaze. The story can move because the frame makes space for it."
+
 ## Frame Cards
 
 ### HF-FRAME-001
@@ -413,6 +513,42 @@ Unlock condition: Complete File 008
 
 Student-facing text: A frame for hearing the edit before seeing it.
 
+### HF-FRAME-009
+
+Frame ID: `frame-009`
+
+Title: THIRDS
+
+Discovery location: File 009
+
+Unlock condition: Complete File 009
+
+Student-facing text: A frame for dividing the image with intention.
+
+### HF-FRAME-010
+
+Frame ID: `frame-010`
+
+Title: LEADING LINES
+
+Discovery location: File 010
+
+Unlock condition: Complete File 010
+
+Student-facing text: A frame for following the path the image creates.
+
+### HF-FRAME-011
+
+Frame ID: `frame-011`
+
+Title: LOOK SPACE
+
+Discovery location: File 011
+
+Unlock condition: Complete File 011
+
+Student-facing text: A frame for leaving room in the direction of attention.
+
 ## Compression Logs
 
 No antagonist Compression logs are canon in Phase 2.
@@ -420,6 +556,8 @@ No antagonist Compression logs are canon in Phase 2.
 Phase 2 includes light system messages such as "First chain visible," "Record locked," "Collection waiting," and "First chain complete." These are interface atmosphere, not threats or story escalation.
 
 Phase 3 includes "Timeline signal" and "Signal scope" messages. These are safety and atmosphere copy, not plot threats.
+
+Phase 4 includes "Camera signal" and "Observation scope" messages. These are safety and atmosphere copy, not plot threats.
 
 ## Symbols
 
@@ -471,6 +609,18 @@ Scanlines and timecode represent media artifacts, recovered recordings, and clos
 
 "The Archivist hears the bridge before the picture changes. The timeline remembers that sound can lead the eye."
 
+### The Archivist - File 009
+
+"The Archivist draws the guide lines. Attention shifts when the frame is divided with intention."
+
+### The Archivist - File 010
+
+"The Archivist follows the path through the image. The frame was pointing before anyone noticed."
+
+### The Archivist - File 011
+
+"The Archivist leaves room for the gaze. The story can move because the frame makes space for it."
+
 ## Recurring Phrases
 
 The Phase 0 token file establishes these phrases:
@@ -498,6 +648,13 @@ Phase 3 adds:
 - The name beneath the frame.
 - Sound before picture.
 - The timeline remembers.
+
+Phase 4 adds:
+
+- The third line.
+- The line that leads.
+- The space ahead.
+- Room for the gaze.
 
 ## Puzzle Solutions
 
@@ -527,6 +684,18 @@ Unlock order:
 
 Accepted input behavior: case-insensitive and trims surrounding whitespace. File 006 also accepts `TIME CODE`. File 007 also accepts `LOWERTHIRD`. File 008 also accepts `SOUND BRIDGE`.
 
+### Camera Signal
+
+Prompt type: signal word gates and composition clue cards
+
+Unlock order:
+
+1. File 009 - `THIRDS` - rewards Frame 009 and unlocks File 010.
+2. File 010 - `LEADING LINES` - rewards Frame 010 and unlocks File 011.
+3. File 011 - `LOOK SPACE` - rewards Frame 011 and completes the first camera signal.
+
+Accepted input behavior: case-insensitive and trims surrounding whitespace. File 009 also accepts `RULE OF THIRDS` and `THE RULE OF THIRDS`. File 010 also accepts `LEADING` and `LINES`. File 011 also accepts `LOOKSPACE`, `LEAD ROOM`, and `LEADROOM`.
+
 ## Passwords
 
 Passwords are intentionally client-visible because Phase 2 is optional, ungraded, local-only, and not security-sensitive.
@@ -539,6 +708,9 @@ Passwords are intentionally client-visible because Phase 2 is optional, ungraded
 - File 006: `TIMECODE`
 - File 007: `LOWER THIRD`
 - File 008: `BRIDGE`
+- File 009: `THIRDS`
+- File 010: `LEADING LINES`
+- File 011: `LOOK SPACE`
 
 Do not store future active passwords in client code unless they are intentionally public, purely narrative, and documented as safe to expose.
 
@@ -550,6 +722,7 @@ Do not store future active passwords in client code unless they are intentionall
 - Why do recovered frames preserve production vocabulary?
 - What happens after the first five frames are recovered?
 - What does the timeline signal reveal after the first three video frames are recovered?
+- Why do composition guides appear before the Render Room fully opens?
 - How do Unreal, Blender, cinematography, and video clues connect beyond this first chain?
 - Why does the Archivist care about what a frame includes and excludes?
 

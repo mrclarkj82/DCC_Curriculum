@@ -1,7 +1,7 @@
 import { hiddenFramePhase0Assets } from '../hiddenFramePhase0Assets';
 
 export type HiddenFrameFileState = 'locked' | 'available' | 'unlocked' | 'completed' | 'future';
-export type HiddenFrameArcId = 'first-chain' | 'video-production';
+export type HiddenFrameArcId = 'first-chain' | 'video-production' | 'cinematography';
 
 export interface HiddenFrameFileRecord {
   id: string;
@@ -243,12 +243,96 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
     passwordAnswer: 'BRIDGE',
     acceptedAnswers: ['SOUND BRIDGE'],
     prerequisiteFileId: '007',
+    unlocksFileId: '009',
     rewardFrameId: 'frame-008',
     recoveredMessage:
       'The Archivist hears the bridge before the picture changes. The timeline remembers that sound can lead the eye.',
     completionMeta: {
       label: 'Frame 008 recovered',
-      nextStep: 'The first video-production signal is complete.',
+      nextStep: 'The first video-production signal is complete. A camera signal is now visible.',
+    },
+  },
+  {
+    id: '009',
+    fileNumber: '009',
+    phase: 4,
+    arcId: 'cinematography',
+    title: 'The Third Line',
+    route: '/hidden-frame/file/009',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A cinematography record about dividing the frame before deciding where attention belongs.',
+    clueText:
+      'The subject did not move. The frame moved around them. Two vertical lines and two horizontal lines quietly divided the image into choices.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    background: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    hintText: 'Many camera guides divide a frame into three columns and three rows.',
+    passwordAnswer: 'THIRDS',
+    acceptedAnswers: ['RULE OF THIRDS', 'THE RULE OF THIRDS'],
+    prerequisiteFileId: '008',
+    unlocksFileId: '010',
+    rewardFrameId: 'frame-009',
+    recoveredMessage:
+      'The Archivist draws the guide lines. Attention shifts when the frame is divided with intention.',
+    completionMeta: {
+      label: 'Frame 009 recovered',
+      nextStep: 'File 010 is now available in the archive.',
+    },
+  },
+  {
+    id: '010',
+    fileNumber: '010',
+    phase: 4,
+    arcId: 'cinematography',
+    title: 'The Line That Leads',
+    route: '/hidden-frame/file/010',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A cinematography record about paths that pull the viewer through the image.',
+    clueText:
+      'The hallway did not speak, but it pointed. Rails, shadows, and edges all leaned toward the same place in the frame.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    background: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    hintText: 'What do cinematographers call lines that guide the viewer through an image?',
+    passwordAnswer: 'LEADING LINES',
+    acceptedAnswers: ['LEADING', 'LINES'],
+    prerequisiteFileId: '009',
+    unlocksFileId: '011',
+    rewardFrameId: 'frame-010',
+    recoveredMessage:
+      'The Archivist follows the path through the image. The frame was pointing before anyone noticed.',
+    completionMeta: {
+      label: 'Frame 010 recovered',
+      nextStep: 'File 011 is now available in the archive.',
+    },
+  },
+  {
+    id: '011',
+    fileNumber: '011',
+    phase: 4,
+    arcId: 'cinematography',
+    title: 'The Space Ahead',
+    route: '/hidden-frame/file/011',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A cinematography record about leaving room in the direction a subject faces or moves.',
+    clueText:
+      'The character looked toward an empty part of the image. The empty space was not empty at all. It was the direction of the story.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    background: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    hintText: 'This is the space left in front of a subject who is looking or moving.',
+    passwordAnswer: 'LOOK SPACE',
+    acceptedAnswers: ['LOOKSPACE', 'LEAD ROOM', 'LEADROOM'],
+    prerequisiteFileId: '010',
+    rewardFrameId: 'frame-011',
+    recoveredMessage:
+      'The Archivist leaves room for the gaze. The story can move because the frame makes space for it.',
+    completionMeta: {
+      label: 'Frame 011 recovered',
+      nextStep: 'The first camera signal is complete.',
     },
   },
 ];
@@ -262,6 +346,10 @@ export const hiddenFrameFirstChainFiles = hiddenFrameFiles.filter(
 
 export const hiddenFrameVideoFiles = hiddenFrameFiles.filter(
   (file) => file.arcId === 'video-production',
+);
+
+export const hiddenFrameCameraFiles = hiddenFrameFiles.filter(
+  (file) => file.arcId === 'cinematography',
 );
 
 export const hiddenFramePuzzleFiles = hiddenFrameFirstChainFiles;

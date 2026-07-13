@@ -1,5 +1,16 @@
 # Hidden Frame Changelog
 
+## Phase 4 - 2026-07-13
+
+- Added `/hidden-frame/camera` for the first cinematography/composition signal route.
+- Added Files 009 through 011: `The Third Line`, `The Line That Leads`, and `The Space Ahead`.
+- Added Frames 009 through 011: `THIRDS`, `LEADING LINES`, and `LOOK SPACE`.
+- Added structured camera clue data for rule of thirds, leading lines, symmetry, headroom, look space, repetition, and central framing.
+- Added reusable components: `CompositionGuideFrame`, `CameraClueCard`, and `CameraClueGrid`.
+- Added CSS guide overlays for composition principles.
+- Expanded `npm run validate:hidden-frame` with Phase 4 checks for the camera route, clue data, camera files, frames, and composition CSS.
+- Updated spec, canon, progress, roadmap, and acceptance criteria.
+
 ## Phase 3 - 2026-07-13
 
 - Added `/hidden-frame/timeline` for the first video-production signal route.

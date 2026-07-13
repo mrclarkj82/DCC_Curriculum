@@ -83,6 +83,33 @@ export const hiddenFrameRewardFrames: HiddenFrameRewardFrame[] = [
     description: 'A frame for hearing the edit before seeing it.',
     thumbnail: hiddenFramePhase0Assets.backgrounds.vhsStatic,
   },
+  {
+    id: 'frame-009',
+    frameNumber: '009',
+    title: 'THIRDS',
+    signalWord: 'THIRDS',
+    sourceFileId: '009',
+    description: 'A frame for dividing the image with intention.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+  },
+  {
+    id: 'frame-010',
+    frameNumber: '010',
+    title: 'LEADING LINES',
+    signalWord: 'LEADING LINES',
+    sourceFileId: '010',
+    description: 'A frame for following the path the image creates.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+  },
+  {
+    id: 'frame-011',
+    frameNumber: '011',
+    title: 'LOOK SPACE',
+    signalWord: 'LOOK SPACE',
+    sourceFileId: '011',
+    description: 'A frame for leaving room in the direction of attention.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+  },
 ];
 
 export const getHiddenFrameRewardFrameById = (

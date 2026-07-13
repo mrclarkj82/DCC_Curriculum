@@ -36,17 +36,19 @@ Implemented work:
 
 ### Phase 4: Cinematography Mystery Arc
 
-Status: Next.
+Status: Complete.
 
 Goal: add composition-focused clue support.
 
-Planned work:
+Implemented work:
 
-- Add `/hidden-frame/camera`.
-- Add cinematography clue data and reusable image/composition clue components.
-- Cover rule of thirds, leading lines, symmetry, headroom, look space, repetition, and central framing.
+- Added `/hidden-frame/camera`.
+- Added cinematography clue data and reusable image/composition clue components.
+- Covered rule of thirds, leading lines, symmetry, headroom, look space, repetition, and central framing.
 
 ### Phase 5: Unreal Engine Integration
+
+Status: Next.
 
 Goal: add Render Room and Unreal-themed clue support.
 

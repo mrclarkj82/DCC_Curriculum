@@ -36,6 +36,9 @@ export function HiddenFrameArchivePage() {
             <Link className="hidden-frame-secondary-link" to="/hidden-frame/timeline">
               Timeline signal
             </Link>
+            <Link className="hidden-frame-secondary-link" to="/hidden-frame/camera">
+              Camera signal
+            </Link>
             <Link className="hidden-frame-secondary-link" to="/hidden-frame/collection">
               Frame collection
             </Link>

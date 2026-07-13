@@ -17,6 +17,7 @@ export { TimelineTrack } from './components/TimelineTrack';
 export { VideoStillClueCard } from './components/VideoStillClueCard';
 export { hiddenFrameRewardFrames, getHiddenFrameRewardFrameById, type HiddenFrameRewardFrame } from './data/hiddenFrameFrames';
 export {
+  hiddenFrameCameraFiles,
   hiddenFrameFiles,
   hiddenFrameFirstChainFiles,
   hiddenFramePlayableFiles,
@@ -28,11 +29,20 @@ export {
   type HiddenFrameFileState,
 } from './data/hiddenFrameFiles';
 export {
+  getHiddenFrameCameraClueById,
+  hiddenFrameCameraClues,
+  type HiddenFrameCameraClue,
+  type HiddenFrameCompositionPrinciple,
+} from './data/hiddenFrameCameraClues';
+export {
   getHiddenFrameVideoClueById,
   hiddenFrameVideoClues,
   type HiddenFrameVideoClue,
   type HiddenFrameVideoClueType,
 } from './data/hiddenFrameVideoClues';
+export { CameraClueCard } from './components/CameraClueCard';
+export { CameraClueGrid } from './components/CameraClueGrid';
+export { CompositionGuideFrame } from './components/CompositionGuideFrame';
 export { useHiddenFrameProgress } from './hooks/useHiddenFrameProgress';
 export {
   HIDDEN_FRAME_PROGRESS_STORAGE_KEY,

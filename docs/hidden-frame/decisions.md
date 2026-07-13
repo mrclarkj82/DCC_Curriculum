@@ -95,3 +95,17 @@ Consequences:
 - `hiddenFrameVideoClues.ts` stores approved clue metadata.
 - Timeline components can later render approved embedded class videos, but Phase 3 only records optional reference notes.
 - Future real media references must be approved class materials and documented in canon/spec.
+
+## Decision 008: Camera Clues Use CSS Guide Overlays First
+
+Date: 2026-07-13
+
+Decision: Phase 4 cinematography clues use CSS guide overlays on existing Phase 0 backgrounds before introducing custom still images.
+
+Reason: The arc can teach composition principles immediately without generating or sourcing new student/media images.
+
+Consequences:
+
+- `hiddenFrameCameraClues.ts` stores composition metadata.
+- `CompositionGuideFrame` displays decorative guide overlays for principles such as thirds, leading lines, headroom, look space, and central framing.
+- Future approved still images can be added through data without changing the component structure.

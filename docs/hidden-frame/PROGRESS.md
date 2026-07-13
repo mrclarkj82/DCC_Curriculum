@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 3. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, and Phase 3 added the first video-production timeline arc.
+The Hidden Frame is implemented through Phase 4. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, and Phase 4 added the first cinematography/composition arc.
 
 The current full-ARG working branch is:
 
@@ -16,8 +16,8 @@ The current full-ARG working branch is:
 | 1 | Hidden Page MVP | Complete | Landing page, archive, File 001, icon, password gate, local progress |
 | 2 | First Puzzle Chain | Complete | Files 001-005, unlock chain, collection route, frame rewards |
 | 3 | Video Production Integration | Complete | Timeline route, video clue data, Files 006-008, timeline components |
-| 4 | Cinematography Mystery Arc | Next | Rule of thirds, leading lines, symmetry, framing clues |
-| 5 | Unreal Engine Integration | Not Started | Render Room, coordinates, rotation, Blueprint-style clues |
+| 4 | Cinematography Mystery Arc | Complete | Camera route, composition clue data, Files 009-011, guide overlays |
+| 5 | Unreal Engine Integration | Next | Render Room, coordinates, rotation, Blueprint-style clues |
 | 6 | Blender/Object Mystery Arc | Not Started | Object, material, UV, shadow, camera-view clues |
 | 7 | Student Progression System | Not Started | Larger collection, achievements, reset, adapter boundary |
 | 8 | Compression Event | Not Started | Glitch/redaction/compression antagonist systems |
@@ -81,21 +81,33 @@ Phase 3 added:
 - `TimelineTrack`, `TimelineClueCard`, `VideoStillClueCard`, and `LowerThirdClueCard`.
 - Phase 3 validation script.
 
+### Phase 4: Cinematography Mystery Arc
+
+Phase 4 added:
+
+- `/hidden-frame/camera`.
+- Camera/composition clue data in `hiddenFrameCameraClues.ts`.
+- Files 009 through 011 for THIRDS, LEADING LINES, and LOOK SPACE.
+- Frames 009 through 011.
+- `CompositionGuideFrame`, `CameraClueCard`, and `CameraClueGrid`.
+- Phase 4 validation script.
+
 ## Active Phase
 
-### Phase 4: Cinematography Mystery Arc
+### Phase 5: Unreal Engine Integration
 
 Objective:
 
-Create the first cinematography/composition expansion arc while keeping all clues inside the DCC website or approved class materials.
+Create the first Unreal/Render Room expansion arc while keeping all clues inside the DCC website or approved class materials.
 
 Required work:
 
-- Add `/hidden-frame/camera`.
-- Add structured data for composition clue entries.
-- Add reusable camera/composition clue components.
-- Support rule of thirds, leading lines, symmetry, headroom, look space, repetition, and central framing.
-- Reuse Phase 0 archive/grid assets.
+- Add `/hidden-frame/render-room`.
+- Add `/hidden-frame/unreal`.
+- Add structured data for Unreal clue entries.
+- Add reusable Unreal clue components.
+- Support coordinates, rotation, scale, lighting, materials, Blueprint-style clues, trigger volumes, collision, and camera/player perspective.
+- Reuse Phase 0 Render Room and grid assets.
 - Update docs and validation.
 
 ## Backlog
