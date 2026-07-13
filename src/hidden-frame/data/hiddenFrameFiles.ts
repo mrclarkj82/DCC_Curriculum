@@ -1,10 +1,13 @@
 import { hiddenFramePhase0Assets } from '../hiddenFramePhase0Assets';
 
 export type HiddenFrameFileState = 'locked' | 'available' | 'unlocked' | 'completed' | 'future';
+export type HiddenFrameArcId = 'first-chain' | 'video-production';
 
 export interface HiddenFrameFileRecord {
   id: string;
   fileNumber: string;
+  phase: number;
+  arcId: HiddenFrameArcId;
   title: string;
   route: string;
   state: HiddenFrameFileState;
@@ -18,6 +21,7 @@ export interface HiddenFrameFileRecord {
   acceptedAnswers?: string[];
   prerequisiteFileId?: string;
   unlocksFileId?: string;
+  unlocksFileIds?: string[];
   rewardFrameId?: string;
   recoveredMessage?: string;
   completionMeta?: {
@@ -30,6 +34,8 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
   {
     id: '001',
     fileNumber: '001',
+    phase: 2,
+    arcId: 'first-chain',
     title: 'The Edge of the Page',
     route: '/hidden-frame/file/001',
     state: 'available',
@@ -54,6 +60,8 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
   {
     id: '002',
     fileNumber: '002',
+    phase: 2,
+    arcId: 'first-chain',
     title: 'The First Cut',
     route: '/hidden-frame/file/002',
     state: 'locked',
@@ -80,6 +88,8 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
   {
     id: '003',
     fileNumber: '003',
+    phase: 2,
+    arcId: 'first-chain',
     title: 'The Cropped Student',
     route: '/hidden-frame/file/003',
     state: 'locked',
@@ -105,6 +115,8 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
   {
     id: '004',
     fileNumber: '004',
+    phase: 2,
+    arcId: 'first-chain',
     title: 'Render Failed',
     route: '/hidden-frame/file/004',
     state: 'locked',
@@ -131,6 +143,8 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
   {
     id: '005',
     fileNumber: '005',
+    phase: 2,
+    arcId: 'first-chain',
     title: 'The Door Facing Light',
     route: '/hidden-frame/file/005',
     state: 'locked',
@@ -145,12 +159,96 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
     passwordAnswer: 'ROTATION',
     acceptedAnswers: ['OBJECT ROTATION'],
     prerequisiteFileId: '004',
+    unlocksFileId: '006',
     rewardFrameId: 'frame-005',
     recoveredMessage:
       'The Archivist turns the final door toward the light. The first chain is complete, and the recovered frames now remember the path.',
     completionMeta: {
       label: 'Frame 005 recovered',
-      nextStep: 'The first Hidden Frame puzzle chain is complete.',
+      nextStep: 'The first Hidden Frame puzzle chain is complete. A timeline signal is now visible.',
+    },
+  },
+  {
+    id: '006',
+    fileNumber: '006',
+    phase: 3,
+    arcId: 'video-production',
+    title: 'The Timecode Drift',
+    route: '/hidden-frame/file/006',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A video-production record that opens after the first chain. It points toward the timeline.',
+    clueText:
+      'The signal does not begin with a title. It begins with an address in time. Hours, minutes, seconds, and frames hold the first drift in place.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+    background: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+    hintText: 'Editors use this numbered address to find an exact moment in a timeline.',
+    passwordAnswer: 'TIMECODE',
+    acceptedAnswers: ['TIME CODE'],
+    prerequisiteFileId: '005',
+    unlocksFileId: '007',
+    rewardFrameId: 'frame-006',
+    recoveredMessage:
+      'The Archivist locks the drift to a frame address. Time is not only passing; it is being counted.',
+    completionMeta: {
+      label: 'Frame 006 recovered',
+      nextStep: 'File 007 is now available in the archive.',
+    },
+  },
+  {
+    id: '007',
+    fileNumber: '007',
+    phase: 3,
+    arcId: 'video-production',
+    title: 'The Name Beneath the Frame',
+    route: '/hidden-frame/file/007',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A recovered graphics record about the text that identifies a person, place, or segment.',
+    clueText:
+      'The speaker was already visible, but the editor added a quiet label below the image. The clue lives in the part of the frame that tells viewers who they are seeing.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+    background: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+    hintText: 'Broadcast graphics often place this identifier in the lower part of the screen.',
+    passwordAnswer: 'LOWER THIRD',
+    acceptedAnswers: ['LOWERTHIRD'],
+    prerequisiteFileId: '006',
+    unlocksFileId: '008',
+    rewardFrameId: 'frame-007',
+    recoveredMessage:
+      'The Archivist restores the label beneath the image. Names guide attention without stopping the story.',
+    completionMeta: {
+      label: 'Frame 007 recovered',
+      nextStep: 'File 008 is now available in the archive.',
+    },
+  },
+  {
+    id: '008',
+    fileNumber: '008',
+    phase: 3,
+    arcId: 'video-production',
+    title: 'The Sound Before the Cut',
+    route: '/hidden-frame/file/008',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A recovered editing record about audio that carries meaning across two shots.',
+    clueText:
+      'The next scene arrived before the picture changed. Sound crossed the boundary first, making the cut feel less like a break and more like a path.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+    background: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+    hintText: 'When audio connects two shots, editors often call it a sound ______.',
+    passwordAnswer: 'BRIDGE',
+    acceptedAnswers: ['SOUND BRIDGE'],
+    prerequisiteFileId: '007',
+    rewardFrameId: 'frame-008',
+    recoveredMessage:
+      'The Archivist hears the bridge before the picture changes. The timeline remembers that sound can lead the eye.',
+    completionMeta: {
+      label: 'Frame 008 recovered',
+      nextStep: 'The first video-production signal is complete.',
     },
   },
 ];
@@ -158,4 +256,14 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
 export const getHiddenFrameFileById = (id: string): HiddenFrameFileRecord | undefined =>
   hiddenFrameFiles.find((file) => file.id === id);
 
-export const hiddenFramePuzzleFiles = hiddenFrameFiles.filter((file) => file.state !== 'future');
+export const hiddenFrameFirstChainFiles = hiddenFrameFiles.filter(
+  (file) => file.arcId === 'first-chain',
+);
+
+export const hiddenFrameVideoFiles = hiddenFrameFiles.filter(
+  (file) => file.arcId === 'video-production',
+);
+
+export const hiddenFramePuzzleFiles = hiddenFrameFirstChainFiles;
+
+export const hiddenFramePlayableFiles = hiddenFrameFiles.filter((file) => file.state !== 'future');

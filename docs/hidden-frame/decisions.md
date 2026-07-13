@@ -81,3 +81,17 @@ Consequences:
 
 - Phase-specific branches can still be used when the teacher explicitly requests a smaller slice.
 - This branch is based on the current Phase 2 work so completed foundation is preserved.
+
+## Decision 007: Video Clues Use In-App Timeline Abstractions First
+
+Date: 2026-07-13
+
+Decision: Phase 3 video-production clues are represented with in-app timeline data and reusable UI components before attaching real video media.
+
+Reason: The ARG must stay contained, school-safe, and independent of external video accounts or unapproved media. Timeline abstractions can teach timecode, cuts, lower thirds, and sound bridges without requiring students to leave the site.
+
+Consequences:
+
+- `hiddenFrameVideoClues.ts` stores approved clue metadata.
+- Timeline components can later render approved embedded class videos, but Phase 3 only records optional reference notes.
+- Future real media references must be approved class materials and documented in canon/spec.

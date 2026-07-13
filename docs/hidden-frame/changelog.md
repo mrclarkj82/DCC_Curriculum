@@ -1,5 +1,16 @@
 # Hidden Frame Changelog
 
+## Phase 3 - 2026-07-13
+
+- Added `/hidden-frame/timeline` for the first video-production signal route.
+- Added Files 006 through 008: `The Timecode Drift`, `The Name Beneath the Frame`, and `The Sound Before the Cut`.
+- Added Frames 006 through 008: `TIMECODE`, `LOWER THIRD`, and `BRIDGE`.
+- Added structured video clue data for timecode, cut, lower-third, and sound-bridge clues.
+- Added reusable components: `TimelineTrack`, `TimelineClueCard`, `VideoStillClueCard`, and `LowerThirdClueCard`.
+- Updated progress logic so Files 001 through 005 still define first-chain completion while Phase 3 can add later files.
+- Expanded `npm run validate:hidden-frame` with Phase 3 checks for the timeline route, video data, video files, frames, and chain boundary.
+- Updated governance, spec, canon, progress, roadmap, and decisions docs.
+
 ## Governance Baseline - 2026-07-13
 
 - Moved the canonical Hidden Frame specification and canon into `docs/hidden-frame/`.

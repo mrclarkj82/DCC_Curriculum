@@ -35,6 +35,10 @@ The first public-facing Hidden Frame entry point appears inside the DCC site. Th
 
 The Archive reveals the First Puzzle Chain. Files 001 through 005 can be recovered in sequence, each completed file unlocks the next file, and Frames 001 through 005 become local optional collectibles.
 
+### 2026-07-13 - Phase 3
+
+The first video-production signal appears in the Timeline. Files 006 through 008 extend the archive through timecode, lower thirds, and sound bridges. Frames 006 through 008 become local optional collectibles.
+
 ## Locations
 
 ### Archive
@@ -55,7 +59,7 @@ A visual language for Unreal Engine or spatial clue contexts. Phase 2 uses viewp
 
 ### VHS / Signal Space
 
-A visual language for video production, broadcast, timeline, and media artifact contexts. Phase 2 uses this language for File 002 and the CUT signal.
+A visual language for video production, broadcast, timeline, and media artifact contexts. Phase 2 uses this language for File 002 and the CUT signal. Phase 3 establishes `/hidden-frame/timeline` as the first dedicated video-production route.
 
 ## Archive Entries
 
@@ -78,6 +82,18 @@ Summary: The first playable Hidden Frame sequence. File 001 is available by defa
 Related files: `HF-FILE-001`, `HF-FILE-002`, `HF-FILE-003`, `HF-FILE-004`, `HF-FILE-005`
 
 Related frames: `HF-FRAME-001`, `HF-FRAME-002`, `HF-FRAME-003`, `HF-FRAME-004`, `HF-FRAME-005`
+
+### HF-ARCHIVE-PHASE-3
+
+Title: Timeline Signal
+
+First appearance: `/hidden-frame/timeline`
+
+Summary: The first video-production expansion route. It contains in-app timeline clues for timecode, cuts, lower thirds, and sound bridges, and links to Files 006 through 008.
+
+Related files: `HF-FILE-006`, `HF-FILE-007`, `HF-FILE-008`
+
+Related frames: `HF-FRAME-006`, `HF-FRAME-007`, `HF-FRAME-008`
 
 ## Recovered Files
 
@@ -215,6 +231,90 @@ Unlocks: First chain complete
 
 Archivist message: "The Archivist turns the final door toward the light. The first chain is complete, and the recovered frames now remember the path."
 
+### HF-FILE-006
+
+File ID: `006`
+
+Filename: The Timecode Drift
+
+Media type: recovered video-production text
+
+First appearance: `/hidden-frame/file/006`
+
+In-world source: Timeline Signal
+
+Canon summary: File 006 connects exact timeline addresses to close observation in editing.
+
+Clue text: "The signal does not begin with a title. It begins with an address in time. Hours, minutes, seconds, and frames hold the first drift in place."
+
+Hint: "Editors use this numbered address to find an exact moment in a timeline."
+
+Password: `TIMECODE`
+
+Accepted variant: `TIME CODE`
+
+Reward frame: `HF-FRAME-006`
+
+Unlocks: File 007
+
+Archivist message: "The Archivist locks the drift to a frame address. Time is not only passing; it is being counted."
+
+### HF-FILE-007
+
+File ID: `007`
+
+Filename: The Name Beneath the Frame
+
+Media type: recovered broadcast graphics text
+
+First appearance: `/hidden-frame/file/007`
+
+In-world source: Timeline Signal
+
+Canon summary: File 007 connects lower-third graphics to context and viewer attention.
+
+Clue text: "The speaker was already visible, but the editor added a quiet label below the image. The clue lives in the part of the frame that tells viewers who they are seeing."
+
+Hint: "Broadcast graphics often place this identifier in the lower part of the screen."
+
+Password: `LOWER THIRD`
+
+Accepted variant: `LOWERTHIRD`
+
+Reward frame: `HF-FRAME-007`
+
+Unlocks: File 008
+
+Archivist message: "The Archivist restores the label beneath the image. Names guide attention without stopping the story."
+
+### HF-FILE-008
+
+File ID: `008`
+
+Filename: The Sound Before the Cut
+
+Media type: recovered editing text
+
+First appearance: `/hidden-frame/file/008`
+
+In-world source: Timeline Signal
+
+Canon summary: File 008 connects sound bridges to continuity and edit pacing.
+
+Clue text: "The next scene arrived before the picture changed. Sound crossed the boundary first, making the cut feel less like a break and more like a path."
+
+Hint: "When audio connects two shots, editors often call it a sound ______."
+
+Password: `BRIDGE`
+
+Accepted variant: `SOUND BRIDGE`
+
+Reward frame: `HF-FRAME-008`
+
+Unlocks: First video-production signal complete
+
+Archivist message: "The Archivist hears the bridge before the picture changes. The timeline remembers that sound can lead the eye."
+
 ## Frame Cards
 
 ### HF-FRAME-001
@@ -277,11 +377,49 @@ Unlock condition: Complete File 005
 
 Student-facing text: A frame for turning the door toward the light.
 
+### HF-FRAME-006
+
+Frame ID: `frame-006`
+
+Title: TIMECODE
+
+Discovery location: File 006
+
+Unlock condition: Complete File 006
+
+Student-facing text: A frame for finding the exact moment a signal begins.
+
+### HF-FRAME-007
+
+Frame ID: `frame-007`
+
+Title: LOWER THIRD
+
+Discovery location: File 007
+
+Unlock condition: Complete File 007
+
+Student-facing text: A frame for naming what appears beneath the image.
+
+### HF-FRAME-008
+
+Frame ID: `frame-008`
+
+Title: BRIDGE
+
+Discovery location: File 008
+
+Unlock condition: Complete File 008
+
+Student-facing text: A frame for hearing the edit before seeing it.
+
 ## Compression Logs
 
 No antagonist Compression logs are canon in Phase 2.
 
 Phase 2 includes light system messages such as "First chain visible," "Record locked," "Collection waiting," and "First chain complete." These are interface atmosphere, not threats or story escalation.
+
+Phase 3 includes "Timeline signal" and "Signal scope" messages. These are safety and atmosphere copy, not plot threats.
 
 ## Symbols
 
@@ -321,6 +459,18 @@ Scanlines and timecode represent media artifacts, recovered recordings, and clos
 
 "The Archivist turns the final door toward the light. The first chain is complete, and the recovered frames now remember the path."
 
+### The Archivist - File 006
+
+"The Archivist locks the drift to a frame address. Time is not only passing; it is being counted."
+
+### The Archivist - File 007
+
+"The Archivist restores the label beneath the image. Names guide attention without stopping the story."
+
+### The Archivist - File 008
+
+"The Archivist hears the bridge before the picture changes. The timeline remembers that sound can lead the eye."
+
 ## Recurring Phrases
 
 The Phase 0 token file establishes these phrases:
@@ -342,6 +492,13 @@ Phase 2 adds:
 - The door facing light.
 - Where you are looking.
 
+Phase 3 adds:
+
+- Address in time.
+- The name beneath the frame.
+- Sound before picture.
+- The timeline remembers.
+
 ## Puzzle Solutions
 
 ### First Puzzle Chain
@@ -358,6 +515,18 @@ Unlock order:
 
 Accepted input behavior: case-insensitive and trims surrounding whitespace. File 002 also accepts `THE CUT`. File 005 also accepts `OBJECT ROTATION`.
 
+### Timeline Signal
+
+Prompt type: signal word gates and timeline clue cards
+
+Unlock order:
+
+1. File 006 - `TIMECODE` - rewards Frame 006 and unlocks File 007.
+2. File 007 - `LOWER THIRD` - rewards Frame 007 and unlocks File 008.
+3. File 008 - `BRIDGE` - rewards Frame 008 and completes the first video-production signal.
+
+Accepted input behavior: case-insensitive and trims surrounding whitespace. File 006 also accepts `TIME CODE`. File 007 also accepts `LOWERTHIRD`. File 008 also accepts `SOUND BRIDGE`.
+
 ## Passwords
 
 Passwords are intentionally client-visible because Phase 2 is optional, ungraded, local-only, and not security-sensitive.
@@ -367,6 +536,9 @@ Passwords are intentionally client-visible because Phase 2 is optional, ungraded
 - File 003: `BORDER`
 - File 004: `RENDER`
 - File 005: `ROTATION`
+- File 006: `TIMECODE`
+- File 007: `LOWER THIRD`
+- File 008: `BRIDGE`
 
 Do not store future active passwords in client code unless they are intentionally public, purely narrative, and documented as safe to expose.
 
@@ -377,6 +549,7 @@ Do not store future active passwords in client code unless they are intentionall
 - What is the Render Room?
 - Why do recovered frames preserve production vocabulary?
 - What happens after the first five frames are recovered?
+- What does the timeline signal reveal after the first three video frames are recovered?
 - How do Unreal, Blender, cinematography, and video clues connect beyond this first chain?
 - Why does the Archivist care about what a frame includes and excludes?
 

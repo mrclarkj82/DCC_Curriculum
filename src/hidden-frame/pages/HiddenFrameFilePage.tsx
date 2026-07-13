@@ -33,7 +33,10 @@ export function HiddenFrameFilePage() {
   const fileState = getFileState(file);
   const fileIsCompleted = fileState === 'completed';
   const fileIsLocked = fileState === 'locked' || fileState === 'future';
-  const nextFile = file.unlocksFileId ? getHiddenFrameFileById(file.unlocksFileId) : null;
+  const nextFiles = [file.unlocksFileId, ...(file.unlocksFileIds ?? [])]
+    .filter((nextFileId): nextFileId is string => Boolean(nextFileId))
+    .map((nextFileId) => getHiddenFrameFileById(nextFileId))
+    .filter((nextFile): nextFile is NonNullable<typeof nextFile> => Boolean(nextFile));
   const background = file.background ?? hiddenFramePhase0AssetRoles.archiveBackground;
 
   return (
@@ -98,11 +101,11 @@ export function HiddenFrameFilePage() {
                     </p>
                   </CompressionLog>
                   <div className="hidden-frame-actions">
-                    {nextFile && (
-                      <Link className="hidden-frame-button" to={nextFile.route}>
+                    {nextFiles.map((nextFile) => (
+                      <Link className="hidden-frame-button" key={nextFile.id} to={nextFile.route}>
                         Continue to File {nextFile.fileNumber}
                       </Link>
-                    )}
+                    ))}
                     <Link className="hidden-frame-secondary-link" to="/hidden-frame/collection">
                       View frame collection
                     </Link>

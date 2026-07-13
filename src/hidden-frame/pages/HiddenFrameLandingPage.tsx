@@ -31,6 +31,9 @@ export function HiddenFrameLandingPage() {
               <Link className="hidden-frame-secondary-link" to="/hidden-frame/collection">
                 View Frames
               </Link>
+              <Link className="hidden-frame-secondary-link" to="/hidden-frame/timeline">
+                Timeline Signal
+              </Link>
               <HiddenFrameIcon
                 destinationPath="/hidden-frame/archive"
                 label="Open hidden frame archive"

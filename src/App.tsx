@@ -9,6 +9,7 @@ import { HiddenFrameArchivePage } from './hidden-frame/pages/HiddenFrameArchiveP
 import { HiddenFrameCollectionPage } from './hidden-frame/pages/HiddenFrameCollectionPage';
 import { HiddenFrameFilePage } from './hidden-frame/pages/HiddenFrameFilePage';
 import { HiddenFrameLandingPage } from './hidden-frame/pages/HiddenFrameLandingPage';
+import { HiddenFrameTimelinePage } from './hidden-frame/pages/HiddenFrameTimelinePage';
 import { JoinClassPage } from './pages/JoinClassPage';
 import { LandingPage } from './pages/LandingPage';
 import { LessonDetailPage } from './pages/LessonDetailPage';
@@ -39,6 +40,7 @@ export function App() {
           <Route path="/hidden-frame" element={<HiddenFrameLandingPage />} />
           <Route path="/hidden-frame/archive" element={<HiddenFrameArchivePage />} />
           <Route path="/hidden-frame/collection" element={<HiddenFrameCollectionPage />} />
+          <Route path="/hidden-frame/timeline" element={<HiddenFrameTimelinePage />} />
           <Route path="/hidden-frame/file/001" element={<HiddenFrameFilePage />} />
           <Route path="/hidden-frame/file/:fileId" element={<HiddenFrameFilePage />} />
           <Route path="/lessons/:lessonId" element={<LessonDetailPage />} />

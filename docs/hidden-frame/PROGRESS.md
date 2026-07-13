@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 2. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, and Phase 2 created the first playable five-file puzzle chain with local frame rewards.
+The Hidden Frame is implemented through Phase 3. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, and Phase 3 added the first video-production timeline arc.
 
 The current full-ARG working branch is:
 
@@ -15,8 +15,8 @@ The current full-ARG working branch is:
 | 0 | Visual Foundation | Complete | Asset kit, visual identity, registry, docs foundation |
 | 1 | Hidden Page MVP | Complete | Landing page, archive, File 001, icon, password gate, local progress |
 | 2 | First Puzzle Chain | Complete | Files 001-005, unlock chain, collection route, frame rewards |
-| 3 | Video Production Integration | Next | Timeline, timecode, lower thirds, editing clues |
-| 4 | Cinematography Mystery Arc | Not Started | Rule of thirds, leading lines, symmetry, framing clues |
+| 3 | Video Production Integration | Complete | Timeline route, video clue data, Files 006-008, timeline components |
+| 4 | Cinematography Mystery Arc | Next | Rule of thirds, leading lines, symmetry, framing clues |
 | 5 | Unreal Engine Integration | Not Started | Render Room, coordinates, rotation, Blueprint-style clues |
 | 6 | Blender/Object Mystery Arc | Not Started | Object, material, UV, shadow, camera-view clues |
 | 7 | Student Progression System | Not Started | Larger collection, achievements, reset, adapter boundary |
@@ -70,21 +70,32 @@ Phase 2 added:
 - `FrameCard` and `FrameCollectionGrid`.
 - Phase 2 validation script.
 
+### Phase 3: Video Production Integration
+
+Phase 3 added:
+
+- `/hidden-frame/timeline`.
+- Video timeline clue data in `hiddenFrameVideoClues.ts`.
+- Files 006 through 008 for TIMECODE, LOWER THIRD, and BRIDGE.
+- Frames 006 through 008.
+- `TimelineTrack`, `TimelineClueCard`, `VideoStillClueCard`, and `LowerThirdClueCard`.
+- Phase 3 validation script.
+
 ## Active Phase
 
-### Phase 3: Video Production Integration
+### Phase 4: Cinematography Mystery Arc
 
 Objective:
 
-Create the first video-production expansion arc while keeping all clues inside the DCC website or approved class materials.
+Create the first cinematography/composition expansion arc while keeping all clues inside the DCC website or approved class materials.
 
 Required work:
 
-- Add `/hidden-frame/timeline`.
-- Add structured data for video/timeline clue entries.
-- Add reusable timeline/video clue components.
-- Support timecode, frame numbers, cuts, J-cuts/L-cuts, lower thirds, B-roll, pacing, sound bridges, and editing decisions.
-- Reuse Phase 0 VHS/signal assets.
+- Add `/hidden-frame/camera`.
+- Add structured data for composition clue entries.
+- Add reusable camera/composition clue components.
+- Support rule of thirds, leading lines, symmetry, headroom, look space, repetition, and central framing.
+- Reuse Phase 0 archive/grid assets.
 - Update docs and validation.
 
 ## Backlog
@@ -170,4 +181,5 @@ Required work:
 ### 2026-07-13
 
 - Governance continuation started on `feature/hidden-frame-full-arg`.
-- Next validation will run after governance docs are committed.
+- Governance docs committed and pushed.
+- Phase 3 implementation started and validated during development.

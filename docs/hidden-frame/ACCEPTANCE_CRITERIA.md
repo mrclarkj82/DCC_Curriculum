@@ -125,6 +125,8 @@ Phase 2 is complete when:
 
 ## Phase 3 Acceptance Criteria: Video Production Integration
 
+Status: Complete.
+
 Phase 3 is complete when:
 
 - `/hidden-frame/timeline` exists.

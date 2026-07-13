@@ -1,5 +1,5 @@
 import { hiddenFrameRewardFrames } from '../data/hiddenFrameFrames';
-import { hiddenFrameFiles, hiddenFramePuzzleFiles } from '../data/hiddenFrameFiles';
+import { hiddenFrameFiles, hiddenFrameFirstChainFiles } from '../data/hiddenFrameFiles';
 import {
   completeHiddenFrameFileProgress,
   getHiddenFrameFileProgressState,
@@ -70,8 +70,8 @@ const normalizeProgress = (value: unknown): HiddenFrameProgressSnapshot => {
   );
   const unlockedFromCompleted = completedFileIds.flatMap((fileId) => {
     const file = hiddenFrameFiles.find((candidate) => candidate.id === fileId);
-    return [fileId, file?.unlocksFileId].filter((candidate): candidate is string =>
-      Boolean(candidate),
+    return [fileId, file?.unlocksFileId, ...(file?.unlocksFileIds ?? [])].filter(
+      (candidate): candidate is string => Boolean(candidate),
     );
   });
   const recoveredFromCompleted = completedFileIds.flatMap((fileId) => {
@@ -86,7 +86,9 @@ const normalizeProgress = (value: unknown): HiddenFrameProgressSnapshot => {
     [...getStringArray(progress.recoveredFrameIds), ...recoveredFromCompleted],
     knownFrameIds,
   );
-  const chainComplete = hiddenFramePuzzleFiles.every((file) => completedFileIds.includes(file.id));
+  const chainComplete = hiddenFrameFirstChainFiles.every((file) =>
+    completedFileIds.includes(file.id),
+  );
 
   return {
     schemaVersion: HIDDEN_FRAME_PROGRESS_SCHEMA_VERSION,
@@ -176,6 +178,7 @@ export const markHiddenFrameFileCompleted = (fileId: string): HiddenFrameProgres
     fileId,
     hiddenFrameFiles,
     completedAt,
+    hiddenFrameFirstChainFiles,
   );
 
   if (nextProgress === progress) {
@@ -209,7 +212,7 @@ export const getHiddenFrameProgressSummary = (
   completedFileCount: progress.completedFileIds.length,
   recoveredFrameCount: progress.recoveredFrameIds.length,
   totalFrameCount: hiddenFrameRewardFrames.length,
-  chainComplete: hiddenFramePuzzleFiles.every((file) =>
+  chainComplete: hiddenFrameFirstChainFiles.every((file) =>
     progress.completedFileIds.includes(file.id),
   ),
 });

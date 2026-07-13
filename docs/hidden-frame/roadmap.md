@@ -22,17 +22,21 @@ Implemented Files 001 through 005, dynamic file routing, local unlock chain, fra
 
 ### Phase 3: Video Production Integration
 
+Status: Complete.
+
 Goal: add the first video-production clue arc and route.
 
-Planned work:
+Implemented work:
 
-- Add `/hidden-frame/timeline`.
-- Create video/timeline clue data.
-- Add reusable components for timeline entries, timecode cards, lower-third clues, video still placeholders, and editing-decision clues.
-- Keep all references inside the DCC site or approved class materials.
-- Add Phase 3 validation.
+- Added `/hidden-frame/timeline`.
+- Created video/timeline clue data.
+- Added reusable components for timeline entries, timecode cards, lower-third clues, video still placeholders, and editing-decision clues.
+- Kept references inside the DCC site or approved class materials.
+- Added Phase 3 validation.
 
 ### Phase 4: Cinematography Mystery Arc
+
+Status: Next.
 
 Goal: add composition-focused clue support.
 

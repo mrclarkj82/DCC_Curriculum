@@ -9,10 +9,30 @@ export { FrameCard } from './components/FrameCard';
 export { FrameCollectionGrid } from './components/FrameCollectionGrid';
 export { HiddenFrameIcon, type HiddenFrameIconSize, type HiddenFrameIconVariant } from './components/HiddenFrameIcon';
 export { HiddenFrameProgress } from './components/HiddenFrameProgress';
+export { LowerThirdClueCard } from './components/LowerThirdClueCard';
 export { PasswordGate } from './components/PasswordGate';
 export { RecoveredFileCard } from './components/RecoveredFileCard';
+export { TimelineClueCard } from './components/TimelineClueCard';
+export { TimelineTrack } from './components/TimelineTrack';
+export { VideoStillClueCard } from './components/VideoStillClueCard';
 export { hiddenFrameRewardFrames, getHiddenFrameRewardFrameById, type HiddenFrameRewardFrame } from './data/hiddenFrameFrames';
-export { hiddenFrameFiles, hiddenFramePuzzleFiles, getHiddenFrameFileById, type HiddenFrameFileRecord, type HiddenFrameFileState } from './data/hiddenFrameFiles';
+export {
+  hiddenFrameFiles,
+  hiddenFrameFirstChainFiles,
+  hiddenFramePlayableFiles,
+  hiddenFramePuzzleFiles,
+  hiddenFrameVideoFiles,
+  getHiddenFrameFileById,
+  type HiddenFrameArcId,
+  type HiddenFrameFileRecord,
+  type HiddenFrameFileState,
+} from './data/hiddenFrameFiles';
+export {
+  getHiddenFrameVideoClueById,
+  hiddenFrameVideoClues,
+  type HiddenFrameVideoClue,
+  type HiddenFrameVideoClueType,
+} from './data/hiddenFrameVideoClues';
 export { useHiddenFrameProgress } from './hooks/useHiddenFrameProgress';
 export {
   HIDDEN_FRAME_PROGRESS_STORAGE_KEY,

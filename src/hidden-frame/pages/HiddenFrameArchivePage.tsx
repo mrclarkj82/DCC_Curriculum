@@ -33,6 +33,9 @@ export function HiddenFrameArchivePage() {
           </div>
           <div className="hidden-frame-header-actions">
             <HiddenFrameProgress summary={summary} />
+            <Link className="hidden-frame-secondary-link" to="/hidden-frame/timeline">
+              Timeline signal
+            </Link>
             <Link className="hidden-frame-secondary-link" to="/hidden-frame/collection">
               Frame collection
             </Link>

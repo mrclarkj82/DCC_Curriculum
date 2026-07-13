@@ -56,6 +56,33 @@ export const hiddenFrameRewardFrames: HiddenFrameRewardFrame[] = [
     description: 'A frame for turning the door toward the light.',
     thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
   },
+  {
+    id: 'frame-006',
+    frameNumber: '006',
+    title: 'TIMECODE',
+    signalWord: 'TIMECODE',
+    sourceFileId: '006',
+    description: 'A frame for finding the exact moment a signal begins.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+  },
+  {
+    id: 'frame-007',
+    frameNumber: '007',
+    title: 'LOWER THIRD',
+    signalWord: 'LOWER THIRD',
+    sourceFileId: '007',
+    description: 'A frame for naming what appears beneath the image.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+  },
+  {
+    id: 'frame-008',
+    frameNumber: '008',
+    title: 'BRIDGE',
+    signalWord: 'BRIDGE',
+    sourceFileId: '008',
+    description: 'A frame for hearing the edit before seeing it.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.vhsStatic,
+  },
 ];
 
 export const getHiddenFrameRewardFrameById = (

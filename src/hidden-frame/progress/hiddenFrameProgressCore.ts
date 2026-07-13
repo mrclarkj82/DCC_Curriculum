@@ -10,6 +10,7 @@ export interface HiddenFrameProgressFileDefinition {
   state: HiddenFrameProgressFileState;
   prerequisiteFileId?: string;
   unlocksFileId?: string;
+  unlocksFileIds?: string[];
   rewardFrameId?: string;
 }
 
@@ -44,6 +45,13 @@ export function getHiddenFrameFileProgressState(
     return 'unlocked';
   }
 
+  if (
+    file.prerequisiteFileId &&
+    progress.completedFileIds.includes(file.prerequisiteFileId)
+  ) {
+    return 'unlocked';
+  }
+
   return 'locked';
 }
 
@@ -60,6 +68,9 @@ export function completeHiddenFrameFileProgress(
   fileId: string,
   files: HiddenFrameProgressFileDefinition[],
   completedAt: string,
+  chainFiles: HiddenFrameProgressFileDefinition[] = files.filter(
+    (candidate) => candidate.state !== 'future',
+  ),
 ): HiddenFrameProgressCoreSnapshot {
   const file = files.find((candidate) => candidate.id === fileId);
 
@@ -67,9 +78,14 @@ export function completeHiddenFrameFileProgress(
     return progress;
   }
 
+  const unlockTargetIds = uniqueStrings(
+    [file.unlocksFileId, ...(file.unlocksFileIds ?? [])].filter(
+      (value): value is string => Boolean(value),
+    ),
+  );
   const completedFileIds = uniqueStrings([...progress.completedFileIds, file.id]);
   const unlockedFileIds = uniqueStrings(
-    [...progress.unlockedFileIds, file.id, file.unlocksFileId].filter(
+    [...progress.unlockedFileIds, file.id, ...unlockTargetIds].filter(
       (value): value is string => Boolean(value),
     ),
   );
@@ -78,7 +94,7 @@ export function completeHiddenFrameFileProgress(
       (value): value is string => Boolean(value),
     ),
   );
-  const activeFileIds = files
+  const activeFileIds = chainFiles
     .filter((candidate) => candidate.state !== 'future')
     .map((candidate) => candidate.id);
   const chainIsComplete = activeFileIds.every((activeFileId) =>

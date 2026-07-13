@@ -8,7 +8,7 @@ Before implementing any future Hidden Frame feature, read this specification fir
 
 The Hidden Frame should add curiosity, observation, media literacy, and creative problem solving to the DCC site without distracting from class workflows or compromising student privacy. It must stay inside the DCC website, approved class materials, and future approved project files.
 
-Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page.
+Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues.
 
 ## Core Principles
 
@@ -142,6 +142,7 @@ scripts/
   validate-hidden-frame-assets.mjs
   validate-hidden-frame-phase1.mjs
   validate-hidden-frame-phase2.mjs
+  validate-hidden-frame-phase3.mjs
 src/
   hidden-frame/
     components/
@@ -150,11 +151,16 @@ src/
       FrameCollectionGrid.tsx
       HiddenFrameIcon.tsx
       HiddenFrameProgress.tsx
+      LowerThirdClueCard.tsx
       PasswordGate.tsx
       RecoveredFileCard.tsx
+      TimelineClueCard.tsx
+      TimelineTrack.tsx
+      VideoStillClueCard.tsx
     data/
       hiddenFrameFrames.ts
       hiddenFrameFiles.ts
+      hiddenFrameVideoClues.ts
     hooks/
       useHiddenFrameProgress.ts
     hiddenFramePhase0Assets.ts
@@ -164,6 +170,7 @@ src/
       HiddenFrameCollectionPage.tsx
       HiddenFrameFilePage.tsx
       HiddenFrameLandingPage.tsx
+      HiddenFrameTimelinePage.tsx
     progress/
       hiddenFrameProgress.ts
       hiddenFrameProgressCore.ts
@@ -184,9 +191,11 @@ Implemented routes:
 - `/hidden-frame/file/001`
 - `/hidden-frame/file/:fileId`
 - `/hidden-frame/collection`
+- `/hidden-frame/timeline`
 
 Reserved future routes:
 
+- `/hidden-frame/camera`
 - `/hidden-frame/frame/:id`
 - `/hidden-frame/progress`
 - `/hidden-frame/render-room`
@@ -208,6 +217,10 @@ Future components should be modular, reusable, and data-driven. Phase 1 created 
 - `CompressionLog`
 - `FrameCard`
 - `FrameCollectionGrid`
+- `TimelineTrack`
+- `TimelineClueCard`
+- `VideoStillClueCard`
+- `LowerThirdClueCard`
 
 Document every reusable component in the Component Library section when it is created.
 
@@ -309,7 +322,7 @@ Run `npm run validate:curriculum` when a change touches curriculum, seed data, l
 
 Future interactive routes should include manual accessibility checks for keyboard focus, reduced motion, readable contrast, and discoverable hidden controls.
 
-`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, and the Phase 2 puzzle-chain validation script.
+`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, and the Phase 3 timeline/video validation script.
 
 ## Future Expansion
 
@@ -431,6 +444,70 @@ Accessibility notes: provides an `aria-label` for the collection grid and delega
 
 Extension strategy: the grid maps over `hiddenFrameRewardFrames`, so future phases can add more frames without changing the component.
 
+### TimelineTrack
+
+Purpose: renders a sequence of video-production clues along an in-app timeline.
+
+Inputs: an array of `HiddenFrameVideoClue` records.
+
+Outputs: a responsive list of `TimelineClueCard` entries with a decorative timeline rail.
+
+Dependencies: `hiddenFrameVideoClues.ts`, `TimelineClueCard`, and Hidden Frame CSS.
+
+Intended reuse: timeline routes, future video-production arcs, and approved class-video clue sequences.
+
+Accessibility notes: the rail is decorative, while each clue is rendered as semantic article content.
+
+Extension strategy: add new timeline clue records or clue types before branching component logic.
+
+### TimelineClueCard
+
+Purpose: displays one video-production clue with timecode, frame number, visual still, copy, optional lower third, optional approved video reference, and a link to a related recovered file.
+
+Inputs: a `HiddenFrameVideoClue`.
+
+Outputs: a semantic article with accessible text and route links.
+
+Dependencies: `VideoStillClueCard`, `LowerThirdClueCard`, `hiddenFrameFiles.ts`, and React Router.
+
+Intended reuse: timeline, broadcast, editing, and future video clue pages.
+
+Accessibility notes: visible text carries the clue; decorative thumbnails are hidden from assistive technology.
+
+Extension strategy: add typed clue variants to `HiddenFrameVideoClueType` and CSS state classes.
+
+### VideoStillClueCard
+
+Purpose: displays an in-app video-still placeholder or approved image reference for a timeline clue.
+
+Inputs: a `HiddenFrameVideoClue`.
+
+Outputs: a figure with decorative thumbnail and text caption for visual label and timecode.
+
+Dependencies: Phase 0 asset registry through clue data.
+
+Intended reuse: video still cards, timeline clue rows, and future approved media references.
+
+Accessibility notes: the thumbnail is decorative because the caption and card body provide the meaningful text.
+
+Extension strategy: support real approved still assets through data without changing component structure.
+
+### LowerThirdClueCard
+
+Purpose: previews a lower-third broadcast graphic clue.
+
+Inputs: lower-third text.
+
+Outputs: a labeled aside styled as a broadcast lower-third.
+
+Dependencies: Hidden Frame CSS.
+
+Intended reuse: broadcast update clues, timeline clues, and video-production puzzle arcs.
+
+Accessibility notes: uses a labeled `aside` with visible text.
+
+Extension strategy: add style variants through props only after future clue data needs them.
+
 ## Design Decisions
 
 Phase 0 imports the asset kit without student-facing UI so the visual foundation is stable before gameplay, story, or progression work begins.
@@ -453,6 +530,8 @@ Phase 2 keeps the existing `dcc.hiddenFrame.phase1Progress` localStorage key to 
 
 Phase 2 uses CSS-driven placeholders and existing Phase 0 backgrounds for frame cards and recovered file art. No new image assets were generated.
 
+Phase 3 uses in-app timeline abstractions before attaching real media. `hiddenFrameVideoClues.ts` can reference approved class video examples later, but Phase 3 only ships safe internal metadata, CSS-driven timeline UI, and Phase 0 VHS/signal assets.
+
 ## Technical Debt & TODO
 
 - Expand structured data schemas for archive entries, recovered files, frame cards, puzzles, achievements, and progression before adding content at larger scale.
@@ -462,7 +541,7 @@ Phase 2 uses CSS-driven placeholders and existing Phase 0 backgrounds for frame 
 - Add automated route/component tests when Hidden Frame has interactive screens.
 - Add visual QA snapshots after future pages are introduced.
 - Add a developer-only reset utility only after a safe, hidden pattern is designed. Phase 2 intentionally does not expose destructive reset controls to students.
-- Video-production integration, Unreal integration, admin tools, account sync, and larger media assets remain postponed.
+- Real embedded video media, Unreal integration, admin tools, account sync, and larger media assets remain postponed.
 
 ## Version History
 
@@ -477,6 +556,10 @@ Implemented the Hidden Page MVP with authenticated hidden routes for `/hidden-fr
 ### Phase 2 - 2026-07-08
 
 Implemented the First Puzzle Chain with Files 001 through 005, dynamic recovered file routing, data-driven clue/hint/password/reward metadata, local unlock sequencing, collectible Frames 001 through 005, a `/hidden-frame/collection` page, hidden-by-default hints, accessible password feedback, a schema-versioned localStorage progress adapter with Phase 1 migration, `FrameCard` and `FrameCollectionGrid`, and a Phase 2 validation script. Firestore persistence, account sync, grades, leaderboards, admin tools, public navigation links, external scavenger hunts, Unreal gameplay, video-production integration, and new media assets were intentionally postponed.
+
+### Phase 3 - 2026-07-13
+
+Implemented the first video-production timeline signal with `/hidden-frame/timeline`, Files 006 through 008, Frames 006 through 008, `hiddenFrameVideoClues.ts`, `TimelineTrack`, `TimelineClueCard`, `VideoStillClueCard`, `LowerThirdClueCard`, VHS/signal styling, and a Phase 3 validation script. The first-chain completion boundary remains Files 001 through 005 even though File 005 can now reveal File 006.
 
 ## Acceptance Criteria
 
@@ -493,3 +576,5 @@ Implemented the First Puzzle Chain with Files 001 through 005, dynamic recovered
 - Completing each active file unlocks the next file in the chain and adds the matching recovered frame.
 - `/hidden-frame/collection` shows recovered and locked frame states from local progress.
 - Phase 2 remains optional, ungraded, localStorage-based, and contained inside the DCC website.
+- `/hidden-frame/timeline` presents video-production clues without external scavenger hunt behavior.
+- Files 006 through 008 extend the recovered-file system with video-production vocabulary and rewards.
