@@ -10,7 +10,9 @@ import { HiddenFrameCameraPage } from './hidden-frame/pages/HiddenFrameCameraPag
 import { HiddenFrameCollectionPage } from './hidden-frame/pages/HiddenFrameCollectionPage';
 import { HiddenFrameFilePage } from './hidden-frame/pages/HiddenFrameFilePage';
 import { HiddenFrameLandingPage } from './hidden-frame/pages/HiddenFrameLandingPage';
+import { HiddenFrameRenderRoomPage } from './hidden-frame/pages/HiddenFrameRenderRoomPage';
 import { HiddenFrameTimelinePage } from './hidden-frame/pages/HiddenFrameTimelinePage';
+import { HiddenFrameUnrealPage } from './hidden-frame/pages/HiddenFrameUnrealPage';
 import { JoinClassPage } from './pages/JoinClassPage';
 import { LandingPage } from './pages/LandingPage';
 import { LessonDetailPage } from './pages/LessonDetailPage';
@@ -43,6 +45,8 @@ export function App() {
           <Route path="/hidden-frame/collection" element={<HiddenFrameCollectionPage />} />
           <Route path="/hidden-frame/timeline" element={<HiddenFrameTimelinePage />} />
           <Route path="/hidden-frame/camera" element={<HiddenFrameCameraPage />} />
+          <Route path="/hidden-frame/render-room" element={<HiddenFrameRenderRoomPage />} />
+          <Route path="/hidden-frame/unreal" element={<HiddenFrameUnrealPage />} />
           <Route path="/hidden-frame/file/001" element={<HiddenFrameFilePage />} />
           <Route path="/hidden-frame/file/:fileId" element={<HiddenFrameFilePage />} />
           <Route path="/lessons/:lessonId" element={<LessonDetailPage />} />

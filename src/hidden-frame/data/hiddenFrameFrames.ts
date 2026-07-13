@@ -110,6 +110,33 @@ export const hiddenFrameRewardFrames: HiddenFrameRewardFrame[] = [
     description: 'A frame for leaving room in the direction of attention.',
     thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
   },
+  {
+    id: 'frame-012',
+    frameNumber: '012',
+    title: 'VECTOR',
+    signalWord: 'VECTOR',
+    sourceFileId: '012',
+    description: 'A frame for placing the clue with coordinates and direction.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+  },
+  {
+    id: 'frame-013',
+    frameNumber: '013',
+    title: 'BLUEPRINT',
+    signalWord: 'BLUEPRINT',
+    sourceFileId: '013',
+    description: 'A frame for making a scene respond through visible logic.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+  },
+  {
+    id: 'frame-014',
+    frameNumber: '014',
+    title: 'TRIGGER',
+    signalWord: 'TRIGGER',
+    sourceFileId: '014',
+    description: 'A frame for noticing the invisible boundary that starts an event.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+  },
 ];
 
 export const getHiddenFrameRewardFrameById = (

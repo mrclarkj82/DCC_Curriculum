@@ -148,6 +148,8 @@ Phase 4 is complete when:
 
 ## Phase 5 Acceptance Criteria: Unreal Engine Integration
 
+Status: Complete.
+
 Phase 5 is complete when:
 
 - `/hidden-frame/render-room` exists.

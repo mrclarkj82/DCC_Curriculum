@@ -43,6 +43,10 @@ The first video-production signal appears in the Timeline. Files 006 through 008
 
 The first camera signal appears in the Cinematography Index. Files 009 through 011 extend the archive through rule of thirds, leading lines, and look space. Frames 009 through 011 become local optional collectibles.
 
+### 2026-07-13 - Phase 5
+
+The first Render Room signal appears. Files 012 through 014 extend the archive through vectors, Blueprints, and trigger volumes. Frames 012 through 014 become local optional collectibles.
+
 ## Locations
 
 ### Archive
@@ -55,11 +59,11 @@ A visual state associated with red warnings, block artifacts, corruption, and an
 
 ### Render Room
 
-A future Unreal Engine themed space suggested by Phase 0 art. Phase 2 references rendering and rotation, but no route, location map, or story event is canon yet.
+An Unreal Engine themed in-site location suggested by Phase 0 art and established in Phase 5. It is a web page that behaves like an editor-room signal, not a playable Unreal build.
 
 ### Viewport Grid
 
-A visual language for Unreal Engine, camera, composition, or spatial clue contexts. Phase 2 uses viewport ideas for File 005 and the ROTATION signal. Phase 4 uses grid overlays for composition clues.
+A visual language for Unreal Engine, camera, composition, or spatial clue contexts. Phase 2 uses viewport ideas for File 005 and the ROTATION signal. Phase 4 uses grid overlays for composition clues. Phase 5 uses viewport readouts for Unreal concepts.
 
 ### VHS / Signal Space
 
@@ -110,6 +114,18 @@ Summary: The first cinematography expansion route. It contains in-app compositio
 Related files: `HF-FILE-009`, `HF-FILE-010`, `HF-FILE-011`
 
 Related frames: `HF-FRAME-009`, `HF-FRAME-010`, `HF-FRAME-011`
+
+### HF-ARCHIVE-PHASE-5
+
+Title: Render Room Signal
+
+First appearance: `/hidden-frame/render-room`
+
+Summary: The first Unreal Engine expansion route. It contains in-app viewport clues for coordinates, rotation, scale, lighting, materials, Blueprints, trigger volumes, collision, and camera/player perspective, and links to Files 012 through 014.
+
+Related files: `HF-FILE-012`, `HF-FILE-013`, `HF-FILE-014`
+
+Related frames: `HF-FRAME-012`, `HF-FRAME-013`, `HF-FRAME-014`
 
 ## Recovered Files
 
@@ -243,7 +259,7 @@ Accepted variant: `OBJECT ROTATION`
 
 Reward frame: `HF-FRAME-005`
 
-Unlocks: First chain complete
+Unlocks: File 006
 
 Archivist message: "The Archivist turns the final door toward the light. The first chain is complete, and the recovered frames now remember the path."
 
@@ -327,7 +343,7 @@ Accepted variant: `SOUND BRIDGE`
 
 Reward frame: `HF-FRAME-008`
 
-Unlocks: First video-production signal complete
+Unlocks: File 009
 
 Archivist message: "The Archivist hears the bridge before the picture changes. The timeline remembers that sound can lead the eye."
 
@@ -411,9 +427,93 @@ Accepted variants: `LOOKSPACE`, `LEAD ROOM`, `LEADROOM`
 
 Reward frame: `HF-FRAME-011`
 
-Unlocks: First camera signal complete
+Unlocks: File 012
 
 Archivist message: "The Archivist leaves room for the gaze. The story can move because the frame makes space for it."
+
+### HF-FILE-012
+
+File ID: `012`
+
+Filename: The Coordinate That Stayed
+
+Media type: recovered Unreal text
+
+First appearance: `/hidden-frame/file/012`
+
+In-world source: Render Room Signal
+
+Canon summary: File 012 connects Unreal transform coordinates to placement and direction inside a scene.
+
+Clue text: "The object was not lost. Its location was written in three quiet numbers. X pointed across the room, Y pulled the path sideways, and Z lifted the clue into view."
+
+Hint: "In Unreal, position and direction values are often stored as this three-number type."
+
+Password: `VECTOR`
+
+Accepted variant: `VECTORS`
+
+Reward frame: `HF-FRAME-012`
+
+Unlocks: File 013
+
+Archivist message: "The Archivist records the coordinate. The room was not hiding the clue; it was placing it."
+
+### HF-FILE-013
+
+File ID: `013`
+
+Filename: Blueprint Without Wires
+
+Media type: recovered Unreal text
+
+First appearance: `/hidden-frame/file/013`
+
+In-world source: Render Room Signal
+
+Canon summary: File 013 connects Blueprint-style visual scripting to responsive scene logic.
+
+Clue text: "The door did not open because it was lucky. An event reached a node, a condition answered, and the room changed because someone built the logic."
+
+Hint: "Unreal visual scripting graphs are commonly called this."
+
+Password: `BLUEPRINT`
+
+Accepted variant: `BLUEPRINTS`
+
+Reward frame: `HF-FRAME-013`
+
+Unlocks: File 014
+
+Archivist message: "The Archivist reconnects the logic. A scene can react when its decisions are visible."
+
+### HF-FILE-014
+
+File ID: `014`
+
+Filename: The Room That Knows You Entered
+
+Media type: recovered Unreal text
+
+First appearance: `/hidden-frame/file/014`
+
+In-world source: Render Room Signal
+
+Canon summary: File 014 connects trigger volumes and collision boundaries to safe scene interaction.
+
+Clue text: "Nothing chased you. Nothing broke. The room simply noticed when a player crossed an invisible boundary and used that moment to change the scene."
+
+Hint: "Designers often use this kind of volume to detect entry and fire an event."
+
+Password: `TRIGGER`
+
+Accepted variants: `TRIGGER VOLUME`, `TRIGGER BOX`
+
+Reward frame: `HF-FRAME-014`
+
+Unlocks: First Render Room signal complete
+
+Archivist message: "The Archivist labels the invisible boundary. Interaction begins when the scene knows what entered it."
 
 ## Frame Cards
 
@@ -549,6 +649,42 @@ Unlock condition: Complete File 011
 
 Student-facing text: A frame for leaving room in the direction of attention.
 
+### HF-FRAME-012
+
+Frame ID: `frame-012`
+
+Title: VECTOR
+
+Discovery location: File 012
+
+Unlock condition: Complete File 012
+
+Student-facing text: A frame for placing the clue with coordinates and direction.
+
+### HF-FRAME-013
+
+Frame ID: `frame-013`
+
+Title: BLUEPRINT
+
+Discovery location: File 013
+
+Unlock condition: Complete File 013
+
+Student-facing text: A frame for making a scene respond through visible logic.
+
+### HF-FRAME-014
+
+Frame ID: `frame-014`
+
+Title: TRIGGER
+
+Discovery location: File 014
+
+Unlock condition: Complete File 014
+
+Student-facing text: A frame for noticing the invisible boundary that starts an event.
+
 ## Compression Logs
 
 No antagonist Compression logs are canon in Phase 2.
@@ -558,6 +694,8 @@ Phase 2 includes light system messages such as "First chain visible," "Record lo
 Phase 3 includes "Timeline signal" and "Signal scope" messages. These are safety and atmosphere copy, not plot threats.
 
 Phase 4 includes "Camera signal" and "Observation scope" messages. These are safety and atmosphere copy, not plot threats.
+
+Phase 5 includes "Render Room signal," "Editor preview," and "Engine scope" messages. These are safety and atmosphere copy, not simulated malware, threats, or real engine instructions.
 
 ## Symbols
 
@@ -621,6 +759,18 @@ Scanlines and timecode represent media artifacts, recovered recordings, and clos
 
 "The Archivist leaves room for the gaze. The story can move because the frame makes space for it."
 
+### The Archivist - File 012
+
+"The Archivist records the coordinate. The room was not hiding the clue; it was placing it."
+
+### The Archivist - File 013
+
+"The Archivist reconnects the logic. A scene can react when its decisions are visible."
+
+### The Archivist - File 014
+
+"The Archivist labels the invisible boundary. Interaction begins when the scene knows what entered it."
+
 ## Recurring Phrases
 
 The Phase 0 token file establishes these phrases:
@@ -655,6 +805,13 @@ Phase 4 adds:
 - The line that leads.
 - The space ahead.
 - Room for the gaze.
+
+Phase 5 adds:
+
+- The coordinate that stayed.
+- Blueprint without wires.
+- The room that knows you entered.
+- Invisible boundary.
 
 ## Puzzle Solutions
 
@@ -692,13 +849,25 @@ Unlock order:
 
 1. File 009 - `THIRDS` - rewards Frame 009 and unlocks File 010.
 2. File 010 - `LEADING LINES` - rewards Frame 010 and unlocks File 011.
-3. File 011 - `LOOK SPACE` - rewards Frame 011 and completes the first camera signal.
+3. File 011 - `LOOK SPACE` - rewards Frame 011 and unlocks File 012.
 
 Accepted input behavior: case-insensitive and trims surrounding whitespace. File 009 also accepts `RULE OF THIRDS` and `THE RULE OF THIRDS`. File 010 also accepts `LEADING` and `LINES`. File 011 also accepts `LOOKSPACE`, `LEAD ROOM`, and `LEADROOM`.
 
+### Render Room Signal
+
+Prompt type: signal word gates and Unreal viewport clue cards
+
+Unlock order:
+
+1. File 012 - `VECTOR` - rewards Frame 012 and unlocks File 013.
+2. File 013 - `BLUEPRINT` - rewards Frame 013 and unlocks File 014.
+3. File 014 - `TRIGGER` - rewards Frame 014 and completes the first Render Room signal.
+
+Accepted input behavior: case-insensitive and trims surrounding whitespace. File 012 also accepts `VECTORS`. File 013 also accepts `BLUEPRINTS`. File 014 also accepts `TRIGGER VOLUME` and `TRIGGER BOX`.
+
 ## Passwords
 
-Passwords are intentionally client-visible because Phase 2 is optional, ungraded, local-only, and not security-sensitive.
+Passwords are intentionally client-visible because Phases 1 through 5 are optional, ungraded, local-only, and not security-sensitive.
 
 - File 001: `LUMEN`
 - File 002: `CUT`
@@ -711,6 +880,9 @@ Passwords are intentionally client-visible because Phase 2 is optional, ungraded
 - File 009: `THIRDS`
 - File 010: `LEADING LINES`
 - File 011: `LOOK SPACE`
+- File 012: `VECTOR`
+- File 013: `BLUEPRINT`
+- File 014: `TRIGGER`
 
 Do not store future active passwords in client code unless they are intentionally public, purely narrative, and documented as safe to expose.
 
@@ -718,11 +890,11 @@ Do not store future active passwords in client code unless they are intentionall
 
 - What is The Compression?
 - Who or what leaves the broken frame symbol?
-- What is the Render Room?
 - Why do recovered frames preserve production vocabulary?
 - What happens after the first five frames are recovered?
 - What does the timeline signal reveal after the first three video frames are recovered?
 - Why do composition guides appear before the Render Room fully opens?
+- Why does the Render Room respond to coordinates, logic, and trigger boundaries?
 - How do Unreal, Blender, cinematography, and video clues connect beyond this first chain?
 - Why does the Archivist care about what a frame includes and excludes?
 
@@ -742,7 +914,7 @@ Potential future threads:
 
 ## Student Discoveries
 
-No student discoveries are recorded in Phase 2.
+No student discoveries are recorded through Phase 5.
 
 Future entries should avoid naming students unless the teacher explicitly approves a privacy-safe classroom convention.
 

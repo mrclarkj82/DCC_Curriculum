@@ -48,18 +48,22 @@ Implemented work:
 
 ### Phase 5: Unreal Engine Integration
 
-Status: Next.
+Status: Complete.
 
 Goal: add Render Room and Unreal-themed clue support.
 
-Planned work:
+Implemented work:
 
-- Add `/hidden-frame/render-room`.
-- Add `/hidden-frame/unreal`.
-- Use the Render Room background and viewport/grid language.
-- Add reusable clue components for coordinates, rotation, scale, lighting, materials, Blueprints, trigger volumes, collision, and perspective.
+- Added `/hidden-frame/render-room`.
+- Added `/hidden-frame/unreal`.
+- Used the Render Room background and viewport/grid language.
+- Added reusable clue components for coordinates, rotation, scale, lighting, materials, Blueprints, trigger volumes, collision, and perspective.
+- Added Files 012 through 014 and Frames 012 through 014.
+- Added Phase 5 validation.
 
 ### Phase 6: Blender/Object Mystery Arc
+
+Status: Next.
 
 Goal: add object-focused clue support.
 

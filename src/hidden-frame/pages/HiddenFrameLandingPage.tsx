@@ -37,6 +37,9 @@ export function HiddenFrameLandingPage() {
               <Link className="hidden-frame-secondary-link" to="/hidden-frame/camera">
                 Camera Signal
               </Link>
+              <Link className="hidden-frame-secondary-link" to="/hidden-frame/render-room">
+                Render Room
+              </Link>
               <HiddenFrameIcon
                 destinationPath="/hidden-frame/archive"
                 label="Open hidden frame archive"

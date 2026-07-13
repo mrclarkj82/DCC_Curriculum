@@ -109,3 +109,17 @@ Consequences:
 - `hiddenFrameCameraClues.ts` stores composition metadata.
 - `CompositionGuideFrame` displays decorative guide overlays for principles such as thirds, leading lines, headroom, look space, and central framing.
 - Future approved still images can be added through data without changing the component structure.
+
+## Decision 009: Render Room Is a Web-First Unreal Abstraction
+
+Date: 2026-07-13
+
+Decision: Phase 5 represents Unreal Engine clues through in-app Render Room pages, viewport readouts, and structured clue data rather than requiring a playable Unreal build.
+
+Reason: The Hidden Frame must remain contained inside the DCC website, optional, and usable without installing software or opening private Unreal projects.
+
+Consequences:
+
+- `/hidden-frame/render-room` uses Phase 0 Render Room visuals and web UI panels.
+- `/hidden-frame/unreal` indexes Unreal concepts through data in `hiddenFrameUnrealClues.ts`.
+- Future playable Unreal content would require a separate documented approval and safety review.

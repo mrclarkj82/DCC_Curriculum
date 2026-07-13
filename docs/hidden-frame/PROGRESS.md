@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 4. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, and Phase 4 added the first cinematography/composition arc.
+The Hidden Frame is implemented through Phase 5. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, and Phase 5 added the first Unreal/Render Room arc.
 
 The current full-ARG working branch is:
 
@@ -17,8 +17,8 @@ The current full-ARG working branch is:
 | 2 | First Puzzle Chain | Complete | Files 001-005, unlock chain, collection route, frame rewards |
 | 3 | Video Production Integration | Complete | Timeline route, video clue data, Files 006-008, timeline components |
 | 4 | Cinematography Mystery Arc | Complete | Camera route, composition clue data, Files 009-011, guide overlays |
-| 5 | Unreal Engine Integration | Next | Render Room, coordinates, rotation, Blueprint-style clues |
-| 6 | Blender/Object Mystery Arc | Not Started | Object, material, UV, shadow, camera-view clues |
+| 5 | Unreal Engine Integration | Complete | Render Room route, Unreal clue data, Files 012-014, viewport readouts |
+| 6 | Blender/Object Mystery Arc | Next | Object, material, UV, shadow, camera-view clues |
 | 7 | Student Progression System | Not Started | Larger collection, achievements, reset, adapter boundary |
 | 8 | Compression Event | Not Started | Glitch/redaction/compression antagonist systems |
 | 9 | Final Export | Not Started | Frame 000 and completion ending |
@@ -92,38 +92,36 @@ Phase 4 added:
 - `CompositionGuideFrame`, `CameraClueCard`, and `CameraClueGrid`.
 - Phase 4 validation script.
 
-## Active Phase
-
 ### Phase 5: Unreal Engine Integration
 
-Objective:
-
-Create the first Unreal/Render Room expansion arc while keeping all clues inside the DCC website or approved class materials.
-
-Required work:
-
-- Add `/hidden-frame/render-room`.
-- Add `/hidden-frame/unreal`.
-- Add structured data for Unreal clue entries.
-- Add reusable Unreal clue components.
-- Support coordinates, rotation, scale, lighting, materials, Blueprint-style clues, trigger volumes, collision, and camera/player perspective.
-- Reuse Phase 0 Render Room and grid assets.
-- Update docs and validation.
-
-## Backlog
-
-### Phase 4 Backlog
-
-- `/hidden-frame/camera`.
-- Composition clue data.
-- Rule-of-thirds, leading-lines, symmetry, headroom, look-space, repetition, and central-framing clue components.
-
-### Phase 5 Backlog
+Phase 5 added:
 
 - `/hidden-frame/render-room`.
 - `/hidden-frame/unreal`.
-- Render Room page.
-- Coordinate, rotation, lighting, material, Blueprint-style, trigger, collision, and perspective clue support.
+- Unreal clue data in `hiddenFrameUnrealClues.ts`.
+- Files 012 through 014 for VECTOR, BLUEPRINT, and TRIGGER.
+- Frames 012 through 014.
+- `UnrealViewportReadout`, `UnrealClueCard`, and `UnrealSignalGrid`.
+- Phase 5 validation script.
+
+## Active Phase
+
+### Phase 6: Blender/Object Mystery Arc
+
+Objective:
+
+Create the first Blender/object expansion arc while keeping all clues inside the DCC website or approved class materials.
+
+Required work:
+
+- Add `/hidden-frame/objects`.
+- Add structured data for object clue entries.
+- Add reusable Blender/object clue components.
+- Support object names, shadows, materials, UV maps, scale, camera view, engraved or hidden text, and model details.
+- Reuse Phase 0 archive and Render Room assets where practical.
+- Update docs and validation.
+
+## Backlog
 
 ### Phase 6 Backlog
 
@@ -195,3 +193,11 @@ Required work:
 - Governance continuation started on `feature/hidden-frame-full-arg`.
 - Governance docs committed and pushed.
 - Phase 3 implementation started and validated during development.
+- Phase 4 committed and pushed as `fc21e45`.
+- Phase 5 implemented with Render Room and Unreal clue support.
+- `git diff --check`: passed for Phase 5 work.
+- `npm.cmd run lint`: passed.
+- `npm.cmd run validate:hidden-frame`: passed through Phase 5.
+- `npm.cmd run validate:curriculum`: passed.
+- `npm.cmd run build`: passed with existing Vite large chunk warning.
+- Route smoke checks returned `200` for `/hidden-frame/render-room`, `/hidden-frame/unreal`, and `/hidden-frame/file/012`.

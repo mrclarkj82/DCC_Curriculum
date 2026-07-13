@@ -14,6 +14,9 @@ export { PasswordGate } from './components/PasswordGate';
 export { RecoveredFileCard } from './components/RecoveredFileCard';
 export { TimelineClueCard } from './components/TimelineClueCard';
 export { TimelineTrack } from './components/TimelineTrack';
+export { UnrealClueCard } from './components/UnrealClueCard';
+export { UnrealSignalGrid } from './components/UnrealSignalGrid';
+export { UnrealViewportReadout } from './components/UnrealViewportReadout';
 export { VideoStillClueCard } from './components/VideoStillClueCard';
 export { hiddenFrameRewardFrames, getHiddenFrameRewardFrameById, type HiddenFrameRewardFrame } from './data/hiddenFrameFrames';
 export {
@@ -22,6 +25,7 @@ export {
   hiddenFrameFirstChainFiles,
   hiddenFramePlayableFiles,
   hiddenFramePuzzleFiles,
+  hiddenFrameUnrealFiles,
   hiddenFrameVideoFiles,
   getHiddenFrameFileById,
   type HiddenFrameArcId,
@@ -34,6 +38,12 @@ export {
   type HiddenFrameCameraClue,
   type HiddenFrameCompositionPrinciple,
 } from './data/hiddenFrameCameraClues';
+export {
+  getHiddenFrameUnrealClueById,
+  hiddenFrameUnrealClues,
+  type HiddenFrameUnrealClue,
+  type HiddenFrameUnrealConcept,
+} from './data/hiddenFrameUnrealClues';
 export {
   getHiddenFrameVideoClueById,
   hiddenFrameVideoClues,

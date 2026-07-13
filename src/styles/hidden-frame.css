@@ -734,6 +734,193 @@ button.hidden-frame-secondary-link {
   box-shadow: inset 0 0 0 999px rgba(5, 7, 11, 0.22);
 }
 
+.hidden-frame-render-room-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+  gap: var(--space-4);
+}
+
+.hidden-frame-render-room-console,
+.hidden-frame-render-room-files {
+  border: 1px solid rgba(141, 247, 255, 0.28);
+  border-radius: var(--hf-radius);
+  padding: var(--space-4);
+  background:
+    linear-gradient(135deg, rgba(141, 247, 255, 0.1), transparent 42%),
+    rgba(5, 7, 11, 0.82);
+  box-shadow: var(--hf-shadow);
+}
+
+.hidden-frame-render-room-console h2,
+.hidden-frame-render-room-files h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.hidden-frame-render-room-console dl {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.hidden-frame-render-room-console dl div {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.35fr) minmax(0, 1fr);
+  gap: var(--space-3);
+  border-bottom: 1px solid rgba(141, 247, 255, 0.16);
+  padding-bottom: var(--space-3);
+}
+
+.hidden-frame-render-room-console dt {
+  color: var(--hf-warning-amber);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.hidden-frame-render-room-console dd {
+  margin: 0;
+  color: var(--hf-ghost-white);
+}
+
+.hidden-frame-render-room-file-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.hidden-frame-render-room-file {
+  display: grid;
+  gap: var(--space-1);
+  border: 1px solid rgba(255, 184, 77, 0.28);
+  border-radius: var(--hf-radius);
+  padding: var(--space-3);
+  color: var(--hf-ghost-white);
+  text-decoration: none;
+  background: rgba(255, 184, 77, 0.08);
+}
+
+.hidden-frame-render-room-file:hover,
+.hidden-frame-render-room-file:focus-visible {
+  border-color: rgba(255, 184, 77, 0.72);
+  outline: none;
+  box-shadow: var(--hf-glow);
+}
+
+.hidden-frame-render-room-file span {
+  color: var(--hf-signal-cyan);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.hidden-frame-render-room-file strong {
+  font-size: 16px;
+}
+
+.hidden-frame-unreal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.hidden-frame-unreal-card {
+  display: grid;
+  gap: var(--space-4);
+  border: 1px solid rgba(141, 247, 255, 0.24);
+  border-radius: var(--hf-radius);
+  padding: var(--space-4);
+  background:
+    linear-gradient(180deg, rgba(141, 247, 255, 0.08), transparent 36%),
+    rgba(5, 7, 11, 0.82);
+  box-shadow: var(--hf-shadow);
+}
+
+.hidden-frame-unreal-card__body {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.hidden-frame-unreal-card__body h2,
+.hidden-frame-unreal-card__body p {
+  margin: 0;
+}
+
+.hidden-frame-unreal-readout {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  min-height: 190px;
+  margin: 0;
+  border: 1px solid rgba(141, 247, 255, 0.24);
+  border-radius: var(--hf-radius);
+  background: rgba(5, 7, 11, 0.72);
+}
+
+.hidden-frame-unreal-readout img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.58;
+}
+
+.hidden-frame-unreal-readout__reticle {
+  position: absolute;
+  inset: var(--space-3);
+  z-index: 1;
+  border: 1px solid rgba(141, 247, 255, 0.34);
+  pointer-events: none;
+}
+
+.hidden-frame-unreal-readout__reticle::before,
+.hidden-frame-unreal-readout__reticle::after {
+  position: absolute;
+  content: "";
+  background: rgba(255, 184, 77, 0.76);
+}
+
+.hidden-frame-unreal-readout__reticle::before {
+  top: 50%;
+  left: 18%;
+  width: 64%;
+  height: 1px;
+}
+
+.hidden-frame-unreal-readout__reticle::after {
+  top: 18%;
+  left: 50%;
+  width: 1px;
+  height: 64%;
+}
+
+.hidden-frame-unreal-readout figcaption {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  gap: var(--space-1);
+  align-self: end;
+  margin: var(--space-3);
+  border: 1px solid rgba(141, 247, 255, 0.28);
+  border-radius: var(--hf-radius);
+  padding: var(--space-2) var(--space-3);
+  color: var(--hf-ghost-white);
+  background: rgba(5, 7, 11, 0.76);
+}
+
+.hidden-frame-unreal-readout figcaption span,
+.hidden-frame-unreal-readout figcaption strong {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.hidden-frame-unreal-readout figcaption span {
+  color: var(--hf-signal-cyan);
+}
+
+.hidden-frame-unreal-readout figcaption strong {
+  color: var(--hf-warning-amber);
+}
+
 .hidden-frame-icon {
   display: inline-grid;
   width: 36px;
@@ -827,7 +1014,9 @@ button.hidden-frame-secondary-link {
   }
 
   .hidden-frame-camera-grid,
-  .hidden-frame-camera-card {
+  .hidden-frame-camera-card,
+  .hidden-frame-render-room-shell,
+  .hidden-frame-unreal-grid {
     grid-template-columns: 1fr;
   }
 }

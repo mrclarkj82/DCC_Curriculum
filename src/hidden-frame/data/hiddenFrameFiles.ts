@@ -1,7 +1,11 @@
 import { hiddenFramePhase0Assets } from '../hiddenFramePhase0Assets';
 
 export type HiddenFrameFileState = 'locked' | 'available' | 'unlocked' | 'completed' | 'future';
-export type HiddenFrameArcId = 'first-chain' | 'video-production' | 'cinematography';
+export type HiddenFrameArcId =
+  | 'first-chain'
+  | 'video-production'
+  | 'cinematography'
+  | 'unreal-engine';
 
 export interface HiddenFrameFileRecord {
   id: string;
@@ -327,12 +331,96 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
     passwordAnswer: 'LOOK SPACE',
     acceptedAnswers: ['LOOKSPACE', 'LEAD ROOM', 'LEADROOM'],
     prerequisiteFileId: '010',
+    unlocksFileId: '012',
     rewardFrameId: 'frame-011',
     recoveredMessage:
       'The Archivist leaves room for the gaze. The story can move because the frame makes space for it.',
     completionMeta: {
       label: 'Frame 011 recovered',
-      nextStep: 'The first camera signal is complete.',
+      nextStep: 'The first camera signal is complete. A Render Room signal is now visible.',
+    },
+  },
+  {
+    id: '012',
+    fileNumber: '012',
+    phase: 5,
+    arcId: 'unreal-engine',
+    title: 'The Coordinate That Stayed',
+    route: '/hidden-frame/file/012',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'An Unreal Engine record about position, direction, and the numbers that hold a scene in place.',
+    clueText:
+      'The object was not lost. Its location was written in three quiet numbers. X pointed across the room, Y pulled the path sideways, and Z lifted the clue into view.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    background: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    hintText: 'In Unreal, position and direction values are often stored as this three-number type.',
+    passwordAnswer: 'VECTOR',
+    acceptedAnswers: ['VECTORS'],
+    prerequisiteFileId: '011',
+    unlocksFileId: '013',
+    rewardFrameId: 'frame-012',
+    recoveredMessage:
+      'The Archivist records the coordinate. The room was not hiding the clue; it was placing it.',
+    completionMeta: {
+      label: 'Frame 012 recovered',
+      nextStep: 'File 013 is now available in the archive.',
+    },
+  },
+  {
+    id: '013',
+    fileNumber: '013',
+    phase: 5,
+    arcId: 'unreal-engine',
+    title: 'Blueprint Without Wires',
+    route: '/hidden-frame/file/013',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'An Unreal Engine record about logic nodes, events, and the choices that make a scene respond.',
+    clueText:
+      'The door did not open because it was lucky. An event reached a node, a condition answered, and the room changed because someone built the logic.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    background: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    hintText: 'Unreal visual scripting graphs are commonly called this.',
+    passwordAnswer: 'BLUEPRINT',
+    acceptedAnswers: ['BLUEPRINTS'],
+    prerequisiteFileId: '012',
+    unlocksFileId: '014',
+    rewardFrameId: 'frame-013',
+    recoveredMessage:
+      'The Archivist reconnects the logic. A scene can react when its decisions are visible.',
+    completionMeta: {
+      label: 'Frame 013 recovered',
+      nextStep: 'File 014 is now available in the archive.',
+    },
+  },
+  {
+    id: '014',
+    fileNumber: '014',
+    phase: 5,
+    arcId: 'unreal-engine',
+    title: 'The Room That Knows You Entered',
+    route: '/hidden-frame/file/014',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'An Unreal Engine record about trigger volumes, collision, and a room responding to presence.',
+    clueText:
+      'Nothing chased you. Nothing broke. The room simply noticed when a player crossed an invisible boundary and used that moment to change the scene.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    background: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    hintText: 'Designers often use this kind of volume to detect entry and fire an event.',
+    passwordAnswer: 'TRIGGER',
+    acceptedAnswers: ['TRIGGER VOLUME', 'TRIGGER BOX'],
+    prerequisiteFileId: '013',
+    rewardFrameId: 'frame-014',
+    recoveredMessage:
+      'The Archivist labels the invisible boundary. Interaction begins when the scene knows what entered it.',
+    completionMeta: {
+      label: 'Frame 014 recovered',
+      nextStep: 'The first Render Room signal is complete.',
     },
   },
 ];
@@ -350,6 +438,10 @@ export const hiddenFrameVideoFiles = hiddenFrameFiles.filter(
 
 export const hiddenFrameCameraFiles = hiddenFrameFiles.filter(
   (file) => file.arcId === 'cinematography',
+);
+
+export const hiddenFrameUnrealFiles = hiddenFrameFiles.filter(
+  (file) => file.arcId === 'unreal-engine',
 );
 
 export const hiddenFramePuzzleFiles = hiddenFrameFirstChainFiles;

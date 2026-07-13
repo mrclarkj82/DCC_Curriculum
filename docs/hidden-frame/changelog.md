@@ -1,5 +1,16 @@
 # Hidden Frame Changelog
 
+## Phase 5 - 2026-07-13
+
+- Added `/hidden-frame/render-room` for the first Unreal-styled Render Room route.
+- Added `/hidden-frame/unreal` for the broader Unreal Engine clue index.
+- Added Files 012 through 014: `The Coordinate That Stayed`, `Blueprint Without Wires`, and `The Room That Knows You Entered`.
+- Added Frames 012 through 014: `VECTOR`, `BLUEPRINT`, and `TRIGGER`.
+- Added structured Unreal clue data for coordinates, rotation, scale, lighting, materials, Blueprints, trigger volumes, collision, and camera/player perspective.
+- Added reusable components: `UnrealViewportReadout`, `UnrealClueCard`, and `UnrealSignalGrid`.
+- Expanded `npm run validate:hidden-frame` with Phase 5 checks for Render Room routes, Unreal clue data, Unreal files, frames, and CSS.
+- Updated spec, canon, progress, roadmap, and acceptance criteria.
+
 ## Phase 4 - 2026-07-13
 
 - Added `/hidden-frame/camera` for the first cinematography/composition signal route.
