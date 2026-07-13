@@ -20,7 +20,7 @@ export function AssignmentGamePauseMenu({
         <p className="retro-label">Preview Paused</p>
         <h2 id="assignment-game-pause-title">Shell Menu</h2>
         <p className="muted">
-          Restart Preview resets only this local Phase 4 courtyard test. No progress is saved or
+          Restart Preview resets only this local Phase 5 combat test. No progress is saved or
           loaded.
         </p>
         <div className="assignment-game-menu-actions">

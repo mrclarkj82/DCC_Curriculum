@@ -5,7 +5,7 @@ import type { AssignmentGameMovementBounds, AssignmentGameVector } from './playe
 export const assignmentGameWorkingTitle = 'The Ember Gate';
 
 export const assignmentGameShellSubtitle =
-  'A Phase 4 top-down Ruined Courtyard prototype for the future assignment-unlocked adventure.';
+  'A Phase 5 local combat prototype for the future assignment-unlocked adventure.';
 
 export const assignmentGameObjectiveTeaser =
   ruinedCourtyardLevel.objectiveText;
@@ -14,14 +14,12 @@ export const assignmentGameContinueMessage =
   'Continue will activate in a later phase when student-specific saves are added.';
 
 export const assignmentGameHudPlaceholders: AssignmentGameHudPlaceholder[] = [
-  { label: 'Health', value: 'Future meter' },
-  { label: 'Energy', value: 'Future cooldowns' },
   { label: 'Inventory', value: 'Future items' },
   { label: 'Objective', value: ruinedCourtyardLevel.name },
 ];
 
 export const assignmentGameMovementInstructions =
-  'Move with Arrow keys or WASD. Press Escape or Pause to open the menu.';
+  'Move with Arrow keys or WASD. Press Space or J for sword, F or K for energy bolt. Press Escape or Pause to open the menu.';
 
 export const assignmentGamePlayerSpawn: AssignmentGameVector = ruinedCourtyardLevel.playerSpawn;
 

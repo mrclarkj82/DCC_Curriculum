@@ -2412,6 +2412,11 @@
   font-size: 14px;
 }
 
+.assignment-game-hud-item--movement,
+.assignment-game-hud-item--combat {
+  grid-column: span 2;
+}
+
 .assignment-game-viewport {
   display: grid;
   gap: var(--space-3);
@@ -2628,10 +2633,80 @@
   color: var(--color-text-soft);
 }
 
+.assignment-game-combat-layer {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  pointer-events: none;
+}
+
+.assignment-game-sword-arc {
+  position: absolute;
+  width: 86px;
+  height: 86px;
+  border: 3px solid transparent;
+  border-top-color: rgba(var(--color-neon-cyan-rgb), 0.95);
+  border-right-color: rgba(var(--color-neon-orange-rgb), 0.92);
+  border-radius: 50%;
+  filter:
+    drop-shadow(0 0 12px rgba(var(--color-neon-cyan-rgb), 0.72))
+    drop-shadow(0 0 14px rgba(var(--color-neon-orange-rgb), 0.54));
+  transform-origin: center;
+  animation: assignment-game-sword-flash 220ms ease-out both;
+}
+
+.assignment-game-sword-arc--north {
+  transform: translate(-50%, -88%) rotate(-45deg);
+}
+
+.assignment-game-sword-arc--south {
+  transform: translate(-50%, -12%) rotate(135deg);
+}
+
+.assignment-game-sword-arc--east {
+  transform: translate(-12%, -50%) rotate(45deg);
+}
+
+.assignment-game-sword-arc--west {
+  transform: translate(-88%, -50%) rotate(-135deg);
+}
+
+.assignment-game-energy-bolt {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.9);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 18%, transparent 19%),
+    radial-gradient(circle, var(--color-neon-cyan), rgba(var(--color-neon-blue-rgb), 0.44));
+  box-shadow:
+    0 0 16px rgba(var(--color-neon-cyan-rgb), 0.78),
+    0 0 26px rgba(var(--color-neon-blue-rgb), 0.48);
+  transform: translate(-50%, -50%);
+}
+
+@keyframes assignment-game-sword-flash {
+  from {
+    opacity: 0;
+    scale: 0.72;
+  }
+
+  40% {
+    opacity: 1;
+    scale: 1.04;
+  }
+
+  to {
+    opacity: 0;
+    scale: 1.18;
+  }
+}
+
 .assignment-game-player {
   --assignment-game-player-size: 76px;
   position: absolute;
-  z-index: 4;
+  z-index: 6;
   display: grid;
   width: var(--assignment-game-player-size);
   height: var(--assignment-game-player-size);
@@ -3113,6 +3188,11 @@
 @media (max-width: 640px) {
   .assignment-game-hud {
     grid-template-columns: 1fr;
+  }
+
+  .assignment-game-hud-item--movement,
+  .assignment-game-hud-item--combat {
+    grid-column: auto;
   }
 
   .assignment-game-menu-actions .gradient-button,

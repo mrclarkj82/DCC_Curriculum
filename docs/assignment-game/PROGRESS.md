@@ -4,16 +4,18 @@
 
 The Ember Gate is the assignment-unlocked student game inside DCC Creative Studio. The current
 verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
-and Phase 3 player movement. Phase 4 is in progress on the first data-driven level.
+Phase 3 player movement, and Phase 4 Ruined Courtyard level. Phase 5 combat foundation is in
+progress.
 
 Verified on 2026-07-13:
 
-- `origin/main`: `47687fd` (`Merge pull request #9 from mrclarkj82/feature/assignment-game-player-movement`).
+- `origin/main`: `65b7ad5` (`Merge pull request #11 from mrclarkj82/feature/assignment-game-level-one`).
 - Phase 0 architecture PR #6: merged.
 - Phase 1 access gate PR #7: merged.
 - Phase 2 shell/start menu PR #8: merged.
 - Phase 3 player movement PR #9: merged.
-- Phase 4 Ruined Courtyard branch: `feature/assignment-game-level-one`.
+- Phase 4 Ruined Courtyard PR #11: merged.
+- Phase 5 combat foundation branch: `feature/assignment-game-combat`.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -47,8 +49,8 @@ Verified on 2026-07-13:
 | Phase 1 | Access Gate | Merged | PR #7 / `feature/assignment-game-gate` | Mainline gate uses existing submission/completion workflow. |
 | Phase 2 | Game Shell and Start Menu | Merged | PR #8 / `feature/assignment-game-shell` | Mainline shell/start menu is available after access gate unlock. |
 | Phase 3 | Player Movement | Merged | PR #9 / `feature/assignment-game-player-movement` | Includes local movement and player sprites. |
-| Phase 4 | First Medieval Level | Ready for review after latest push | `feature/assignment-game-level-one` | Builds Ruined Courtyard as a data-driven top-down level. |
-| Phase 5 | Combat Foundation | Pending | Recommended: `feature/assignment-game-combat` | Add sword and energy attack foundations only. |
+| Phase 4 | First Medieval Level | Merged | PR #11 / `feature/assignment-game-level-one` | Builds Ruined Courtyard as a data-driven top-down level. |
+| Phase 5 | Combat Foundation | Ready for review after latest push | `feature/assignment-game-combat` | Adds local-only sword and energy attack foundations. |
 | Phase 6 | Enemies | Pending | Recommended: `feature/assignment-game-enemies` | Add Hollow Squire and Ash Wisp only after combat foundation. |
 | Phase 7 | Dialogue | Pending | Recommended: `feature/assignment-game-dialogue` | Add Lantern Keeper NPC and data-driven dialogue. |
 | Phase 8 | Inventory and Collectibles | Pending | Recommended: `feature/assignment-game-inventory` | Add Ember Shard, Rusty Key, and Lantern Oil. |
@@ -68,6 +70,7 @@ Verified on 2026-07-13:
 | #8 | `[Phase 2] Assignment Game Shell and Start Menu` | Merged | Added shell, start menu, disabled Continue, preview viewport, HUD placeholders, pause menu. |
 | #9 | `[Phase 3] Assignment Game Player Movement` | Merged | Adds local movement, player state, and player sprites. |
 | #10 | `[Goal] Assignment Game Project Control Docs` | Merged | Added root assignment-game rules, full-game acceptance criteria, and this progress log. |
+| #11 | `[Phase 4] Assignment Game Ruined Courtyard Level` | Merged | Added data-driven Ruined Courtyard level and tileset assets. |
 
 ## Validation Log
 
@@ -104,6 +107,15 @@ Verified on 2026-07-13:
 - 2026-07-13: Phase 4 `git diff --check` passed with Git line-ending normalization warnings only.
 - 2026-07-13: Verified Phase 4 tile dimensions: all eleven integrated tiles are 64x64 PNGs.
 - 2026-07-13: Verified local Vite served `/assets/assignment-game/tiles/tile_stone_floor.png` and `/student/game` with HTTP 200 on port 5178.
+- 2026-07-13: PR #11 merged into `main`.
+- 2026-07-13: Phase 5 branch `feature/assignment-game-combat` created from current `origin/main`.
+- 2026-07-13: Phase 5 `npm.cmd install` passed. npm reported 6 moderate audit vulnerabilities and deprecation warnings for `node-domexception`, `glob`, and `uuid`.
+- 2026-07-13: Phase 5 `npm.cmd run lint` passed.
+- 2026-07-13: Phase 5 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Phase 5 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Phase 5 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Phase 5 `git diff --check` passed with Git line-ending normalization warnings only.
+- 2026-07-13: Verified local Vite served `/student/game` and `/assets/assignment-game/player/player_idle_down.png` with HTTP 200 on port 5179.
 
 ## Asset Notes
 
@@ -122,8 +134,8 @@ Verified on 2026-07-13:
 
 ## Next Step
 
-Finish Phase 4 PR:
+Finish Phase 5 PR:
 
-1. Commit and push `feature/assignment-game-level-one`.
-2. Open PR `[Phase 4] Assignment Game Ruined Courtyard Level`.
-3. After PR #11 merges, start Phase 5 combat foundation on `feature/assignment-game-combat`.
+1. Commit and push `feature/assignment-game-combat`.
+2. Open PR `[Phase 5] Assignment Game Combat Foundation`.
+3. After PR #12 merges, start Phase 6 enemies on `feature/assignment-game-enemies`.
