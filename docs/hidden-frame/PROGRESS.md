@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 9. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, Phase 6 added the first Blender/object inspection arc, Phase 7 added the local progression layer, Phase 8 added the safe Compression event, and Phase 9 added the Final Export ending with Frame 000.
+The Hidden Frame is implemented through Phase 10. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, Phase 6 added the first Blender/object inspection arc, Phase 7 added the local progression layer, Phase 8 added the safe Compression event, Phase 9 added the Final Export ending with Frame 000, and Phase 10 added safe expansion tooling and documentation.
 
 The current full-ARG working branch is:
 
@@ -22,7 +22,7 @@ The current full-ARG working branch is:
 | 7 | Student Progression System | Complete | Achievement data, signal badges, reset panel, schema v3 migration |
 | 8 | Compression Event | Complete | Compression route, logs, glitch/redaction/corrupted states |
 | 9 | Final Export | Complete | Final Export route, Frame 000 route, prerequisite gate, ending |
-| 10 | Admin and Expansion Tools | Next | Long-term content expansion tools and docs |
+| 10 | Admin and Expansion Tools | Complete | Admin-only expansion index, manifest, asset requests, extension guide |
 
 ## Completed Phase Summaries
 
@@ -148,31 +148,29 @@ Phase 9 added:
 - Local recovery of Frame 000 after the prerequisite set is complete.
 - Phase 9 validation script.
 
-## Active Phase
-
 ### Phase 10: Admin and Expansion Tools
 
-Objective:
+Phase 10 added:
 
-Add safe maintainability and expansion support without exposing answers, student data, or admin-only functionality to students.
+- Admin-only `/hidden-frame/expansion`.
+- Expansion manifest in `hiddenFrameExpansionManifest.ts`.
+- `ExpansionSafetyPanel`, `ExpansionChecklist`, and `AssetRequestList`.
+- `docs/hidden-frame/extension-guide.md`.
+- `docs/hidden-frame/asset-requests.md`.
+- Phase 10 validation script.
 
-Required work:
+## Active Phase
 
-- Add content expansion documentation or data manifest support.
-- Add optional dev/admin preview tooling only if it stays separate from student-facing pages.
-- Track future asset requests and extension points.
-- Strengthen validation for content expansion.
-- Update docs and validation.
+All requested phases through Phase 10 are implemented.
 
 ## Backlog
 
-### Phase 10 Backlog
+### Future Backlog
 
-- Content expansion workflow.
-- Optional dev/admin preview tools.
-- Asset request tracking.
-- Data validation.
-- Long-term documentation cleanup.
+- Add approved new media assets when available.
+- Consider code splitting Hidden Frame routes if bundle size becomes a priority.
+- Add visual snapshot tests if future UI changes become larger.
+- Revisit authenticated persistence only after a separate security decision.
 
 ## Open Questions
 
@@ -248,3 +246,11 @@ Required work:
 - `npm.cmd run validate:curriculum`: passed.
 - `npm.cmd run build`: passed with existing Vite large chunk warning.
 - Route smoke checks returned `200` for `/hidden-frame/final-export` and `/hidden-frame/frame-000`.
+- Phase 9 committed and pushed as `8cfbd29`.
+- Phase 10 implemented with admin-only expansion support.
+- `git diff --check`: passed for Phase 10 work.
+- `npm.cmd run lint`: passed.
+- `npm.cmd run validate:hidden-frame`: passed through Phase 10.
+- `npm.cmd run validate:curriculum`: passed.
+- `npm.cmd run build`: passed with existing Vite large chunk warning.
+- Route smoke checks returned `200` for `/hidden-frame/expansion` route shell.

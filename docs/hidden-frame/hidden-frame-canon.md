@@ -63,6 +63,10 @@ The Compression event appears. The archive reveals data-driven logs about creati
 
 The Final Export opens after the local prerequisite frame set is recovered. Frame 000 reveals that the first frame was never missing; it begins when human choice enters the work.
 
+### 2026-07-13 - Phase 10
+
+The expansion index is added as admin-only maintenance tooling. It is not an in-world puzzle, does not expose answers, and does not display student data.
+
 ## Locations
 
 ### Archive
@@ -88,6 +92,10 @@ A web-based object/modeling clue space established in Phase 6. It represents obj
 ### Final Export
 
 The ending space established in Phase 9. It uses local prerequisite frame recovery and reveals Frame 000 without grades, points, or class credit.
+
+### Expansion Index
+
+An admin-only maintenance view established in Phase 10. It documents extension points and asset requests; it is not part of the student-facing mystery path.
 
 ### VHS / Signal Space
 
@@ -182,6 +190,14 @@ First appearance: `/hidden-frame/final-export`
 Summary: The first Hidden Frame ending route. It checks the local prerequisite frame set and links to Frame 000 when the ending is ready.
 
 Related frame: `HF-FRAME-000`
+
+### HF-ADMIN-PHASE-10
+
+Title: Expansion Tools
+
+First appearance: `/hidden-frame/expansion`
+
+Summary: Admin-only planning view for extension points and future asset requests. It is answer-free, student-data-free, and separated from student-facing routes.
 
 ## Recovered Files
 
@@ -1261,7 +1277,7 @@ Potential future threads:
 
 ## Student Discoveries
 
-No student discoveries are recorded through Phase 9.
+No student discoveries are recorded through Phase 10.
 
 Future entries should avoid naming students unless the teacher explicitly approves a privacy-safe classroom convention.
 

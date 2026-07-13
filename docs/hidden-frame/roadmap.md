@@ -117,16 +117,16 @@ Implemented work:
 
 ### Phase 10: Admin and Expansion Tools
 
-Status: Next.
+Status: Complete.
 
 Goal: make future Hidden Frame content easier to maintain.
 
-Planned work:
+Implemented work:
 
-- Add data validation and content expansion docs.
-- Add optional dev/admin preview tools only if they can be separated from student-facing routes safely.
-- Track future asset requests.
-- Document extension points for new files, frames, arcs, and puzzle types.
+- Added data validation and content expansion docs.
+- Added admin-only expansion preview tooling separated from student-facing routes.
+- Tracked future asset requests.
+- Documented extension points for new files, frames, arcs, and puzzle types.
 
 ## Validation Gates
 

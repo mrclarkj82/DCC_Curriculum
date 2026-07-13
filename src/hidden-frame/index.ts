@@ -6,9 +6,12 @@ export {
 } from './hiddenFramePhase0Assets';
 export { AchievementBadge } from './components/AchievementBadge';
 export { AchievementGrid } from './components/AchievementGrid';
+export { AssetRequestList } from './components/AssetRequestList';
 export { CompressionLog } from './components/CompressionLog';
 export { CompressionWarningPanel } from './components/CompressionWarningPanel';
 export { CorruptedFileCard } from './components/CorruptedFileCard';
+export { ExpansionChecklist } from './components/ExpansionChecklist';
+export { ExpansionSafetyPanel } from './components/ExpansionSafetyPanel';
 export { FinalExportPanel } from './components/FinalExportPanel';
 export { FrameCard } from './components/FrameCard';
 export { FrameCollectionGrid } from './components/FrameCollectionGrid';
@@ -51,6 +54,12 @@ export {
   HIDDEN_FRAME_FINAL_FRAME_ID,
   hiddenFrameFinalPrerequisiteFrameIds,
 } from './data/hiddenFrameFinalExport';
+export {
+  hiddenFrameAssetRequests,
+  hiddenFrameExpansionPoints,
+  type HiddenFrameAssetRequest,
+  type HiddenFrameExpansionPoint,
+} from './data/hiddenFrameExpansionManifest';
 export {
   hiddenFrameCameraFiles,
   hiddenFrameFiles,

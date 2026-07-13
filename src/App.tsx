@@ -13,6 +13,7 @@ import { HiddenFrameFilePage } from './hidden-frame/pages/HiddenFrameFilePage';
 import { HiddenFrameFinalExportPage } from './hidden-frame/pages/HiddenFrameFinalExportPage';
 import { HiddenFrameFrame000Page } from './hidden-frame/pages/HiddenFrameFrame000Page';
 import { HiddenFrameLandingPage } from './hidden-frame/pages/HiddenFrameLandingPage';
+import { HiddenFrameExpansionPage } from './hidden-frame/pages/HiddenFrameExpansionPage';
 import { HiddenFrameObjectsPage } from './hidden-frame/pages/HiddenFrameObjectsPage';
 import { HiddenFrameRenderRoomPage } from './hidden-frame/pages/HiddenFrameRenderRoomPage';
 import { HiddenFrameTimelinePage } from './hidden-frame/pages/HiddenFrameTimelinePage';
@@ -74,6 +75,7 @@ export function App() {
           </Route>
           <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
             <Route path="/admin" element={<AdminPage />} />
+            <Route path="/hidden-frame/expansion" element={<HiddenFrameExpansionPage />} />
           </Route>
         </Route>
       </Route>

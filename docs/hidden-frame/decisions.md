@@ -180,3 +180,17 @@ Consequences:
 - `/hidden-frame/final-export` reports local prerequisite progress.
 - `/hidden-frame/frame-000` recovers `frame-000` locally after prerequisites are complete.
 - The final ending reinforces human creative choice rather than awarding points or class credit.
+
+## Decision 014: Expansion Tooling Is Admin-Only And Answer-Free
+
+Date: 2026-07-13
+
+Decision: Phase 10 expansion tooling lives behind the existing admin route guard and shows extension points and asset requests only.
+
+Reason: Future maintainability is useful, but student-facing pages must not expose hidden answers, student data, private class data, or unsafe controls.
+
+Consequences:
+
+- `/hidden-frame/expansion` is registered only inside the admin-protected route group.
+- The expansion manifest does not include password answers or accepted answer variants.
+- Future admin/dev tooling must stay separated from student-facing Hidden Frame pages and avoid student private data.

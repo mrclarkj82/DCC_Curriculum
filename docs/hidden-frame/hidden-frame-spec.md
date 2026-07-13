@@ -8,7 +8,7 @@ Before implementing any future Hidden Frame feature, read this specification fir
 
 The Hidden Frame should add curiosity, observation, media literacy, and creative problem solving to the DCC site without distracting from class workflows or compromising student privacy. It must stay inside the DCC website, approved class materials, and future approved project files.
 
-Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data. Phase 7 adds local signal badges, schema version 3 progress, and local reset support. Phase 8 adds the safe Compression event route with data-driven logs, glitch/redaction UI, and corrupted card states. Phase 9 adds the Final Export ending and Frame 000 reveal.
+Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data. Phase 7 adds local signal badges, schema version 3 progress, and local reset support. Phase 8 adds the safe Compression event route with data-driven logs, glitch/redaction UI, and corrupted card states. Phase 9 adds the Final Export ending and Frame 000 reveal. Phase 10 adds admin-only expansion tooling, asset request tracking, and an extension guide.
 
 ## Core Principles
 
@@ -119,6 +119,8 @@ docs/
     PROGRESS.md
     changelog.md
     decisions.md
+    asset-requests.md
+    extension-guide.md
     hidden-frame-canon.md
     hidden-frame-spec.md
     roadmap.md
@@ -149,17 +151,21 @@ scripts/
   validate-hidden-frame-phase7.mjs
   validate-hidden-frame-phase8.mjs
   validate-hidden-frame-phase9.mjs
+  validate-hidden-frame-phase10.mjs
 src/
   hidden-frame/
     components/
       AchievementBadge.tsx
       AchievementGrid.tsx
+      AssetRequestList.tsx
       CameraClueCard.tsx
       CameraClueGrid.tsx
       CompressionLog.tsx
       CompressionWarningPanel.tsx
       CompositionGuideFrame.tsx
       CorruptedFileCard.tsx
+      ExpansionChecklist.tsx
+      ExpansionSafetyPanel.tsx
       FinalExportPanel.tsx
       FrameCard.tsx
       Frame000Reveal.tsx
@@ -185,6 +191,7 @@ src/
       hiddenFrameAchievements.ts
       hiddenFrameCameraClues.ts
       hiddenFrameCompressionLogs.ts
+      hiddenFrameExpansionManifest.ts
       hiddenFrameFinalExport.ts
       hiddenFrameFrames.ts
       hiddenFrameFiles.ts
@@ -200,6 +207,7 @@ src/
       HiddenFrameCameraPage.tsx
       HiddenFrameCollectionPage.tsx
       HiddenFrameCompressionPage.tsx
+      HiddenFrameExpansionPage.tsx
       HiddenFrameFilePage.tsx
       HiddenFrameFinalExportPage.tsx
       HiddenFrameFrame000Page.tsx
@@ -236,6 +244,7 @@ Implemented routes:
 - `/hidden-frame/compression`
 - `/hidden-frame/final-export`
 - `/hidden-frame/frame-000`
+- `/hidden-frame/expansion` (admin only)
 
 Reserved future routes:
 
@@ -266,6 +275,9 @@ Future components should be modular, reusable, and data-driven. Phase 1 created 
 - `RedactedText`
 - `AchievementBadge`
 - `AchievementGrid`
+- `AssetRequestList`
+- `ExpansionChecklist`
+- `ExpansionSafetyPanel`
 - `FrameCard`
 - `FrameCollectionGrid`
 - `TimelineTrack`
@@ -382,7 +394,7 @@ Run `npm run validate:curriculum` when a change touches curriculum, seed data, l
 
 Future interactive routes should include manual accessibility checks for keyboard focus, reduced motion, readable contrast, and discoverable hidden controls.
 
-`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, the Phase 6 object inspection validation script, the Phase 7 progression validation script, the Phase 8 Compression validation script, and the Phase 9 Final Export validation script.
+`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, the Phase 6 object inspection validation script, the Phase 7 progression validation script, the Phase 8 Compression validation script, the Phase 9 Final Export validation script, and the Phase 10 expansion validation script.
 
 ## Future Expansion
 
@@ -648,6 +660,54 @@ Accessibility notes: provides a group `aria-label` and delegates card semantics 
 
 Extension strategy: map over data so new badges can be added without page changes.
 
+### ExpansionSafetyPanel
+
+Purpose: displays admin-only safety rules for future Hidden Frame expansion.
+
+Inputs: none.
+
+Outputs: an answer-free safety panel.
+
+Dependencies: Hidden Frame CSS.
+
+Intended reuse: admin-only expansion route and future maintainer views.
+
+Accessibility notes: uses semantic headings and a text list.
+
+Extension strategy: update copy as future governance decisions change.
+
+### ExpansionChecklist
+
+Purpose: renders the answer-free extension points from `hiddenFrameExpansionManifest.ts`.
+
+Inputs: an array of `HiddenFrameExpansionPoint` records.
+
+Outputs: a grid of content-system cards.
+
+Dependencies: `hiddenFrameExpansionManifest.ts` and Hidden Frame CSS.
+
+Intended reuse: admin-only expansion route.
+
+Accessibility notes: extension paths and safety notes are visible text.
+
+Extension strategy: add expansion points through manifest data.
+
+### AssetRequestList
+
+Purpose: renders future asset request tracking from `hiddenFrameExpansionManifest.ts`.
+
+Inputs: an array of `HiddenFrameAssetRequest` records.
+
+Outputs: a list/grid of asset request cards.
+
+Dependencies: `hiddenFrameExpansionManifest.ts` and Hidden Frame CSS.
+
+Intended reuse: admin-only expansion route and future planning views.
+
+Accessibility notes: priority and status are visible text, not color-only states.
+
+Extension strategy: keep requests free of credentials, private media, and student data.
+
 ### TimelineTrack
 
 Purpose: renders a sequence of video-production clues along an in-app timeline.
@@ -892,6 +952,8 @@ Phase 8 introduces The Compression as creative flattening, template drift, and l
 
 Phase 9 gates Frame 000 behind the local prerequisite frame set and recovers it locally when opened. The ending is thematic and optional, not a score, grade, or class credit.
 
+Phase 10 adds admin-only expansion tooling that is answer-free and student-data-free. It documents extension points, asset requests, and validation expectations without adding student-facing controls.
+
 ## Technical Debt & TODO
 
 - Expand structured data schemas for Compression logs, final export entries, admin preview tooling, and future content packs before adding content at larger scale.
@@ -945,6 +1007,10 @@ Implemented the first Compression event with `/hidden-frame/compression`, `hidde
 
 Implemented the Final Export ending with `/hidden-frame/final-export`, `/hidden-frame/frame-000`, `hiddenFrameFinalExport.ts`, Frame 000 / `FINAL EXPORT`, `FinalExportPanel`, `Frame000Reveal`, local final-frame recovery, and a Phase 9 validation script.
 
+### Phase 10 - 2026-07-13
+
+Implemented safe expansion tooling with admin-only `/hidden-frame/expansion`, `hiddenFrameExpansionManifest.ts`, `ExpansionSafetyPanel`, `ExpansionChecklist`, `AssetRequestList`, `asset-requests.md`, `extension-guide.md`, and a Phase 10 validation script.
+
 ## Acceptance Criteria
 
 - The Phase 0 assets are imported without modifying artwork.
@@ -973,3 +1039,4 @@ Implemented the Final Export ending with `/hidden-frame/final-export`, `/hidden-
 - `/hidden-frame/compression` presents data-driven Compression logs and corrupted states without real-threat, malware, breach, horror, or unsafe scavenger-hunt framing.
 - `/hidden-frame/final-export` and `/hidden-frame/frame-000` gate and reveal Frame 000 locally after the prerequisite frame set is recovered.
 - The ending reinforces that the first frame was never missing and that human choices give tools creative meaning.
+- `/hidden-frame/expansion` is admin-only, answer-free, student-data-free, and documents extension points and future asset requests.

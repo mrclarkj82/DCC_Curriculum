@@ -1,5 +1,15 @@
 # Hidden Frame Changelog
 
+## Phase 10 - 2026-07-13
+
+- Added admin-only `/hidden-frame/expansion` behind the existing admin route guard.
+- Added expansion manifest data in `hiddenFrameExpansionManifest.ts`.
+- Added reusable components: `ExpansionSafetyPanel`, `ExpansionChecklist`, and `AssetRequestList`.
+- Added `docs/hidden-frame/extension-guide.md` for future content expansion.
+- Added `docs/hidden-frame/asset-requests.md` for future asset request tracking.
+- Expanded `npm run validate:hidden-frame` with Phase 10 checks for admin guard, manifest coverage, answer-free tooling, docs, and CSS.
+- Updated spec, canon, progress, roadmap, and acceptance criteria.
+
 ## Phase 9 - 2026-07-13
 
 - Added `/hidden-frame/final-export` for the final prerequisite gate.
