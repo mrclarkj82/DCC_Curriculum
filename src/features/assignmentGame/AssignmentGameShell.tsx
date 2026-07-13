@@ -4,6 +4,7 @@ import { AssignmentGamePauseMenu } from './components/AssignmentGamePauseMenu';
 import { AssignmentGameStartMenu } from './components/AssignmentGameStartMenu';
 import { AssignmentGameViewport } from './components/AssignmentGameViewport';
 import { assignmentGameWorkingTitle } from './gameShellConstants';
+import { usePlayerCombat } from './hooks/usePlayerCombat';
 import { usePlayerMovement } from './hooks/usePlayerMovement';
 import type { AssignmentGameShellState } from './gameShellTypes';
 
@@ -13,6 +14,7 @@ export function AssignmentGameShell() {
   const isPreviewVisible = shellState === 'shellPreview' || shellState === 'paused';
   const isMovementEnabled = shellState === 'shellPreview';
   const playerState = usePlayerMovement(isMovementEnabled, previewKey);
+  const combatState = usePlayerCombat(isMovementEnabled, previewKey, playerState);
 
   const startNewGame = () => {
     setPreviewKey((currentKey) => currentKey + 1);
@@ -80,16 +82,17 @@ export function AssignmentGameShell() {
             </button>
           </div>
 
-          <AssignmentGameHud playerState={playerState} />
+          <AssignmentGameHud combatState={combatState} playerState={playerState} />
           <AssignmentGameViewport
+            combatState={combatState}
             isPaused={shellState === 'paused'}
             playerState={playerState}
             previewKey={previewKey}
           />
 
           <p className="muted">
-            Phase 4 adds the first data-driven level layout only. Combat, inventory data, dialogue,
-            progression, and saves are intentionally not active yet.
+            Phase 5 adds local-only sword and energy attack feedback. Enemies, inventory data,
+            dialogue, progression, and saves are intentionally not active yet.
           </p>
 
           {shellState === 'paused' && (

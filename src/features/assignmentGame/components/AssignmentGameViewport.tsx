@@ -2,18 +2,22 @@ import {
   assignmentGameMovementInstructions,
   assignmentGameWorkingTitle,
 } from '../gameShellConstants';
+import type { AssignmentGameCombatState } from '../combatTypes';
 import { ruinedCourtyardLevel } from '../levels/ruinedCourtyardLevel';
 import type { AssignmentGamePlayerState } from '../playerMovementTypes';
+import { AssignmentGameCombatLayer } from './AssignmentGameCombatLayer';
 import { AssignmentGameLevelMap } from './AssignmentGameLevelMap';
 import { AssignmentGamePlayer } from './AssignmentGamePlayer';
 
 interface AssignmentGameViewportProps {
+  combatState: AssignmentGameCombatState;
   isPaused: boolean;
   playerState: AssignmentGamePlayerState;
   previewKey: number;
 }
 
 export function AssignmentGameViewport({
+  combatState,
   isPaused,
   playerState,
   previewKey,
@@ -36,6 +40,7 @@ export function AssignmentGameViewport({
         aria-label={`${ruinedCourtyardLevel.name} top-down movement prototype`}
       >
         <AssignmentGameLevelMap level={ruinedCourtyardLevel} />
+        <AssignmentGameCombatLayer combatState={combatState} />
         <AssignmentGamePlayer playerState={playerState} />
         {isPaused && <span className="assignment-game-paused-ribbon">Paused</span>}
       </div>
