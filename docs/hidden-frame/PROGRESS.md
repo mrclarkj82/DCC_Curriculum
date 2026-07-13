@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 7. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, Phase 6 added the first Blender/object inspection arc, and Phase 7 added the local progression layer.
+The Hidden Frame is implemented through Phase 8. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, Phase 6 added the first Blender/object inspection arc, Phase 7 added the local progression layer, and Phase 8 added the safe Compression event.
 
 The current full-ARG working branch is:
 
@@ -20,8 +20,8 @@ The current full-ARG working branch is:
 | 5 | Unreal Engine Integration | Complete | Render Room route, Unreal clue data, Files 012-014, viewport readouts |
 | 6 | Blender/Object Mystery Arc | Complete | Objects route, object clue data, Files 015-017, inspection panels |
 | 7 | Student Progression System | Complete | Achievement data, signal badges, reset panel, schema v3 migration |
-| 8 | Compression Event | Next | Glitch/redaction/compression antagonist systems |
-| 9 | Final Export | Not Started | Frame 000 and completion ending |
+| 8 | Compression Event | Complete | Compression route, logs, glitch/redaction/corrupted states |
+| 9 | Final Export | Next | Frame 000 and completion ending |
 | 10 | Admin and Expansion Tools | Not Started | Long-term content expansion tools and docs |
 
 ## Completed Phase Summaries
@@ -126,31 +126,34 @@ Phase 7 added:
 - Richer progress summary counts for frames and recovered signals.
 - Phase 7 validation script.
 
+### Phase 8: The Compression Event
+
+Phase 8 added:
+
+- `/hidden-frame/compression`.
+- Compression log data in `hiddenFrameCompressionLogs.ts`.
+- `GlitchText`, `RedactedText`, `CompressionWarningPanel`, and `CorruptedFileCard`.
+- Corrupted log cards and safe Compression warning panels.
+- Phase 8 validation script.
+
 ## Active Phase
 
-### Phase 8: The Compression Event
+### Phase 9: Final Export
 
 Objective:
 
-Add the first safe Compression event layer without making it feel like malware, a threat, or a real security breach.
+Add the first ending route, reveal Frame 000, and close the initial ARG arc around human creative choice.
 
 Required work:
 
-- Add `/hidden-frame/compression`.
-- Add Compression log data.
-- Add glitch/redaction/corrupted visual states.
-- Add Compression warning panels with safe antagonist language.
-- Preserve calm, school-appropriate scope.
+- Add `/hidden-frame/final-export`.
+- Add `/hidden-frame/frame-000`.
+- Gate the final route behind the intended local prerequisite frame set.
+- Add Frame 000 / Final Export ending components.
+- Reinforce that the first frame was never missing and creativity begins with human choice.
 - Update docs and validation.
 
 ## Backlog
-
-### Phase 8 Backlog
-
-- `/hidden-frame/compression`.
-- Compression logs and warning panels.
-- Glitch/redaction/corrupted states.
-- Safe antagonist language.
 
 ### Phase 9 Backlog
 
@@ -225,3 +228,11 @@ Required work:
 - `npm.cmd run validate:curriculum`: passed.
 - `npm.cmd run build`: passed with existing Vite large chunk warning.
 - Route smoke checks returned `200` for `/hidden-frame/collection`.
+- Phase 7 committed and pushed as `9689984`.
+- Phase 8 implemented with safe Compression event support.
+- `git diff --check`: passed for Phase 8 work.
+- `npm.cmd run lint`: passed.
+- `npm.cmd run validate:hidden-frame`: passed through Phase 8.
+- `npm.cmd run validate:curriculum`: passed.
+- `npm.cmd run build`: passed with existing Vite large chunk warning.
+- Route smoke checks returned `200` for `/hidden-frame/compression`.

@@ -1,5 +1,15 @@
 # Hidden Frame Changelog
 
+## Phase 8 - 2026-07-13
+
+- Added `/hidden-frame/compression` for the first safe Compression event route.
+- Added structured Compression log data in `hiddenFrameCompressionLogs.ts`.
+- Added reusable components: `GlitchText`, `RedactedText`, `CompressionWarningPanel`, and `CorruptedFileCard`.
+- Added corrupted log cards, redacted text, glitch text, and warning panel styles.
+- Framed The Compression as creative flattening/generic output, not malware, a security breach, a monster, or a threat.
+- Expanded `npm run validate:hidden-frame` with Phase 8 checks for route, data-driven logs, safe copy, and Compression CSS.
+- Updated spec, canon, progress, roadmap, and acceptance criteria.
+
 ## Phase 7 - 2026-07-13
 
 - Migrated local Hidden Frame progress to schema version 3 with `achievementIds`.

@@ -8,7 +8,7 @@ Before implementing any future Hidden Frame feature, read this specification fir
 
 The Hidden Frame should add curiosity, observation, media literacy, and creative problem solving to the DCC site without distracting from class workflows or compromising student privacy. It must stay inside the DCC website, approved class materials, and future approved project files.
 
-Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data. Phase 7 adds local signal badges, schema version 3 progress, and local reset support.
+Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data. Phase 7 adds local signal badges, schema version 3 progress, and local reset support. Phase 8 adds the safe Compression event route with data-driven logs, glitch/redaction UI, and corrupted card states.
 
 ## Core Principles
 
@@ -147,6 +147,7 @@ scripts/
   validate-hidden-frame-phase5.mjs
   validate-hidden-frame-phase6.mjs
   validate-hidden-frame-phase7.mjs
+  validate-hidden-frame-phase8.mjs
 src/
   hidden-frame/
     components/
@@ -155,9 +156,12 @@ src/
       CameraClueCard.tsx
       CameraClueGrid.tsx
       CompressionLog.tsx
+      CompressionWarningPanel.tsx
       CompositionGuideFrame.tsx
+      CorruptedFileCard.tsx
       FrameCard.tsx
       FrameCollectionGrid.tsx
+      GlitchText.tsx
       HiddenFrameIcon.tsx
       HiddenFrameProgress.tsx
       HiddenFrameResetPanel.tsx
@@ -166,6 +170,7 @@ src/
       ObjectClueGrid.tsx
       ObjectInspectionFrame.tsx
       PasswordGate.tsx
+      RedactedText.tsx
       RecoveredFileCard.tsx
       TimelineClueCard.tsx
       TimelineTrack.tsx
@@ -176,6 +181,7 @@ src/
     data/
       hiddenFrameAchievements.ts
       hiddenFrameCameraClues.ts
+      hiddenFrameCompressionLogs.ts
       hiddenFrameFrames.ts
       hiddenFrameFiles.ts
       hiddenFrameObjectClues.ts
@@ -189,6 +195,7 @@ src/
       HiddenFrameArchivePage.tsx
       HiddenFrameCameraPage.tsx
       HiddenFrameCollectionPage.tsx
+      HiddenFrameCompressionPage.tsx
       HiddenFrameFilePage.tsx
       HiddenFrameLandingPage.tsx
       HiddenFrameObjectsPage.tsx
@@ -220,12 +227,12 @@ Implemented routes:
 - `/hidden-frame/render-room`
 - `/hidden-frame/unreal`
 - `/hidden-frame/objects`
+- `/hidden-frame/compression`
 
 Reserved future routes:
 
 - `/hidden-frame/frame/:id`
 - `/hidden-frame/progress`
-- `/hidden-frame/compression`
 - `/hidden-frame/final-export`
 - `/hidden-frame/frame-000`
 
@@ -245,6 +252,10 @@ Future components should be modular, reusable, and data-driven. Phase 1 created 
 - `HiddenFrameProgress`
 - `HiddenFrameResetPanel`
 - `CompressionLog`
+- `CompressionWarningPanel`
+- `CorruptedFileCard`
+- `GlitchText`
+- `RedactedText`
 - `AchievementBadge`
 - `AchievementGrid`
 - `FrameCard`
@@ -363,7 +374,7 @@ Run `npm run validate:curriculum` when a change touches curriculum, seed data, l
 
 Future interactive routes should include manual accessibility checks for keyboard focus, reduced motion, readable contrast, and discoverable hidden controls.
 
-`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, the Phase 6 object inspection validation script, and the Phase 7 progression validation script.
+`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, the Phase 6 object inspection validation script, the Phase 7 progression validation script, and the Phase 8 Compression validation script.
 
 ## Future Expansion
 
@@ -468,6 +479,70 @@ Intended reuse: archive notices, recovered files, Compression states, and future
 Accessibility notes: uses a labeled `aside` and avoids content that implies danger, threats, or real-world action.
 
 Extension strategy: add tone variants through the typed `tone` prop and CSS.
+
+### GlitchText
+
+Purpose: renders short Compression-flavored text with a static glitch treatment.
+
+Inputs: text children.
+
+Outputs: inline text with decorative pseudo-layering.
+
+Dependencies: Hidden Frame CSS.
+
+Intended reuse: Compression headings, corrupted cards, and future system messages.
+
+Accessibility notes: the readable text remains present; the glitch layer is decorative.
+
+Extension strategy: keep effects CSS-only and reduced-motion-safe unless future accessibility review approves motion.
+
+### RedactedText
+
+Purpose: renders a redacted phrase while preserving an accessible label for context.
+
+Inputs: `label`.
+
+Outputs: inline redaction bars with `aria-label`.
+
+Dependencies: Hidden Frame CSS.
+
+Intended reuse: Compression logs and future redacted records.
+
+Accessibility notes: redaction is visual; the label remains available to assistive technology.
+
+Extension strategy: use for atmosphere only, not for security or graded secrecy.
+
+### CompressionWarningPanel
+
+Purpose: displays safe Compression event warnings about creative flattening.
+
+Inputs: `title`, optional `tone`, and children.
+
+Outputs: a labeled warning panel using `GlitchText`.
+
+Dependencies: `GlitchText`, Compression data tone values, and Hidden Frame CSS.
+
+Intended reuse: Compression route, final export setup, and future system notices.
+
+Accessibility notes: copy must clearly avoid real malware, breach, threat, or horror language.
+
+Extension strategy: add new tone values through typed data and CSS only when future logs need them.
+
+### CorruptedFileCard
+
+Purpose: displays one data-driven Compression log as a corrupted archive card.
+
+Inputs: a `HiddenFrameCompressionLog`.
+
+Outputs: a semantic article with timestamp, tone, visible text, redactions, and restoration prompt.
+
+Dependencies: `hiddenFrameCompressionLogs.ts`, `GlitchText`, `RedactedText`, and Hidden Frame CSS.
+
+Intended reuse: Compression route and future Compression log indexes.
+
+Accessibility notes: decorative corruption layers do not carry the only meaningful information.
+
+Extension strategy: add new log records through data before adding card variants.
 
 ### FrameCard
 
@@ -773,6 +848,8 @@ Phase 6 uses in-site object inspection panels instead of uploaded or private pro
 
 Phase 7 adds local signal badges and reset support without Firestore persistence, teacher dashboards, public comparison, grades, or leaderboards. Achievement IDs are derived locally from archive visits, completed files, and recovered frame counts.
 
+Phase 8 introduces The Compression as creative flattening, template drift, and loss of specific human choices. It must not be framed as real malware, a breach, a threat, a monster, or a horror escalation.
+
 ## Technical Debt & TODO
 
 - Expand structured data schemas for Compression logs, final export entries, admin preview tooling, and future content packs before adding content at larger scale.
@@ -818,6 +895,10 @@ Implemented the first Blender/object inspection signal with `/hidden-frame/objec
 
 Implemented the local progression layer with schema version 3 progress, `achievementIds`, `hiddenFrameAchievements.ts`, `AchievementBadge`, `AchievementGrid`, `HiddenFrameResetPanel`, richer `HiddenFrameProgress` summary copy, local-only reset behavior, and a Phase 7 validation script.
 
+### Phase 8 - 2026-07-13
+
+Implemented the first Compression event with `/hidden-frame/compression`, `hiddenFrameCompressionLogs.ts`, `GlitchText`, `RedactedText`, `CompressionWarningPanel`, `CorruptedFileCard`, safe creative-flattening copy, corrupted/redacted styles, and a Phase 8 validation script.
+
 ## Acceptance Criteria
 
 - The Phase 0 assets are imported without modifying artwork.
@@ -843,3 +924,4 @@ Implemented the local progression layer with schema version 3 progress, `achieve
 - Files 015 through 017 extend the recovered-file system with object/modeling vocabulary and rewards.
 - `/hidden-frame/collection` supports frame cards, local signal badges, progress summary, and optional local reset without grade or leaderboard presentation.
 - Local progress schema version 3 preserves migration boundaries and keeps future persistence swappable behind the adapter.
+- `/hidden-frame/compression` presents data-driven Compression logs and corrupted states without real-threat, malware, breach, horror, or unsafe scavenger-hunt framing.

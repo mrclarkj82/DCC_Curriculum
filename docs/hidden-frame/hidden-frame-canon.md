@@ -19,7 +19,7 @@ Keep this document separate from `docs/hidden-frame/hidden-frame-spec.md`. The s
 
 The Archivist is the calm archive voice attached to recovered files. The Archivist rewards careful observation, composition awareness, and production vocabulary. No identity, biography, real-world role, or teacher/student connection is canon.
 
-The Compression is named by the Phase 0 visual language as an antagonist or antagonist-state concept. Its identity, motive, rules, voice, and story role are not yet established.
+The Compression is the calm antagonist-state introduced in Phase 8. It represents creative flattening, template drift, generic output, and the loss of specific human choices. It is not malware, a real security breach, a monster, or a threat.
 
 ## Timeline
 
@@ -55,6 +55,10 @@ The first object signal appears. Files 015 through 017 extend the archive throug
 
 The collection begins showing local signal badges. These badges mark optional discovery on the current device only and are not grades, points, public rankings, or classroom credit.
 
+### 2026-07-13 - Phase 8
+
+The Compression event appears. The archive reveals data-driven logs about creative choices being flattened into generic output, while explicitly staying safe, metaphorical, and contained inside the DCC site.
+
 ## Locations
 
 ### Archive
@@ -63,7 +67,7 @@ A visual setting for forgotten digital records, recovered files, frame cards, an
 
 ### Compression
 
-A visual state associated with red warnings, block artifacts, corruption, and antagonist pressure. Phase 2 uses Compression styling for locked and output-related states, but no specific Compression character event is canon yet.
+A visual state associated with red warnings, block artifacts, corruption, and antagonist pressure. Phase 8 establishes `/hidden-frame/compression` as the first Compression route. The concept is creative flattening, not danger.
 
 ### Render Room
 
@@ -150,6 +154,16 @@ Summary: The first Blender/object expansion route. It contains in-app object ins
 Related files: `HF-FILE-015`, `HF-FILE-016`, `HF-FILE-017`
 
 Related frames: `HF-FRAME-015`, `HF-FRAME-016`, `HF-FRAME-017`
+
+### HF-ARCHIVE-PHASE-8
+
+Title: Compression Event
+
+First appearance: `/hidden-frame/compression`
+
+Summary: The first Compression event route. It contains in-app logs for creative flattening, template drift, context redaction, and flat output warnings. It does not create a real threat, real malware, real security breach, or real-world task.
+
+Related logs: `compression-log-original-choice`, `compression-log-template-drift`, `compression-log-redacted-context`, `compression-log-flat-output`
 
 ## Recovered Files
 
@@ -899,8 +913,6 @@ Unlock condition: Complete all currently available files, Files 001 through 017.
 
 ## Compression Logs
 
-No antagonist Compression logs are canon in Phase 2.
-
 Phase 2 includes light system messages such as "First chain visible," "Record locked," "Collection waiting," and "First chain complete." These are interface atmosphere, not threats or story escalation.
 
 Phase 3 includes "Timeline signal" and "Signal scope" messages. These are safety and atmosphere copy, not plot threats.
@@ -912,6 +924,38 @@ Phase 5 includes "Render Room signal," "Editor preview," and "Engine scope" mess
 Phase 6 includes "Object signal" and "Object scope" messages. These are safety and atmosphere copy, not instructions to upload files, open private folders, or leave the site.
 
 Phase 7 includes local progress and reset copy. These are interface messages, not narrative threats or class-management records.
+
+### compression-log-original-choice
+
+Title: Original Choice Detected
+
+Tone: warning
+
+Canon summary: A student-selected camera angle is preserved because unusual does not mean wrong.
+
+### compression-log-template-drift
+
+Title: Template Drift
+
+Tone: template
+
+Canon summary: A project begins to sound generic after its specific details are removed.
+
+### compression-log-redacted-context
+
+Title: Context Redacted
+
+Tone: redacted
+
+Canon summary: The project remains technically correct, but the reasons for the choices are hidden.
+
+### compression-log-flat-output
+
+Title: Flat Output Warning
+
+Tone: corrupted
+
+Canon summary: A final export loses its strange edges when risky decisions are removed.
 
 ## Symbols
 
@@ -1054,6 +1098,14 @@ Phase 7 adds:
 - Current archive recovered.
 - Reset this device.
 
+Phase 8 adds:
+
+- Flattening detected.
+- Template drift.
+- Context redacted.
+- Flat output warning.
+- Deliberate choice.
+
 ## Puzzle Solutions
 
 ### First Puzzle Chain
@@ -1144,7 +1196,6 @@ Do not store future active passwords in client code unless they are intentionall
 
 ## Unanswered Questions
 
-- What is The Compression?
 - Who or what leaves the broken frame symbol?
 - Why do recovered frames preserve production vocabulary?
 - What happens after the first five frames are recovered?
@@ -1152,6 +1203,7 @@ Do not store future active passwords in client code unless they are intentionall
 - Why do composition guides appear before the Render Room fully opens?
 - Why does the Render Room respond to coordinates, logic, and trigger boundaries?
 - Why do object details preserve clues after the Render Room opens?
+- What happens after The Compression tries to flatten the archive?
 - How do Unreal, Blender, cinematography, and video clues connect beyond this first chain?
 - Why does the Archivist care about what a frame includes and excludes?
 

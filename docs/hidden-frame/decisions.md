@@ -152,3 +152,17 @@ Consequences:
 - `/hidden-frame/collection` displays signal badges and a two-step local reset panel.
 - Reset clears only this browser's Hidden Frame progress and does not touch class records, submissions, responses, rosters, or Firestore data.
 - Future account-based persistence still requires a new documented decision and security review.
+
+## Decision 012: Compression Is Creative Flattening, Not Danger
+
+Date: 2026-07-13
+
+Decision: Phase 8 presents The Compression as a metaphor for generic output, template drift, and loss of specific human choices, not as malware, a real breach, a monster, or a threat.
+
+Reason: The Hidden Frame must remain calm, school-safe, optional, and fully contained inside the DCC website.
+
+Consequences:
+
+- `/hidden-frame/compression` includes explicit safe-scope copy.
+- Compression logs use redaction/glitch visuals for atmosphere only.
+- Future Compression content must avoid real-world security language, threats, horror escalation, or unsafe instructions.

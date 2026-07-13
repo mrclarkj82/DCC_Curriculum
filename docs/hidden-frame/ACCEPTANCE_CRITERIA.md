@@ -182,6 +182,8 @@ Phase 7 is complete when:
 
 ## Phase 8 Acceptance Criteria: The Compression Event
 
+Status: Complete.
+
 Phase 8 is complete when:
 
 - `/hidden-frame/compression` exists.

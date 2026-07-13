@@ -7,8 +7,11 @@ export {
 export { AchievementBadge } from './components/AchievementBadge';
 export { AchievementGrid } from './components/AchievementGrid';
 export { CompressionLog } from './components/CompressionLog';
+export { CompressionWarningPanel } from './components/CompressionWarningPanel';
+export { CorruptedFileCard } from './components/CorruptedFileCard';
 export { FrameCard } from './components/FrameCard';
 export { FrameCollectionGrid } from './components/FrameCollectionGrid';
+export { GlitchText } from './components/GlitchText';
 export { HiddenFrameIcon, type HiddenFrameIconSize, type HiddenFrameIconVariant } from './components/HiddenFrameIcon';
 export { HiddenFrameProgress } from './components/HiddenFrameProgress';
 export { HiddenFrameResetPanel } from './components/HiddenFrameResetPanel';
@@ -17,6 +20,7 @@ export { ObjectClueCard } from './components/ObjectClueCard';
 export { ObjectClueGrid } from './components/ObjectClueGrid';
 export { ObjectInspectionFrame } from './components/ObjectInspectionFrame';
 export { PasswordGate } from './components/PasswordGate';
+export { RedactedText } from './components/RedactedText';
 export { RecoveredFileCard } from './components/RecoveredFileCard';
 export { TimelineClueCard } from './components/TimelineClueCard';
 export { TimelineTrack } from './components/TimelineTrack';
@@ -34,6 +38,12 @@ export {
   type HiddenFrameAchievementCriteria,
   type HiddenFrameAchievementProgressState,
 } from './data/hiddenFrameAchievements';
+export {
+  getHiddenFrameCompressionLogById,
+  hiddenFrameCompressionLogs,
+  type HiddenFrameCompressionLog,
+  type HiddenFrameCompressionLogTone,
+} from './data/hiddenFrameCompressionLogs';
 export {
   hiddenFrameCameraFiles,
   hiddenFrameFiles,

@@ -91,18 +91,20 @@ Implemented work:
 
 ### Phase 8: The Compression Event
 
-Status: Next.
+Status: Complete.
 
 Goal: add the safe antagonist/event layer.
 
-Planned work:
+Implemented work:
 
-- Add `/hidden-frame/compression`.
-- Add Compression log data/routes.
-- Add glitch text, redaction, corrupted cards, warning panels, and Compression visual states.
-- Keep tone about creative flattening, not threats or real malware.
+- Added `/hidden-frame/compression`.
+- Added Compression log data.
+- Added glitch text, redaction, corrupted cards, warning panels, and Compression visual states.
+- Kept tone about creative flattening, not threats or real malware.
 
 ### Phase 9: Final Export
+
+Status: Next.
 
 Goal: complete the first ARG arc.
 
