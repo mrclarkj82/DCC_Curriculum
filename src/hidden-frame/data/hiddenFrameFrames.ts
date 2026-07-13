@@ -12,6 +12,15 @@ export interface HiddenFrameRewardFrame {
 
 export const hiddenFrameRewardFrames: HiddenFrameRewardFrame[] = [
   {
+    id: 'frame-000',
+    frameNumber: '000',
+    title: 'FINAL EXPORT',
+    signalWord: 'FINAL EXPORT',
+    sourceFileId: '000',
+    description: 'The first frame was never missing. It begins when a human choice enters the work.',
+    thumbnail: hiddenFramePhase0Assets.ui.titleCard,
+  },
+  {
     id: 'frame-001',
     frameNumber: '001',
     title: 'LUMEN',

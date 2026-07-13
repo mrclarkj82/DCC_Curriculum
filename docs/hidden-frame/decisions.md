@@ -166,3 +166,17 @@ Consequences:
 - `/hidden-frame/compression` includes explicit safe-scope copy.
 - Compression logs use redaction/glitch visuals for atmosphere only.
 - Future Compression content must avoid real-world security language, threats, horror escalation, or unsafe instructions.
+
+## Decision 013: Frame 000 Uses Local Prerequisite Gating
+
+Date: 2026-07-13
+
+Decision: Phase 9 reveals Frame 000 after the local prerequisite frame set has been recovered in this browser.
+
+Reason: The ending should reward completing the first optional ARG arc without creating account sync, grading, or teacher-facing data requirements.
+
+Consequences:
+
+- `/hidden-frame/final-export` reports local prerequisite progress.
+- `/hidden-frame/frame-000` recovers `frame-000` locally after prerequisites are complete.
+- The final ending reinforces human creative choice rather than awarding points or class credit.

@@ -194,6 +194,8 @@ Phase 8 is complete when:
 
 ## Phase 9 Acceptance Criteria: Final Export
 
+Status: Complete.
+
 Phase 9 is complete when:
 
 - `/hidden-frame/final-export` exists.

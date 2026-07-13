@@ -9,8 +9,10 @@ export { AchievementGrid } from './components/AchievementGrid';
 export { CompressionLog } from './components/CompressionLog';
 export { CompressionWarningPanel } from './components/CompressionWarningPanel';
 export { CorruptedFileCard } from './components/CorruptedFileCard';
+export { FinalExportPanel } from './components/FinalExportPanel';
 export { FrameCard } from './components/FrameCard';
 export { FrameCollectionGrid } from './components/FrameCollectionGrid';
+export { Frame000Reveal } from './components/Frame000Reveal';
 export { GlitchText } from './components/GlitchText';
 export { HiddenFrameIcon, type HiddenFrameIconSize, type HiddenFrameIconVariant } from './components/HiddenFrameIcon';
 export { HiddenFrameProgress } from './components/HiddenFrameProgress';
@@ -44,6 +46,11 @@ export {
   type HiddenFrameCompressionLog,
   type HiddenFrameCompressionLogTone,
 } from './data/hiddenFrameCompressionLogs';
+export {
+  getHiddenFrameFinalExportStatus,
+  HIDDEN_FRAME_FINAL_FRAME_ID,
+  hiddenFrameFinalPrerequisiteFrameIds,
+} from './data/hiddenFrameFinalExport';
 export {
   hiddenFrameCameraFiles,
   hiddenFrameFiles,
@@ -94,6 +101,7 @@ export {
   getResolvedHiddenFrameFileState,
   isHiddenFrameFileAccessible,
   markHiddenFrameArchiveVisited,
+  markHiddenFrameFrameRecovered,
   markHiddenFrameFileCompleted,
   markHiddenFrameFileUnlocked,
   readHiddenFrameProgress,

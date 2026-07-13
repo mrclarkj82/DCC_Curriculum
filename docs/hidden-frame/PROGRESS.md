@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 8. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, Phase 6 added the first Blender/object inspection arc, Phase 7 added the local progression layer, and Phase 8 added the safe Compression event.
+The Hidden Frame is implemented through Phase 9. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, Phase 6 added the first Blender/object inspection arc, Phase 7 added the local progression layer, Phase 8 added the safe Compression event, and Phase 9 added the Final Export ending with Frame 000.
 
 The current full-ARG working branch is:
 
@@ -21,8 +21,8 @@ The current full-ARG working branch is:
 | 6 | Blender/Object Mystery Arc | Complete | Objects route, object clue data, Files 015-017, inspection panels |
 | 7 | Student Progression System | Complete | Achievement data, signal badges, reset panel, schema v3 migration |
 | 8 | Compression Event | Complete | Compression route, logs, glitch/redaction/corrupted states |
-| 9 | Final Export | Next | Frame 000 and completion ending |
-| 10 | Admin and Expansion Tools | Not Started | Long-term content expansion tools and docs |
+| 9 | Final Export | Complete | Final Export route, Frame 000 route, prerequisite gate, ending |
+| 10 | Admin and Expansion Tools | Next | Long-term content expansion tools and docs |
 
 ## Completed Phase Summaries
 
@@ -136,31 +136,35 @@ Phase 8 added:
 - Corrupted log cards and safe Compression warning panels.
 - Phase 8 validation script.
 
-## Active Phase
-
 ### Phase 9: Final Export
 
-Objective:
-
-Add the first ending route, reveal Frame 000, and close the initial ARG arc around human creative choice.
-
-Required work:
-
-- Add `/hidden-frame/final-export`.
-- Add `/hidden-frame/frame-000`.
-- Gate the final route behind the intended local prerequisite frame set.
-- Add Frame 000 / Final Export ending components.
-- Reinforce that the first frame was never missing and creativity begins with human choice.
-- Update docs and validation.
-
-## Backlog
-
-### Phase 9 Backlog
+Phase 9 added:
 
 - `/hidden-frame/final-export`.
 - `/hidden-frame/frame-000`.
-- Final prerequisite check.
-- Ending sequence and Frame 000 reward.
+- Final prerequisite frame set in `hiddenFrameFinalExport.ts`.
+- Frame 000 / FINAL EXPORT in the frame collection.
+- `FinalExportPanel` and `Frame000Reveal`.
+- Local recovery of Frame 000 after the prerequisite set is complete.
+- Phase 9 validation script.
+
+## Active Phase
+
+### Phase 10: Admin and Expansion Tools
+
+Objective:
+
+Add safe maintainability and expansion support without exposing answers, student data, or admin-only functionality to students.
+
+Required work:
+
+- Add content expansion documentation or data manifest support.
+- Add optional dev/admin preview tooling only if it stays separate from student-facing pages.
+- Track future asset requests and extension points.
+- Strengthen validation for content expansion.
+- Update docs and validation.
+
+## Backlog
 
 ### Phase 10 Backlog
 
@@ -236,3 +240,11 @@ Required work:
 - `npm.cmd run validate:curriculum`: passed.
 - `npm.cmd run build`: passed with existing Vite large chunk warning.
 - Route smoke checks returned `200` for `/hidden-frame/compression`.
+- Phase 8 committed and pushed as `8586578`.
+- Phase 9 implemented with Final Export and Frame 000 support.
+- `git diff --check`: passed for Phase 9 work.
+- `npm.cmd run lint`: passed.
+- `npm.cmd run validate:hidden-frame`: passed through Phase 9.
+- `npm.cmd run validate:curriculum`: passed.
+- `npm.cmd run build`: passed with existing Vite large chunk warning.
+- Route smoke checks returned `200` for `/hidden-frame/final-export` and `/hidden-frame/frame-000`.

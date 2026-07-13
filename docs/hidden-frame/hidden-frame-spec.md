@@ -8,7 +8,7 @@ Before implementing any future Hidden Frame feature, read this specification fir
 
 The Hidden Frame should add curiosity, observation, media literacy, and creative problem solving to the DCC site without distracting from class workflows or compromising student privacy. It must stay inside the DCC website, approved class materials, and future approved project files.
 
-Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data. Phase 7 adds local signal badges, schema version 3 progress, and local reset support. Phase 8 adds the safe Compression event route with data-driven logs, glitch/redaction UI, and corrupted card states.
+Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data. Phase 7 adds local signal badges, schema version 3 progress, and local reset support. Phase 8 adds the safe Compression event route with data-driven logs, glitch/redaction UI, and corrupted card states. Phase 9 adds the Final Export ending and Frame 000 reveal.
 
 ## Core Principles
 
@@ -148,6 +148,7 @@ scripts/
   validate-hidden-frame-phase6.mjs
   validate-hidden-frame-phase7.mjs
   validate-hidden-frame-phase8.mjs
+  validate-hidden-frame-phase9.mjs
 src/
   hidden-frame/
     components/
@@ -159,7 +160,9 @@ src/
       CompressionWarningPanel.tsx
       CompositionGuideFrame.tsx
       CorruptedFileCard.tsx
+      FinalExportPanel.tsx
       FrameCard.tsx
+      Frame000Reveal.tsx
       FrameCollectionGrid.tsx
       GlitchText.tsx
       HiddenFrameIcon.tsx
@@ -182,6 +185,7 @@ src/
       hiddenFrameAchievements.ts
       hiddenFrameCameraClues.ts
       hiddenFrameCompressionLogs.ts
+      hiddenFrameFinalExport.ts
       hiddenFrameFrames.ts
       hiddenFrameFiles.ts
       hiddenFrameObjectClues.ts
@@ -197,6 +201,8 @@ src/
       HiddenFrameCollectionPage.tsx
       HiddenFrameCompressionPage.tsx
       HiddenFrameFilePage.tsx
+      HiddenFrameFinalExportPage.tsx
+      HiddenFrameFrame000Page.tsx
       HiddenFrameLandingPage.tsx
       HiddenFrameObjectsPage.tsx
       HiddenFrameRenderRoomPage.tsx
@@ -228,13 +234,13 @@ Implemented routes:
 - `/hidden-frame/unreal`
 - `/hidden-frame/objects`
 - `/hidden-frame/compression`
+- `/hidden-frame/final-export`
+- `/hidden-frame/frame-000`
 
 Reserved future routes:
 
 - `/hidden-frame/frame/:id`
 - `/hidden-frame/progress`
-- `/hidden-frame/final-export`
-- `/hidden-frame/frame-000`
 
 The Hidden Frame routes live inside the existing authenticated app shell so they remain contained inside DCC Creative Studio and preserve normal access controls. They are intentionally not added to the normal public student navigation menu.
 
@@ -254,6 +260,8 @@ Future components should be modular, reusable, and data-driven. Phase 1 created 
 - `CompressionLog`
 - `CompressionWarningPanel`
 - `CorruptedFileCard`
+- `FinalExportPanel`
+- `Frame000Reveal`
 - `GlitchText`
 - `RedactedText`
 - `AchievementBadge`
@@ -374,7 +382,7 @@ Run `npm run validate:curriculum` when a change touches curriculum, seed data, l
 
 Future interactive routes should include manual accessibility checks for keyboard focus, reduced motion, readable contrast, and discoverable hidden controls.
 
-`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, the Phase 6 object inspection validation script, the Phase 7 progression validation script, and the Phase 8 Compression validation script.
+`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, the Phase 6 object inspection validation script, the Phase 7 progression validation script, the Phase 8 Compression validation script, and the Phase 9 Final Export validation script.
 
 ## Future Expansion
 
@@ -543,6 +551,38 @@ Intended reuse: Compression route and future Compression log indexes.
 Accessibility notes: decorative corruption layers do not carry the only meaningful information.
 
 Extension strategy: add new log records through data before adding card variants.
+
+### FinalExportPanel
+
+Purpose: displays final export readiness based on the local prerequisite frame set.
+
+Inputs: `canRevealFinalFrame`, `recoveredPrerequisiteCount`, and `totalPrerequisiteCount`.
+
+Outputs: a final export panel with either a Frame 000 link or a collection link.
+
+Dependencies: `hiddenFrameFinalExport.ts`, React Router, and Hidden Frame CSS.
+
+Intended reuse: final export route and future ending variants.
+
+Accessibility notes: prerequisite status is visible text and is not conveyed by color alone.
+
+Extension strategy: keep prerequisite logic in data/helpers rather than hardcoding inside page markup.
+
+### Frame000Reveal
+
+Purpose: displays the Frame 000 ending and final story statement.
+
+Inputs: none.
+
+Outputs: a final reveal section with title art, ending copy, and return links.
+
+Dependencies: Phase 0 title-card asset, React Router, and Hidden Frame CSS.
+
+Intended reuse: Frame 000 route and future final export summaries.
+
+Accessibility notes: the title-card image has meaningful alt text and the final message is real text.
+
+Extension strategy: future ending variants should be data-driven before adding branches.
 
 ### FrameCard
 
@@ -850,6 +890,8 @@ Phase 7 adds local signal badges and reset support without Firestore persistence
 
 Phase 8 introduces The Compression as creative flattening, template drift, and loss of specific human choices. It must not be framed as real malware, a breach, a threat, a monster, or a horror escalation.
 
+Phase 9 gates Frame 000 behind the local prerequisite frame set and recovers it locally when opened. The ending is thematic and optional, not a score, grade, or class credit.
+
 ## Technical Debt & TODO
 
 - Expand structured data schemas for Compression logs, final export entries, admin preview tooling, and future content packs before adding content at larger scale.
@@ -899,6 +941,10 @@ Implemented the local progression layer with schema version 3 progress, `achieve
 
 Implemented the first Compression event with `/hidden-frame/compression`, `hiddenFrameCompressionLogs.ts`, `GlitchText`, `RedactedText`, `CompressionWarningPanel`, `CorruptedFileCard`, safe creative-flattening copy, corrupted/redacted styles, and a Phase 8 validation script.
 
+### Phase 9 - 2026-07-13
+
+Implemented the Final Export ending with `/hidden-frame/final-export`, `/hidden-frame/frame-000`, `hiddenFrameFinalExport.ts`, Frame 000 / `FINAL EXPORT`, `FinalExportPanel`, `Frame000Reveal`, local final-frame recovery, and a Phase 9 validation script.
+
 ## Acceptance Criteria
 
 - The Phase 0 assets are imported without modifying artwork.
@@ -925,3 +971,5 @@ Implemented the first Compression event with `/hidden-frame/compression`, `hidde
 - `/hidden-frame/collection` supports frame cards, local signal badges, progress summary, and optional local reset without grade or leaderboard presentation.
 - Local progress schema version 3 preserves migration boundaries and keeps future persistence swappable behind the adapter.
 - `/hidden-frame/compression` presents data-driven Compression logs and corrupted states without real-threat, malware, breach, horror, or unsafe scavenger-hunt framing.
+- `/hidden-frame/final-export` and `/hidden-frame/frame-000` gate and reveal Frame 000 locally after the prerequisite frame set is recovered.
+- The ending reinforces that the first frame was never missing and that human choices give tools creative meaning.

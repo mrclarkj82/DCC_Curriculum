@@ -4,6 +4,7 @@ import {
   getResolvedHiddenFrameFileState,
   isHiddenFrameFileAccessible,
   markHiddenFrameArchiveVisited,
+  markHiddenFrameFrameRecovered,
   markHiddenFrameFileCompleted,
   markHiddenFrameFileUnlocked,
   readHiddenFrameProgress,
@@ -31,6 +32,10 @@ export function useHiddenFrameProgress() {
 
   const completeFile = useCallback((fileId: string) => {
     setProgress(markHiddenFrameFileCompleted(fileId));
+  }, []);
+
+  const recoverFrame = useCallback((frameId: string) => {
+    setProgress(markHiddenFrameFrameRecovered(frameId));
   }, []);
 
   const resetProgress = useCallback(() => {
@@ -70,6 +75,7 @@ export function useHiddenFrameProgress() {
     visitArchive,
     unlockFile,
     completeFile,
+    recoverFrame,
     resetProgress,
     isFileUnlocked,
     isFileCompleted,

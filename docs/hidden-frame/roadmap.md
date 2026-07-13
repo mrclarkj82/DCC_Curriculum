@@ -104,18 +104,20 @@ Implemented work:
 
 ### Phase 9: Final Export
 
-Status: Next.
+Status: Complete.
 
 Goal: complete the first ARG arc.
 
-Planned work:
+Implemented work:
 
-- Add `/hidden-frame/final-export`.
-- Add `/hidden-frame/frame-000`.
-- Gate the ending behind the intended prerequisite frame set.
-- Reveal Frame 000 and close the first story arc around human creative choice.
+- Added `/hidden-frame/final-export`.
+- Added `/hidden-frame/frame-000`.
+- Gated the ending behind the intended prerequisite frame set.
+- Revealed Frame 000 and closed the first story arc around human creative choice.
 
 ### Phase 10: Admin and Expansion Tools
+
+Status: Next.
 
 Goal: make future Hidden Frame content easier to maintain.
 

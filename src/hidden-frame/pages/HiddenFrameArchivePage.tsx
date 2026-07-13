@@ -48,6 +48,9 @@ export function HiddenFrameArchivePage() {
             <Link className="hidden-frame-secondary-link" to="/hidden-frame/compression">
               Compression
             </Link>
+            <Link className="hidden-frame-secondary-link" to="/hidden-frame/final-export">
+              Final Export
+            </Link>
             <Link className="hidden-frame-secondary-link" to="/hidden-frame/collection">
               Frame collection
             </Link>

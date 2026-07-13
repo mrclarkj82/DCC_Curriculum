@@ -46,6 +46,9 @@ export function HiddenFrameLandingPage() {
               <Link className="hidden-frame-secondary-link" to="/hidden-frame/compression">
                 Compression
               </Link>
+              <Link className="hidden-frame-secondary-link" to="/hidden-frame/final-export">
+                Final Export
+              </Link>
               <HiddenFrameIcon
                 destinationPath="/hidden-frame/archive"
                 label="Open hidden frame archive"

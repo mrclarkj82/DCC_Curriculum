@@ -213,6 +213,19 @@ export const markHiddenFrameFileCompleted = (fileId: string): HiddenFrameProgres
   });
 };
 
+export const markHiddenFrameFrameRecovered = (frameId: string): HiddenFrameProgressSnapshot => {
+  const progress = readHiddenFrameProgress();
+
+  if (!knownFrameIds.includes(frameId) || progress.recoveredFrameIds.includes(frameId)) {
+    return progress;
+  }
+
+  return writeHiddenFrameProgress({
+    ...progress,
+    recoveredFrameIds: [...progress.recoveredFrameIds, frameId],
+  });
+};
+
 export const resetHiddenFrameProgress = (): HiddenFrameProgressSnapshot => {
   const nextProgress = createInitialHiddenFrameProgress();
 

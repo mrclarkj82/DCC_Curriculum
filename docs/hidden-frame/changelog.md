@@ -1,5 +1,16 @@
 # Hidden Frame Changelog
 
+## Phase 9 - 2026-07-13
+
+- Added `/hidden-frame/final-export` for the final prerequisite gate.
+- Added `/hidden-frame/frame-000` for the Frame 000 reveal.
+- Added final prerequisite data in `hiddenFrameFinalExport.ts`.
+- Added Frame 000 / `FINAL EXPORT` to the frame collection data.
+- Added reusable components: `FinalExportPanel` and `Frame000Reveal`.
+- Added local Frame 000 recovery after the prerequisite frame set is complete.
+- Expanded `npm run validate:hidden-frame` with Phase 9 checks for routes, prerequisites, Frame 000, final copy, and CSS.
+- Updated spec, canon, progress, roadmap, and acceptance criteria.
+
 ## Phase 8 - 2026-07-13
 
 - Added `/hidden-frame/compression` for the first safe Compression event route.

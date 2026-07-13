@@ -10,6 +10,8 @@ import { HiddenFrameCameraPage } from './hidden-frame/pages/HiddenFrameCameraPag
 import { HiddenFrameCollectionPage } from './hidden-frame/pages/HiddenFrameCollectionPage';
 import { HiddenFrameCompressionPage } from './hidden-frame/pages/HiddenFrameCompressionPage';
 import { HiddenFrameFilePage } from './hidden-frame/pages/HiddenFrameFilePage';
+import { HiddenFrameFinalExportPage } from './hidden-frame/pages/HiddenFrameFinalExportPage';
+import { HiddenFrameFrame000Page } from './hidden-frame/pages/HiddenFrameFrame000Page';
 import { HiddenFrameLandingPage } from './hidden-frame/pages/HiddenFrameLandingPage';
 import { HiddenFrameObjectsPage } from './hidden-frame/pages/HiddenFrameObjectsPage';
 import { HiddenFrameRenderRoomPage } from './hidden-frame/pages/HiddenFrameRenderRoomPage';
@@ -51,6 +53,8 @@ export function App() {
           <Route path="/hidden-frame/unreal" element={<HiddenFrameUnrealPage />} />
           <Route path="/hidden-frame/objects" element={<HiddenFrameObjectsPage />} />
           <Route path="/hidden-frame/compression" element={<HiddenFrameCompressionPage />} />
+          <Route path="/hidden-frame/final-export" element={<HiddenFrameFinalExportPage />} />
+          <Route path="/hidden-frame/frame-000" element={<HiddenFrameFrame000Page />} />
           <Route path="/hidden-frame/file/001" element={<HiddenFrameFilePage />} />
           <Route path="/hidden-frame/file/:fileId" element={<HiddenFrameFilePage />} />
           <Route path="/lessons/:lessonId" element={<LessonDetailPage />} />

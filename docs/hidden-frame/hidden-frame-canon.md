@@ -59,6 +59,10 @@ The collection begins showing local signal badges. These badges mark optional di
 
 The Compression event appears. The archive reveals data-driven logs about creative choices being flattened into generic output, while explicitly staying safe, metaphorical, and contained inside the DCC site.
 
+### 2026-07-13 - Phase 9
+
+The Final Export opens after the local prerequisite frame set is recovered. Frame 000 reveals that the first frame was never missing; it begins when human choice enters the work.
+
 ## Locations
 
 ### Archive
@@ -80,6 +84,10 @@ A visual language for Unreal Engine, camera, composition, or spatial clue contex
 ### Object Inspection Index
 
 A web-based object/modeling clue space established in Phase 6. It represents object names, mesh details, materials, UV maps, shadows, scale, camera view, and small in-site surface marks without asking students to upload or open private files.
+
+### Final Export
+
+The ending space established in Phase 9. It uses local prerequisite frame recovery and reveals Frame 000 without grades, points, or class credit.
 
 ### VHS / Signal Space
 
@@ -164,6 +172,16 @@ First appearance: `/hidden-frame/compression`
 Summary: The first Compression event route. It contains in-app logs for creative flattening, template drift, context redaction, and flat output warnings. It does not create a real threat, real malware, real security breach, or real-world task.
 
 Related logs: `compression-log-original-choice`, `compression-log-template-drift`, `compression-log-redacted-context`, `compression-log-flat-output`
+
+### HF-ARCHIVE-PHASE-9
+
+Title: Final Export
+
+First appearance: `/hidden-frame/final-export`
+
+Summary: The first Hidden Frame ending route. It checks the local prerequisite frame set and links to Frame 000 when the ending is ready.
+
+Related frame: `HF-FRAME-000`
 
 ## Recovered Files
 
@@ -639,6 +657,18 @@ Archivist message: "The Archivist grounds the model. A shadow is not only darkne
 
 ## Frame Cards
 
+### HF-FRAME-000
+
+Frame ID: `frame-000`
+
+Title: FINAL EXPORT
+
+Discovery location: `/hidden-frame/frame-000`
+
+Unlock condition: Recover the local prerequisite frame set and open Frame 000.
+
+Student-facing text: The first frame was never missing. It begins when a human choice enters the work.
+
 ### HF-FRAME-001
 
 Frame ID: `frame-001`
@@ -1106,6 +1136,14 @@ Phase 8 adds:
 - Flat output warning.
 - Deliberate choice.
 
+Phase 9 adds:
+
+- Final Export.
+- Frame 000.
+- The first frame was never missing.
+- Tools render the image.
+- Human decisions give it a reason to exist.
+
 ## Puzzle Solutions
 
 ### First Puzzle Chain
@@ -1203,7 +1241,7 @@ Do not store future active passwords in client code unless they are intentionall
 - Why do composition guides appear before the Render Room fully opens?
 - Why does the Render Room respond to coordinates, logic, and trigger boundaries?
 - Why do object details preserve clues after the Render Room opens?
-- What happens after The Compression tries to flatten the archive?
+- What future expansion follows the first Final Export?
 - How do Unreal, Blender, cinematography, and video clues connect beyond this first chain?
 - Why does the Archivist care about what a frame includes and excludes?
 
@@ -1223,7 +1261,7 @@ Potential future threads:
 
 ## Student Discoveries
 
-No student discoveries are recorded through Phase 6.
+No student discoveries are recorded through Phase 9.
 
 Future entries should avoid naming students unless the teacher explicitly approves a privacy-safe classroom convention.
 
