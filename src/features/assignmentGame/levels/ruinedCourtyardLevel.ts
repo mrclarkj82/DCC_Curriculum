@@ -79,7 +79,7 @@ export const ruinedCourtyardLevel = {
   id: 'ruined-courtyard',
   name: 'Ruined Courtyard',
   objectiveText:
-    'Defeat the courtyard sentries, then speak with the Lantern Keeper near the sealed Ember Gate.',
+    'Collect the Ember Shard, Rusty Key, and Lantern Oil while exploring the sealed courtyard.',
   dimensions: {
     columns: 12,
     rows: 8,

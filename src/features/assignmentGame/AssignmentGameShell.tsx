@@ -6,6 +6,7 @@ import { AssignmentGameViewport } from './components/AssignmentGameViewport';
 import { assignmentGameWorkingTitle } from './gameShellConstants';
 import { useAssignmentGameDialogue } from './hooks/useAssignmentGameDialogue';
 import { useAssignmentGameEnemies } from './hooks/useAssignmentGameEnemies';
+import { useAssignmentGameInventory } from './hooks/useAssignmentGameInventory';
 import { usePlayerCombat } from './hooks/usePlayerCombat';
 import { usePlayerMovement } from './hooks/usePlayerMovement';
 import type { AssignmentGameShellState } from './gameShellTypes';
@@ -23,6 +24,11 @@ export function AssignmentGameShell() {
     isGameInputEnabled,
     previewKey,
     combatState,
+    playerState,
+  );
+  const inventoryState = useAssignmentGameInventory(
+    isGameInputEnabled,
+    previewKey,
     playerState,
   );
   const { advanceDialogue, closeDialogue, dialogueState } = useAssignmentGameDialogue(
@@ -111,12 +117,14 @@ export function AssignmentGameShell() {
             combatState={combatState}
             dialogueState={dialogueState}
             enemiesState={enemiesState}
+            inventoryState={inventoryState}
             playerState={playerState}
           />
           <AssignmentGameViewport
             combatState={combatState}
             dialogueState={dialogueState}
             enemiesState={enemiesState}
+            inventoryState={inventoryState}
             isPaused={shellState === 'paused'}
             onAdvanceDialogue={advanceDialogue}
             onCloseDialogue={closeDialogue}
@@ -125,8 +133,8 @@ export function AssignmentGameShell() {
           />
 
           <p className="muted">
-            Phase 7 adds local-only Lantern Keeper dialogue. Inventory data, progression, and saves
-            are intentionally not active yet.
+            Phase 8 adds local-only Ember Shard, Rusty Key, and Lantern Oil collectibles.
+            Progression and saves are intentionally not active yet.
           </p>
 
           {shellState === 'paused' && (

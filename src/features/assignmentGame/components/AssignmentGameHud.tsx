@@ -2,12 +2,14 @@ import { assignmentGameHudPlaceholders } from '../gameShellConstants';
 import type { AssignmentGameCombatState } from '../combatTypes';
 import type { AssignmentGameDialogueState } from '../dialogueTypes';
 import type { AssignmentGameEnemiesState } from '../enemyTypes';
+import type { AssignmentGameInventoryState } from '../inventoryTypes';
 import type { AssignmentGamePlayerState } from '../playerMovementTypes';
 
 interface AssignmentGameHudProps {
   combatState: AssignmentGameCombatState;
   dialogueState: AssignmentGameDialogueState;
   enemiesState: AssignmentGameEnemiesState;
+  inventoryState: AssignmentGameInventoryState;
   playerState: AssignmentGamePlayerState;
 }
 
@@ -25,16 +27,26 @@ function dialogueStatusText(dialogueState: AssignmentGameDialogueState): string 
   return 'Find the Lantern Keeper';
 }
 
+function inventoryStatusText(inventoryState: AssignmentGameInventoryState): string {
+  if (!inventoryState.collectedItems.length) {
+    return 'No items yet';
+  }
+
+  return inventoryState.collectedItems.map((item) => item.shortName).join(', ');
+}
+
 export function AssignmentGameHud({
   combatState,
   dialogueState,
   enemiesState,
+  inventoryState,
   playerState,
 }: AssignmentGameHudProps) {
   const roundedX = Math.round(playerState.position.x);
   const roundedY = Math.round(playerState.position.y);
   const contactDamage = enemiesState.enemies[0]?.contactDamage ?? 0;
   const dialogueStatus = dialogueStatusText(dialogueState);
+  const inventoryStatus = inventoryStatusText(inventoryState);
 
   return (
     <aside className="assignment-game-hud" aria-label="Game HUD">
@@ -60,6 +72,12 @@ export function AssignmentGameHud({
         <span>Contact</span>
         <strong>{contactDamage} dmg</strong>
       </div>
+      <div className="assignment-game-hud-item">
+        <span>Inventory</span>
+        <strong>
+          {inventoryState.collectedCount} / {inventoryState.totalCount}
+        </strong>
+      </div>
       {assignmentGameHudPlaceholders.map((item) => (
         <div className="assignment-game-hud-item" key={item.label}>
           <span>{item.label}</span>
@@ -84,6 +102,14 @@ export function AssignmentGameHud({
       <div className="assignment-game-hud-item assignment-game-hud-item--dialogue">
         <span>Dialogue</span>
         <strong>{dialogueStatus}</strong>
+      </div>
+      <div className="assignment-game-hud-item assignment-game-hud-item--inventory">
+        <span>Items</span>
+        <strong>{inventoryStatus}</strong>
+      </div>
+      <div className="assignment-game-hud-item assignment-game-hud-item--inventory">
+        <span>Item Status</span>
+        <strong>{inventoryState.lastInventoryEvent}</strong>
       </div>
     </aside>
   );
