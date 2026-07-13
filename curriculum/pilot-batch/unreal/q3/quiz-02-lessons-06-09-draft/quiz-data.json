@@ -1,0 +1,140 @@
+{
+  "id": "ue-q3-quiz-02",
+  "programAreaId": "unreal-engine",
+  "title": "Q3 Quiz 2 Draft: Materials, Terrain Assets, Modular Kits, Composition, and Process Evidence",
+  "quarter": "Q3",
+  "lessonIds": [
+    "ue-q3-l06",
+    "ue-q3-l07",
+    "ue-q3-l08",
+    "ue-q3-l09"
+  ],
+  "status": "draft-pilot",
+  "isPublished": false,
+  "questions": [
+    {
+      "id": "ue-q3-quiz-02-q01",
+      "type": "multiple-choice",
+      "text": "What is the main job of landscape materials in a castle environment?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l06",
+      "tag": "landscape-materials",
+      "choices": [
+        "To make terrain zones readable and believable.",
+        "To erase all landscape shapes.",
+        "To replace the production log.",
+        "To automatically build the castle."
+      ],
+      "correctAnswer": "To make terrain zones readable and believable.",
+      "explanation": "Materials help viewers understand paths, cliffs, grass, and other terrain surfaces."
+    },
+    {
+      "id": "ue-q3-quiz-02-q02",
+      "type": "multiple-choice",
+      "text": "What makes an imported terrain asset support the scene?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l07",
+      "tag": "assets",
+      "choices": [
+        "It matches scale, style, and story purpose.",
+        "It is random and large.",
+        "It hides the focal point.",
+        "It has no source note."
+      ],
+      "correctAnswer": "It matches scale, style, and story purpose.",
+      "explanation": "Imported assets should serve the environment rather than replace design decisions."
+    },
+    {
+      "id": "ue-q3-quiz-02-q03",
+      "type": "multiple-choice",
+      "text": "Why are modular castle pieces useful?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l08",
+      "tag": "modular-kit",
+      "choices": [
+        "They allow repeated pieces to create larger structures efficiently.",
+        "They make all pieces unique automatically.",
+        "They prevent the need for saving.",
+        "They remove the need for composition."
+      ],
+      "correctAnswer": "They allow repeated pieces to create larger structures efficiently.",
+      "explanation": "Modular kits make construction faster while still requiring variation and planning."
+    },
+    {
+      "id": "ue-q3-quiz-02-q04",
+      "type": "multiple-choice",
+      "text": "What does silhouette help communicate in a castle composition?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l09",
+      "tag": "composition",
+      "choices": [
+        "The overall readable shape of the castle from a distance.",
+        "The exact file size.",
+        "The teacher password.",
+        "The audio level of a clip."
+      ],
+      "correctAnswer": "The overall readable shape of the castle from a distance.",
+      "explanation": "A strong silhouette helps the castle read clearly before small details are visible."
+    },
+    {
+      "id": "ue-q3-quiz-02-q05",
+      "type": "vocabulary",
+      "text": "Identify the term: reusable pieces assembled to build a larger structure.",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l08",
+      "tag": "vocabulary",
+      "correctAnswer": "Modular kit",
+      "explanation": "A modular kit contains pieces that can be combined into larger readable forms."
+    },
+    {
+      "id": "ue-q3-quiz-02-q06",
+      "type": "vocabulary",
+      "text": "Identify the term: the main visual shape or outline of an object or building.",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l09",
+      "tag": "vocabulary",
+      "correctAnswer": "Silhouette",
+      "explanation": "Silhouette is the readable outer shape that helps viewers identify the castle."
+    },
+    {
+      "id": "ue-q3-quiz-02-q07",
+      "type": "scenario",
+      "text": "A student downloads ten terrain assets but the scene looks cluttered and inconsistent. What should they do?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l07",
+      "tag": "troubleshooting",
+      "correctAnswer": "They should choose fewer assets, check scale/style, place them with purpose, and document why each supports the castle environment.",
+      "explanation": "Asset use should support design rather than create random clutter."
+    },
+    {
+      "id": "ue-q3-quiz-02-q08",
+      "type": "scenario",
+      "text": "A modular castle wall repeats the same piece so obviously that it looks artificial. What can improve it?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l08",
+      "tag": "troubleshooting",
+      "correctAnswer": "The student can vary height, spacing, rotation, damage/detail pieces, surrounding props, or camera composition while keeping the structure organized.",
+      "explanation": "Variation makes modular construction feel more believable."
+    },
+    {
+      "id": "ue-q3-quiz-02-q09",
+      "type": "process-order",
+      "text": "Put the modular castle workflow in order: review kit, block silhouette, assemble pieces, add variation, record progress.",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l08",
+      "tag": "workflow",
+      "correctAnswer": "1. Review kit pieces. 2. Block the castle silhouette. 3. Assemble modular pieces. 4. Add variation. 5. Record progress evidence.",
+      "explanation": "The castle should move from broad readable form to more varied detail."
+    },
+    {
+      "id": "ue-q3-quiz-02-q10",
+      "type": "short-response",
+      "text": "In 2-3 sentences, explain how material, asset, and modular choices can support the final documentary.",
+      "difficulty": "hard",
+      "lessonId": "ue-q3-l09",
+      "tag": "short-response",
+      "correctAnswer": "A strong answer explains that each choice shows how the castle changed over time and why the environment became more readable, believable, or story-driven. It should mention screenshots, recordings, or production log evidence.",
+      "explanation": "This checks whether students connect production choices to documentary evidence."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "id": "ue-q3-l03",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q3",
+  "unit": "Castle Environment Production",
+  "lessonNumber": 3,
+  "title": "Third-Person Project Setup",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Q3 Unreal Castle Documentary Project",
+    "start": "N/A",
+    "end": "N/A",
+    "url": "",
+    "note": "Students build a castle environment in Unreal Engine while recording daily screen/camera evidence for a making-of documentary."
+  },
+  "learningTarget": "I can set up a playable third-person Unreal project and document why player scale matters for a castle walkthrough.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "Why might a castle look different when viewed from a player camera instead of the editor camera?"
+  },
+  "vocabulary": [
+    {
+      "term": "Production log",
+      "definition": "A dated record of what was built, what was captured, what changed, and what needs to happen next."
+    },
+    {
+      "term": "Screen recording",
+      "definition": "Video captured from the computer screen to show workflow, testing, or before/after changes."
+    },
+    {
+      "term": "Behind-the-scenes footage",
+      "definition": "Camera or screen-recorded evidence that shows how a project was made."
+    },
+    {
+      "term": "B-roll",
+      "definition": "Supporting footage that helps explain a process, place, detail, or action."
+    },
+    {
+      "term": "Castle environment",
+      "definition": "The Q3 Unreal scene students build, refine, walk through, and document."
+    }
+  ],
+  "slides": {
+    "title": "Q3 Lesson 03 - Third-Person Project Setup",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "ue-q3-a03",
+    "title": "Third-Person Walkthrough Setup",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of the playable character in the project.",
+      "Short note explaining why player scale matters.",
+      "Daily screen recording of a player-view test.",
+      "Production log entry for today."
+    ]
+  },
+  "exitTicket": "What did your recording show about player scale or movement?",
+  "tags": [
+    "third-person",
+    "walkthrough",
+    "project-setup",
+    "q3",
+    "castle-environment",
+    "daily-documentary",
+    "screen-recording",
+    "process-documentation"
+  ]
+}

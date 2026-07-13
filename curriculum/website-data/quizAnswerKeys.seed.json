@@ -339,33 +339,237 @@
     "id": "ue-q3-quiz-01",
     "quizId": "ue-q3-quiz-01",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 1: Production Expectations, Documentation, Planning, Setup, and Blockout",
-    "questionCount": 0,
-    "answers": []
+    "title": "Q3 Quiz 1 Draft: Production, Documentation, Planning, Setup, and Blockout",
+    "questionCount": 10,
+    "answers": [
+      {
+        "questionId": "ue-q3-quiz-01-q01",
+        "correctAnswer": "To track what was built, captured, changed, and planned next.",
+        "explanation": "A production log records work and decisions so the documentary has accurate process evidence."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q02",
+        "correctAnswer": "A short screen recording showing a decision being made.",
+        "explanation": "Process evidence shows how the project changed, not just the final state."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q03",
+        "correctAnswer": "It helps the viewer know what to notice first.",
+        "explanation": "A focal point gives the environment visual priority and direction."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q04",
+        "correctAnswer": "It shows whether doors, paths, walls, and spaces feel believable from player view.",
+        "explanation": "The player character helps test whether the environment feels readable and walkable."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q05",
+        "correctAnswer": "B-roll",
+        "explanation": "B-roll supports the main story with useful detail or process footage."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q06",
+        "correctAnswer": "Production log",
+        "explanation": "The production log protects the process story from being forgotten."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q07",
+        "correctAnswer": "They should record the work process early, capture before/after evidence, and update the production log while they build.",
+        "explanation": "The documentary needs daily process evidence, not only final screenshots."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q08",
+        "correctAnswer": "They should test from player view and adjust scale, doors, paths, walls, or camera framing based on the character size.",
+        "explanation": "Player-view testing reveals scale problems that editor view can hide."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q09",
+        "correctAnswer": "1. Build or revise the castle. 2. Record screen/camera evidence. 3. Update the production log. 4. Upload evidence to Drive or YouTube. 5. Submit the link in DCC Creative Studio.",
+        "explanation": "This sequence keeps production work and evidence connected."
+      },
+      {
+        "questionId": "ue-q3-quiz-01-q10",
+        "correctAnswer": "A strong answer explains that daily recording captures the process, decisions, mistakes, revisions, and progress that a final screenshot cannot show. It should connect the evidence to the final making-of documentary.",
+        "explanation": "This checks whether students understand the documentary purpose of daily evidence."
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-02",
     "quizId": "ue-q3-quiz-02",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 2: Landscape Materials, Terrain Assets, Modular Kits, Composition, and Process Evidence",
-    "questionCount": 0,
-    "answers": []
+    "title": "Q3 Quiz 2 Draft: Materials, Terrain Assets, Modular Kits, Composition, and Process Evidence",
+    "questionCount": 10,
+    "answers": [
+      {
+        "questionId": "ue-q3-quiz-02-q01",
+        "correctAnswer": "To make terrain zones readable and believable.",
+        "explanation": "Materials help viewers understand paths, cliffs, grass, and other terrain surfaces."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q02",
+        "correctAnswer": "It matches scale, style, and story purpose.",
+        "explanation": "Imported assets should serve the environment rather than replace design decisions."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q03",
+        "correctAnswer": "They allow repeated pieces to create larger structures efficiently.",
+        "explanation": "Modular kits make construction faster while still requiring variation and planning."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q04",
+        "correctAnswer": "The overall readable shape of the castle from a distance.",
+        "explanation": "A strong silhouette helps the castle read clearly before small details are visible."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q05",
+        "correctAnswer": "Modular kit",
+        "explanation": "A modular kit contains pieces that can be combined into larger readable forms."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q06",
+        "correctAnswer": "Silhouette",
+        "explanation": "Silhouette is the readable outer shape that helps viewers identify the castle."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q07",
+        "correctAnswer": "They should choose fewer assets, check scale/style, place them with purpose, and document why each supports the castle environment.",
+        "explanation": "Asset use should support design rather than create random clutter."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q08",
+        "correctAnswer": "The student can vary height, spacing, rotation, damage/detail pieces, surrounding props, or camera composition while keeping the structure organized.",
+        "explanation": "Variation makes modular construction feel more believable."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q09",
+        "correctAnswer": "1. Review kit pieces. 2. Block the castle silhouette. 3. Assemble modular pieces. 4. Add variation. 5. Record progress evidence.",
+        "explanation": "The castle should move from broad readable form to more varied detail."
+      },
+      {
+        "questionId": "ue-q3-quiz-02-q10",
+        "correctAnswer": "A strong answer explains that each choice shows how the castle changed over time and why the environment became more readable, believable, or story-driven. It should mention screenshots, recordings, or production log evidence.",
+        "explanation": "This checks whether students connect production choices to documentary evidence."
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-03",
     "quizId": "ue-q3-quiz-03",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 3: Scene Framing, Foliage, Storytelling, Lighting Mood, and Documentary Capture",
-    "questionCount": 0,
-    "answers": []
+    "title": "Q3 Quiz 3 Draft: Framing, Foliage, Storytelling, Lighting Mood, and Documentary Capture",
+    "questionCount": 10,
+    "answers": [
+      {
+        "questionId": "ue-q3-quiz-03-q01",
+        "correctAnswer": "Guide the viewer toward important areas.",
+        "explanation": "Framing uses foreground, middle ground, and background to direct attention."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q02",
+        "correctAnswer": "When it hides paths, focal points, or important silhouettes.",
+        "explanation": "Too much foliage can reduce readability or create performance concerns."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q03",
+        "correctAnswer": "Using visual details to imply history, purpose, or events.",
+        "explanation": "Environmental storytelling lets viewers infer story from the scene itself."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q04",
+        "correctAnswer": "Adjusting lighting choices to support a clear emotional tone.",
+        "explanation": "Lighting mood uses color, direction, contrast, and intensity to shape feeling."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q05",
+        "correctAnswer": "Story details or environmental storytelling details",
+        "explanation": "Story details give the environment meaning beyond decoration."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q06",
+        "correctAnswer": "Foreground",
+        "explanation": "Foreground elements can guide attention and add depth."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q07",
+        "correctAnswer": "They should reduce density, clear the path, group foliage intentionally, and record before/after readability evidence.",
+        "explanation": "Foliage should support the route and mood, not hide navigation."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q08",
+        "correctAnswer": "They should choose one story idea, remove random details, and arrange a few visible clues that support that idea.",
+        "explanation": "Storytelling works best when details point to a clear interpretation."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q09",
+        "correctAnswer": "1. Choose a mood word. 2. Capture before evidence. 3. Adjust lighting. 4. Capture after evidence. 5. Explain the change.",
+        "explanation": "Lighting mood evidence is strongest when before and after are comparable."
+      },
+      {
+        "questionId": "ue-q3-quiz-03-q10",
+        "correctAnswer": "A strong answer explains that these choices help viewers understand where to look, what changed, what the castle feels like, and what story the build communicates. It should mention visual evidence or production clips.",
+        "explanation": "This checks synthesis across visual storytelling and documentation."
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-04",
     "quizId": "ue-q3-quiz-04",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 4: Post-Process, Walkthroughs, Documentary Evidence, and Portfolio Submission",
-    "questionCount": 0,
-    "answers": []
+    "title": "Q3 Quiz 4 Draft: Post-Process, Walkthroughs, Documentary Evidence, and Portfolio Submission",
+    "questionCount": 10,
+    "answers": [
+      {
+        "questionId": "ue-q3-quiz-04-q01",
+        "correctAnswer": "To present the scene with intentional framing, mood, and clarity.",
+        "explanation": "A cinematic screenshot should look purposeful and readable."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q02",
+        "correctAnswer": "It can polish mood and image quality without hiding readability.",
+        "explanation": "Post-process supports the final look but should not obscure the scene."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q03",
+        "correctAnswer": "Pacing, route readability, collision issues, and how the scene feels in motion.",
+        "explanation": "Walkthroughs show the experience over time."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q04",
+        "correctAnswer": "How the castle was made and improved over time.",
+        "explanation": "The documentary should tell the process story, not only show the final product."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q05",
+        "correctAnswer": "Walkthrough",
+        "explanation": "A walkthrough shows how the environment feels while moving through it."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q06",
+        "correctAnswer": "Cinematic screenshot or portfolio screenshot",
+        "explanation": "A cinematic or portfolio screenshot presents the project intentionally."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q07",
+        "correctAnswer": "They should plan a slower route, pause at focal points, re-record from player view, and check that viewers can understand the scene.",
+        "explanation": "Walkthrough pacing should help viewers read the environment."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q08",
+        "correctAnswer": "The sharing permissions are likely restricted; the student should set Drive or YouTube sharing so the teacher can view the evidence before submitting.",
+        "explanation": "Link evidence only works when sharing permissions are correct."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q09",
+        "correctAnswer": "1. Select strongest evidence. 2. Organize the folder or links. 3. Check sharing permissions. 4. Write the final reflection. 5. Submit the link in DCC Creative Studio.",
+        "explanation": "Final submission needs organization and accessible links."
+      },
+      {
+        "questionId": "ue-q3-quiz-04-q10",
+        "correctAnswer": "A strong answer names early, middle, and final process evidence such as screen recordings, camera clips, screenshots, walkthroughs, production log entries, and reflection. It explains that the documentary should show how decisions and revisions created the final castle.",
+        "explanation": "This checks final synthesis of the castle documentary process."
+      }
+    ]
   },
   {
     "id": "vp-q2-quiz-01",

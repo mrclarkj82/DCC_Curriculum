@@ -1,0 +1,69 @@
+{
+  "id": "ue-q3-l05",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q3",
+  "unit": "Castle Environment Production",
+  "lessonNumber": 5,
+  "title": "Quiz 1 and Landscape Refinement",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Q3 Unreal Castle Documentary Project",
+    "start": "N/A",
+    "end": "N/A",
+    "url": "",
+    "note": "Students build a castle environment in Unreal Engine while recording daily screen/camera evidence for a making-of documentary."
+  },
+  "learningTarget": "I can review early Q3 production expectations and refine the castle landscape while documenting visible progress.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What is one change that can make a rough landscape feel more believable?"
+  },
+  "vocabulary": [
+    {
+      "term": "Production log",
+      "definition": "A dated record of what was built, what was captured, what changed, and what needs to happen next."
+    },
+    {
+      "term": "Screen recording",
+      "definition": "Video captured from the computer screen to show workflow, testing, or before/after changes."
+    },
+    {
+      "term": "Behind-the-scenes footage",
+      "definition": "Camera or screen-recorded evidence that shows how a project was made."
+    },
+    {
+      "term": "B-roll",
+      "definition": "Supporting footage that helps explain a process, place, detail, or action."
+    },
+    {
+      "term": "Castle environment",
+      "definition": "The Q3 Unreal scene students build, refine, walk through, and document."
+    }
+  ],
+  "slides": {
+    "title": "Q3 Lesson 05 - Quiz 1 and Landscape Refinement",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "ue-q3-a05",
+    "title": "Landscape Refinement Pass",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot or clip showing the refined landscape.",
+      "Before/after evidence of one improvement.",
+      "Daily documentary clip or screen recording showing refinement work.",
+      "Production log entry for today."
+    ]
+  },
+  "exitTicket": "What landscape improvement did today's footage capture clearly?",
+  "tags": [
+    "placeholder",
+    "unreal-engine",
+    "q3",
+    "castle-environment",
+    "daily-documentary",
+    "screen-recording",
+    "process-documentation"
+  ]
+}

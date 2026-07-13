@@ -1,0 +1,139 @@
+{
+  "id": "ue-q3-quiz-04",
+  "programAreaId": "unreal-engine",
+  "title": "Q3 Quiz 4 Draft: Post-Process, Walkthroughs, Documentary Evidence, and Portfolio Submission",
+  "quarter": "Q3",
+  "lessonIds": [
+    "ue-q3-l14",
+    "ue-q3-l15",
+    "ue-q3-l16"
+  ],
+  "status": "draft-pilot",
+  "isPublished": false,
+  "questions": [
+    {
+      "id": "ue-q3-quiz-04-q01",
+      "type": "multiple-choice",
+      "text": "What is the goal of a cinematic screenshot?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l14",
+      "tag": "cinematic-screenshot",
+      "choices": [
+        "To present the scene with intentional framing, mood, and clarity.",
+        "To show random editor UI.",
+        "To avoid final evidence.",
+        "To replace all reflection writing."
+      ],
+      "correctAnswer": "To present the scene with intentional framing, mood, and clarity.",
+      "explanation": "A cinematic screenshot should look purposeful and readable."
+    },
+    {
+      "id": "ue-q3-quiz-04-q02",
+      "type": "multiple-choice",
+      "text": "Why use post-process carefully?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l14",
+      "tag": "post-process",
+      "choices": [
+        "It can polish mood and image quality without hiding readability.",
+        "It should always make the scene blurry.",
+        "It deletes the need for lighting.",
+        "It prevents screenshots."
+      ],
+      "correctAnswer": "It can polish mood and image quality without hiding readability.",
+      "explanation": "Post-process supports the final look but should not obscure the scene."
+    },
+    {
+      "id": "ue-q3-quiz-04-q03",
+      "type": "multiple-choice",
+      "text": "What can a player walkthrough reveal that screenshots cannot?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l15",
+      "tag": "walkthrough",
+      "choices": [
+        "Pacing, route readability, collision issues, and how the scene feels in motion.",
+        "Only the file name.",
+        "The teacher gradebook.",
+        "Whether the Drive link is private."
+      ],
+      "correctAnswer": "Pacing, route readability, collision issues, and how the scene feels in motion.",
+      "explanation": "Walkthroughs show the experience over time."
+    },
+    {
+      "id": "ue-q3-quiz-04-q04",
+      "type": "multiple-choice",
+      "text": "What should the final documentary prove?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l16",
+      "tag": "documentary",
+      "choices": [
+        "How the castle was made and improved over time.",
+        "Only that the final screenshot exists.",
+        "That no revisions were needed.",
+        "That the project has no files."
+      ],
+      "correctAnswer": "How the castle was made and improved over time.",
+      "explanation": "The documentary should tell the process story, not only show the final product."
+    },
+    {
+      "id": "ue-q3-quiz-04-q05",
+      "type": "vocabulary",
+      "text": "Identify the term: a recorded player-view path through the environment.",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l15",
+      "tag": "vocabulary",
+      "correctAnswer": "Walkthrough",
+      "explanation": "A walkthrough shows how the environment feels while moving through it."
+    },
+    {
+      "id": "ue-q3-quiz-04-q06",
+      "type": "vocabulary",
+      "text": "Identify the term: a polished image chosen to represent the project in a portfolio or critique.",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l14",
+      "tag": "vocabulary",
+      "correctAnswer": "Cinematic screenshot or portfolio screenshot",
+      "explanation": "A cinematic or portfolio screenshot presents the project intentionally."
+    },
+    {
+      "id": "ue-q3-quiz-04-q07",
+      "type": "scenario",
+      "text": "A student walkthrough moves too fast and misses the important castle details. What should they revise?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l15",
+      "tag": "troubleshooting",
+      "correctAnswer": "They should plan a slower route, pause at focal points, re-record from player view, and check that viewers can understand the scene.",
+      "explanation": "Walkthrough pacing should help viewers read the environment."
+    },
+    {
+      "id": "ue-q3-quiz-04-q08",
+      "type": "scenario",
+      "text": "A final submission folder has great clips, but the teacher cannot open them. What is the likely issue and fix?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l16",
+      "tag": "troubleshooting",
+      "correctAnswer": "The sharing permissions are likely restricted; the student should set Drive or YouTube sharing so the teacher can view the evidence before submitting.",
+      "explanation": "Link evidence only works when sharing permissions are correct."
+    },
+    {
+      "id": "ue-q3-quiz-04-q09",
+      "type": "process-order",
+      "text": "Put the final evidence workflow in order: select evidence, organize folder, check sharing, write reflection, submit link.",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l16",
+      "tag": "workflow",
+      "correctAnswer": "1. Select strongest evidence. 2. Organize the folder or links. 3. Check sharing permissions. 4. Write the final reflection. 5. Submit the link in DCC Creative Studio.",
+      "explanation": "Final submission needs organization and accessible links."
+    },
+    {
+      "id": "ue-q3-quiz-04-q10",
+      "type": "short-response",
+      "text": "In 2-3 sentences, explain what evidence belongs in the final making-of documentary and why.",
+      "difficulty": "hard",
+      "lessonId": "ue-q3-l16",
+      "tag": "short-response",
+      "correctAnswer": "A strong answer names early, middle, and final process evidence such as screen recordings, camera clips, screenshots, walkthroughs, production log entries, and reflection. It explains that the documentary should show how decisions and revisions created the final castle.",
+      "explanation": "This checks final synthesis of the castle documentary process."
+    }
+  ]
+}

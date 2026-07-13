@@ -311,7 +311,7 @@
     "slides": {
       "title": "Lesson 05 - Quiz 1 and First Scene Cleanup",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q1-a05",
@@ -998,7 +998,7 @@
     "slides": {
       "title": "Lesson 13 - Quiz 3 and Lumen Lighting",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q1-a13",
@@ -1087,7 +1087,7 @@
     "slides": {
       "title": "Lesson 14 - Light Types and Scene Lighting",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q1-a14",
@@ -1176,7 +1176,7 @@
     "slides": {
       "title": "Lesson 15 - Landscapes",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q1-a15",
@@ -1265,7 +1265,7 @@
     "slides": {
       "title": "Lesson 16 - Foliage, Mini-World, and Blueprint Preview",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q1-a16",
@@ -1334,7 +1334,7 @@
     "slides": {
       "title": "Q3 Lesson 01 - Unreal Reboot and Production Expectations",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a01",
@@ -1403,7 +1403,7 @@
     "slides": {
       "title": "Q3 Lesson 02 - Environment Planning",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a02",
@@ -1472,7 +1472,7 @@
     "slides": {
       "title": "Q3 Lesson 03 - Third-Person Project Setup",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a03",
@@ -1542,7 +1542,7 @@
     "slides": {
       "title": "Q3 Lesson 04 - Landscape Blockout",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a04",
@@ -1611,7 +1611,7 @@
     "slides": {
       "title": "Q3 Lesson 05 - Quiz 1 and Landscape Refinement",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a05",
@@ -1680,7 +1680,7 @@
     "slides": {
       "title": "Q3 Lesson 06 - Landscape Materials",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a06",
@@ -1748,7 +1748,7 @@
     "slides": {
       "title": "Q3 Lesson 07 - Megascans/Fab/Bridge Terrain Assets",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a07",
@@ -1816,7 +1816,7 @@
     "slides": {
       "title": "Q3 Lesson 08 - Castle Modular Kit",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a08",
@@ -1884,7 +1884,7 @@
     "slides": {
       "title": "Q3 Lesson 09 - Quiz 2 and Castle Composition",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a09",
@@ -1952,7 +1952,7 @@
     "slides": {
       "title": "Q3 Lesson 10 - Rocks, Cliffs, and Scene Framing",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a10",
@@ -2020,7 +2020,7 @@
     "slides": {
       "title": "Q3 Lesson 11 - Trees and Foliage",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a11",
@@ -2088,7 +2088,7 @@
     "slides": {
       "title": "Q3 Lesson 12 - Environmental Storytelling",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a12",
@@ -2156,7 +2156,7 @@
     "slides": {
       "title": "Q3 Lesson 13 - Quiz 3 and Lighting Mood",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a13",
@@ -2224,7 +2224,7 @@
     "slides": {
       "title": "Q3 Lesson 14 - Post-Process and Cinematic Screenshots",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a14",
@@ -2292,7 +2292,7 @@
     "slides": {
       "title": "Q3 Lesson 15 - Player Walkthrough",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a15",
@@ -2360,7 +2360,7 @@
     "slides": {
       "title": "Q3 Lesson 16 - Final Critique and Portfolio Submission",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q3-a16",
@@ -2433,7 +2433,7 @@
     "slides": {
       "title": "Lesson 01 - Video Production File Organization",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-file-org-a01",
@@ -2503,7 +2503,7 @@
     "slides": {
       "title": "Lesson 02 - Video Game Development File Organization",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "ue-q2-file-org-a01",
@@ -2574,7 +2574,7 @@
     "slides": {
       "title": "Lesson 01 - DaVinci Resolve Setup and Project Manager",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-a01",
@@ -2644,7 +2644,7 @@
     "slides": {
       "title": "Lesson 02 - Media Page, Imports, and Bins",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-a02",
@@ -2718,7 +2718,7 @@
     "slides": {
       "title": "Lesson 03 - Syncing Audio and Timeline Basics",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-a03",
@@ -2792,7 +2792,7 @@
     "slides": {
       "title": "Lesson 04 - Trimming Clips and Building a Rough Cut",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-a04",
@@ -2862,7 +2862,7 @@
     "slides": {
       "title": "Lesson 05 - Quiz 1 and Rough Cut Cleanup",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-a05",
@@ -2937,7 +2937,7 @@
     "slides": {
       "title": "Lesson 06 - Titles, Transitions, and Simple Motion",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-a06",
@@ -3015,7 +3015,7 @@
     "slides": {
       "title": "Lesson 07 - Quiz 2 and Final Export",
       "url": "",
-      "status": "not-created"
+      "status": "ready-for-chatgpt"
     },
     "assignment": {
       "id": "vp-q2-a07",

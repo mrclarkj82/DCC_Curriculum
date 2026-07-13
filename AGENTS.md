@@ -1,73 +1,147 @@
 # Repository Instructions for Codex
 
-## Project
+## Project Identity
 
-DCC Creative Studio is a Firebase web app for a high school Digital Content Creators course.
+DCC Creative Studio is a multi-program-area classroom platform for a high school Digital Content Creators course.
+
+Current major program areas include:
+
+- Unreal Engine Studio
+- Video Production Studio
+- DaVinci Resolve curriculum
+- Broadcast Desk workflows
+- Future game and mission-map systems
+
+Do not make the project Unreal-only.
 
 ## Current Phase
 
-Phase 8 adds Google Drive link submissions while preserving teacher/admin class management, secure class join codes, bell ringer and exit ticket responses, Teacher Student Preview Mode, Firebase Google SSO, roles, protected routes, Firestore-backed content, and the active Today workflow.
+- Website Phase 8 is complete.
+- Phase 9 is Curriculum Completion and ChatGPT Pro Slide Handoff.
+- Phase 9 is a curriculum production, repository organization, website-data integration, and slide-handoff phase.
+- Phase 9 does not include creating PowerPoint files, slide images, generated presentation backgrounds, or slide artwork.
+
+## Source-Of-Truth Priority
+
+When sources disagree, use this priority:
+
+1. Explicit current teacher instructions
+2. `PROGRESS.md`
+3. Current curriculum source files and transcripts
+4. Current seed JSON
+5. Lesson maps and schedules
+6. Existing lesson artifacts
+7. Older placeholder documentation
+
+Do not preserve outdated content merely because it already exists.
 
 ## Repository Workflow
 
 - Do not open pull requests unless the teacher explicitly asks.
 - Work from `main`.
-- Commit working changes directly to `main` only after build, lint, and validation pass.
-- Push `main` to GitHub.
-- Deploy live to Firebase Hosting when the task affects the website.
-- Return the live Firebase Hosting URL after deploys.
-- Never commit `.env.local`, credentials, service account keys, or student data.
-
-## Required Program Areas
-
-- Unreal Engine Studio
-- Video Production Studio
-
-## Future Stack
-
-- React
-- Vite
-- TypeScript
-- Firebase Authentication
-- Cloud Firestore
-- Cloud Storage for Firebase
-- Firebase Hosting
-- Firebase Security Rules
-
-## Coding and Content Rules
-
-- Do not hardcode Firebase credentials.
-- Do not build features before the requested phase.
-- Keep curriculum/content data separate from app code.
-- DCC data in the shared Firebase project must stay namespaced under `apps/dcc`.
+- Pull latest `origin/main` before changing files.
+- Commit working changes directly to `main` only after build, lint, curriculum validation, and relevant dry runs pass.
+- Push validated milestones to GitHub.
+- Deploy Firebase Hosting only when live website behavior changes.
 - Deploy DCC Hosting only to the configured `dcc` Hosting target, not the default DragonMath Hosting site.
-- The app must support multiple program areas.
-- Do not assume the website is Unreal-only.
+- Return the live Firebase Hosting URL after deploys.
+- Never commit `.env.local`, credentials, service account keys, student data, rosters, private links, or private media.
+
+## Required Lesson Artifact Standard
+
+Every completed lesson should contain the project-standard equivalents of:
+
+- `lesson-page.md`
+- `assignment-sheet.md`
+- `bell-ringer-and-exit-ticket.md`
+- `teacher-notes.md`
+- `lesson-data.json`
+- `slide-brief.md`
+- `presentation-brief.md`
+
+Where the existing structure uses additional files, preserve them.
+
+## Presentation Rules
+
+- `slide-brief.md` is the concise automation-oriented brief.
+- `presentation-brief.md` is the premium instructional brief for ChatGPT Pro.
+- Neither brief is student-facing.
+- Codex must not create `.pptx` files.
+- Codex must not use PowerPoint generation tools.
+- Codex must not generate slide artwork or presentation background images.
+- PowerPoint links stay blank until the teacher supplies real Drive links.
+- Slide status must accurately reflect reality, such as `not-created`, `ready-for-chatgpt`, `created`, or another existing accurate enum.
+- Do not mark a slide deck as completed when only a brief exists.
+- Do not add fake Google Drive presentation links.
+
+## Submission Policy
+
+- Student evidence uses Google Drive, Google Docs, YouTube, or approved link submissions through the existing submission workflow.
+- Do not add raw student upload requirements.
+- Do not enable Firebase Storage uploads for student assignment media unless the teacher explicitly changes this later.
+- Student Preview Mode must not create real student submissions.
+
+## Curriculum Quality Rules
+
+- Student-facing language must be clear and high-school appropriate.
+- Teacher notes must be practical for a 90-minute A/B block.
+- Assignments must be realistic for available class time.
+- Bell ringers should be brief.
+- Exit tickets must measure the learning target.
+- Each lesson should include intervention and extension guidance.
+- Lessons should follow the school calendar and A/B schedule where schedule files exist.
+- Saturdays and Sundays are always off.
+- Weekend dates must not appear as no-school or skipped dates.
+- Only actual weekday no-school dates belong in `noSchoolDates`.
+- Do not silently invent critical curriculum decisions when source material is missing; mark the item `needs-teacher-review` and document the blocker.
+
+## Website And Data Rules
+
+- Keep curriculum and content data separate from app code.
+- DCC data in the shared Firebase project must stay namespaced under `apps/dcc`.
 - Lesson pages should render from Firestore-backed seed data.
 - Video production projects and Broadcast Desk Updates should render from structured Firestore-backed data.
 - Do not hardcode one-off lesson pages.
 - Do not build an in-browser video editor unless explicitly requested in a future phase.
 - Future video production functionality should focus on hosting, collecting, organizing, and reviewing media submissions.
-- Calendar-based scheduling must respect the attached/source school calendar. Saturdays and Sundays are always off, no-school days must be skipped, and Q1 Unreal lessons should be mapped in A/B pairs starting August 13 unless the teacher changes the start date.
-- Schedule views should use a block calendar layout, not only a list/table view. Instructional day cell headings should use the short `Q1 L1`, `Q1 L2`, `Q1 L3` format, with long lesson titles beneath the short label.
-- Weekends must not appear in skipped-date or no-school lists. `noSchoolDates` should mean actual weekday non-student days from the school calendar only.
-- If a source calendar does not explicitly label A/B days, infer the alternating A/B sequence across valid instructional days only and preserve any calendar anomalies in notes. ACT testing days should be noted when known, but they do not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
-- Auth uses Google SSO through Firebase.
+- Do not remove Firebase Auth, Google SSO, role protection, class-based access checks, Firestore-backed content services, or the active Today workflow.
 - Do not weaken Firebase Auth, Firestore rules, or Storage rules to make local testing easier.
-- Do not remove Firebase Auth, Google SSO, role protection, or class-based access checks.
+
+## Class And Response Security
+
 - Preserve class-code security: students join classes by code through the callable Cloud Function, must use `@student.doralacademynv.org`, cannot read join-code records, and cannot directly edit rosters or `classIds`.
 - Teachers may manage join codes only for assigned classes. Admins may manage all class join codes.
-- Preserve student response security: students may submit and edit only their own bell ringer and exit ticket responses for the active item in their assigned class; students cannot read classmates' responses; teachers may read responses only for classes they teach; admins may read response status across DCC.
+- Preserve student response security: students may submit and edit only their own bell ringer and exit ticket responses for the active item in their assigned class.
+- Students cannot read classmates' responses.
+- Teachers may read responses only for classes they teach.
+- Admins may read response status across DCC.
 - Student Preview Mode is teacher/admin only. Do not implement real student impersonation, do not add teachers to student rosters, and do not let preview responses count as real student work.
-- Preview responses must stay separate from real student response collections.
-- Preserve submission security: students submit Google Drive / Docs / YouTube evidence links only to `apps/dcc/submissions`; students cannot read classmates' submissions; assigned teachers may review submissions only for classes they teach; admins may review all DCC submissions.
-- Do not add raw file uploads, Firebase Storage uploads, media hosting, video editing, grading, quiz attempts, or portfolio workflows unless a later phase explicitly requests them.
-- Student Preview Mode must keep the submission panel read-only and must not create real `submissions` documents.
-- Seed imports must use local credentials only. Do not commit `.env.local`, service accounts, API secrets, rosters, private links, student names, or student media.
-- Visual design rule: DCC Creative Studio uses a colorful retro 80s synthwave design system. Future tasks must preserve neon cyan, magenta, purple, blue, and orange accents, glowing cards, synthwave gradients, and the creative media studio look. Do not regress the app into a plain dark command-center UI.
-- `src/styles/theme.css` contains the core design tokens. `src/styles/synthwave.css` contains the visual identity layer.
-- Use TypeScript when app code is introduced.
-- Keep student privacy and role-based access in mind for future phases.
-- Do not expose student data across accounts.
+- Preserve submission security: students submit evidence links only to `apps/dcc/submissions`; students cannot read classmates' submissions; assigned teachers may review submissions only for classes they teach; admins may review all DCC submissions.
+
+## Visual Identity Rules
+
+- Preserve the colorful retro 80s synthwave design system in the website.
+- Preserve neon cyan, magenta, purple, blue, and orange accents, glowing cards, synthwave gradients, and the creative media studio look.
+- Do not regress the website into a plain dark command-center appearance.
+- `src/styles/theme.css` contains the core design tokens.
+- `src/styles/synthwave.css` contains the visual identity layer.
+- Slide visual briefs should be compatible with the established premium deck style.
+
+## Validation Rules
+
+Before committing curriculum or website changes, run the relevant checks:
+
+- `npm install` when dependencies may need refresh
+- `npm run build`
+- `npm run lint`
+- `npm run validate:curriculum`
+- `npm run seed:curriculum -- --dry-run` when seed files change
+- `git diff --check`
+
+Also confirm no `.pptx` files, generated slide image folders, fake Drive links, credentials, `.env.local`, service accounts, student data, rosters, or private media are staged.
+
+## Acceptance Criteria Practice
+
 - Add acceptance criteria to major task summaries.
+- Keep `PROGRESS.md` current during Phase 9.
 - Preserve existing useful project instructions.

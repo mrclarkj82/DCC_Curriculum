@@ -1,0 +1,140 @@
+{
+  "id": "ue-q3-quiz-01",
+  "programAreaId": "unreal-engine",
+  "title": "Q3 Quiz 1 Draft: Production, Documentation, Planning, Setup, and Blockout",
+  "quarter": "Q3",
+  "lessonIds": [
+    "ue-q3-l01",
+    "ue-q3-l02",
+    "ue-q3-l03",
+    "ue-q3-l04"
+  ],
+  "status": "draft-pilot",
+  "isPublished": false,
+  "questions": [
+    {
+      "id": "ue-q3-quiz-01-q01",
+      "type": "multiple-choice",
+      "text": "What is the main purpose of a production log during the Q3 castle project?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l01",
+      "tag": "production-log",
+      "choices": [
+        "To track what was built, captured, changed, and planned next.",
+        "To replace all screenshots.",
+        "To store secret passwords.",
+        "To skip daily recording."
+      ],
+      "correctAnswer": "To track what was built, captured, changed, and planned next.",
+      "explanation": "A production log records work and decisions so the documentary has accurate process evidence."
+    },
+    {
+      "id": "ue-q3-quiz-01-q02",
+      "type": "multiple-choice",
+      "text": "Which evidence best supports a making-of documentary?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l01",
+      "tag": "documentary-evidence",
+      "choices": [
+        "A short screen recording showing a decision being made.",
+        "Only the final screenshot.",
+        "A blank project folder.",
+        "A title with no visual proof."
+      ],
+      "correctAnswer": "A short screen recording showing a decision being made.",
+      "explanation": "Process evidence shows how the project changed, not just the final state."
+    },
+    {
+      "id": "ue-q3-quiz-01-q03",
+      "type": "multiple-choice",
+      "text": "Why should a castle environment have a focal point?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l02",
+      "tag": "focal-point",
+      "choices": [
+        "It helps the viewer know what to notice first.",
+        "It hides all mistakes automatically.",
+        "It turns every mesh into a material.",
+        "It replaces player testing."
+      ],
+      "correctAnswer": "It helps the viewer know what to notice first.",
+      "explanation": "A focal point gives the environment visual priority and direction."
+    },
+    {
+      "id": "ue-q3-quiz-01-q04",
+      "type": "multiple-choice",
+      "text": "Why is player scale important in a third-person castle project?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l03",
+      "tag": "player-scale",
+      "choices": [
+        "It shows whether doors, paths, walls, and spaces feel believable from player view.",
+        "It changes the school calendar.",
+        "It makes screenshots unnecessary.",
+        "It deletes the need for terrain."
+      ],
+      "correctAnswer": "It shows whether doors, paths, walls, and spaces feel believable from player view.",
+      "explanation": "The player character helps test whether the environment feels readable and walkable."
+    },
+    {
+      "id": "ue-q3-quiz-01-q05",
+      "type": "vocabulary",
+      "text": "Identify the term: supporting footage that helps explain a process, place, detail, or action.",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l01",
+      "tag": "vocabulary",
+      "correctAnswer": "B-roll",
+      "explanation": "B-roll supports the main story with useful detail or process footage."
+    },
+    {
+      "id": "ue-q3-quiz-01-q06",
+      "type": "vocabulary",
+      "text": "Identify the term: a dated record of what was built, captured, changed, and planned next.",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l01",
+      "tag": "vocabulary",
+      "correctAnswer": "Production log",
+      "explanation": "The production log protects the process story from being forgotten."
+    },
+    {
+      "id": "ue-q3-quiz-01-q07",
+      "type": "scenario",
+      "text": "A student has a strong final screenshot but no process clips from the day. What should they do next class?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l01",
+      "tag": "troubleshooting",
+      "correctAnswer": "They should record the work process early, capture before/after evidence, and update the production log while they build.",
+      "explanation": "The documentary needs daily process evidence, not only final screenshots."
+    },
+    {
+      "id": "ue-q3-quiz-01-q08",
+      "type": "scenario",
+      "text": "A castle looks impressive from editor view but too small when the player walks through it. What should the student check?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l03",
+      "tag": "troubleshooting",
+      "correctAnswer": "They should test from player view and adjust scale, doors, paths, walls, or camera framing based on the character size.",
+      "explanation": "Player-view testing reveals scale problems that editor view can hide."
+    },
+    {
+      "id": "ue-q3-quiz-01-q09",
+      "type": "process-order",
+      "text": "Put the daily Q3 evidence workflow in order: build, record, log, upload, submit.",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l01",
+      "tag": "workflow",
+      "correctAnswer": "1. Build or revise the castle. 2. Record screen/camera evidence. 3. Update the production log. 4. Upload evidence to Drive or YouTube. 5. Submit the link in DCC Creative Studio.",
+      "explanation": "This sequence keeps production work and evidence connected."
+    },
+    {
+      "id": "ue-q3-quiz-01-q10",
+      "type": "short-response",
+      "text": "In 2-3 sentences, explain why Q3 requires daily recording while students build the castle.",
+      "difficulty": "hard",
+      "lessonId": "ue-q3-l01",
+      "tag": "short-response",
+      "correctAnswer": "A strong answer explains that daily recording captures the process, decisions, mistakes, revisions, and progress that a final screenshot cannot show. It should connect the evidence to the final making-of documentary.",
+      "explanation": "This checks whether students understand the documentary purpose of daily evidence."
+    }
+  ]
+}

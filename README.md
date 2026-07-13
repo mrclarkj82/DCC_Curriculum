@@ -6,7 +6,7 @@ The app is intended to become a data-driven curriculum and media project player.
 
 ## Current Phase
 
-Phase 8 + Quiz 1 Self-Grading Pilot
+Phase 9: Curriculum Completion and ChatGPT Pro Slide Handoff
 
 ## Local Development
 
@@ -431,6 +431,35 @@ $env:CONFIRM_SEED="true"; npm run seed:quizzes
 
 This pilot does not add full gradebook categories, grade exports, retake management, item analysis, portfolio scoring, raw uploads, media uploads, or quiz answer review pages.
 
+## Phase 9 Curriculum Completion And Slide Handoff
+
+Phase 9 completes the current non-slide curriculum package and prepares missing decks for ChatGPT Pro instead of generating PowerPoints inside this repository.
+
+What Phase 9 adds:
+
+- Complete local Q3 Unreal Castle Documentary lesson folders for Lessons 01-16.
+- Standard lesson artifacts for Q3: lesson page, assignment sheet, bell ringer and exit ticket, teacher notes, `lesson-data.json`, `slide-brief.md`, and `presentation-brief.md`.
+- Four Q3 draft-pilot quiz checkpoints with public quiz data and private answer-key seed data.
+- A Q1 Lesson 05 presentation brief so every missing Q1 deck has a premium handoff source.
+- `curriculum/slide-handoff/` with the presentation brief index, slide-generation manifest, master ChatGPT Pro prompt, and slide-link return template.
+- Seed and local mirror updates so missing decks are marked `ready-for-chatgpt` while real slide URLs stay blank until the teacher supplies them.
+
+Phase 9 intentionally does not create:
+
+- PowerPoint files.
+- Slide image exports.
+- Generated presentation artwork.
+- Fake Google Drive links.
+- Raw upload workflows, media hosting, grading exports, or portfolio workflows.
+
+Deck creation handoff files:
+
+- `curriculum/slide-handoff/README.md`
+- `curriculum/slide-handoff/presentation-brief-index.md`
+- `curriculum/slide-handoff/slide-generation-manifest.json`
+- `curriculum/slide-handoff/CHATGPT_PRO_MASTER_SLIDE_PROMPT.md`
+- `curriculum/slide-handoff/SLIDE_LINK_RETURN_TEMPLATE.md`
+
 ## Calendar-Based Lesson Scheduling
 
 The 2026-2027 Doral list-form calendar is used as the source of truth for A/B lesson scheduling data in `curriculum/calendar/`.
@@ -502,16 +531,18 @@ It includes:
 
 ## Q3 Unreal Castle Documentary Curriculum
 
-The Q3 Unreal Engine Studio sequence is represented in the Firestore seed data and generated calendar files. It focuses on a sustained Unreal castle environment project paired with daily process documentation.
+The Q3 Unreal Engine Studio sequence is represented in the Firestore seed data, generated calendar files, and complete local pilot-batch lesson folders. It focuses on a sustained Unreal castle environment project paired with daily process documentation.
 
 It includes:
 
+- 16 draft-pilot Unreal lesson folders in `curriculum/pilot-batch/unreal/q3/`.
 - 16 draft-pilot Unreal lesson records in `curriculum/website-data/lessons.seed.json`.
 - 16 matching assignment records in `curriculum/website-data/assignments.seed.json`.
-- 4 draft quiz checkpoints in `curriculum/website-data/quizzes.seed.json`.
+- 4 draft quiz checkpoints in `curriculum/website-data/quizzes.seed.json` with private answer keys in `curriculum/website-data/quizAnswerKeys.seed.json`.
 - A/B lesson schedule records in `curriculum/website-data/lessonSchedule.seed.json`.
 - A teacher schedule block calendar in `curriculum/website-data/blockLessonCalendars.seed.json`.
 - Daily evidence expectations for screen recording, camera footage, behind-the-scenes clips, and production log updates.
+- Slide and presentation briefs marked `ready-for-chatgpt`; no Q3 PowerPoint decks exist in the repository.
 
 Students should treat the Q3 castle build as both a game environment project and a documentary production. As castles move from blockout to materials, lighting, walkthroughs, and final polish, the daily captured evidence becomes the source material for the making-of documentary.
 

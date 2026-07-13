@@ -1,0 +1,140 @@
+{
+  "id": "ue-q3-quiz-03",
+  "programAreaId": "unreal-engine",
+  "title": "Q3 Quiz 3 Draft: Framing, Foliage, Storytelling, Lighting Mood, and Documentary Capture",
+  "quarter": "Q3",
+  "lessonIds": [
+    "ue-q3-l10",
+    "ue-q3-l11",
+    "ue-q3-l12",
+    "ue-q3-l13"
+  ],
+  "status": "draft-pilot",
+  "isPublished": false,
+  "questions": [
+    {
+      "id": "ue-q3-quiz-03-q01",
+      "type": "multiple-choice",
+      "text": "What is scene framing supposed to do?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l10",
+      "tag": "framing",
+      "choices": [
+        "Guide the viewer toward important areas.",
+        "Hide all evidence.",
+        "Delete the player path.",
+        "Replace lighting."
+      ],
+      "correctAnswer": "Guide the viewer toward important areas.",
+      "explanation": "Framing uses foreground, middle ground, and background to direct attention."
+    },
+    {
+      "id": "ue-q3-quiz-03-q02",
+      "type": "multiple-choice",
+      "text": "When can foliage hurt a scene?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l11",
+      "tag": "foliage",
+      "choices": [
+        "When it hides paths, focal points, or important silhouettes.",
+        "When it is placed intentionally.",
+        "When it creates scale.",
+        "When it supports mood."
+      ],
+      "correctAnswer": "When it hides paths, focal points, or important silhouettes.",
+      "explanation": "Too much foliage can reduce readability or create performance concerns."
+    },
+    {
+      "id": "ue-q3-quiz-03-q03",
+      "type": "multiple-choice",
+      "text": "What is environmental storytelling?",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l12",
+      "tag": "storytelling",
+      "choices": [
+        "Using visual details to imply history, purpose, or events.",
+        "Writing a paragraph on every wall.",
+        "Using random props without meaning.",
+        "Turning off all lights."
+      ],
+      "correctAnswer": "Using visual details to imply history, purpose, or events.",
+      "explanation": "Environmental storytelling lets viewers infer story from the scene itself."
+    },
+    {
+      "id": "ue-q3-quiz-03-q04",
+      "type": "multiple-choice",
+      "text": "What is a lighting mood pass?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l13",
+      "tag": "lighting",
+      "choices": [
+        "Adjusting lighting choices to support a clear emotional tone.",
+        "Only making the scene brighter.",
+        "Deleting all post-process settings.",
+        "Submitting a folder with no screenshots."
+      ],
+      "correctAnswer": "Adjusting lighting choices to support a clear emotional tone.",
+      "explanation": "Lighting mood uses color, direction, contrast, and intensity to shape feeling."
+    },
+    {
+      "id": "ue-q3-quiz-03-q05",
+      "type": "vocabulary",
+      "text": "Identify the term: objects placed in the scene to suggest story, use, or history.",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l12",
+      "tag": "vocabulary",
+      "correctAnswer": "Story details or environmental storytelling details",
+      "explanation": "Story details give the environment meaning beyond decoration."
+    },
+    {
+      "id": "ue-q3-quiz-03-q06",
+      "type": "vocabulary",
+      "text": "Identify the term: objects closest to the camera that can help frame the main subject.",
+      "difficulty": "easy",
+      "lessonId": "ue-q3-l10",
+      "tag": "vocabulary",
+      "correctAnswer": "Foreground",
+      "explanation": "Foreground elements can guide attention and add depth."
+    },
+    {
+      "id": "ue-q3-quiz-03-q07",
+      "type": "scenario",
+      "text": "A student paints dense trees directly over the player path. What should they adjust?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l11",
+      "tag": "troubleshooting",
+      "correctAnswer": "They should reduce density, clear the path, group foliage intentionally, and record before/after readability evidence.",
+      "explanation": "Foliage should support the route and mood, not hide navigation."
+    },
+    {
+      "id": "ue-q3-quiz-03-q08",
+      "type": "scenario",
+      "text": "A castle has props everywhere but no clear story. What should the student do?",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l12",
+      "tag": "troubleshooting",
+      "correctAnswer": "They should choose one story idea, remove random details, and arrange a few visible clues that support that idea.",
+      "explanation": "Storytelling works best when details point to a clear interpretation."
+    },
+    {
+      "id": "ue-q3-quiz-03-q09",
+      "type": "process-order",
+      "text": "Put the lighting mood workflow in order: choose mood word, capture before, adjust lighting, capture after, explain the change.",
+      "difficulty": "medium",
+      "lessonId": "ue-q3-l13",
+      "tag": "workflow",
+      "correctAnswer": "1. Choose a mood word. 2. Capture before evidence. 3. Adjust lighting. 4. Capture after evidence. 5. Explain the change.",
+      "explanation": "Lighting mood evidence is strongest when before and after are comparable."
+    },
+    {
+      "id": "ue-q3-quiz-03-q10",
+      "type": "short-response",
+      "text": "In 2-3 sentences, explain how framing, foliage, story details, or lighting can make the castle documentary stronger.",
+      "difficulty": "hard",
+      "lessonId": "ue-q3-l13",
+      "tag": "short-response",
+      "correctAnswer": "A strong answer explains that these choices help viewers understand where to look, what changed, what the castle feels like, and what story the build communicates. It should mention visual evidence or production clips.",
+      "explanation": "This checks synthesis across visual storytelling and documentation."
+    }
+  ]
+}

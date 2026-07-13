@@ -1,0 +1,618 @@
+[
+  {
+    "lessonId": "ue-q1-l05",
+    "title": "Quiz 1 and First Scene Cleanup",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-05-quiz-01-and-first-scene-cleanup/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-05-quiz-01-and-first-scene-cleanup/slide-brief.md",
+    "expectedFileName": "DCC_ue-q1-l05_quiz-1-and-first-scene-cleanup.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Unreal Engine 5 Beginner Tutorial Transcript, local class curriculum source.",
+      "Epic Games, Unreal Engine Documentation: https://dev.epicgames.com/documentation/unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q1-l13",
+    "title": "Quiz 3 and Lumen Lighting",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-13-quiz-3-and-lumen-lighting/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-13-quiz-3-and-lumen-lighting/slide-brief.md",
+    "expectedFileName": "DCC_ue-q1-l13_quiz-3-and-lumen-lighting.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Unreal Engine 5 Beginner Tutorial Transcript, local class curriculum source.",
+      "Epic Games, Unreal Engine Documentation: https://dev.epicgames.com/documentation/unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q1-l14",
+    "title": "Light Types and Scene Lighting",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-14-light-types-and-scene-lighting/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-14-light-types-and-scene-lighting/slide-brief.md",
+    "expectedFileName": "DCC_ue-q1-l14_light-types-and-scene-lighting.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Unreal Engine 5 Beginner Tutorial Transcript, local class curriculum source.",
+      "Epic Games, Unreal Engine Documentation: https://dev.epicgames.com/documentation/unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q1-l15",
+    "title": "Landscapes",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-15-landscapes/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-15-landscapes/slide-brief.md",
+    "expectedFileName": "DCC_ue-q1-l15_landscapes.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Unreal Engine 5 Beginner Tutorial Transcript, local class curriculum source.",
+      "Epic Games, Unreal Engine Documentation: https://dev.epicgames.com/documentation/unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q1-l16",
+    "title": "Foliage, Mini-World, and Blueprint Preview",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q1",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-16-foliage-mini-world-and-blueprint-preview/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q1/lesson-16-foliage-mini-world-and-blueprint-preview/slide-brief.md",
+    "expectedFileName": "DCC_ue-q1-l16_foliage-mini-world-and-blueprint-preview.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Unreal Engine 5 Beginner Tutorial Transcript, local class curriculum source.",
+      "Epic Games, Unreal Engine Documentation: https://dev.epicgames.com/documentation/unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l01",
+    "title": "Unreal Reboot and Production Expectations",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-01-unreal-reboot-and-production-expectations/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-01-unreal-reboot-and-production-expectations/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l01_unreal-reboot-and-production-expectations.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l02",
+    "title": "Environment Planning",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-02-environment-planning/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-02-environment-planning/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l02_environment-planning.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l03",
+    "title": "Third-Person Project Setup",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-03-third-person-project-setup/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-03-third-person-project-setup/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l03_third-person-project-setup.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l04",
+    "title": "Landscape Blockout",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-04-landscape-blockout/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-04-landscape-blockout/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l04_landscape-blockout.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l05",
+    "title": "Quiz 1 and Landscape Refinement",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-05-quiz-1-and-landscape-refinement/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-05-quiz-1-and-landscape-refinement/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l05_quiz-1-and-landscape-refinement.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l06",
+    "title": "Landscape Materials",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-06-landscape-materials/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-06-landscape-materials/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l06_landscape-materials.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l07",
+    "title": "Megascans/Fab/Bridge Terrain Assets",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-07-megascans-fab-bridge-terrain-assets/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-07-megascans-fab-bridge-terrain-assets/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l07_megascans-fab-bridge-terrain-assets.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l08",
+    "title": "Castle Modular Kit",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-08-castle-modular-kit/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-08-castle-modular-kit/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l08_castle-modular-kit.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l09",
+    "title": "Quiz 2 and Castle Composition",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-09-quiz-2-and-castle-composition/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-09-quiz-2-and-castle-composition/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l09_quiz-2-and-castle-composition.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l10",
+    "title": "Rocks, Cliffs, and Scene Framing",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-10-rocks-cliffs-and-scene-framing/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-10-rocks-cliffs-and-scene-framing/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l10_rocks-cliffs-and-scene-framing.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l11",
+    "title": "Trees and Foliage",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-11-trees-and-foliage/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-11-trees-and-foliage/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l11_trees-and-foliage.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l12",
+    "title": "Environmental Storytelling",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-12-environmental-storytelling/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-12-environmental-storytelling/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l12_environmental-storytelling.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l13",
+    "title": "Quiz 3 and Lighting Mood",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-13-quiz-3-and-lighting-mood/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-13-quiz-3-and-lighting-mood/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l13_quiz-3-and-lighting-mood.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l14",
+    "title": "Post-Process and Cinematic Screenshots",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-14-post-process-and-cinematic-screenshots/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-14-post-process-and-cinematic-screenshots/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l14_post-process-and-cinematic-screenshots.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l15",
+    "title": "Player Walkthrough",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-15-player-walkthrough/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-15-player-walkthrough/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l15_player-walkthrough.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q3-l16",
+    "title": "Final Critique and Portfolio Submission",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q3",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-16-final-critique-and-portfolio-submission/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q3/lesson-16-final-critique-and-portfolio-submission/slide-brief.md",
+    "expectedFileName": "DCC_ue-q3-l16_final-critique-and-portfolio-submission.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Q3 Castle Environment Lesson Map, local curriculum source.",
+      "Epic Games, Create Your First Project in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/create-your-first-project-in-unreal-engine",
+      "Epic Games, Third Person Template in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/third-person-template-in-unreal-engine",
+      "Epic Games, Level Designer Quick Start in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/level-designer-quick-start-in-unreal-engine",
+      "Epic Games, Landscape Overview: https://dev.epicgames.com/documentation/unreal-engine/landscape-overview",
+      "Epic Games, Landscape Materials: https://dev.epicgames.com/documentation/unreal-engine/landscape-materials-in-unreal-engine",
+      "Epic Games, Fab in Unreal Engine: https://dev.epicgames.com/documentation/unreal-engine/fab-window-in-unreal-engine",
+      "Epic Games, Foliage Mode: https://dev.epicgames.com/documentation/unreal-engine/foliage-mode-in-unreal-engine",
+      "Epic Games, Post Process Effects: https://dev.epicgames.com/documentation/unreal-engine/post-process-effects-in-unreal-engine",
+      "Epic Games, Lumen Global Illumination and Reflections: https://dev.epicgames.com/documentation/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-file-org-01",
+    "title": "Video Production File Organization",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/file-organization/lesson-01-video-production-file-organization/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/file-organization/lesson-01-video-production-file-organization/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-file-org-01_video-production-file-organization.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "ue-q2-file-org-01",
+    "title": "Video Game Development File Organization",
+    "programAreaId": "unreal-engine",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/unreal/q2/file-organization/lesson-01-video-game-development-file-organization/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/unreal/q2/file-organization/lesson-01-video-game-development-file-organization/slide-brief.md",
+    "expectedFileName": "DCC_ue-q2-file-org-01_video-game-development-file-organization.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Unreal Engine 5 Beginner Tutorial Transcript, local class curriculum source.",
+      "Epic Games, Unreal Engine Documentation: https://dev.epicgames.com/documentation/unreal-engine"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l01",
+    "title": "DaVinci Resolve Setup and Project Manager",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-01-resolve-setup-and-project-manager/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-01-resolve-setup-and-project-manager/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l01_davinci-resolve-setup-and-project-manager.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l02",
+    "title": "Media Page, Imports, and Bins",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-02-media-page-imports-and-bins/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-02-media-page-imports-and-bins/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l02_media-page-imports-and-bins.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l03",
+    "title": "Syncing Audio and Timeline Basics",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-03-syncing-audio-and-timeline-basics/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-03-syncing-audio-and-timeline-basics/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l03_syncing-audio-and-timeline-basics.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l04",
+    "title": "Trimming Clips and Building a Rough Cut",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-04-trimming-clips-and-rough-cut/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-04-trimming-clips-and-rough-cut/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l04_trimming-clips-and-building-a-rough-cut.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l05",
+    "title": "Quiz 1 and Rough Cut Cleanup",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-05-quiz-1-and-rough-cut-cleanup/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-05-quiz-1-and-rough-cut-cleanup/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l05_quiz-1-and-rough-cut-cleanup.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l06",
+    "title": "Titles, Transitions, and Simple Motion",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-06-titles-transitions-and-simple-motion/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-06-titles-transitions-and-simple-motion/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l06_titles-transitions-and-simple-motion.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l07",
+    "title": "Quiz 2 and Final Export",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-07-quiz-2-and-final-export/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-07-quiz-2-and-final-export/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l07_quiz-2-and-final-export.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "DaVinci Resolve Q2 Tutorial Transcript, local class curriculum source.",
+      "Blackmagic Design, DaVinci Resolve: https://www.blackmagicdesign.com/products/davinciresolve",
+      "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
+    ],
+    "status": "ready-for-chatgpt"
+  }
+]

@@ -81,11 +81,20 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 - [x] Q2 Video Game Development File Organization lesson-data.json - ready for seed import
 - [x] Q3 Unreal Castle Documentary lesson seeds 01-16 - draft-pilot / needs teacher review
 - [x] Q3 Unreal Castle Documentary assignment seeds 01-16 - needs teacher review
+- [x] Q3 Unreal Castle Documentary local lesson folders 01-16 - ready for seed import / needs teacher review
+- [x] Q3 Unreal Castle Documentary lesson pages 01-16 - ready for seed import / needs teacher review
+- [x] Q3 Unreal Castle Documentary assignment sheets 01-16 - needs teacher review
+- [x] Q3 Unreal Castle Documentary bell ringer / exit ticket files 01-16 - needs teacher review
+- [x] Q3 Unreal Castle Documentary teacher notes 01-16 - needs teacher review
+- [x] Q3 Unreal Castle Documentary slide briefs 01-16 - ready for ChatGPT Pro
+- [x] Q3 Unreal Castle Documentary presentation briefs 01-16 - ready for ChatGPT Pro
 - [x] Q3 Unreal Castle Documentary daily screen/camera recording focus - built into lesson and assignment evidence
 - [x] Q3 Unreal Castle Documentary production log focus - built into lesson and assignment evidence
 - [x] Q3 Unreal Castle Documentary A/B schedule - generated from 2026-2027 calendar
 - [x] Q3 Unreal Castle Documentary block calendar - generated from 2026-2027 calendar
-- [x] Q3 Unreal Castle Documentary quizzes 01-04 - placeholder drafts / needs question writing
+- [x] Q3 Unreal Castle Documentary quizzes 01-04 - draft-pilot 10-question checkpoints / needs teacher review
+- [x] Q3 Unreal Castle Documentary private answer keys 01-04 - ready for seed validation / needs teacher review
+- [x] Phase 9 slide handoff package - ready for ChatGPT Pro
 
 ## Video Production Studio
 
@@ -161,7 +170,7 @@ Status labels used: draft, needs teacher review, ready for ChatGPT Pro, ready fo
 
 ## Notes
 
-- Unreal slide briefs are ready for ChatGPT Pro PowerPoint generation.
-- Q3 Unreal Castle Documentary is seed-ready for macro schedule preview, but lesson slide briefs and quiz questions still need authoring before classroom pilot.
+- Unreal slide briefs and presentation briefs for missing decks are ready for ChatGPT Pro PowerPoint generation.
+- Q3 Unreal Castle Documentary is seed-ready for macro schedule preview and now has complete local lesson artifacts. Teacher review is still needed before classroom pilot.
 - Video Production project placeholders need teacher-specific equipment, software, and submission details.
 - Broadcast Desk Updates need real publish dates, due dates, and approved resource links before classroom use.

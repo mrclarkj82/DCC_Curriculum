@@ -724,7 +724,7 @@
   {
     "id": "ue-q3-quiz-01",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 1: Production Expectations, Documentation, Planning, Setup, and Blockout",
+    "title": "Q3 Quiz 1 Draft: Production, Documentation, Planning, Setup, and Blockout",
     "quarter": "Q3",
     "lessonIds": [
       "ue-q3-l01",
@@ -732,14 +732,119 @@
       "ue-q3-l03",
       "ue-q3-l04"
     ],
-    "status": "placeholder",
+    "status": "draft-pilot",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q3-quiz-01-q01",
+        "type": "multiple-choice",
+        "text": "What is the main purpose of a production log during the Q3 castle project?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l01",
+        "tag": "production-log",
+        "choices": [
+          "To track what was built, captured, changed, and planned next.",
+          "To replace all screenshots.",
+          "To store secret passwords.",
+          "To skip daily recording."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-01-q02",
+        "type": "multiple-choice",
+        "text": "Which evidence best supports a making-of documentary?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l01",
+        "tag": "documentary-evidence",
+        "choices": [
+          "A short screen recording showing a decision being made.",
+          "Only the final screenshot.",
+          "A blank project folder.",
+          "A title with no visual proof."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-01-q03",
+        "type": "multiple-choice",
+        "text": "Why should a castle environment have a focal point?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l02",
+        "tag": "focal-point",
+        "choices": [
+          "It helps the viewer know what to notice first.",
+          "It hides all mistakes automatically.",
+          "It turns every mesh into a material.",
+          "It replaces player testing."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-01-q04",
+        "type": "multiple-choice",
+        "text": "Why is player scale important in a third-person castle project?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l03",
+        "tag": "player-scale",
+        "choices": [
+          "It shows whether doors, paths, walls, and spaces feel believable from player view.",
+          "It changes the school calendar.",
+          "It makes screenshots unnecessary.",
+          "It deletes the need for terrain."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-01-q05",
+        "type": "vocabulary",
+        "text": "Identify the term: supporting footage that helps explain a process, place, detail, or action.",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l01",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-01-q06",
+        "type": "vocabulary",
+        "text": "Identify the term: a dated record of what was built, captured, changed, and planned next.",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l01",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-01-q07",
+        "type": "scenario",
+        "text": "A student has a strong final screenshot but no process clips from the day. What should they do next class?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l01",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-01-q08",
+        "type": "scenario",
+        "text": "A castle looks impressive from editor view but too small when the player walks through it. What should the student check?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l03",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-01-q09",
+        "type": "process-order",
+        "text": "Put the daily Q3 evidence workflow in order: build, record, log, upload, submit.",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l01",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q3-quiz-01-q10",
+        "type": "short-response",
+        "text": "In 2-3 sentences, explain why Q3 requires daily recording while students build the castle.",
+        "difficulty": "hard",
+        "lessonId": "ue-q3-l01",
+        "tag": "short-response"
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-02",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 2: Landscape Materials, Terrain Assets, Modular Kits, Composition, and Process Evidence",
+    "title": "Q3 Quiz 2 Draft: Materials, Terrain Assets, Modular Kits, Composition, and Process Evidence",
     "quarter": "Q3",
     "lessonIds": [
       "ue-q3-l06",
@@ -747,14 +852,119 @@
       "ue-q3-l08",
       "ue-q3-l09"
     ],
-    "status": "placeholder",
+    "status": "draft-pilot",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q3-quiz-02-q01",
+        "type": "multiple-choice",
+        "text": "What is the main job of landscape materials in a castle environment?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l06",
+        "tag": "landscape-materials",
+        "choices": [
+          "To make terrain zones readable and believable.",
+          "To erase all landscape shapes.",
+          "To replace the production log.",
+          "To automatically build the castle."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-02-q02",
+        "type": "multiple-choice",
+        "text": "What makes an imported terrain asset support the scene?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l07",
+        "tag": "assets",
+        "choices": [
+          "It matches scale, style, and story purpose.",
+          "It is random and large.",
+          "It hides the focal point.",
+          "It has no source note."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-02-q03",
+        "type": "multiple-choice",
+        "text": "Why are modular castle pieces useful?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l08",
+        "tag": "modular-kit",
+        "choices": [
+          "They allow repeated pieces to create larger structures efficiently.",
+          "They make all pieces unique automatically.",
+          "They prevent the need for saving.",
+          "They remove the need for composition."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-02-q04",
+        "type": "multiple-choice",
+        "text": "What does silhouette help communicate in a castle composition?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l09",
+        "tag": "composition",
+        "choices": [
+          "The overall readable shape of the castle from a distance.",
+          "The exact file size.",
+          "The teacher password.",
+          "The audio level of a clip."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-02-q05",
+        "type": "vocabulary",
+        "text": "Identify the term: reusable pieces assembled to build a larger structure.",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l08",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-02-q06",
+        "type": "vocabulary",
+        "text": "Identify the term: the main visual shape or outline of an object or building.",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l09",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-02-q07",
+        "type": "scenario",
+        "text": "A student downloads ten terrain assets but the scene looks cluttered and inconsistent. What should they do?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l07",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-02-q08",
+        "type": "scenario",
+        "text": "A modular castle wall repeats the same piece so obviously that it looks artificial. What can improve it?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l08",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-02-q09",
+        "type": "process-order",
+        "text": "Put the modular castle workflow in order: review kit, block silhouette, assemble pieces, add variation, record progress.",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l08",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q3-quiz-02-q10",
+        "type": "short-response",
+        "text": "In 2-3 sentences, explain how material, asset, and modular choices can support the final documentary.",
+        "difficulty": "hard",
+        "lessonId": "ue-q3-l09",
+        "tag": "short-response"
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-03",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 3: Scene Framing, Foliage, Storytelling, Lighting Mood, and Documentary Capture",
+    "title": "Q3 Quiz 3 Draft: Framing, Foliage, Storytelling, Lighting Mood, and Documentary Capture",
     "quarter": "Q3",
     "lessonIds": [
       "ue-q3-l10",
@@ -762,23 +972,233 @@
       "ue-q3-l12",
       "ue-q3-l13"
     ],
-    "status": "placeholder",
+    "status": "draft-pilot",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q3-quiz-03-q01",
+        "type": "multiple-choice",
+        "text": "What is scene framing supposed to do?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l10",
+        "tag": "framing",
+        "choices": [
+          "Guide the viewer toward important areas.",
+          "Hide all evidence.",
+          "Delete the player path.",
+          "Replace lighting."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-03-q02",
+        "type": "multiple-choice",
+        "text": "When can foliage hurt a scene?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l11",
+        "tag": "foliage",
+        "choices": [
+          "When it hides paths, focal points, or important silhouettes.",
+          "When it is placed intentionally.",
+          "When it creates scale.",
+          "When it supports mood."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-03-q03",
+        "type": "multiple-choice",
+        "text": "What is environmental storytelling?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l12",
+        "tag": "storytelling",
+        "choices": [
+          "Using visual details to imply history, purpose, or events.",
+          "Writing a paragraph on every wall.",
+          "Using random props without meaning.",
+          "Turning off all lights."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-03-q04",
+        "type": "multiple-choice",
+        "text": "What is a lighting mood pass?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l13",
+        "tag": "lighting",
+        "choices": [
+          "Adjusting lighting choices to support a clear emotional tone.",
+          "Only making the scene brighter.",
+          "Deleting all post-process settings.",
+          "Submitting a folder with no screenshots."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-03-q05",
+        "type": "vocabulary",
+        "text": "Identify the term: objects placed in the scene to suggest story, use, or history.",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l12",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-03-q06",
+        "type": "vocabulary",
+        "text": "Identify the term: objects closest to the camera that can help frame the main subject.",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l10",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-03-q07",
+        "type": "scenario",
+        "text": "A student paints dense trees directly over the player path. What should they adjust?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l11",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-03-q08",
+        "type": "scenario",
+        "text": "A castle has props everywhere but no clear story. What should the student do?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l12",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-03-q09",
+        "type": "process-order",
+        "text": "Put the lighting mood workflow in order: choose mood word, capture before, adjust lighting, capture after, explain the change.",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l13",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q3-quiz-03-q10",
+        "type": "short-response",
+        "text": "In 2-3 sentences, explain how framing, foliage, story details, or lighting can make the castle documentary stronger.",
+        "difficulty": "hard",
+        "lessonId": "ue-q3-l13",
+        "tag": "short-response"
+      }
+    ]
   },
   {
     "id": "ue-q3-quiz-04",
     "programAreaId": "unreal-engine",
-    "title": "Q3 Quiz 4: Post-Process, Walkthroughs, Documentary Evidence, and Portfolio Submission",
+    "title": "Q3 Quiz 4 Draft: Post-Process, Walkthroughs, Documentary Evidence, and Portfolio Submission",
     "quarter": "Q3",
     "lessonIds": [
       "ue-q3-l14",
       "ue-q3-l15",
       "ue-q3-l16"
     ],
-    "status": "placeholder",
+    "status": "draft-pilot",
     "isPublished": false,
-    "questions": []
+    "questions": [
+      {
+        "id": "ue-q3-quiz-04-q01",
+        "type": "multiple-choice",
+        "text": "What is the goal of a cinematic screenshot?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l14",
+        "tag": "cinematic-screenshot",
+        "choices": [
+          "To present the scene with intentional framing, mood, and clarity.",
+          "To show random editor UI.",
+          "To avoid final evidence.",
+          "To replace all reflection writing."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-04-q02",
+        "type": "multiple-choice",
+        "text": "Why use post-process carefully?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l14",
+        "tag": "post-process",
+        "choices": [
+          "It can polish mood and image quality without hiding readability.",
+          "It should always make the scene blurry.",
+          "It deletes the need for lighting.",
+          "It prevents screenshots."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-04-q03",
+        "type": "multiple-choice",
+        "text": "What can a player walkthrough reveal that screenshots cannot?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l15",
+        "tag": "walkthrough",
+        "choices": [
+          "Pacing, route readability, collision issues, and how the scene feels in motion.",
+          "Only the file name.",
+          "The teacher gradebook.",
+          "Whether the Drive link is private."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-04-q04",
+        "type": "multiple-choice",
+        "text": "What should the final documentary prove?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l16",
+        "tag": "documentary",
+        "choices": [
+          "How the castle was made and improved over time.",
+          "Only that the final screenshot exists.",
+          "That no revisions were needed.",
+          "That the project has no files."
+        ]
+      },
+      {
+        "id": "ue-q3-quiz-04-q05",
+        "type": "vocabulary",
+        "text": "Identify the term: a recorded player-view path through the environment.",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l15",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-04-q06",
+        "type": "vocabulary",
+        "text": "Identify the term: a polished image chosen to represent the project in a portfolio or critique.",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l14",
+        "tag": "vocabulary"
+      },
+      {
+        "id": "ue-q3-quiz-04-q07",
+        "type": "scenario",
+        "text": "A student walkthrough moves too fast and misses the important castle details. What should they revise?",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l15",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-04-q08",
+        "type": "scenario",
+        "text": "A final submission folder has great clips, but the teacher cannot open them. What is the likely issue and fix?",
+        "difficulty": "easy",
+        "lessonId": "ue-q3-l16",
+        "tag": "troubleshooting"
+      },
+      {
+        "id": "ue-q3-quiz-04-q09",
+        "type": "process-order",
+        "text": "Put the final evidence workflow in order: select evidence, organize folder, check sharing, write reflection, submit link.",
+        "difficulty": "medium",
+        "lessonId": "ue-q3-l16",
+        "tag": "workflow"
+      },
+      {
+        "id": "ue-q3-quiz-04-q10",
+        "type": "short-response",
+        "text": "In 2-3 sentences, explain what evidence belongs in the final making-of documentary and why.",
+        "difficulty": "hard",
+        "lessonId": "ue-q3-l16",
+        "tag": "short-response"
+      }
+    ]
   },
   {
     "id": "vp-q2-quiz-01",

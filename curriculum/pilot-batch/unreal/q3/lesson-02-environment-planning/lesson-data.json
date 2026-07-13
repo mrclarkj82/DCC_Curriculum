@@ -1,0 +1,69 @@
+{
+  "id": "ue-q3-l02",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q3",
+  "unit": "Castle Environment Production",
+  "lessonNumber": 2,
+  "title": "Environment Planning",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Q3 Unreal Castle Documentary Project",
+    "start": "N/A",
+    "end": "N/A",
+    "url": "",
+    "note": "Students build a castle environment in Unreal Engine while recording daily screen/camera evidence for a making-of documentary."
+  },
+  "learningTarget": "I can plan a fantasy/castle environment and capture planning evidence that explains the intended story and visual direction.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What planning evidence would help a viewer understand the castle you are about to build?"
+  },
+  "vocabulary": [
+    {
+      "term": "Production log",
+      "definition": "A dated record of what was built, what was captured, what changed, and what needs to happen next."
+    },
+    {
+      "term": "Screen recording",
+      "definition": "Video captured from the computer screen to show workflow, testing, or before/after changes."
+    },
+    {
+      "term": "Behind-the-scenes footage",
+      "definition": "Camera or screen-recorded evidence that shows how a project was made."
+    },
+    {
+      "term": "B-roll",
+      "definition": "Supporting footage that helps explain a process, place, detail, or action."
+    },
+    {
+      "term": "Castle environment",
+      "definition": "The Q3 Unreal scene students build, refine, walk through, and document."
+    }
+  ],
+  "slides": {
+    "title": "Q3 Lesson 02 - Environment Planning",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "ue-q3-a02",
+    "title": "Castle Environment Plan",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Reference board or planning document.",
+      "Simple layout sketch or written scene plan.",
+      "Daily documentary clip explaining one planning decision.",
+      "Production log entry for today."
+    ]
+  },
+  "exitTicket": "What planning choice did you record or photograph today for the documentary?",
+  "tags": [
+    "planning",
+    "reference",
+    "castle-environment",
+    "q3",
+    "daily-documentary",
+    "screen-recording",
+    "process-documentation"
+  ]
+}

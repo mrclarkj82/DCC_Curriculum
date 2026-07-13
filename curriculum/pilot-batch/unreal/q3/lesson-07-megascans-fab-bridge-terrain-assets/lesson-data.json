@@ -1,0 +1,68 @@
+{
+  "id": "ue-q3-l07",
+  "programAreaId": "unreal-engine",
+  "quarter": "Q3",
+  "unit": "Castle Environment Production",
+  "lessonNumber": 7,
+  "title": "Megascans/Fab/Bridge Terrain Assets",
+  "status": "draft-pilot",
+  "video": {
+    "source": "Q3 Unreal Castle Documentary Project",
+    "start": "N/A",
+    "end": "N/A",
+    "url": "",
+    "note": "Students build a castle environment in Unreal Engine while recording daily screen/camera evidence for a making-of documentary."
+  },
+  "learningTarget": "I can import and place terrain assets responsibly while documenting how assets support the castle environment.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What makes an imported asset feel like it belongs in a scene instead of looking randomly placed?"
+  },
+  "vocabulary": [
+    {
+      "term": "Production log",
+      "definition": "A dated record of what was built, what was captured, what changed, and what needs to happen next."
+    },
+    {
+      "term": "Screen recording",
+      "definition": "Video captured from the computer screen to show workflow, testing, or before/after changes."
+    },
+    {
+      "term": "Behind-the-scenes footage",
+      "definition": "Camera or screen-recorded evidence that shows how a project was made."
+    },
+    {
+      "term": "B-roll",
+      "definition": "Supporting footage that helps explain a process, place, detail, or action."
+    },
+    {
+      "term": "Castle environment",
+      "definition": "The Q3 Unreal scene students build, refine, walk through, and document."
+    }
+  ],
+  "slides": {
+    "title": "Q3 Lesson 07 - Megascans/Fab/Bridge Terrain Assets",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "ue-q3-a07",
+    "title": "Terrain Asset Import and Placement",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "evidenceRequired": [
+      "Screenshot of imported terrain assets placed in the scene.",
+      "Daily documentary clip showing an asset placement decision.",
+      "Production log entry for today."
+    ]
+  },
+  "exitTicket": "Which imported asset did you document, and why did it belong in your scene?",
+  "tags": [
+    "placeholder",
+    "unreal-engine",
+    "q3",
+    "castle-environment",
+    "daily-documentary",
+    "screen-recording",
+    "process-documentation"
+  ]
+}
