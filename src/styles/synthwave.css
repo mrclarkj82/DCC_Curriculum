@@ -2464,6 +2464,153 @@
   cursor: crosshair;
 }
 
+.assignment-game-level {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.assignment-game-level::after {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  pointer-events: none;
+  content: '';
+  opacity: 0.18;
+  background:
+    linear-gradient(rgba(var(--color-neon-cyan-rgb), 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--color-neon-pink-rgb), 0.1) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mix-blend-mode: screen;
+}
+
+.assignment-game-level-map {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(var(--assignment-game-level-columns), minmax(0, 1fr));
+  grid-template-rows: repeat(var(--assignment-game-level-rows), minmax(0, 1fr));
+  background:
+    radial-gradient(circle at 50% 18%, rgba(var(--color-neon-orange-rgb), 0.14), transparent 20%),
+    linear-gradient(180deg, rgba(18, 11, 35, 0.96), rgba(7, 5, 18, 0.98));
+}
+
+.assignment-game-map-tile,
+.assignment-game-level-feature {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+
+.assignment-game-map-tile {
+  min-width: 0;
+  min-height: 0;
+  box-shadow: inset 0 0 0 1px rgba(248, 244, 255, 0.035);
+}
+
+.assignment-game-level-feature,
+.assignment-game-level-blocked-zone {
+  position: absolute;
+  pointer-events: none;
+}
+
+.assignment-game-level-feature {
+  z-index: 2;
+  filter:
+    drop-shadow(0 0 12px rgba(var(--color-neon-orange-rgb), 0.24))
+    saturate(1.08);
+}
+
+.assignment-game-level-feature--lockedGate,
+.assignment-game-level-feature--boundary {
+  opacity: 0.86;
+  filter:
+    drop-shadow(0 0 16px rgba(var(--color-neon-orange-rgb), 0.42))
+    drop-shadow(0 0 12px rgba(var(--color-neon-pink-rgb), 0.28))
+    saturate(1.18);
+}
+
+.assignment-game-level-feature--shadow {
+  opacity: 0.72;
+  mix-blend-mode: multiply;
+}
+
+.assignment-game-level-blocked-zone {
+  z-index: 3;
+  border: 1px solid rgba(var(--color-neon-orange-rgb), 0.16);
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(var(--color-neon-orange-rgb), 0.065) 0 7px,
+      transparent 7px 15px
+    );
+}
+
+.assignment-game-level-objective {
+  position: absolute;
+  z-index: 5;
+  top: var(--space-4);
+  left: var(--space-4);
+  width: min(440px, calc(100% - 32px));
+  border-left: 3px solid var(--color-neon-orange);
+  padding: var(--space-3) var(--space-4);
+  background:
+    linear-gradient(90deg, rgba(8, 3, 18, 0.88), rgba(8, 3, 18, 0.42)),
+    rgba(8, 3, 18, 0.72);
+  box-shadow: 0 0 22px rgba(var(--color-neon-orange-rgb), 0.18);
+  backdrop-filter: blur(10px);
+}
+
+.assignment-game-level-objective h3 {
+  margin: 0 0 var(--space-1);
+  color: var(--color-text-main);
+  font-size: 22px;
+}
+
+.assignment-game-level-objective p:last-child {
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 14px;
+}
+
+.assignment-game-level-meta {
+  position: absolute;
+  z-index: 5;
+  right: var(--space-4);
+  bottom: var(--space-4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: flex-end;
+  margin: 0;
+  color: var(--color-text-soft);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.assignment-game-level-meta div {
+  display: grid;
+  min-width: 76px;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.28);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2);
+  background: rgba(8, 3, 18, 0.66);
+  box-shadow: inset 0 0 14px rgba(var(--color-neon-cyan-rgb), 0.08);
+}
+
+.assignment-game-level-meta dt {
+  color: var(--color-neon-orange);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.assignment-game-level-meta dd {
+  margin: 0;
+}
+
 .assignment-game-playfield-copy {
   position: relative;
   z-index: 2;
@@ -2934,6 +3081,19 @@
     min-height: 440px;
   }
 
+  .assignment-game-level-objective {
+    right: var(--space-3);
+    left: var(--space-3);
+    width: auto;
+  }
+
+  .assignment-game-level-meta {
+    right: var(--space-3);
+    bottom: var(--space-3);
+    left: var(--space-3);
+    justify-content: flex-start;
+  }
+
   .assignment-game-castle-silhouette {
     right: 5%;
     width: 62%;
@@ -2959,6 +3119,23 @@
   .assignment-game-menu-actions .outline-button,
   .assignment-game-shell-toolbar .outline-button {
     width: 100%;
+  }
+
+  .assignment-game-level-objective {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .assignment-game-level-objective h3 {
+    font-size: 18px;
+  }
+
+  .assignment-game-level-objective p:last-child {
+    font-size: 13px;
+  }
+
+  .assignment-game-level-meta div {
+    min-width: 0;
+    flex: 1 1 88px;
   }
 
   .landing-hero h1,

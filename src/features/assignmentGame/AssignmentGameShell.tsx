@@ -88,8 +88,8 @@ export function AssignmentGameShell() {
           />
 
           <p className="muted">
-            Phase 3 adds local player movement only. Combat, inventory data, dialogue, progression,
-            and saves are intentionally not active yet.
+            Phase 4 adds the first data-driven level layout only. Combat, inventory data, dialogue,
+            progression, and saves are intentionally not active yet.
           </p>
 
           {shellState === 'paused' && (
