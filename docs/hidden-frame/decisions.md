@@ -1,0 +1,83 @@
+# Hidden Frame Decisions
+
+This document records architectural and product decisions for The Hidden Frame.
+
+## Decision 001: Keep Hidden Frame Contained Inside DCC
+
+Date: 2026-07-08
+
+Decision: Hidden Frame clues, routes, copy, and interactions stay inside the DCC website or approved class materials.
+
+Reason: The experience is for a high school curriculum site and must remain school-safe, optional, and easy to supervise.
+
+Consequences:
+
+- No social media, email, phone, real-world scavenger hunts, or external-contact mechanics.
+- Hidden Frame routes live inside the authenticated DCC app shell.
+- Future clues should use approved internal materials or static in-app content.
+
+## Decision 002: Use Phase 0 Asset Kit As Canonical Visual Identity
+
+Date: 2026-07-08
+
+Decision: The Phase 0 broken-frame symbol, backgrounds, title card, style board, and design tokens are the canonical Hidden Frame visual identity.
+
+Reason: A stable visual foundation prevents drift and keeps future phases coherent.
+
+Consequences:
+
+- Use `src/hidden-frame/hiddenFramePhase0Assets.ts` rather than scattering hardcoded paths.
+- Do not redesign the symbol or replace the art direction without a documented future decision.
+
+## Decision 003: Use LocalStorage For Early Progress
+
+Date: 2026-07-08
+
+Decision: Hidden Frame progress starts as localStorage-only.
+
+Reason: The ARG is optional, ungraded, and non-sensitive. Local progress avoids new privacy, roster, Firestore rules, and account-sync risk.
+
+Consequences:
+
+- Progress is device-local.
+- Progress is never a grade or leaderboard score.
+- Future authenticated persistence requires a new documented decision and security review.
+
+## Decision 004: Client-Side Passwords Are Acceptable For Optional Narrative Gates
+
+Date: 2026-07-08
+
+Decision: Early Hidden Frame passwords can live in client-side data.
+
+Reason: Files 001 through 005 are optional, ungraded, school-safe narrative puzzles. Their answers are documented in canon and are not security boundaries.
+
+Consequences:
+
+- Students can inspect bundled code to see answers.
+- Do not use client-visible answers for graded, private, or security-sensitive features.
+
+## Decision 005: Canonical Docs Live Under `docs/hidden-frame`
+
+Date: 2026-07-13
+
+Decision: The canonical Hidden Frame spec, canon, acceptance criteria, progress, roadmap, changelog, and decisions documents live under `docs/hidden-frame/`.
+
+Reason: The full ARG now needs one folder containing its governance, implementation plan, story bible, and progress tracking.
+
+Consequences:
+
+- Root-level `docs/hidden-frame-spec.md` and `docs/hidden-frame-canon.md` remain compatibility pointers only.
+- Future Hidden Frame doc updates should target `docs/hidden-frame/`.
+
+## Decision 006: Full ARG Work Uses `feature/hidden-frame-full-arg`
+
+Date: 2026-07-13
+
+Decision: The continuing full Hidden Frame ARG effort uses `feature/hidden-frame-full-arg` when branch management is available.
+
+Reason: The goal spans multiple phases and should not be mixed directly into `main` until reviewed and ready.
+
+Consequences:
+
+- Phase-specific branches can still be used when the teacher explicitly requests a smaller slice.
+- This branch is based on the current Phase 2 work so completed foundation is preserved.

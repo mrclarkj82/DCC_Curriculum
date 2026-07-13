@@ -4,6 +4,44 @@
 
 DCC Creative Studio is a Firebase web app for a high school Digital Content Creators course.
 
+## Hidden Frame Governance
+
+The Hidden Frame is an optional, ungraded Easter egg / ARG experience embedded inside the DCC curriculum website. It is not a separate game, not a grading system, and not a real-world scavenger hunt.
+
+Before making Hidden Frame changes, read all current Hidden Frame documentation:
+
+- `docs/hidden-frame/hidden-frame-spec.md`
+- `docs/hidden-frame/hidden-frame-canon.md`
+- `docs/hidden-frame/ACCEPTANCE_CRITERIA.md`
+- `docs/hidden-frame/PROGRESS.md`
+- `docs/hidden-frame/roadmap.md`
+- `docs/hidden-frame/changelog.md`
+- `docs/hidden-frame/decisions.md`
+- Phase 0 notes under `docs/hidden-frame/phase0/`
+
+Hidden Frame work should be modular, reusable, data-driven, accessible, responsive, and visually consistent with the Phase 0 asset kit. Prefer shared data modules, route templates, cards, password gates, progress adapters, collection UI, archive UI, and reusable clue components over one-off pages or duplicated logic.
+
+The Hidden Frame must stay:
+
+- Optional and ungraded.
+- Fully contained inside the DCC website and approved class materials.
+- Free from real-world scavenger hunt mechanics.
+- Free from personal-data collection, external-contact instructions, hacking simulations, occult imagery, gore, real threats, horror escalation, or real-world conspiracy themes.
+- Focused on curiosity, observation, media literacy, creativity, Unreal Engine, Blender, cinematography, and video production concepts.
+
+Progress should remain localStorage-based unless a later explicitly approved phase documents a safe persistence model. Local progress must never be treated as a grade, leaderboard score, class requirement, or student comparison.
+
+When branch management is available and the task is the full Hidden Frame ARG effort, use `feature/hidden-frame-full-arg`. Smaller teacher-requested slices may use a more specific Hidden Frame feature branch when the request names one.
+
+After every Hidden Frame phase:
+
+- Update `docs/hidden-frame/PROGRESS.md`.
+- Update `docs/hidden-frame/hidden-frame-spec.md`.
+- Update `docs/hidden-frame/hidden-frame-canon.md`.
+- Update `docs/hidden-frame/changelog.md`, `docs/hidden-frame/roadmap.md`, and `docs/hidden-frame/decisions.md` as applicable.
+- Run the available validation commands, including `npm.cmd run validate:hidden-frame`, `npm.cmd run lint`, and `npm.cmd run build`.
+- Record validation results and known limitations.
+
 ## Current Phase
 
 Phase 8 adds Google Drive link submissions while preserving teacher/admin class management, secure class join codes, bell ringer and exit ticket responses, Teacher Student Preview Mode, Firebase Google SSO, roles, protected routes, Firestore-backed content, and the active Today workflow.

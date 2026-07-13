@@ -1,5 +1,14 @@
 # Hidden Frame Changelog
 
+## Governance Baseline - 2026-07-13
+
+- Moved the canonical Hidden Frame specification and canon into `docs/hidden-frame/`.
+- Added root-level compatibility pointers for the previous spec/canon paths.
+- Added `AGENTS.md` Hidden Frame governance instructions.
+- Added `ACCEPTANCE_CRITERIA.md`, `PROGRESS.md`, `roadmap.md`, and `decisions.md`.
+- Recorded the Phase 1-10 full ARG implementation plan and current Phase 0-2 completion status.
+- Established `feature/hidden-frame-full-arg` as the continuing full-ARG branch.
+
 ## Phase 2 - 2026-07-08
 
 - Added the First Puzzle Chain for Files 001 through 005.
