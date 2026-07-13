@@ -4,11 +4,15 @@ import { AssignmentGamePauseMenu } from './components/AssignmentGamePauseMenu';
 import { AssignmentGameStartMenu } from './components/AssignmentGameStartMenu';
 import { AssignmentGameViewport } from './components/AssignmentGameViewport';
 import { assignmentGameWorkingTitle } from './gameShellConstants';
+import { usePlayerMovement } from './hooks/usePlayerMovement';
 import type { AssignmentGameShellState } from './gameShellTypes';
 
 export function AssignmentGameShell() {
   const [shellState, setShellState] = useState<AssignmentGameShellState>('startMenu');
   const [previewKey, setPreviewKey] = useState(0);
+  const isPreviewVisible = shellState === 'shellPreview' || shellState === 'paused';
+  const isMovementEnabled = shellState === 'shellPreview';
+  const playerState = usePlayerMovement(isMovementEnabled, previewKey);
 
   const startNewGame = () => {
     setPreviewKey((currentKey) => currentKey + 1);
@@ -21,10 +25,9 @@ export function AssignmentGameShell() {
   };
 
   const backToStartMenu = () => {
+    setPreviewKey(0);
     setShellState('startMenu');
   };
-
-  const isPreviewVisible = shellState === 'shellPreview' || shellState === 'paused';
 
   useEffect(() => {
     if (!isPreviewVisible) {
@@ -77,12 +80,16 @@ export function AssignmentGameShell() {
             </button>
           </div>
 
-          <AssignmentGameHud />
-          <AssignmentGameViewport previewKey={previewKey} />
+          <AssignmentGameHud playerState={playerState} />
+          <AssignmentGameViewport
+            isPaused={shellState === 'paused'}
+            playerState={playerState}
+            previewKey={previewKey}
+          />
 
           <p className="muted">
-            Phase 2 is a non-playable shell only. Movement, combat, inventory data, dialogue,
-            progression, and saves are intentionally not active yet.
+            Phase 3 adds local player movement only. Combat, inventory data, dialogue, progression,
+            and saves are intentionally not active yet.
           </p>
 
           {shellState === 'paused' && (

@@ -45,7 +45,7 @@ Verified on 2026-07-13:
 | Phase 0 | Architecture | Merged | PR #6 / `feature/assignment-game-architecture` | Mainline doc exists at `docs/assignment-game/phase-0-architecture.md`. |
 | Phase 1 | Access Gate | Merged | PR #7 / `feature/assignment-game-gate` | Mainline gate uses existing submission/completion workflow. |
 | Phase 2 | Game Shell and Start Menu | Merged | PR #8 / `feature/assignment-game-shell` | Mainline shell/start menu is available after access gate unlock. |
-| Phase 3 | Player Movement | Draft PR open | PR #9 / `feature/assignment-game-player-movement` | Includes local movement and player sprites. Needs review and any asset-path cleanup before ready. |
+| Phase 3 | Player Movement | Ready for review after latest push | PR #9 / `feature/assignment-game-player-movement` | Includes local movement and player sprites. Asset path cleanup is aligned to the control docs, and validation passed locally. |
 | Phase 4 | First Medieval Level | Pending | Recommended: `feature/assignment-game-level-one` | Build Ruined Courtyard as a data-driven top-down level. |
 | Phase 5 | Combat Foundation | Pending | Recommended: `feature/assignment-game-combat` | Add sword and energy attack foundations only. |
 | Phase 6 | Enemies | Pending | Recommended: `feature/assignment-game-enemies` | Add Hollow Squire and Ash Wisp only after combat foundation. |
@@ -65,7 +65,8 @@ Verified on 2026-07-13:
 | #6 | `[Phase 0] Assignment Game Architecture` | Merged | Established architecture plan. |
 | #7 | `[Phase 1] Assignment Game Access Gate` | Merged | Added route/page gate and Today entry card. |
 | #8 | `[Phase 2] Assignment Game Shell and Start Menu` | Merged | Added shell, start menu, disabled Continue, preview viewport, HUD placeholders, pause menu. |
-| #9 | `[Phase 3] Assignment Game Player Movement` | Open draft | Adds local movement, player state, and player sprites. |
+| #9 | `[Phase 3] Assignment Game Player Movement` | Ready for review after latest push | Adds local movement, player state, and player sprites. |
+| #10 | `[Goal] Assignment Game Project Control Docs` | Merged | Added root assignment-game rules, full-game acceptance criteria, and this progress log. |
 
 ## Validation Log
 
@@ -80,19 +81,27 @@ Verified on 2026-07-13:
 - 2026-07-13: `npm.cmd run validate:curriculum` passed.
 - 2026-07-13: `npm.cmd run validate:hidden-frame` passed.
 - 2026-07-13: `git diff --check` passed with Git line-ending normalization warnings only.
+- 2026-07-13: PR #10 merged into `main`.
+- 2026-07-13: Phase 3 branch rebased onto current `origin/main`.
+- 2026-07-13: Phase 3 player sprites moved to `public/assets/assignment-game/player/` to match the control docs.
+- 2026-07-13: Phase 3 `npm.cmd run lint` passed.
+- 2026-07-13: Phase 3 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Phase 3 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Phase 3 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Phase 3 `git diff --check` passed with Git line-ending normalization warnings only.
+- 2026-07-13: Verified Phase 3 player sprite dimensions: idle frames are 128x128; walking sheets are 512x128.
+- 2026-07-13: Verified local Vite served `/assets/assignment-game/player/player_idle_down.png`, `/assets/assignment-game/player/player_walk_down_spritesheet.png`, and `/student/game` with HTTP 200 on port 5177.
 
 ## Asset Notes
 
 - Required future runtime player asset location: `public/assets/assignment-game/player/`.
 - Required future runtime tile asset location: `public/assets/assignment-game/tiles/`.
-- Phase 3 PR #9 currently contains player sprites under `public/assignment-game/player/`.
-- Before marking PR #9 ready, decide whether to move those player sprites to the new required `public/assets/assignment-game/player/` path or document a deliberate path exception.
+- Phase 3 PR #9 now contains player sprites under `public/assets/assignment-game/player/`.
 - Phase 4 should use the tileset zip if available and should extract only `game_ready_64/` runtime tiles unless source/reference files are specifically needed.
 - Missing optional image assets must use graceful fallback rendering and must not crash the game.
 
 ## Current Open Questions
 
-- Should Phase 3 PR #9 move player assets from `public/assignment-game/player/` to `public/assets/assignment-game/player/` to match the new project control rule?
 - Should `useAssignmentGameAccess(studentId, assignmentId, ...)` rename the second parameter to `targetId` in a later cleanup so missions, assignments, media projects, and broadcast updates all fit the name?
 - Should Phase 4 use CSS grid/DOM tiles first, or canvas rendering with the same data model? Keep the choice lightweight and avoid heavy engines either way.
 - What exact assignment progression model should unlock areas after the first gate: current active item only, completed historical targets, or teacher-selected milestones?
@@ -100,8 +109,8 @@ Verified on 2026-07-13:
 
 ## Next Step
 
-Finish and merge the control-doc PR:
+Finish Phase 3 PR #9:
 
-1. Commit `AGENTS.md`, `docs/assignment-game/ACCEPTANCE_CRITERIA.md`, and this `PROGRESS.md` on `feature/assignment-game-goal-docs`.
-2. Open PR `[Goal] Assignment Game Project Control Docs`.
-3. After that PR is merged, return to Phase 3 PR #9, resolve any asset-path issue, re-run checks, and mark it ready only when it satisfies the control docs.
+1. Update PR #9 notes with the current validation and asset path.
+2. Mark PR #9 ready after the pushed branch matches these validation notes.
+3. After PR #9 merges, start Phase 4 on `feature/assignment-game-level-one`.
