@@ -4,6 +4,7 @@ import { AssignmentGamePauseMenu } from './components/AssignmentGamePauseMenu';
 import { AssignmentGameStartMenu } from './components/AssignmentGameStartMenu';
 import { AssignmentGameViewport } from './components/AssignmentGameViewport';
 import { assignmentGameWorkingTitle } from './gameShellConstants';
+import { useAssignmentGameEnemies } from './hooks/useAssignmentGameEnemies';
 import { usePlayerCombat } from './hooks/usePlayerCombat';
 import { usePlayerMovement } from './hooks/usePlayerMovement';
 import type { AssignmentGameShellState } from './gameShellTypes';
@@ -15,6 +16,12 @@ export function AssignmentGameShell() {
   const isMovementEnabled = shellState === 'shellPreview';
   const playerState = usePlayerMovement(isMovementEnabled, previewKey);
   const combatState = usePlayerCombat(isMovementEnabled, previewKey, playerState);
+  const enemiesState = useAssignmentGameEnemies(
+    isMovementEnabled,
+    previewKey,
+    combatState,
+    playerState,
+  );
 
   const startNewGame = () => {
     setPreviewKey((currentKey) => currentKey + 1);
@@ -82,17 +89,22 @@ export function AssignmentGameShell() {
             </button>
           </div>
 
-          <AssignmentGameHud combatState={combatState} playerState={playerState} />
+          <AssignmentGameHud
+            combatState={combatState}
+            enemiesState={enemiesState}
+            playerState={playerState}
+          />
           <AssignmentGameViewport
             combatState={combatState}
+            enemiesState={enemiesState}
             isPaused={shellState === 'paused'}
             playerState={playerState}
             previewKey={previewKey}
           />
 
           <p className="muted">
-            Phase 5 adds local-only sword and energy attack feedback. Enemies, inventory data,
-            dialogue, progression, and saves are intentionally not active yet.
+            Phase 6 adds local-only Hollow Squire and Ash Wisp enemies. Inventory data, dialogue,
+            progression, and saves are intentionally not active yet.
           </p>
 
           {shellState === 'paused' && (

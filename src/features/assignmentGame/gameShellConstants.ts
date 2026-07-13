@@ -5,7 +5,7 @@ import type { AssignmentGameMovementBounds, AssignmentGameVector } from './playe
 export const assignmentGameWorkingTitle = 'The Ember Gate';
 
 export const assignmentGameShellSubtitle =
-  'A Phase 5 local combat prototype for the future assignment-unlocked adventure.';
+  'A Phase 6 local enemy combat prototype for the future assignment-unlocked adventure.';
 
 export const assignmentGameObjectiveTeaser =
   ruinedCourtyardLevel.objectiveText;
@@ -19,7 +19,7 @@ export const assignmentGameHudPlaceholders: AssignmentGameHudPlaceholder[] = [
 ];
 
 export const assignmentGameMovementInstructions =
-  'Move with Arrow keys or WASD. Press Space or J for sword, F or K for energy bolt. Press Escape or Pause to open the menu.';
+  'Move with Arrow keys or WASD. Press Space or J for sword, F or K for energy bolt. Defeat the Hollow Squire and Ash Wisp, then press Escape or Pause to open the menu.';
 
 export const assignmentGamePlayerSpawn: AssignmentGameVector = ruinedCourtyardLevel.playerSpawn;
 
