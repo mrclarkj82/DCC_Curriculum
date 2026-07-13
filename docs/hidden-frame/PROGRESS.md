@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 5. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, and Phase 5 added the first Unreal/Render Room arc.
+The Hidden Frame is implemented through Phase 6. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, and Phase 6 added the first Blender/object inspection arc.
 
 The current full-ARG working branch is:
 
@@ -18,8 +18,8 @@ The current full-ARG working branch is:
 | 3 | Video Production Integration | Complete | Timeline route, video clue data, Files 006-008, timeline components |
 | 4 | Cinematography Mystery Arc | Complete | Camera route, composition clue data, Files 009-011, guide overlays |
 | 5 | Unreal Engine Integration | Complete | Render Room route, Unreal clue data, Files 012-014, viewport readouts |
-| 6 | Blender/Object Mystery Arc | Next | Object, material, UV, shadow, camera-view clues |
-| 7 | Student Progression System | Not Started | Larger collection, achievements, reset, adapter boundary |
+| 6 | Blender/Object Mystery Arc | Complete | Objects route, object clue data, Files 015-017, inspection panels |
+| 7 | Student Progression System | Next | Larger collection, achievements, reset, adapter boundary |
 | 8 | Compression Event | Not Started | Glitch/redaction/compression antagonist systems |
 | 9 | Final Export | Not Started | Frame 000 and completion ending |
 | 10 | Admin and Expansion Tools | Not Started | Long-term content expansion tools and docs |
@@ -104,30 +104,34 @@ Phase 5 added:
 - `UnrealViewportReadout`, `UnrealClueCard`, and `UnrealSignalGrid`.
 - Phase 5 validation script.
 
+### Phase 6: Blender/Object Mystery Arc
+
+Phase 6 added:
+
+- `/hidden-frame/objects`.
+- Object clue data in `hiddenFrameObjectClues.ts`.
+- Files 015 through 017 for MESH, UV MAP, and SHADOW.
+- Frames 015 through 017.
+- `ObjectInspectionFrame`, `ObjectClueCard`, and `ObjectClueGrid`.
+- Phase 6 validation script.
+
 ## Active Phase
 
-### Phase 6: Blender/Object Mystery Arc
+### Phase 7: Student Progression System
 
 Objective:
 
-Create the first Blender/object expansion arc while keeping all clues inside the DCC website or approved class materials.
+Expand optional local progression without making Hidden Frame feel like grades, points, or public competition.
 
 Required work:
 
-- Add `/hidden-frame/objects`.
-- Add structured data for object clue entries.
-- Add reusable Blender/object clue components.
-- Support object names, shadows, materials, UV maps, scale, camera view, engraved or hidden text, and model details.
-- Reuse Phase 0 archive and Render Room assets where practical.
+- Add achievement metadata and achievement display components.
+- Add richer progress summary states.
+- Add optional reset with clear local-only copy.
+- Preserve the localStorage adapter boundary and migration path.
 - Update docs and validation.
 
 ## Backlog
-
-### Phase 6 Backlog
-
-- `/hidden-frame/objects`.
-- Object/material/UV/shadow/camera-view clue data.
-- Blender/object clue components.
 
 ### Phase 7 Backlog
 
@@ -201,3 +205,11 @@ Required work:
 - `npm.cmd run validate:curriculum`: passed.
 - `npm.cmd run build`: passed with existing Vite large chunk warning.
 - Route smoke checks returned `200` for `/hidden-frame/render-room`, `/hidden-frame/unreal`, and `/hidden-frame/file/012`.
+- Phase 5 committed and pushed as `bdaddf2`.
+- Phase 6 implemented with object inspection clue support.
+- `git diff --check`: passed for Phase 6 work.
+- `npm.cmd run lint`: passed.
+- `npm.cmd run validate:hidden-frame`: passed through Phase 6.
+- `npm.cmd run validate:curriculum`: passed.
+- `npm.cmd run build`: passed with existing Vite large chunk warning.
+- Route smoke checks returned `200` for `/hidden-frame/objects` and `/hidden-frame/file/015`.

@@ -63,17 +63,22 @@ Implemented work:
 
 ### Phase 6: Blender/Object Mystery Arc
 
-Status: Next.
+Status: Complete.
 
 Goal: add object-focused clue support.
 
-Planned work:
+Implemented work:
 
-- Add `/hidden-frame/objects`.
-- Add object clue data.
-- Support object names, shadows, materials, UV maps, scale, camera view, engraved/hidden text, and model details.
+- Added `/hidden-frame/objects`.
+- Added object clue data.
+- Added reusable object inspection components.
+- Supported object names, shadows, materials, UV maps, scale, camera view, engraved/hidden text, and model details.
+- Added Files 015 through 017 and Frames 015 through 017.
+- Added Phase 6 validation.
 
 ### Phase 7: Student Progression System
+
+Status: Next.
 
 Goal: expand local progression without turning it into grades.
 

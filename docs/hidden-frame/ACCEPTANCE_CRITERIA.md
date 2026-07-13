@@ -160,6 +160,8 @@ Phase 5 is complete when:
 
 ## Phase 6 Acceptance Criteria: Blender/Object Mystery Arc
 
+Status: Complete.
+
 Phase 6 is complete when:
 
 - `/hidden-frame/objects` exists.

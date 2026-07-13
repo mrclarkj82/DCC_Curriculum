@@ -47,6 +47,10 @@ The first camera signal appears in the Cinematography Index. Files 009 through 0
 
 The first Render Room signal appears. Files 012 through 014 extend the archive through vectors, Blueprints, and trigger volumes. Frames 012 through 014 become local optional collectibles.
 
+### 2026-07-13 - Phase 6
+
+The first object signal appears. Files 015 through 017 extend the archive through meshes, UV maps, and shadows. Frames 015 through 017 become local optional collectibles.
+
 ## Locations
 
 ### Archive
@@ -64,6 +68,10 @@ An Unreal Engine themed in-site location suggested by Phase 0 art and establishe
 ### Viewport Grid
 
 A visual language for Unreal Engine, camera, composition, or spatial clue contexts. Phase 2 uses viewport ideas for File 005 and the ROTATION signal. Phase 4 uses grid overlays for composition clues. Phase 5 uses viewport readouts for Unreal concepts.
+
+### Object Inspection Index
+
+A web-based object/modeling clue space established in Phase 6. It represents object names, mesh details, materials, UV maps, shadows, scale, camera view, and small in-site surface marks without asking students to upload or open private files.
 
 ### VHS / Signal Space
 
@@ -126,6 +134,18 @@ Summary: The first Unreal Engine expansion route. It contains in-app viewport cl
 Related files: `HF-FILE-012`, `HF-FILE-013`, `HF-FILE-014`
 
 Related frames: `HF-FRAME-012`, `HF-FRAME-013`, `HF-FRAME-014`
+
+### HF-ARCHIVE-PHASE-6
+
+Title: Object Signal
+
+First appearance: `/hidden-frame/objects`
+
+Summary: The first Blender/object expansion route. It contains in-app object inspection clues for object names, model details, materials, UV maps, shadows, scale, camera view, and engraved text, and links to Files 015 through 017.
+
+Related files: `HF-FILE-015`, `HF-FILE-016`, `HF-FILE-017`
+
+Related frames: `HF-FRAME-015`, `HF-FRAME-016`, `HF-FRAME-017`
 
 ## Recovered Files
 
@@ -511,9 +531,93 @@ Accepted variants: `TRIGGER VOLUME`, `TRIGGER BOX`
 
 Reward frame: `HF-FRAME-014`
 
-Unlocks: First Render Room signal complete
+Unlocks: File 015
 
 Archivist message: "The Archivist labels the invisible boundary. Interaction begins when the scene knows what entered it."
+
+### HF-FILE-015
+
+File ID: `015`
+
+Filename: The Name on the Mesh
+
+Media type: recovered object text
+
+First appearance: `/hidden-frame/file/015`
+
+In-world source: Object Signal
+
+Canon summary: File 015 connects object naming and mesh organization to meaning inside a 3D scene.
+
+Clue text: "The object did not need to shout. Its name in the outliner remembered what the camera forgot: a simple mesh, labeled with intention."
+
+Hint: "In Blender and 3D modeling, editable object geometry is commonly called a ______."
+
+Password: `MESH`
+
+Accepted variant: `OBJECT MESH`
+
+Reward frame: `HF-FRAME-015`
+
+Unlocks: File 016
+
+Archivist message: "The Archivist reads the object name. Organization is not decoration; it is a way to leave meaning where others can find it."
+
+### HF-FILE-016
+
+File ID: `016`
+
+Filename: The Folded Surface
+
+Media type: recovered object text
+
+First appearance: `/hidden-frame/file/016`
+
+In-world source: Object Signal
+
+Canon summary: File 016 connects UV maps to texture placement and surface interpretation.
+
+Clue text: "The surface looked seamless only because someone unfolded it first. A flat map told the image how to return to the model."
+
+Hint: "Texture coordinates on a model are often arranged in this kind of map."
+
+Password: `UV MAP`
+
+Accepted variants: `UV`, `UVS`, `U V MAP`
+
+Reward frame: `HF-FRAME-016`
+
+Unlocks: File 017
+
+Archivist message: "The Archivist unfolds the surface. A texture can only return home when the object remembers where each part belongs."
+
+### HF-FILE-017
+
+File ID: `017`
+
+Filename: The Shadow Under the Model
+
+Media type: recovered object text
+
+First appearance: `/hidden-frame/file/017`
+
+In-world source: Object Signal
+
+Canon summary: File 017 connects scale, material, light, shadow, and camera view to believable object placement.
+
+Clue text: "The model finally felt real when it touched the floor with a shadow. Scale, material, and camera view agreed for one quiet frame."
+
+Hint: "A model becomes grounded when light creates this beneath or beside it."
+
+Password: `SHADOW`
+
+Accepted variants: `CAST SHADOW`, `SHADOWS`
+
+Reward frame: `HF-FRAME-017`
+
+Unlocks: First object signal complete
+
+Archivist message: "The Archivist grounds the model. A shadow is not only darkness; it is evidence that the object belongs in the scene."
 
 ## Frame Cards
 
@@ -685,6 +789,42 @@ Unlock condition: Complete File 014
 
 Student-facing text: A frame for noticing the invisible boundary that starts an event.
 
+### HF-FRAME-015
+
+Frame ID: `frame-015`
+
+Title: MESH
+
+Discovery location: File 015
+
+Unlock condition: Complete File 015
+
+Student-facing text: A frame for reading the object name and the model structure beneath it.
+
+### HF-FRAME-016
+
+Frame ID: `frame-016`
+
+Title: UV MAP
+
+Discovery location: File 016
+
+Unlock condition: Complete File 016
+
+Student-facing text: A frame for unfolding a surface before a texture can return to it.
+
+### HF-FRAME-017
+
+Frame ID: `frame-017`
+
+Title: SHADOW
+
+Discovery location: File 017
+
+Unlock condition: Complete File 017
+
+Student-facing text: A frame for grounding a model with scale, material, and light.
+
 ## Compression Logs
 
 No antagonist Compression logs are canon in Phase 2.
@@ -696,6 +836,8 @@ Phase 3 includes "Timeline signal" and "Signal scope" messages. These are safety
 Phase 4 includes "Camera signal" and "Observation scope" messages. These are safety and atmosphere copy, not plot threats.
 
 Phase 5 includes "Render Room signal," "Editor preview," and "Engine scope" messages. These are safety and atmosphere copy, not simulated malware, threats, or real engine instructions.
+
+Phase 6 includes "Object signal" and "Object scope" messages. These are safety and atmosphere copy, not instructions to upload files, open private folders, or leave the site.
 
 ## Symbols
 
@@ -771,6 +913,18 @@ Scanlines and timecode represent media artifacts, recovered recordings, and clos
 
 "The Archivist labels the invisible boundary. Interaction begins when the scene knows what entered it."
 
+### The Archivist - File 015
+
+"The Archivist reads the object name. Organization is not decoration; it is a way to leave meaning where others can find it."
+
+### The Archivist - File 016
+
+"The Archivist unfolds the surface. A texture can only return home when the object remembers where each part belongs."
+
+### The Archivist - File 017
+
+"The Archivist grounds the model. A shadow is not only darkness; it is evidence that the object belongs in the scene."
+
 ## Recurring Phrases
 
 The Phase 0 token file establishes these phrases:
@@ -813,6 +967,13 @@ Phase 5 adds:
 - The room that knows you entered.
 - Invisible boundary.
 
+Phase 6 adds:
+
+- The name on the mesh.
+- The folded surface.
+- The shadow under the model.
+- Object signal.
+
 ## Puzzle Solutions
 
 ### First Puzzle Chain
@@ -825,7 +986,7 @@ Unlock order:
 2. File 002 - `CUT` - rewards Frame 002 and unlocks File 003.
 3. File 003 - `BORDER` - rewards Frame 003 and unlocks File 004.
 4. File 004 - `RENDER` - rewards Frame 004 and unlocks File 005.
-5. File 005 - `ROTATION` - rewards Frame 005 and completes the first chain.
+5. File 005 - `ROTATION` - rewards Frame 005 and unlocks File 006.
 
 Accepted input behavior: case-insensitive and trims surrounding whitespace. File 002 also accepts `THE CUT`. File 005 also accepts `OBJECT ROTATION`.
 
@@ -837,7 +998,7 @@ Unlock order:
 
 1. File 006 - `TIMECODE` - rewards Frame 006 and unlocks File 007.
 2. File 007 - `LOWER THIRD` - rewards Frame 007 and unlocks File 008.
-3. File 008 - `BRIDGE` - rewards Frame 008 and completes the first video-production signal.
+3. File 008 - `BRIDGE` - rewards Frame 008 and unlocks File 009.
 
 Accepted input behavior: case-insensitive and trims surrounding whitespace. File 006 also accepts `TIME CODE`. File 007 also accepts `LOWERTHIRD`. File 008 also accepts `SOUND BRIDGE`.
 
@@ -861,13 +1022,25 @@ Unlock order:
 
 1. File 012 - `VECTOR` - rewards Frame 012 and unlocks File 013.
 2. File 013 - `BLUEPRINT` - rewards Frame 013 and unlocks File 014.
-3. File 014 - `TRIGGER` - rewards Frame 014 and completes the first Render Room signal.
+3. File 014 - `TRIGGER` - rewards Frame 014 and unlocks File 015.
 
 Accepted input behavior: case-insensitive and trims surrounding whitespace. File 012 also accepts `VECTORS`. File 013 also accepts `BLUEPRINTS`. File 014 also accepts `TRIGGER VOLUME` and `TRIGGER BOX`.
 
+### Object Signal
+
+Prompt type: signal word gates and object inspection clue cards
+
+Unlock order:
+
+1. File 015 - `MESH` - rewards Frame 015 and unlocks File 016.
+2. File 016 - `UV MAP` - rewards Frame 016 and unlocks File 017.
+3. File 017 - `SHADOW` - rewards Frame 017 and completes the first object signal.
+
+Accepted input behavior: case-insensitive and trims surrounding whitespace. File 015 also accepts `OBJECT MESH`. File 016 also accepts `UV`, `UVS`, and `U V MAP`. File 017 also accepts `CAST SHADOW` and `SHADOWS`.
+
 ## Passwords
 
-Passwords are intentionally client-visible because Phases 1 through 5 are optional, ungraded, local-only, and not security-sensitive.
+Passwords are intentionally client-visible because Phases 1 through 6 are optional, ungraded, local-only, and not security-sensitive.
 
 - File 001: `LUMEN`
 - File 002: `CUT`
@@ -883,6 +1056,9 @@ Passwords are intentionally client-visible because Phases 1 through 5 are option
 - File 012: `VECTOR`
 - File 013: `BLUEPRINT`
 - File 014: `TRIGGER`
+- File 015: `MESH`
+- File 016: `UV MAP`
+- File 017: `SHADOW`
 
 Do not store future active passwords in client code unless they are intentionally public, purely narrative, and documented as safe to expose.
 
@@ -895,6 +1071,7 @@ Do not store future active passwords in client code unless they are intentionall
 - What does the timeline signal reveal after the first three video frames are recovered?
 - Why do composition guides appear before the Render Room fully opens?
 - Why does the Render Room respond to coordinates, logic, and trigger boundaries?
+- Why do object details preserve clues after the Render Room opens?
 - How do Unreal, Blender, cinematography, and video clues connect beyond this first chain?
 - Why does the Archivist care about what a frame includes and excludes?
 
@@ -914,7 +1091,7 @@ Potential future threads:
 
 ## Student Discoveries
 
-No student discoveries are recorded through Phase 5.
+No student discoveries are recorded through Phase 6.
 
 Future entries should avoid naming students unless the teacher explicitly approves a privacy-safe classroom convention.
 

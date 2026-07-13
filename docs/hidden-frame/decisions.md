@@ -123,3 +123,17 @@ Consequences:
 - `/hidden-frame/render-room` uses Phase 0 Render Room visuals and web UI panels.
 - `/hidden-frame/unreal` indexes Unreal concepts through data in `hiddenFrameUnrealClues.ts`.
 - Future playable Unreal content would require a separate documented approval and safety review.
+
+## Decision 010: Object Clues Use In-Site Inspection Panels First
+
+Date: 2026-07-13
+
+Decision: Phase 6 represents Blender/object clues through in-app inspection panels and structured object clue data rather than asking students to upload files or open private project folders.
+
+Reason: The Hidden Frame must remain optional, contained, and privacy-safe while still reinforcing modeling, materials, UVs, shadows, scale, and camera-view concepts.
+
+Consequences:
+
+- `/hidden-frame/objects` uses static in-site clue panels.
+- `hiddenFrameObjectClues.ts` stores object inspection metadata.
+- Future real model/project references must use approved class materials and stay documented in spec/canon.

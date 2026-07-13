@@ -10,6 +10,7 @@ import { HiddenFrameCameraPage } from './hidden-frame/pages/HiddenFrameCameraPag
 import { HiddenFrameCollectionPage } from './hidden-frame/pages/HiddenFrameCollectionPage';
 import { HiddenFrameFilePage } from './hidden-frame/pages/HiddenFrameFilePage';
 import { HiddenFrameLandingPage } from './hidden-frame/pages/HiddenFrameLandingPage';
+import { HiddenFrameObjectsPage } from './hidden-frame/pages/HiddenFrameObjectsPage';
 import { HiddenFrameRenderRoomPage } from './hidden-frame/pages/HiddenFrameRenderRoomPage';
 import { HiddenFrameTimelinePage } from './hidden-frame/pages/HiddenFrameTimelinePage';
 import { HiddenFrameUnrealPage } from './hidden-frame/pages/HiddenFrameUnrealPage';
@@ -47,6 +48,7 @@ export function App() {
           <Route path="/hidden-frame/camera" element={<HiddenFrameCameraPage />} />
           <Route path="/hidden-frame/render-room" element={<HiddenFrameRenderRoomPage />} />
           <Route path="/hidden-frame/unreal" element={<HiddenFrameUnrealPage />} />
+          <Route path="/hidden-frame/objects" element={<HiddenFrameObjectsPage />} />
           <Route path="/hidden-frame/file/001" element={<HiddenFrameFilePage />} />
           <Route path="/hidden-frame/file/:fileId" element={<HiddenFrameFilePage />} />
           <Route path="/lessons/:lessonId" element={<LessonDetailPage />} />

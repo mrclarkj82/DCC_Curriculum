@@ -137,6 +137,33 @@ export const hiddenFrameRewardFrames: HiddenFrameRewardFrame[] = [
     description: 'A frame for noticing the invisible boundary that starts an event.',
     thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
   },
+  {
+    id: 'frame-015',
+    frameNumber: '015',
+    title: 'MESH',
+    signalWord: 'MESH',
+    sourceFileId: '015',
+    description: 'A frame for reading the object name and the model structure beneath it.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+  },
+  {
+    id: 'frame-016',
+    frameNumber: '016',
+    title: 'UV MAP',
+    signalWord: 'UV MAP',
+    sourceFileId: '016',
+    description: 'A frame for unfolding a surface before a texture can return to it.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveDark,
+  },
+  {
+    id: 'frame-017',
+    frameNumber: '017',
+    title: 'SHADOW',
+    signalWord: 'SHADOW',
+    sourceFileId: '017',
+    description: 'A frame for grounding a model with scale, material, and light.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+  },
 ];
 
 export const getHiddenFrameRewardFrameById = (

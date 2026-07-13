@@ -5,7 +5,8 @@ export type HiddenFrameArcId =
   | 'first-chain'
   | 'video-production'
   | 'cinematography'
-  | 'unreal-engine';
+  | 'unreal-engine'
+  | 'blender-object';
 
 export interface HiddenFrameFileRecord {
   id: string;
@@ -415,12 +416,96 @@ export const hiddenFrameFiles: HiddenFrameFileRecord[] = [
     passwordAnswer: 'TRIGGER',
     acceptedAnswers: ['TRIGGER VOLUME', 'TRIGGER BOX'],
     prerequisiteFileId: '013',
+    unlocksFileId: '015',
     rewardFrameId: 'frame-014',
     recoveredMessage:
       'The Archivist labels the invisible boundary. Interaction begins when the scene knows what entered it.',
     completionMeta: {
       label: 'Frame 014 recovered',
-      nextStep: 'The first Render Room signal is complete.',
+      nextStep: 'The first Render Room signal is complete. An object signal is now visible.',
+    },
+  },
+  {
+    id: '015',
+    fileNumber: '015',
+    phase: 6,
+    arcId: 'blender-object',
+    title: 'The Name on the Mesh',
+    route: '/hidden-frame/file/015',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A Blender/object record about names, mesh details, and the clues artists leave in organized scenes.',
+    clueText:
+      'The object did not need to shout. Its name in the outliner remembered what the camera forgot: a simple mesh, labeled with intention.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    background: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    hintText: 'In Blender and 3D modeling, editable object geometry is commonly called a ______.',
+    passwordAnswer: 'MESH',
+    acceptedAnswers: ['OBJECT MESH'],
+    prerequisiteFileId: '014',
+    unlocksFileId: '016',
+    rewardFrameId: 'frame-015',
+    recoveredMessage:
+      'The Archivist reads the object name. Organization is not decoration; it is a way to leave meaning where others can find it.',
+    completionMeta: {
+      label: 'Frame 015 recovered',
+      nextStep: 'File 016 is now available in the archive.',
+    },
+  },
+  {
+    id: '016',
+    fileNumber: '016',
+    phase: 6,
+    arcId: 'blender-object',
+    title: 'The Folded Surface',
+    route: '/hidden-frame/file/016',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A Blender/object record about how textures wrap around a model through flattened surface coordinates.',
+    clueText:
+      'The surface looked seamless only because someone unfolded it first. A flat map told the image how to return to the model.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.archiveGrid,
+    background: hiddenFramePhase0Assets.backgrounds.archiveDark,
+    hintText: 'Texture coordinates on a model are often arranged in this kind of map.',
+    passwordAnswer: 'UV MAP',
+    acceptedAnswers: ['UV', 'UVS', 'U V MAP'],
+    prerequisiteFileId: '015',
+    unlocksFileId: '017',
+    rewardFrameId: 'frame-016',
+    recoveredMessage:
+      'The Archivist unfolds the surface. A texture can only return home when the object remembers where each part belongs.',
+    completionMeta: {
+      label: 'Frame 016 recovered',
+      nextStep: 'File 017 is now available in the archive.',
+    },
+  },
+  {
+    id: '017',
+    fileNumber: '017',
+    phase: 6,
+    arcId: 'blender-object',
+    title: 'The Shadow Under the Model',
+    route: '/hidden-frame/file/017',
+    state: 'locked',
+    statusLabel: 'Locked',
+    description:
+      'A Blender/object record about scale, materials, shadows, and checking a model from the camera view.',
+    clueText:
+      'The model finally felt real when it touched the floor with a shadow. Scale, material, and camera view agreed for one quiet frame.',
+    thumbnail: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    background: hiddenFramePhase0Assets.backgrounds.renderRoom,
+    hintText: 'A model becomes grounded when light creates this beneath or beside it.',
+    passwordAnswer: 'SHADOW',
+    acceptedAnswers: ['CAST SHADOW', 'SHADOWS'],
+    prerequisiteFileId: '016',
+    rewardFrameId: 'frame-017',
+    recoveredMessage:
+      'The Archivist grounds the model. A shadow is not only darkness; it is evidence that the object belongs in the scene.',
+    completionMeta: {
+      label: 'Frame 017 recovered',
+      nextStep: 'The first object signal is complete.',
     },
   },
 ];
@@ -442,6 +527,10 @@ export const hiddenFrameCameraFiles = hiddenFrameFiles.filter(
 
 export const hiddenFrameUnrealFiles = hiddenFrameFiles.filter(
   (file) => file.arcId === 'unreal-engine',
+);
+
+export const hiddenFrameObjectFiles = hiddenFrameFiles.filter(
+  (file) => file.arcId === 'blender-object',
 );
 
 export const hiddenFramePuzzleFiles = hiddenFrameFirstChainFiles;

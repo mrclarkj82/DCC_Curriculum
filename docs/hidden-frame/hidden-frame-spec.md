@@ -8,7 +8,7 @@ Before implementing any future Hidden Frame feature, read this specification fir
 
 The Hidden Frame should add curiosity, observation, media literacy, and creative problem solving to the DCC site without distracting from class workflows or compromising student privacy. It must stay inside the DCC website, approved class materials, and future approved project files.
 
-Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data.
+Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data.
 
 ## Core Principles
 
@@ -145,6 +145,7 @@ scripts/
   validate-hidden-frame-phase3.mjs
   validate-hidden-frame-phase4.mjs
   validate-hidden-frame-phase5.mjs
+  validate-hidden-frame-phase6.mjs
 src/
   hidden-frame/
     components/
@@ -157,6 +158,9 @@ src/
       HiddenFrameIcon.tsx
       HiddenFrameProgress.tsx
       LowerThirdClueCard.tsx
+      ObjectClueCard.tsx
+      ObjectClueGrid.tsx
+      ObjectInspectionFrame.tsx
       PasswordGate.tsx
       RecoveredFileCard.tsx
       TimelineClueCard.tsx
@@ -169,6 +173,7 @@ src/
       hiddenFrameCameraClues.ts
       hiddenFrameFrames.ts
       hiddenFrameFiles.ts
+      hiddenFrameObjectClues.ts
       hiddenFrameUnrealClues.ts
       hiddenFrameVideoClues.ts
     hooks/
@@ -181,6 +186,7 @@ src/
       HiddenFrameCollectionPage.tsx
       HiddenFrameFilePage.tsx
       HiddenFrameLandingPage.tsx
+      HiddenFrameObjectsPage.tsx
       HiddenFrameRenderRoomPage.tsx
       HiddenFrameTimelinePage.tsx
       HiddenFrameUnrealPage.tsx
@@ -208,19 +214,19 @@ Implemented routes:
 - `/hidden-frame/camera`
 - `/hidden-frame/render-room`
 - `/hidden-frame/unreal`
+- `/hidden-frame/objects`
 
 Reserved future routes:
 
 - `/hidden-frame/frame/:id`
 - `/hidden-frame/progress`
-- `/hidden-frame/objects`
 - `/hidden-frame/compression`
 - `/hidden-frame/final-export`
 - `/hidden-frame/frame-000`
 
 The Hidden Frame routes live inside the existing authenticated app shell so they remain contained inside DCC Creative Studio and preserve normal access controls. They are intentionally not added to the normal public student navigation menu.
 
-`/hidden-frame/file/001` remains registered for backwards compatibility. `/hidden-frame/file/:fileId` is the data-driven route used for Files 001 through 014.
+`/hidden-frame/file/001` remains registered for backwards compatibility. `/hidden-frame/file/:fileId` is the data-driven route used for Files 001 through 017.
 
 Routes must be protected or public according to the learning purpose and privacy implications. Do not expose student data or teacher/admin data through Hidden Frame routes.
 
@@ -242,6 +248,9 @@ Future components should be modular, reusable, and data-driven. Phase 1 created 
 - `CompositionGuideFrame`
 - `CameraClueCard`
 - `CameraClueGrid`
+- `ObjectInspectionFrame`
+- `ObjectClueCard`
+- `ObjectClueGrid`
 - `UnrealViewportReadout`
 - `UnrealClueCard`
 - `UnrealSignalGrid`
@@ -346,7 +355,7 @@ Run `npm run validate:curriculum` when a change touches curriculum, seed data, l
 
 Future interactive routes should include manual accessibility checks for keyboard focus, reduced motion, readable contrast, and discoverable hidden controls.
 
-`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, and the Phase 5 Unreal/Render Room validation script.
+`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, and the Phase 6 object inspection validation script.
 
 ## Future Expansion
 
@@ -580,6 +589,54 @@ Accessibility notes: provides an `aria-label` for the clue group and delegates c
 
 Extension strategy: map over data so new composition clues can be added without new page code.
 
+### ObjectInspectionFrame
+
+Purpose: displays a Blender/object-style inspection thumbnail with a simplified model marker, visible object label, and inspection note.
+
+Inputs: `concept`, `label`, `note`, and `thumbnail`.
+
+Outputs: a figure with decorative image/model marker and visible caption text.
+
+Dependencies: `hiddenFrameObjectClues.ts`, Phase 0 assets, and Hidden Frame CSS.
+
+Intended reuse: object inspection route, future Blender/modeling clues, and approved object-detail references.
+
+Accessibility notes: the decorative model marker is not the only clue source; label and note remain visible text.
+
+Extension strategy: add new `HiddenFrameObjectConcept` values and CSS classes as future object clue categories are introduced.
+
+### ObjectClueCard
+
+Purpose: displays one object clue with concept label, inspection frame, observation copy, prompt copy, and optional recovered-file link.
+
+Inputs: a `HiddenFrameObjectClue`.
+
+Outputs: a semantic article.
+
+Dependencies: `ObjectInspectionFrame`, `hiddenFrameObjectClues.ts`, `hiddenFrameFiles.ts`, and React Router.
+
+Intended reuse: object route, future Blender/object arcs, and approved model-inspection clue sequences.
+
+Accessibility notes: visible text describes the modeling concept; inspection decoration is supplemental.
+
+Extension strategy: use typed clue data instead of branching per clue.
+
+### ObjectClueGrid
+
+Purpose: renders a responsive grid of Blender/object clue cards.
+
+Inputs: an array of `HiddenFrameObjectClue` records.
+
+Outputs: a labeled grid section.
+
+Dependencies: `ObjectClueCard`.
+
+Intended reuse: object route and future model-inspection indexes.
+
+Accessibility notes: provides an `aria-label` for the clue group and delegates card semantics to `ObjectClueCard`.
+
+Extension strategy: map over data so new object clues can be added without new page code.
+
 ### UnrealViewportReadout
 
 Purpose: displays an Unreal-styled viewport thumbnail with a reticle, visible transform/status label, and readout.
@@ -656,6 +713,8 @@ Phase 4 uses CSS guide overlays on existing Phase 0 backgrounds before introduci
 
 Phase 5 uses web-first Render Room and Unreal clue abstractions instead of a playable Unreal build. `hiddenFrameUnrealClues.ts` can reference approved project-file concepts later, but Phase 5 only ships safe internal metadata, viewport readouts, and Phase 0 Render Room assets.
 
+Phase 6 uses in-site object inspection panels instead of uploaded or private project files. `hiddenFrameObjectClues.ts` can reference approved model examples later, but Phase 6 only ships safe internal metadata, simplified model markers, and Phase 0 backgrounds.
+
 ## Technical Debt & TODO
 
 - Expand structured data schemas for archive entries, recovered files, frame cards, puzzles, achievements, and progression before adding content at larger scale.
@@ -665,7 +724,7 @@ Phase 5 uses web-first Render Room and Unreal clue abstractions instead of a pla
 - Add automated route/component tests when Hidden Frame has interactive screens.
 - Add visual QA snapshots after future pages are introduced.
 - Add a developer-only reset utility only after a safe, hidden pattern is designed. Phase 2 intentionally does not expose destructive reset controls to students.
-- Real embedded video media, playable Unreal builds, Blender/object integration, admin tools, account sync, and larger media assets remain postponed.
+- Real embedded video media, playable Unreal builds, real Blender project embeds, admin tools, account sync, and larger media assets remain postponed.
 
 ## Version History
 
@@ -693,6 +752,10 @@ Implemented the first cinematography/composition signal with `/hidden-frame/came
 
 Implemented the first Unreal/Render Room signal with `/hidden-frame/render-room`, `/hidden-frame/unreal`, Files 012 through 014, Frames 012 through 014, `hiddenFrameUnrealClues.ts`, `UnrealViewportReadout`, `UnrealClueCard`, `UnrealSignalGrid`, Render Room viewport/readout styling, and a Phase 5 validation script.
 
+### Phase 6 - 2026-07-13
+
+Implemented the first Blender/object inspection signal with `/hidden-frame/objects`, Files 015 through 017, Frames 015 through 017, `hiddenFrameObjectClues.ts`, `ObjectInspectionFrame`, `ObjectClueCard`, `ObjectClueGrid`, object inspection styling, and a Phase 6 validation script.
+
 ## Acceptance Criteria
 
 - The Phase 0 assets are imported without modifying artwork.
@@ -714,3 +777,5 @@ Implemented the first Unreal/Render Room signal with `/hidden-frame/render-room`
 - Files 009 through 011 extend the recovered-file system with composition vocabulary and rewards.
 - `/hidden-frame/render-room` and `/hidden-frame/unreal` present Unreal Engine clues without requiring a playable Unreal build.
 - Files 012 through 014 extend the recovered-file system with Unreal vocabulary and rewards.
+- `/hidden-frame/objects` presents Blender/object clues without uploads, private project folders, or external scavenger hunt behavior.
+- Files 015 through 017 extend the recovered-file system with object/modeling vocabulary and rewards.

@@ -10,6 +10,9 @@ export { FrameCollectionGrid } from './components/FrameCollectionGrid';
 export { HiddenFrameIcon, type HiddenFrameIconSize, type HiddenFrameIconVariant } from './components/HiddenFrameIcon';
 export { HiddenFrameProgress } from './components/HiddenFrameProgress';
 export { LowerThirdClueCard } from './components/LowerThirdClueCard';
+export { ObjectClueCard } from './components/ObjectClueCard';
+export { ObjectClueGrid } from './components/ObjectClueGrid';
+export { ObjectInspectionFrame } from './components/ObjectInspectionFrame';
 export { PasswordGate } from './components/PasswordGate';
 export { RecoveredFileCard } from './components/RecoveredFileCard';
 export { TimelineClueCard } from './components/TimelineClueCard';
@@ -23,6 +26,7 @@ export {
   hiddenFrameCameraFiles,
   hiddenFrameFiles,
   hiddenFrameFirstChainFiles,
+  hiddenFrameObjectFiles,
   hiddenFramePlayableFiles,
   hiddenFramePuzzleFiles,
   hiddenFrameUnrealFiles,
@@ -38,6 +42,12 @@ export {
   type HiddenFrameCameraClue,
   type HiddenFrameCompositionPrinciple,
 } from './data/hiddenFrameCameraClues';
+export {
+  getHiddenFrameObjectClueById,
+  hiddenFrameObjectClues,
+  type HiddenFrameObjectClue,
+  type HiddenFrameObjectConcept,
+} from './data/hiddenFrameObjectClues';
 export {
   getHiddenFrameUnrealClueById,
   hiddenFrameUnrealClues,

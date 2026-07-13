@@ -1,5 +1,15 @@
 # Hidden Frame Changelog
 
+## Phase 6 - 2026-07-13
+
+- Added `/hidden-frame/objects` for the first Blender/object inspection signal route.
+- Added Files 015 through 017: `The Name on the Mesh`, `The Folded Surface`, and `The Shadow Under the Model`.
+- Added Frames 015 through 017: `MESH`, `UV MAP`, and `SHADOW`.
+- Added structured object clue data for object names, model details, materials, UV maps, shadows, scale, camera view, and engraved text.
+- Added reusable components: `ObjectInspectionFrame`, `ObjectClueCard`, and `ObjectClueGrid`.
+- Expanded `npm run validate:hidden-frame` with Phase 6 checks for the objects route, object clue data, object files, frames, and CSS.
+- Updated spec, canon, progress, roadmap, and acceptance criteria.
+
 ## Phase 5 - 2026-07-13
 
 - Added `/hidden-frame/render-room` for the first Unreal-styled Render Room route.
