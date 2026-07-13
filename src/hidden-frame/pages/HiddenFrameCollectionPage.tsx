@@ -1,13 +1,15 @@
 import type { CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
+import { AchievementGrid } from '../components/AchievementGrid';
 import { CompressionLog } from '../components/CompressionLog';
 import { FrameCollectionGrid } from '../components/FrameCollectionGrid';
 import { HiddenFrameProgress } from '../components/HiddenFrameProgress';
+import { HiddenFrameResetPanel } from '../components/HiddenFrameResetPanel';
 import { useHiddenFrameProgress } from '../hooks/useHiddenFrameProgress';
 import { hiddenFramePhase0AssetRoles } from '../hiddenFramePhase0Assets';
 
 export function HiddenFrameCollectionPage() {
-  const { progress, summary } = useHiddenFrameProgress();
+  const { progress, summary, resetProgress } = useHiddenFrameProgress();
 
   return (
     <section
@@ -46,6 +48,20 @@ export function HiddenFrameCollectionPage() {
         )}
 
         <FrameCollectionGrid recoveredFrameIds={progress.recoveredFrameIds} />
+
+        <section className="hidden-frame-collection-section">
+          <div>
+            <p className="hidden-frame-kicker">Recovered signals</p>
+            <h2>Signal Badges</h2>
+            <p>
+              Badges are local discovery markers for this browser. They are not points,
+              leaderboards, or assignment credit.
+            </p>
+          </div>
+          <AchievementGrid earnedAchievementIds={progress.achievementIds} />
+        </section>
+
+        <HiddenFrameResetPanel onReset={resetProgress} />
       </div>
     </section>
   );

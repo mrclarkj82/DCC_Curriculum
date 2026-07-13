@@ -51,6 +51,10 @@ The first Render Room signal appears. Files 012 through 014 extend the archive t
 
 The first object signal appears. Files 015 through 017 extend the archive through meshes, UV maps, and shadows. Frames 015 through 017 become local optional collectibles.
 
+### 2026-07-13 - Phase 7
+
+The collection begins showing local signal badges. These badges mark optional discovery on the current device only and are not grades, points, public rankings, or classroom credit.
+
 ## Locations
 
 ### Archive
@@ -825,6 +829,74 @@ Unlock condition: Complete File 017
 
 Student-facing text: A frame for grounding a model with scale, material, and light.
 
+## Signal Badges
+
+Signal badges are local achievement-style markers shown on `/hidden-frame/collection`. They are not grades, points, badges of mastery, public comparisons, or teacher-facing student data.
+
+### HF-ACHIEVEMENT-ARCHIVE-OPENED
+
+Badge ID: `archive-opened`
+
+Title: Archive Opened
+
+Unlock condition: Visit the archive.
+
+### HF-ACHIEVEMENT-FIRST-CHAIN-RECOVERED
+
+Badge ID: `first-chain-recovered`
+
+Title: First Chain Recovered
+
+Unlock condition: Complete Files 001 through 005.
+
+### HF-ACHIEVEMENT-TIMELINE-SIGNAL-RECOVERED
+
+Badge ID: `timeline-signal-recovered`
+
+Title: Timeline Signal
+
+Unlock condition: Complete Files 006 through 008.
+
+### HF-ACHIEVEMENT-CAMERA-SIGNAL-RECOVERED
+
+Badge ID: `camera-signal-recovered`
+
+Title: Camera Signal
+
+Unlock condition: Complete Files 009 through 011.
+
+### HF-ACHIEVEMENT-RENDER-ROOM-SIGNAL-RECOVERED
+
+Badge ID: `render-room-signal-recovered`
+
+Title: Render Room Signal
+
+Unlock condition: Complete Files 012 through 014.
+
+### HF-ACHIEVEMENT-OBJECT-SIGNAL-RECOVERED
+
+Badge ID: `object-signal-recovered`
+
+Title: Object Signal
+
+Unlock condition: Complete Files 015 through 017.
+
+### HF-ACHIEVEMENT-TEN-FRAMES-RECOVERED
+
+Badge ID: `ten-frames-recovered`
+
+Title: Ten Frames Recovered
+
+Unlock condition: Recover ten local frame cards.
+
+### HF-ACHIEVEMENT-CURRENT-ARCHIVE-RECOVERED
+
+Badge ID: `current-archive-recovered`
+
+Title: Current Archive Recovered
+
+Unlock condition: Complete all currently available files, Files 001 through 017.
+
 ## Compression Logs
 
 No antagonist Compression logs are canon in Phase 2.
@@ -838,6 +910,8 @@ Phase 4 includes "Camera signal" and "Observation scope" messages. These are saf
 Phase 5 includes "Render Room signal," "Editor preview," and "Engine scope" messages. These are safety and atmosphere copy, not simulated malware, threats, or real engine instructions.
 
 Phase 6 includes "Object signal" and "Object scope" messages. These are safety and atmosphere copy, not instructions to upload files, open private folders, or leave the site.
+
+Phase 7 includes local progress and reset copy. These are interface messages, not narrative threats or class-management records.
 
 ## Symbols
 
@@ -973,6 +1047,12 @@ Phase 6 adds:
 - The folded surface.
 - The shadow under the model.
 - Object signal.
+
+Phase 7 adds:
+
+- Signal badges.
+- Current archive recovered.
+- Reset this device.
 
 ## Puzzle Solutions
 

@@ -78,18 +78,20 @@ Implemented work:
 
 ### Phase 7: Student Progression System
 
-Status: Next.
+Status: Complete.
 
 Goal: expand local progression without turning it into grades.
 
-Planned work:
+Implemented work:
 
-- Support larger frame collections.
-- Add achievement metadata and display components.
-- Add optional reset behind a safe, non-prominent developer/student-safe pattern.
-- Strengthen migration and adapter boundaries.
+- Supported larger frame collections through the existing frame data.
+- Added achievement metadata and display components.
+- Added optional local reset behind a two-step confirmation.
+- Strengthened migration and adapter boundaries with schema version 3 and `achievementIds`.
 
 ### Phase 8: The Compression Event
+
+Status: Next.
 
 Goal: add the safe antagonist/event layer.
 

@@ -7,12 +7,10 @@ interface HiddenFrameProgressProps {
 
 export function HiddenFrameProgress({ summary, className }: HiddenFrameProgressProps) {
   const statusText =
-    summary.chainComplete && summary.recoveredFrameCount < summary.totalFrameCount
-      ? `First chain complete / ${summary.recoveredFrameCount}/${summary.totalFrameCount} frames`
-      : summary.chainComplete
-        ? 'First chain complete'
+    summary.allCurrentFramesRecovered
+      ? `Current archive recovered / ${summary.achievementCount}/${summary.totalAchievementCount} signals`
       : summary.recoveredFrameCount > 0
-        ? `${summary.recoveredFrameCount}/${summary.totalFrameCount} frames recovered`
+        ? `${summary.recoveredFrameCount}/${summary.totalFrameCount} frames / ${summary.achievementCount}/${summary.totalAchievementCount} signals`
         : summary.unlockedFileCount > 1
           ? `${summary.unlockedFileCount} files available`
           : summary.archiveInitialized

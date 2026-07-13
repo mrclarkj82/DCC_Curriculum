@@ -4,11 +4,14 @@ export {
   hiddenFramePhase0Assets,
   type HiddenFramePhase0AssetKey,
 } from './hiddenFramePhase0Assets';
+export { AchievementBadge } from './components/AchievementBadge';
+export { AchievementGrid } from './components/AchievementGrid';
 export { CompressionLog } from './components/CompressionLog';
 export { FrameCard } from './components/FrameCard';
 export { FrameCollectionGrid } from './components/FrameCollectionGrid';
 export { HiddenFrameIcon, type HiddenFrameIconSize, type HiddenFrameIconVariant } from './components/HiddenFrameIcon';
 export { HiddenFrameProgress } from './components/HiddenFrameProgress';
+export { HiddenFrameResetPanel } from './components/HiddenFrameResetPanel';
 export { LowerThirdClueCard } from './components/LowerThirdClueCard';
 export { ObjectClueCard } from './components/ObjectClueCard';
 export { ObjectClueGrid } from './components/ObjectClueGrid';
@@ -22,6 +25,15 @@ export { UnrealSignalGrid } from './components/UnrealSignalGrid';
 export { UnrealViewportReadout } from './components/UnrealViewportReadout';
 export { VideoStillClueCard } from './components/VideoStillClueCard';
 export { hiddenFrameRewardFrames, getHiddenFrameRewardFrameById, type HiddenFrameRewardFrame } from './data/hiddenFrameFrames';
+export {
+  getEarnedHiddenFrameAchievementIds,
+  getHiddenFrameAchievementById,
+  hiddenFrameAchievements,
+  isHiddenFrameAchievementEarned,
+  type HiddenFrameAchievement,
+  type HiddenFrameAchievementCriteria,
+  type HiddenFrameAchievementProgressState,
+} from './data/hiddenFrameAchievements';
 export {
   hiddenFrameCameraFiles,
   hiddenFrameFiles,
@@ -75,6 +87,7 @@ export {
   markHiddenFrameFileCompleted,
   markHiddenFrameFileUnlocked,
   readHiddenFrameProgress,
+  resetHiddenFrameProgress,
   writeHiddenFrameProgress,
   type HiddenFrameProgressSnapshot,
   type HiddenFrameProgressSummary,

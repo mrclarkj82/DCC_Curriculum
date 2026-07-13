@@ -137,3 +137,18 @@ Consequences:
 - `/hidden-frame/objects` uses static in-site clue panels.
 - `hiddenFrameObjectClues.ts` stores object inspection metadata.
 - Future real model/project references must use approved class materials and stay documented in spec/canon.
+
+## Decision 011: Achievements Are Local Signal Badges Only
+
+Date: 2026-07-13
+
+Decision: Phase 7 achievements are local signal badges derived from localStorage progress, not grades, points, public comparisons, or teacher-facing mastery data.
+
+Reason: Hidden Frame is optional and ungraded. A lightweight progression layer can reward discovery without creating privacy, leaderboard, or grading risks.
+
+Consequences:
+
+- Progress schema version 3 stores `achievementIds`.
+- `/hidden-frame/collection` displays signal badges and a two-step local reset panel.
+- Reset clears only this browser's Hidden Frame progress and does not touch class records, submissions, responses, rosters, or Firestore data.
+- Future account-based persistence still requires a new documented decision and security review.

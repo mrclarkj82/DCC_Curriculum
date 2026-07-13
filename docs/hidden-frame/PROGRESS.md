@@ -2,7 +2,7 @@
 
 ## Current Overall Status
 
-The Hidden Frame is implemented through Phase 6. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, and Phase 6 added the first Blender/object inspection arc.
+The Hidden Frame is implemented through Phase 7. Phase 0 established the visual foundation, Phase 1 created the hidden page MVP, Phase 2 created the first playable five-file puzzle chain with local frame rewards, Phase 3 added the first video-production timeline arc, Phase 4 added the first cinematography/composition arc, Phase 5 added the first Unreal/Render Room arc, Phase 6 added the first Blender/object inspection arc, and Phase 7 added the local progression layer.
 
 The current full-ARG working branch is:
 
@@ -19,8 +19,8 @@ The current full-ARG working branch is:
 | 4 | Cinematography Mystery Arc | Complete | Camera route, composition clue data, Files 009-011, guide overlays |
 | 5 | Unreal Engine Integration | Complete | Render Room route, Unreal clue data, Files 012-014, viewport readouts |
 | 6 | Blender/Object Mystery Arc | Complete | Objects route, object clue data, Files 015-017, inspection panels |
-| 7 | Student Progression System | Next | Larger collection, achievements, reset, adapter boundary |
-| 8 | Compression Event | Not Started | Glitch/redaction/compression antagonist systems |
+| 7 | Student Progression System | Complete | Achievement data, signal badges, reset panel, schema v3 migration |
+| 8 | Compression Event | Next | Glitch/redaction/compression antagonist systems |
 | 9 | Final Export | Not Started | Frame 000 and completion ending |
 | 10 | Admin and Expansion Tools | Not Started | Long-term content expansion tools and docs |
 
@@ -115,31 +115,35 @@ Phase 6 added:
 - `ObjectInspectionFrame`, `ObjectClueCard`, and `ObjectClueGrid`.
 - Phase 6 validation script.
 
+### Phase 7: Student Progression System
+
+Phase 7 added:
+
+- Schema version 3 localStorage progress with `achievementIds`.
+- Achievement data in `hiddenFrameAchievements.ts`.
+- `AchievementBadge` and `AchievementGrid`.
+- `HiddenFrameResetPanel` with two-step local-only reset confirmation.
+- Richer progress summary counts for frames and recovered signals.
+- Phase 7 validation script.
+
 ## Active Phase
 
-### Phase 7: Student Progression System
+### Phase 8: The Compression Event
 
 Objective:
 
-Expand optional local progression without making Hidden Frame feel like grades, points, or public competition.
+Add the first safe Compression event layer without making it feel like malware, a threat, or a real security breach.
 
 Required work:
 
-- Add achievement metadata and achievement display components.
-- Add richer progress summary states.
-- Add optional reset with clear local-only copy.
-- Preserve the localStorage adapter boundary and migration path.
+- Add `/hidden-frame/compression`.
+- Add Compression log data.
+- Add glitch/redaction/corrupted visual states.
+- Add Compression warning panels with safe antagonist language.
+- Preserve calm, school-appropriate scope.
 - Update docs and validation.
 
 ## Backlog
-
-### Phase 7 Backlog
-
-- Expanded frame collection.
-- Achievement data.
-- Optional reset flow.
-- Persistence adapter interface.
-- Additional schema migration coverage.
 
 ### Phase 8 Backlog
 
@@ -213,3 +217,11 @@ Required work:
 - `npm.cmd run validate:curriculum`: passed.
 - `npm.cmd run build`: passed with existing Vite large chunk warning.
 - Route smoke checks returned `200` for `/hidden-frame/objects` and `/hidden-frame/file/015`.
+- Phase 6 committed and pushed as `0015595`.
+- Phase 7 implemented with local achievements, schema v3 progress, and reset support.
+- `git diff --check`: passed for Phase 7 work.
+- `npm.cmd run lint`: passed.
+- `npm.cmd run validate:hidden-frame`: passed through Phase 7.
+- `npm.cmd run validate:curriculum`: passed.
+- `npm.cmd run build`: passed with existing Vite large chunk warning.
+- Route smoke checks returned `200` for `/hidden-frame/collection`.

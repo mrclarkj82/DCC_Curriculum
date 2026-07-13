@@ -1,5 +1,15 @@
 # Hidden Frame Changelog
 
+## Phase 7 - 2026-07-13
+
+- Migrated local Hidden Frame progress to schema version 3 with `achievementIds`.
+- Added structured achievement data in `hiddenFrameAchievements.ts`.
+- Added reusable components: `AchievementBadge`, `AchievementGrid`, and `HiddenFrameResetPanel`.
+- Updated `/hidden-frame/collection` with signal badges, richer progress summary copy, and two-step local reset.
+- Preserved optional, ungraded, non-leaderboard presentation.
+- Expanded `npm run validate:hidden-frame` with Phase 7 checks for achievements, schema migration, reset copy, and collection UI.
+- Updated spec, canon, progress, roadmap, and acceptance criteria.
+
 ## Phase 6 - 2026-07-13
 
 - Added `/hidden-frame/objects` for the first Blender/object inspection signal route.

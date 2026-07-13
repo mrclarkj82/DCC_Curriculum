@@ -170,6 +170,8 @@ Phase 6 is complete when:
 
 ## Phase 7 Acceptance Criteria: Student Progression System
 
+Status: Complete.
+
 Phase 7 is complete when:
 
 - The collection system supports many frame cards, locked/unlocked/completed states, achievement badges, progress summary, optional reset, and schema migration.

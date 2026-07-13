@@ -501,6 +501,79 @@ button.hidden-frame-secondary-link {
   font-size: 22px;
 }
 
+.hidden-frame-collection-section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.hidden-frame-collection-section > div > h2,
+.hidden-frame-collection-section > div > p {
+  margin: 0;
+}
+
+.hidden-frame-achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.hidden-frame-achievement-badge {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+  min-height: 190px;
+  border: 1px solid rgba(141, 247, 255, 0.24);
+  border-radius: var(--hf-radius);
+  padding: var(--space-4);
+  background:
+    linear-gradient(135deg, rgba(141, 247, 255, 0.08), transparent 42%),
+    rgba(5, 7, 11, 0.78);
+  box-shadow: var(--hf-shadow);
+}
+
+.hidden-frame-achievement-badge--earned {
+  border-color: rgba(255, 184, 77, 0.62);
+  box-shadow: var(--hf-shadow), var(--hf-glow);
+}
+
+.hidden-frame-achievement-badge--locked {
+  opacity: 0.68;
+  filter: saturate(0.42);
+}
+
+.hidden-frame-achievement-badge h2,
+.hidden-frame-achievement-badge p {
+  margin: 0;
+}
+
+.hidden-frame-achievement-badge h2 {
+  color: var(--hf-ghost-white);
+  font-size: 20px;
+}
+
+.hidden-frame-reset-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-4);
+  align-items: center;
+  border: 1px solid rgba(255, 184, 77, 0.3);
+  border-radius: var(--hf-radius);
+  padding: var(--space-4);
+  background: rgba(5, 7, 11, 0.72);
+}
+
+.hidden-frame-reset-panel h2,
+.hidden-frame-reset-panel p {
+  margin: 0;
+}
+
+.hidden-frame-reset-panel__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  justify-content: flex-end;
+}
+
 .hidden-frame-timeline-track {
   position: relative;
   display: grid;
@@ -1106,7 +1179,9 @@ button.hidden-frame-secondary-link {
   .hidden-frame-grid--two,
   .hidden-frame-grid--file,
   .recovered-file-grid,
-  .hidden-frame-frame-grid {
+  .hidden-frame-frame-grid,
+  .hidden-frame-achievement-grid,
+  .hidden-frame-reset-panel {
     grid-template-columns: 1fr;
   }
 
@@ -1115,6 +1190,10 @@ button.hidden-frame-secondary-link {
   }
 
   .hidden-frame-header-actions {
+    justify-content: flex-start;
+  }
+
+  .hidden-frame-reset-panel__actions {
     justify-content: flex-start;
   }
 

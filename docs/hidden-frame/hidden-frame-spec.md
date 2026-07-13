@@ -8,7 +8,7 @@ Before implementing any future Hidden Frame feature, read this specification fir
 
 The Hidden Frame should add curiosity, observation, media literacy, and creative problem solving to the DCC site without distracting from class workflows or compromising student privacy. It must stay inside the DCC website, approved class materials, and future approved project files.
 
-Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data.
+Phase 0 imports the official visual identity only. Phase 1 adds the first small public-facing hidden route experience with a landing page, archive hub, one password-gated recovered file, reusable components, and local-only progress tracking. Phase 2 expands that foundation into the first optional puzzle chain with five recovered files, local unlock sequencing, collectible frame rewards, hint reveals, and a local collection page. Phase 3 adds the first video-production timeline route with structured timecode, cut, lower-third, and sound-bridge clues. Phase 4 adds the first cinematography route with composition clue data and CSS guide overlays. Phase 5 adds the first web-based Unreal/Render Room routes with structured viewport clue data. Phase 6 adds the first object inspection route with Blender/modeling clue data. Phase 7 adds local signal badges, schema version 3 progress, and local reset support.
 
 ## Core Principles
 
@@ -146,9 +146,12 @@ scripts/
   validate-hidden-frame-phase4.mjs
   validate-hidden-frame-phase5.mjs
   validate-hidden-frame-phase6.mjs
+  validate-hidden-frame-phase7.mjs
 src/
   hidden-frame/
     components/
+      AchievementBadge.tsx
+      AchievementGrid.tsx
       CameraClueCard.tsx
       CameraClueGrid.tsx
       CompressionLog.tsx
@@ -157,6 +160,7 @@ src/
       FrameCollectionGrid.tsx
       HiddenFrameIcon.tsx
       HiddenFrameProgress.tsx
+      HiddenFrameResetPanel.tsx
       LowerThirdClueCard.tsx
       ObjectClueCard.tsx
       ObjectClueGrid.tsx
@@ -170,6 +174,7 @@ src/
       UnrealViewportReadout.tsx
       VideoStillClueCard.tsx
     data/
+      hiddenFrameAchievements.ts
       hiddenFrameCameraClues.ts
       hiddenFrameFrames.ts
       hiddenFrameFiles.ts
@@ -238,7 +243,10 @@ Future components should be modular, reusable, and data-driven. Phase 1 created 
 - `RecoveredFileCard`
 - `PasswordGate`
 - `HiddenFrameProgress`
+- `HiddenFrameResetPanel`
 - `CompressionLog`
+- `AchievementBadge`
+- `AchievementGrid`
 - `FrameCard`
 - `FrameCollectionGrid`
 - `TimelineTrack`
@@ -355,7 +363,7 @@ Run `npm run validate:curriculum` when a change touches curriculum, seed data, l
 
 Future interactive routes should include manual accessibility checks for keyboard focus, reduced motion, readable contrast, and discoverable hidden controls.
 
-`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, and the Phase 6 object inspection validation script.
+`npm run validate:hidden-frame` currently runs the Phase 0 asset resolver, the Phase 1 route/data/password validation script, the Phase 2 puzzle-chain validation script, the Phase 3 timeline/video validation script, the Phase 4 camera/composition validation script, the Phase 5 Unreal/Render Room validation script, the Phase 6 object inspection validation script, and the Phase 7 progression validation script.
 
 ## Future Expansion
 
@@ -415,7 +423,7 @@ Extension strategy: replace or wrap the validation source if future phases need 
 
 ### HiddenFrameProgress
 
-Purpose: displays subtle local progress such as "Archive initialized" or "1 recovered file unlocked".
+Purpose: displays subtle local progress such as archive status, recovered frames, and recovered local signals.
 
 Inputs: `HiddenFrameProgressSummary` and optional `className`.
 
@@ -428,6 +436,22 @@ Intended reuse: archive pages, file pages, and future progress panels.
 Accessibility notes: uses `aria-live="polite"` and avoids grade-like language.
 
 Extension strategy: keep the component bound to a summary interface so persistence can change without rewriting UI.
+
+### HiddenFrameResetPanel
+
+Purpose: lets a user clear only this browser's local Hidden Frame progress.
+
+Inputs: `onReset`.
+
+Outputs: a two-step reset confirmation panel with local-only safety copy.
+
+Dependencies: `useHiddenFrameProgress`, `hiddenFrameProgress.ts`, and Hidden Frame CSS.
+
+Intended reuse: collection route and future local progress views.
+
+Accessibility notes: uses real buttons and visible confirmation/cancel controls.
+
+Extension strategy: keep reset behavior behind the progress adapter so future persistence can replace the implementation safely.
 
 ### CompressionLog
 
@@ -476,6 +500,38 @@ Intended reuse: collection route, future progress routes, and post-unlock reward
 Accessibility notes: provides an `aria-label` for the collection grid and delegates card labels to `FrameCard`.
 
 Extension strategy: the grid maps over `hiddenFrameRewardFrames`, so future phases can add more frames without changing the component.
+
+### AchievementBadge
+
+Purpose: displays one local Hidden Frame signal badge.
+
+Inputs: a `HiddenFrameAchievement` and `isEarned`.
+
+Outputs: an article showing earned copy or a waiting state.
+
+Dependencies: `hiddenFrameAchievements.ts` and Hidden Frame CSS.
+
+Intended reuse: collection route and future progress views.
+
+Accessibility notes: uses visible text and an `aria-label` that avoids points, grades, or ranking language.
+
+Extension strategy: add new achievement records through data before changing component logic.
+
+### AchievementGrid
+
+Purpose: renders local signal badges from the achievement data module.
+
+Inputs: `earnedAchievementIds`.
+
+Outputs: a labeled grid of `AchievementBadge` entries.
+
+Dependencies: `hiddenFrameAchievements.ts` and `AchievementBadge`.
+
+Intended reuse: collection route and future progress views.
+
+Accessibility notes: provides a group `aria-label` and delegates card semantics to `AchievementBadge`.
+
+Extension strategy: map over data so new badges can be added without page changes.
 
 ### TimelineTrack
 
@@ -703,7 +759,7 @@ Phase 1 uses client-side password validation because File 001 is optional, ungra
 
 Phase 2 keeps client-side password validation and localStorage progress because the chain is optional, ungraded, and non-sensitive. Passwords and accepted variants are intentionally documented in canon and visible in bundled code. This remains inappropriate for graded, private, or security-sensitive content.
 
-Phase 2 keeps the existing `dcc.hiddenFrame.phase1Progress` localStorage key to preserve prior local progress. The stored payload now has schema version `2` and migrates legacy Phase 1 `unlockedFileIds` into completed file and recovered frame state when appropriate.
+Phase 2 kept the existing `dcc.hiddenFrame.phase1Progress` localStorage key to preserve prior local progress. Phase 7 still uses that key, but the stored payload now has schema version `3`, preserves schema 2 completed/recovered state, migrates legacy Phase 1 `unlockedFileIds` only when the source schema is older than 2, and derives `achievementIds` from local progress.
 
 Phase 2 uses CSS-driven placeholders and existing Phase 0 backgrounds for frame cards and recovered file art. No new image assets were generated.
 
@@ -715,15 +771,17 @@ Phase 5 uses web-first Render Room and Unreal clue abstractions instead of a pla
 
 Phase 6 uses in-site object inspection panels instead of uploaded or private project files. `hiddenFrameObjectClues.ts` can reference approved model examples later, but Phase 6 only ships safe internal metadata, simplified model markers, and Phase 0 backgrounds.
 
+Phase 7 adds local signal badges and reset support without Firestore persistence, teacher dashboards, public comparison, grades, or leaderboards. Achievement IDs are derived locally from archive visits, completed files, and recovered frame counts.
+
 ## Technical Debt & TODO
 
-- Expand structured data schemas for archive entries, recovered files, frame cards, puzzles, achievements, and progression before adding content at larger scale.
+- Expand structured data schemas for Compression logs, final export entries, admin preview tooling, and future content packs before adding content at larger scale.
 - Decide whether future Hidden Frame content should stay static, move to Firestore under `apps/dcc`, or use a hybrid content pack model.
 - Replace localStorage progress with authenticated persistence only if future phases need cross-device continuity.
 - Replace client-side password validation if future gates become sensitive, graded, or tied to authenticated progression.
 - Add automated route/component tests when Hidden Frame has interactive screens.
 - Add visual QA snapshots after future pages are introduced.
-- Add a developer-only reset utility only after a safe, hidden pattern is designed. Phase 2 intentionally does not expose destructive reset controls to students.
+- Revisit reset placement if future authenticated persistence is added. Phase 7 reset is intentionally local-only and two-step confirmed.
 - Real embedded video media, playable Unreal builds, real Blender project embeds, admin tools, account sync, and larger media assets remain postponed.
 
 ## Version History
@@ -756,6 +814,10 @@ Implemented the first Unreal/Render Room signal with `/hidden-frame/render-room`
 
 Implemented the first Blender/object inspection signal with `/hidden-frame/objects`, Files 015 through 017, Frames 015 through 017, `hiddenFrameObjectClues.ts`, `ObjectInspectionFrame`, `ObjectClueCard`, `ObjectClueGrid`, object inspection styling, and a Phase 6 validation script.
 
+### Phase 7 - 2026-07-13
+
+Implemented the local progression layer with schema version 3 progress, `achievementIds`, `hiddenFrameAchievements.ts`, `AchievementBadge`, `AchievementGrid`, `HiddenFrameResetPanel`, richer `HiddenFrameProgress` summary copy, local-only reset behavior, and a Phase 7 validation script.
+
 ## Acceptance Criteria
 
 - The Phase 0 assets are imported without modifying artwork.
@@ -779,3 +841,5 @@ Implemented the first Blender/object inspection signal with `/hidden-frame/objec
 - Files 012 through 014 extend the recovered-file system with Unreal vocabulary and rewards.
 - `/hidden-frame/objects` presents Blender/object clues without uploads, private project folders, or external scavenger hunt behavior.
 - Files 015 through 017 extend the recovered-file system with object/modeling vocabulary and rewards.
+- `/hidden-frame/collection` supports frame cards, local signal badges, progress summary, and optional local reset without grade or leaderboard presentation.
+- Local progress schema version 3 preserves migration boundaries and keeps future persistence swappable behind the adapter.
