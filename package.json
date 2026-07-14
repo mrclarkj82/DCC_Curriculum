@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/validate-firebase-env.mjs",
     "build": "tsc -b && vite build",
+    "prebuild:github-pages": "node scripts/validate-firebase-env.mjs",
     "build:github-pages": "tsc -b && vite build --base=/dcccs/ && node scripts/prepare-github-pages.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
