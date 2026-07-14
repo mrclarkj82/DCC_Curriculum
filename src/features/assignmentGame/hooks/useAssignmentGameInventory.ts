@@ -1,25 +1,31 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { ruinedCourtyardInventoryItems } from '../inventory/ruinedCourtyardInventory';
 import type {
+  AssignmentGameInventoryItemId,
   AssignmentGameInventoryItemState,
   AssignmentGameInventoryState,
 } from '../inventoryTypes';
 import type { AssignmentGamePlayerState, AssignmentGameVector } from '../playerMovementTypes';
 
 const initialInventoryEvent = 'Three useful relics shimmer in the Ruined Courtyard.';
+const emptyCollectedItemIds: readonly AssignmentGameInventoryItemId[] = [];
 
 type AssignmentGameInventoryRuntimeState = Pick<
   AssignmentGameInventoryState,
   'items' | 'lastInventoryEvent'
 >;
 
-function createInitialInventoryState(): AssignmentGameInventoryRuntimeState {
+function createInitialInventoryState(
+  collectedItemIds: readonly AssignmentGameInventoryItemId[] = [],
+): AssignmentGameInventoryRuntimeState {
   return {
     items: ruinedCourtyardInventoryItems.map((item) => ({
       ...item,
-      status: 'available',
+      status: collectedItemIds.includes(item.id) ? 'collected' : 'available',
     })),
-    lastInventoryEvent: initialInventoryEvent,
+    lastInventoryEvent: collectedItemIds.length
+      ? 'Saved inventory restored.'
+      : initialInventoryEvent,
   };
 }
 
@@ -48,13 +54,16 @@ export function useAssignmentGameInventory(
   isEnabled: boolean,
   resetKey: number,
   playerState: AssignmentGamePlayerState,
+  collectedItemIds: readonly AssignmentGameInventoryItemId[] = emptyCollectedItemIds,
 ): AssignmentGameInventoryState {
   const playerStateRef = useRef(playerState);
   const runtimeStateRef = useRef<AssignmentGameInventoryRuntimeState>(
-    createInitialInventoryState(),
+    createInitialInventoryState(collectedItemIds),
   );
   const [runtimeState, setRuntimeState] =
-    useState<AssignmentGameInventoryRuntimeState>(createInitialInventoryState);
+    useState<AssignmentGameInventoryRuntimeState>(() =>
+      createInitialInventoryState(collectedItemIds),
+    );
 
   useEffect(() => {
     playerStateRef.current = playerState;
@@ -65,10 +74,10 @@ export function useAssignmentGameInventory(
   }, [runtimeState]);
 
   useEffect(() => {
-    const initialState = createInitialInventoryState();
+    const initialState = createInitialInventoryState(collectedItemIds);
     runtimeStateRef.current = initialState;
     setRuntimeState(initialState);
-  }, [resetKey]);
+  }, [collectedItemIds, resetKey]);
 
   useEffect(() => {
     if (!isEnabled) {

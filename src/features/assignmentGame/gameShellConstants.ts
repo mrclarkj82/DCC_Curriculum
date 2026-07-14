@@ -5,13 +5,13 @@ import type { AssignmentGameMovementBounds, AssignmentGameVector } from './playe
 export const assignmentGameWorkingTitle = 'The Ember Gate';
 
 export const assignmentGameShellSubtitle =
-  'A Phase 8 local inventory prototype for the future assignment-unlocked adventure.';
+  'A Phase 9 Firestore save prototype for the assignment-unlocked adventure.';
 
 export const assignmentGameObjectiveTeaser =
   ruinedCourtyardLevel.objectiveText;
 
 export const assignmentGameContinueMessage =
-  'Continue will activate in a later phase when student-specific saves are added.';
+  'Continue activates when a verified Firestore save exists for this student and assignment target.';
 
 export const assignmentGameHudPlaceholders: AssignmentGameHudPlaceholder[] = [
   { label: 'Objective', value: ruinedCourtyardLevel.name },
