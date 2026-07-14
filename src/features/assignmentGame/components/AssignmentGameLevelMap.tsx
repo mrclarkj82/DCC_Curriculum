@@ -6,9 +6,11 @@ import type {
   AssignmentGameLevelZone,
   AssignmentGameTileId,
 } from '../levels/assignmentGameLevelTypes';
+import type { AssignmentGameProgressionState } from '../progressionTypes';
 
 interface AssignmentGameLevelMapProps {
   level: AssignmentGameLevel;
+  progressionState: AssignmentGameProgressionState;
 }
 
 function tileStyle(tileId: AssignmentGameTileId): CSSProperties {
@@ -34,14 +36,23 @@ function gridOverlayStyle(
 function featureStyle(
   level: AssignmentGameLevel,
   feature: AssignmentGameLevelFeature,
+  isUnlockedGate = false,
 ): CSSProperties {
+  if (isUnlockedGate) {
+    return {
+      ...gridOverlayStyle(level, feature),
+      backgroundImage:
+        'radial-gradient(circle, rgba(0, 229, 255, 0.78), transparent 52%), linear-gradient(180deg, rgba(255, 176, 0, 0.32), rgba(8, 3, 18, 0.64))',
+    };
+  }
+
   return {
     ...gridOverlayStyle(level, feature),
     ...tileStyle(feature.tileId),
   };
 }
 
-export function AssignmentGameLevelMap({ level }: AssignmentGameLevelMapProps) {
+export function AssignmentGameLevelMap({ level, progressionState }: AssignmentGameLevelMapProps) {
   const mapStyle = {
     '--assignment-game-level-columns': level.dimensions.columns,
     '--assignment-game-level-rows': level.dimensions.rows,
@@ -72,15 +83,23 @@ export function AssignmentGameLevelMap({ level }: AssignmentGameLevelMapProps) {
           }),
         )}
 
-        {level.features.map((feature) => (
-          <span
-            className={`assignment-game-level-feature assignment-game-level-feature--${feature.kind}`}
-            key={feature.id}
-            style={featureStyle(level, feature)}
-            title={feature.label}
-            aria-hidden="true"
-          />
-        ))}
+        {level.features.map((feature) => {
+          const isUnlockedGate =
+            feature.kind === 'lockedGate' &&
+            progressionState.unlockedGateIds.some((gateId) => gateId === feature.id);
+
+          return (
+            <span
+              className={`assignment-game-level-feature assignment-game-level-feature--${feature.kind}${
+                isUnlockedGate ? ' is-unlocked' : ''
+              }`}
+              key={feature.id}
+              style={featureStyle(level, feature, isUnlockedGate)}
+              title={isUnlockedGate ? `${feature.label} restored` : feature.label}
+              aria-hidden="true"
+            />
+          );
+        })}
 
         {level.blockedZones.map((zone) => (
           <span
@@ -97,6 +116,7 @@ export function AssignmentGameLevelMap({ level }: AssignmentGameLevelMapProps) {
         <p className="retro-label">First Level</p>
         <h3>{level.name}</h3>
         <p>{level.objectiveText}</p>
+        <p className="assignment-game-level-progress">{progressionState.statusText}</p>
       </div>
 
       <dl className="assignment-game-level-meta" aria-label={`${level.name} data`}>

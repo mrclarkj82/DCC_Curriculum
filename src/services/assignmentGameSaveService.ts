@@ -7,6 +7,7 @@ import {
   type AssignmentGameSaveDocument,
   type AssignmentGameSaveSnapshot,
 } from '../features/assignmentGame/saveTypes';
+import { normalizeAssignmentGameProgressionSnapshot } from '../features/assignmentGame/progressionTypes';
 import type { AssignmentGameFacingDirection } from '../features/assignmentGame/playerMovementTypes';
 import type { AssignmentGameInventoryItemId } from '../features/assignmentGame/inventoryTypes';
 
@@ -59,7 +60,10 @@ function collectedItemIdsFromData(data: unknown): AssignmentGameInventoryItemId[
   );
 }
 
-function snapshotFromData(data: unknown): AssignmentGameSaveSnapshot {
+function snapshotFromData(
+  data: unknown,
+  fallbackCompletedTargetId: string,
+): AssignmentGameSaveSnapshot {
   const snapshot = data as Partial<AssignmentGameSaveSnapshot>;
   const player = snapshot.player as { position?: unknown; facingDirection?: unknown } | undefined;
 
@@ -72,12 +76,17 @@ function snapshotFromData(data: unknown): AssignmentGameSaveSnapshot {
     },
     defeatedEnemyIds: stringListFromData(snapshot.defeatedEnemyIds),
     collectedItemIds: collectedItemIdsFromData(snapshot.collectedItemIds),
+    progression: normalizeAssignmentGameProgressionSnapshot(
+      snapshot.progression,
+      fallbackCompletedTargetId,
+    ),
   };
 }
 
 function saveDocumentFromData(
   fallbackId: string,
   data: Record<string, unknown>,
+  context: AssignmentGameSaveContext,
 ): AssignmentGameSaveDocument {
   return {
     id: String(data.id ?? fallbackId),
@@ -90,7 +99,7 @@ function saveDocumentFromData(
     activeItemType: data.activeItemType as AssignmentGameSaveContext['activeItemType'],
     activeItemId: String(data.activeItemId ?? ''),
     submissionId: String(data.submissionId ?? ''),
-    snapshot: snapshotFromData(data.snapshot),
+    snapshot: snapshotFromData(data.snapshot, context.targetId),
     createdAt: data.createdAt,
     updatedAt: data.updatedAt,
   };
@@ -106,7 +115,7 @@ export async function getAssignmentGameSave(
     return null;
   }
 
-  return saveDocumentFromData(snapshot.id, snapshot.data());
+  return saveDocumentFromData(snapshot.id, snapshot.data(), context);
 }
 
 export async function saveAssignmentGameProgress(

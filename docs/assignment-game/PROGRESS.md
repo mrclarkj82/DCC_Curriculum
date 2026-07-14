@@ -6,7 +6,7 @@ The Ember Gate is the assignment-unlocked student game inside DCC Creative Studi
 verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
 Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
 enemies, Phase 7 dialogue, Phase 8 inventory, and Phase 9 save and continue. Phase 10 assignment
-progression is the next recommended phase.
+progression is in progress on `feature/assignment-game-progression`.
 
 Verified on 2026-07-13:
 
@@ -21,6 +21,7 @@ Verified on 2026-07-13:
 - Phase 7 dialogue PR #14: merged and deployed.
 - Phase 8 inventory PR #15: merged and deployed.
 - Phase 9 save system PR #16: merged and deployed.
+- Phase 10 assignment progression branch: `feature/assignment-game-progression`.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -60,7 +61,7 @@ Verified on 2026-07-13:
 | Phase 7 | Dialogue | Merged | PR #14 / `feature/assignment-game-dialogue` | Adds local-only Lantern Keeper NPC and data-driven dialogue. |
 | Phase 8 | Inventory and Collectibles | Merged | PR #15 / `feature/assignment-game-inventory` | Adds local-only Ember Shard, Rusty Key, and Lantern Oil collectibles. |
 | Phase 9 | Save and Continue System | Merged | PR #16 / `feature/assignment-game-save-system` | Adds Firestore saves, Continue support, and reviewed game save rules. |
-| Phase 10 | Assignment Progression | Pending | Recommended: `feature/assignment-game-progression` | Unlock new areas from verified assignment progress. |
+| Phase 10 | Assignment Progression | In progress | `feature/assignment-game-progression` | Opens the first Ember Gate progression milestone from verified assignment progress. |
 | Phase 11 | Easter Egg Integration | Pending | Recommended: `feature/assignment-game-easter-egg` | Add Hidden Frame clue integration. |
 | Phase 12 | Teacher/Admin Controls | Pending | Recommended: `feature/assignment-game-teacher-controls` | Build only if classroom support needs are confirmed. |
 | Phase 13 | Polish and Final QA | Pending | Recommended: `feature/assignment-game-polish` | Classroom-ready pass and final manual verification. |
@@ -189,6 +190,16 @@ Verified on 2026-07-13:
 - 2026-07-13: Main after PR #16 `firebase.cmd deploy --only firestore:rules --dry-run` passed; `firestore.rules` compiled successfully.
 - 2026-07-13: Deployed Phase 9 Firestore rules and Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
 - 2026-07-13: Verified live `/student/game` returned HTTP 200 after Phase 9 deploy.
+- 2026-07-13: Phase 10 branch `feature/assignment-game-progression` created from current `origin/main`.
+- 2026-07-13: Phase 10 adds a first-gate progression snapshot to save version 2, HUD/map progression UI, and Firestore rules that reject future unreviewed progression fields.
+- 2026-07-13: Phase 10 `npm.cmd install` passed. npm reported 6 moderate audit vulnerabilities and deprecation warnings for `node-domexception`, `glob`, and `uuid`.
+- 2026-07-13: Phase 10 `npm.cmd run lint` passed.
+- 2026-07-13: Phase 10 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Phase 10 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Phase 10 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Phase 10 `firebase.cmd deploy --only firestore:rules --dry-run` passed; `firestore.rules` compiled successfully.
+- 2026-07-13: Phase 10 `git diff --check` passed with Git line-ending normalization warnings only.
+- 2026-07-13: Verified local Vite served `/student/game` with HTTP 200 on port 5186.
 
 ## Asset Notes
 
@@ -209,9 +220,10 @@ Verified on 2026-07-13:
 
 ## Next Step
 
-Start Phase 10 assignment progression:
+Finish Phase 10 PR:
 
-1. Create `feature/assignment-game-progression` from current `main`.
-2. Define the first assignment-progression data shape before adding new persisted fields.
-3. Add matching Firestore rules for any new progression fields.
-4. Keep `/student/game` protected by the existing auth, student-role, and assignment access gates.
+1. Validate `feature/assignment-game-progression`.
+2. Commit and push the progression branch.
+3. Open PR `[Phase 10] Assignment Game Progression`.
+4. After the Phase 10 PR merges, deploy Firestore rules and Firebase Hosting target `dcc`.
+5. Start Phase 11 Easter egg integration on `feature/assignment-game-easter-egg`.

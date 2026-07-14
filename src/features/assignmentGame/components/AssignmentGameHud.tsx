@@ -4,6 +4,7 @@ import type { AssignmentGameDialogueState } from '../dialogueTypes';
 import type { AssignmentGameEnemiesState } from '../enemyTypes';
 import type { AssignmentGameInventoryState } from '../inventoryTypes';
 import type { AssignmentGamePlayerState } from '../playerMovementTypes';
+import type { AssignmentGameProgressionState } from '../progressionTypes';
 
 interface AssignmentGameHudProps {
   combatState: AssignmentGameCombatState;
@@ -11,6 +12,7 @@ interface AssignmentGameHudProps {
   enemiesState: AssignmentGameEnemiesState;
   inventoryState: AssignmentGameInventoryState;
   playerState: AssignmentGamePlayerState;
+  progressionState: AssignmentGameProgressionState;
 }
 
 function dialogueStatusText(dialogueState: AssignmentGameDialogueState): string {
@@ -41,6 +43,7 @@ export function AssignmentGameHud({
   enemiesState,
   inventoryState,
   playerState,
+  progressionState,
 }: AssignmentGameHudProps) {
   const roundedX = Math.round(playerState.position.x);
   const roundedY = Math.round(playerState.position.y);
@@ -110,6 +113,10 @@ export function AssignmentGameHud({
       <div className="assignment-game-hud-item assignment-game-hud-item--inventory">
         <span>Item Status</span>
         <strong>{inventoryState.lastInventoryEvent}</strong>
+      </div>
+      <div className="assignment-game-hud-item assignment-game-hud-item--progression">
+        <span>Progression</span>
+        <strong>{progressionState.statusText}</strong>
       </div>
     </aside>
   );

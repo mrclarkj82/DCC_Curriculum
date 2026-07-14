@@ -5,7 +5,7 @@ import type { AssignmentGameMovementBounds, AssignmentGameVector } from './playe
 export const assignmentGameWorkingTitle = 'The Ember Gate';
 
 export const assignmentGameShellSubtitle =
-  'A Phase 9 Firestore save prototype for the assignment-unlocked adventure.';
+  'A Phase 10 assignment progression prototype for the assignment-unlocked adventure.';
 
 export const assignmentGameObjectiveTeaser =
   ruinedCourtyardLevel.objectiveText;

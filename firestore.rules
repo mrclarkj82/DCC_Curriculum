@@ -724,16 +724,36 @@ service cloud.firestore {
         || itemIds[index] in ['emberShard', 'rustyKey', 'lanternOil'];
     }
 
-    function validGameSaveSnapshot(snapshotData) {
+    function validGameSaveProgression(progressionData, saveData) {
+      return progressionData is map
+        && progressionData.keys().hasOnly([
+          'unlockedGateIds',
+          'unlockedAreaIds',
+          'completedTargetIds'
+        ])
+        && progressionData.unlockedGateIds is list
+        && progressionData.unlockedGateIds.size() == 1
+        && progressionData.unlockedGateIds[0] == 'ember-gate'
+        && progressionData.unlockedAreaIds is list
+        && progressionData.unlockedAreaIds.size() == 2
+        && progressionData.unlockedAreaIds[0] == 'ruined-courtyard'
+        && progressionData.unlockedAreaIds[1] == 'ember-gate-passage'
+        && progressionData.completedTargetIds is list
+        && progressionData.completedTargetIds.size() == 1
+        && progressionData.completedTargetIds[0] == saveData.targetId;
+    }
+
+    function validGameSaveSnapshot(snapshotData, saveData) {
       return snapshotData is map
         && snapshotData.keys().hasOnly([
           'snapshotVersion',
           'levelId',
           'player',
           'defeatedEnemyIds',
-          'collectedItemIds'
+          'collectedItemIds',
+          'progression'
         ])
-        && snapshotData.snapshotVersion == 1
+        && snapshotData.snapshotVersion == 2
         && snapshotData.levelId == 'ruined-courtyard'
         && snapshotData.player is map
         && snapshotData.player.keys().hasOnly(['position', 'facingDirection'])
@@ -747,7 +767,8 @@ service cloud.firestore {
         && snapshotData.collectedItemIds.size() <= 3
         && validItemIdAt(snapshotData.collectedItemIds, 0)
         && validItemIdAt(snapshotData.collectedItemIds, 1)
-        && validItemIdAt(snapshotData.collectedItemIds, 2);
+        && validItemIdAt(snapshotData.collectedItemIds, 2)
+        && validGameSaveProgression(snapshotData.progression, saveData);
     }
 
     function gameSaveSubmissionPath(saveData) {
@@ -794,7 +815,7 @@ service cloud.firestore {
         && request.resource.data.activeItemId == classData(request.resource.data.classId).activeItemId
         && submissionActiveItemExists(request.resource.data)
         && gameSaveHasVerifiedSubmission(request.resource.data)
-        && validGameSaveSnapshot(request.resource.data.snapshot)
+        && validGameSaveSnapshot(request.resource.data.snapshot, request.resource.data)
         && request.resource.data.updatedAt == request.time;
     }
 

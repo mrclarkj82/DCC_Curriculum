@@ -8,6 +8,7 @@ import type { AssignmentGameEnemiesState } from '../enemyTypes';
 import type { AssignmentGameInventoryState } from '../inventoryTypes';
 import { ruinedCourtyardLevel } from '../levels/ruinedCourtyardLevel';
 import type { AssignmentGamePlayerState } from '../playerMovementTypes';
+import type { AssignmentGameProgressionState } from '../progressionTypes';
 import { AssignmentGameCollectibleLayer } from './AssignmentGameCollectibleLayer';
 import { AssignmentGameCombatLayer } from './AssignmentGameCombatLayer';
 import { AssignmentGameDialoguePanel } from './AssignmentGameDialoguePanel';
@@ -26,6 +27,7 @@ interface AssignmentGameViewportProps {
   onCloseDialogue: () => void;
   playerState: AssignmentGamePlayerState;
   previewKey: number;
+  progressionState: AssignmentGameProgressionState;
 }
 
 export function AssignmentGameViewport({
@@ -38,6 +40,7 @@ export function AssignmentGameViewport({
   onCloseDialogue,
   playerState,
   previewKey,
+  progressionState,
 }: AssignmentGameViewportProps) {
   return (
     <section className="assignment-game-viewport" aria-labelledby="assignment-game-viewport-title">
@@ -49,14 +52,14 @@ export function AssignmentGameViewport({
           </h2>
           <p className="assignment-game-controls-note">{assignmentGameMovementInstructions}</p>
         </div>
-        <span className="status-badge">Phase 9 Preview {previewKey}</span>
+        <span className="status-badge">Phase 10 Preview {previewKey}</span>
       </div>
 
       <div
         className="assignment-game-playfield assignment-game-playfield--interactive"
         aria-label={`${ruinedCourtyardLevel.name} top-down dialogue prototype`}
       >
-        <AssignmentGameLevelMap level={ruinedCourtyardLevel} />
+        <AssignmentGameLevelMap level={ruinedCourtyardLevel} progressionState={progressionState} />
         <AssignmentGameCollectibleLayer inventoryState={inventoryState} />
         <AssignmentGameNpcLayer dialogueState={dialogueState} />
         <AssignmentGameEnemyLayer enemiesState={enemiesState} />
@@ -67,6 +70,11 @@ export function AssignmentGameViewport({
           onAdvanceDialogue={onAdvanceDialogue}
           onCloseDialogue={onCloseDialogue}
         />
+        <div className="assignment-game-progression-panel" aria-live="polite">
+          <p className="retro-label">Assignment Progression</p>
+          <strong>{progressionState.statusText}</strong>
+          <span>{progressionState.nextStepText}</span>
+        </div>
         {isPaused && <span className="assignment-game-paused-ribbon">Paused</span>}
       </div>
     </section>
