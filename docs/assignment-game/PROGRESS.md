@@ -5,13 +5,13 @@
 The Ember Gate is the assignment-unlocked student game inside DCC Creative Studio. The current
 verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
 Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
-enemies, Phase 7 dialogue, Phase 8 inventory, Phase 9 save and continue, and Phase 10 assignment
-progression. Phase 11 Easter egg integration is in progress on
-`feature/assignment-game-easter-egg`.
+enemies, Phase 7 dialogue, Phase 8 inventory, Phase 9 save and continue, Phase 10 assignment
+progression, and Phase 11 Easter egg integration. Phase 12 teacher/admin controls are deferred
+unless a classroom troubleshooting need is confirmed.
 
 Verified on 2026-07-13:
 
-- `origin/main`: `1ed5ff3` (`Merge pull request #17 from mrclarkj82/feature/assignment-game-progression`).
+- `origin/main`: `e912d03` (`Merge pull request #18 from mrclarkj82/feature/assignment-game-easter-egg`).
 - Phase 0 architecture PR #6: merged.
 - Phase 1 access gate PR #7: merged.
 - Phase 2 shell/start menu PR #8: merged.
@@ -23,7 +23,8 @@ Verified on 2026-07-13:
 - Phase 8 inventory PR #15: merged and deployed.
 - Phase 9 save system PR #16: merged and deployed.
 - Phase 10 assignment progression PR #17: merged and deployed.
-- Phase 11 Easter egg integration branch: `feature/assignment-game-easter-egg`.
+- Phase 11 Easter egg integration PR #18: merged and deployed.
+- Phase 12 teacher/admin controls: deferred unless the teacher confirms a need.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -64,8 +65,8 @@ Verified on 2026-07-13:
 | Phase 8 | Inventory and Collectibles | Merged | PR #15 / `feature/assignment-game-inventory` | Adds local-only Ember Shard, Rusty Key, and Lantern Oil collectibles. |
 | Phase 9 | Save and Continue System | Merged | PR #16 / `feature/assignment-game-save-system` | Adds Firestore saves, Continue support, and reviewed game save rules. |
 | Phase 10 | Assignment Progression | Merged | PR #17 / `feature/assignment-game-progression` | Opens the first Ember Gate progression milestone from verified assignment progress. |
-| Phase 11 | Easter Egg Integration | In progress | `feature/assignment-game-easter-egg` | Adds the approved Hidden Frame clue inside the assignment-gated game. |
-| Phase 12 | Teacher/Admin Controls | Pending | Recommended: `feature/assignment-game-teacher-controls` | Build only if classroom support needs are confirmed. |
+| Phase 11 | Easter Egg Integration | Merged | PR #18 / `feature/assignment-game-easter-egg` | Adds the approved Hidden Frame clue inside the assignment-gated game. |
+| Phase 12 | Teacher/Admin Controls | Deferred | None | Build only if classroom support needs are confirmed. |
 | Phase 13 | Polish and Final QA | Pending | Recommended: `feature/assignment-game-polish` | Classroom-ready pass and final manual verification. |
 
 ## PR Log
@@ -85,6 +86,7 @@ Verified on 2026-07-13:
 | #15 | `[Phase 8] Assignment Game Inventory` | Merged | Added local-only Ember Shard, Rusty Key, and Lantern Oil collectibles. |
 | #16 | `[Phase 9] Assignment Game Save System` | Merged | Added Firestore save documents, Continue loading, and game save rules. |
 | #17 | `[Phase 10] Assignment Game Progression` | Merged | Added first-gate progression, save snapshot version 2, and progression rules. |
+| #18 | `[Phase 11] Assignment Game Easter Egg` | Merged | Added the approved Hidden Frame clue inside the assignment-gated game. |
 
 ## Validation Log
 
@@ -220,6 +222,14 @@ Verified on 2026-07-13:
 - 2026-07-13: Phase 11 `npm.cmd run validate:hidden-frame` passed.
 - 2026-07-13: Phase 11 `git diff --check` passed with Git line-ending normalization warnings only.
 - 2026-07-13: Verified local Vite served `/student/game` and `/hidden-frame/archive` with HTTP 200 on port 5187.
+- 2026-07-13: PR #18 merged into `main`.
+- 2026-07-13: Main after PR #18 `npm.cmd run lint` passed.
+- 2026-07-13: Main after PR #18 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Main after PR #18 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Main after PR #18 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Deployed Phase 11 to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
+- 2026-07-13: Verified live `/student/game` and `/hidden-frame/archive` returned HTTP 200 after Phase 11 deploy.
+- 2026-07-13: Phase 12 teacher/admin controls deferred because no classroom troubleshooting need has been confirmed; this preserves the rule that controls must not be added without a need.
 
 ## Asset Notes
 
@@ -240,10 +250,9 @@ Verified on 2026-07-13:
 
 ## Next Step
 
-Finish Phase 11 PR:
+Start Phase 13 polish and final QA:
 
-1. Validate `feature/assignment-game-easter-egg`.
-2. Commit and push the Easter egg branch.
-3. Open PR `[Phase 11] Assignment Game Easter Egg`.
-4. After the Phase 11 PR merges, deploy Firebase Hosting target `dcc`.
-5. Decide whether Phase 12 teacher/admin controls are needed or move to Phase 13 polish.
+1. Create `feature/assignment-game-polish` from current `main`.
+2. Run a classroom-ready manual QA pass across locked, unlocked, save, continue, progression, and Easter egg states.
+3. Polish student-facing copy and small responsive UI issues found during QA.
+4. Do not add new systems unless QA reveals a blocker.
