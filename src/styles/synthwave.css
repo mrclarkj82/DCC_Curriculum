@@ -2350,6 +2350,13 @@
   justify-content: space-between;
 }
 
+.assignment-game-shell-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: flex-end;
+}
+
 .assignment-game-menu-actions .gradient-button,
 .assignment-game-menu-actions .outline-button {
   min-width: 170px;
@@ -2423,6 +2430,13 @@
 .assignment-game-viewport {
   display: grid;
   gap: var(--space-3);
+}
+
+.assignment-game-save-status {
+  margin-top: calc(var(--space-3) * -1);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 800;
 }
 
 .assignment-game-viewport-header {
@@ -3630,7 +3644,8 @@
 
   .assignment-game-menu-actions .gradient-button,
   .assignment-game-menu-actions .outline-button,
-  .assignment-game-shell-toolbar .outline-button {
+  .assignment-game-shell-toolbar .outline-button,
+  .assignment-game-shell-toolbar-actions {
     width: 100%;
   }
 

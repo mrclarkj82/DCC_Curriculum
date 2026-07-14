@@ -685,6 +685,149 @@ service cloud.firestore {
         && request.resource.data.isPreview == resource.data.isPreview;
     }
 
+    function gameSaveAllowedKeys(saveData) {
+      return saveData.keys().hasOnly([
+        'id',
+        'uid',
+        'studentEmail',
+        'classId',
+        'programAreaId',
+        'targetType',
+        'targetId',
+        'activeItemType',
+        'activeItemId',
+        'submissionId',
+        'snapshot',
+        'createdAt',
+        'updatedAt'
+      ]);
+    }
+
+    function validSavedVector(vectorData) {
+      return vectorData is map
+        && vectorData.keys().hasOnly(['x', 'y'])
+        && vectorData.x is number
+        && vectorData.y is number
+        && vectorData.x >= 8
+        && vectorData.x <= 92
+        && vectorData.y >= 17
+        && vectorData.y <= 86;
+    }
+
+    function validEnemyIdAt(enemyIds, index) {
+      return enemyIds.size() <= index
+        || enemyIds[index] in ['hollow-squire-01', 'ash-wisp-01'];
+    }
+
+    function validItemIdAt(itemIds, index) {
+      return itemIds.size() <= index
+        || itemIds[index] in ['emberShard', 'rustyKey', 'lanternOil'];
+    }
+
+    function validGameSaveSnapshot(snapshotData) {
+      return snapshotData is map
+        && snapshotData.keys().hasOnly([
+          'snapshotVersion',
+          'levelId',
+          'player',
+          'defeatedEnemyIds',
+          'collectedItemIds'
+        ])
+        && snapshotData.snapshotVersion == 1
+        && snapshotData.levelId == 'ruined-courtyard'
+        && snapshotData.player is map
+        && snapshotData.player.keys().hasOnly(['position', 'facingDirection'])
+        && validSavedVector(snapshotData.player.position)
+        && snapshotData.player.facingDirection in ['north', 'south', 'east', 'west']
+        && snapshotData.defeatedEnemyIds is list
+        && snapshotData.defeatedEnemyIds.size() <= 2
+        && validEnemyIdAt(snapshotData.defeatedEnemyIds, 0)
+        && validEnemyIdAt(snapshotData.defeatedEnemyIds, 1)
+        && snapshotData.collectedItemIds is list
+        && snapshotData.collectedItemIds.size() <= 3
+        && validItemIdAt(snapshotData.collectedItemIds, 0)
+        && validItemIdAt(snapshotData.collectedItemIds, 1)
+        && validItemIdAt(snapshotData.collectedItemIds, 2);
+    }
+
+    function gameSaveSubmissionPath(saveData) {
+      return /databases/$(database)/documents/apps/dcc/submissions/$(saveData.submissionId);
+    }
+
+    function gameSaveHasVerifiedSubmission(saveData) {
+      return saveData.submissionId is string
+        && exists(gameSaveSubmissionPath(saveData))
+        && get(gameSaveSubmissionPath(saveData)).data.uid == request.auth.uid
+        && get(gameSaveSubmissionPath(saveData)).data.classId == saveData.classId
+        && get(gameSaveSubmissionPath(saveData)).data.programAreaId == saveData.programAreaId
+        && get(gameSaveSubmissionPath(saveData)).data.targetType == saveData.targetType
+        && get(gameSaveSubmissionPath(saveData)).data.targetId == saveData.targetId
+        && get(gameSaveSubmissionPath(saveData)).data.activeItemType == saveData.activeItemType
+        && get(gameSaveSubmissionPath(saveData)).data.activeItemId == saveData.activeItemId
+        && get(gameSaveSubmissionPath(saveData)).data.status in ['submitted', 'resubmitted', 'accepted']
+        && get(gameSaveSubmissionPath(saveData)).data.driveLinks is list
+        && get(gameSaveSubmissionPath(saveData)).data.otherLinks is list
+        && (
+          get(gameSaveSubmissionPath(saveData)).data.driveLinks.size()
+            + get(gameSaveSubmissionPath(saveData)).data.otherLinks.size() > 0
+        )
+        && get(gameSaveSubmissionPath(saveData)).data.reflection is string
+        && get(gameSaveSubmissionPath(saveData)).data.reflection.size() > 0;
+    }
+
+    function safeGameSaveBase(saveId) {
+      return isAllowedAccount()
+        && userRole() == 'student'
+        && gameSaveAllowedKeys(request.resource.data)
+        && request.resource.data.id == saveId
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.studentEmail == request.auth.token.email
+        && request.resource.data.classId is string
+        && classExists(request.resource.data.classId)
+        && request.auth.uid in classData(request.resource.data.classId).studentIds
+        && userHasClassId(request.resource.data.classId)
+        && request.resource.data.programAreaId == classData(request.resource.data.classId).activeProgramAreaId
+        && validSubmissionTargetType(request.resource.data.targetType)
+        && submissionTargetExists(request.resource.data)
+        && activeItemTypeIsSupported(request.resource.data.activeItemType)
+        && request.resource.data.activeItemType == classData(request.resource.data.classId).activeItemType
+        && request.resource.data.activeItemId == classData(request.resource.data.classId).activeItemId
+        && submissionActiveItemExists(request.resource.data)
+        && gameSaveHasVerifiedSubmission(request.resource.data)
+        && validGameSaveSnapshot(request.resource.data.snapshot)
+        && request.resource.data.updatedAt == request.time;
+    }
+
+    function safeGameSaveCreate(saveId) {
+      return safeGameSaveBase(saveId)
+        && request.resource.data.createdAt == request.time;
+    }
+
+    function safeGameSaveUpdate(saveId) {
+      return safeGameSaveBase(saveId)
+        && request.resource.data.createdAt == resource.data.createdAt
+        && request.resource.data.id == resource.data.id
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.studentEmail == resource.data.studentEmail
+        && request.resource.data.classId == resource.data.classId
+        && request.resource.data.programAreaId == resource.data.programAreaId
+        && request.resource.data.targetType == resource.data.targetType
+        && request.resource.data.targetId == resource.data.targetId
+        && request.resource.data.activeItemType == resource.data.activeItemType
+        && request.resource.data.activeItemId == resource.data.activeItemId
+        && request.resource.data.submissionId == resource.data.submissionId;
+    }
+
+    function canReadGameSave(saveData) {
+      return isAllowedAccount()
+        && userRole() == 'student'
+        && saveData.uid == request.auth.uid
+        && saveData.classId is string
+        && classExists(saveData.classId)
+        && request.auth.uid in classData(saveData.classId).studentIds
+        && userHasClassId(saveData.classId);
+    }
+
     match /apps/{appId} {
       allow read, write: if false;
 
@@ -757,6 +900,14 @@ service cloud.firestore {
         allow get, list: if isDccApp(appId) && canReadTeacherPreviewResponse(resource.data);
         allow create: if isDccApp(appId) && safeTeacherPreviewResponseCreate(responseId);
         allow update: if isDccApp(appId) && safeTeacherPreviewResponseUpdate(responseId);
+        allow delete: if false;
+      }
+
+      match /gameSaves/{saveId} {
+        allow get: if isDccApp(appId) && canReadGameSave(resource.data);
+        allow list: if false;
+        allow create: if isDccApp(appId) && safeGameSaveCreate(saveId);
+        allow update: if isDccApp(appId) && safeGameSaveUpdate(saveId);
         allow delete: if false;
       }
 

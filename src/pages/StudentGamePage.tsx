@@ -4,6 +4,7 @@ import { useAuth } from '../auth/useAuth';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { AssignmentGameShell } from '../features/assignmentGame/AssignmentGameShell';
+import type { AssignmentGameSaveContext } from '../features/assignmentGame/saveTypes';
 import { PageContainer } from '../components/PageContainer';
 import { usePrimaryClassRecord } from '../hooks/usePrimaryClassRecord';
 import { useAssignmentGameAccess } from '../hooks/useAssignmentGameAccess';
@@ -121,12 +122,47 @@ export function StudentGamePage() {
       isPending: accessContextPending,
     },
   );
+  const saveContext = useMemo<AssignmentGameSaveContext | null>(() => {
+    if (
+      !access.allowed ||
+      !access.submissionId ||
+      !userProfile ||
+      !classRecord ||
+      !activeItem ||
+      !target
+    ) {
+      return null;
+    }
+
+    return {
+      uid: userProfile.uid,
+      studentEmail: userProfile.email,
+      classId: classRecord.id,
+      programAreaId: target.programAreaId,
+      targetType: target.targetType,
+      targetId: target.targetId,
+      activeItemType: activeItem.type,
+      activeItemId: activeItem.id,
+      submissionId: access.submissionId,
+    };
+  }, [
+    access.allowed,
+    access.submissionId,
+    activeItem?.id,
+    activeItem?.type,
+    classRecord?.id,
+    target?.programAreaId,
+    target?.targetId,
+    target?.targetType,
+    userProfile?.email,
+    userProfile?.uid,
+  ]);
 
   return (
     <PageContainer
       eyebrow="Student Game Gate"
       title={assignmentGameTitle}
-      description="A gated Phase 8 inventory prototype for the future assignment-unlocked game."
+      description="A gated Phase 9 save prototype for the future assignment-unlocked game."
       className="mission-board assignment-game-page"
     >
       {(accessContextPending || access.state === 'loading') && (
@@ -151,7 +187,7 @@ export function StudentGamePage() {
         !activeItemLoading &&
         !classError &&
         !activeItemError &&
-        access.allowed && <AssignmentGameShell />}
+        access.allowed && <AssignmentGameShell saveContext={saveContext} />}
     </PageContainer>
   );
 }

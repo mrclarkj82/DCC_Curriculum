@@ -6,10 +6,20 @@ import {
 } from '../gameShellConstants';
 
 interface AssignmentGameStartMenuProps {
+  canContinue: boolean;
+  continueMessage: string;
+  isCheckingSave: boolean;
+  onContinueGame: () => void;
   onNewGame: () => void;
 }
 
-export function AssignmentGameStartMenu({ onNewGame }: AssignmentGameStartMenuProps) {
+export function AssignmentGameStartMenu({
+  canContinue,
+  continueMessage,
+  isCheckingSave,
+  onContinueGame,
+  onNewGame,
+}: AssignmentGameStartMenuProps) {
   return (
     <section className="assignment-game-shell-panel assignment-game-start-menu">
       <div>
@@ -25,10 +35,11 @@ export function AssignmentGameStartMenu({ onNewGame }: AssignmentGameStartMenuPr
         <button
           className="outline-button"
           type="button"
-          disabled
+          disabled={!canContinue || isCheckingSave}
           aria-describedby="assignment-game-continue-note"
+          onClick={onContinueGame}
         >
-          Continue
+          {isCheckingSave ? 'Checking Save...' : 'Continue'}
         </button>
         <Link className="outline-button" to="/today">
           Back to Today's Mission
@@ -36,7 +47,7 @@ export function AssignmentGameStartMenu({ onNewGame }: AssignmentGameStartMenuPr
       </div>
 
       <p className="muted" id="assignment-game-continue-note">
-        {assignmentGameContinueMessage}
+        {continueMessage || assignmentGameContinueMessage}
       </p>
     </section>
   );

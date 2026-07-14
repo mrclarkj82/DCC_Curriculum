@@ -9,6 +9,7 @@ import type {
   AssignmentGamePlayerState,
   AssignmentGameVector,
 } from '../playerMovementTypes';
+import type { AssignmentGameSavedPlayerState } from '../saveTypes';
 import { useKeyboardMovement } from './useKeyboardMovement';
 
 const idleInputDirection: AssignmentGameVector = { x: 0, y: 0 };
@@ -32,28 +33,49 @@ function facingDirectionFromInput(
   return inputDirection.y > 0 ? 'south' : 'north';
 }
 
-function createInitialPlayerState(): AssignmentGamePlayerState {
+function createInitialPlayerState(
+  savedPlayerState: AssignmentGameSavedPlayerState | null = null,
+): AssignmentGamePlayerState {
+  const savedPosition = savedPlayerState?.position;
+
   return {
-    position: assignmentGamePlayerSpawn,
-    facingDirection: 'south',
+    position: savedPosition
+      ? {
+          x: clamp(
+            savedPosition.x,
+            assignmentGameMovementBounds.minX,
+            assignmentGameMovementBounds.maxX,
+          ),
+          y: clamp(
+            savedPosition.y,
+            assignmentGameMovementBounds.minY,
+            assignmentGameMovementBounds.maxY,
+          ),
+        }
+      : assignmentGamePlayerSpawn,
+    facingDirection: savedPlayerState?.facingDirection ?? 'south',
     isMoving: false,
     lastInputDirection: idleInputDirection,
   };
 }
 
-export function usePlayerMovement(isEnabled: boolean, resetKey: number): AssignmentGamePlayerState {
+export function usePlayerMovement(
+  isEnabled: boolean,
+  resetKey: number,
+  savedPlayerState: AssignmentGameSavedPlayerState | null = null,
+): AssignmentGamePlayerState {
   const inputDirection = useKeyboardMovement(isEnabled);
   const inputDirectionRef = useRef(inputDirection);
   const [playerState, setPlayerState] =
-    useState<AssignmentGamePlayerState>(createInitialPlayerState);
+    useState<AssignmentGamePlayerState>(() => createInitialPlayerState(savedPlayerState));
 
   useEffect(() => {
     inputDirectionRef.current = inputDirection;
   }, [inputDirection]);
 
   useEffect(() => {
-    setPlayerState(createInitialPlayerState());
-  }, [resetKey]);
+    setPlayerState(createInitialPlayerState(savedPlayerState));
+  }, [resetKey, savedPlayerState]);
 
   useEffect(() => {
     if (!isEnabled) {

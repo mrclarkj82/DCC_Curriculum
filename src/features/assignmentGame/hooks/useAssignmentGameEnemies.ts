@@ -14,19 +14,22 @@ const swordHitRange = 10;
 const energyBoltHitRange = 6;
 const contactRange = 5;
 const initialEnemyEvent = 'Hollow Squire and Ash Wisp patrol the courtyard.';
+const emptyDefeatedEnemyIds: readonly string[] = [];
 
 type AssignmentGameEnemyRuntimeState = Pick<
   AssignmentGameEnemiesState,
   'enemies' | 'lastEnemyEvent'
 >;
 
-function createInitialEnemyState(): AssignmentGameEnemyState[] {
+function createInitialEnemyState(
+  defeatedEnemyIds: readonly string[] = [],
+): AssignmentGameEnemyState[] {
   return ruinedCourtyardEnemies.map((enemy) => ({
     ...enemy,
-    health: enemy.maxHealth,
+    health: defeatedEnemyIds.includes(enemy.id) ? 0 : enemy.maxHealth,
     position: enemy.spawn,
     patrolDirection: 1,
-    status: 'alive',
+    status: defeatedEnemyIds.includes(enemy.id) ? 'defeated' : 'alive',
   }));
 }
 
@@ -109,14 +112,17 @@ export function useAssignmentGameEnemies(
   resetKey: number,
   combatState: AssignmentGameCombatState,
   playerState: AssignmentGamePlayerState,
+  defeatedEnemyIds: readonly string[] = emptyDefeatedEnemyIds,
 ): AssignmentGameEnemiesState {
   const combatStateRef = useRef(combatState);
   const playerStateRef = useRef(playerState);
   const processedHitIdsRef = useRef<Set<string>>(new Set());
   const [enemyRuntimeState, setEnemyRuntimeState] = useState<AssignmentGameEnemyRuntimeState>(
     () => ({
-      enemies: createInitialEnemyState(),
-      lastEnemyEvent: initialEnemyEvent,
+      enemies: createInitialEnemyState(defeatedEnemyIds),
+      lastEnemyEvent: defeatedEnemyIds.length
+        ? 'Saved defeated enemies restored.'
+        : initialEnemyEvent,
     }),
   );
 
@@ -131,10 +137,12 @@ export function useAssignmentGameEnemies(
   useEffect(() => {
     processedHitIdsRef.current.clear();
     setEnemyRuntimeState({
-      enemies: createInitialEnemyState(),
-      lastEnemyEvent: initialEnemyEvent,
+      enemies: createInitialEnemyState(defeatedEnemyIds),
+      lastEnemyEvent: defeatedEnemyIds.length
+        ? 'Saved defeated enemies restored.'
+        : initialEnemyEvent,
     });
-  }, [resetKey]);
+  }, [defeatedEnemyIds, resetKey]);
 
   useEffect(() => {
     if (!isEnabled) {

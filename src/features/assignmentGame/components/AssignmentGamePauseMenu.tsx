@@ -20,8 +20,8 @@ export function AssignmentGamePauseMenu({
         <p className="retro-label">Preview Paused</p>
         <h2 id="assignment-game-pause-title">Shell Menu</h2>
         <p className="muted">
-          Restart Preview resets only this local Phase 8 inventory, dialogue, and combat test. No
-          progress is saved or loaded.
+          Restart Preview resets this Phase 9 preview to the current run start. Use Save Progress
+          before returning to the start menu if you want Continue to load your latest state.
         </p>
         <div className="assignment-game-menu-actions">
           <button className="gradient-button" type="button" onClick={onResume} autoFocus>

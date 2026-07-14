@@ -49,7 +49,7 @@ export function AssignmentGameViewport({
           </h2>
           <p className="assignment-game-controls-note">{assignmentGameMovementInstructions}</p>
         </div>
-        <span className="status-badge">Phase 8 Preview {previewKey}</span>
+        <span className="status-badge">Phase 9 Preview {previewKey}</span>
       </div>
 
       <div
