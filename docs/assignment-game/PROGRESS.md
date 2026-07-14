@@ -7,12 +7,12 @@ verified mainline state includes the Phase 0 architecture, Phase 1 access gate, 
 Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
 enemies, Phase 7 dialogue, Phase 8 inventory, Phase 9 save and continue, Phase 10 assignment
 progression, and Phase 11 Easter egg integration. Phase 12 teacher/admin controls are deferred
-unless a classroom troubleshooting need is confirmed. Phase 13 polish and final QA is in progress
-on `feature/assignment-game-polish`.
+unless a classroom troubleshooting need is confirmed. Phase 13 polish and final QA is merged and
+deployed.
 
 Verified on 2026-07-13:
 
-- `origin/main`: `e912d03` (`Merge pull request #18 from mrclarkj82/feature/assignment-game-easter-egg`).
+- `origin/main`: `08cfd71` (`Merge pull request #19 from mrclarkj82/feature/assignment-game-polish`).
 - Phase 0 architecture PR #6: merged.
 - Phase 1 access gate PR #7: merged.
 - Phase 2 shell/start menu PR #8: merged.
@@ -26,7 +26,7 @@ Verified on 2026-07-13:
 - Phase 10 assignment progression PR #17: merged and deployed.
 - Phase 11 Easter egg integration PR #18: merged and deployed.
 - Phase 12 teacher/admin controls: deferred unless the teacher confirms a need.
-- Phase 13 polish branch: `feature/assignment-game-polish`.
+- Phase 13 polish PR #19: merged and deployed.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -69,7 +69,7 @@ Verified on 2026-07-13:
 | Phase 10 | Assignment Progression | Merged | PR #17 / `feature/assignment-game-progression` | Opens the first Ember Gate progression milestone from verified assignment progress. |
 | Phase 11 | Easter Egg Integration | Merged | PR #18 / `feature/assignment-game-easter-egg` | Adds the approved Hidden Frame clue inside the assignment-gated game. |
 | Phase 12 | Teacher/Admin Controls | Deferred | None | Build only if classroom support needs are confirmed. |
-| Phase 13 | Polish and Final QA | In progress | `feature/assignment-game-polish` | Classroom-ready pass and final manual verification. |
+| Phase 13 | Polish and Final QA | Merged | PR #19 / `feature/assignment-game-polish` | Classroom-ready pass and final manual verification. |
 
 ## PR Log
 
@@ -89,6 +89,7 @@ Verified on 2026-07-13:
 | #16 | `[Phase 9] Assignment Game Save System` | Merged | Added Firestore save documents, Continue loading, and game save rules. |
 | #17 | `[Phase 10] Assignment Game Progression` | Merged | Added first-gate progression, save snapshot version 2, and progression rules. |
 | #18 | `[Phase 11] Assignment Game Easter Egg` | Merged | Added the approved Hidden Frame clue inside the assignment-gated game. |
+| #19 | `[Phase 13] Assignment Game Polish and Final QA` | Merged | Renamed live assignment-game access identifiers from `assignmentId` to `targetId`. |
 
 ## Validation Log
 
@@ -241,6 +242,13 @@ Verified on 2026-07-13:
 - 2026-07-13: Phase 13 `npm.cmd run validate:hidden-frame` passed.
 - 2026-07-13: Phase 13 `git diff --check` passed with Git line-ending normalization warnings only.
 - 2026-07-13: Verified local Vite served `/student/game`, `/today`, and `/hidden-frame/archive` with HTTP 200 on port 5188.
+- 2026-07-13: PR #19 merged into `main`.
+- 2026-07-13: Main after PR #19 `npm.cmd run lint` passed.
+- 2026-07-13: Main after PR #19 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Main after PR #19 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Main after PR #19 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Deployed Phase 13 to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
+- 2026-07-13: Verified live `/student/game`, `/today`, and `/hidden-frame/archive` returned HTTP 200 after Phase 13 deploy.
 
 ## Asset Notes
 
@@ -255,15 +263,10 @@ Verified on 2026-07-13:
 - Should future combat-health work subtract enemy contact damage from player health, use invulnerability windows, or keep contact as a warning-only interaction for classroom play?
 - Should later dialogue branch based on completed assignments, or should assignment progression unlock areas only while dialogue stays flavor-only?
 - Should inventory items remain flavor-only until assignment progression, or should Rusty Key and Lantern Oil become usable once saves exist?
-- What exact assignment progression model should unlock areas after the first gate: current active item only, completed historical targets, or teacher-selected milestones?
-- Are teacher/admin troubleshooting controls needed, or should Phase 12 remain skipped unless classroom use proves the need?
+- What exact assignment progression model should unlock areas after the first gate in a future expansion: completed historical targets or teacher-selected milestones?
 
 ## Next Step
 
-Finish Phase 13 polish and final QA:
+No active assignment-game phase remains in this goal.
 
-1. Validate `feature/assignment-game-polish`.
-2. Commit and push the polish branch.
-3. Open PR `[Phase 13] Assignment Game Polish and Final QA`.
-4. After the Phase 13 PR merges, deploy Firebase Hosting target `dcc`.
-5. Keep future work scoped to bugs or teacher-confirmed requests.
+Future work should be scoped to bugs, classroom QA findings, or teacher-confirmed requests.
