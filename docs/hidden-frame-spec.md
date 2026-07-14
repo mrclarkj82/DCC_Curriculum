@@ -398,6 +398,11 @@ Phase 1 uses a localStorage progress adapter with a small summary interface so f
 
 Phase 1 uses client-side password validation because File 001 is optional, ungraded, non-sensitive content. The answer is therefore visible to anyone inspecting bundled client code. This is acceptable for Phase 1 but should not be used for graded, private, or security-sensitive gates.
 
+The assignment-game Easter egg uses the existing `HiddenFrameIcon` inside the assignment-gated
+Ember Gate game shell. It is a static optional clue linked to `/hidden-frame/archive`; it does not
+read student data, write Hidden Frame progress, create a new route, or change assignment-game save
+or progression rules.
+
 ## Technical Debt & TODO
 
 - Define structured data schemas for archive entries, recovered files, frame cards, puzzles, achievements, and progression before adding content at scale.
@@ -416,6 +421,12 @@ Imported the official Phase 0 Asset Kit, established `public/hidden-frame` stati
 ### Phase 1 - 2026-07-08
 
 Implemented the Hidden Page MVP with authenticated hidden routes for `/hidden-frame`, `/hidden-frame/archive`, and `/hidden-frame/file/001`; added reusable `HiddenFrameIcon`, `RecoveredFileCard`, `PasswordGate`, `HiddenFrameProgress`, and `CompressionLog` components; added `hiddenFrameFiles.ts`; added a localStorage progress adapter; placed the first subtle `HiddenFrameIcon` on assignment detail pages; documented File 001 and the Phase 1 password in canon; and expanded `npm run validate:hidden-frame` to include Phase 1 route, data, state, and password checks.
+
+### Assignment Game Easter Egg - 2026-07-13
+
+Added the first Hidden Frame clue inside The Ember Gate after the assignment-game gate and first
+progression milestone. The clue reuses `HiddenFrameIcon`, links to `/hidden-frame/archive`, and
+does not add Hidden Frame persistence, passwords, routes, or private data access.
 
 ## Acceptance Criteria
 
