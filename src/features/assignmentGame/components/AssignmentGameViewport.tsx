@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   assignmentGameMovementInstructions,
   assignmentGameWorkingTitle,
@@ -43,8 +44,52 @@ export function AssignmentGameViewport({
   previewKey,
   progressionState,
 }: AssignmentGameViewportProps) {
+  const viewportRef = useRef<HTMLElement | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [fullscreenError, setFullscreenError] = useState('');
+  const fullscreenSupported =
+    typeof document !== 'undefined' &&
+    typeof document.fullscreenEnabled === 'boolean' &&
+    document.fullscreenEnabled;
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(document.fullscreenElement === viewportRef.current);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
+  const toggleFullscreen = async () => {
+    setFullscreenError('');
+
+    try {
+      if (document.fullscreenElement === viewportRef.current) {
+        await document.exitFullscreen();
+        return;
+      }
+
+      if (!viewportRef.current || !fullscreenSupported) {
+        setFullscreenError('Fullscreen is not available in this browser.');
+        return;
+      }
+
+      await viewportRef.current.requestFullscreen();
+    } catch {
+      setFullscreenError('Fullscreen could not start. Try using your browser window controls.');
+    }
+  };
+
   return (
-    <section className="assignment-game-viewport" aria-labelledby="assignment-game-viewport-title">
+    <section
+      ref={viewportRef}
+      className={`assignment-game-viewport${isFullscreen ? ' is-fullscreen' : ''}`}
+      aria-labelledby="assignment-game-viewport-title"
+    >
       <div className="assignment-game-viewport-header">
         <div>
           <p className="retro-label">Level Prototype</p>
@@ -53,8 +98,24 @@ export function AssignmentGameViewport({
           </h2>
           <p className="assignment-game-controls-note">{assignmentGameMovementInstructions}</p>
         </div>
-        <span className="status-badge">Phase 10 Preview {previewKey}</span>
+        <div className="assignment-game-viewport-actions">
+          <span className="status-badge">Phase 10 Preview {previewKey}</span>
+          <button
+            className="outline-button"
+            type="button"
+            onClick={() => void toggleFullscreen()}
+            disabled={!fullscreenSupported}
+            aria-pressed={isFullscreen}
+          >
+            {isFullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+          </button>
+        </div>
       </div>
+      {fullscreenError && (
+        <p className="assignment-game-fullscreen-error" role="status">
+          {fullscreenError}
+        </p>
+      )}
 
       <div
         className="assignment-game-playfield assignment-game-playfield--interactive"
