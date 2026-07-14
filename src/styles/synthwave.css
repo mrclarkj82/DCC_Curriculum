@@ -2415,7 +2415,8 @@
 .assignment-game-hud-item--movement,
 .assignment-game-hud-item--combat,
 .assignment-game-hud-item--enemies,
-.assignment-game-hud-item--dialogue {
+.assignment-game-hud-item--dialogue,
+.assignment-game-hud-item--inventory {
   grid-column: span 2;
 }
 
@@ -2647,6 +2648,141 @@
   z-index: 4;
   inset: 0;
   pointer-events: none;
+}
+
+.assignment-game-collectible-layer {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  pointer-events: none;
+}
+
+.assignment-game-collectible {
+  --assignment-game-collectible-size: 44px;
+
+  position: absolute;
+  display: grid;
+  width: calc(var(--assignment-game-collectible-size) + 44px);
+  min-height: 86px;
+  justify-items: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    filter var(--transition-fast),
+    opacity var(--transition-fast),
+    scale var(--transition-fast);
+}
+
+.assignment-game-collectible-sprite {
+  position: relative;
+  display: block;
+  width: var(--assignment-game-collectible-size);
+  height: var(--assignment-game-collectible-size);
+  image-rendering: pixelated;
+}
+
+.assignment-game-collectible--emberShard .assignment-game-collectible-sprite {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0 9%, transparent 10%),
+    linear-gradient(135deg, transparent 0 26%, var(--color-neon-orange) 27% 64%, transparent 65%),
+    linear-gradient(45deg, transparent 0 25%, rgba(var(--color-neon-pink-rgb), 0.78) 26% 66%, transparent 67%);
+  filter:
+    drop-shadow(0 0 12px rgba(var(--color-neon-orange-rgb), 0.72))
+    drop-shadow(0 0 18px rgba(var(--color-neon-pink-rgb), 0.38));
+  transform: rotate(45deg);
+}
+
+.assignment-game-collectible--rustyKey .assignment-game-collectible-sprite {
+  border: 5px solid rgba(var(--color-neon-orange-rgb), 0.82);
+  border-right-width: 12px;
+  border-radius: 50% 12px 12px 50%;
+  background:
+    radial-gradient(circle at 31% 50%, rgba(8, 3, 18, 0.92) 0 21%, transparent 22%),
+    linear-gradient(90deg, rgba(138, 92, 255, 0.14), rgba(var(--color-neon-orange-rgb), 0.5));
+  box-shadow:
+    0 0 14px rgba(var(--color-neon-orange-rgb), 0.38),
+    inset 0 0 12px rgba(0, 0, 0, 0.24);
+}
+
+.assignment-game-collectible--rustyKey .assignment-game-collectible-sprite::after {
+  position: absolute;
+  right: -20px;
+  bottom: 3px;
+  width: 24px;
+  height: 9px;
+  border-radius: 0 6px 6px 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(var(--color-neon-orange-rgb), 0.82),
+      rgba(var(--color-neon-pink-rgb), 0.62)
+    );
+  box-shadow: 0 0 12px rgba(var(--color-neon-orange-rgb), 0.34);
+  content: '';
+}
+
+.assignment-game-collectible--lanternOil .assignment-game-collectible-sprite {
+  border: 2px solid rgba(var(--color-neon-cyan-rgb), 0.72);
+  border-radius: 14px 14px 18px 18px;
+  background:
+    linear-gradient(180deg, transparent 0 22%, rgba(var(--color-neon-cyan-rgb), 0.18) 23% 38%, transparent 39%),
+    radial-gradient(circle at 50% 68%, var(--color-neon-cyan) 0 18%, transparent 19%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(var(--color-neon-blue-rgb), 0.56));
+  box-shadow:
+    0 0 14px rgba(var(--color-neon-cyan-rgb), 0.5),
+    0 0 18px rgba(var(--color-neon-blue-rgb), 0.34),
+    inset 0 -10px 12px rgba(var(--color-neon-cyan-rgb), 0.2);
+}
+
+.assignment-game-collectible--lanternOil .assignment-game-collectible-sprite::before {
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 19px;
+  height: 10px;
+  border-radius: 8px 8px 3px 3px;
+  background: rgba(var(--color-neon-orange-rgb), 0.82);
+  box-shadow: 0 0 10px rgba(var(--color-neon-orange-rgb), 0.32);
+  content: '';
+  transform: translateX(-50%);
+}
+
+.assignment-game-collectible.is-nearby {
+  filter: brightness(1.22) saturate(1.2);
+  scale: 1.06;
+}
+
+.assignment-game-collectible--collected {
+  opacity: 0;
+  scale: 0.72;
+}
+
+.assignment-game-collectible-name,
+.assignment-game-collectible-prompt {
+  font-family: var(--font-mono);
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.assignment-game-collectible-name {
+  margin-top: 4px;
+  color: var(--color-text-main);
+  font-size: 10px;
+  text-shadow:
+    0 0 8px rgba(var(--color-neon-orange-rgb), 0.54),
+    0 2px 4px rgba(0, 0, 0, 0.72);
+}
+
+.assignment-game-collectible-prompt {
+  margin-top: 4px;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.62);
+  border-radius: var(--radius-pill);
+  padding: 3px 8px;
+  color: var(--color-neon-cyan);
+  background: rgba(8, 3, 18, 0.78);
+  box-shadow: var(--glow-cyan);
+  font-size: 10px;
 }
 
 .assignment-game-enemy {
@@ -3487,7 +3623,8 @@
   .assignment-game-hud-item--movement,
   .assignment-game-hud-item--combat,
   .assignment-game-hud-item--enemies,
-  .assignment-game-hud-item--dialogue {
+  .assignment-game-hud-item--dialogue,
+  .assignment-game-hud-item--inventory {
     grid-column: auto;
   }
 

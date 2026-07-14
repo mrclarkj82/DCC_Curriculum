@@ -4,13 +4,13 @@
 
 The Ember Gate is the assignment-unlocked student game inside DCC Creative Studio. The current
 verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
-Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, and Phase 6
-enemies. Phase 7 dialogue is implemented on `feature/assignment-game-dialogue` and ready for
-review after validation.
+Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
+enemies, and Phase 7 dialogue. Phase 8 inventory and collectibles are implemented on
+`feature/assignment-game-inventory` and ready for review after validation.
 
 Verified on 2026-07-13:
 
-- `origin/main`: `584fdcf` (`Merge pull request #13 from mrclarkj82/feature/assignment-game-enemies`).
+- `origin/main`: `01d1a6d` (`Merge pull request #14 from mrclarkj82/feature/assignment-game-dialogue`).
 - Phase 0 architecture PR #6: merged.
 - Phase 1 access gate PR #7: merged.
 - Phase 2 shell/start menu PR #8: merged.
@@ -18,7 +18,8 @@ Verified on 2026-07-13:
 - Phase 4 Ruined Courtyard PR #11: merged.
 - Phase 5 combat foundation PR #12: merged.
 - Phase 6 enemies PR #13: merged and deployed.
-- Phase 7 dialogue branch: `feature/assignment-game-dialogue`.
+- Phase 7 dialogue PR #14: merged and deployed.
+- Phase 8 inventory branch: `feature/assignment-game-inventory`.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -55,8 +56,8 @@ Verified on 2026-07-13:
 | Phase 4 | First Medieval Level | Merged | PR #11 / `feature/assignment-game-level-one` | Builds Ruined Courtyard as a data-driven top-down level. |
 | Phase 5 | Combat Foundation | Merged | PR #12 / `feature/assignment-game-combat` | Adds local-only sword and energy attack foundations. |
 | Phase 6 | Enemies | Merged | PR #13 / `feature/assignment-game-enemies` | Adds local-only Hollow Squire and Ash Wisp enemies. |
-| Phase 7 | Dialogue | Ready for review after latest validation | `feature/assignment-game-dialogue` | Adds local-only Lantern Keeper NPC and data-driven dialogue. |
-| Phase 8 | Inventory and Collectibles | Pending | Recommended: `feature/assignment-game-inventory` | Add Ember Shard, Rusty Key, and Lantern Oil. |
+| Phase 7 | Dialogue | Merged | PR #14 / `feature/assignment-game-dialogue` | Adds local-only Lantern Keeper NPC and data-driven dialogue. |
+| Phase 8 | Inventory and Collectibles | Ready for review after latest validation | `feature/assignment-game-inventory` | Adds local-only Ember Shard, Rusty Key, and Lantern Oil collectibles. |
 | Phase 9 | Save and Continue System | Pending | Recommended: `feature/assignment-game-save-system` | Add Firestore saves and reviewed rules in the same phase. |
 | Phase 10 | Assignment Progression | Pending | Recommended: `feature/assignment-game-progression` | Unlock new areas from verified assignment progress. |
 | Phase 11 | Easter Egg Integration | Pending | Recommended: `feature/assignment-game-easter-egg` | Add Hidden Frame clue integration. |
@@ -76,6 +77,7 @@ Verified on 2026-07-13:
 | #11 | `[Phase 4] Assignment Game Ruined Courtyard Level` | Merged | Added data-driven Ruined Courtyard level and tileset assets. |
 | #12 | `[Phase 5] Assignment Game Combat Foundation` | Merged | Added local-only sword and energy bolt combat foundation. |
 | #13 | `[Phase 6] Assignment Game Enemies` | Merged | Added local-only Hollow Squire and Ash Wisp enemies. |
+| #14 | `[Phase 7] Assignment Game Dialogue` | Merged | Added local-only Lantern Keeper NPC and dialogue. |
 
 ## Validation Log
 
@@ -144,6 +146,21 @@ Verified on 2026-07-13:
 - 2026-07-13: Phase 7 `npm.cmd run validate:curriculum` passed.
 - 2026-07-13: Phase 7 `npm.cmd run validate:hidden-frame` passed.
 - 2026-07-13: Verified local Vite served `/student/game` with HTTP 200 on port 5181.
+- 2026-07-13: PR #14 merged into `main`.
+- 2026-07-13: Main after PR #14 `npm.cmd run lint` passed.
+- 2026-07-13: Main after PR #14 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Main after PR #14 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Main after PR #14 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Deployed Phase 7 to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
+- 2026-07-13: Verified live `/student/game` returned HTTP 200 after Phase 7 deploy.
+- 2026-07-13: Phase 8 branch `feature/assignment-game-inventory` created from current `origin/main`.
+- 2026-07-13: Phase 8 `npm.cmd install` passed. npm reported 6 moderate audit vulnerabilities and deprecation warnings for `node-domexception`, `glob`, and `uuid`.
+- 2026-07-13: Phase 8 `npm.cmd run lint` passed.
+- 2026-07-13: Phase 8 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Phase 8 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Phase 8 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Phase 8 `git diff --check` passed with Git line-ending normalization warnings only.
+- 2026-07-13: Verified local Vite served `/student/game` with HTTP 200 on port 5182.
 
 ## Asset Notes
 
@@ -158,13 +175,14 @@ Verified on 2026-07-13:
 - Should `useAssignmentGameAccess(studentId, assignmentId, ...)` rename the second parameter to `targetId` in a later cleanup so missions, assignments, media projects, and broadcast updates all fit the name?
 - Should future combat-health work subtract enemy contact damage from player health, use invulnerability windows, or keep contact as a warning-only interaction for classroom play?
 - Should later dialogue branch based on completed assignments, or should assignment progression unlock areas only while dialogue stays flavor-only?
+- Should inventory items remain flavor-only until assignment progression, or should Rusty Key and Lantern Oil become usable once saves exist?
 - What exact assignment progression model should unlock areas after the first gate: current active item only, completed historical targets, or teacher-selected milestones?
 - Are teacher/admin troubleshooting controls needed, or should Phase 12 remain skipped unless classroom use proves the need?
 
 ## Next Step
 
-Finish Phase 7 PR:
+Finish Phase 8 PR:
 
-1. Commit and push `feature/assignment-game-dialogue`.
-2. Open PR `[Phase 7] Assignment Game Dialogue`.
-3. After the Phase 7 PR merges, start Phase 8 inventory on `feature/assignment-game-inventory`.
+1. Commit and push `feature/assignment-game-inventory`.
+2. Open PR `[Phase 8] Assignment Game Inventory`.
+3. After the Phase 8 PR merges, start Phase 9 save system on `feature/assignment-game-save-system`.
