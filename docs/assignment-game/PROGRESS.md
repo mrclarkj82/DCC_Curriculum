@@ -6,13 +6,13 @@ The Ember Gate is the assignment-unlocked student game inside DCC Creative Studi
 verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
 Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
 enemies, Phase 7 dialogue, Phase 8 inventory, Phase 9 save and continue, Phase 10 assignment
-progression, and Phase 11 Easter egg integration. Phase 12 teacher/admin controls are deferred
-unless a classroom troubleshooting need is confirmed. Phase 13 polish and final QA is merged and
-deployed.
+progression, Phase 11 Easter egg integration, and the final copy audit cleanup. Phase 12
+teacher/admin controls are deferred unless a classroom troubleshooting need is confirmed.
+Phase 13 polish and final QA is merged and deployed.
 
 Verified on 2026-07-13:
 
-- `origin/main`: `08cfd71` (`Merge pull request #19 from mrclarkj82/feature/assignment-game-polish`).
+- `origin/main`: `f45d78b` (`Update assignment game final progress`).
 - Phase 0 architecture PR #6: merged.
 - Phase 1 access gate PR #7: merged.
 - Phase 2 shell/start menu PR #8: merged.
@@ -27,6 +27,7 @@ Verified on 2026-07-13:
 - Phase 11 Easter egg integration PR #18: merged and deployed.
 - Phase 12 teacher/admin controls: deferred unless the teacher confirms a need.
 - Phase 13 polish PR #19: merged and deployed.
+- Final copy audit cleanup: in progress on `feature/assignment-game-final-copy`.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -90,6 +91,7 @@ Verified on 2026-07-13:
 | #17 | `[Phase 10] Assignment Game Progression` | Merged | Added first-gate progression, save snapshot version 2, and progression rules. |
 | #18 | `[Phase 11] Assignment Game Easter Egg` | Merged | Added the approved Hidden Frame clue inside the assignment-gated game. |
 | #19 | `[Phase 13] Assignment Game Polish and Final QA` | Merged | Renamed live assignment-game access identifiers from `assignmentId` to `targetId`. |
+| Pending | `[Polish] Assignment Game Final Copy Audit` | In progress | Removes stale phase-specific student-facing copy found during final completion audit. |
 
 ## Validation Log
 
@@ -249,6 +251,14 @@ Verified on 2026-07-13:
 - 2026-07-13: Main after PR #19 `npm.cmd run validate:hidden-frame` passed.
 - 2026-07-13: Deployed Phase 13 to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
 - 2026-07-13: Verified live `/student/game`, `/today`, and `/hidden-frame/archive` returned HTTP 200 after Phase 13 deploy.
+- 2026-07-14: Final completion audit found stale student-facing Phase 9 copy on `/student/game`.
+- 2026-07-14: Final copy audit branch `feature/assignment-game-final-copy` removes the stale phase-specific page description.
+- 2026-07-14: Final copy audit first `npm.cmd run lint` attempt failed because this new worktree did not yet have `node_modules`; no source lint errors were reported.
+- 2026-07-14: Final copy audit `npm.cmd install` passed. npm reported 6 moderate audit vulnerabilities and deprecation warnings for `node-domexception`, `glob`, and `uuid`.
+- 2026-07-14: Final copy audit `npm.cmd run lint` passed after dependencies were installed.
+- 2026-07-14: Final copy audit `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-14: Final copy audit `npm.cmd run validate:curriculum` passed.
+- 2026-07-14: Final copy audit `npm.cmd run validate:hidden-frame` passed.
 
 ## Asset Notes
 
