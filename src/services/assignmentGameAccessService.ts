@@ -22,7 +22,7 @@ export interface AssignmentGameAccessResult {
   reason: string;
   state: AssignmentGameAccessState;
   classId?: string;
-  assignmentId?: string;
+  targetId?: string;
   submissionId?: string;
   missingRequirements?: string[];
 }
@@ -46,7 +46,7 @@ const lockedResult = (
   reason,
   state: 'locked',
   classId: context.classRecord?.id,
-  assignmentId: context.target?.targetId,
+  targetId: context.target?.targetId,
   missingRequirements,
 });
 
@@ -70,7 +70,7 @@ function submissionHasEvidenceLink(submission: StudentSubmission): boolean {
 
 export function validateAssignmentGameAccessContext(
   studentId: string,
-  assignmentId: string,
+  targetId: string,
   context: AssignmentGameAccessContext,
 ): AssignmentGameAccessResult | null {
   if (!studentId || !context.userProfile) {
@@ -143,7 +143,7 @@ export function validateAssignmentGameAccessContext(
     );
   }
 
-  if (!assignmentId || assignmentId !== context.target.targetId) {
+  if (!targetId || targetId !== context.target.targetId) {
     return lockedResult(
       'The assignment unlock target could not be verified.',
       ["Return to Today's Mission and try again from the current assignment card."],
@@ -156,11 +156,11 @@ export function validateAssignmentGameAccessContext(
 
 export function getAssignmentGameAccessResultFromSubmission(
   studentId: string,
-  assignmentId: string,
+  targetId: string,
   context: AssignmentGameAccessContext,
   submission: StudentSubmission | null,
 ): AssignmentGameAccessResult {
-  const contextResult = validateAssignmentGameAccessContext(studentId, assignmentId, context);
+  const contextResult = validateAssignmentGameAccessContext(studentId, targetId, context);
 
   if (contextResult) {
     return contextResult;
@@ -204,7 +204,7 @@ export function getAssignmentGameAccessResultFromSubmission(
       'You have opened the first gate. The game will appear here in a future phase. For now, your completion unlock has been verified.',
     state: 'unlocked',
     classId: context.classRecord?.id,
-    assignmentId: context.target?.targetId,
+    targetId: context.target?.targetId,
     submissionId: submission?.id,
     missingRequirements: [],
   };
@@ -212,10 +212,10 @@ export function getAssignmentGameAccessResultFromSubmission(
 
 export async function canStudentAccessAssignmentGame(
   studentId: string,
-  assignmentId: string,
+  targetId: string,
   context: AssignmentGameAccessContext,
 ): Promise<AssignmentGameAccessResult> {
-  const contextResult = validateAssignmentGameAccessContext(studentId, assignmentId, context);
+  const contextResult = validateAssignmentGameAccessContext(studentId, targetId, context);
 
   if (contextResult) {
     return contextResult;
@@ -236,5 +236,5 @@ export async function canStudentAccessAssignmentGame(
     studentId,
   );
 
-  return getAssignmentGameAccessResultFromSubmission(studentId, assignmentId, context, submission);
+  return getAssignmentGameAccessResultFromSubmission(studentId, targetId, context, submission);
 }
