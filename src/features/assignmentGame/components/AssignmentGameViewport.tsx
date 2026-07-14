@@ -13,6 +13,7 @@ import { AssignmentGameCollectibleLayer } from './AssignmentGameCollectibleLayer
 import { AssignmentGameCombatLayer } from './AssignmentGameCombatLayer';
 import { AssignmentGameDialoguePanel } from './AssignmentGameDialoguePanel';
 import { AssignmentGameEnemyLayer } from './AssignmentGameEnemyLayer';
+import { AssignmentGameHiddenFrameClue } from './AssignmentGameHiddenFrameClue';
 import { AssignmentGameLevelMap } from './AssignmentGameLevelMap';
 import { AssignmentGameNpcLayer } from './AssignmentGameNpcLayer';
 import { AssignmentGamePlayer } from './AssignmentGamePlayer';
@@ -74,6 +75,9 @@ export function AssignmentGameViewport({
           <p className="retro-label">Assignment Progression</p>
           <strong>{progressionState.statusText}</strong>
           <span>{progressionState.nextStepText}</span>
+          <AssignmentGameHiddenFrameClue
+            isVisible={progressionState.unlockedGateIds.includes('ember-gate')}
+          />
         </div>
         {isPaused && <span className="assignment-game-paused-ribbon">Paused</span>}
       </div>

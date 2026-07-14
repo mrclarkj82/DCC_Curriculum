@@ -103,7 +103,23 @@ Future files should record:
 
 ## Frame Cards
 
-No collectible frame cards are canon in Phase 0.
+### HF-FRAME-EMBER-GATE
+
+Title: The Frame Remembers
+
+First appearance: `/student/game`
+
+Discovery condition: The signed-in student has passed The Ember Gate assignment gate and restored
+the first Ember Gate progression milestone.
+
+Student-facing text:
+
+```txt
+THE FRAME REMEMBERS WHAT THE PAGE FORGOT.
+```
+
+Canon summary: The first game-side frame clue connects The Ember Gate back to the Hidden Frame
+archive without requiring the student to leave the DCC site or reveal private app state.
 
 Future cards should record:
 
@@ -164,6 +180,10 @@ Phase 1 adds:
 
 - The edge of the page.
 - What the frame chooses to show.
+
+The assignment-game Easter egg adds:
+
+- THE FRAME REMEMBERS WHAT THE PAGE FORGOT.
 
 Do not assign extra speakers, events, or puzzle solutions to these phrases until a future phase documents them.
 
