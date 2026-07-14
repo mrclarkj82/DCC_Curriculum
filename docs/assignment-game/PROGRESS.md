@@ -5,12 +5,12 @@
 The Ember Gate is the assignment-unlocked student game inside DCC Creative Studio. The current
 verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
 Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
-enemies, Phase 7 dialogue, and Phase 8 inventory. Phase 9 save and continue is in progress on
-`feature/assignment-game-save-system`.
+enemies, Phase 7 dialogue, Phase 8 inventory, and Phase 9 save and continue. Phase 10 assignment
+progression is the next recommended phase.
 
 Verified on 2026-07-13:
 
-- `origin/main`: `2fe6180` (`Merge pull request #15 from mrclarkj82/feature/assignment-game-inventory`).
+- `origin/main`: `7d904d5` (`Merge pull request #16 from mrclarkj82/feature/assignment-game-save-system`).
 - Phase 0 architecture PR #6: merged.
 - Phase 1 access gate PR #7: merged.
 - Phase 2 shell/start menu PR #8: merged.
@@ -20,7 +20,7 @@ Verified on 2026-07-13:
 - Phase 6 enemies PR #13: merged and deployed.
 - Phase 7 dialogue PR #14: merged and deployed.
 - Phase 8 inventory PR #15: merged and deployed.
-- Phase 9 save system branch: `feature/assignment-game-save-system`.
+- Phase 9 save system PR #16: merged and deployed.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -59,7 +59,7 @@ Verified on 2026-07-13:
 | Phase 6 | Enemies | Merged | PR #13 / `feature/assignment-game-enemies` | Adds local-only Hollow Squire and Ash Wisp enemies. |
 | Phase 7 | Dialogue | Merged | PR #14 / `feature/assignment-game-dialogue` | Adds local-only Lantern Keeper NPC and data-driven dialogue. |
 | Phase 8 | Inventory and Collectibles | Merged | PR #15 / `feature/assignment-game-inventory` | Adds local-only Ember Shard, Rusty Key, and Lantern Oil collectibles. |
-| Phase 9 | Save and Continue System | In progress | `feature/assignment-game-save-system` | Adds Firestore saves, Continue support, and reviewed game save rules. |
+| Phase 9 | Save and Continue System | Merged | PR #16 / `feature/assignment-game-save-system` | Adds Firestore saves, Continue support, and reviewed game save rules. |
 | Phase 10 | Assignment Progression | Pending | Recommended: `feature/assignment-game-progression` | Unlock new areas from verified assignment progress. |
 | Phase 11 | Easter Egg Integration | Pending | Recommended: `feature/assignment-game-easter-egg` | Add Hidden Frame clue integration. |
 | Phase 12 | Teacher/Admin Controls | Pending | Recommended: `feature/assignment-game-teacher-controls` | Build only if classroom support needs are confirmed. |
@@ -80,6 +80,7 @@ Verified on 2026-07-13:
 | #13 | `[Phase 6] Assignment Game Enemies` | Merged | Added local-only Hollow Squire and Ash Wisp enemies. |
 | #14 | `[Phase 7] Assignment Game Dialogue` | Merged | Added local-only Lantern Keeper NPC and dialogue. |
 | #15 | `[Phase 8] Assignment Game Inventory` | Merged | Added local-only Ember Shard, Rusty Key, and Lantern Oil collectibles. |
+| #16 | `[Phase 9] Assignment Game Save System` | Merged | Added Firestore save documents, Continue loading, and game save rules. |
 
 ## Validation Log
 
@@ -180,6 +181,14 @@ Verified on 2026-07-13:
 - 2026-07-13: Phase 9 `git diff --check` passed with Git line-ending normalization warnings only.
 - 2026-07-13: Phase 9 `firebase.cmd deploy --only firestore:rules --dry-run` passed; `firestore.rules` compiled successfully.
 - 2026-07-13: Verified local Vite served `/student/game` with HTTP 200 on port 5183.
+- 2026-07-13: PR #16 merged into `main`.
+- 2026-07-13: Main after PR #16 `npm.cmd run lint` passed.
+- 2026-07-13: Main after PR #16 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Main after PR #16 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Main after PR #16 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Main after PR #16 `firebase.cmd deploy --only firestore:rules --dry-run` passed; `firestore.rules` compiled successfully.
+- 2026-07-13: Deployed Phase 9 Firestore rules and Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
+- 2026-07-13: Verified live `/student/game` returned HTTP 200 after Phase 9 deploy.
 
 ## Asset Notes
 
@@ -200,10 +209,9 @@ Verified on 2026-07-13:
 
 ## Next Step
 
-Finish Phase 9 PR:
+Start Phase 10 assignment progression:
 
-1. Validate `feature/assignment-game-save-system`.
-2. Commit and push the save-system branch.
-3. Open PR `[Phase 9] Assignment Game Save System`.
-4. After the Phase 9 PR merges, deploy Firestore rules and Firebase Hosting target `dcc`.
-5. Start Phase 10 assignment progression on `feature/assignment-game-progression`.
+1. Create `feature/assignment-game-progression` from current `main`.
+2. Define the first assignment-progression data shape before adding new persisted fields.
+3. Add matching Firestore rules for any new progression fields.
+4. Keep `/student/game` protected by the existing auth, student-role, and assignment access gates.
