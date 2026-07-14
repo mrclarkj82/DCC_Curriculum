@@ -27,7 +27,7 @@ Verified on 2026-07-13:
 - Phase 11 Easter egg integration PR #18: merged and deployed.
 - Phase 12 teacher/admin controls: deferred unless the teacher confirms a need.
 - Phase 13 polish PR #19: merged and deployed.
-- Final copy audit cleanup: in progress on `feature/assignment-game-final-copy`.
+- Final copy audit cleanup PR #20: open on `feature/assignment-game-final-copy`.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -91,7 +91,7 @@ Verified on 2026-07-13:
 | #17 | `[Phase 10] Assignment Game Progression` | Merged | Added first-gate progression, save snapshot version 2, and progression rules. |
 | #18 | `[Phase 11] Assignment Game Easter Egg` | Merged | Added the approved Hidden Frame clue inside the assignment-gated game. |
 | #19 | `[Phase 13] Assignment Game Polish and Final QA` | Merged | Renamed live assignment-game access identifiers from `assignmentId` to `targetId`. |
-| Pending | `[Polish] Assignment Game Final Copy Audit` | In progress | Removes stale phase-specific student-facing copy found during final completion audit. |
+| #20 | `[Polish] Assignment Game Final Copy Audit` | Open | Removes stale phase-specific student-facing copy found during final completion audit. |
 
 ## Validation Log
 
@@ -259,6 +259,7 @@ Verified on 2026-07-13:
 - 2026-07-14: Final copy audit `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
 - 2026-07-14: Final copy audit `npm.cmd run validate:curriculum` passed.
 - 2026-07-14: Final copy audit `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-14: PR #20 opened for the final copy audit cleanup.
 
 ## Asset Notes
 
