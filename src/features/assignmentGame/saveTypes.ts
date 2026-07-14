@@ -6,8 +6,9 @@ import type {
   AssignmentGamePlayerState,
   AssignmentGameVector,
 } from './playerMovementTypes';
+import type { AssignmentGameProgressionSnapshot } from './progressionTypes';
 
-export const assignmentGameSaveSnapshotVersion = 1;
+export const assignmentGameSaveSnapshotVersion = 2;
 
 export interface AssignmentGameSavedPlayerState {
   position: AssignmentGameVector;
@@ -20,6 +21,7 @@ export interface AssignmentGameSaveSnapshot {
   player: AssignmentGameSavedPlayerState;
   defeatedEnemyIds: string[];
   collectedItemIds: AssignmentGameInventoryItemId[];
+  progression: AssignmentGameProgressionSnapshot;
 }
 
 export interface AssignmentGameSaveContext {
@@ -46,6 +48,7 @@ export function createAssignmentGameSaveSnapshot(
   playerState: AssignmentGamePlayerState,
   enemies: readonly AssignmentGameEnemyState[],
   inventoryState: AssignmentGameInventoryState,
+  progression: AssignmentGameProgressionSnapshot,
 ): AssignmentGameSaveSnapshot {
   return {
     snapshotVersion: assignmentGameSaveSnapshotVersion,
@@ -61,5 +64,6 @@ export function createAssignmentGameSaveSnapshot(
       .filter((enemy) => enemy.status === 'defeated')
       .map((enemy) => enemy.id),
     collectedItemIds: inventoryState.collectedItems.map((item) => item.id),
+    progression,
   };
 }

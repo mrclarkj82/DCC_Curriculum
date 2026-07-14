@@ -2423,7 +2423,8 @@
 .assignment-game-hud-item--combat,
 .assignment-game-hud-item--enemies,
 .assignment-game-hud-item--dialogue,
-.assignment-game-hud-item--inventory {
+.assignment-game-hud-item--inventory,
+.assignment-game-hud-item--progression {
   grid-column: span 2;
 }
 
@@ -2555,6 +2556,14 @@
     saturate(1.18);
 }
 
+.assignment-game-level-feature--lockedGate.is-unlocked {
+  opacity: 1;
+  filter:
+    drop-shadow(0 0 18px rgba(var(--color-neon-cyan-rgb), 0.68))
+    drop-shadow(0 0 22px rgba(var(--color-neon-orange-rgb), 0.34))
+    saturate(1.3);
+}
+
 .assignment-game-level-feature--shadow {
   opacity: 0.72;
   mix-blend-mode: multiply;
@@ -2598,6 +2607,14 @@
   font-size: 14px;
 }
 
+.assignment-game-level-progress {
+  margin-top: var(--space-2);
+  color: var(--color-neon-cyan);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .assignment-game-level-meta {
   position: absolute;
   z-index: 5;
@@ -2631,6 +2648,39 @@
 
 .assignment-game-level-meta dd {
   margin: 0;
+}
+
+.assignment-game-progression-panel {
+  position: absolute;
+  z-index: 6;
+  right: var(--space-4);
+  bottom: calc(var(--space-4) + 76px);
+  display: grid;
+  width: min(380px, calc(100% - 32px));
+  gap: var(--space-1);
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.52);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-cyan-rgb), 0.14),
+      rgba(var(--color-neon-purple-rgb), 0.18)
+    ),
+    rgba(8, 3, 18, 0.76);
+  box-shadow: var(--glow-cyan), inset 0 0 18px rgba(var(--color-neon-cyan-rgb), 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.assignment-game-progression-panel strong,
+.assignment-game-progression-panel span {
+  color: var(--color-text-main);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.assignment-game-progression-panel span {
+  color: var(--color-text-soft);
 }
 
 .assignment-game-playfield-copy {
@@ -3638,7 +3688,8 @@
   .assignment-game-hud-item--combat,
   .assignment-game-hud-item--enemies,
   .assignment-game-hud-item--dialogue,
-  .assignment-game-hud-item--inventory {
+  .assignment-game-hud-item--inventory,
+  .assignment-game-hud-item--progression {
     grid-column: auto;
   }
 

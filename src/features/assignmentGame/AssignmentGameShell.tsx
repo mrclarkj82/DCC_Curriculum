@@ -13,6 +13,10 @@ import { usePlayerMovement } from './hooks/usePlayerMovement';
 import { ruinedCourtyardLevel } from './levels/ruinedCourtyardLevel';
 import type { AssignmentGameShellState } from './gameShellTypes';
 import {
+  createAssignmentGameProgressionSnapshot,
+  createAssignmentGameProgressionState,
+} from './progressionTypes';
+import {
   createAssignmentGameSaveSnapshot,
   type AssignmentGameSaveContext,
   type AssignmentGameSaveSnapshot,
@@ -39,6 +43,14 @@ export function AssignmentGameShell({ saveContext }: AssignmentGameShellProps) {
   const savedDefeatedEnemyIds = activeSaveSnapshot?.defeatedEnemyIds ?? emptyDefeatedEnemyIds;
   const savedCollectedItemIds =
     activeSaveSnapshot?.collectedItemIds ?? emptyCollectedItemIds;
+  const progressionSnapshot =
+    activeSaveSnapshot?.progression ??
+    createAssignmentGameProgressionSnapshot(saveContext?.targetId ?? '');
+  const progressionState = createAssignmentGameProgressionState(
+    progressionSnapshot,
+    saveContext?.targetType ?? null,
+    saveContext?.targetId ?? '',
+  );
   const saveState = useAssignmentGameSave(saveContext);
   const playerState = usePlayerMovement(isGameInputEnabled, previewKey, savedPlayerState);
   const combatState = usePlayerCombat(isGameInputEnabled, previewKey, playerState);
@@ -100,6 +112,7 @@ export function AssignmentGameShell({ saveContext }: AssignmentGameShellProps) {
       playerState,
       enemiesState.enemies,
       inventoryState,
+      progressionSnapshot,
     );
 
     void saveState.saveProgress(snapshot);
@@ -189,6 +202,7 @@ export function AssignmentGameShell({ saveContext }: AssignmentGameShellProps) {
             enemiesState={enemiesState}
             inventoryState={inventoryState}
             playerState={playerState}
+            progressionState={progressionState}
           />
           <AssignmentGameViewport
             combatState={combatState}
@@ -200,11 +214,12 @@ export function AssignmentGameShell({ saveContext }: AssignmentGameShellProps) {
             onCloseDialogue={closeDialogue}
             playerState={playerState}
             previewKey={previewKey}
+            progressionState={progressionState}
           />
 
           <p className="muted">
-            Phase 9 saves player position, defeated enemies, and collected items to Firestore for
-            this verified assignment target. Assignment progression is intentionally not active yet.
+            Phase 10 opens the first Ember Gate path from the verified assignment target and keeps
+            future progression fields locked behind reviewed save rules.
           </p>
           <p className="muted assignment-game-save-status">{saveState.message}</p>
 
