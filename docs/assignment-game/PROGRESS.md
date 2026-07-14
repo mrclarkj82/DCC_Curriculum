@@ -7,7 +7,8 @@ verified mainline state includes the Phase 0 architecture, Phase 1 access gate, 
 Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
 enemies, Phase 7 dialogue, Phase 8 inventory, Phase 9 save and continue, Phase 10 assignment
 progression, and Phase 11 Easter egg integration. Phase 12 teacher/admin controls are deferred
-unless a classroom troubleshooting need is confirmed.
+unless a classroom troubleshooting need is confirmed. Phase 13 polish and final QA is in progress
+on `feature/assignment-game-polish`.
 
 Verified on 2026-07-13:
 
@@ -25,6 +26,7 @@ Verified on 2026-07-13:
 - Phase 10 assignment progression PR #17: merged and deployed.
 - Phase 11 Easter egg integration PR #18: merged and deployed.
 - Phase 12 teacher/admin controls: deferred unless the teacher confirms a need.
+- Phase 13 polish branch: `feature/assignment-game-polish`.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
 - `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
@@ -67,7 +69,7 @@ Verified on 2026-07-13:
 | Phase 10 | Assignment Progression | Merged | PR #17 / `feature/assignment-game-progression` | Opens the first Ember Gate progression milestone from verified assignment progress. |
 | Phase 11 | Easter Egg Integration | Merged | PR #18 / `feature/assignment-game-easter-egg` | Adds the approved Hidden Frame clue inside the assignment-gated game. |
 | Phase 12 | Teacher/Admin Controls | Deferred | None | Build only if classroom support needs are confirmed. |
-| Phase 13 | Polish and Final QA | Pending | Recommended: `feature/assignment-game-polish` | Classroom-ready pass and final manual verification. |
+| Phase 13 | Polish and Final QA | In progress | `feature/assignment-game-polish` | Classroom-ready pass and final manual verification. |
 
 ## PR Log
 
@@ -230,6 +232,15 @@ Verified on 2026-07-13:
 - 2026-07-13: Deployed Phase 11 to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
 - 2026-07-13: Verified live `/student/game` and `/hidden-frame/archive` returned HTTP 200 after Phase 11 deploy.
 - 2026-07-13: Phase 12 teacher/admin controls deferred because no classroom troubleshooting need has been confirmed; this preserves the rule that controls must not be added without a need.
+- 2026-07-13: Phase 13 branch `feature/assignment-game-polish` created from current `origin/main`.
+- 2026-07-13: Phase 13 resolves the assignment-game access naming cleanup by renaming live `assignmentId` adapter/result fields to `targetId`.
+- 2026-07-13: Phase 13 `npm.cmd install` passed. npm reported 6 moderate audit vulnerabilities and deprecation warnings for `node-domexception`, `glob`, and `uuid`.
+- 2026-07-13: Phase 13 `npm.cmd run lint` passed.
+- 2026-07-13: Phase 13 `npm.cmd run build` passed. Vite reported the existing chunk-size warning for bundles over 500 kB after minification.
+- 2026-07-13: Phase 13 `npm.cmd run validate:curriculum` passed.
+- 2026-07-13: Phase 13 `npm.cmd run validate:hidden-frame` passed.
+- 2026-07-13: Phase 13 `git diff --check` passed with Git line-ending normalization warnings only.
+- 2026-07-13: Verified local Vite served `/student/game`, `/today`, and `/hidden-frame/archive` with HTTP 200 on port 5188.
 
 ## Asset Notes
 
@@ -241,7 +252,6 @@ Verified on 2026-07-13:
 
 ## Current Open Questions
 
-- Should `useAssignmentGameAccess(studentId, assignmentId, ...)` rename the second parameter to `targetId` in a later cleanup so missions, assignments, media projects, and broadcast updates all fit the name?
 - Should future combat-health work subtract enemy contact damage from player health, use invulnerability windows, or keep contact as a warning-only interaction for classroom play?
 - Should later dialogue branch based on completed assignments, or should assignment progression unlock areas only while dialogue stays flavor-only?
 - Should inventory items remain flavor-only until assignment progression, or should Rusty Key and Lantern Oil become usable once saves exist?
@@ -250,9 +260,10 @@ Verified on 2026-07-13:
 
 ## Next Step
 
-Start Phase 13 polish and final QA:
+Finish Phase 13 polish and final QA:
 
-1. Create `feature/assignment-game-polish` from current `main`.
-2. Run a classroom-ready manual QA pass across locked, unlocked, save, continue, progression, and Easter egg states.
-3. Polish student-facing copy and small responsive UI issues found during QA.
-4. Do not add new systems unless QA reveals a blocker.
+1. Validate `feature/assignment-game-polish`.
+2. Commit and push the polish branch.
+3. Open PR `[Phase 13] Assignment Game Polish and Final QA`.
+4. After the Phase 13 PR merges, deploy Firebase Hosting target `dcc`.
+5. Keep future work scoped to bugs or teacher-confirmed requests.

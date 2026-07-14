@@ -15,7 +15,7 @@ interface UseAssignmentGameAccessOptions {
 
 export function useAssignmentGameAccess(
   studentId: string,
-  assignmentId: string,
+  targetId: string,
   context: AssignmentGameAccessContext,
   options: UseAssignmentGameAccessOptions = {},
 ): AssignmentGameAccessResult {
@@ -29,12 +29,12 @@ export function useAssignmentGameAccess(
       setAccess({
         ...loadingAssignmentGameAccessResult,
         classId: context.classRecord?.id,
-        assignmentId: assignmentId || context.target?.targetId,
+        targetId: targetId || context.target?.targetId,
       });
       return undefined;
     }
 
-    const contextResult = validateAssignmentGameAccessContext(studentId, assignmentId, context);
+    const contextResult = validateAssignmentGameAccessContext(studentId, targetId, context);
 
     if (contextResult) {
       setAccess(contextResult);
@@ -55,10 +55,10 @@ export function useAssignmentGameAccess(
     setAccess({
       ...loadingAssignmentGameAccessResult,
       classId: context.classRecord.id,
-      assignmentId: context.target.targetId,
+      targetId: context.target.targetId,
     });
 
-    void canStudentAccessAssignmentGame(studentId, assignmentId, context)
+    void canStudentAccessAssignmentGame(studentId, targetId, context)
       .then((nextAccess) => {
         if (!didCancel) {
           setAccess(nextAccess);
@@ -73,7 +73,7 @@ export function useAssignmentGameAccess(
               'The app could not verify access to The Ember Gate. Please try again from Today.',
             state: 'error',
             classId: context.classRecord?.id,
-            assignmentId: context.target?.targetId,
+            targetId: context.target?.targetId,
             missingRequirements: [],
           });
         }
@@ -89,7 +89,7 @@ export function useAssignmentGameAccess(
           setAccess(
             getAssignmentGameAccessResultFromSubmission(
               studentId,
-              assignmentId,
+              targetId,
               context,
               submission,
             ),
@@ -105,7 +105,7 @@ export function useAssignmentGameAccess(
               'The app could not verify access to The Ember Gate. Please try again from Today.',
             state: 'error',
             classId: context.classRecord?.id,
-            assignmentId: context.target?.targetId,
+            targetId: context.target?.targetId,
             missingRequirements: [],
           });
         }
@@ -117,7 +117,6 @@ export function useAssignmentGameAccess(
       unsubscribe();
     };
   }, [
-    assignmentId,
     context.activeItem?.id,
     context.activeItem?.type,
     context.classRecord?.id,
@@ -127,6 +126,7 @@ export function useAssignmentGameAccess(
     context.userProfile?.uid,
     isPending,
     studentId,
+    targetId,
   ]);
 
   return access;
