@@ -855,7 +855,13 @@ service cloud.firestore {
       match /users/{userId} {
         allow get: if isDccApp(appId)
           && isAllowedAccount()
-          && (isSelf(userId) || isAdmin() || teacherCanReadStudent(resource.data));
+          && (
+            isSelf(userId)
+            || (
+              exists(userPath(userId))
+              && (isAdmin() || teacherCanReadStudent(resource.data))
+            )
+          );
         allow list: if isDccApp(appId) && isAdmin();
         allow create: if isDccApp(appId) && safeUserCreate(userId);
         allow update: if isDccApp(appId)

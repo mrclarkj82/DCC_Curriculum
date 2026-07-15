@@ -62,12 +62,16 @@ export async function createUserProfileIfNeeded(firebaseUser: User): Promise<voi
     return;
   }
 
-  await updateDoc(userRef, {
-    displayName: safeDisplayName,
-    photoURL: safePhotoURL,
-    updatedAt: serverTimestamp(),
-    lastLoginAt: serverTimestamp(),
-  });
+  try {
+    await updateDoc(userRef, {
+      displayName: safeDisplayName,
+      photoURL: safePhotoURL,
+      updatedAt: serverTimestamp(),
+      lastLoginAt: serverTimestamp(),
+    });
+  } catch (error) {
+    console.warn('Unable to refresh DCC profile metadata after sign-in.', error);
+  }
 }
 
 export async function updateLastLogin(firebaseUser: User): Promise<void> {
