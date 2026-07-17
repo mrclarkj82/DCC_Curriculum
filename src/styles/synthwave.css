@@ -2435,10 +2435,11 @@
 
 .assignment-game-viewport:fullscreen,
 .assignment-game-viewport.is-fullscreen {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
-  align-content: stretch;
-  grid-template-rows: auto auto minmax(0, 1fr);
+  min-height: 100vh;
   overflow: auto;
   padding: var(--space-4);
   background:
@@ -2517,6 +2518,7 @@
 
 .assignment-game-viewport:fullscreen .assignment-game-playfield,
 .assignment-game-viewport.is-fullscreen .assignment-game-playfield {
+  flex: 1 1 auto;
   height: auto;
   min-height: 0;
 }
