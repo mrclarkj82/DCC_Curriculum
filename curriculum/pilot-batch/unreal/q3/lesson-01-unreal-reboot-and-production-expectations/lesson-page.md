@@ -37,8 +37,8 @@ What should a behind-the-scenes documentary show that a final screenshot cannot 
 ## Slides Placeholder
 
 - Slide deck title: Q3 Lesson 01 - Unreal Reboot and Production Expectations
-- Slide status: ready-for-chatgpt
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1gtx8eZ70HOxckeFKWe87UmbCGUP28BDd/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Student Workflow
 

@@ -37,8 +37,8 @@ What planning evidence would help a viewer understand the castle you are about t
 ## Slides Placeholder
 
 - Slide deck title: Q3 Lesson 02 - Environment Planning
-- Slide status: ready-for-chatgpt
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1w21OBrYtBlIlFnbzNDvGY2QVf2Ii6I5_/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Student Workflow
 
