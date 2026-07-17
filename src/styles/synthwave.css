@@ -809,6 +809,14 @@
   margin-bottom: var(--space-4);
 }
 
+.section-heading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin-left: auto;
+}
+
 .teacher-tab-list {
   display: flex;
   flex-wrap: wrap;

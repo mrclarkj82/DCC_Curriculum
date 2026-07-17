@@ -66,6 +66,8 @@ interface CreateClassFormState {
   schoolYear: string;
 }
 
+type UserListView = 'staff' | 'students';
+
 const emptyActiveItemForm: ActiveItemFormState = {
   classId: '',
   activeProgramAreaId: '',
@@ -146,6 +148,7 @@ export function AdminPage() {
   const [submissionSummary, setSubmissionSummary] = useState<SubmissionSystemSummary | null>(null);
   const [submissionSummaryError, setSubmissionSummaryError] = useState<string | null>(null);
   const [savingKey, setSavingKey] = useState<string | null>(null);
+  const [userListView, setUserListView] = useState<UserListView>('staff');
 
   useEffect(() => {
     setUsersLoading(true);
@@ -358,6 +361,18 @@ export function AdminPage() {
       schoolYear: schoolYears.join(', ') || 'Not set',
     };
   }, [classes, users]);
+
+  const studentUsers = useMemo(
+    () => users.filter((user) => user.role === 'student'),
+    [users],
+  );
+
+  const staffUsers = useMemo(
+    () => users.filter((user) => user.role === 'teacher' || user.role === 'admin'),
+    [users],
+  );
+
+  const displayedUsers = userListView === 'students' ? studentUsers : staffUsers;
 
   const setMessage = (message: string) => {
     setOperationMessage(message);
@@ -711,15 +726,45 @@ export function AdminPage() {
           <div className="section-heading-row">
             <div>
               <p className="retro-label">User Management</p>
-              <h2>Roles And Class Membership</h2>
+              <h2>{userListView === 'students' ? 'All Students' : 'Roles And Class Membership'}</h2>
             </div>
-            <StatusBadge status={`${users.length} users`} />
+            <div className="section-heading-actions">
+              <StatusBadge
+                status={
+                  userListView === 'students'
+                    ? `${studentUsers.length} students`
+                    : `${staffUsers.length} staff`
+                }
+              />
+              <button
+                className={userListView === 'students' ? 'gradient-button' : 'secondary-button'}
+                type="button"
+                aria-pressed={userListView === 'students'}
+                onClick={() =>
+                  setUserListView((currentView) =>
+                    currentView === 'students' ? 'staff' : 'students',
+                  )
+                }
+              >
+                {userListView === 'students'
+                  ? 'Back To Roles And Membership'
+                  : `View All Students (${studentUsers.length})`}
+              </button>
+            </div>
           </div>
 
-          {!users.length && !usersLoading ? (
+          {!displayedUsers.length && !usersLoading ? (
             <EmptyState
-              title="No signed-in users yet"
-              message="Users appear here after they sign in with an approved Google account."
+              title={
+                userListView === 'students'
+                  ? 'No students have signed in yet'
+                  : 'No teachers or admins have signed in yet'
+              }
+              message={
+                userListView === 'students'
+                  ? 'Students appear here after they sign in with an approved Google account.'
+                  : 'Use the student roster button to manage student accounts and class membership.'
+              }
             />
           ) : (
             <div className="table-scroll">
@@ -735,7 +780,7 @@ export function AdminPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {users.map((targetUser) => {
+                  {displayedUsers.map((targetUser) => {
                     const selectedClassId =
                       selectedClassByUser[targetUser.uid] ?? classes[0]?.id ?? '';
                     const selectedClass = classes.find(
