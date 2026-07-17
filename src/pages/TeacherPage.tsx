@@ -25,7 +25,7 @@ import {
   subscribeToResponsesForClassItem,
   type ClassItemResponses,
 } from '../services/responseService';
-import { subscribeToQuizAttemptsForClassQuiz } from '../services/quizService';
+import { subscribeToQuizAttemptsForClass } from '../services/quizService';
 import {
   resolveSubmissionTargetForActiveItem,
   subscribeToSubmissionsForClassTarget,
@@ -524,17 +524,8 @@ export function TeacherPage() {
 
     const unsubscribes = classRecords
       .map((classRecord) => {
-        if (classRecord.activeItemType !== 'quiz') {
-          setQuizAttemptsByClassId((current) => ({
-            ...current,
-            [classRecord.id]: [],
-          }));
-          return null;
-        }
-
-        return subscribeToQuizAttemptsForClassQuiz(
+        return subscribeToQuizAttemptsForClass(
           classRecord.id,
-          classRecord.activeItemId,
           (attempts) => {
             setQuizAttemptsByClassId((current) => ({
               ...current,
@@ -1343,12 +1334,9 @@ export function TeacherPage() {
             <h2>Quiz Scores</h2>
             <div className="response-completion-stack">
               {classRecords.map((classRecord) => {
-                const activeItem = activeItemsByClassId[classRecord.id];
-                const students = studentsByClassId[classRecord.id] ?? [];
                 const attempts = quizAttemptsByClassId[classRecord.id] ?? [];
                 const quizError = quizErrorsByClassId[classRecord.id];
-                const attemptsByUid = new Map(attempts.map((attempt) => [attempt.uid, attempt]));
-                const submittedCount = attempts.length;
+                const submittedStudentCount = new Set(attempts.map((attempt) => attempt.uid)).size;
                 const averagePercentage = attempts.length
                   ? Math.round(
                       attempts.reduce((total, attempt) => total + attempt.percentage, 0) /
@@ -1363,15 +1351,9 @@ export function TeacherPage() {
                         <p className="retro-label">
                           {classRecord.name} / {classRecord.period}
                         </p>
-                        <h3>{activeItem?.title ?? classRecord.activeItemId}</h3>
+                        <h3>Recorded Quiz Scores</h3>
                       </div>
-                      <StatusBadge
-                        status={
-                          classRecord.activeItemType === 'quiz'
-                            ? `${submittedCount}/${classRecord.studentIds.length} submitted`
-                            : 'no active quiz'
-                        }
-                      />
+                      <StatusBadge status={`${attempts.length} scores`} />
                     </div>
 
                     <dl className="detail-list response-summary-list">
@@ -1383,8 +1365,14 @@ export function TeacherPage() {
                         </dd>
                       </div>
                       <div>
+                        <dt>Students With Scores</dt>
+                        <dd>{`${submittedStudentCount}/${classRecord.studentIds.length}`}</dd>
+                      </div>
+                      <div>
                         <dt>Average</dt>
-                        <dd>{averagePercentage === null ? 'Not enough scores' : `${averagePercentage}%`}</dd>
+                        <dd>
+                          {averagePercentage === null ? 'Not enough scores' : `${averagePercentage}%`}
+                        </dd>
                       </div>
                       <div>
                         <dt>Answer Visibility</dt>
@@ -1394,12 +1382,10 @@ export function TeacherPage() {
 
                     {quizError && <ErrorState message={quizError} />}
 
-                    {classRecord.activeItemType !== 'quiz' ? (
-                      <p className="muted">
-                        Set this class active item type to Quiz to collect scores here.
-                      </p>
-                    ) : !classRecord.studentIds.length ? (
+                    {!classRecord.studentIds.length ? (
                       <p className="muted">No students are assigned to this class yet.</p>
+                    ) : !attempts.length ? (
+                      <p className="muted">No quiz scores have been recorded for this class yet.</p>
                     ) : (
                       <div className="table-scroll">
                         <table className="management-table response-table grade-table">
@@ -1413,26 +1399,23 @@ export function TeacherPage() {
                             </tr>
                           </thead>
                           <tbody>
-                            {classRecord.studentIds.map((uid) => {
-                              const student = students.find((nextStudent) => nextStudent.uid === uid);
-                              const attempt = attemptsByUid.get(uid);
-
+                            {attempts.map((attempt) => {
                               return (
-                                <tr key={`${classRecord.id}-${uid}`}>
+                                <tr key={attempt.id}>
                                   <td>
-                                    <strong>{student?.displayName || attempt?.studentName || uid}</strong>
-                                    {(student?.email || attempt?.studentEmail) && (
+                                    <strong>{attempt.studentName || attempt.uid}</strong>
+                                    {attempt.studentEmail && (
                                       <p className="meta-line">
-                                        {student?.email || attempt?.studentEmail}
+                                        {attempt.studentEmail}
                                       </p>
                                     )}
                                   </td>
-                                  <td>{activeItem?.title ?? classRecord.activeItemId}</td>
+                                  <td>{attempt.quizTitle || attempt.quizId}</td>
                                   <td>{formatQuizScore(attempt)}</td>
                                   <td>
-                                    <StatusBadge status={attempt ? 'submitted' : 'missing'} />
+                                    <StatusBadge status="submitted" />
                                   </td>
-                                  <td>{formatTimestamp(attempt?.submittedAt)}</td>
+                                  <td>{formatTimestamp(attempt.submittedAt)}</td>
                                 </tr>
                               );
                             })}

@@ -269,6 +269,12 @@ export const submitQuizAttempt = onCall(
         );
       }
 
+      if (!quizSnapshot.exists) {
+        throw new HttpsError('not-found', 'Quiz record was not found.');
+      }
+
+      const quizData = quizSnapshot.data() ?? {};
+
       const activeItemType = tokenString(classData.activeItemType);
       const activeItemId = tokenString(classData.activeItemId);
       let isQuizAvailableForActiveItem =
@@ -284,8 +290,12 @@ export const submitQuizAttempt = onCall(
           assignmentData && typeof assignmentData === 'object'
             ? tokenString((assignmentData as Record<string, unknown>).quizId)
             : '';
+        const quizLessonIds = Array.isArray(quizData.lessonIds)
+          ? quizData.lessonIds.map(String)
+          : [];
 
-        isQuizAvailableForActiveItem = linkedQuizId === quizId;
+        isQuizAvailableForActiveItem =
+          linkedQuizId === quizId || quizLessonIds.includes(activeItemId);
       }
 
       if (!isQuizAvailableForActiveItem && activeItemType === 'assignment' && activeItemId) {
@@ -302,12 +312,6 @@ export const submitQuizAttempt = onCall(
           'This quiz is not available for the active class item.',
         );
       }
-
-      if (!quizSnapshot.exists) {
-        throw new HttpsError('not-found', 'Quiz record was not found.');
-      }
-
-      const quizData = quizSnapshot.data() ?? {};
 
       if (quizData.isPublished !== true) {
         throw new HttpsError('failed-precondition', 'This quiz is not published yet.');

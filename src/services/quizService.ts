@@ -140,3 +140,21 @@ export function subscribeToQuizAttemptsForClassQuiz(
     onError,
   );
 }
+
+export function subscribeToQuizAttemptsForClass(
+  classId: string,
+  onAttempts: (attempts: QuizAttempt[]) => void,
+  onError: (error: Error) => void,
+): Unsubscribe {
+  return onSnapshot(
+    query(collection(db, dccCollectionPath('quizAttempts')), where('classId', '==', classId)),
+    (snapshot) => {
+      onAttempts(
+        snapshot.docs.map((documentSnapshot) =>
+          quizAttemptFromData(documentSnapshot.id, documentSnapshot.data()),
+        ),
+      );
+    },
+    onError,
+  );
+}
