@@ -226,6 +226,7 @@ export const submitQuizAttempt = onCall(
     const answerKeyRef = appRef.collection('quizAnswerKeys').doc(quizId);
     const attemptId = makeQuizAttemptId(classId, quizId, uid);
     const attemptRef = appRef.collection('quizAttempts').doc(attemptId);
+    const attemptDetailRef = appRef.collection('quizAttemptDetails').doc(attemptId);
     const now = Timestamp.now();
 
     return db.runTransaction(async (transaction) => {
@@ -359,6 +360,7 @@ export const submitQuizAttempt = onCall(
       }
 
       let score = 0;
+      const incorrectQuestionIds: string[] = [];
 
       for (const question of questions) {
         const questionId = tokenString(question.id);
@@ -374,6 +376,8 @@ export const submitQuizAttempt = onCall(
 
         if (answersMatch(selectedAnswer, correctAnswer)) {
           score += 1;
+        } else {
+          incorrectQuestionIds.push(questionId);
         }
       }
 
@@ -397,8 +401,18 @@ export const submitQuizAttempt = onCall(
         updatedAt: now,
         submittedAt: now,
       };
+      const attemptDetailData = {
+        id: attemptId,
+        uid,
+        classId,
+        quizId,
+        incorrectQuestionIds,
+        createdAt: now,
+        updatedAt: now,
+      };
 
       transaction.set(attemptRef, attemptData);
+      transaction.set(attemptDetailRef, attemptDetailData);
 
       return {
         attempt: quizAttemptFromData(attemptId, attemptData),

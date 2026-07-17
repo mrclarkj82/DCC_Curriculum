@@ -10,7 +10,12 @@ import {
 import { httpsCallable } from 'firebase/functions';
 import { dccCollectionPath, dccDocumentPath } from '../config/firestoreNamespace';
 import { cloudFunctions, db } from '../firebase/client';
-import type { Quiz, QuizAttempt, QuizAttemptAnswerInput } from '../types';
+import type {
+  Quiz,
+  QuizAttempt,
+  QuizAttemptAnswerInput,
+  QuizAttemptDetail,
+} from '../types';
 import { getCollectionRecords, getDocumentRecord } from './firestoreService';
 
 interface SubmitQuizAttemptPayload {
@@ -68,6 +73,23 @@ function quizAttemptFromData(id: string, data: Record<string, unknown>): QuizAtt
   };
 }
 
+function quizAttemptDetailFromData(
+  id: string,
+  data: Record<string, unknown>,
+): QuizAttemptDetail {
+  return {
+    id: String(data.id ?? id),
+    uid: String(data.uid ?? ''),
+    classId: String(data.classId ?? ''),
+    quizId: String(data.quizId ?? ''),
+    incorrectQuestionIds: Array.isArray(data.incorrectQuestionIds)
+      ? data.incorrectQuestionIds.map(String)
+      : [],
+    createdAt: data.createdAt,
+    updatedAt: data.updatedAt,
+  };
+}
+
 export function subscribeToQuizAttempt(
   classId: string,
   quizId: string,
@@ -99,6 +121,17 @@ export async function submitQuizAttempt(
 
     throw new Error('Unable to submit quiz. Please try again or ask your teacher.');
   }
+}
+
+export async function getQuizAttemptDetail(
+  attemptId: string,
+): Promise<QuizAttemptDetail | null> {
+  const record = await getDocumentRecord<{ id: string; [key: string]: unknown }>(
+    'quizAttemptDetails',
+    attemptId,
+  );
+
+  return record ? quizAttemptDetailFromData(attemptId, record) : null;
 }
 
 export async function getQuizAttemptsForClassQuiz(

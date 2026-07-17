@@ -25,7 +25,11 @@ import {
   subscribeToResponsesForClassItem,
   type ClassItemResponses,
 } from '../services/responseService';
-import { getQuizzes, subscribeToQuizAttemptsForClass } from '../services/quizService';
+import {
+  getQuizAttemptDetail,
+  getQuizzes,
+  subscribeToQuizAttemptsForClass,
+} from '../services/quizService';
 import {
   resolveSubmissionTargetForActiveItem,
   subscribeToSubmissionsForClassTarget,
@@ -39,6 +43,7 @@ import type {
   ProgramArea,
   Quiz,
   QuizAttempt,
+  QuizAttemptDetail,
   ResponseCompletionSummary,
   StudentSubmission,
   SubmissionStatus,
@@ -297,6 +302,16 @@ export function TeacherPage() {
   const [selectedSubmissionClassId, setSelectedSubmissionClassId] = useState<string | null>(null);
   const [selectedGradeClassId, setSelectedGradeClassId] = useState<string | null>(null);
   const [selectedGradeQuizId, setSelectedGradeQuizId] = useState<string | null>(null);
+  const [expandedGradeAttemptId, setExpandedGradeAttemptId] = useState<string | null>(null);
+  const [gradeAttemptDetailsById, setGradeAttemptDetailsById] = useState<
+    Record<string, QuizAttemptDetail | null>
+  >({});
+  const [gradeAttemptDetailLoadingId, setGradeAttemptDetailLoadingId] = useState<string | null>(
+    null,
+  );
+  const [gradeAttemptDetailErrors, setGradeAttemptDetailErrors] = useState<
+    Record<string, string>
+  >({});
 
   useEffect(() => {
     let didCancel = false;
@@ -888,6 +903,40 @@ export function TeacherPage() {
       setFormError(firestoreErrorMessage(error, 'Unable to update submission review.'));
     } finally {
       setReviewSavingKey(null);
+    }
+  };
+
+  const handleGradeAttemptToggle = async (attempt: QuizAttempt) => {
+    if (expandedGradeAttemptId === attempt.id) {
+      setExpandedGradeAttemptId(null);
+      return;
+    }
+
+    setExpandedGradeAttemptId(attempt.id);
+
+    if (Object.prototype.hasOwnProperty.call(gradeAttemptDetailsById, attempt.id)) {
+      return;
+    }
+
+    setGradeAttemptDetailLoadingId(attempt.id);
+    setGradeAttemptDetailErrors((current) => {
+      const next = { ...current };
+      delete next[attempt.id];
+      return next;
+    });
+
+    try {
+      const detail = await getQuizAttemptDetail(attempt.id);
+      setGradeAttemptDetailsById((current) => ({ ...current, [attempt.id]: detail }));
+    } catch (error) {
+      setGradeAttemptDetailErrors((current) => ({
+        ...current,
+        [attempt.id]: firestoreErrorMessage(error, 'Unable to load wrong-question details.'),
+      }));
+    } finally {
+      setGradeAttemptDetailLoadingId((current) =>
+        current === attempt.id ? null : current,
+      );
     }
   };
 
@@ -1652,15 +1701,40 @@ export function TeacherPage() {
                                   (nextStudent) => nextStudent.uid === uid,
                                 );
                                 const attempt = attemptsByUid.get(uid);
+                                const isGradeAttemptExpanded =
+                                  attempt && expandedGradeAttemptId === attempt.id;
+                                const attemptDetail = attempt
+                                  ? gradeAttemptDetailsById[attempt.id]
+                                  : undefined;
+                                const attemptDetailError = attempt
+                                  ? gradeAttemptDetailErrors[attempt.id]
+                                  : undefined;
 
                                 return (
-                                  <tr key={`${selectedGradeQuiz.id}-${uid}`}>
+                                  <Fragment key={`${selectedGradeQuiz.id}-${uid}`}>
+                                    <tr>
                                     <td>
-                                      <strong>{student?.displayName || attempt?.studentName || uid}</strong>
-                                      {(student?.email || attempt?.studentEmail) && (
-                                        <p className="meta-line">
-                                          {student?.email || attempt?.studentEmail}
-                                        </p>
+                                      {attempt ? (
+                                        <button
+                                          className="grade-student-button"
+                                          type="button"
+                                          aria-expanded={isGradeAttemptExpanded}
+                                          onClick={() => handleGradeAttemptToggle(attempt)}
+                                        >
+                                          <strong>
+                                            {student?.displayName || attempt.studentName || uid}
+                                          </strong>
+                                          {(student?.email || attempt.studentEmail) && (
+                                            <span className="meta-line">
+                                              {student?.email || attempt.studentEmail}
+                                            </span>
+                                          )}
+                                        </button>
+                                      ) : (
+                                        <>
+                                          <strong>{student?.displayName || uid}</strong>
+                                          {student?.email && <p className="meta-line">{student.email}</p>}
+                                        </>
                                       )}
                                     </td>
                                     <td>{formatQuizScore(attempt)}</td>
@@ -1668,7 +1742,51 @@ export function TeacherPage() {
                                       <StatusBadge status={attempt ? 'submitted' : 'missing'} />
                                     </td>
                                     <td>{formatTimestamp(attempt?.submittedAt)}</td>
-                                  </tr>
+                                    </tr>
+                                    {isGradeAttemptExpanded && (
+                                      <tr className="response-detail-row">
+                                        <td colSpan={4}>
+                                          <div className="grade-attempt-detail">
+                                            <p className="retro-label">Wrong Questions</p>
+                                            {gradeAttemptDetailLoadingId === attempt.id && (
+                                              <LoadingState label="Loading wrong-question details..." />
+                                            )}
+                                            {attemptDetailError && (
+                                              <ErrorState message={attemptDetailError} />
+                                            )}
+                                            {attemptDetail &&
+                                              (attemptDetail.incorrectQuestionIds.length ? (
+                                                <ol className="grade-wrong-question-list">
+                                                  {attemptDetail.incorrectQuestionIds.map(
+                                                    (questionId) => {
+                                                      const question = selectedGradeQuiz.questions.find(
+                                                        (nextQuestion) => nextQuestion.id === questionId,
+                                                      );
+
+                                                      return (
+                                                        <li key={questionId}>
+                                                          {question?.text || questionId}
+                                                        </li>
+                                                      );
+                                                    },
+                                                  )}
+                                                </ol>
+                                              ) : (
+                                                <p className="muted">
+                                                  Perfect score. This student missed no questions.
+                                                </p>
+                                              ))}
+                                            {attemptDetail === null && !attemptDetailError && (
+                                              <p className="muted">
+                                                Wrong-question details are unavailable for this older
+                                                submission.
+                                              </p>
+                                            )}
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    )}
+                                  </Fragment>
                                 );
                               })}
                             </tbody>

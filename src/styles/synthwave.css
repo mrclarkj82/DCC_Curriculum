@@ -1598,6 +1598,41 @@
   background: rgba(8, 3, 18, 0.44);
 }
 
+.grade-student-button {
+  display: grid;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  color: var(--color-text-main);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.grade-student-button:hover strong,
+.grade-student-button:focus-visible strong {
+  color: var(--color-neon-cyan);
+  text-decoration: underline;
+}
+
+.grade-student-button:focus-visible {
+  outline: 2px solid var(--color-neon-orange);
+  outline-offset: 4px;
+}
+
+.grade-attempt-detail {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.grade-wrong-question-list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: 24px;
+  color: var(--color-text-main);
+}
+
 .primary-button:disabled,
 .secondary-button:disabled,
 .ghost-button:disabled,

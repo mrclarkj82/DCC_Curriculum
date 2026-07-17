@@ -137,6 +137,16 @@ export interface QuizAttempt {
   submittedAt?: unknown;
 }
 
+export interface QuizAttemptDetail {
+  id: string;
+  uid: string;
+  classId: string;
+  quizId: string;
+  incorrectQuestionIds: string[];
+  createdAt?: unknown;
+  updatedAt?: unknown;
+}
+
 export interface MediaProject {
   id: string;
   programAreaId: string;

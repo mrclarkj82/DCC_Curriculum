@@ -510,6 +510,16 @@ service cloud.firestore {
         );
     }
 
+    function canReadQuizAttemptDetail(detailData) {
+      return isAdmin()
+        || (
+          isTeacher()
+          && detailData.classId is string
+          && classExists(detailData.classId)
+          && request.auth.uid in classData(detailData.classId).teacherIds
+        );
+    }
+
     function safeStudentSubmissionBase(submissionId) {
       return isAllowedAccount()
         && userRole() == 'student'
@@ -921,6 +931,11 @@ service cloud.firestore {
       match /quizAttempts/{attemptId} {
         allow get, list: if isDccApp(appId) && canReadQuizAttempt(resource.data);
         allow create, update, delete: if false;
+      }
+
+      match /quizAttemptDetails/{attemptId} {
+        allow get: if isDccApp(appId) && canReadQuizAttemptDetail(resource.data);
+        allow list, create, update, delete: if false;
       }
 
       match /teacherPreviewResponses/{responseId} {
