@@ -37,8 +37,8 @@ What makes lighting in a 3D scene feel realistic instead of flat?
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 13 - Quiz 3 and Lumen Lighting
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1_WZ44eUTJTYtxwtFs6cSnC1D9RGCrqYU/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

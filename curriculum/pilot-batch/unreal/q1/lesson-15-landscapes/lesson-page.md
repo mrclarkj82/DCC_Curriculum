@@ -37,8 +37,8 @@ What makes outdoor terrain look natural instead of flat or artificial?
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 15 - Landscapes
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1o9i6f0Xs96y5WjG0YhftoC5zSyI7s2jk/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

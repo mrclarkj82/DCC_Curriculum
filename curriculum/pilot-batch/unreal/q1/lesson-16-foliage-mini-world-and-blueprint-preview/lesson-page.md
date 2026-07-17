@@ -37,8 +37,8 @@ What details make an environment feel alive or intentionally designed?
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 16 - Foliage, Mini-World, and Blueprint Preview
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1uKPGeRBGj2_WTqCVPo-2omRKtbCRtnPU/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

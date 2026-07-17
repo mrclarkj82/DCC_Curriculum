@@ -37,8 +37,8 @@ Where do you see different types of light in real life, and how do they change t
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 14 - Light Types and Scene Lighting
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1NOxNeVkvuJOlz7c_O219f15rtIU6bvSn/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 
