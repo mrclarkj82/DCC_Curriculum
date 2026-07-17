@@ -35,8 +35,8 @@ Why might camera audio and separate microphone audio need to be matched before e
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 03 - Syncing Audio and Timeline Basics
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/1Jt6u4zaKjznFGwO5BWn9RJjqbA5J2W5Z/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

@@ -34,8 +34,8 @@ When you have a folder full of random clips, what information helps you find the
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 02 - Media Page, Imports, and Bins
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/13PT__0PLlXTf3YxLYJOZz-JeTe_lM_LC/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 

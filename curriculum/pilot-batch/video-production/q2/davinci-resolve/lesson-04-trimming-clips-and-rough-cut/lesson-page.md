@@ -35,8 +35,8 @@ What makes a video clip feel too long, even if the shot itself is useful?
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 04 - Trimming Clips and Building a Rough Cut
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/14y8n5yg0u8gLSpdFIgkeZNpREeoUtLJm/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 
