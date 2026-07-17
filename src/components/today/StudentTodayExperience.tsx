@@ -3,6 +3,7 @@ import { AssignmentGameEntryCard } from '../assignmentGame/AssignmentGameEntryCa
 import { EmptyState } from '../EmptyState';
 import { EvidenceChecklist } from '../EvidenceChecklist';
 import { QuizTakingPanel } from '../quizzes/QuizTakingPanel';
+import { RelatedQuizPanel } from '../quizzes/RelatedQuizPanel';
 import { BellRingerResponseCard } from '../responses/BellRingerResponseCard';
 import { ExitTicketResponseCard } from '../responses/ExitTicketResponseCard';
 import { SubmissionPanel } from '../submissions/SubmissionPanel';
@@ -322,6 +323,12 @@ export function StudentTodayExperience({
     !isQuizOrPortfolio && (userProfile.role === 'student' || isTeacherPreviewMode(viewerMode));
   const submissionTarget = resolveSubmissionTargetForActiveItem(activeItem);
   const isMissingActiveRecord = activeItem.type !== 'portfolioCheckpoint' && !record;
+  const relatedQuizId =
+    activeItem.type === 'lesson' && record
+      ? (record as Lesson).assignment.quizId
+      : activeItem.type === 'assignment' && record
+        ? (record as Assignment).quizId
+        : undefined;
 
   return (
     <>
@@ -419,6 +426,14 @@ export function StudentTodayExperience({
           />
         )}
         {activeItem.type === 'portfolioCheckpoint' && <PortfolioMission />}
+        {relatedQuizId && (
+          <RelatedQuizPanel
+            quizId={relatedQuizId}
+            classRecord={classRecord}
+            userProfile={userProfile}
+            viewerMode={viewerMode}
+          />
+        )}
       </div>
     </>
   );

@@ -62,6 +62,7 @@ export interface Lesson {
   };
   assignment: {
     id: string;
+    quizId?: string;
     title: string;
     submissionType: string;
     evidenceRequired: string[];
@@ -74,6 +75,7 @@ export interface Assignment {
   id: string;
   programAreaId: string;
   lessonId: string;
+  quizId?: string;
   title: string;
   skillFocus: string[];
   instructions: string;

@@ -269,10 +269,37 @@ export const submitQuizAttempt = onCall(
         );
       }
 
-      if (classData.activeItemType !== 'quiz' || classData.activeItemId !== quizId) {
+      const activeItemType = tokenString(classData.activeItemType);
+      const activeItemId = tokenString(classData.activeItemId);
+      let isQuizAvailableForActiveItem =
+        activeItemType === 'quiz' && activeItemId === quizId;
+
+      if (!isQuizAvailableForActiveItem && activeItemType === 'lesson' && activeItemId) {
+        const activeLessonSnapshot = await transaction.get(
+          appRef.collection('lessons').doc(activeItemId),
+        );
+        const activeLessonData = activeLessonSnapshot.data() ?? {};
+        const assignmentData = activeLessonData.assignment;
+        const linkedQuizId =
+          assignmentData && typeof assignmentData === 'object'
+            ? tokenString((assignmentData as Record<string, unknown>).quizId)
+            : '';
+
+        isQuizAvailableForActiveItem = linkedQuizId === quizId;
+      }
+
+      if (!isQuizAvailableForActiveItem && activeItemType === 'assignment' && activeItemId) {
+        const activeAssignmentSnapshot = await transaction.get(
+          appRef.collection('assignments').doc(activeItemId),
+        );
+        const activeAssignmentData = activeAssignmentSnapshot.data() ?? {};
+        isQuizAvailableForActiveItem = tokenString(activeAssignmentData.quizId) === quizId;
+      }
+
+      if (!isQuizAvailableForActiveItem) {
         throw new HttpsError(
           'failed-precondition',
-          'This quiz is not the active item for your class.',
+          'This quiz is not available for the active class item.',
         );
       }
 

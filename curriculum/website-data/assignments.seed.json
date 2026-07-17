@@ -204,6 +204,7 @@
     "id": "ue-q1-a05",
     "programAreaId": "unreal-engine",
     "lessonId": "ue-q1-l05",
+    "quizId": "ue-q1-quiz-01",
     "title": "First Scene Cleanup and Evidence Upgrade",
     "skillFocus": [
       "Quiz feedback helps identify what needs review",

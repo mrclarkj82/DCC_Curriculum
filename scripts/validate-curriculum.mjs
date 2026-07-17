@@ -165,6 +165,12 @@ for (const assignment of assignments.filter((item) => item.programAreaId === 'un
     lessonIds.has(assignment.lessonId),
     `Assignment ${assignment.id} references missing lesson ${assignment.lessonId}`,
   );
+  if (assignment.quizId) {
+    assert(
+      quizIds.has(assignment.quizId),
+      `Assignment ${assignment.id} references missing quiz ${assignment.quizId}`,
+    );
+  }
 }
 
 assert(

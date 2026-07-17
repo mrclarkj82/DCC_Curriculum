@@ -5,6 +5,7 @@ import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { RubricTable } from '../components/RubricTable';
+import { RelatedQuizPanel } from '../components/quizzes/RelatedQuizPanel';
 import { SubmissionPanel } from '../components/submissions/SubmissionPanel';
 import { HiddenFrameIcon } from '../hidden-frame/components/HiddenFrameIcon';
 import { useAsyncData } from '../hooks/useAsyncData';
@@ -106,6 +107,15 @@ export function AssignmentDetailPage() {
             )}
           </section>
         ) : null}
+
+        {assignment.quizId && (
+          <RelatedQuizPanel
+            quizId={assignment.quizId}
+            classRecord={classRecord}
+            userProfile={userProfile}
+            viewerMode="student"
+          />
+        )}
 
         <section className="card span-two mission-panel">
           <h2>Required Steps</h2>

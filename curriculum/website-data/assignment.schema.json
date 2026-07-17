@@ -28,6 +28,9 @@
       "lessonId": {
         "type": "string"
       },
+      "quizId": {
+        "type": "string"
+      },
       "title": {
         "type": "string"
       },
