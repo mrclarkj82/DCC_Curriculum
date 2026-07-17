@@ -25,7 +25,7 @@ import {
   subscribeToResponsesForClassItem,
   type ClassItemResponses,
 } from '../services/responseService';
-import { subscribeToQuizAttemptsForClass } from '../services/quizService';
+import { getQuizzes, subscribeToQuizAttemptsForClass } from '../services/quizService';
 import {
   resolveSubmissionTargetForActiveItem,
   subscribeToSubmissionsForClassTarget,
@@ -37,6 +37,7 @@ import type {
   ActiveItemType,
   ClassRecord,
   ProgramArea,
+  Quiz,
   QuizAttempt,
   ResponseCompletionSummary,
   StudentSubmission,
@@ -218,6 +219,38 @@ function activeFormFromClass(classRecord: ClassRecord): ActiveItemFormState {
   };
 }
 
+interface ClassSelectionPanelProps {
+  classRecords: ClassRecord[];
+  label: string;
+  onSelect: (classId: string) => void;
+}
+
+function ClassSelectionPanel({ classRecords, label, onSelect }: ClassSelectionPanelProps) {
+  return (
+    <div className="teacher-class-picker">
+      <p className="muted">Choose a class to view its {label.toLowerCase()}.</p>
+      <div className="teacher-class-picker-grid">
+        {classRecords.map((classRecord) => (
+          <button
+            className="teacher-class-picker-button"
+            type="button"
+            key={classRecord.id}
+            onClick={() => onSelect(classRecord.id)}
+          >
+            <span className="teacher-class-picker-title">
+              <strong>{classRecord.name}</strong>
+              <span>{classRecord.period}</span>
+            </span>
+            <span className="teacher-class-picker-meta">
+              {classRecord.studentIds.length} students
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function TeacherPage() {
   const { classIds, isAdmin, userProfile } = useAuth();
   const [activeTeacherTab, setActiveTeacherTab] = useState<TeacherTab>('overview');
@@ -236,6 +269,9 @@ export function TeacherPage() {
   const [quizAttemptsByClassId, setQuizAttemptsByClassId] = useState<
     Record<string, QuizAttempt[]>
   >({});
+  const [quizzes, setQuizzes] = useState<Quiz[]>([]);
+  const [quizzesLoading, setQuizzesLoading] = useState(true);
+  const [quizzesError, setQuizzesError] = useState<string | null>(null);
   const [activeErrorsByClassId, setActiveErrorsByClassId] = useState<Record<string, string>>({});
   const [responseErrorsByClassId, setResponseErrorsByClassId] = useState<Record<string, string>>(
     {},
@@ -257,6 +293,10 @@ export function TeacherPage() {
   const [expandedSubmissionId, setExpandedSubmissionId] = useState<string | null>(null);
   const [feedbackDrafts, setFeedbackDrafts] = useState<Record<string, string>>({});
   const [reviewSavingKey, setReviewSavingKey] = useState<string | null>(null);
+  const [selectedResponseClassId, setSelectedResponseClassId] = useState<string | null>(null);
+  const [selectedSubmissionClassId, setSelectedSubmissionClassId] = useState<string | null>(null);
+  const [selectedGradeClassId, setSelectedGradeClassId] = useState<string | null>(null);
+  const [selectedGradeQuizId, setSelectedGradeQuizId] = useState<string | null>(null);
 
   useEffect(() => {
     let didCancel = false;
@@ -270,6 +310,30 @@ export function TeacherPage() {
       .catch((error: unknown) => {
         if (!didCancel) {
           setClassError(firestoreErrorMessage(error, 'Unable to load program areas.'));
+        }
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let didCancel = false;
+    setQuizzesLoading(true);
+    setQuizzesError(null);
+
+    getQuizzes()
+      .then((nextQuizzes) => {
+        if (!didCancel) {
+          setQuizzes(nextQuizzes);
+          setQuizzesLoading(false);
+        }
+      })
+      .catch((error: unknown) => {
+        if (!didCancel) {
+          setQuizzesError(firestoreErrorMessage(error, 'Unable to load quizzes.'));
+          setQuizzesLoading(false);
         }
       });
 
@@ -619,6 +683,48 @@ export function TeacherPage() {
     [classRecords],
   );
 
+  const selectedResponseClass = useMemo(
+    () => classRecords.find((classRecord) => classRecord.id === selectedResponseClassId),
+    [classRecords, selectedResponseClassId],
+  );
+
+  const selectedSubmissionClass = useMemo(
+    () => classRecords.find((classRecord) => classRecord.id === selectedSubmissionClassId),
+    [classRecords, selectedSubmissionClassId],
+  );
+
+  const selectedGradeClass = useMemo(
+    () => classRecords.find((classRecord) => classRecord.id === selectedGradeClassId),
+    [classRecords, selectedGradeClassId],
+  );
+
+  const gradeQuizzes = useMemo(
+    () =>
+      selectedGradeClass
+        ? quizzes.filter((quiz) => quiz.programAreaId === selectedGradeClass.activeProgramAreaId)
+        : [],
+    [quizzes, selectedGradeClass],
+  );
+
+  const selectedGradeQuiz = useMemo(
+    () => gradeQuizzes.find((quiz) => quiz.id === selectedGradeQuizId),
+    [gradeQuizzes, selectedGradeQuizId],
+  );
+
+  const selectedGradeAttempts = useMemo(
+    () =>
+      selectedGradeClass && selectedGradeQuiz
+        ? (quizAttemptsByClassId[selectedGradeClass.id] ?? []).filter(
+            (attempt) => attempt.quizId === selectedGradeQuiz.id,
+          )
+        : [],
+    [quizAttemptsByClassId, selectedGradeClass, selectedGradeQuiz],
+  );
+
+  const selectedGradeStudents = selectedGradeClass
+    ? studentsByClassId[selectedGradeClass.id] ?? []
+    : [];
+
   const completionSummariesByClassId = useMemo(
     () =>
       Object.fromEntries(
@@ -944,8 +1050,31 @@ export function TeacherPage() {
           <section className="content-section neon-section">
             <p className="retro-label">Daily Response Completion</p>
             <h2>Bell Ringers And Exit Tickets</h2>
-            <div className="response-completion-stack">
-              {classRecords.map((classRecord) => {
+            {!selectedResponseClass ? (
+              <ClassSelectionPanel
+                classRecords={classRecords}
+                label="daily responses"
+                onSelect={setSelectedResponseClassId}
+              />
+            ) : (
+              <>
+                <div className="teacher-drilldown-heading">
+                  <div>
+                    <p className="retro-label">Selected Class</p>
+                    <h3>
+                      {selectedResponseClass.name} / {selectedResponseClass.period}
+                    </h3>
+                  </div>
+                  <button
+                    className="outline-button"
+                    type="button"
+                    onClick={() => setSelectedResponseClassId(null)}
+                  >
+                    Choose Another Class
+                  </button>
+                </div>
+                <div className="response-completion-stack">
+                  {[selectedResponseClass].map((classRecord) => {
                 const activeItem = activeItemsByClassId[classRecord.id];
                 const responseError = responseErrorsByClassId[classRecord.id];
                 const summaries = completionSummariesByClassId[classRecord.id] ?? [];
@@ -1099,8 +1228,10 @@ export function TeacherPage() {
                     )}
                   </article>
                 );
-              })}
-            </div>
+                  })}
+                </div>
+              </>
+            )}
           </section>
         )}
 
@@ -1108,8 +1239,31 @@ export function TeacherPage() {
           <section className="content-section neon-section">
             <p className="retro-label">Student Submissions</p>
             <h2>Google Drive Evidence Review</h2>
-            <div className="response-completion-stack">
-              {classRecords.map((classRecord) => {
+            {!selectedSubmissionClass ? (
+              <ClassSelectionPanel
+                classRecords={classRecords}
+                label="Google Drive submissions"
+                onSelect={setSelectedSubmissionClassId}
+              />
+            ) : (
+              <>
+                <div className="teacher-drilldown-heading">
+                  <div>
+                    <p className="retro-label">Selected Class</p>
+                    <h3>
+                      {selectedSubmissionClass.name} / {selectedSubmissionClass.period}
+                    </h3>
+                  </div>
+                  <button
+                    className="outline-button"
+                    type="button"
+                    onClick={() => setSelectedSubmissionClassId(null)}
+                  >
+                    Choose Another Class
+                  </button>
+                </div>
+                <div className="response-completion-stack">
+                  {[selectedSubmissionClass].map((classRecord) => {
                 const activeItem = activeItemsByClassId[classRecord.id];
                 const submissionTarget = activeItem
                   ? resolveSubmissionTargetForActiveItem(activeItem)
@@ -1323,8 +1477,10 @@ export function TeacherPage() {
                     )}
                   </article>
                 );
-              })}
-            </div>
+                  })}
+                </div>
+              </>
+            )}
           </section>
         )}
 
@@ -1332,101 +1488,198 @@ export function TeacherPage() {
           <section className="content-section neon-section">
             <p className="retro-label">Grades</p>
             <h2>Quiz Scores</h2>
-            <div className="response-completion-stack">
-              {classRecords.map((classRecord) => {
-                const attempts = quizAttemptsByClassId[classRecord.id] ?? [];
-                const quizError = quizErrorsByClassId[classRecord.id];
-                const submittedStudentCount = new Set(attempts.map((attempt) => attempt.uid)).size;
-                const averagePercentage = attempts.length
+            {!selectedGradeClass ? (
+              <ClassSelectionPanel
+                classRecords={classRecords}
+                label="quiz grades"
+                onSelect={(classId) => {
+                  setSelectedGradeClassId(classId);
+                  setSelectedGradeQuizId(null);
+                }}
+              />
+            ) : !selectedGradeQuiz ? (
+              <>
+                <div className="teacher-drilldown-heading">
+                  <div>
+                    <p className="retro-label">Selected Class</p>
+                    <h3>
+                      {selectedGradeClass.name} / {selectedGradeClass.period}
+                    </h3>
+                  </div>
+                  <button
+                    className="outline-button"
+                    type="button"
+                    onClick={() => {
+                      setSelectedGradeClassId(null);
+                      setSelectedGradeQuizId(null);
+                    }}
+                  >
+                    Choose Another Class
+                  </button>
+                </div>
+                <div className="teacher-class-picker">
+                  <p className="muted">Choose a quiz to view this class's score roster.</p>
+                  {quizzesError && <ErrorState message={quizzesError} />}
+                  {quizzesLoading && <LoadingState label="Loading quizzes..." />}
+                  {!quizzesLoading && !quizzesError && !gradeQuizzes.length && (
+                    <EmptyState
+                      title="No quizzes for this program area"
+                      message="Quiz records will appear here after they are seeded and published."
+                    />
+                  )}
+                  {!quizzesLoading && !quizzesError && !!gradeQuizzes.length && (
+                    <div className="teacher-class-picker-grid">
+                      {gradeQuizzes.map((quiz) => {
+                        const submittedCount = (quizAttemptsByClassId[selectedGradeClass.id] ?? []).filter(
+                          (attempt) => attempt.quizId === quiz.id,
+                        ).length;
+
+                        return (
+                          <button
+                            className="teacher-class-picker-button"
+                            type="button"
+                            key={quiz.id}
+                            onClick={() => setSelectedGradeQuizId(quiz.id)}
+                          >
+                            <span className="teacher-class-picker-title">
+                              <strong>{quiz.title}</strong>
+                              <span>{quiz.quarter}</span>
+                            </span>
+                            <span className="teacher-class-picker-meta">
+                              {submittedCount} submitted / {quiz.questions.length} questions
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              </>
+            ) : (
+              (() => {
+                const attemptsByUid = new Map(
+                  selectedGradeAttempts.map((attempt) => [attempt.uid, attempt]),
+                );
+                const averagePercentage = selectedGradeAttempts.length
                   ? Math.round(
-                      attempts.reduce((total, attempt) => total + attempt.percentage, 0) /
-                        attempts.length,
+                      selectedGradeAttempts.reduce(
+                        (total, attempt) => total + attempt.percentage,
+                        0,
+                      ) / selectedGradeAttempts.length,
                     )
                   : null;
+                const quizError = quizErrorsByClassId[selectedGradeClass.id];
 
                 return (
-                  <article className="card neon-card response-completion-card" key={classRecord.id}>
-                    <div className="section-heading-row">
+                  <>
+                    <div className="teacher-drilldown-heading">
                       <div>
                         <p className="retro-label">
-                          {classRecord.name} / {classRecord.period}
+                          {selectedGradeClass.name} / {selectedGradeClass.period}
                         </p>
-                        <h3>Recorded Quiz Scores</h3>
+                        <h3>{selectedGradeQuiz.title}</h3>
                       </div>
-                      <StatusBadge status={`${attempts.length} scores`} />
+                      <div className="teacher-drilldown-actions">
+                        <button
+                          className="outline-button"
+                          type="button"
+                          onClick={() => setSelectedGradeQuizId(null)}
+                        >
+                          All Quizzes
+                        </button>
+                        <button
+                          className="outline-button"
+                          type="button"
+                          onClick={() => {
+                            setSelectedGradeClassId(null);
+                            setSelectedGradeQuizId(null);
+                          }}
+                        >
+                          Choose Another Class
+                        </button>
+                      </div>
                     </div>
+                    <article className="card neon-card response-completion-card">
+                      <div className="section-heading-row">
+                        <div>
+                          <p className="retro-label">Quiz Score Roster</p>
+                          <h3>{selectedGradeQuiz.title}</h3>
+                        </div>
+                        <StatusBadge
+                          status={`${selectedGradeAttempts.length}/${selectedGradeClass.studentIds.length} submitted`}
+                        />
+                      </div>
 
-                    <dl className="detail-list response-summary-list">
-                      <div>
-                        <dt>Active Item</dt>
-                        <dd>
-                          {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
-                          {classRecord.activeItemId}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>Students With Scores</dt>
-                        <dd>{`${submittedStudentCount}/${classRecord.studentIds.length}`}</dd>
-                      </div>
-                      <div>
-                        <dt>Average</dt>
-                        <dd>
-                          {averagePercentage === null ? 'Not enough scores' : `${averagePercentage}%`}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>Answer Visibility</dt>
-                        <dd>Scores only</dd>
-                      </div>
-                    </dl>
+                      <dl className="detail-list response-summary-list">
+                        <div>
+                          <dt>Quarter</dt>
+                          <dd>{selectedGradeQuiz.quarter}</dd>
+                        </div>
+                        <div>
+                          <dt>Questions</dt>
+                          <dd>{selectedGradeQuiz.questions.length}</dd>
+                        </div>
+                        <div>
+                          <dt>Average</dt>
+                          <dd>
+                            {averagePercentage === null ? 'Not enough scores' : `${averagePercentage}%`}
+                          </dd>
+                        </div>
+                        <div>
+                          <dt>Answer Visibility</dt>
+                          <dd>Scores only</dd>
+                        </div>
+                      </dl>
 
-                    {quizError && <ErrorState message={quizError} />}
+                      {quizError && <ErrorState message={quizError} />}
 
-                    {!classRecord.studentIds.length ? (
-                      <p className="muted">No students are assigned to this class yet.</p>
-                    ) : !attempts.length ? (
-                      <p className="muted">No quiz scores have been recorded for this class yet.</p>
-                    ) : (
-                      <div className="table-scroll">
-                        <table className="management-table response-table grade-table">
-                          <thead>
-                            <tr>
-                              <th scope="col">Student</th>
-                              <th scope="col">Quiz</th>
-                              <th scope="col">Score</th>
-                              <th scope="col">Status</th>
-                              <th scope="col">Submitted</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {attempts.map((attempt) => {
-                              return (
-                                <tr key={attempt.id}>
-                                  <td>
-                                    <strong>{attempt.studentName || attempt.uid}</strong>
-                                    {attempt.studentEmail && (
-                                      <p className="meta-line">
-                                        {attempt.studentEmail}
-                                      </p>
-                                    )}
-                                  </td>
-                                  <td>{attempt.quizTitle || attempt.quizId}</td>
-                                  <td>{formatQuizScore(attempt)}</td>
-                                  <td>
-                                    <StatusBadge status="submitted" />
-                                  </td>
-                                  <td>{formatTimestamp(attempt.submittedAt)}</td>
-                                </tr>
-                              );
-                            })}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </article>
+                      {!selectedGradeClass.studentIds.length ? (
+                        <p className="muted">No students are assigned to this class yet.</p>
+                      ) : (
+                        <div className="table-scroll">
+                          <table className="management-table response-table grade-table">
+                            <thead>
+                              <tr>
+                                <th scope="col">Student</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Submitted</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {selectedGradeClass.studentIds.map((uid) => {
+                                const student = selectedGradeStudents.find(
+                                  (nextStudent) => nextStudent.uid === uid,
+                                );
+                                const attempt = attemptsByUid.get(uid);
+
+                                return (
+                                  <tr key={`${selectedGradeQuiz.id}-${uid}`}>
+                                    <td>
+                                      <strong>{student?.displayName || attempt?.studentName || uid}</strong>
+                                      {(student?.email || attempt?.studentEmail) && (
+                                        <p className="meta-line">
+                                          {student?.email || attempt?.studentEmail}
+                                        </p>
+                                      )}
+                                    </td>
+                                    <td>{formatQuizScore(attempt)}</td>
+                                    <td>
+                                      <StatusBadge status={attempt ? 'submitted' : 'missing'} />
+                                    </td>
+                                    <td>{formatTimestamp(attempt?.submittedAt)}</td>
+                                  </tr>
+                                );
+                              })}
+                            </tbody>
+                          </table>
+                        </div>
+                      )}
+                    </article>
+                  </>
                 );
-              })}
-            </div>
+              })()
+            )}
           </section>
         )}
 
