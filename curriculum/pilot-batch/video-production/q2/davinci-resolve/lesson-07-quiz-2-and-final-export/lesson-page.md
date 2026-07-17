@@ -36,8 +36,8 @@ What needs to be true before a project is ready to export for someone else to wa
 ## Teacher Slides Placeholder
 
 - Slide deck title: Lesson 07 - Quiz 2 and Final Export
-- Slide status: not-created
-- Slide URL: to be added after deck creation
+- Slide status: created
+- Slide URL: https://docs.google.com/presentation/d/18bJDzH_0arbeMOq3Yq0L7QZOAb0HsA8B/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
 ## Assignment Summary
 
