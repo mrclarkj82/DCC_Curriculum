@@ -431,6 +431,7 @@ export async function getSubmissionsForClassTarget(
       where('classId', '==', classId),
       where('targetType', '==', targetType),
       where('targetId', '==', targetId),
+      limit(500),
     ),
   );
 
@@ -452,6 +453,7 @@ export function subscribeToSubmissionsForClassTarget(
       where('classId', '==', classId),
       where('targetType', '==', targetType),
       where('targetId', '==', targetId),
+      limit(500),
     ),
     (snapshot) => {
       onSubmissions(

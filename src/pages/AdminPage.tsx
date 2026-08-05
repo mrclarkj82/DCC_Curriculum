@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../auth/useAuth';
 import { ClassJoinCodePanel } from '../components/classes/ClassJoinCodePanel';
@@ -18,9 +18,9 @@ import {
   assignStudentToClass,
   assignTeacherToClass,
   createClass,
+  getAllClasses,
   removeStudentFromClass,
   removeTeacherFromClass,
-  subscribeToClasses,
   updateClassActiveItem,
   updateClassBasicInfo,
 } from '../services/classManagementService';
@@ -31,7 +31,7 @@ import {
   getSubmissionSystemSummary,
   type SubmissionSystemSummary,
 } from '../services/submissionService';
-import { subscribeToUsers, updateUserRole } from '../services/userManagementService';
+import { getAllUsers, updateUserRole } from '../services/userManagementService';
 import type {
   ActiveItemType,
   ClassMembershipType,
@@ -150,35 +150,26 @@ export function AdminPage() {
   const [savingKey, setSavingKey] = useState<string | null>(null);
   const [userListView, setUserListView] = useState<UserListView>('staff');
 
-  useEffect(() => {
+  const refreshUsersAndClasses = useCallback(async () => {
     setUsersLoading(true);
+    setClassesLoading(true);
+    setLoadError(null);
 
-    return subscribeToUsers(
-      (nextUsers) => {
-        setUsers(nextUsers);
-        setUsersLoading(false);
-      },
-      (error) => {
-        setLoadError(firestoreErrorMessage(error, 'Unable to load users.'));
-        setUsersLoading(false);
-      },
-    );
+    try {
+      const [nextUsers, nextClasses] = await Promise.all([getAllUsers(), getAllClasses()]);
+      setUsers(nextUsers);
+      setClasses(nextClasses);
+    } catch (error) {
+      setLoadError(firestoreErrorMessage(error, 'Unable to load users and classes.'));
+    } finally {
+      setUsersLoading(false);
+      setClassesLoading(false);
+    }
   }, []);
 
   useEffect(() => {
-    setClassesLoading(true);
-
-    return subscribeToClasses(
-      (nextClasses) => {
-        setClasses(nextClasses);
-        setClassesLoading(false);
-      },
-      (error) => {
-        setLoadError(firestoreErrorMessage(error, 'Unable to load classes.'));
-        setClassesLoading(false);
-      },
-    );
-  }, []);
+    void refreshUsersAndClasses();
+  }, [refreshUsersAndClasses]);
 
   useEffect(() => {
     let didCancel = false;
@@ -394,6 +385,7 @@ export function AdminPage() {
 
     try {
       await updateUserRole(targetUser.uid, role);
+      await refreshUsersAndClasses();
       setMessage(`Updated ${targetUser.displayName || targetUser.email} to ${role}.`);
     } catch (error) {
       setError(firestoreErrorMessage(error, 'Unable to update role.'));
@@ -433,6 +425,7 @@ export function AdminPage() {
         await removeTeacherFromClass(targetUser.uid, classId);
       }
 
+      await refreshUsersAndClasses();
       setMessage(
         `${action === 'assign' ? 'Assigned' : 'Removed'} ${
           targetUser.displayName || targetUser.email
@@ -462,6 +455,7 @@ export function AdminPage() {
 
     try {
       await updateClassBasicInfo(classRecord.id, { name, period });
+      await refreshUsersAndClasses();
       setClassEdits((current) => {
         const next = { ...current };
         delete next[classRecord.id];
@@ -510,6 +504,7 @@ export function AdminPage() {
         activeItemType: 'lesson',
         activeItemId: 'ue-q1-l01',
       });
+      await refreshUsersAndClasses();
       setCreateClassForm(defaultCreateClassForm);
       setMessage(`Created class ${classId}.`);
     } catch (error) {
@@ -546,6 +541,7 @@ export function AdminPage() {
         type: validation.item.type,
         programAreaId: validation.item.programAreaId,
       });
+      await refreshUsersAndClasses();
       setActiveForm((current) => ({
         ...current,
         activeItemId: validation.item?.id ?? current.activeItemId,
@@ -618,6 +614,14 @@ export function AdminPage() {
             <Link className="secondary-button" to="/teacher/schedule">
               Open Schedule View
             </Link>
+            <button
+              className="outline-button"
+              type="button"
+              onClick={() => void refreshUsersAndClasses()}
+              disabled={usersLoading || classesLoading}
+            >
+              Refresh Roster Data
+            </button>
           </div>
         </section>
 

@@ -8,12 +8,15 @@ import type {
   MediaProject,
   Quiz,
 } from '../types';
-import { getAssignmentById, getAssignments } from './assignmentService';
-import { getBroadcastUpdateById, getBroadcastUpdates } from './broadcastUpdateService';
+import { getAssignmentById, getAssignmentsByProgramArea } from './assignmentService';
+import {
+  getBroadcastUpdateById,
+  getBroadcastUpdatesByProgramArea,
+} from './broadcastUpdateService';
 import { getLessonById, getLessonsByProgramArea } from './lessonService';
 import { getMediaProjectById, getMediaProjectsByProgramArea } from './mediaProjectService';
 import { getProgramAreaById } from './programAreaService';
-import { getQuizById, getQuizzes } from './quizService';
+import { getQuizById, getQuizzesByProgramArea } from './quizService';
 
 export const supportedActiveItemTypes: ActiveItemType[] = [
   'lesson',
@@ -142,12 +145,8 @@ export async function getActiveItemOptions(
   }
 
   if (activeItemType === 'assignment') {
-    const assignments = await getAssignments();
-
     return optionSort(
-      assignments
-        .filter((assignment) => assignment.programAreaId === activeProgramAreaId)
-        .map(optionFromRecord),
+      (await getAssignmentsByProgramArea(activeProgramAreaId)).map(optionFromRecord),
     );
   }
 
@@ -158,20 +157,14 @@ export async function getActiveItemOptions(
   }
 
   if (activeItemType === 'broadcastUpdate') {
-    const updates = await getBroadcastUpdates();
-
     return optionSort(
-      updates
-        .filter((update) => update.programAreaId === activeProgramAreaId)
-        .map(optionFromRecord),
+      (await getBroadcastUpdatesByProgramArea(activeProgramAreaId)).map(optionFromRecord),
     );
   }
 
   if (activeItemType === 'quiz') {
-    const quizzes = await getQuizzes();
-
     return optionSort(
-      quizzes.filter((quiz) => quiz.programAreaId === activeProgramAreaId).map(optionFromRecord),
+      (await getQuizzesByProgramArea(activeProgramAreaId)).map(optionFromRecord),
     );
   }
 

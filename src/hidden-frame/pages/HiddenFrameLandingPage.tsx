@@ -41,6 +41,7 @@ export function HiddenFrameLandingPage() {
             className="hidden-frame-hero__art"
             src={hiddenFramePhase0Assets.ui.titleCard}
             alt="The Hidden Frame title art with the broken frame symbol"
+            loading="lazy"
           />
         </header>
 

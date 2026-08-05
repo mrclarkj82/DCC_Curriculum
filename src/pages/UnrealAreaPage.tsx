@@ -5,10 +5,10 @@ import { LessonCard } from '../components/LessonCard';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { useAsyncData } from '../hooks/useAsyncData';
-import { getAssignments } from '../services/assignmentService';
+import { getAssignmentsByProgramArea } from '../services/assignmentService';
 import { getLessonsByProgramArea } from '../services/lessonService';
 import { getProgramAreaById } from '../services/programAreaService';
-import { getQuizzes } from '../services/quizService';
+import { getQuizzesByProgramArea } from '../services/quizService';
 
 export function UnrealAreaPage() {
   const { data, isLoading, error } = useAsyncData(
@@ -16,8 +16,8 @@ export function UnrealAreaPage() {
       const [area, lessons, assignments, quizzes] = await Promise.all([
         getProgramAreaById('unreal-engine'),
         getLessonsByProgramArea('unreal-engine'),
-        getAssignments(),
-        getQuizzes(),
+        getAssignmentsByProgramArea('unreal-engine'),
+        getQuizzesByProgramArea('unreal-engine'),
       ]);
 
       return { area, lessons, assignments, quizzes };

@@ -16,23 +16,23 @@ import {
   type ActiveItemOption,
 } from '../services/activeItemService';
 import { getClassesForUser } from '../services/classService';
-import { subscribeToClasses, updateClassActiveItem } from '../services/classManagementService';
+import { getAllClasses, updateClassActiveItem } from '../services/classManagementService';
 import { firestoreErrorMessage } from '../services/firestoreService';
 import { getProgramAreas } from '../services/programAreaService';
 import {
   getBellRingerPrompt,
+  getClassItemResponses,
   getExitTicketPrompt,
-  subscribeToResponsesForClassItem,
   type ClassItemResponses,
 } from '../services/responseService';
 import {
   getQuizAttemptDetail,
-  getQuizzes,
-  subscribeToQuizAttemptsForClass,
+  getQuizAttemptsForClassQuiz,
+  getQuizzesByProgramArea,
 } from '../services/quizService';
 import {
+  getSubmissionsForClassTarget,
   resolveSubmissionTargetForActiveItem,
-  subscribeToSubmissionsForClassTarget,
   updateSubmissionReviewStatus,
 } from '../services/submissionService';
 import { getUsersByIds } from '../services/userManagementService';
@@ -312,6 +312,26 @@ export function TeacherPage() {
   const [gradeAttemptDetailErrors, setGradeAttemptDetailErrors] = useState<
     Record<string, string>
   >({});
+  const [dataRefreshVersion, setDataRefreshVersion] = useState(0);
+
+  const selectedDataClassIds = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          [selectedResponseClassId, selectedSubmissionClassId, selectedGradeClassId].filter(
+            (classId): classId is string => Boolean(classId),
+          ),
+        ),
+      ),
+    [selectedGradeClassId, selectedResponseClassId, selectedSubmissionClassId],
+  );
+
+  const selectedGradeProgramAreaId = useMemo(
+    () =>
+      classRecords.find((classRecord) => classRecord.id === selectedGradeClassId)
+        ?.activeProgramAreaId ?? null,
+    [classRecords, selectedGradeClassId],
+  );
 
   useEffect(() => {
     let didCancel = false;
@@ -338,7 +358,13 @@ export function TeacherPage() {
     setQuizzesLoading(true);
     setQuizzesError(null);
 
-    getQuizzes()
+    if (activeTeacherTab !== 'grades' || !selectedGradeProgramAreaId) {
+      setQuizzes([]);
+      setQuizzesLoading(false);
+      return undefined;
+    }
+
+    getQuizzesByProgramArea(selectedGradeProgramAreaId)
       .then((nextQuizzes) => {
         if (!didCancel) {
           setQuizzes(nextQuizzes);
@@ -355,7 +381,7 @@ export function TeacherPage() {
     return () => {
       didCancel = true;
     };
-  }, []);
+  }, [activeTeacherTab, dataRefreshVersion, selectedGradeProgramAreaId]);
 
   useEffect(() => {
     if (!userProfile) {
@@ -364,21 +390,29 @@ export function TeacherPage() {
       return undefined;
     }
 
+    let didCancel = false;
     setIsLoadingClasses(true);
     setClassError(null);
 
     if (isAdmin) {
-      return subscribeToClasses(
-        (nextClasses) => {
-          setClassRecords(nextClasses);
-          setIsLoadingClasses(false);
-        },
-        (error) => {
-          setClassError(firestoreErrorMessage(error, 'Unable to load classes.'));
-          setClassRecords([]);
-          setIsLoadingClasses(false);
-        },
-      );
+      getAllClasses()
+        .then((nextClasses) => {
+          if (!didCancel) {
+            setClassRecords(nextClasses);
+            setIsLoadingClasses(false);
+          }
+        })
+        .catch((error: unknown) => {
+          if (!didCancel) {
+            setClassError(firestoreErrorMessage(error, 'Unable to load classes.'));
+            setClassRecords([]);
+            setIsLoadingClasses(false);
+          }
+        });
+
+      return () => {
+        didCancel = true;
+      };
     }
 
     if (!classIds.length) {
@@ -386,8 +420,6 @@ export function TeacherPage() {
       setIsLoadingClasses(false);
       return undefined;
     }
-
-    let didCancel = false;
 
     getClassesForUser(classIds)
       .then((nextClasses) => {
@@ -409,7 +441,7 @@ export function TeacherPage() {
     return () => {
       didCancel = true;
     };
-  }, [classIds, isAdmin, userProfile]);
+  }, [classIds, dataRefreshVersion, isAdmin, userProfile]);
 
   useEffect(() => {
     if (activeForm.classIds.length || !classRecords.length) {
@@ -469,7 +501,7 @@ export function TeacherPage() {
   }, [classRecords]);
 
   useEffect(() => {
-    if (!classRecords.length) {
+    if (!selectedDataClassIds.length) {
       setStudentsByClassId({});
       return;
     }
@@ -477,7 +509,13 @@ export function TeacherPage() {
     let didCancel = false;
 
     Promise.all(
-      classRecords.map(async (classRecord) => {
+      selectedDataClassIds.map(async (classId) => {
+        const classRecord = classRecords.find((record) => record.id === classId);
+
+        if (!classRecord) {
+          return [classId, []] as const;
+        }
+
         try {
           const students = await getUsersByIds(classRecord.studentIds);
           return [classRecord.id, students] as const;
@@ -494,142 +532,131 @@ export function TeacherPage() {
     return () => {
       didCancel = true;
     };
-  }, [classRecords]);
+  }, [classRecords, selectedDataClassIds]);
 
   useEffect(() => {
-    if (!classRecords.length) {
+    const classId = selectedResponseClassId;
+    const classRecord = classRecords.find((record) => record.id === classId);
+    const activeItem = classRecord ? activeItemsByClassId[classRecord.id] : null;
+
+    if (!classId || !classRecord || !activeItem) {
       setResponsesByClassId({});
       setResponseErrorsByClassId({});
       return undefined;
     }
 
-    const unsubscribes = classRecords.map((classRecord) =>
-      subscribeToResponsesForClassItem(
-        classRecord.id,
-        classRecord.activeItemId,
-        (responses) => {
-          setResponsesByClassId((current) => ({
-            ...current,
-            [classRecord.id]: responses,
-          }));
-          setResponseErrorsByClassId((current) => {
-            const next = { ...current };
-            delete next[classRecord.id];
-            return next;
-          });
-        },
-        (error) => {
-          setResponseErrorsByClassId((current) => ({
-            ...current,
-            [classRecord.id]: firestoreErrorMessage(
-              error,
-              'Unable to load response completion data.',
-            ),
-          }));
-        },
-      ),
-    );
+    let didCancel = false;
+
+    void getClassItemResponses(classId, activeItem.id)
+      .then((responses) => {
+        if (didCancel) {
+          return;
+        }
+
+        setResponsesByClassId({ [classId]: responses });
+        setResponseErrorsByClassId({});
+      })
+      .catch((error: unknown) => {
+        if (didCancel) {
+          return;
+        }
+
+        setResponseErrorsByClassId({
+          [classId]: firestoreErrorMessage(error, 'Unable to load response completion data.'),
+        });
+      });
 
     return () => {
-      unsubscribes.forEach((unsubscribe) => unsubscribe());
+      didCancel = true;
     };
-  }, [classRecords]);
+  }, [activeItemsByClassId, classRecords, dataRefreshVersion, selectedResponseClassId]);
 
   useEffect(() => {
-    if (!classRecords.length) {
+    const classId = selectedSubmissionClassId;
+    const classRecord = classRecords.find((record) => record.id === classId);
+    const activeItem = classRecord ? activeItemsByClassId[classRecord.id] : null;
+    const submissionTarget = activeItem ? resolveSubmissionTargetForActiveItem(activeItem) : null;
+
+    if (!classId || !classRecord || !submissionTarget) {
       setSubmissionsByClassId({});
       setSubmissionErrorsByClassId({});
       return undefined;
     }
 
-    const unsubscribes = classRecords
-      .map((classRecord) => {
-        const activeItem = activeItemsByClassId[classRecord.id];
-        const submissionTarget = activeItem ? resolveSubmissionTargetForActiveItem(activeItem) : null;
+    let didCancel = false;
 
-        if (!submissionTarget) {
-          setSubmissionsByClassId((current) => ({
-            ...current,
-            [classRecord.id]: [],
-          }));
-          return null;
+    void getSubmissionsForClassTarget(
+      classId,
+      submissionTarget.targetType,
+      submissionTarget.targetId,
+    )
+      .then((submissions) => {
+        if (didCancel) {
+          return;
         }
 
-        return subscribeToSubmissionsForClassTarget(
-          classRecord.id,
-          submissionTarget.targetType,
-          submissionTarget.targetId,
-          (submissions) => {
-            setSubmissionsByClassId((current) => ({
-              ...current,
-              [classRecord.id]: submissions,
-            }));
-            setFeedbackDrafts((current) => {
-              const next = { ...current };
-              submissions.forEach((submission) => {
-                if (next[submission.id] === undefined) {
-                  next[submission.id] = submission.teacherFeedback;
-                }
-              });
-              return next;
-            });
-            setSubmissionErrorsByClassId((current) => {
-              const next = { ...current };
-              delete next[classRecord.id];
-              return next;
-            });
-          },
-          (error) => {
-            setSubmissionErrorsByClassId((current) => ({
-              ...current,
-              [classRecord.id]: firestoreErrorMessage(error, 'Unable to load submissions.'),
-            }));
-          },
-        );
+        setSubmissionsByClassId({ [classId]: submissions });
+        setFeedbackDrafts((current) => {
+          const next = { ...current };
+          submissions.forEach((submission) => {
+            if (next[submission.id] === undefined) {
+              next[submission.id] = submission.teacherFeedback;
+            }
+          });
+          return next;
+        });
+        setSubmissionErrorsByClassId({});
       })
-      .filter((unsubscribe): unsubscribe is () => void => Boolean(unsubscribe));
+      .catch((error: unknown) => {
+        if (didCancel) {
+          return;
+        }
+
+        setSubmissionErrorsByClassId({
+          [classId]: firestoreErrorMessage(error, 'Unable to load submissions.'),
+        });
+      });
 
     return () => {
-      unsubscribes.forEach((unsubscribe) => unsubscribe());
+      didCancel = true;
     };
-  }, [activeItemsByClassId, classRecords]);
+  }, [activeItemsByClassId, classRecords, dataRefreshVersion, selectedSubmissionClassId]);
 
   useEffect(() => {
-    if (!classRecords.length) {
+    const classId = selectedGradeClassId;
+    const quizId = selectedGradeQuizId;
+
+    if (!classId || !quizId) {
       setQuizAttemptsByClassId({});
       setQuizErrorsByClassId({});
       return undefined;
     }
 
-    const unsubscribes = classRecords
-      .map((classRecord) => {
-        return subscribeToQuizAttemptsForClass(
-          classRecord.id,
-          (attempts) => {
-            setQuizAttemptsByClassId((current) => ({
-              ...current,
-              [classRecord.id]: attempts,
-            }));
-            setQuizErrorsByClassId((current) => {
-              const next = { ...current };
-              delete next[classRecord.id];
-              return next;
-            });
-          },
-          (error) => {
-            setQuizErrorsByClassId((current) => ({
-              ...current,
-              [classRecord.id]: firestoreErrorMessage(error, 'Unable to load quiz grades.'),
-            }));
-          },
-        );
+    let didCancel = false;
+
+    void getQuizAttemptsForClassQuiz(classId, quizId)
+      .then((attempts) => {
+        if (didCancel) {
+          return;
+        }
+
+        setQuizAttemptsByClassId({ [classId]: attempts });
+        setQuizErrorsByClassId({});
       })
-      .filter((unsubscribe): unsubscribe is () => void => Boolean(unsubscribe));
+      .catch((error: unknown) => {
+        if (didCancel) {
+          return;
+        }
+
+        setQuizErrorsByClassId({
+          [classId]: firestoreErrorMessage(error, 'Unable to load quiz grades.'),
+        });
+      });
 
     return () => {
-      unsubscribes.forEach((unsubscribe) => unsubscribe());
+      didCancel = true;
     };
-  }, [classRecords]);
+  }, [dataRefreshVersion, selectedGradeClassId, selectedGradeQuizId]);
 
   useEffect(() => {
     if (!activeForm.activeProgramAreaId || activeForm.activeItemType === 'portfolioCheckpoint') {
@@ -1008,6 +1035,14 @@ export function TeacherPage() {
                 <Link className="secondary-button" to="/teacher/schedule">
                   Preview Curriculum Schedule
                 </Link>
+                <button
+                  className="outline-button"
+                  type="button"
+                  onClick={() => setDataRefreshVersion((current) => current + 1)}
+                  disabled={isLoadingClasses}
+                >
+                  Refresh Current Data
+                </button>
               </div>
             </section>
 
@@ -1579,10 +1614,6 @@ export function TeacherPage() {
                   {!quizzesLoading && !quizzesError && !!gradeQuizzes.length && (
                     <div className="teacher-class-picker-grid">
                       {gradeQuizzes.map((quiz) => {
-                        const submittedCount = (quizAttemptsByClassId[selectedGradeClass.id] ?? []).filter(
-                          (attempt) => attempt.quizId === quiz.id,
-                        ).length;
-
                         return (
                           <button
                             className="teacher-class-picker-button"
@@ -1595,7 +1626,7 @@ export function TeacherPage() {
                               <span>{quiz.quarter}</span>
                             </span>
                             <span className="teacher-class-picker-meta">
-                              {submittedCount} submitted / {quiz.questions.length} questions
+                              {quiz.questions.length} questions / open to view scores
                             </span>
                           </button>
                         );

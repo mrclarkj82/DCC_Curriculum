@@ -1,4 +1,4 @@
-import { where } from 'firebase/firestore';
+import { limit, where } from 'firebase/firestore';
 import type { Lesson } from '../types';
 import { getCollectionRecords, getDocumentRecord } from './firestoreService';
 
@@ -12,12 +12,15 @@ const sortLessons = (lessons: Lesson[]) =>
   });
 
 export async function getLessons(): Promise<Lesson[]> {
-  return sortLessons(await getCollectionRecords<Lesson>('lessons'));
+  return sortLessons(await getCollectionRecords<Lesson>('lessons', [limit(250)]));
 }
 
 export async function getLessonsByProgramArea(programAreaId: string): Promise<Lesson[]> {
   return sortLessons(
-    await getCollectionRecords<Lesson>('lessons', [where('programAreaId', '==', programAreaId)]),
+    await getCollectionRecords<Lesson>('lessons', [
+      where('programAreaId', '==', programAreaId),
+      limit(250),
+    ]),
   );
 }
 

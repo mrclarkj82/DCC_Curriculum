@@ -6,6 +6,17 @@ initializeApp();
 
 const studentDomain = 'student.doralacademynv.org';
 const allowedCodePattern = /^[A-Z0-9]{6}$/;
+const maxQuizAnswers = 100;
+const maxAnswerParts = 20;
+const maxAnswerLength = 4000;
+const maxIdentifierLength = 200;
+const callableOptions = {
+  region: 'us-central1' as const,
+  invoker: 'public' as const,
+  maxInstances: 5,
+  timeoutSeconds: 30,
+  enforceAppCheck: process.env.ENFORCE_APPCHECK === 'true',
+};
 const dccAppRef = () => getFirestore().collection('apps').doc('dcc');
 
 const normalizeCode = (value: unknown): string =>
@@ -38,6 +49,33 @@ interface QuizAnswerKeyItem {
   questionId?: unknown;
   correctAnswer?: unknown;
 }
+
+const isAnswerValue = (value: unknown): value is AnswerValue => {
+  if (typeof value === 'string') {
+    return value.length <= maxAnswerLength;
+  }
+
+  return (
+    Array.isArray(value) &&
+    value.length <= maxAnswerParts &&
+    value.every((part) => typeof part === 'string' && part.length <= maxAnswerLength)
+  );
+};
+
+const isQuizAttemptAnswer = (value: unknown): value is QuizAttemptAnswerInput => {
+  if (!value || typeof value !== 'object') {
+    return false;
+  }
+
+  const answer = value as Record<string, unknown>;
+
+  return (
+    typeof answer.questionId === 'string' &&
+    answer.questionId.trim().length > 0 &&
+    answer.questionId.length <= maxIdentifierLength &&
+    isAnswerValue(answer.selectedAnswer)
+  );
+};
 
 const normalizeAnswerPart = (value: unknown): string =>
   String(value ?? '')
@@ -81,7 +119,7 @@ const quizAttemptFromData = (id: string, data: Record<string, unknown>) => ({
 });
 
 export const joinClassWithCode = onCall(
-  { region: 'us-central1', invoker: 'public' },
+  callableOptions,
   async (request) => {
     if (!request.auth) {
       throw new HttpsError('unauthenticated', 'Please sign in before joining a class.');
@@ -199,7 +237,7 @@ export const joinClassWithCode = onCall(
 );
 
 export const submitQuizAttempt = onCall(
-  { region: 'us-central1', invoker: 'public' },
+  callableOptions,
   async (request) => {
     if (!request.auth) {
       throw new HttpsError('unauthenticated', 'Please sign in before submitting a quiz.');
@@ -210,13 +248,26 @@ export const submitQuizAttempt = onCall(
     const email = tokenString(request.auth.token.email);
     const classId = tokenString(request.data?.classId).trim();
     const quizId = tokenString(request.data?.quizId).trim();
-    const answers = Array.isArray(request.data?.answers)
-      ? (request.data.answers as QuizAttemptAnswerInput[])
-      : [];
+    const rawAnswers = request.data?.answers;
 
-    if (!classId || !quizId) {
+    if (
+      !classId ||
+      !quizId ||
+      classId.length > maxIdentifierLength ||
+      quizId.length > maxIdentifierLength
+    ) {
       throw new HttpsError('invalid-argument', 'Class ID and quiz ID are required.');
     }
+
+    if (
+      !Array.isArray(rawAnswers) ||
+      rawAnswers.length > maxQuizAnswers ||
+      !rawAnswers.every(isQuizAttemptAnswer)
+    ) {
+      throw new HttpsError('invalid-argument', 'Quiz answers are invalid or too large.');
+    }
+
+    const answers = rawAnswers;
 
     const db = getFirestore();
     const appRef = dccAppRef();

@@ -2,6 +2,7 @@ import {
   collection,
   doc,
   getDocs,
+  limit,
   onSnapshot,
   query,
   where,
@@ -35,7 +36,14 @@ const submitQuizAttemptCallable = httpsCallable<
 >(cloudFunctions, 'submitQuizAttempt');
 
 export async function getQuizzes(): Promise<Quiz[]> {
-  return getCollectionRecords<Quiz>('quizzes');
+  return getCollectionRecords<Quiz>('quizzes', [limit(100)]);
+}
+
+export async function getQuizzesByProgramArea(programAreaId: string): Promise<Quiz[]> {
+  return getCollectionRecords<Quiz>('quizzes', [
+    where('programAreaId', '==', programAreaId),
+    limit(100),
+  ]);
 }
 
 export async function getQuizById(quizId: string): Promise<Quiz | null> {
@@ -143,6 +151,7 @@ export async function getQuizAttemptsForClassQuiz(
       collection(db, dccCollectionPath('quizAttempts')),
       where('classId', '==', classId),
       where('quizId', '==', quizId),
+      limit(500),
     ),
   );
 
@@ -162,6 +171,7 @@ export function subscribeToQuizAttemptsForClassQuiz(
       collection(db, dccCollectionPath('quizAttempts')),
       where('classId', '==', classId),
       where('quizId', '==', quizId),
+      limit(500),
     ),
     (snapshot) => {
       onAttempts(
@@ -180,7 +190,11 @@ export function subscribeToQuizAttemptsForClass(
   onError: (error: Error) => void,
 ): Unsubscribe {
   return onSnapshot(
-    query(collection(db, dccCollectionPath('quizAttempts')), where('classId', '==', classId)),
+    query(
+      collection(db, dccCollectionPath('quizAttempts')),
+      where('classId', '==', classId),
+      limit(500),
+    ),
     (snapshot) => {
       onAttempts(
         snapshot.docs.map((documentSnapshot) =>

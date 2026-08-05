@@ -4,6 +4,7 @@ import {
   getCountFromServer,
   getDoc,
   getDocs,
+  limit,
   onSnapshot,
   query,
   serverTimestamp,
@@ -236,12 +237,25 @@ async function getResponsesForClassItem<T extends BellRingerResponse | ExitTicke
       collection(db, dccCollectionPath(responseCollections[kind])),
       where('classId', '==', classId),
       where('activeItemId', '==', activeItemId),
+      limit(500),
     ),
   );
 
   return snapshot.docs.map((documentSnapshot) =>
     responseFromData<T>(documentSnapshot.id, kind, documentSnapshot.data()),
   );
+}
+
+export async function getClassItemResponses(
+  classId: string,
+  activeItemId: string,
+): Promise<ClassItemResponses> {
+  const [bellRingerResponses, exitTicketResponses] = await Promise.all([
+    getResponsesForClassItem<BellRingerResponse>('bellRinger', classId, activeItemId),
+    getResponsesForClassItem<ExitTicketResponse>('exitTicket', classId, activeItemId),
+  ]);
+
+  return { bellRingerResponses, exitTicketResponses };
 }
 
 export function subscribeToResponsesForClassItem(
@@ -260,6 +274,7 @@ export function subscribeToResponsesForClassItem(
       collection(db, dccCollectionPath(responseCollections.bellRinger)),
       where('classId', '==', classId),
       where('activeItemId', '==', activeItemId),
+      limit(500),
     ),
     (snapshot) => {
       bellRingerResponses = snapshot.docs.map((documentSnapshot) =>
@@ -279,6 +294,7 @@ export function subscribeToResponsesForClassItem(
       collection(db, dccCollectionPath(responseCollections.exitTicket)),
       where('classId', '==', classId),
       where('activeItemId', '==', activeItemId),
+      limit(500),
     ),
     (snapshot) => {
       exitTicketResponses = snapshot.docs.map((documentSnapshot) =>

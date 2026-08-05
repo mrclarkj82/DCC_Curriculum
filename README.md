@@ -57,12 +57,15 @@ VITE_FIREBASE_PROJECT_ID=
 VITE_FIREBASE_STORAGE_BUCKET=
 VITE_FIREBASE_MESSAGING_SENDER_ID=
 VITE_FIREBASE_APP_ID=
+VITE_FIREBASE_APPCHECK_SITE_KEY=
 VITE_ALLOWED_EMAIL_DOMAINS=doralacademynv.org,student.doralacademynv.org
 VITE_ALLOWED_EMAILS=
 VITE_FIRESTORE_NAMESPACE=apps/dcc
 ```
 
 `VITE_ALLOWED_EMAILS` is for specific trusted teacher/admin bootstrap accounts that are not on the school domain. The same account must also be present in `apps/dcc/config/access.allowedAdminEmails` for Firestore rules to allow the profile. Do not commit `.env.local` or real Firebase credentials.
+
+For production abuse protection, register the DCC web app with Firebase App Check using reCAPTCHA Enterprise, put the resulting site key in the uncommitted `VITE_FIREBASE_APPCHECK_SITE_KEY` value, and set `ENFORCE_APPCHECK=true` in the Functions environment before enforcing App Check for callable requests. Keep enforcement disabled until the production domain is registered and verified.
 
 ## Firebase Setup
 
@@ -80,6 +83,10 @@ For Firebase setup:
 8. If a trusted bootstrap admin uses a non-school email, add it to `VITE_ALLOWED_EMAILS` and to `apps/dcc/config/access.allowedAdminEmails`.
 
 Firestore rules now enforce authenticated school-domain users, a narrow bootstrap admin email allowlist, safe default student profile creation, role boundaries, class membership checks, authenticated curriculum reads, and admin-only curriculum writes under the DCC namespace `apps/dcc`. Storage remains closed until a later upload phase.
+
+## Billing Protection Controls
+
+The app uses bounded curriculum queries, one-time teacher/admin reads, selected-class drilldowns for responses/submissions/grades, and immutable caching for hashed Hosting assets. Callable Functions use short timeouts, a five-instance ceiling, strict request-size validation, and optional App Check enforcement. These controls reduce unnecessary reads and runaway function scaling; Firebase budget alerts still require monitoring because they are notifications rather than a hard spending cap.
 
 ## Phase 5 Firestore Content
 

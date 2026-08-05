@@ -1,9 +1,9 @@
-import { where } from 'firebase/firestore';
+import { limit, where } from 'firebase/firestore';
 import type { BroadcastUpdate } from '../types';
 import { getCollectionRecords, getDocumentRecord } from './firestoreService';
 
 export async function getBroadcastUpdates(): Promise<BroadcastUpdate[]> {
-  return getCollectionRecords<BroadcastUpdate>('broadcastUpdates');
+  return getCollectionRecords<BroadcastUpdate>('broadcastUpdates', [limit(100)]);
 }
 
 export async function getBroadcastUpdatesByProgramArea(
@@ -11,6 +11,7 @@ export async function getBroadcastUpdatesByProgramArea(
 ): Promise<BroadcastUpdate[]> {
   return getCollectionRecords<BroadcastUpdate>('broadcastUpdates', [
     where('programAreaId', '==', programAreaId),
+    limit(100),
   ]);
 }
 

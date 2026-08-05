@@ -53,6 +53,7 @@ export function HiddenFrameFilePage() {
             className="hidden-frame-file-art"
             src={hiddenFramePhase0Assets.symbols.transparent}
             alt="Broken frame symbol for recovered File 001"
+            loading="lazy"
           />
 
           <PasswordGate

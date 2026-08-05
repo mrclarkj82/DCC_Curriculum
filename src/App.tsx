@@ -1,13 +1,12 @@
+import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { ProtectedRoute } from './auth/ProtectedRoute';
 import { AppShell } from './components/AppShell';
+import { LoadingState } from './components/LoadingState';
 import { AdminPage } from './pages/AdminPage';
 import { AreasPage } from './pages/AreasPage';
 import { AssignmentDetailPage } from './pages/AssignmentDetailPage';
 import { BroadcastUpdateDetailPage } from './pages/BroadcastUpdateDetailPage';
-import { HiddenFrameArchivePage } from './hidden-frame/pages/HiddenFrameArchivePage';
-import { HiddenFrameFilePage } from './hidden-frame/pages/HiddenFrameFilePage';
-import { HiddenFrameLandingPage } from './hidden-frame/pages/HiddenFrameLandingPage';
 import { JoinClassPage } from './pages/JoinClassPage';
 import { LandingPage } from './pages/LandingPage';
 import { LessonDetailPage } from './pages/LessonDetailPage';
@@ -22,44 +21,62 @@ import { TodayPage } from './pages/TodayPage';
 import { UnrealAreaPage } from './pages/UnrealAreaPage';
 import { VideoProductionAreaPage } from './pages/VideoProductionAreaPage';
 
+const HiddenFrameArchivePage = lazy(() =>
+  import('./hidden-frame/pages/HiddenFrameArchivePage').then(({ HiddenFrameArchivePage: page }) => ({
+    default: page,
+  })),
+);
+const HiddenFrameFilePage = lazy(() =>
+  import('./hidden-frame/pages/HiddenFrameFilePage').then(({ HiddenFrameFilePage: page }) => ({
+    default: page,
+  })),
+);
+const HiddenFrameLandingPage = lazy(() =>
+  import('./hidden-frame/pages/HiddenFrameLandingPage').then(({ HiddenFrameLandingPage: page }) => ({
+    default: page,
+  })),
+);
+
 export function App() {
   return (
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/login" element={<LoginPage />} />
+    <Suspense fallback={<LoadingState label="Loading DCC Creative Studio..." />}>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
 
-      <Route element={<ProtectedRoute />}>
-        <Route element={<AppShell />}>
-          <Route path="/today" element={<TodayPage />} />
-          <Route path="/join-class" element={<JoinClassPage />} />
-          <Route path="/areas" element={<AreasPage />} />
-          <Route path="/areas/unreal-engine" element={<UnrealAreaPage />} />
-          <Route path="/areas/video-production" element={<VideoProductionAreaPage />} />
-          <Route path="/hidden-frame" element={<HiddenFrameLandingPage />} />
-          <Route path="/hidden-frame/archive" element={<HiddenFrameArchivePage />} />
-          <Route path="/hidden-frame/file/001" element={<HiddenFrameFilePage />} />
-          <Route path="/lessons/:lessonId" element={<LessonDetailPage />} />
-          <Route path="/assignments/:assignmentId" element={<AssignmentDetailPage />} />
-          <Route path="/media-projects/:projectId" element={<MediaProjectDetailPage />} />
-          <Route path="/broadcast-updates/:updateId" element={<BroadcastUpdateDetailPage />} />
-          <Route element={<ProtectedRoute allowedRoles={['student']} />}>
-            <Route path="/student/game" element={<StudentGamePage />} />
-          </Route>
-          <Route element={<ProtectedRoute allowedRoles={['teacher', 'admin']} />}>
-            <Route path="/teacher" element={<TeacherPage />} />
-            <Route path="/teacher/schedule" element={<TeacherSchedulePage />} />
-            <Route
-              path="/teacher/classes/:classId/student-preview"
-              element={<TeacherStudentPreviewPage />}
-            />
-          </Route>
-          <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
-            <Route path="/admin" element={<AdminPage />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<AppShell />}>
+            <Route path="/today" element={<TodayPage />} />
+            <Route path="/join-class" element={<JoinClassPage />} />
+            <Route path="/areas" element={<AreasPage />} />
+            <Route path="/areas/unreal-engine" element={<UnrealAreaPage />} />
+            <Route path="/areas/video-production" element={<VideoProductionAreaPage />} />
+            <Route path="/hidden-frame" element={<HiddenFrameLandingPage />} />
+            <Route path="/hidden-frame/archive" element={<HiddenFrameArchivePage />} />
+            <Route path="/hidden-frame/file/001" element={<HiddenFrameFilePage />} />
+            <Route path="/lessons/:lessonId" element={<LessonDetailPage />} />
+            <Route path="/assignments/:assignmentId" element={<AssignmentDetailPage />} />
+            <Route path="/media-projects/:projectId" element={<MediaProjectDetailPage />} />
+            <Route path="/broadcast-updates/:updateId" element={<BroadcastUpdateDetailPage />} />
+            <Route element={<ProtectedRoute allowedRoles={['student']} />}>
+              <Route path="/student/game" element={<StudentGamePage />} />
+            </Route>
+            <Route element={<ProtectedRoute allowedRoles={['teacher', 'admin']} />}>
+              <Route path="/teacher" element={<TeacherPage />} />
+              <Route path="/teacher/schedule" element={<TeacherSchedulePage />} />
+              <Route
+                path="/teacher/classes/:classId/student-preview"
+                element={<TeacherStudentPreviewPage />}
+              />
+            </Route>
+            <Route element={<ProtectedRoute allowedRoles={['admin']} />}>
+              <Route path="/admin" element={<AdminPage />} />
+            </Route>
           </Route>
         </Route>
-      </Route>
 
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </Suspense>
   );
 }
