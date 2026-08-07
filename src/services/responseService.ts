@@ -2,7 +2,6 @@ import {
   collection,
   doc,
   getCountFromServer,
-  getDoc,
   getDocs,
   limit,
   onSnapshot,
@@ -151,22 +150,35 @@ function responseFromData<T extends BellRingerResponse | ExitTicketResponse>(
   } as T;
 }
 
+function studentResponseQuery(
+  kind: ResponseKind,
+  classId: string,
+  activeItemId: string,
+  uid: string,
+) {
+  return query(
+    collection(db, dccCollectionPath(responseCollections[kind])),
+    where('uid', '==', uid),
+    where('classId', '==', classId),
+    where('activeItemId', '==', activeItemId),
+    limit(1),
+  );
+}
+
 async function getResponse<T extends BellRingerResponse | ExitTicketResponse>(
   kind: ResponseKind,
   classId: string,
   activeItemId: string,
   uid: string,
 ): Promise<T | null> {
-  const responseId = makeResponseId(classId, activeItemId, uid);
-  const snapshot = await getDoc(
-    doc(db, dccDocumentPath(responseCollections[kind], responseId)),
-  );
+  const snapshot = await getDocs(studentResponseQuery(kind, classId, activeItemId, uid));
+  const responseDocument = snapshot.docs[0];
 
-  if (!snapshot.exists()) {
+  if (!responseDocument) {
     return null;
   }
 
-  return responseFromData<T>(snapshot.id, kind, snapshot.data());
+  return responseFromData<T>(responseDocument.id, kind, responseDocument.data());
 }
 
 function subscribeToResponse<T extends BellRingerResponse | ExitTicketResponse>(
@@ -177,13 +189,14 @@ function subscribeToResponse<T extends BellRingerResponse | ExitTicketResponse>(
   onResponse: (response: T | null) => void,
   onError: (error: Error) => void,
 ): Unsubscribe {
-  const responseId = makeResponseId(classId, activeItemId, uid);
-
   return onSnapshot(
-    doc(db, dccDocumentPath(responseCollections[kind], responseId)),
+    studentResponseQuery(kind, classId, activeItemId, uid),
     (snapshot) => {
+      const responseDocument = snapshot.docs[0];
       onResponse(
-        snapshot.exists() ? responseFromData<T>(snapshot.id, kind, snapshot.data()) : null,
+        responseDocument
+          ? responseFromData<T>(responseDocument.id, kind, responseDocument.data())
+          : null,
       );
     },
     onError,
@@ -199,7 +212,11 @@ async function submitResponse(kind: ResponseKind, input: StudentResponseInput): 
 
   const responseId = makeResponseId(input.classId, input.activeItemId, input.uid);
   const responseRef = doc(db, dccDocumentPath(responseCollections[kind], responseId));
-  const existingResponse = await getDoc(responseRef);
+  // A filtered query remains authorized when a student has no response document yet.
+  // A direct get cannot inspect resource.data until that first document exists.
+  const existingResponse = await getDocs(
+    studentResponseQuery(kind, input.classId, input.activeItemId, input.uid),
+  );
   const responseData = {
     id: responseId,
     uid: input.uid,
@@ -217,7 +234,7 @@ async function submitResponse(kind: ResponseKind, input: StudentResponseInput): 
 
   await setDoc(
     responseRef,
-    existingResponse.exists()
+    !existingResponse.empty
       ? responseData
       : {
           ...responseData,

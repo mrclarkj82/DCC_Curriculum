@@ -87,14 +87,17 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Diagnosed YouTube Error 153 on exact-segment links: the standalone player request lost its required HTTP referrer because the link used `rel="noreferrer"`.
 - 2026-08-07: Updated exact-segment links to retain a strict-origin referrer while preserving `noopener` protection; normal YouTube links remain unchanged.
 - 2026-08-07: Committed and pushed the Error 153 fix to `main` in commit `43ed471`, then redeployed Firebase Hosting target `dcc`.
+- 2026-08-07: Diagnosed student Today response-card permission warnings: direct listeners attempted to read deterministic response documents before those documents existed, leaving no `resource.data` for the ownership rule to evaluate.
+- 2026-08-07: Changed student response reads and subscriptions to queries constrained by the signed-in student's UID, class, and active item; Firestore response ownership and roster rules remain unchanged.
 
 ## In Progress
 
-- None.
+- Validate and deploy the student Today response-card permission fix.
 
 ## Remaining
 
-- None for the Q1 Unreal video-link update or Error 153 fix.
+- Verify the empty-response and existing-response states without weakening Firestore rules.
+- Commit, push, deploy, and live-test the student Today fix.
 
 ## Blockers And Assumptions
 
@@ -134,6 +137,10 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 segment-player browser test: passed; the exact-segment player opened with the intended URL and controls, and no Error 153 or player-configuration message appeared.
 - 2026-08-07 Error 153 Firebase Hosting redeploy: passed for target `dcc` / site `dcccs`.
 - 2026-08-07 Error 153 live verification: passed; the live production asset includes the strict-origin referrer policy and Hosting does not suppress outbound referrers.
+- 2026-08-07 response-permission emulator regression: passed; empty own-response queries succeeded, the student created and read an own response, and classmate plus unfiltered collection reads remained denied.
+- 2026-08-07 response-card fix `npm.cmd run build`: passed using process-only Firebase web configuration; no `.env.local` was created. Vite reported the existing chunk-size warning.
+- 2026-08-07 response-card fix `npm.cmd run lint` and `npm.cmd run validate:curriculum`: passed.
+- 2026-08-07 response-card fix `git diff --check`: passed with Git line-ending normalization warnings only.
 
 ## Slide Handoff
 
