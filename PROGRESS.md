@@ -93,6 +93,7 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Diagnosed the student evidence-panel permission warning as the same nonexistent-document pre-read pattern in submission loading, subscription, and save detection.
 - 2026-08-07: Changed student submission lookups to queries constrained by UID, class, target type, and target ID; teacher review queries and Firestore submission rules remain unchanged.
 - 2026-08-07: Committed and pushed the student evidence-panel fix to `main` in commit `7dd303c`, then deployed Firebase Hosting target `dcc`.
+- 2026-08-07: Paused The Ember Gate on the student front end at the teacher's request by removing its Today entry card and `/student/game` route while retaining the implementation and security code for possible future work.
 
 ## In Progress
 

@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { AssignmentGameEntryCard } from '../assignmentGame/AssignmentGameEntryCard';
 import { EmptyState } from '../EmptyState';
 import { EvidenceChecklist } from '../EvidenceChecklist';
 import { QuizTakingPanel } from '../quizzes/QuizTakingPanel';
@@ -390,15 +389,6 @@ export function StudentTodayExperience({
           target={submissionTarget}
           userProfile={userProfile}
           viewerMode={viewerMode}
-        />
-      )}
-
-      {viewerMode === 'student' && userProfile.role === 'student' && submissionTarget && (
-        <AssignmentGameEntryCard
-          classRecord={classRecord}
-          activeItem={activeItem}
-          target={submissionTarget}
-          userProfile={userProfile}
         />
       )}
 

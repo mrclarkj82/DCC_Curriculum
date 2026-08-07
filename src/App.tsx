@@ -13,7 +13,6 @@ import { LessonDetailPage } from './pages/LessonDetailPage';
 import { LoginPage } from './pages/LoginPage';
 import { MediaProjectDetailPage } from './pages/MediaProjectDetailPage';
 import { NotFoundPage } from './pages/NotFoundPage';
-import { StudentGamePage } from './pages/StudentGamePage';
 import { TeacherPage } from './pages/TeacherPage';
 import { TeacherSchedulePage } from './pages/TeacherSchedulePage';
 import { TeacherStudentPreviewPage } from './pages/TeacherStudentPreviewPage';
@@ -58,9 +57,6 @@ export function App() {
             <Route path="/assignments/:assignmentId" element={<AssignmentDetailPage />} />
             <Route path="/media-projects/:projectId" element={<MediaProjectDetailPage />} />
             <Route path="/broadcast-updates/:updateId" element={<BroadcastUpdateDetailPage />} />
-            <Route element={<ProtectedRoute allowedRoles={['student']} />}>
-              <Route path="/student/game" element={<StudentGamePage />} />
-            </Route>
             <Route element={<ProtectedRoute allowedRoles={['teacher', 'admin']} />}>
               <Route path="/teacher" element={<TeacherPage />} />
               <Route path="/teacher/schedule" element={<TeacherSchedulePage />} />

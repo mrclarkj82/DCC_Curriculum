@@ -23,9 +23,11 @@ Do not make the project Unreal-only.
 
 ## Assignment Game: The Ember Gate
 
-The repository also contains an assignment-unlocked student game project called **The Ember Gate**.
-The game lives inside the DCC Creative Studio app and must preserve the classroom workflow: students
-complete required DCC assignment work first, then unlock the game from the student Today experience.
+The repository also contains a paused assignment-unlocked student game project called **The Ember Gate**.
+Its implementation is retained for possible future work, but it is currently unpublished: do not expose
+the game in student-facing navigation, the Today experience, or an app route unless the teacher explicitly
+asks to resume it. If resumed, preserve the classroom workflow: students complete required DCC assignment
+work first, then unlock the game from the student Today experience.
 
 The Ember Gate is a top-down 2D medieval action-adventure game, not a side-scrolling platformer.
 The intended game direction includes:
@@ -84,9 +86,11 @@ Relevant files and folders to inspect before assignment-game work:
 - `firestore.rules`
 - `storage.rules`
 
-The current route is `/student/game`. It must remain protected by the existing authenticated app shell,
-the student-role `ProtectedRoute`, and the page-level assignment access gate unless a later approved
-phase explicitly changes the route model while preserving equivalent or stronger protections.
+The former route was `/student/game`, but it is currently unpublished and must remain absent from the app
+router while the project is paused. If the teacher explicitly resumes the game, the route must be protected
+by the existing authenticated app shell, the student-role `ProtectedRoute`, and the page-level assignment
+access gate unless a later approved phase explicitly changes the route model while preserving equivalent
+or stronger protections.
 
 ### Assignment Game Assets
 

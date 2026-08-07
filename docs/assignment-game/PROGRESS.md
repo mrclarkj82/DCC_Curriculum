@@ -2,13 +2,17 @@
 
 ## Current Status Summary
 
-The Ember Gate is the assignment-unlocked student game inside DCC Creative Studio. The current
-verified mainline state includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
+The Ember Gate is a paused assignment-unlocked student game project for DCC Creative Studio. At the
+teacher's request on 2026-08-07, its Today entry card and `/student/game` route were removed from the
+student front end because the game is not ready for classroom use. The implementation, assets, access
+checks, save security, and project documentation remain in the repository for possible future work.
+
+The retained implementation includes the Phase 0 architecture, Phase 1 access gate, Phase 2 shell,
 Phase 3 player movement, Phase 4 Ruined Courtyard level, Phase 5 combat foundation, Phase 6
 enemies, Phase 7 dialogue, Phase 8 inventory, Phase 9 save and continue, Phase 10 assignment
 progression, Phase 11 Easter egg integration, and the final copy audit cleanup. Phase 12
 teacher/admin controls are deferred unless a classroom troubleshooting need is confirmed.
-Phase 13 polish and final QA is merged and deployed.
+Phase 13 polish and final QA is merged, but the game is no longer published in the live app.
 
 Verified through 2026-07-14:
 
@@ -30,9 +34,9 @@ Verified through 2026-07-14:
 - Final copy audit cleanup PR #20: merged and deployed.
 - Older vertical-slice PR #5: open draft on `feature/assignment-game`; reference only, do not merge or copy wholesale.
 - `docs/assignment-game/` on `origin/main` contains Phase 0, Phase 2, Phase 3, Phase 4, Phase 5, control, acceptance, and progress docs.
-- `/student/game` is nested under authenticated routing and student-role route protection in `src/App.tsx`.
-- `StudentGamePage` performs a page-level assignment-game access check before rendering `AssignmentGameShell`.
-- `AssignmentGameEntryCard` appears in the student Today experience when a submission target exists.
+- `/student/game` is absent from `src/App.tsx`; direct navigation falls through to the standard not-found route.
+- `StudentGamePage` and its page-level assignment-game access check are retained but not imported by the app.
+- `AssignmentGameEntryCard` is retained but no longer imported or rendered by the student Today experience.
 
 ## Working Rules
 
