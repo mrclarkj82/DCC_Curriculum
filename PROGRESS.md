@@ -90,14 +90,17 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Diagnosed student Today response-card permission warnings: direct listeners attempted to read deterministic response documents before those documents existed, leaving no `resource.data` for the ownership rule to evaluate.
 - 2026-08-07: Changed student response reads and subscriptions to queries constrained by the signed-in student's UID, class, and active item; Firestore response ownership and roster rules remain unchanged.
 - 2026-08-07: Committed and pushed the student Today response-card fix to `main` in commit `44005f0`, then deployed Firebase Hosting target `dcc`.
+- 2026-08-07: Diagnosed the student evidence-panel permission warning as the same nonexistent-document pre-read pattern in submission loading, subscription, and save detection.
+- 2026-08-07: Changed student submission lookups to queries constrained by UID, class, target type, and target ID; teacher review queries and Firestore submission rules remain unchanged.
 
 ## In Progress
 
-- None.
+- Validate and deploy the student evidence-panel permission fix.
 
 ## Remaining
 
-- None for the student Today response-card permission fix.
+- Verify empty, own-submission, classmate-denial, and unfiltered-list-denial cases.
+- Commit, push, deploy, and live-verify the evidence-panel fix.
 
 ## Blockers And Assumptions
 
@@ -144,6 +147,10 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 response-card Firebase Hosting deploy: passed for target `dcc` / site `dcccs`.
 - 2026-08-07 response-card live asset verification: passed; `https://dcccs.web.app` returned HTTP 200 and served the validated `index-BTAJIptG.js` build.
 - 2026-08-07 live route gate verification: passed; an unsigned browser session was redirected to school Google sign-in as expected.
+- 2026-08-07 submission-permission emulator regression: passed; empty own-submission queries succeeded, the student created and read an own submission, and classmate plus unfiltered collection reads remained denied.
+- 2026-08-07 evidence-panel fix `npm.cmd run build`: passed using process-only Firebase web configuration; no `.env.local` was created. Vite reported the existing chunk-size warning.
+- 2026-08-07 evidence-panel fix `npm.cmd run lint` and `npm.cmd run validate:curriculum`: passed.
+- 2026-08-07 evidence-panel fix `git diff --check`: passed with Git line-ending normalization warnings only.
 
 ## Slide Handoff
 

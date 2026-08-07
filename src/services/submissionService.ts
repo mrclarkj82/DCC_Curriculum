@@ -2,7 +2,6 @@ import {
   collection,
   doc,
   getCountFromServer,
-  getDoc,
   getDocs,
   limit,
   onSnapshot,
@@ -308,6 +307,22 @@ function submissionFromData(id: string, data: Record<string, unknown>): StudentS
   };
 }
 
+function studentSubmissionQuery(
+  classId: string,
+  targetType: SubmissionTargetType,
+  targetId: string,
+  uid: string,
+) {
+  return query(
+    collection(db, dccCollectionPath('submissions')),
+    where('uid', '==', uid),
+    where('classId', '==', classId),
+    where('targetType', '==', targetType),
+    where('targetId', '==', targetId),
+    limit(1),
+  );
+}
+
 async function writeSubmission(
   payload: SubmissionWritePayload,
   status: Extract<SubmissionStatus, 'submitted' | 'resubmitted'>,
@@ -330,7 +345,16 @@ async function writeSubmission(
     payload.uid,
   );
   const submissionRef = doc(db, dccDocumentPath('submissions', submissionId));
-  const existingSubmission = await getDoc(submissionRef);
+  // A filtered query remains authorized when a student has no submission document yet.
+  // A direct get cannot inspect resource.data until that first document exists.
+  const existingSubmission = await getDocs(
+    studentSubmissionQuery(
+      payload.classId,
+      payload.target.targetType,
+      payload.target.targetId,
+      payload.uid,
+    ),
+  );
   const submissionData = {
     id: submissionId,
     uid: payload.uid,
@@ -355,7 +379,7 @@ async function writeSubmission(
 
   await setDoc(
     submissionRef,
-    existingSubmission.exists()
+    !existingSubmission.empty
       ? {
           ...submissionData,
           ...(status === 'resubmitted' ? { resubmittedAt: serverTimestamp() } : {}),
@@ -379,14 +403,14 @@ export async function getSubmission(
   targetId: string,
   uid: string,
 ): Promise<StudentSubmission | null> {
-  const submissionId = makeSubmissionId(classId, targetType, targetId, uid);
-  const snapshot = await getDoc(doc(db, dccDocumentPath('submissions', submissionId)));
+  const snapshot = await getDocs(studentSubmissionQuery(classId, targetType, targetId, uid));
+  const submissionDocument = snapshot.docs[0];
 
-  if (!snapshot.exists()) {
+  if (!submissionDocument) {
     return null;
   }
 
-  return submissionFromData(snapshot.id, snapshot.data());
+  return submissionFromData(submissionDocument.id, submissionDocument.data());
 }
 
 export function subscribeToSubmission(
@@ -397,12 +421,15 @@ export function subscribeToSubmission(
   onSubmission: (submission: StudentSubmission | null) => void,
   onError: (error: Error) => void,
 ): Unsubscribe {
-  const submissionId = makeSubmissionId(classId, targetType, targetId, uid);
-
   return onSnapshot(
-    doc(db, dccDocumentPath('submissions', submissionId)),
+    studentSubmissionQuery(classId, targetType, targetId, uid),
     (snapshot) => {
-      onSubmission(snapshot.exists() ? submissionFromData(snapshot.id, snapshot.data()) : null);
+      const submissionDocument = snapshot.docs[0];
+      onSubmission(
+        submissionDocument
+          ? submissionFromData(submissionDocument.id, submissionDocument.data())
+          : null,
+      );
     },
     onError,
   );
