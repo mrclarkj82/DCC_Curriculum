@@ -14,7 +14,7 @@ progression, Phase 11 Easter egg integration, and the final copy audit cleanup. 
 teacher/admin controls are deferred unless a classroom troubleshooting need is confirmed.
 Phase 13 polish and final QA is merged, but the game is no longer published in the live app.
 
-Verified through 2026-07-14:
+Verified through 2026-08-07:
 
 - `origin/main`: `06e3d25` (`Merge pull request #20 from mrclarkj82/feature/assignment-game-final-copy`).
 - Phase 0 architecture PR #6: merged.
@@ -272,6 +272,13 @@ Verified through 2026-07-14:
 - 2026-07-14: Deployed final copy audit cleanup to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
 - 2026-07-14: Verified live `/student/game`, `/today`, and `/hidden-frame/archive` returned HTTP 200 after final copy deploy.
 - 2026-07-14: Verified the production bundle contains `A gated student adventure unlocked by verified assignment work.`
+- 2026-08-07: Teacher requested that The Ember Gate be removed from the student front end until it is ready for future work.
+- 2026-08-07: Removed the Today entry card import/render and the `/student/game` app route; retained the implementation, assets, access checks, save security, and documentation.
+- 2026-08-07: `npm.cmd run lint`, `npm.cmd run build`, and `npm.cmd run validate:curriculum` passed. Vite reported the existing chunk-size warning for the main bundle.
+- 2026-08-07: The first Hidden Frame validation attempt under Node 20.20.2 stopped with `ERR_UNKNOWN_FILE_EXTENSION` for `passwordGate.ts`; the same unchanged validator passed under the bundled Node 24.14.0 runtime.
+- 2026-08-07: `git diff --check` passed with Git line-ending normalization warnings only, and the production JavaScript was verified to contain no Ember Gate UI copy or `/student/game` route.
+- 2026-08-07: Committed and pushed the front-end pause to `main` in commit `238930e`, then deployed Firebase Hosting target `dcc` at `https://dcccs.web.app`.
+- 2026-08-07: Browser verification confirmed live `/student/game` now renders the standard `Page not found` experience with a `Back to Today` link.
 
 ## Asset Notes
 
@@ -292,4 +299,4 @@ Verified through 2026-07-14:
 
 No active assignment-game phase remains in this goal.
 
-Future work should be scoped to bugs, classroom QA findings, or teacher-confirmed requests.
+Keep the game unpublished. Resume route or Today integration work only after an explicit teacher request.
