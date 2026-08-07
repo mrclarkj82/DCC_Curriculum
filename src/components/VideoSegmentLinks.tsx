@@ -86,7 +86,8 @@ export function VideoSegmentLinks({ video }: VideoSegmentLinksProps) {
                 className="secondary-button"
                 href={exactSegmentUrl}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener"
+                referrerPolicy="strict-origin-when-cross-origin"
               >
                 Play assigned segment
               </a>

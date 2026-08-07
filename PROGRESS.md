@@ -84,14 +84,17 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Committed and pushed the Q1 Unreal video-link implementation to `main` in commit `86d5e0e`.
 - 2026-08-07: Updated and read-back verified only the video URL/start/end fields on the 16 live `apps/dcc/lessons` Q1 Unreal documents.
 - 2026-08-07: Deployed the validated front-end to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
+- 2026-08-07: Diagnosed YouTube Error 153 on exact-segment links: the standalone player request lost its required HTTP referrer because the link used `rel="noreferrer"`.
+- 2026-08-07: Updated exact-segment links to retain a strict-origin referrer while preserving `noopener` protection; normal YouTube links remain unchanged.
 
 ## In Progress
 
-- None.
+- Publish the validated YouTube Error 153 fix to the configured `dcc` Hosting target.
 
 ## Remaining
 
-- None for the Q1 Unreal video-link update.
+- Commit and push the referrer-policy fix to `main`.
+- Deploy and live-verify the updated production asset.
 
 ## Blockers And Assumptions
 
@@ -126,6 +129,9 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 targeted Firestore write: passed; 16 existing Q1 Unreal lessons updated and read-back verified with no unrelated curriculum records seeded.
 - 2026-08-07 Firebase Hosting deploy: passed for target `dcc` / site `dcccs`.
 - 2026-08-07 live hosting verification: passed; `https://dcccs.web.app` returned HTTP 200 and served the production asset containing the assigned-segment controls.
+- 2026-08-07 Error 153 fix `npm.cmd run build`: passed using process-only Firebase web configuration; no `.env.local` was created.
+- 2026-08-07 Error 153 fix `npm.cmd run lint` and `npm.cmd run validate:curriculum`: passed.
+- 2026-08-07 segment-player browser test: passed; the exact-segment player opened with the intended URL and controls, and no Error 153 or player-configuration message appeared.
 
 ## Slide Handoff
 
