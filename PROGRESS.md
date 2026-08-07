@@ -96,6 +96,7 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Paused The Ember Gate on the student front end at the teacher's request by removing its Today entry card and `/student/game` route while retaining the implementation and security code for possible future work.
 - 2026-08-07: Committed and pushed the Ember Gate front-end pause in commit `238930e`, deployed Firebase Hosting target `dcc`, and verified the former game URL now shows the standard not-found experience.
 - 2026-08-07: Updated the teacher Responses view to live-populate class bell ringer and exit ticket submissions in a three-column table with each question in its column heading and each student's answer in the row below.
+- 2026-08-07: Committed and pushed the live class-response table in commit `35b8808`, deployed Firebase Hosting target `dcc`, and verified the signed-in A1 view with real response data, responsive horizontal scrolling, and no browser console errors.
 
 ## In Progress
 
