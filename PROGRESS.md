@@ -92,15 +92,15 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Committed and pushed the student Today response-card fix to `main` in commit `44005f0`, then deployed Firebase Hosting target `dcc`.
 - 2026-08-07: Diagnosed the student evidence-panel permission warning as the same nonexistent-document pre-read pattern in submission loading, subscription, and save detection.
 - 2026-08-07: Changed student submission lookups to queries constrained by UID, class, target type, and target ID; teacher review queries and Firestore submission rules remain unchanged.
+- 2026-08-07: Committed and pushed the student evidence-panel fix to `main` in commit `7dd303c`, then deployed Firebase Hosting target `dcc`.
 
 ## In Progress
 
-- Validate and deploy the student evidence-panel permission fix.
+- None.
 
 ## Remaining
 
-- Verify empty, own-submission, classmate-denial, and unfiltered-list-denial cases.
-- Commit, push, deploy, and live-verify the evidence-panel fix.
+- None for the student evidence-panel permission fix.
 
 ## Blockers And Assumptions
 
@@ -151,6 +151,9 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 evidence-panel fix `npm.cmd run build`: passed using process-only Firebase web configuration; no `.env.local` was created. Vite reported the existing chunk-size warning.
 - 2026-08-07 evidence-panel fix `npm.cmd run lint` and `npm.cmd run validate:curriculum`: passed.
 - 2026-08-07 evidence-panel fix `git diff --check`: passed with Git line-ending normalization warnings only.
+- 2026-08-07 evidence-panel Firebase Hosting deploy: passed for target `dcc` / site `dcccs`.
+- 2026-08-07 evidence-panel live asset verification: passed; `https://dcccs.web.app` returned HTTP 200 and served the validated `index-CX-BWsMm.js` build.
+- 2026-08-07 evidence-panel live route gate verification: passed; an unsigned browser session was redirected to school Google sign-in as expected.
 
 ## Slide Handoff
 
@@ -175,4 +178,4 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 
 ## Final Status
 
-Phase 9 repository work is complete. The Q1 Unreal video links, Error 153 repair, and student Today response-card permission fix are committed, pushed, deployed, security-tested, and live-verified.
+Phase 9 repository work is complete. The Q1 Unreal video links, Error 153 repair, student Today response-card fix, and student evidence-panel fix are committed, pushed, deployed, security-tested, and live-verified.
