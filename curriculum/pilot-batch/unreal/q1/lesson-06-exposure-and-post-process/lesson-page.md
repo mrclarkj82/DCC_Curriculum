@@ -18,6 +18,8 @@ Why does a camera or your eyes sometimes need time to adjust when moving from a 
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 00:27:14-00:35:47
+- Assigned segment: [Play 00:27:14-00:35:47 only](https://www.youtube.com/embed/k-zMkzmduqI?start=1634&end=2147&autoplay=1)
+- YouTube page: [Open at 00:27:14](https://www.youtube.com/watch?v=k-zMkzmduqI&t=1634s); stop at 00:35:47.
 - Note: Covers auto exposure, a hut/dark-space test, manual exposure, post-process volume settings, bloom, vignette, saturation, and Infinite Extent Unbound.
 
 ## Vocabulary

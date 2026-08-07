@@ -18,6 +18,8 @@ How can you tell whether a surface is metal, plastic, stone, wood, or paint just
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 00:35:47-00:54:38
+- Assigned segment: [Play 00:35:47-00:54:38 only](https://www.youtube.com/embed/k-zMkzmduqI?start=2147&end=3278&autoplay=1)
+- YouTube page: [Open at 00:35:47](https://www.youtube.com/watch?v=k-zMkzmduqI&t=2147s); stop at 00:54:38.
 - Note: Covers material example setup, starter materials, creating a material, the material graph, Base Color, Roughness, Metallic, PBR, Apply/Save, and simple texture-driven variation.
 
 ## Vocabulary

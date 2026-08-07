@@ -10,7 +10,7 @@
     "source": "Unreal Engine 5 Beginner Tutorial Transcript",
     "start": "00:35:47",
     "end": "00:54:38",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=2147s",
     "note": "Covers material example setup, starter materials, creating a material, the material graph, Base Color, Roughness, Metallic, PBR, Apply/Save, and simple texture-driven variation."
   },
   "learningTarget": "I can create a basic Unreal material and control how it looks using base color, roughness, metallic, and simple texture-driven variation.",

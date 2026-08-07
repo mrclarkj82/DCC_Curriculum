@@ -10,7 +10,7 @@
     "source": "Unreal Engine 5 Beginner Tutorial Transcript",
     "start": "01:32:47",
     "end": "01:41:19",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=5567s",
     "note": "Covers point lights, intensity, source radius, temperature, light color, indirect lighting intensity, spotlights, inner and outer cone angles, rectangle lights, directional lights as sunlight, source angle, skylights, sky atmosphere, and Lumen settings in a post-process volume."
   },
   "learningTarget": "I can use different Unreal light types to create a clear mood and visual focus in a scene.",

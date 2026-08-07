@@ -11,7 +11,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:00:00",
       "end": "00:03:47",
-      "url": ""
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=0s"
     },
     "learningTarget": "I can create and save a new Unreal Engine project using the correct class setup, project name, and starter content settings.",
     "bellRinger": {
@@ -78,7 +78,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:03:47",
       "end": "00:11:57",
-      "url": ""
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=227s"
     },
     "learningTarget": "I can identify the main Unreal interface panels and explain how each one supports building and organizing a 3D world.",
     "bellRinger": {
@@ -144,7 +144,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:11:57",
       "end": "00:17:31",
-      "url": ""
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=717s"
     },
     "learningTarget": "I can navigate the Unreal viewport confidently using mouse controls, keyboard movement, focus, view modes, show flags, and game view.",
     "bellRinger": {
@@ -211,7 +211,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:17:31",
       "end": "00:27:14",
-      "url": ""
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=1051s"
     },
     "learningTarget": "I can build a simple starter scene by moving, rotating, scaling, duplicating, and placing objects from the toolbar and Content Drawer.",
     "bellRinger": {
@@ -278,7 +278,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:00:00",
       "end": "00:27:14",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=0s",
       "note": "Review range only; no new required tutorial segment."
     },
     "learningTarget": "I can show what I remember from Lessons 01-04 and improve my first Unreal scene using feedback, organization, and stronger evidence screenshots.",
@@ -346,7 +346,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:27:14",
       "end": "00:35:47",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=1634s",
       "note": "Covers auto exposure, a hut/dark-space test, manual exposure, post-process volume settings, bloom, vignette, saturation, and Infinite Extent Unbound."
     },
     "learningTarget": "I can use a post-process volume to control exposure and camera-based visual effects in an Unreal scene.",
@@ -424,7 +424,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:35:47",
       "end": "00:54:38",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=2147s",
       "note": "Covers material example setup, starter materials, creating a material, the material graph, Base Color, Roughness, Metallic, PBR, Apply/Save, and simple texture-driven variation."
     },
     "learningTarget": "I can create a basic Unreal material and control how it looks using base color, roughness, metallic, and simple texture-driven variation.",
@@ -510,7 +510,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "00:54:38",
       "end": "01:03:02",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=3278s",
       "note": "Covers importing texture maps, Base Color maps, Roughness maps, Normal maps, sRGB settings, mask/non-color texture settings, normal map compression, material connections, Texture Coordinate, Multiply, tiling/scale, and optional color tint. Ends before material instances."
     },
     "learningTarget": "I can import texture maps and connect base color, roughness, and normal maps correctly to build a more believable material.",
@@ -597,7 +597,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "01:03:02",
       "end": "01:09:01",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=3782s",
       "note": "Covers creating material instances from parent materials, exposing scalar/vector parameters, Apply/Save behavior, real-time material instance adjustments, normal flatness, roughness strength, color tint, resetting defaults, and efficient material variation. Includes Quiz 2 as the opening checkpoint."
     },
     "learningTarget": "I can explain core material concepts and create an editable material instance.",
@@ -684,7 +684,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "01:09:01",
       "end": "01:14:43",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=4141s",
       "note": "Covers the master material concept, neutral default values, exposing texture parameters, swapping Base Color/Roughness/Normal textures in instances, adding a Metallic map, using a Static Switch Parameter for metallic behavior, and building a reusable material workflow."
     },
     "learningTarget": "I can describe why master materials help organize reusable material workflows.",
@@ -771,7 +771,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "01:14:47",
       "end": "01:23:23",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=4487s",
       "note": "Covers static meshes as 3D objects, FBX import workflow, folder organization, import options, importing textures manually, checking sRGB/compression settings, creating a material instance from the master material, assigning a default material slot in the Static Mesh Editor, and introducing packed mask channel use."
     },
     "learningTarget": "I can import a static mesh and place it correctly in an Unreal scene.",
@@ -858,7 +858,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "01:23:39",
       "end": "01:26:30",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=5019s",
       "note": "Covers opening a source project, identifying a folder of assets, using the Migrate command, reviewing the asset dependency list, choosing the destination project Content folder, confirming migration success, locating the migrated folder in the destination project, and using Show in Explorer as an alternate way to find the Content folder. Ends before the Lumen lighting explanation."
     },
     "learningTarget": "I can migrate assets between Unreal projects while preserving dependencies.",
@@ -946,7 +946,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "01:26:33",
       "end": "01:32:47",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=5193s",
       "note": "Covers Lumen as Unreal Engine 5 dynamic global illumination, light bounce, color bleed, static baked light maps, broken static lighting when objects move, movable lights, Lumen on/off comparison, source radius, softer shadows, and emissive material lighting. Includes Quiz 3 as the opening checkpoint."
     },
     "learningTarget": "I can explain the basic purpose of Lumen and use lighting evidence to show how global illumination changes an Unreal scene.",
@@ -1035,7 +1035,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "01:32:47",
       "end": "01:41:19",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=5567s",
       "note": "Covers point lights, intensity, source radius, temperature, light color, indirect lighting intensity, spotlights, inner and outer cone angles, rectangle lights, directional lights as sunlight, source angle, skylights, sky atmosphere, and Lumen settings in a post-process volume."
     },
     "learningTarget": "I can use different Unreal light types to create a clear mood and visual focus in a scene.",
@@ -1124,7 +1124,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "01:56:25",
       "end": "02:03:19",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=6985s",
       "note": "Covers creating a new map for landscapes, entering Landscape mode, creating a landscape, sculpting terrain, raising and lowering with mouse/Shift, brush size, falloff, smooth brush, and flatten brush for terraces or playable areas."
     },
     "learningTarget": "I can create, sculpt, and shape a basic Unreal landscape with intentional terrain forms.",
@@ -1213,7 +1213,7 @@
       "source": "Unreal Engine 5 Beginner Tutorial Transcript",
       "start": "04:19:04",
       "end": "04:33:12",
-      "url": "",
+      "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=15544s",
       "note": "Primary range covers adding trees to Foliage mode, density adjustment, Align to Normal, mobility, scale checks with the mannequin, paint and single instance placement, moving selected foliage, LOD/performance awareness, and play testing the world. Blueprint preview connection references 02:56:37-03:20:24, and final playable-space detailing references 04:57:25-04:59:31."
     },
     "learningTarget": "I can add environmental detail to a small Unreal scene and explain how foliage, props, and simple interaction prepare a scene for a playable mini-world.",

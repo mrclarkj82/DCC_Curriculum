@@ -19,6 +19,8 @@ Which software interface have you used that felt complicated at first, and what 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Start: 00:03:47
 - End: 00:11:57
+- Assigned segment: [Play 00:03:47-00:11:57 only](https://www.youtube.com/embed/k-zMkzmduqI?start=227&end=717&autoplay=1)
+- YouTube page: [Open at 00:03:47](https://www.youtube.com/watch?v=k-zMkzmduqI&t=227s); stop at 00:11:57.
 - Transcript source: `curriculum/source/unreal-video-transcript.md`
 
 ## Vocabulary

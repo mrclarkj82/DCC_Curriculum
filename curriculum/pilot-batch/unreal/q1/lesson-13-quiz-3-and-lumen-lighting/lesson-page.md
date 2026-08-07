@@ -18,6 +18,8 @@ What makes lighting in a 3D scene feel realistic instead of flat?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 01:26:33-01:32:47
+- Assigned segment: [Play 01:26:33-01:32:47 only](https://www.youtube.com/embed/k-zMkzmduqI?start=5193&end=5567&autoplay=1)
+- YouTube page: [Open at 01:26:33](https://www.youtube.com/watch?v=k-zMkzmduqI&t=5193s); stop at 01:32:47.
 - Note: Covers Lumen as Unreal Engine 5 dynamic global illumination, light bounce, color bleed, static baked light maps, broken static lighting when objects move, movable lights, Lumen on/off comparison, source radius, softer shadows, and emissive material lighting. Includes Quiz 3 as the opening checkpoint.
 - Verification note: Timestamp range is based on transcript search for the Lumen introduction and comparison workflow. Teacher may verify the exact clip endpoint if using a trimmed classroom video.
 

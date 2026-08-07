@@ -18,6 +18,8 @@ Why might copying only one file fail when moving assets between projects?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 01:23:39-01:26:30
+- Assigned segment: [Play 01:23:39-01:26:30 only](https://www.youtube.com/embed/k-zMkzmduqI?start=5019&end=5190&autoplay=1)
+- YouTube page: [Open at 01:23:39](https://www.youtube.com/watch?v=k-zMkzmduqI&t=5019s); stop at 01:26:30.
 - Note: Covers opening a source project, identifying a folder of assets, using the Migrate command, reviewing the asset dependency list, choosing the destination project Content folder, confirming migration success, locating the migrated folder in the destination project, and using Show in Explorer as an alternate way to find the Content folder. Ends before the Lumen lighting explanation.
 
 ## Vocabulary

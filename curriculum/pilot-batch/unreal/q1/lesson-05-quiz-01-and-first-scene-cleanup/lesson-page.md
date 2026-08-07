@@ -18,6 +18,8 @@ Which Unreal tool or shortcut from Lessons 01-04 helped you the most so far, and
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 00:00:00-00:27:14
+- Assigned segment: [Play 00:00:00-00:27:14 only](https://www.youtube.com/embed/k-zMkzmduqI?start=0&end=1634&autoplay=1)
+- YouTube page: [Open at 00:00:00](https://www.youtube.com/watch?v=k-zMkzmduqI&t=0s); stop at 00:27:14.
 - Note: Review range only; no new required tutorial segment.
 
 ## Vocabulary

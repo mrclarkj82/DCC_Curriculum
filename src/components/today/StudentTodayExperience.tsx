@@ -9,6 +9,7 @@ import { ExitTicketResponseCard } from '../responses/ExitTicketResponseCard';
 import { SubmissionPanel } from '../submissions/SubmissionPanel';
 import { RubricTable } from '../RubricTable';
 import { StatusBadge } from '../StatusBadge';
+import { VideoSegmentLinks } from '../VideoSegmentLinks';
 import { VocabularyList } from '../VocabularyList';
 import { getBellRingerPrompt, getExitTicketPrompt } from '../../services/responseService';
 import { resolveSubmissionTargetForActiveItem } from '../../services/submissionService';
@@ -56,10 +57,7 @@ function LessonMission({
 
       <section className="card mission-panel">
         <h2>Video Segment</h2>
-        <p>{lesson.video.source}</p>
-        <p className="meta-line">
-          {lesson.video.start}-{lesson.video.end}
-        </p>
+        <VideoSegmentLinks video={lesson.video} />
       </section>
 
       <section className="card mission-panel">

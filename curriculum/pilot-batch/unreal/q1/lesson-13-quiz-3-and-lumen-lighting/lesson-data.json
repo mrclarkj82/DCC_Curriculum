@@ -10,7 +10,7 @@
     "source": "Unreal Engine 5 Beginner Tutorial Transcript",
     "start": "01:26:33",
     "end": "01:32:47",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=5193s",
     "note": "Covers Lumen as Unreal Engine 5 dynamic global illumination, light bounce, color bleed, static baked light maps, broken static lighting when objects move, movable lights, Lumen on/off comparison, source radius, softer shadows, and emissive material lighting. Includes Quiz 3 as the opening checkpoint."
   },
   "learningTarget": "I can explain the basic purpose of Lumen and use lighting evidence to show how global illumination changes an Unreal scene.",

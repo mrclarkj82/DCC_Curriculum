@@ -18,6 +18,8 @@ What details make an environment feel alive or intentionally designed?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 04:19:04-04:33:12
+- Assigned segment: [Play 04:19:04-04:33:12 only](https://www.youtube.com/embed/k-zMkzmduqI?start=15544&end=16392&autoplay=1)
+- YouTube page: [Open at 04:19:04](https://www.youtube.com/watch?v=k-zMkzmduqI&t=15544s); stop at 04:33:12.
 - Note: Primary range covers adding trees to Foliage mode, density adjustment, Align to Normal, mobility, scale checks with the mannequin, paint and single instance placement, moving selected foliage, LOD/performance awareness, and play testing the world. Blueprint preview connection references 02:56:37-03:20:24, and final playable-space detailing references 04:57:25-04:59:31.
 - Verification note: Timestamp range is based on transcript search. This lesson intentionally combines the primary foliage range with earlier Blueprint preview concepts and later playable-space detailing; teacher may verify exact clips before recording a final deck.
 

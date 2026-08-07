@@ -18,6 +18,8 @@ Where do you see different types of light in real life, and how do they change t
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 01:32:47-01:41:19
+- Assigned segment: [Play 01:32:47-01:41:19 only](https://www.youtube.com/embed/k-zMkzmduqI?start=5567&end=6079&autoplay=1)
+- YouTube page: [Open at 01:32:47](https://www.youtube.com/watch?v=k-zMkzmduqI&t=5567s); stop at 01:41:19.
 - Note: Covers point lights, intensity, source radius, temperature, light color, indirect lighting intensity, spotlights, inner and outer cone angles, rectangle lights, directional lights as sunlight, source angle, skylights, sky atmosphere, and Lumen settings in a post-process volume.
 - Verification note: Timestamp range is based on transcript search for Unreal light types and Lumen settings. Teacher may trim the demo if class time is tight.
 

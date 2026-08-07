@@ -18,6 +18,8 @@ Why might a studio want many variations of one material?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 01:03:02-01:09:01
+- Assigned segment: [Play 01:03:02-01:09:01 only](https://www.youtube.com/embed/k-zMkzmduqI?start=3782&end=4141&autoplay=1)
+- YouTube page: [Open at 01:03:02](https://www.youtube.com/watch?v=k-zMkzmduqI&t=3782s); stop at 01:09:01.
 - Note: Covers creating material instances from parent materials, exposing scalar/vector parameters, Apply/Save behavior, real-time material instance adjustments, normal flatness, roughness strength, color tint, resetting defaults, and efficient material variation. Includes Quiz 2 as the opening checkpoint.
 
 ## Vocabulary

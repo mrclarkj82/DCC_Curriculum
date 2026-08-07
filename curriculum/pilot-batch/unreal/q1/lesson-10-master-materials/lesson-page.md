@@ -18,6 +18,8 @@ What kinds of settings would be useful to reuse across many objects?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 01:09:01-01:14:43
+- Assigned segment: [Play 01:09:01-01:14:43 only](https://www.youtube.com/embed/k-zMkzmduqI?start=4141&end=4483&autoplay=1)
+- YouTube page: [Open at 01:09:01](https://www.youtube.com/watch?v=k-zMkzmduqI&t=4141s); stop at 01:14:43.
 - Note: Covers the master material concept, neutral default values, exposing texture parameters, swapping Base Color/Roughness/Normal textures in instances, adding a Metallic map, using a Static Switch Parameter for metallic behavior, and building a reusable material workflow.
 
 ## Vocabulary

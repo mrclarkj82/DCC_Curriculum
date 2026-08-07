@@ -18,6 +18,8 @@ What makes an asset ready or not ready to use in a project?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 01:14:47-01:23:23
+- Assigned segment: [Play 01:14:47-01:23:23 only](https://www.youtube.com/embed/k-zMkzmduqI?start=4487&end=5003&autoplay=1)
+- YouTube page: [Open at 01:14:47](https://www.youtube.com/watch?v=k-zMkzmduqI&t=4487s); stop at 01:23:23.
 - Note: Covers static meshes as 3D objects, FBX import workflow, folder organization, import options, importing textures manually, checking sRGB/compression settings, creating a material instance from the master material, assigning a default material slot in the Static Mesh Editor, and introducing packed mask channel use.
 
 ## Vocabulary

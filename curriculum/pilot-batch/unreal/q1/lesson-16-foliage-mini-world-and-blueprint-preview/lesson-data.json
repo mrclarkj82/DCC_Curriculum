@@ -10,7 +10,7 @@
     "source": "Unreal Engine 5 Beginner Tutorial Transcript",
     "start": "04:19:04",
     "end": "04:33:12",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=15544s",
     "note": "Primary range covers adding trees to Foliage mode, density adjustment, Align to Normal, mobility, scale checks with the mannequin, paint and single instance placement, moving selected foliage, LOD/performance awareness, and play testing the world. Blueprint preview connection references 02:56:37-03:20:24, and final playable-space detailing references 04:57:25-04:59:31."
   },
   "learningTarget": "I can add environmental detail to a small Unreal scene and explain how foliage, props, and simple interaction prepare a scene for a playable mini-world.",

@@ -18,6 +18,8 @@ What makes outdoor terrain look natural instead of flat or artificial?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 01:56:25-02:03:19
+- Assigned segment: [Play 01:56:25-02:03:19 only](https://www.youtube.com/embed/k-zMkzmduqI?start=6985&end=7399&autoplay=1)
+- YouTube page: [Open at 01:56:25](https://www.youtube.com/watch?v=k-zMkzmduqI&t=6985s); stop at 02:03:19.
 - Note: Covers creating a new map for landscapes, entering Landscape mode, creating a landscape, sculpting terrain, raising and lowering with mouse/Shift, brush size, falloff, smooth brush, and flatten brush for terraces or playable areas.
 - Verification note: Timestamp range is based on transcript search for the first complete landscape creation and sculpting explanation. Later environment-build ranges expand the same workflow.
 

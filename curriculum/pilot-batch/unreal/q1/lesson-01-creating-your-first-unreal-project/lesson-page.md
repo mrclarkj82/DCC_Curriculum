@@ -19,6 +19,8 @@ What kinds of digital worlds have you seen in games, movies, architecture, or VR
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Start: 00:00:00
 - End: 00:03:47
+- Assigned segment: [Play 00:00:00-00:03:47 only](https://www.youtube.com/embed/k-zMkzmduqI?start=0&end=227&autoplay=1)
+- YouTube page: [Open at 00:00:00](https://www.youtube.com/watch?v=k-zMkzmduqI&t=0s); stop at 00:03:47.
 - Transcript source: `curriculum/source/unreal-video-transcript.md`
 
 ## Vocabulary

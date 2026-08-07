@@ -78,14 +78,19 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-07-13: Updated lesson seed mirrors so missing deck records use `slides.status: "ready-for-chatgpt"` with blank URLs.
 - 2026-07-13: Created `curriculum/slide-handoff/` with README, presentation brief index, slide-generation manifest, master ChatGPT Pro prompt, and slide-link return template.
 - 2026-07-13: Updated pilot content index/status docs for Phase 9 artifacts.
+- 2026-08-07: Added the teacher-supplied Unreal Engine 5 YouTube tutorial to all 16 Q1 Unreal lessons with lesson-specific start times.
+- 2026-08-07: Added exact assigned-segment playback links that use each lesson's start and end times, plus standard YouTube links that open at the assigned start.
+- 2026-08-07: Added reusable video-segment controls to the full lesson page and the student Today lesson experience.
 
 ## In Progress
 
-- Final git staging, commit, and push.
+- Publish the validated Q1 Unreal video-link update to Firestore and the configured `dcc` Hosting target.
 
 ## Remaining
 
-- Commit directly to `main` and push.
+- Commit and push the validated source changes to `main`.
+- Update the 16 Q1 Unreal lesson documents in Firestore without reseeding unrelated curriculum records.
+- Deploy the website update to the configured `dcc` Hosting target.
 
 ## Blockers And Assumptions
 
@@ -110,6 +115,13 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - `npm.cmd run seed:curriculum -- --dry-run`: passed. Dry run only; `skipped=158 created=0 updated=0 failed=0`.
 - `git diff --check`: passed with Git line-ending normalization warnings only.
 - Secret scan: no `.env.local`, service account JSON, private key, or Firebase API key files detected in changed/untracked files. Documentation references to these safety terms remain intentional.
+- 2026-08-07 Q1 video-link mirror audit: passed; all 16 lesson records match across local lesson data and both seed mirrors.
+- 2026-08-07 Q1 exact-segment link audit: passed; all 16 lesson pages include start/end YouTube player links.
+- 2026-08-07 `npm.cmd run build`: passed using the configured Firebase web app values in process environment only; no `.env.local` was created or committed. Vite reported the existing chunk-size optimization warning.
+- 2026-08-07 `npm.cmd run lint`: passed.
+- 2026-08-07 `npm.cmd run validate:curriculum`: passed.
+- 2026-08-07 `npm.cmd run seed:curriculum -- --dry-run`: passed; `skipped=158 created=0 updated=0 failed=0`.
+- 2026-08-07 `git diff --check`: passed with Git line-ending normalization warnings only.
 
 ## Slide Handoff
 

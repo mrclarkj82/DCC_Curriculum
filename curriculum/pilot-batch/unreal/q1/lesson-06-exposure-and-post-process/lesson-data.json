@@ -10,7 +10,7 @@
     "source": "Unreal Engine 5 Beginner Tutorial Transcript",
     "start": "00:27:14",
     "end": "00:35:47",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=1634s",
     "note": "Covers auto exposure, a hut/dark-space test, manual exposure, post-process volume settings, bloom, vignette, saturation, and Infinite Extent Unbound."
   },
   "learningTarget": "I can use a post-process volume to control exposure and camera-based visual effects in an Unreal scene.",

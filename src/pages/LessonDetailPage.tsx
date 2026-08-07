@@ -5,6 +5,7 @@ import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
+import { VideoSegmentLinks } from '../components/VideoSegmentLinks';
 import { VocabularyList } from '../components/VocabularyList';
 import { useAsyncData } from '../hooks/useAsyncData';
 import { getAssignmentById } from '../services/assignmentService';
@@ -85,10 +86,7 @@ export function LessonDetailPage() {
 
         <section className="card mission-panel">
           <h2>Video Segment</h2>
-          <p>{lesson.video.source}</p>
-          <p className="meta-line">
-            {lesson.video.start}-{lesson.video.end}
-          </p>
+          <VideoSegmentLinks video={lesson.video} />
         </section>
 
         <section className="card mission-panel">

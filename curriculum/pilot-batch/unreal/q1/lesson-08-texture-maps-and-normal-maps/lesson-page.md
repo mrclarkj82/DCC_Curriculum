@@ -18,6 +18,8 @@ What is the difference between color detail and surface depth detail?
 
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Timestamp range: 00:54:38-01:03:02
+- Assigned segment: [Play 00:54:38-01:03:02 only](https://www.youtube.com/embed/k-zMkzmduqI?start=3278&end=3782&autoplay=1)
+- YouTube page: [Open at 00:54:38](https://www.youtube.com/watch?v=k-zMkzmduqI&t=3278s); stop at 01:03:02.
 - Note: Covers importing texture maps, Base Color maps, Roughness maps, Normal maps, sRGB settings, mask/non-color texture settings, normal map compression, material connections, Texture Coordinate, Multiply, tiling/scale, and optional color tint. Ends before material instances.
 
 ## Vocabulary

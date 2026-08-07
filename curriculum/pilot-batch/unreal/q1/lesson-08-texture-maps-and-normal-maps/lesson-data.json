@@ -10,7 +10,7 @@
     "source": "Unreal Engine 5 Beginner Tutorial Transcript",
     "start": "00:54:38",
     "end": "01:03:02",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=3278s",
     "note": "Covers importing texture maps, Base Color maps, Roughness maps, Normal maps, sRGB settings, mask/non-color texture settings, normal map compression, material connections, Texture Coordinate, Multiply, tiling/scale, and optional color tint. Ends before material instances."
   },
   "learningTarget": "I can import texture maps and connect base color, roughness, and normal maps correctly to build a more believable material.",

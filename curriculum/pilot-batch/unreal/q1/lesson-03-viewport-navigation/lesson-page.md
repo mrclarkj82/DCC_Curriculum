@@ -19,6 +19,8 @@ Why might navigation controls matter before building anything in a 3D scene?
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Start: 00:11:57
 - End: 00:17:31
+- Assigned segment: [Play 00:11:57-00:17:31 only](https://www.youtube.com/embed/k-zMkzmduqI?start=717&end=1051&autoplay=1)
+- YouTube page: [Open at 00:11:57](https://www.youtube.com/watch?v=k-zMkzmduqI&t=717s); stop at 00:17:31.
 - Transcript source: `curriculum/source/unreal-video-transcript.md`
 
 ## Vocabulary

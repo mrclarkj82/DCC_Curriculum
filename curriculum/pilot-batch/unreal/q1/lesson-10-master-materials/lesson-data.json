@@ -10,7 +10,7 @@
     "source": "Unreal Engine 5 Beginner Tutorial Transcript",
     "start": "01:09:01",
     "end": "01:14:43",
-    "url": "",
+    "url": "https://www.youtube.com/watch?v=k-zMkzmduqI&t=4141s",
     "note": "Covers the master material concept, neutral default values, exposing texture parameters, swapping Base Color/Roughness/Normal textures in instances, adding a Metallic map, using a Static Switch Parameter for metallic behavior, and building a reusable material workflow."
   },
   "learningTarget": "I can describe why master materials help organize reusable material workflows.",

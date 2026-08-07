@@ -19,6 +19,8 @@ What is the difference between moving an object and changing the camera view?
 - Source: Unreal Engine 5 Beginner Tutorial Transcript
 - Start: 00:17:31
 - End: 00:27:14
+- Assigned segment: [Play 00:17:31-00:27:14 only](https://www.youtube.com/embed/k-zMkzmduqI?start=1051&end=1634&autoplay=1)
+- YouTube page: [Open at 00:17:31](https://www.youtube.com/watch?v=k-zMkzmduqI&t=1051s); stop at 00:27:14.
 - Transcript source: `curriculum/source/unreal-video-transcript.md`
 
 ## Vocabulary
