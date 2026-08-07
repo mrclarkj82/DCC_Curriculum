@@ -81,16 +81,17 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Added the teacher-supplied Unreal Engine 5 YouTube tutorial to all 16 Q1 Unreal lessons with lesson-specific start times.
 - 2026-08-07: Added exact assigned-segment playback links that use each lesson's start and end times, plus standard YouTube links that open at the assigned start.
 - 2026-08-07: Added reusable video-segment controls to the full lesson page and the student Today lesson experience.
+- 2026-08-07: Committed and pushed the Q1 Unreal video-link implementation to `main` in commit `86d5e0e`.
+- 2026-08-07: Updated and read-back verified only the video URL/start/end fields on the 16 live `apps/dcc/lessons` Q1 Unreal documents.
+- 2026-08-07: Deployed the validated front-end to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
 
 ## In Progress
 
-- Publish the validated Q1 Unreal video-link update to Firestore and the configured `dcc` Hosting target.
+- None.
 
 ## Remaining
 
-- Commit and push the validated source changes to `main`.
-- Update the 16 Q1 Unreal lesson documents in Firestore without reseeding unrelated curriculum records.
-- Deploy the website update to the configured `dcc` Hosting target.
+- None for the Q1 Unreal video-link update.
 
 ## Blockers And Assumptions
 
@@ -122,6 +123,9 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 `npm.cmd run validate:curriculum`: passed.
 - 2026-08-07 `npm.cmd run seed:curriculum -- --dry-run`: passed; `skipped=158 created=0 updated=0 failed=0`.
 - 2026-08-07 `git diff --check`: passed with Git line-ending normalization warnings only.
+- 2026-08-07 targeted Firestore write: passed; 16 existing Q1 Unreal lessons updated and read-back verified with no unrelated curriculum records seeded.
+- 2026-08-07 Firebase Hosting deploy: passed for target `dcc` / site `dcccs`.
+- 2026-08-07 live hosting verification: passed; `https://dcccs.web.app` returned HTTP 200 and served the production asset containing the assigned-segment controls.
 
 ## Slide Handoff
 
@@ -146,4 +150,4 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 
 ## Final Status
 
-In progress. Acceptance criteria are not complete yet.
+Phase 9 repository work is complete. The Q1 Unreal video-link update is committed, pushed, seeded to the 16 affected lesson records, deployed, and live-verified.
