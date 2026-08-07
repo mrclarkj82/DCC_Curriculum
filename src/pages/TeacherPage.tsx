@@ -21,8 +21,8 @@ import { firestoreErrorMessage } from '../services/firestoreService';
 import { getProgramAreas } from '../services/programAreaService';
 import {
   getBellRingerPrompt,
-  getClassItemResponses,
   getExitTicketPrompt,
+  subscribeToResponsesForClassItem,
   type ClassItemResponses,
 } from '../services/responseService';
 import {
@@ -139,9 +139,15 @@ function buildCompletionSummaries(
     return {
       uid,
       studentName:
-        student?.displayName || bellRingerResponse?.studentName || exitTicketResponse?.studentName || uid,
+        student?.displayName ||
+        bellRingerResponse?.studentName ||
+        exitTicketResponse?.studentName ||
+        uid,
       studentEmail:
-        student?.email || bellRingerResponse?.studentEmail || exitTicketResponse?.studentEmail || '',
+        student?.email ||
+        bellRingerResponse?.studentEmail ||
+        exitTicketResponse?.studentEmail ||
+        '',
       bellRingerComplete: Boolean(bellRingerResponse?.response.trim()),
       exitTicketComplete: Boolean(exitTicketResponse?.response.trim()),
       bellRingerUpdatedAt: bellRingerResponse?.updatedAt,
@@ -161,7 +167,10 @@ function formatQuizScore(attempt: QuizAttempt | undefined): string {
 }
 
 function normalizedPeriodToken(period: string): string {
-  return period.trim().toUpperCase().replace(/^PERIOD\s*/, '');
+  return period
+    .trim()
+    .toUpperCase()
+    .replace(/^PERIOD\s*/, '');
 }
 
 function hasDaySectionLabel(value: string, day: 'A' | 'B'): boolean {
@@ -265,15 +274,15 @@ export function TeacherPage() {
     Record<string, ActiveClassItem | null>
   >({});
   const [studentsByClassId, setStudentsByClassId] = useState<Record<string, UserProfile[]>>({});
-  const [responsesByClassId, setResponsesByClassId] = useState<
-    Record<string, ClassItemResponses>
-  >({});
+  const [responsesByClassId, setResponsesByClassId] = useState<Record<string, ClassItemResponses>>(
+    {},
+  );
   const [submissionsByClassId, setSubmissionsByClassId] = useState<
     Record<string, StudentSubmission[]>
   >({});
-  const [quizAttemptsByClassId, setQuizAttemptsByClassId] = useState<
-    Record<string, QuizAttempt[]>
-  >({});
+  const [quizAttemptsByClassId, setQuizAttemptsByClassId] = useState<Record<string, QuizAttempt[]>>(
+    {},
+  );
   const [quizzes, setQuizzes] = useState<Quiz[]>([]);
   const [quizzesLoading, setQuizzesLoading] = useState(true);
   const [quizzesError, setQuizzesError] = useState<string | null>(null);
@@ -294,7 +303,6 @@ export function TeacherPage() {
   const [formMessage, setFormMessage] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
-  const [expandedResponseKey, setExpandedResponseKey] = useState<string | null>(null);
   const [expandedSubmissionId, setExpandedSubmissionId] = useState<string | null>(null);
   const [feedbackDrafts, setFeedbackDrafts] = useState<Record<string, string>>({});
   const [reviewSavingKey, setReviewSavingKey] = useState<string | null>(null);
@@ -309,9 +317,9 @@ export function TeacherPage() {
   const [gradeAttemptDetailLoadingId, setGradeAttemptDetailLoadingId] = useState<string | null>(
     null,
   );
-  const [gradeAttemptDetailErrors, setGradeAttemptDetailErrors] = useState<
-    Record<string, string>
-  >({});
+  const [gradeAttemptDetailErrors, setGradeAttemptDetailErrors] = useState<Record<string, string>>(
+    {},
+  );
   const [dataRefreshVersion, setDataRefreshVersion] = useState(0);
 
   const selectedDataClassIds = useMemo(
@@ -545,30 +553,22 @@ export function TeacherPage() {
       return undefined;
     }
 
-    let didCancel = false;
+    setResponsesByClassId({});
+    setResponseErrorsByClassId({});
 
-    void getClassItemResponses(classId, activeItem.id)
-      .then((responses) => {
-        if (didCancel) {
-          return;
-        }
-
+    return subscribeToResponsesForClassItem(
+      classId,
+      activeItem.id,
+      (responses) => {
         setResponsesByClassId({ [classId]: responses });
         setResponseErrorsByClassId({});
-      })
-      .catch((error: unknown) => {
-        if (didCancel) {
-          return;
-        }
-
+      },
+      (error) => {
         setResponseErrorsByClassId({
           [classId]: firestoreErrorMessage(error, 'Unable to load response completion data.'),
         });
-      });
-
-    return () => {
-      didCancel = true;
-    };
+      },
+    );
   }, [activeItemsByClassId, classRecords, dataRefreshVersion, selectedResponseClassId]);
 
   useEffect(() => {
@@ -764,7 +764,7 @@ export function TeacherPage() {
   );
 
   const selectedGradeStudents = selectedGradeClass
-    ? studentsByClassId[selectedGradeClass.id] ?? []
+    ? (studentsByClassId[selectedGradeClass.id] ?? [])
     : [];
 
   const completionSummariesByClassId = useMemo(
@@ -961,9 +961,7 @@ export function TeacherPage() {
         [attempt.id]: firestoreErrorMessage(error, 'Unable to load wrong-question details.'),
       }));
     } finally {
-      setGradeAttemptDetailLoadingId((current) =>
-        current === attempt.id ? null : current,
-      );
+      setGradeAttemptDetailLoadingId((current) => (current === attempt.id ? null : current));
     }
   };
 
@@ -1159,159 +1157,156 @@ export function TeacherPage() {
                 </div>
                 <div className="response-completion-stack">
                   {[selectedResponseClass].map((classRecord) => {
-                const activeItem = activeItemsByClassId[classRecord.id];
-                const responseError = responseErrorsByClassId[classRecord.id];
-                const summaries = completionSummariesByClassId[classRecord.id] ?? [];
-                const bellRingerPrompt = getBellRingerPrompt(activeItem);
-                const exitTicketPrompt = getExitTicketPrompt(activeItem);
-                const bellRingerComplete = summaries.filter(
-                  (summary) => summary.bellRingerComplete,
-                ).length;
-                const exitTicketComplete = summaries.filter(
-                  (summary) => summary.exitTicketComplete,
-                ).length;
+                    const activeItem = activeItemsByClassId[classRecord.id];
+                    const responseError = responseErrorsByClassId[classRecord.id];
+                    const summaries = completionSummariesByClassId[classRecord.id] ?? [];
+                    const bellRingerPrompt = getBellRingerPrompt(activeItem);
+                    const exitTicketPrompt = getExitTicketPrompt(activeItem);
+                    const bellRingerComplete = summaries.filter(
+                      (summary) => summary.bellRingerComplete,
+                    ).length;
+                    const exitTicketComplete = summaries.filter(
+                      (summary) => summary.exitTicketComplete,
+                    ).length;
 
-                return (
-                  <article className="card neon-card response-completion-card" key={classRecord.id}>
-                    <div className="section-heading-row">
-                      <div>
-                        <p className="retro-label">
-                          {classRecord.name} / {classRecord.period}
-                        </p>
-                        <h3>{activeItem?.title ?? classRecord.activeItemId}</h3>
-                      </div>
-                      <StatusBadge status={`${classRecord.studentIds.length} students`} />
-                    </div>
+                    return (
+                      <article
+                        className="card neon-card response-completion-card"
+                        key={classRecord.id}
+                      >
+                        <div className="section-heading-row">
+                          <div>
+                            <p className="retro-label">
+                              {classRecord.name} / {classRecord.period}
+                            </p>
+                            <h3>{activeItem?.title ?? classRecord.activeItemId}</h3>
+                          </div>
+                          <StatusBadge status={`${classRecord.studentIds.length} students`} />
+                        </div>
 
-                    <dl className="detail-list response-summary-list">
-                      <div>
-                        <dt>Active Item</dt>
-                        <dd>
-                          {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
-                          {classRecord.activeItemId}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>Bell Ringer Completion</dt>
-                        <dd>
-                          {bellRingerPrompt
-                            ? `${bellRingerComplete}/${classRecord.studentIds.length}`
-                            : 'No prompt attached'}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>Exit Ticket Completion</dt>
-                        <dd>
-                          {exitTicketPrompt
-                            ? `${exitTicketComplete}/${classRecord.studentIds.length}`
-                            : 'No prompt attached'}
-                        </dd>
-                      </div>
-                    </dl>
+                        <dl className="detail-list response-summary-list">
+                          <div>
+                            <dt>Active Item</dt>
+                            <dd>
+                              {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
+                              {classRecord.activeItemId}
+                            </dd>
+                          </div>
+                          <div>
+                            <dt>Bell Ringer Completion</dt>
+                            <dd>
+                              {bellRingerPrompt
+                                ? `${bellRingerComplete}/${classRecord.studentIds.length}`
+                                : 'No prompt attached'}
+                            </dd>
+                          </div>
+                          <div>
+                            <dt>Exit Ticket Completion</dt>
+                            <dd>
+                              {exitTicketPrompt
+                                ? `${exitTicketComplete}/${classRecord.studentIds.length}`
+                                : 'No prompt attached'}
+                            </dd>
+                          </div>
+                        </dl>
 
-                    {responseError && <ErrorState message={responseError} />}
+                        {responseError && <ErrorState message={responseError} />}
 
-                    {!classRecord.studentIds.length ? (
-                      <p className="muted">No students are assigned to this class yet.</p>
-                    ) : (
-                      <div className="table-scroll">
-                        <table className="management-table response-table">
-                          <thead>
-                            <tr>
-                              <th scope="col">Student</th>
-                              <th scope="col">Bell Ringer</th>
-                              <th scope="col">Bell Updated</th>
-                              <th scope="col">Exit Ticket</th>
-                              <th scope="col">Exit Updated</th>
-                              <th scope="col">Actions</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {summaries.map((summary) => {
-                              const responseKey = `${classRecord.id}-${summary.uid}`;
-                              const isExpanded = expandedResponseKey === responseKey;
-                              const bellRingerStatus = !bellRingerPrompt
-                                ? 'no prompt'
-                                : summary.bellRingerComplete
-                                  ? 'submitted'
-                                  : 'pending';
-                              const exitTicketStatus = !exitTicketPrompt
-                                ? 'no prompt'
-                                : summary.exitTicketComplete
-                                  ? 'submitted'
-                                  : 'pending';
+                        {!classRecord.studentIds.length ? (
+                          <p className="muted">No students are assigned to this class yet.</p>
+                        ) : (
+                          <div className="table-scroll">
+                            <table className="management-table response-table">
+                              <thead>
+                                <tr>
+                                  <th className="response-student-column" scope="col">
+                                    Student
+                                  </th>
+                                  <th className="response-question-column" scope="col">
+                                    <span className="response-column-label">Bell Ringer</span>
+                                    <span className="response-column-prompt">
+                                      {bellRingerPrompt || 'No bell ringer prompt attached.'}
+                                    </span>
+                                  </th>
+                                  <th className="response-question-column" scope="col">
+                                    <span className="response-column-label">Exit Ticket</span>
+                                    <span className="response-column-prompt">
+                                      {exitTicketPrompt || 'No exit ticket prompt attached.'}
+                                    </span>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {summaries.map((summary) => {
+                                  const responseKey = `${classRecord.id}-${summary.uid}`;
+                                  const bellRingerStatus = !bellRingerPrompt
+                                    ? 'no prompt'
+                                    : summary.bellRingerComplete
+                                      ? 'submitted'
+                                      : 'pending';
+                                  const exitTicketStatus = !exitTicketPrompt
+                                    ? 'no prompt'
+                                    : summary.exitTicketComplete
+                                      ? 'submitted'
+                                      : 'pending';
 
-                              return (
-                                <Fragment key={responseKey}>
-                                  <tr>
-                                    <td>
-                                      <strong>{summary.studentName}</strong>
-                                      {summary.studentEmail && (
-                                        <p className="meta-line">{summary.studentEmail}</p>
-                                      )}
-                                    </td>
-                                    <td>
-                                      <StatusBadge status={bellRingerStatus} />
-                                    </td>
-                                    <td>{formatTimestamp(summary.bellRingerUpdatedAt)}</td>
-                                    <td>
-                                      <StatusBadge status={exitTicketStatus} />
-                                    </td>
-                                    <td>{formatTimestamp(summary.exitTicketUpdatedAt)}</td>
-                                    <td>
-                                      <button
-                                        className="outline-button"
-                                        type="button"
-                                        aria-expanded={isExpanded}
-                                        onClick={() =>
-                                          setExpandedResponseKey(isExpanded ? null : responseKey)
-                                        }
-                                      >
-                                        {isExpanded ? 'Hide Responses' : 'View Responses'}
-                                      </button>
-                                    </td>
-                                  </tr>
-                                  {isExpanded && (
-                                    <tr className="response-detail-row">
-                                      <td colSpan={6}>
-                                        <div className="response-detail-grid">
-                                          <section>
-                                            <p className="retro-label">Bell Ringer</p>
-                                            <p className="muted">
-                                              {summary.bellRingerResponse?.prompt ||
-                                                bellRingerPrompt ||
-                                                'No prompt attached.'}
-                                            </p>
-                                            <p>
+                                  return (
+                                    <tr key={responseKey}>
+                                      <td>
+                                        <strong>{summary.studentName}</strong>
+                                        {summary.studentEmail && (
+                                          <p className="meta-line">{summary.studentEmail}</p>
+                                        )}
+                                      </td>
+                                      <td className="response-answer-cell">
+                                        {bellRingerPrompt ? (
+                                          <>
+                                            <div className="response-answer-meta">
+                                              <StatusBadge status={bellRingerStatus} />
+                                              <span>
+                                                {formatTimestamp(summary.bellRingerUpdatedAt)}
+                                              </span>
+                                            </div>
+                                            <p className="response-answer-text">
                                               {summary.bellRingerResponse?.response ||
-                                                'No bell ringer response submitted yet.'}
+                                                'No response submitted yet.'}
                                             </p>
-                                          </section>
-                                          <section>
-                                            <p className="retro-label">Exit Ticket</p>
-                                            <p className="muted">
-                                              {summary.exitTicketResponse?.prompt ||
-                                                exitTicketPrompt ||
-                                                'No prompt attached.'}
-                                            </p>
-                                            <p>
+                                          </>
+                                        ) : (
+                                          <p className="response-answer-text muted">
+                                            No prompt attached.
+                                          </p>
+                                        )}
+                                      </td>
+                                      <td className="response-answer-cell">
+                                        {exitTicketPrompt ? (
+                                          <>
+                                            <div className="response-answer-meta">
+                                              <StatusBadge status={exitTicketStatus} />
+                                              <span>
+                                                {formatTimestamp(summary.exitTicketUpdatedAt)}
+                                              </span>
+                                            </div>
+                                            <p className="response-answer-text">
                                               {summary.exitTicketResponse?.response ||
-                                                'No exit ticket response submitted yet.'}
+                                                'No response submitted yet.'}
                                             </p>
-                                          </section>
-                                        </div>
+                                          </>
+                                        ) : (
+                                          <p className="response-answer-text muted">
+                                            No prompt attached.
+                                          </p>
+                                        )}
                                       </td>
                                     </tr>
-                                  )}
-                                </Fragment>
-                              );
-                            })}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </article>
-                );
+                                  );
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        )}
+                      </article>
+                    );
                   })}
                 </div>
               </>
@@ -1348,219 +1343,238 @@ export function TeacherPage() {
                 </div>
                 <div className="response-completion-stack">
                   {[selectedSubmissionClass].map((classRecord) => {
-                const activeItem = activeItemsByClassId[classRecord.id];
-                const submissionTarget = activeItem
-                  ? resolveSubmissionTargetForActiveItem(activeItem)
-                  : null;
-                const submissions = submissionsByClassId[classRecord.id] ?? [];
-                const submissionError = submissionErrorsByClassId[classRecord.id];
-                const submittedUids = new Set(submissions.map((submission) => submission.uid));
-                const missingCount = Math.max(classRecord.studentIds.length - submittedUids.size, 0);
-                const needsRevisionCount = submissions.filter(
-                  (submission) => submission.status === 'needs_revision',
-                ).length;
-                const acceptedCount = submissions.filter(
-                  (submission) => submission.status === 'accepted',
-                ).length;
+                    const activeItem = activeItemsByClassId[classRecord.id];
+                    const submissionTarget = activeItem
+                      ? resolveSubmissionTargetForActiveItem(activeItem)
+                      : null;
+                    const submissions = submissionsByClassId[classRecord.id] ?? [];
+                    const submissionError = submissionErrorsByClassId[classRecord.id];
+                    const submittedUids = new Set(submissions.map((submission) => submission.uid));
+                    const missingCount = Math.max(
+                      classRecord.studentIds.length - submittedUids.size,
+                      0,
+                    );
+                    const needsRevisionCount = submissions.filter(
+                      (submission) => submission.status === 'needs_revision',
+                    ).length;
+                    const acceptedCount = submissions.filter(
+                      (submission) => submission.status === 'accepted',
+                    ).length;
 
-                return (
-                  <article className="card neon-card response-completion-card" key={classRecord.id}>
-                    <div className="section-heading-row">
-                      <div>
-                        <p className="retro-label">
-                          {classRecord.name} / {classRecord.period}
-                        </p>
-                        <h3>{submissionTarget?.title ?? activeItem?.title ?? classRecord.activeItemId}</h3>
-                      </div>
-                      <StatusBadge status={`${submissions.length} submitted`} />
-                    </div>
+                    return (
+                      <article
+                        className="card neon-card response-completion-card"
+                        key={classRecord.id}
+                      >
+                        <div className="section-heading-row">
+                          <div>
+                            <p className="retro-label">
+                              {classRecord.name} / {classRecord.period}
+                            </p>
+                            <h3>
+                              {submissionTarget?.title ??
+                                activeItem?.title ??
+                                classRecord.activeItemId}
+                            </h3>
+                          </div>
+                          <StatusBadge status={`${submissions.length} submitted`} />
+                        </div>
 
-                    <dl className="detail-list response-summary-list">
-                      <div>
-                        <dt>Active Item</dt>
-                        <dd>
-                          {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
-                          {classRecord.activeItemId}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>Submission Target</dt>
-                        <dd>
-                          {submissionTarget
-                            ? `${submissionTarget.targetType} / ${submissionTarget.targetId}`
-                            : 'No Drive-link target'}
-                        </dd>
-                      </div>
-                      <div>
-                        <dt>Missing</dt>
-                        <dd>{missingCount}</dd>
-                      </div>
-                      <div>
-                        <dt>Needs Revision</dt>
-                        <dd>{needsRevisionCount}</dd>
-                      </div>
-                      <div>
-                        <dt>Accepted</dt>
-                        <dd>{acceptedCount}</dd>
-                      </div>
-                    </dl>
+                        <dl className="detail-list response-summary-list">
+                          <div>
+                            <dt>Active Item</dt>
+                            <dd>
+                              {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
+                              {classRecord.activeItemId}
+                            </dd>
+                          </div>
+                          <div>
+                            <dt>Submission Target</dt>
+                            <dd>
+                              {submissionTarget
+                                ? `${submissionTarget.targetType} / ${submissionTarget.targetId}`
+                                : 'No Drive-link target'}
+                            </dd>
+                          </div>
+                          <div>
+                            <dt>Missing</dt>
+                            <dd>{missingCount}</dd>
+                          </div>
+                          <div>
+                            <dt>Needs Revision</dt>
+                            <dd>{needsRevisionCount}</dd>
+                          </div>
+                          <div>
+                            <dt>Accepted</dt>
+                            <dd>{acceptedCount}</dd>
+                          </div>
+                        </dl>
 
-                    {submissionError && <ErrorState message={submissionError} />}
+                        {submissionError && <ErrorState message={submissionError} />}
 
-                    {!submissionTarget ? (
-                      <p className="muted">
-                        This active item does not have a Drive-link submission target. Quiz scores
-                        appear in the Grades tab.
-                      </p>
-                    ) : !classRecord.studentIds.length ? (
-                      <p className="muted">No students are assigned to this class yet.</p>
-                    ) : !submissions.length ? (
-                      <p className="muted">No Google Drive evidence links have been submitted yet.</p>
-                    ) : (
-                      <div className="table-scroll">
-                        <table className="management-table response-table submission-review-table">
-                          <thead>
-                            <tr>
-                              <th scope="col">Student</th>
-                              <th scope="col">Status</th>
-                              <th scope="col">Drive Links</th>
-                              <th scope="col">Reflection</th>
-                              <th scope="col">Submitted</th>
-                              <th scope="col">Updated</th>
-                              <th scope="col">Teacher Feedback</th>
-                              <th scope="col">Actions</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {submissions.map((submission) => {
-                              const allLinks = [
-                                ...submission.driveLinks,
-                                ...submission.otherLinks,
-                              ];
-                              const isExpanded = expandedSubmissionId === submission.id;
+                        {!submissionTarget ? (
+                          <p className="muted">
+                            This active item does not have a Drive-link submission target. Quiz
+                            scores appear in the Grades tab.
+                          </p>
+                        ) : !classRecord.studentIds.length ? (
+                          <p className="muted">No students are assigned to this class yet.</p>
+                        ) : !submissions.length ? (
+                          <p className="muted">
+                            No Google Drive evidence links have been submitted yet.
+                          </p>
+                        ) : (
+                          <div className="table-scroll">
+                            <table className="management-table response-table submission-review-table">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Student</th>
+                                  <th scope="col">Status</th>
+                                  <th scope="col">Drive Links</th>
+                                  <th scope="col">Reflection</th>
+                                  <th scope="col">Submitted</th>
+                                  <th scope="col">Updated</th>
+                                  <th scope="col">Teacher Feedback</th>
+                                  <th scope="col">Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {submissions.map((submission) => {
+                                  const allLinks = [
+                                    ...submission.driveLinks,
+                                    ...submission.otherLinks,
+                                  ];
+                                  const isExpanded = expandedSubmissionId === submission.id;
 
-                              return (
-                                <Fragment key={submission.id}>
-                                  <tr>
-                                    <td>
-                                      <strong>{submission.studentName || submission.uid}</strong>
-                                      {submission.studentEmail && (
-                                        <p className="meta-line">{submission.studentEmail}</p>
+                                  return (
+                                    <Fragment key={submission.id}>
+                                      <tr>
+                                        <td>
+                                          <strong>
+                                            {submission.studentName || submission.uid}
+                                          </strong>
+                                          {submission.studentEmail && (
+                                            <p className="meta-line">{submission.studentEmail}</p>
+                                          )}
+                                        </td>
+                                        <td>
+                                          <SubmissionStatusBadge status={submission.status} />
+                                        </td>
+                                        <td>
+                                          <ul className="submission-link-display-list compact">
+                                            {allLinks.map((link) => (
+                                              <li key={link.url}>
+                                                <a href={link.url} target="_blank" rel="noreferrer">
+                                                  {link.label || 'Open evidence'}
+                                                </a>
+                                              </li>
+                                            ))}
+                                          </ul>
+                                        </td>
+                                        <td>
+                                          <p className="submission-reflection-preview">
+                                            {submission.reflection}
+                                          </p>
+                                        </td>
+                                        <td>{formatTimestamp(submission.submittedAt)}</td>
+                                        <td>{formatTimestamp(submission.updatedAt)}</td>
+                                        <td>
+                                          <label
+                                            className="sr-only"
+                                            htmlFor={`feedback-${submission.id}`}
+                                          >
+                                            Feedback for {submission.studentName || submission.uid}
+                                          </label>
+                                          <textarea
+                                            id={`feedback-${submission.id}`}
+                                            className="submission-feedback-input"
+                                            value={
+                                              feedbackDrafts[submission.id] ??
+                                              submission.teacherFeedback
+                                            }
+                                            rows={4}
+                                            onChange={(event) =>
+                                              setFeedbackDrafts((current) => ({
+                                                ...current,
+                                                [submission.id]: event.target.value,
+                                              }))
+                                            }
+                                          />
+                                        </td>
+                                        <td>
+                                          <div className="button-row vertical">
+                                            <button
+                                              className="outline-button"
+                                              type="button"
+                                              aria-expanded={isExpanded}
+                                              onClick={() =>
+                                                setExpandedSubmissionId(
+                                                  isExpanded ? null : submission.id,
+                                                )
+                                              }
+                                            >
+                                              {isExpanded ? 'Hide Details' : 'View Details'}
+                                            </button>
+                                            <button
+                                              className="secondary-button"
+                                              type="button"
+                                              disabled={
+                                                reviewSavingKey ===
+                                                `${submission.id}-needs_revision`
+                                              }
+                                              onClick={() =>
+                                                handleReviewSubmission(submission, 'needs_revision')
+                                              }
+                                            >
+                                              Needs Revision
+                                            </button>
+                                            <button
+                                              className="gradient-button"
+                                              type="button"
+                                              disabled={
+                                                reviewSavingKey === `${submission.id}-accepted`
+                                              }
+                                              onClick={() =>
+                                                handleReviewSubmission(submission, 'accepted')
+                                              }
+                                            >
+                                              Accept
+                                            </button>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                      {isExpanded && (
+                                        <tr className="response-detail-row">
+                                          <td colSpan={8}>
+                                            <div className="response-detail-grid">
+                                              <section>
+                                                <p className="retro-label">Reflection</p>
+                                                <p>{submission.reflection}</p>
+                                              </section>
+                                              <section>
+                                                <p className="retro-label">Checklist</p>
+                                                <ul className="submission-checklist-readonly">
+                                                  {submission.evidenceChecklist.map((item) => (
+                                                    <li key={item.label}>
+                                                      {item.complete ? 'Complete' : 'Missing'}:{' '}
+                                                      {item.label}
+                                                    </li>
+                                                  ))}
+                                                </ul>
+                                              </section>
+                                            </div>
+                                          </td>
+                                        </tr>
                                       )}
-                                    </td>
-                                    <td>
-                                      <SubmissionStatusBadge status={submission.status} />
-                                    </td>
-                                    <td>
-                                      <ul className="submission-link-display-list compact">
-                                        {allLinks.map((link) => (
-                                          <li key={link.url}>
-                                            <a href={link.url} target="_blank" rel="noreferrer">
-                                              {link.label || 'Open evidence'}
-                                            </a>
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </td>
-                                    <td>
-                                      <p className="submission-reflection-preview">
-                                        {submission.reflection}
-                                      </p>
-                                    </td>
-                                    <td>{formatTimestamp(submission.submittedAt)}</td>
-                                    <td>{formatTimestamp(submission.updatedAt)}</td>
-                                    <td>
-                                      <label className="sr-only" htmlFor={`feedback-${submission.id}`}>
-                                        Feedback for {submission.studentName || submission.uid}
-                                      </label>
-                                      <textarea
-                                        id={`feedback-${submission.id}`}
-                                        className="submission-feedback-input"
-                                        value={
-                                          feedbackDrafts[submission.id] ??
-                                          submission.teacherFeedback
-                                        }
-                                        rows={4}
-                                        onChange={(event) =>
-                                          setFeedbackDrafts((current) => ({
-                                            ...current,
-                                            [submission.id]: event.target.value,
-                                          }))
-                                        }
-                                      />
-                                    </td>
-                                    <td>
-                                      <div className="button-row vertical">
-                                        <button
-                                          className="outline-button"
-                                          type="button"
-                                          aria-expanded={isExpanded}
-                                          onClick={() =>
-                                            setExpandedSubmissionId(
-                                              isExpanded ? null : submission.id,
-                                            )
-                                          }
-                                        >
-                                          {isExpanded ? 'Hide Details' : 'View Details'}
-                                        </button>
-                                        <button
-                                          className="secondary-button"
-                                          type="button"
-                                          disabled={
-                                            reviewSavingKey === `${submission.id}-needs_revision`
-                                          }
-                                          onClick={() =>
-                                            handleReviewSubmission(submission, 'needs_revision')
-                                          }
-                                        >
-                                          Needs Revision
-                                        </button>
-                                        <button
-                                          className="gradient-button"
-                                          type="button"
-                                          disabled={
-                                            reviewSavingKey === `${submission.id}-accepted`
-                                          }
-                                          onClick={() =>
-                                            handleReviewSubmission(submission, 'accepted')
-                                          }
-                                        >
-                                          Accept
-                                        </button>
-                                      </div>
-                                    </td>
-                                  </tr>
-                                  {isExpanded && (
-                                    <tr className="response-detail-row">
-                                      <td colSpan={8}>
-                                        <div className="response-detail-grid">
-                                          <section>
-                                            <p className="retro-label">Reflection</p>
-                                            <p>{submission.reflection}</p>
-                                          </section>
-                                          <section>
-                                            <p className="retro-label">Checklist</p>
-                                            <ul className="submission-checklist-readonly">
-                                              {submission.evidenceChecklist.map((item) => (
-                                                <li key={item.label}>
-                                                  {item.complete ? 'Complete' : 'Missing'}: {item.label}
-                                                </li>
-                                              ))}
-                                            </ul>
-                                          </section>
-                                        </div>
-                                      </td>
-                                    </tr>
-                                  )}
-                                </Fragment>
-                              );
-                            })}
-                          </tbody>
-                        </table>
-                      </div>
-                    )}
-                  </article>
-                );
+                                    </Fragment>
+                                  );
+                                })}
+                              </tbody>
+                            </table>
+                          </div>
+                        )}
+                      </article>
+                    );
                   })}
                 </div>
               </>
@@ -1702,7 +1716,9 @@ export function TeacherPage() {
                         <div>
                           <dt>Average</dt>
                           <dd>
-                            {averagePercentage === null ? 'Not enough scores' : `${averagePercentage}%`}
+                            {averagePercentage === null
+                              ? 'Not enough scores'
+                              : `${averagePercentage}%`}
                           </dd>
                         </div>
                         <div>
@@ -1744,35 +1760,37 @@ export function TeacherPage() {
                                 return (
                                   <Fragment key={`${selectedGradeQuiz.id}-${uid}`}>
                                     <tr>
-                                    <td>
-                                      {attempt ? (
-                                        <button
-                                          className="grade-student-button"
-                                          type="button"
-                                          aria-expanded={isGradeAttemptExpanded}
-                                          onClick={() => handleGradeAttemptToggle(attempt)}
-                                        >
-                                          <strong>
-                                            {student?.displayName || attempt.studentName || uid}
-                                          </strong>
-                                          {(student?.email || attempt.studentEmail) && (
-                                            <span className="meta-line">
-                                              {student?.email || attempt.studentEmail}
-                                            </span>
-                                          )}
-                                        </button>
-                                      ) : (
-                                        <>
-                                          <strong>{student?.displayName || uid}</strong>
-                                          {student?.email && <p className="meta-line">{student.email}</p>}
-                                        </>
-                                      )}
-                                    </td>
-                                    <td>{formatQuizScore(attempt)}</td>
-                                    <td>
-                                      <StatusBadge status={attempt ? 'submitted' : 'missing'} />
-                                    </td>
-                                    <td>{formatTimestamp(attempt?.submittedAt)}</td>
+                                      <td>
+                                        {attempt ? (
+                                          <button
+                                            className="grade-student-button"
+                                            type="button"
+                                            aria-expanded={isGradeAttemptExpanded}
+                                            onClick={() => handleGradeAttemptToggle(attempt)}
+                                          >
+                                            <strong>
+                                              {student?.displayName || attempt.studentName || uid}
+                                            </strong>
+                                            {(student?.email || attempt.studentEmail) && (
+                                              <span className="meta-line">
+                                                {student?.email || attempt.studentEmail}
+                                              </span>
+                                            )}
+                                          </button>
+                                        ) : (
+                                          <>
+                                            <strong>{student?.displayName || uid}</strong>
+                                            {student?.email && (
+                                              <p className="meta-line">{student.email}</p>
+                                            )}
+                                          </>
+                                        )}
+                                      </td>
+                                      <td>{formatQuizScore(attempt)}</td>
+                                      <td>
+                                        <StatusBadge status={attempt ? 'submitted' : 'missing'} />
+                                      </td>
+                                      <td>{formatTimestamp(attempt?.submittedAt)}</td>
                                     </tr>
                                     {isGradeAttemptExpanded && (
                                       <tr className="response-detail-row">
@@ -1790,9 +1808,11 @@ export function TeacherPage() {
                                                 <ol className="grade-wrong-question-list">
                                                   {attemptDetail.incorrectQuestionIds.map(
                                                     (questionId) => {
-                                                      const question = selectedGradeQuiz.questions.find(
-                                                        (nextQuestion) => nextQuestion.id === questionId,
-                                                      );
+                                                      const question =
+                                                        selectedGradeQuiz.questions.find(
+                                                          (nextQuestion) =>
+                                                            nextQuestion.id === questionId,
+                                                        );
 
                                                       return (
                                                         <li key={questionId}>
@@ -1809,8 +1829,8 @@ export function TeacherPage() {
                                               ))}
                                             {attemptDetail === null && !attemptDetailError && (
                                               <p className="muted">
-                                                Wrong-question details are unavailable for this older
-                                                submission.
+                                                Wrong-question details are unavailable for this
+                                                older submission.
                                               </p>
                                             )}
                                           </div>
