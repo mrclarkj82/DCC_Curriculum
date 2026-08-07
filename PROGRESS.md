@@ -86,15 +86,15 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Deployed the validated front-end to Firebase Hosting target `dcc`; live URL is `https://dcccs.web.app`.
 - 2026-08-07: Diagnosed YouTube Error 153 on exact-segment links: the standalone player request lost its required HTTP referrer because the link used `rel="noreferrer"`.
 - 2026-08-07: Updated exact-segment links to retain a strict-origin referrer while preserving `noopener` protection; normal YouTube links remain unchanged.
+- 2026-08-07: Committed and pushed the Error 153 fix to `main` in commit `43ed471`, then redeployed Firebase Hosting target `dcc`.
 
 ## In Progress
 
-- Publish the validated YouTube Error 153 fix to the configured `dcc` Hosting target.
+- None.
 
 ## Remaining
 
-- Commit and push the referrer-policy fix to `main`.
-- Deploy and live-verify the updated production asset.
+- None for the Q1 Unreal video-link update or Error 153 fix.
 
 ## Blockers And Assumptions
 
@@ -132,6 +132,8 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 Error 153 fix `npm.cmd run build`: passed using process-only Firebase web configuration; no `.env.local` was created.
 - 2026-08-07 Error 153 fix `npm.cmd run lint` and `npm.cmd run validate:curriculum`: passed.
 - 2026-08-07 segment-player browser test: passed; the exact-segment player opened with the intended URL and controls, and no Error 153 or player-configuration message appeared.
+- 2026-08-07 Error 153 Firebase Hosting redeploy: passed for target `dcc` / site `dcccs`.
+- 2026-08-07 Error 153 live verification: passed; the live production asset includes the strict-origin referrer policy and Hosting does not suppress outbound referrers.
 
 ## Slide Handoff
 
@@ -156,4 +158,4 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 
 ## Final Status
 
-Phase 9 repository work is complete. The Q1 Unreal video-link update is committed, pushed, seeded to the 16 affected lesson records, deployed, and live-verified.
+Phase 9 repository work is complete. The Q1 Unreal video-link update and Error 153 fix are committed, pushed, deployed, browser-tested, and live-verified.
