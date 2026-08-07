@@ -7,7 +7,7 @@ import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { StatusBadge } from '../components/StatusBadge';
-import { SubmissionStatusBadge } from '../components/submissions/SubmissionStatusBadge';
+import { SubmissionImageGallery } from '../components/submissions/SubmissionImageGallery';
 import {
   getActiveItemOptions,
   resolveActiveItem,
@@ -31,9 +31,8 @@ import {
   getQuizzesByProgramArea,
 } from '../services/quizService';
 import {
-  getSubmissionsForClassTarget,
   resolveSubmissionTargetForActiveItem,
-  updateSubmissionReviewStatus,
+  subscribeToSubmissionsForClassTarget,
 } from '../services/submissionService';
 import { getUsersByIds } from '../services/userManagementService';
 import type {
@@ -46,7 +45,6 @@ import type {
   QuizAttemptDetail,
   ResponseCompletionSummary,
   StudentSubmission,
-  SubmissionStatus,
   UserProfile,
 } from '../types';
 import { canSetActiveItem } from '../types';
@@ -303,9 +301,6 @@ export function TeacherPage() {
   const [formMessage, setFormMessage] = useState<string | null>(null);
   const [formError, setFormError] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
-  const [expandedSubmissionId, setExpandedSubmissionId] = useState<string | null>(null);
-  const [feedbackDrafts, setFeedbackDrafts] = useState<Record<string, string>>({});
-  const [reviewSavingKey, setReviewSavingKey] = useState<string | null>(null);
   const [selectedResponseClassId, setSelectedResponseClassId] = useState<string | null>(null);
   const [selectedSubmissionClassId, setSelectedSubmissionClassId] = useState<string | null>(null);
   const [selectedGradeClassId, setSelectedGradeClassId] = useState<string | null>(null);
@@ -583,43 +578,23 @@ export function TeacherPage() {
       return undefined;
     }
 
-    let didCancel = false;
+    setSubmissionsByClassId({});
+    setSubmissionErrorsByClassId({});
 
-    void getSubmissionsForClassTarget(
+    return subscribeToSubmissionsForClassTarget(
       classId,
       submissionTarget.targetType,
       submissionTarget.targetId,
-    )
-      .then((submissions) => {
-        if (didCancel) {
-          return;
-        }
-
+      (submissions) => {
         setSubmissionsByClassId({ [classId]: submissions });
-        setFeedbackDrafts((current) => {
-          const next = { ...current };
-          submissions.forEach((submission) => {
-            if (next[submission.id] === undefined) {
-              next[submission.id] = submission.teacherFeedback;
-            }
-          });
-          return next;
-        });
         setSubmissionErrorsByClassId({});
-      })
-      .catch((error: unknown) => {
-        if (didCancel) {
-          return;
-        }
-
+      },
+      (error) => {
         setSubmissionErrorsByClassId({
           [classId]: firestoreErrorMessage(error, 'Unable to load submissions.'),
         });
-      });
-
-    return () => {
-      didCancel = true;
-    };
+      },
+    );
   }, [activeItemsByClassId, classRecords, dataRefreshVersion, selectedSubmissionClassId]);
 
   useEffect(() => {
@@ -899,37 +874,6 @@ export function TeacherPage() {
       setFormError(firestoreErrorMessage(error, 'Unable to update active class item.'));
     } finally {
       setIsSaving(false);
-    }
-  };
-
-  const handleReviewSubmission = async (
-    submission: StudentSubmission,
-    status: Extract<SubmissionStatus, 'needs_revision' | 'accepted'>,
-  ) => {
-    if (!userProfile) {
-      setFormError('Sign in again before reviewing submissions.');
-      return;
-    }
-
-    const savingKey = `${submission.id}-${status}`;
-    setReviewSavingKey(savingKey);
-    setFormMessage(null);
-    setFormError(null);
-
-    try {
-      await updateSubmissionReviewStatus({
-        submissionId: submission.id,
-        status,
-        teacherFeedback: feedbackDrafts[submission.id] ?? submission.teacherFeedback,
-        reviewedBy: userProfile.uid,
-      });
-      setFormMessage(
-        status === 'accepted' ? 'Submission marked accepted.' : 'Revision request saved.',
-      );
-    } catch (error) {
-      setFormError(firestoreErrorMessage(error, 'Unable to update submission review.'));
-    } finally {
-      setReviewSavingKey(null);
     }
   };
 
@@ -1317,11 +1261,11 @@ export function TeacherPage() {
         {activeTeacherTab === 'submissions' && !!classRecords.length && (
           <section className="content-section neon-section">
             <p className="retro-label">Student Submissions</p>
-            <h2>Google Drive Evidence Review</h2>
+            <h2>Submission Image Gallery</h2>
             {!selectedSubmissionClass ? (
               <ClassSelectionPanel
                 classRecords={classRecords}
-                label="Google Drive submissions"
+                label="student images"
                 onSelect={setSelectedSubmissionClassId}
               />
             ) : (
@@ -1349,17 +1293,6 @@ export function TeacherPage() {
                       : null;
                     const submissions = submissionsByClassId[classRecord.id] ?? [];
                     const submissionError = submissionErrorsByClassId[classRecord.id];
-                    const submittedUids = new Set(submissions.map((submission) => submission.uid));
-                    const missingCount = Math.max(
-                      classRecord.studentIds.length - submittedUids.size,
-                      0,
-                    );
-                    const needsRevisionCount = submissions.filter(
-                      (submission) => submission.status === 'needs_revision',
-                    ).length;
-                    const acceptedCount = submissions.filter(
-                      (submission) => submission.status === 'accepted',
-                    ).length;
 
                     return (
                       <article
@@ -1377,201 +1310,20 @@ export function TeacherPage() {
                                 classRecord.activeItemId}
                             </h3>
                           </div>
-                          <StatusBadge status={`${submissions.length} submitted`} />
                         </div>
-
-                        <dl className="detail-list response-summary-list">
-                          <div>
-                            <dt>Active Item</dt>
-                            <dd>
-                              {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
-                              {classRecord.activeItemId}
-                            </dd>
-                          </div>
-                          <div>
-                            <dt>Submission Target</dt>
-                            <dd>
-                              {submissionTarget
-                                ? `${submissionTarget.targetType} / ${submissionTarget.targetId}`
-                                : 'No Drive-link target'}
-                            </dd>
-                          </div>
-                          <div>
-                            <dt>Missing</dt>
-                            <dd>{missingCount}</dd>
-                          </div>
-                          <div>
-                            <dt>Needs Revision</dt>
-                            <dd>{needsRevisionCount}</dd>
-                          </div>
-                          <div>
-                            <dt>Accepted</dt>
-                            <dd>{acceptedCount}</dd>
-                          </div>
-                        </dl>
 
                         {submissionError && <ErrorState message={submissionError} />}
 
                         {!submissionTarget ? (
                           <p className="muted">
-                            This active item does not have a Drive-link submission target. Quiz
-                            scores appear in the Grades tab.
-                          </p>
-                        ) : !classRecord.studentIds.length ? (
-                          <p className="muted">No students are assigned to this class yet.</p>
-                        ) : !submissions.length ? (
-                          <p className="muted">
-                            No Google Drive evidence links have been submitted yet.
+                            This active item does not have image-submission requirements.
                           </p>
                         ) : (
-                          <div className="table-scroll">
-                            <table className="management-table response-table submission-review-table">
-                              <thead>
-                                <tr>
-                                  <th scope="col">Student</th>
-                                  <th scope="col">Status</th>
-                                  <th scope="col">Drive Links</th>
-                                  <th scope="col">Reflection</th>
-                                  <th scope="col">Submitted</th>
-                                  <th scope="col">Updated</th>
-                                  <th scope="col">Teacher Feedback</th>
-                                  <th scope="col">Actions</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {submissions.map((submission) => {
-                                  const allLinks = [
-                                    ...submission.driveLinks,
-                                    ...submission.otherLinks,
-                                  ];
-                                  const isExpanded = expandedSubmissionId === submission.id;
-
-                                  return (
-                                    <Fragment key={submission.id}>
-                                      <tr>
-                                        <td>
-                                          <strong>
-                                            {submission.studentName || submission.uid}
-                                          </strong>
-                                          {submission.studentEmail && (
-                                            <p className="meta-line">{submission.studentEmail}</p>
-                                          )}
-                                        </td>
-                                        <td>
-                                          <SubmissionStatusBadge status={submission.status} />
-                                        </td>
-                                        <td>
-                                          <ul className="submission-link-display-list compact">
-                                            {allLinks.map((link) => (
-                                              <li key={link.url}>
-                                                <a href={link.url} target="_blank" rel="noreferrer">
-                                                  {link.label || 'Open evidence'}
-                                                </a>
-                                              </li>
-                                            ))}
-                                          </ul>
-                                        </td>
-                                        <td>
-                                          <p className="submission-reflection-preview">
-                                            {submission.reflection}
-                                          </p>
-                                        </td>
-                                        <td>{formatTimestamp(submission.submittedAt)}</td>
-                                        <td>{formatTimestamp(submission.updatedAt)}</td>
-                                        <td>
-                                          <label
-                                            className="sr-only"
-                                            htmlFor={`feedback-${submission.id}`}
-                                          >
-                                            Feedback for {submission.studentName || submission.uid}
-                                          </label>
-                                          <textarea
-                                            id={`feedback-${submission.id}`}
-                                            className="submission-feedback-input"
-                                            value={
-                                              feedbackDrafts[submission.id] ??
-                                              submission.teacherFeedback
-                                            }
-                                            rows={4}
-                                            onChange={(event) =>
-                                              setFeedbackDrafts((current) => ({
-                                                ...current,
-                                                [submission.id]: event.target.value,
-                                              }))
-                                            }
-                                          />
-                                        </td>
-                                        <td>
-                                          <div className="button-row vertical">
-                                            <button
-                                              className="outline-button"
-                                              type="button"
-                                              aria-expanded={isExpanded}
-                                              onClick={() =>
-                                                setExpandedSubmissionId(
-                                                  isExpanded ? null : submission.id,
-                                                )
-                                              }
-                                            >
-                                              {isExpanded ? 'Hide Details' : 'View Details'}
-                                            </button>
-                                            <button
-                                              className="secondary-button"
-                                              type="button"
-                                              disabled={
-                                                reviewSavingKey ===
-                                                `${submission.id}-needs_revision`
-                                              }
-                                              onClick={() =>
-                                                handleReviewSubmission(submission, 'needs_revision')
-                                              }
-                                            >
-                                              Needs Revision
-                                            </button>
-                                            <button
-                                              className="gradient-button"
-                                              type="button"
-                                              disabled={
-                                                reviewSavingKey === `${submission.id}-accepted`
-                                              }
-                                              onClick={() =>
-                                                handleReviewSubmission(submission, 'accepted')
-                                              }
-                                            >
-                                              Accept
-                                            </button>
-                                          </div>
-                                        </td>
-                                      </tr>
-                                      {isExpanded && (
-                                        <tr className="response-detail-row">
-                                          <td colSpan={8}>
-                                            <div className="response-detail-grid">
-                                              <section>
-                                                <p className="retro-label">Reflection</p>
-                                                <p>{submission.reflection}</p>
-                                              </section>
-                                              <section>
-                                                <p className="retro-label">Checklist</p>
-                                                <ul className="submission-checklist-readonly">
-                                                  {submission.evidenceChecklist.map((item) => (
-                                                    <li key={item.label}>
-                                                      {item.complete ? 'Complete' : 'Missing'}:{' '}
-                                                      {item.label}
-                                                    </li>
-                                                  ))}
-                                                </ul>
-                                              </section>
-                                            </div>
-                                          </td>
-                                        </tr>
-                                      )}
-                                    </Fragment>
-                                  );
-                                })}
-                              </tbody>
-                            </table>
-                          </div>
+                          <SubmissionImageGallery
+                            key={`${classRecord.id}-${submissionTarget.targetId}`}
+                            requirements={submissionTarget.requirements}
+                            submissions={submissions}
+                          />
                         )}
                       </article>
                     );
