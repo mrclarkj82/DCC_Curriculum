@@ -89,15 +89,15 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Committed and pushed the Error 153 fix to `main` in commit `43ed471`, then redeployed Firebase Hosting target `dcc`.
 - 2026-08-07: Diagnosed student Today response-card permission warnings: direct listeners attempted to read deterministic response documents before those documents existed, leaving no `resource.data` for the ownership rule to evaluate.
 - 2026-08-07: Changed student response reads and subscriptions to queries constrained by the signed-in student's UID, class, and active item; Firestore response ownership and roster rules remain unchanged.
+- 2026-08-07: Committed and pushed the student Today response-card fix to `main` in commit `44005f0`, then deployed Firebase Hosting target `dcc`.
 
 ## In Progress
 
-- Validate and deploy the student Today response-card permission fix.
+- None.
 
 ## Remaining
 
-- Verify the empty-response and existing-response states without weakening Firestore rules.
-- Commit, push, deploy, and live-test the student Today fix.
+- None for the student Today response-card permission fix.
 
 ## Blockers And Assumptions
 
@@ -141,6 +141,9 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 response-card fix `npm.cmd run build`: passed using process-only Firebase web configuration; no `.env.local` was created. Vite reported the existing chunk-size warning.
 - 2026-08-07 response-card fix `npm.cmd run lint` and `npm.cmd run validate:curriculum`: passed.
 - 2026-08-07 response-card fix `git diff --check`: passed with Git line-ending normalization warnings only.
+- 2026-08-07 response-card Firebase Hosting deploy: passed for target `dcc` / site `dcccs`.
+- 2026-08-07 response-card live asset verification: passed; `https://dcccs.web.app` returned HTTP 200 and served the validated `index-BTAJIptG.js` build.
+- 2026-08-07 live route gate verification: passed; an unsigned browser session was redirected to school Google sign-in as expected.
 
 ## Slide Handoff
 
@@ -165,4 +168,4 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 
 ## Final Status
 
-Phase 9 repository work is complete. The Q1 Unreal video-link update and Error 153 fix are committed, pushed, deployed, browser-tested, and live-verified.
+Phase 9 repository work is complete. The Q1 Unreal video links, Error 153 repair, and student Today response-card permission fix are committed, pushed, deployed, security-tested, and live-verified.
