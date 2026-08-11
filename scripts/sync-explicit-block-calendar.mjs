@@ -509,7 +509,7 @@ const buildBlockCalendar = ({ schedule, endDate, activities = [], notes }) => {
   const months = visibleMonths.map(({ year, monthIndex, month }, monthOffset) => {
     const monthStart = new Date(Date.UTC(year, monthIndex, 1));
     const monthEnd = getMonthEnd(year, monthIndex);
-    const firstVisibleDate = monthOffset === 0 ? monthStart : monthStart;
+    const firstVisibleDate = monthOffset === 0 ? parseDate(startDate) : monthStart;
     const lastVisibleDate =
       monthOffset === visibleMonths.length - 1 ? parseDate(endDate) : monthEnd;
     const weeks = [];
