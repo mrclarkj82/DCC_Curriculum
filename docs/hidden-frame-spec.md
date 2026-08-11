@@ -428,6 +428,14 @@ Added the first Hidden Frame clue inside The Ember Gate after the assignment-gam
 progression milestone. The clue reuses `HiddenFrameIcon`, links to `/hidden-frame/archive`, and
 does not add Hidden Frame persistence, passwords, routes, or private data access.
 
+### Assignment Marker Signal Flicker - 2026-08-11
+
+Added an irregular corruption animation to the subtle broken-frame marker on assignment detail
+pages. The effect combines intermittent brightness flicker, one-pixel position jumps, cyan/red
+color separation, clipped symbol echoes, and a brief scanline. Hover and keyboard focus accelerate
+the signal while preserving the link target and visible focus treatment. The animation is disabled
+when the visitor requests reduced motion.
+
 ## Acceptance Criteria
 
 - The Phase 0 assets are imported without modifying artwork.

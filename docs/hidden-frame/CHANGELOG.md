@@ -1,5 +1,12 @@
 # Hidden Frame Changelog
 
+## Assignment Marker Signal Flicker - 2026-08-11
+
+- Added irregular flicker and glitch bursts to the broken-frame marker on assignment pages.
+- Added cyan/red symbol separation, clipped ghost frames, scanline artifacts, and tiny position jumps.
+- Accelerated the corruption effect on hover and keyboard focus.
+- Disabled all new animation under `prefers-reduced-motion: reduce`.
+
 ## Phase 1 - 2026-07-08
 
 - Added hidden routes for `/hidden-frame`, `/hidden-frame/archive`, and `/hidden-frame/file/001`.

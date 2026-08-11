@@ -70,6 +70,24 @@ assert(
   'Archive page does not render RecoveredFileCard components.',
 );
 
+const hiddenFrameStyles = readProjectFile('src/styles/hidden-frame.css');
+assert(
+  hiddenFrameStyles.includes('.hidden-frame-assignment-marker .hidden-frame-icon'),
+  'Assignment marker does not have scoped Hidden Frame styling.',
+);
+assert(
+  hiddenFrameStyles.includes('@keyframes hidden-frame-marker-flicker'),
+  'Assignment marker signal flicker animation is missing.',
+);
+assert(
+  hiddenFrameStyles.includes('@keyframes hidden-frame-symbol-ghost'),
+  'Assignment marker ghost-frame animation is missing.',
+);
+assert(
+  hiddenFrameStyles.includes('@media (prefers-reduced-motion: reduce)'),
+  'Hidden Frame styles do not include a reduced-motion fallback.',
+);
+
 const passwordUtilsPath = path.join(repoRoot, 'src/hidden-frame/utils/passwordGate.ts');
 const { isHiddenFrameAnswerCorrect } = await import(pathToFileURL(passwordUtilsPath).href);
 
