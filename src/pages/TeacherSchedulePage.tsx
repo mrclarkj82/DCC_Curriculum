@@ -46,7 +46,7 @@ function formatShortDate(value: string): string {
 }
 
 function dayStatusLabel(day: BlockCalendarDay): string {
-  if (day.status === 'instructional') {
+  if (day.status === 'instructional' || day.status === 'activity') {
     return `${day.cycleDay} Day`;
   }
 
@@ -84,6 +84,20 @@ function ScheduleDayCell({ day, quarter }: { day: BlockCalendarDay; quarter: str
           <Link className="outline-button schedule-cell-link" to={`/lessons/${day.lessonId}`}>
             Open Lesson
           </Link>
+        </>
+      )}
+
+      {day.status === 'activity' && (
+        <>
+          <h3>{day.heading}</h3>
+          <div className="tag-row">
+            <StatusBadge status={dayStatusLabel(day)} />
+            <StatusBadge status={day.activityType ?? 'activity'} />
+          </div>
+          <p className="schedule-lesson-title">{day.activityTitle}</p>
+          {day.activitySummary && <p className="schedule-note">{day.activitySummary}</p>}
+          {day.dueLabel && <p className="meta-line">{day.dueLabel}</p>}
+          {day.sourceTiming && <p className="schedule-note">Source: {day.sourceTiming}</p>}
         </>
       )}
 
@@ -192,10 +206,24 @@ export function TeacherSchedulePage() {
               <p className="retro-label">Lessons</p>
               <h3>{summary.lessonCount}</h3>
             </article>
+            {typeof summary.activityCount === 'number' && (
+              <article className="card neon-card metric-card">
+                <p className="retro-label">Projects + Checkpoints</p>
+                <h3>{summary.activityCount}</h3>
+              </article>
+            )}
             <article className="card neon-card metric-card">
-              <p className="retro-label">Class Days</p>
+              <p className="retro-label">
+                {typeof summary.activityCount === 'number' ? 'Lesson Class Days' : 'Class Days'}
+              </p>
               <h3>{summary.instructionalDateCount}</h3>
             </article>
+            {typeof summary.activityDateCount === 'number' && (
+              <article className="card neon-card metric-card">
+                <p className="retro-label">Activity Class Days</p>
+                <h3>{summary.activityDateCount}</h3>
+              </article>
+            )}
             <article className="card neon-card metric-card">
               <p className="retro-label">No-School Days</p>
               <h3>{summary.noSchoolDateCount}</h3>

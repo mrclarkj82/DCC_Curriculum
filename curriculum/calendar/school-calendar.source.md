@@ -1,8 +1,10 @@
 # 2026-2027 Doral Calendar Source
 
-Source file: `2026-2027 Doral Calendar (List Form).pdf`
+Primary A/B source file: `Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf`
 
-The PDF is marked `Board Approved` and `Pending State Approval`. The text below is a normalized ASCII transcription of the attached list-form calendar used to create the scheduling data.
+Original date-list source: `2026-2027 Doral Calendar (List Form).pdf`
+
+The original list-form PDF is marked `Board Approved` and `Pending State Approval`. The text below is its normalized ASCII transcription. The teacher-provided block calendar is now the source of truth for printed A/B labels in Q2 and Q3.
 
 ```text
 Board Approved
@@ -52,7 +54,9 @@ Wednesday, May 26 Contingency Day #3
 
 - Saturdays and Sundays are always treated as non-instructional days.
 - Staff development days, structured teacher planning days, holidays, and breaks marked no school are excluded for DCC scheduling.
-- The source calendar does not provide A/B labels. A/B cycle days are inferred beginning Thursday, August 13, 2026 as `A` and alternating only across valid instructional weekdays.
+- The block calendar explicitly labels A, B, and C days. Its printed labels override the earlier inferred cycle for Q2 and Q3.
+- Tuesday, January 5, 2027 is explicitly labeled `A`; Wednesday, January 6 is `B`.
+- Thursday, September 24, 2026 is a `C` day. That special day explains why continuing a simple alternating inference produced the wrong Q2 and Q3 labels.
 - October 15, 2026 is marked no school for ES/MS students only. Because DCC Creative Studio is a high school course, this date is preserved as a special note and treated as instructional unless the teacher later says DCC high school is off that day too.
 - Universal Test Day is listed as `Tuesday, TBD`; it is preserved as an informational anomaly. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
 - The calendar's stated grading-period day counts do not reconcile exactly with the fixed dates listed in the source. The generated data follows the listed dates and no-school notes rather than the summary counts.

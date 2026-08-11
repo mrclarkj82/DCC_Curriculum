@@ -1,34 +1,47 @@
 # Q3 Unreal Castle Documentary Block Calendar
 
-Source: 2026-2027 Doral Calendar (List Form).pdf
+Source: `Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf`
 
-Formal sequence window: 2027-01-05 through 2027-02-22
+School year: **2026-2027**
 
-Daily documentation rule: every Q3 class day includes Unreal build work plus screen recording or camera footage for the castle making-of documentary.
+Schedule window: **2027-01-05** through **2027-02-22**
 
-## January 2027
+A/B method: Uses the day labels printed on the teacher-provided Doral Red Rock block calendar.
 
-| Monday | Tuesday | Wednesday | Thursday | Friday |
-|---|---|---|---|---|
-| 2026-12-28<br>Outside Month | 2026-12-29<br>Outside Month | 2026-12-30<br>Outside Month | 2026-12-31<br>Outside Month | 2027-01-01<br>No School<br>Winter Break; New Year's Day Observed (No School) |
-| 2027-01-04<br>No School<br>Structured Teacher Planning Day (No School for Students) | 2027-01-05<br>Q3 L1<br>Unreal Reboot and Production Expectations<br>B Day | 2027-01-06<br>Q3 L1<br>Unreal Reboot and Production Expectations<br>A Day | 2027-01-07<br>Q3 L2<br>Environment Planning<br>B Day | 2027-01-08<br>Q3 L2<br>Environment Planning<br>A Day |
-| 2027-01-11<br>Q3 L3<br>Third-Person Project Setup<br>B Day | 2027-01-12<br>Q3 L3<br>Third-Person Project Setup<br>A Day | 2027-01-13<br>Q3 L4<br>Landscape Blockout<br>B Day | 2027-01-14<br>Q3 L4<br>Landscape Blockout<br>A Day | 2027-01-15<br>Q3 L5<br>Quiz 1 and Landscape Refinement<br>B Day |
-| 2027-01-18<br>No School<br>Martin Luther King Jr. Day (No School) | 2027-01-19<br>Q3 L5<br>Quiz 1 and Landscape Refinement<br>A Day | 2027-01-20<br>Q3 L6<br>Landscape Materials<br>B Day | 2027-01-21<br>Q3 L6<br>Landscape Materials<br>A Day | 2027-01-22<br>Q3 L7<br>Megascans/Fab/Bridge Terrain Assets<br>B Day |
-| 2027-01-25<br>Q3 L7<br>Megascans/Fab/Bridge Terrain Assets<br>A Day | 2027-01-26<br>Q3 L8<br>Castle Modular Kit<br>B Day | 2027-01-27<br>Q3 L8<br>Castle Modular Kit<br>A Day | 2027-01-28<br>Q3 L9<br>Quiz 2 and Castle Composition<br>B Day | 2027-01-29<br>Q3 L9<br>Quiz 2 and Castle Composition<br>A Day |
+## Block Calendar
 
-## February 2027
+### January 2027
 
-| Monday | Tuesday | Wednesday | Thursday | Friday |
-|---|---|---|---|---|
-| 2027-02-01<br>Q3 L10<br>Rocks, Cliffs, and Scene Framing<br>B Day | 2027-02-02<br>Q3 L10<br>Rocks, Cliffs, and Scene Framing<br>A Day | 2027-02-03<br>Q3 L11<br>Trees and Foliage<br>B Day | 2027-02-04<br>Q3 L11<br>Trees and Foliage<br>A Day | 2027-02-05<br>Q3 L12<br>Environmental Storytelling<br>B Day |
-| 2027-02-08<br>Q3 L12<br>Environmental Storytelling<br>A Day | 2027-02-09<br>Q3 L13<br>Quiz 3 and Lighting Mood<br>B Day | 2027-02-10<br>Q3 L13<br>Quiz 3 and Lighting Mood<br>A Day | 2027-02-11<br>Q3 L14<br>Post-Process and Cinematic Screenshots<br>B Day | 2027-02-12<br>No School<br>Staff Development Day #4 (No School for Students) |
-| 2027-02-15<br>No School<br>Presidents' Day Observed (No School) | 2027-02-16<br>Q3 L14<br>Post-Process and Cinematic Screenshots<br>A Day | 2027-02-17<br>Q3 L15<br>Player Walkthrough<br>B Day | 2027-02-18<br>Q3 L15<br>Player Walkthrough<br>A Day | 2027-02-19<br>Q3 L16<br>Final Critique and Portfolio Submission<br>B Day |
-| 2027-02-22<br>Q3 L16<br>Final Critique and Portfolio Submission<br>A Day | 2027-02-23<br>Production Day<br>Build + record + log | 2027-02-24<br>Production Day<br>Build + record + log | 2027-02-25<br>Production Day<br>Build + record + log | 2027-02-26<br>Production Day<br>Build + record + log |
+| Week | Monday | Tuesday | Wednesday | Thursday | Friday |
+| --- | --- | --- | --- | --- | --- |
+| 2026-12-28 | 2026-12-28<br><em>Outside January 2027</em> | 2026-12-29<br><em>Outside January 2027</em> | 2026-12-30<br><em>Outside January 2027</em> | 2026-12-31<br><em>Outside January 2027</em> | **No School**<br>Winter Break; New Year's Day Observed (No School) |
+| 2027-01-04 | **No School**<br>Structured Teacher Planning Day (No School for Students) | **Q3 L1**<br>A Day<br>Unreal Reboot and Production Expectations<br><code>ue-q3-l01</code> | **Q3 L1**<br>B Day<br>Unreal Reboot and Production Expectations<br><code>ue-q3-l01</code> | **Q3 L2**<br>A Day<br>Environment Planning<br><code>ue-q3-l02</code> | **Q3 L2**<br>B Day<br>Environment Planning<br><code>ue-q3-l02</code> |
+| 2027-01-11 | **Q3 L3**<br>A Day<br>Third-Person Project Setup<br><code>ue-q3-l03</code> | **Q3 L3**<br>B Day<br>Third-Person Project Setup<br><code>ue-q3-l03</code> | **Q3 L4**<br>A Day<br>Landscape Blockout<br><code>ue-q3-l04</code> | **Q3 L4**<br>B Day<br>Landscape Blockout<br><code>ue-q3-l04</code> | **Q3 L5**<br>A Day<br>Quiz 1 and Landscape Refinement<br><code>ue-q3-l05</code> |
+| 2027-01-18 | **No School**<br>Martin Luther King Jr. Day (No School) | **Q3 L5**<br>B Day<br>Quiz 1 and Landscape Refinement<br><code>ue-q3-l05</code> | **Q3 L6**<br>A Day<br>Landscape Materials<br><code>ue-q3-l06</code> | **Q3 L6**<br>B Day<br>Landscape Materials<br><code>ue-q3-l06</code> | **Q3 L7**<br>A Day<br>Megascans/Fab/Bridge Terrain Assets<br><code>ue-q3-l07</code> |
+| 2027-01-25 | **Q3 L7**<br>B Day<br>Megascans/Fab/Bridge Terrain Assets<br><code>ue-q3-l07</code> | **Q3 L8**<br>A Day<br>Castle Modular Kit<br><code>ue-q3-l08</code> | **Q3 L8**<br>B Day<br>Castle Modular Kit<br><code>ue-q3-l08</code> | **Q3 L9**<br>A Day<br>Quiz 2 and Castle Composition<br><code>ue-q3-l09</code> | **Q3 L9**<br>B Day<br>Quiz 2 and Castle Composition<br><code>ue-q3-l09</code> |
+
+### February 2027
+
+| Week | Monday | Tuesday | Wednesday | Thursday | Friday |
+| --- | --- | --- | --- | --- | --- |
+| 2027-02-01 | **Q3 L10**<br>A Day<br>Rocks, Cliffs, and Scene Framing<br><code>ue-q3-l10</code> | **Q3 L10**<br>B Day<br>Rocks, Cliffs, and Scene Framing<br><code>ue-q3-l10</code> | **Q3 L11**<br>A Day<br>Trees and Foliage<br><code>ue-q3-l11</code> | **Q3 L11**<br>B Day<br>Trees and Foliage<br><code>ue-q3-l11</code> | **Q3 L12**<br>A Day<br>Environmental Storytelling<br><code>ue-q3-l12</code> |
+| 2027-02-08 | **Q3 L12**<br>B Day<br>Environmental Storytelling<br><code>ue-q3-l12</code> | **Q3 L13**<br>A Day<br>Quiz 3 and Lighting Mood<br><code>ue-q3-l13</code> | **Q3 L13**<br>B Day<br>Quiz 3 and Lighting Mood<br><code>ue-q3-l13</code> | **Q3 L14**<br>A Day<br>Post-Process and Cinematic Screenshots<br><code>ue-q3-l14</code> | **No School**<br>Staff Development Day #4 (No School for Students) |
+| 2027-02-15 | **No School**<br>Presidents' Day Observed (No School) | **Q3 L14**<br>B Day<br>Post-Process and Cinematic Screenshots<br><code>ue-q3-l14</code> | **Q3 L15**<br>A Day<br>Player Walkthrough<br><code>ue-q3-l15</code> | **Q3 L15**<br>B Day<br>Player Walkthrough<br><code>ue-q3-l15</code> | **Q3 L16**<br>A Day<br>Final Critique and Portfolio Submission<br><code>ue-q3-l16</code> |
+| 2027-02-22 | **Q3 L16**<br>B Day<br>Final Critique and Portfolio Submission<br><code>ue-q3-l16</code> | 2027-02-23<br><em>Q3 open studio, project production, critique, or teacher-selected work</em> | 2027-02-24<br><em>Q3 open studio, project production, critique, or teacher-selected work</em> | 2027-02-25<br><em>Q3 open studio, project production, critique, or teacher-selected work</em> | 2027-02-26<br><em>Q3 open studio, project production, critique, or teacher-selected work</em> |
+
+## No-School Weekdays
+
+| Date | Day | Reason |
+| --- | --- | --- |
+| 2027-01-01 | Friday | Winter Break; New Year's Day Observed (No School) |
+| 2027-01-04 | Monday | Structured Teacher Planning Day (No School for Students) |
+| 2027-01-18 | Monday | Martin Luther King Jr. Day (No School) |
+| 2027-02-12 | Friday | Staff Development Day #4 (No School for Students) |
+| 2027-02-15 | Monday | Presidents' Day Observed (No School) |
 
 ## Calendar Notes
 
-- Q3 begins after Winter Break and a Structured Teacher Planning Day; classes resume Tuesday, January 5, 2027.
-- Q3 Unreal is a castle environment production project and a making-of documentary project at the same time.
-- Students should capture screen recording or camera footage and update a production log every Q3 class day, including open production days after the formal 16-lesson sequence.
-- The formal 16-lesson sequence is scheduled through February 22, 2027. Remaining Q3 days should continue castle polish, pickup footage, documentary editing, critique, and final export routines.
-- ACT or other testing notes do not pause or renumber the A/B cycle unless the teacher changes that rule.
+- A/B labels come from the teacher-provided 2026-2027 Doral Red Rock block calendar.
+- January 5, 2027 is A day and January 6, 2027 is B day.
+- Q3 Unreal combines castle-environment production with making-of documentary evidence.
+- Weekends are excluded and do not appear in noSchoolDates.

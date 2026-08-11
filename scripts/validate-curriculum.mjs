@@ -348,7 +348,7 @@ const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId
           `${label} ${day.date} must be a Monday-Friday calendar cell`,
         );
         assert(
-          ['instructional', 'no-school', 'empty', 'outside-month'].includes(day.status),
+          ['instructional', 'activity', 'no-school', 'empty', 'outside-month'].includes(day.status),
           `${label} ${day.date} has unsupported status ${day.status}`,
         );
 
@@ -387,6 +387,29 @@ const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId
           );
 
           lessonDateCounts.set(day.lessonId, (lessonDateCounts.get(day.lessonId) ?? 0) + 1);
+        }
+
+        if (day.status === 'activity') {
+          assert(day.heading, `${label} ${day.date} activity cell is missing heading`);
+          assert(day.activityId, `${label} ${day.date} activity cell is missing activityId`);
+          assert(day.activityTitle, `${label} ${day.date} activity cell is missing activityTitle`);
+          assert(
+            ['assignment', 'material', 'assessment', 'make-up'].includes(day.activityType),
+            `${label} ${day.date} activity cell has unsupported activityType ${day.activityType}`,
+          );
+          assert(
+            day.cycleDay === 'A' || day.cycleDay === 'B',
+            `${label} ${day.date} activity cell must have A/B cycleDay`,
+          );
+          assert(!day.lessonId, `${label} ${day.date} activity cell must not include lessonId`);
+
+          const sourceDay = instructionalDayByDate.get(day.date);
+          assert(sourceDay, `${label} ${day.date} activity is missing from instructional-days`);
+          assert(sourceDay.isInstructionalDay, `${label} ${day.date} activity is not instructional`);
+          assert(
+            sourceDay.cycleDay === day.cycleDay,
+            `${label} ${day.date} activity cycleDay does not match instructional-days`,
+          );
         }
 
         if (day.status === 'no-school') {

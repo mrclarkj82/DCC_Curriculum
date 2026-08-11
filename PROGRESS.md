@@ -10,7 +10,7 @@ Complete the current DCC Creative Studio curriculum buildout for all started pos
 - Phase 9 is Curriculum Completion and ChatGPT Pro Slide Handoff.
 - The app supports Unreal Engine Studio, Video Production Studio, DaVinci Resolve curriculum, Broadcast Desk workflows, Google SSO, class management, Today active items, bell ringer and exit ticket responses, Google Drive link submissions, and the Quiz 1 self-grading pilot.
 - Q1 Unreal curriculum exists through Lesson 16, with known teacher-supplied slide links through Lesson 12 and local presentation briefs for Lessons 13-16.
-- Q2 has two file-organization opener lessons and seven DaVinci Resolve lessons with local lesson folders.
+- Q2 has two file-organization opener lessons, seven DaVinci Resolve lessons, and eight archived Video Production activities placed through the end of the quarter.
 - Q2 DaVinci planning excludes the Color page and Fairlight page transcript span, approximately `02:50:00-04:53:05`.
 - Q3 Unreal Castle Documentary exists in seed data, schedule files, and complete local lesson artifact folders.
 - Known schedules include Q1 Unreal, Q2 Studio Organization + DaVinci Resolve, and Q3 Unreal Castle Documentary.
@@ -99,6 +99,9 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Committed and pushed the live class-response table in commit `35b8808`, deployed Firebase Hosting target `dcc`, and verified the signed-in A1 view with real response data, responsive horizontal scrolling, and no browser console errors.
 - 2026-08-07: Replaced the teacher submission-management table with a focused image gallery that shows one submitted image and its assignment requirements at a time, with previous/next controls for moving through class work.
 - 2026-08-07: Committed and pushed the submission image gallery in commit `9748c71`, deployed Firebase Hosting target `dcc`, and verified the signed-in A1 Drive image rendered at 1600x1919 with the two assignment requirements and no browser console errors.
+- 2026-08-11: Reviewed the teacher-provided Doral Red Rock block-calendar PDF and corrected Q2/Q3 schedule labels to use its explicit A/B days; January 5, 2027 is now A day.
+- 2026-08-11: Reviewed eight archived `P1 Gated Gangsters` Video Production items and placed them in the Q2 block schedule without copying private Classroom, Drive, Forms, roster, or group-list links.
+- 2026-08-11: Extended the Q2 teacher schedule preview through December 18 with project, material, make-up, assessment, and open-studio blocks.
 
 ## In Progress
 
@@ -153,6 +156,15 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 response-card Firebase Hosting deploy: passed for target `dcc` / site `dcccs`.
 - 2026-08-07 response-card live asset verification: passed; `https://dcccs.web.app` returned HTTP 200 and served the validated `index-BTAJIptG.js` build.
 - 2026-08-07 live route gate verification: passed; an unsigned browser session was redirected to school Google sign-in as expected.
+- 2026-08-11 explicit block-calendar audit: passed; Q2/Q3 scheduled dates match the teacher-provided printed labels, including `2027-01-05` as A and `2027-01-06` as B.
+- 2026-08-11 archived Q2 activity audit: passed; all eight requested Video Production items appear on one A-day and one B-day schedule cell, with archived timing and due-date distinctions preserved.
+- 2026-08-11 private-link audit: passed; no archived Classroom, Drive, Forms, roster, or group-list URL was added to repository data.
+- 2026-08-11 `npm.cmd run lint`: passed.
+- 2026-08-11 `npm.cmd run build`: passed using Firebase web configuration loaded into process environment only; no `.env.local` was created. Vite reported the existing chunk-size warning.
+- 2026-08-11 `npm.cmd run validate:curriculum`: passed.
+- 2026-08-11 `npm.cmd run seed:curriculum -- --dry-run`: passed; `skipped=158 created=0 updated=0 failed=0`.
+- 2026-08-11 `git diff --check`: passed with line-ending normalization warnings only.
+- 2026-08-11 Hidden Frame asset validation passed; the existing phase-one validator then stopped because Node cannot directly load `src/hidden-frame/utils/passwordGate.ts` (`ERR_UNKNOWN_FILE_EXTENSION`). No Hidden Frame files were changed.
 - 2026-08-07 submission-permission emulator regression: passed; empty own-submission queries succeeded, the student created and read an own submission, and classmate plus unfiltered collection reads remained denied.
 - 2026-08-07 evidence-panel fix `npm.cmd run build`: passed using process-only Firebase web configuration; no `.env.local` was created. Vite reported the existing chunk-size warning.
 - 2026-08-07 evidence-panel fix `npm.cmd run lint` and `npm.cmd run validate:curriculum`: passed.

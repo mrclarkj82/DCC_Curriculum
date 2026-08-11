@@ -819,10 +819,10 @@
     "schoolYear": "2026-2027",
     "programAreaId": "video-production",
     "quarter": "Q2",
-    "source": "attached-school-calendar",
-    "sourceFile": "2026-2027 Doral Calendar (List Form).pdf",
+    "source": "teacher-provided-block-calendar",
+    "sourceFile": "Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf",
     "startDate": "2026-10-12",
-    "endDate": "2026-11-06",
+    "endDate": "2026-12-18",
     "weekdays": [
       "Monday",
       "Tuesday",
@@ -833,8 +833,10 @@
     "summary": {
       "lessonCount": 9,
       "instructionalDateCount": 18,
+      "activityCount": 8,
+      "activityDateCount": 16,
       "noSchoolDateCount": 8,
-      "monthCount": 2
+      "monthCount": 3
     },
     "months": [
       {
@@ -849,37 +851,72 @@
               {
                 "date": "2026-09-28",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside October 2026"
               },
               {
                 "date": "2026-09-29",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside October 2026"
               },
               {
                 "date": "2026-09-30",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside October 2026"
               },
               {
                 "date": "2026-10-01",
                 "dayOfWeek": "Thursday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Before Q2 schedule starts"
               },
               {
                 "date": "2026-10-02",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Before Q2 schedule starts"
               }
             ]
           },
@@ -890,37 +927,72 @@
               {
                 "date": "2026-10-05",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Before Q2 schedule starts"
               },
               {
                 "date": "2026-10-06",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Before Q2 schedule starts"
               },
               {
                 "date": "2026-10-07",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Before Q2 schedule starts"
               },
               {
                 "date": "2026-10-08",
                 "dayOfWeek": "Thursday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Before Q2 schedule starts"
               },
               {
                 "date": "2026-10-09",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Before Q2 schedule starts"
               }
             ]
           },
@@ -931,63 +1003,80 @@
               {
                 "date": "2026-10-12",
                 "dayOfWeek": "Monday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L1",
                 "lessonLabel": "Q2 L1",
                 "lessonId": "vp-q2-file-org-01",
                 "lessonTitle": "Video Production File Organization",
+                "lessonNumber": 1,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-13",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L1",
                 "lessonLabel": "Q2 L1",
                 "lessonId": "vp-q2-file-org-01",
                 "lessonTitle": "Video Production File Organization",
+                "lessonNumber": 1,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-14",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L2",
                 "lessonLabel": "Q2 L2",
                 "lessonId": "ue-q2-file-org-01",
                 "lessonTitle": "Video Game Development File Organization",
+                "lessonNumber": 2,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-15",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L2",
                 "lessonLabel": "Q2 L2",
                 "lessonId": "ue-q2-file-org-01",
                 "lessonTitle": "Video Game Development File Organization",
+                "lessonNumber": 2,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
-                "calendarNote": "Conferences (No School for all ES or MS Students)",
-                "sourceNote": "Conferences (No School for all ES or MS Students)"
+                "calendarNote": "Conference day note applies to ES/MS students only in the source calendar; treated as instructional for DCC high school scheduling.",
+                "sourceNote": "Conferences (No School for all ES or MS Students)",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-16",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Staff Development Day #3 (No School for Students)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Staff Development Day #3 (No School for Students)",
-                "calendarNote": ""
+                "reason": "Staff Development Day #3 (No School for Students)"
               }
             ]
           },
@@ -998,67 +1087,82 @@
               {
                 "date": "2026-10-19",
                 "dayOfWeek": "Monday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L3",
                 "lessonLabel": "Q2 L3",
                 "lessonId": "vp-q2-l01",
                 "lessonTitle": "DaVinci Resolve Setup and Project Manager",
+                "lessonNumber": 3,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-20",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L3",
                 "lessonLabel": "Q2 L3",
                 "lessonId": "vp-q2-l01",
                 "lessonTitle": "DaVinci Resolve Setup and Project Manager",
+                "lessonNumber": 3,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-21",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L4",
                 "lessonLabel": "Q2 L4",
                 "lessonId": "vp-q2-l02",
                 "lessonTitle": "Media Page, Imports, and Bins",
+                "lessonNumber": 4,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-22",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L4",
                 "lessonLabel": "Q2 L4",
                 "lessonId": "vp-q2-l02",
                 "lessonTitle": "Media Page, Imports, and Bins",
+                "lessonNumber": 4,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-23",
                 "dayOfWeek": "Friday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L5",
                 "lessonLabel": "Q2 L5",
                 "lessonId": "vp-q2-l03",
                 "lessonTitle": "Syncing Audio and Timeline Basics",
+                "lessonNumber": 5,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           },
@@ -1069,63 +1173,80 @@
               {
                 "date": "2026-10-26",
                 "dayOfWeek": "Monday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L5",
                 "lessonLabel": "Q2 L5",
                 "lessonId": "vp-q2-l03",
                 "lessonTitle": "Syncing Audio and Timeline Basics",
+                "lessonNumber": 5,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-27",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L6",
                 "lessonLabel": "Q2 L6",
                 "lessonId": "vp-q2-l04",
                 "lessonTitle": "Trimming Clips and Building a Rough Cut",
+                "lessonNumber": 6,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-28",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L6",
                 "lessonLabel": "Q2 L6",
                 "lessonId": "vp-q2-l04",
                 "lessonTitle": "Trimming Clips and Building a Rough Cut",
+                "lessonNumber": 6,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-29",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L7",
                 "lessonLabel": "Q2 L7",
                 "lessonId": "vp-q2-l05",
                 "lessonTitle": "Quiz 1 and Rough Cut Cleanup",
+                "lessonNumber": 7,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-10-30",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Nevada Day Observed (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Nevada Day Observed (No School)",
-                "calendarNote": ""
+                "reason": "Nevada Day Observed (No School)"
               }
             ]
           }
@@ -1143,37 +1264,72 @@
               {
                 "date": "2026-10-26",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               },
               {
                 "date": "2026-10-27",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               },
               {
                 "date": "2026-10-28",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               },
               {
                 "date": "2026-10-29",
                 "dayOfWeek": "Thursday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               },
               {
                 "date": "2026-10-30",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               }
             ]
           },
@@ -1184,67 +1340,82 @@
               {
                 "date": "2026-11-02",
                 "dayOfWeek": "Monday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L7",
                 "lessonLabel": "Q2 L7",
                 "lessonId": "vp-q2-l05",
                 "lessonTitle": "Quiz 1 and Rough Cut Cleanup",
+                "lessonNumber": 7,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-11-03",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L8",
                 "lessonLabel": "Q2 L8",
                 "lessonId": "vp-q2-l06",
                 "lessonTitle": "Titles, Transitions, and Simple Motion",
+                "lessonNumber": 8,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-11-04",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L8",
                 "lessonLabel": "Q2 L8",
                 "lessonId": "vp-q2-l06",
                 "lessonTitle": "Titles, Transitions, and Simple Motion",
+                "lessonNumber": 8,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-11-05",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q2 L9",
                 "lessonLabel": "Q2 L9",
                 "lessonId": "vp-q2-l07",
                 "lessonTitle": "Quiz 2 and Final Export",
+                "lessonNumber": 9,
                 "programAreaId": "video-production",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2026-11-06",
                 "dayOfWeek": "Friday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q2 L9",
                 "lessonLabel": "Q2 L9",
                 "lessonId": "vp-q2-l07",
                 "lessonTitle": "Quiz 2 and Final Export",
+                "lessonNumber": 9,
                 "programAreaId": "video-production",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           },
@@ -1255,39 +1426,96 @@
               {
                 "date": "2026-11-09",
                 "dayOfWeek": "Monday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-01",
+                "activityType": "assignment",
+                "activityTitle": "1st Video Editing Assignment",
+                "activitySummary": "Create an exactly 30-second edit with smooth pacing, readable text, balanced audio, and a Drive or YouTube evidence link.",
+                "dueLabel": "Due end of class; no archived Classroom due date",
+                "sourceTiming": "Edited Nov 12, 2025"
               },
               {
                 "date": "2026-11-10",
                 "dayOfWeek": "Tuesday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-01",
+                "activityType": "assignment",
+                "activityTitle": "1st Video Editing Assignment",
+                "activitySummary": "Create an exactly 30-second edit with smooth pacing, readable text, balanced audio, and a Drive or YouTube evidence link.",
+                "dueLabel": "Due end of class; no archived Classroom due date",
+                "sourceTiming": "Edited Nov 12, 2025"
               },
               {
                 "date": "2026-11-11",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Veterans Day Observed (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Veterans Day Observed (No School)",
-                "calendarNote": ""
+                "reason": "Veterans Day Observed (No School)"
               },
               {
                 "date": "2026-11-12",
                 "dayOfWeek": "Thursday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Studio Support",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-02",
+                "activityType": "material",
+                "activityTitle": "How to Render in DaVinci",
+                "activitySummary": "Use the teacher render demonstration to verify Deliver-page settings, MP4 export, file naming, and final playback.",
+                "dueLabel": "Support material; no due date",
+                "sourceTiming": "Posted Nov 14, 2025"
               },
               {
                 "date": "2026-11-13",
                 "dayOfWeek": "Friday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Studio Support",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-02",
+                "activityType": "material",
+                "activityTitle": "How to Render in DaVinci",
+                "activitySummary": "Use the teacher render demonstration to verify Deliver-page settings, MP4 export, file naming, and final playback.",
+                "dueLabel": "Support material; no due date",
+                "sourceTiming": "Posted Nov 14, 2025"
               }
             ]
           },
@@ -1298,37 +1526,96 @@
               {
                 "date": "2026-11-16",
                 "dayOfWeek": "Monday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-03",
+                "activityType": "assignment",
+                "activityTitle": "2nd Video Editing Assignment - The Redo",
+                "activitySummary": "Rebuild the 30-second edit with noticeably stronger flow, pacing, titles, audio balance, and storytelling.",
+                "dueLabel": "Due end of class; no archived Classroom due date",
+                "sourceTiming": "Posted Dec 1, 2025"
               },
               {
                 "date": "2026-11-17",
                 "dayOfWeek": "Tuesday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-03",
+                "activityType": "assignment",
+                "activityTitle": "2nd Video Editing Assignment - The Redo",
+                "activitySummary": "Rebuild the 30-second edit with noticeably stronger flow, pacing, titles, audio balance, and storytelling.",
+                "dueLabel": "Due end of class; no archived Classroom due date",
+                "sourceTiming": "Posted Dec 1, 2025"
               },
               {
                 "date": "2026-11-18",
                 "dayOfWeek": "Wednesday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-04",
+                "activityType": "assignment",
+                "activityTitle": "1st Group Project: The Duel",
+                "activitySummary": "Plan and produce a 20-30 second visual duel using 6-10 composed shots, music, sound effects, organized files, and rotating production roles.",
+                "dueLabel": "Project launch; continue on following open-studio days",
+                "sourceTiming": "Edited Dec 1, 2025; no archived Classroom due date"
               },
               {
                 "date": "2026-11-19",
                 "dayOfWeek": "Thursday",
-                "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-04",
+                "activityType": "assignment",
+                "activityTitle": "1st Group Project: The Duel",
+                "activitySummary": "Plan and produce a 20-30 second visual duel using 6-10 composed shots, music, sound effects, organized files, and rotating production roles.",
+                "dueLabel": "Project launch; continue on following open-studio days",
+                "sourceTiming": "Edited Dec 1, 2025; no archived Classroom due date"
               },
               {
                 "date": "2026-11-20",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
               }
             ]
           },
@@ -1339,47 +1626,72 @@
               {
                 "date": "2026-11-23",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Thanksgiving Break (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Thanksgiving Break (No School)",
-                "calendarNote": ""
+                "reason": "Thanksgiving Break (No School)"
               },
               {
                 "date": "2026-11-24",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Thanksgiving Break (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Thanksgiving Break (No School)",
-                "calendarNote": ""
+                "reason": "Thanksgiving Break (No School)"
               },
               {
                 "date": "2026-11-25",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Thanksgiving Break (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Thanksgiving Break (No School)",
-                "calendarNote": ""
+                "reason": "Thanksgiving Break (No School)"
               },
               {
                 "date": "2026-11-26",
                 "dayOfWeek": "Thursday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Thanksgiving Break (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Thanksgiving Break (No School)",
-                "calendarNote": ""
+                "reason": "Thanksgiving Break (No School)"
               },
               {
                 "date": "2026-11-27",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Thanksgiving Break (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
                 "sourceNote": "Thanksgiving Break (No School)",
-                "calendarNote": ""
+                "reason": "Thanksgiving Break (No School)"
               }
             ]
           },
@@ -1390,37 +1702,355 @@
               {
                 "date": "2026-11-30",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "No Q2 Lesson",
-                "reason": "No Q2 File Organization or DaVinci Resolve lesson scheduled"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
               },
               {
                 "date": "2026-12-01",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               },
               {
                 "date": "2026-12-02",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               },
               {
                 "date": "2026-12-03",
                 "dayOfWeek": "Thursday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
               },
               {
                 "date": "2026-12-04",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside November 2026"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "month": "December",
+        "monthNumber": 12,
+        "year": 2026,
+        "weeks": [
+          {
+            "weekStart": "2026-11-30",
+            "weekEnd": "2026-12-04",
+            "days": [
+              {
+                "date": "2026-11-30",
+                "dayOfWeek": "Monday",
+                "cycleDay": null,
+                "status": "outside-month",
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside December 2026"
+              },
+              {
+                "date": "2026-12-01",
+                "dayOfWeek": "Tuesday",
+                "cycleDay": null,
+                "status": "empty",
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
+              },
+              {
+                "date": "2026-12-02",
+                "dayOfWeek": "Wednesday",
+                "cycleDay": null,
+                "status": "empty",
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
+              },
+              {
+                "date": "2026-12-03",
+                "dayOfWeek": "Thursday",
+                "cycleDay": null,
+                "status": "empty",
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
+              },
+              {
+                "date": "2026-12-04",
+                "dayOfWeek": "Friday",
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-05",
+                "activityType": "assignment",
+                "activityTitle": "Group Project 2: The Movie Line Challenge",
+                "activitySummary": "Create a 30-40 second short film inspired by an assigned movie line while rotating roles and applying composition, music, and sound design.",
+                "dueLabel": "Project launch; continue through the next production blocks",
+                "sourceTiming": "Posted Dec 7, 2025; no archived Classroom due date"
+              }
+            ]
+          },
+          {
+            "weekStart": "2026-12-07",
+            "weekEnd": "2026-12-11",
+            "days": [
+              {
+                "date": "2026-12-07",
+                "dayOfWeek": "Monday",
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-05",
+                "activityType": "assignment",
+                "activityTitle": "Group Project 2: The Movie Line Challenge",
+                "activitySummary": "Create a 30-40 second short film inspired by an assigned movie line while rotating roles and applying composition, music, and sound design.",
+                "dueLabel": "Project launch; continue through the next production blocks",
+                "sourceTiming": "Posted Dec 7, 2025; no archived Classroom due date"
+              },
+              {
+                "date": "2026-12-08",
+                "dayOfWeek": "Tuesday",
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Make-Up",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-06",
+                "activityType": "make-up",
+                "activityTitle": "The Duel Absent Work",
+                "activitySummary": "Analyze the finished Duel for story, composition, shot variety, editing, sound, file organization, and production decisions while classmates continue project work.",
+                "dueLabel": "Make-up option for students absent during The Duel",
+                "sourceTiming": "Posted Dec 9, 2025; no archived Classroom due date"
+              },
+              {
+                "date": "2026-12-09",
+                "dayOfWeek": "Wednesday",
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Make-Up",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-06",
+                "activityType": "make-up",
+                "activityTitle": "The Duel Absent Work",
+                "activitySummary": "Analyze the finished Duel for story, composition, shot variety, editing, sound, file organization, and production decisions while classmates continue project work.",
+                "dueLabel": "Make-up option for students absent during The Duel",
+                "sourceTiming": "Posted Dec 9, 2025; no archived Classroom due date"
+              },
+              {
+                "date": "2026-12-10",
+                "dayOfWeek": "Thursday",
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Assessment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-07",
+                "activityType": "assessment",
+                "activityTitle": "Avatar: Book 1 Water 1-11 Film Study Quiz",
+                "activitySummary": "Complete the teacher-provided film-study questions while viewing the assigned episode compilation or approved classroom excerpt.",
+                "dueLabel": "Due end of class",
+                "sourceTiming": "Posted Dec 11, 2025; archived due date Dec 12, 2025"
+              },
+              {
+                "date": "2026-12-11",
+                "dayOfWeek": "Friday",
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Assessment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-07",
+                "activityType": "assessment",
+                "activityTitle": "Avatar: Book 1 Water 1-11 Film Study Quiz",
+                "activitySummary": "Complete the teacher-provided film-study questions while viewing the assigned episode compilation or approved classroom excerpt.",
+                "dueLabel": "Due end of class",
+                "sourceTiming": "Posted Dec 11, 2025; archived due date Dec 12, 2025"
+              }
+            ]
+          },
+          {
+            "weekStart": "2026-12-14",
+            "weekEnd": "2026-12-18",
+            "days": [
+              {
+                "date": "2026-12-14",
+                "dayOfWeek": "Monday",
+                "cycleDay": "B",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-08",
+                "activityType": "assignment",
+                "activityTitle": "Group Project 3: The Genre Challenge",
+                "activitySummary": "Create a 35-45 second genre short with 6-10 composed shots, role rotation, purposeful pacing, music, sound effects, and a clear visual story.",
+                "dueLabel": "Project launch; use remaining Q2 blocks for production and critique",
+                "sourceTiming": "Posted Dec 17, 2025; no archived Classroom due date"
+              },
+              {
+                "date": "2026-12-15",
+                "dayOfWeek": "Tuesday",
+                "cycleDay": "A",
+                "status": "activity",
+                "heading": "Project / Assignment",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "Archived P1 Gated Gangsters classwork reviewed by teacher request.",
+                "reason": "",
+                "activityId": "vp-q2-activity-08",
+                "activityType": "assignment",
+                "activityTitle": "Group Project 3: The Genre Challenge",
+                "activitySummary": "Create a 35-45 second genre short with 6-10 composed shots, role rotation, purposeful pacing, music, sound effects, and a clear visual story.",
+                "dueLabel": "Project launch; use remaining Q2 blocks for production and critique",
+                "sourceTiming": "Posted Dec 17, 2025; no archived Classroom due date"
+              },
+              {
+                "date": "2026-12-16",
+                "dayOfWeek": "Wednesday",
+                "cycleDay": null,
+                "status": "empty",
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
+              },
+              {
+                "date": "2026-12-17",
+                "dayOfWeek": "Thursday",
+                "cycleDay": null,
+                "status": "empty",
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
+              },
+              {
+                "date": "2026-12-18",
+                "dayOfWeek": "Friday",
+                "cycleDay": null,
+                "status": "empty",
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "video-production",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q2 open studio, project production, critique, or teacher-selected work"
               }
             ]
           }
@@ -1432,73 +2062,74 @@
         "date": "2026-10-16",
         "dayOfWeek": "Friday",
         "reason": "Staff Development Day #3 (No School for Students)",
-        "sourceNote": "Staff Development Day #3 (No School for Students)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Staff Development Day #3 (No School for Students)"
       },
       {
         "date": "2026-10-30",
         "dayOfWeek": "Friday",
         "reason": "Nevada Day Observed (No School)",
-        "sourceNote": "Nevada Day Observed (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Nevada Day Observed (No School)"
       },
       {
         "date": "2026-11-11",
         "dayOfWeek": "Wednesday",
         "reason": "Veterans Day Observed (No School)",
-        "sourceNote": "Veterans Day Observed (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Veterans Day Observed (No School)"
       },
       {
         "date": "2026-11-23",
         "dayOfWeek": "Monday",
         "reason": "Thanksgiving Break (No School)",
-        "sourceNote": "Thanksgiving Break (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Thanksgiving Break (No School)"
       },
       {
         "date": "2026-11-24",
         "dayOfWeek": "Tuesday",
         "reason": "Thanksgiving Break (No School)",
-        "sourceNote": "Thanksgiving Break (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Thanksgiving Break (No School)"
       },
       {
         "date": "2026-11-25",
         "dayOfWeek": "Wednesday",
         "reason": "Thanksgiving Break (No School)",
-        "sourceNote": "Thanksgiving Break (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Thanksgiving Break (No School)"
       },
       {
         "date": "2026-11-26",
         "dayOfWeek": "Thursday",
         "reason": "Thanksgiving Break (No School)",
-        "sourceNote": "Thanksgiving Break (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Thanksgiving Break (No School)"
       },
       {
         "date": "2026-11-27",
         "dayOfWeek": "Friday",
         "reason": "Thanksgiving Break (No School)",
-        "sourceNote": "Thanksgiving Break (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Thanksgiving Break (No School)"
       }
     ],
     "notes": [
-      "Saturdays and Sundays are excluded from scheduling and are not listed as no-school dates.",
-      "Q2 begins with two file organization openers before the DaVinci Resolve sequence starts.",
-      "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher changes that rule.",
-      "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.",
-      "The Color page and Fairlight page transcript span, approximately 02:50:00-04:53:05, is intentionally excluded from this Q2 plan."
+      "A/B labels come from the teacher-provided 2026-2027 Doral Red Rock block calendar.",
+      "Q2 begins with two file-organization openers and seven DaVinci Resolve lessons.",
+      "Eight archived Video Production items are placed after the DaVinci sequence in their prior instructional order.",
+      "Only the archived Avatar film-study quiz had a Classroom due date. The individual edits were due by the end of class; other projects had no Classroom due date.",
+      "Open Q2 dates remain available for multi-session production, editing, critique, recovery, and teacher-selected work.",
+      "Weekends are excluded and do not appear in noSchoolDates."
     ]
   },
   {
     "schoolYear": "2026-2027",
     "programAreaId": "unreal-engine",
     "quarter": "Q3",
-    "source": "attached-school-calendar",
-    "sourceFile": "2026-2027 Doral Calendar (List Form).pdf",
+    "source": "teacher-provided-block-calendar",
+    "sourceFile": "Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf",
     "startDate": "2027-01-05",
     "endDate": "2027-02-22",
     "gradingPeriodEndDate": "2027-03-11",
@@ -1528,39 +2159,72 @@
               {
                 "date": "2026-12-28",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside January 2027"
               },
               {
                 "date": "2026-12-29",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside January 2027"
               },
               {
                 "date": "2026-12-30",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside January 2027"
               },
               {
                 "date": "2026-12-31",
                 "dayOfWeek": "Thursday",
+                "cycleDay": null,
                 "status": "outside-month",
-                "heading": "Outside Month",
-                "reason": "Outside displayed month"
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Outside January 2027"
               },
               {
                 "date": "2027-01-01",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Winter Break; New Year's Day Observed (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
                 "sourceNote": "Winter Break; New Year's Day Observed (No School)",
-                "calendarNote": ""
+                "reason": "Winter Break; New Year's Day Observed (No School)"
               }
             ]
           },
@@ -1571,63 +2235,80 @@
               {
                 "date": "2027-01-04",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Structured Teacher Planning Day (No School for Students)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
                 "sourceNote": "Structured Teacher Planning Day (No School for Students)",
-                "calendarNote": ""
+                "reason": "Structured Teacher Planning Day (No School for Students)"
               },
               {
                 "date": "2027-01-05",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L1",
                 "lessonLabel": "Q3 L1",
                 "lessonId": "ue-q3-l01",
                 "lessonTitle": "Unreal Reboot and Production Expectations",
+                "lessonNumber": 1,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "Classes Resume",
-                "sourceNote": "Classes Resume"
+                "sourceNote": "Classes Resume",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-06",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L1",
                 "lessonLabel": "Q3 L1",
                 "lessonId": "ue-q3-l01",
                 "lessonTitle": "Unreal Reboot and Production Expectations",
+                "lessonNumber": 1,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-07",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L2",
                 "lessonLabel": "Q3 L2",
                 "lessonId": "ue-q3-l02",
                 "lessonTitle": "Environment Planning",
+                "lessonNumber": 2,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-08",
                 "dayOfWeek": "Friday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L2",
                 "lessonLabel": "Q3 L2",
                 "lessonId": "ue-q3-l02",
                 "lessonTitle": "Environment Planning",
+                "lessonNumber": 2,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           },
@@ -1638,67 +2319,82 @@
               {
                 "date": "2027-01-11",
                 "dayOfWeek": "Monday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L3",
                 "lessonLabel": "Q3 L3",
                 "lessonId": "ue-q3-l03",
                 "lessonTitle": "Third-Person Project Setup",
+                "lessonNumber": 3,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-12",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L3",
                 "lessonLabel": "Q3 L3",
                 "lessonId": "ue-q3-l03",
                 "lessonTitle": "Third-Person Project Setup",
+                "lessonNumber": 3,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-13",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L4",
                 "lessonLabel": "Q3 L4",
                 "lessonId": "ue-q3-l04",
                 "lessonTitle": "Landscape Blockout",
+                "lessonNumber": 4,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-14",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L4",
                 "lessonLabel": "Q3 L4",
                 "lessonId": "ue-q3-l04",
                 "lessonTitle": "Landscape Blockout",
+                "lessonNumber": 4,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-15",
                 "dayOfWeek": "Friday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L5",
                 "lessonLabel": "Q3 L5",
                 "lessonId": "ue-q3-l05",
                 "lessonTitle": "Quiz 1 and Landscape Refinement",
+                "lessonNumber": 5,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           },
@@ -1709,63 +2405,80 @@
               {
                 "date": "2027-01-18",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Martin Luther King Jr. Day (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
                 "sourceNote": "Martin Luther King Jr. Day (No School)",
-                "calendarNote": ""
+                "reason": "Martin Luther King Jr. Day (No School)"
               },
               {
                 "date": "2027-01-19",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L5",
                 "lessonLabel": "Q3 L5",
                 "lessonId": "ue-q3-l05",
                 "lessonTitle": "Quiz 1 and Landscape Refinement",
+                "lessonNumber": 5,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-20",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L6",
                 "lessonLabel": "Q3 L6",
                 "lessonId": "ue-q3-l06",
                 "lessonTitle": "Landscape Materials",
+                "lessonNumber": 6,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-21",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L6",
                 "lessonLabel": "Q3 L6",
                 "lessonId": "ue-q3-l06",
                 "lessonTitle": "Landscape Materials",
+                "lessonNumber": 6,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-22",
                 "dayOfWeek": "Friday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L7",
                 "lessonLabel": "Q3 L7",
                 "lessonId": "ue-q3-l07",
                 "lessonTitle": "Megascans/Fab/Bridge Terrain Assets",
+                "lessonNumber": 7,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           },
@@ -1776,67 +2489,82 @@
               {
                 "date": "2027-01-25",
                 "dayOfWeek": "Monday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L7",
                 "lessonLabel": "Q3 L7",
                 "lessonId": "ue-q3-l07",
                 "lessonTitle": "Megascans/Fab/Bridge Terrain Assets",
+                "lessonNumber": 7,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-26",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L8",
                 "lessonLabel": "Q3 L8",
                 "lessonId": "ue-q3-l08",
                 "lessonTitle": "Castle Modular Kit",
+                "lessonNumber": 8,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-27",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L8",
                 "lessonLabel": "Q3 L8",
                 "lessonId": "ue-q3-l08",
                 "lessonTitle": "Castle Modular Kit",
+                "lessonNumber": 8,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-28",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L9",
                 "lessonLabel": "Q3 L9",
                 "lessonId": "ue-q3-l09",
                 "lessonTitle": "Quiz 2 and Castle Composition",
+                "lessonNumber": 9,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-01-29",
                 "dayOfWeek": "Friday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L9",
                 "lessonLabel": "Q3 L9",
                 "lessonId": "ue-q3-l09",
                 "lessonTitle": "Quiz 2 and Castle Composition",
+                "lessonNumber": 9,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           }
@@ -1854,67 +2582,82 @@
               {
                 "date": "2027-02-01",
                 "dayOfWeek": "Monday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L10",
                 "lessonLabel": "Q3 L10",
                 "lessonId": "ue-q3-l10",
                 "lessonTitle": "Rocks, Cliffs, and Scene Framing",
+                "lessonNumber": 10,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-02",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L10",
                 "lessonLabel": "Q3 L10",
                 "lessonId": "ue-q3-l10",
                 "lessonTitle": "Rocks, Cliffs, and Scene Framing",
+                "lessonNumber": 10,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-03",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L11",
                 "lessonLabel": "Q3 L11",
                 "lessonId": "ue-q3-l11",
                 "lessonTitle": "Trees and Foliage",
+                "lessonNumber": 11,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-04",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L11",
                 "lessonLabel": "Q3 L11",
                 "lessonId": "ue-q3-l11",
                 "lessonTitle": "Trees and Foliage",
+                "lessonNumber": 11,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-05",
                 "dayOfWeek": "Friday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L12",
                 "lessonLabel": "Q3 L12",
                 "lessonId": "ue-q3-l12",
                 "lessonTitle": "Environmental Storytelling",
+                "lessonNumber": 12,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           },
@@ -1925,63 +2668,80 @@
               {
                 "date": "2027-02-08",
                 "dayOfWeek": "Monday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L12",
                 "lessonLabel": "Q3 L12",
                 "lessonId": "ue-q3-l12",
                 "lessonTitle": "Environmental Storytelling",
+                "lessonNumber": 12,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-09",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L13",
                 "lessonLabel": "Q3 L13",
                 "lessonId": "ue-q3-l13",
                 "lessonTitle": "Quiz 3 and Lighting Mood",
+                "lessonNumber": 13,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-10",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L13",
                 "lessonLabel": "Q3 L13",
                 "lessonId": "ue-q3-l13",
                 "lessonTitle": "Quiz 3 and Lighting Mood",
+                "lessonNumber": 13,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-11",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L14",
                 "lessonLabel": "Q3 L14",
                 "lessonId": "ue-q3-l14",
                 "lessonTitle": "Post-Process and Cinematic Screenshots",
+                "lessonNumber": 14,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-12",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Staff Development Day #4 (No School for Students)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
                 "sourceNote": "Staff Development Day #4 (No School for Students)",
-                "calendarNote": ""
+                "reason": "Staff Development Day #4 (No School for Students)"
               }
             ]
           },
@@ -1992,63 +2752,80 @@
               {
                 "date": "2027-02-15",
                 "dayOfWeek": "Monday",
+                "cycleDay": null,
                 "status": "no-school",
                 "heading": "No School",
-                "reason": "Presidents' Day Observed (No School)",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
                 "sourceNote": "Presidents' Day Observed (No School)",
-                "calendarNote": ""
+                "reason": "Presidents' Day Observed (No School)"
               },
               {
                 "date": "2027-02-16",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L14",
                 "lessonLabel": "Q3 L14",
                 "lessonId": "ue-q3-l14",
                 "lessonTitle": "Post-Process and Cinematic Screenshots",
+                "lessonNumber": 14,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-17",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L15",
                 "lessonLabel": "Q3 L15",
                 "lessonId": "ue-q3-l15",
                 "lessonTitle": "Player Walkthrough",
+                "lessonNumber": 15,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-18",
                 "dayOfWeek": "Thursday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L15",
                 "lessonLabel": "Q3 L15",
                 "lessonId": "ue-q3-l15",
                 "lessonTitle": "Player Walkthrough",
+                "lessonNumber": 15,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-19",
                 "dayOfWeek": "Friday",
+                "cycleDay": "A",
                 "status": "instructional",
                 "heading": "Q3 L16",
                 "lessonLabel": "Q3 L16",
                 "lessonId": "ue-q3-l16",
                 "lessonTitle": "Final Critique and Portfolio Submission",
+                "lessonNumber": 16,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "B",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               }
             ]
           },
@@ -2059,43 +2836,74 @@
               {
                 "date": "2027-02-22",
                 "dayOfWeek": "Monday",
+                "cycleDay": "B",
                 "status": "instructional",
                 "heading": "Q3 L16",
                 "lessonLabel": "Q3 L16",
                 "lessonId": "ue-q3-l16",
                 "lessonTitle": "Final Critique and Portfolio Submission",
+                "lessonNumber": 16,
                 "programAreaId": "unreal-engine",
-                "cycleDay": "A",
                 "calendarNote": "",
-                "sourceNote": ""
+                "sourceNote": "",
+                "reason": "",
+                "activeItemType": "lesson"
               },
               {
                 "date": "2027-02-23",
                 "dayOfWeek": "Tuesday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "Q3 Production Day",
-                "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q3 open studio, project production, critique, or teacher-selected work"
               },
               {
                 "date": "2027-02-24",
                 "dayOfWeek": "Wednesday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "Q3 Production Day",
-                "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q3 open studio, project production, critique, or teacher-selected work"
               },
               {
                 "date": "2027-02-25",
                 "dayOfWeek": "Thursday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "Q3 Production Day",
-                "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q3 open studio, project production, critique, or teacher-selected work"
               },
               {
                 "date": "2027-02-26",
                 "dayOfWeek": "Friday",
+                "cycleDay": null,
                 "status": "empty",
-                "heading": "Q3 Production Day",
-                "reason": "Q3 castle documentary production day: continue Unreal build work, capture screen/camera evidence, and update the production log."
+                "heading": "",
+                "lessonLabel": "",
+                "lessonId": "",
+                "lessonTitle": "",
+                "programAreaId": "unreal-engine",
+                "calendarNote": "",
+                "sourceNote": "",
+                "reason": "Q3 open studio, project production, critique, or teacher-selected work"
               }
             ]
           }
@@ -2107,44 +2915,43 @@
         "date": "2027-01-01",
         "dayOfWeek": "Friday",
         "reason": "Winter Break; New Year's Day Observed (No School)",
-        "sourceNote": "Winter Break; New Year's Day Observed (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Winter Break; New Year's Day Observed (No School)"
       },
       {
         "date": "2027-01-04",
         "dayOfWeek": "Monday",
         "reason": "Structured Teacher Planning Day (No School for Students)",
-        "sourceNote": "Structured Teacher Planning Day (No School for Students)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Structured Teacher Planning Day (No School for Students)"
       },
       {
         "date": "2027-01-18",
         "dayOfWeek": "Monday",
         "reason": "Martin Luther King Jr. Day (No School)",
-        "sourceNote": "Martin Luther King Jr. Day (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Martin Luther King Jr. Day (No School)"
       },
       {
         "date": "2027-02-12",
         "dayOfWeek": "Friday",
         "reason": "Staff Development Day #4 (No School for Students)",
-        "sourceNote": "Staff Development Day #4 (No School for Students)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Staff Development Day #4 (No School for Students)"
       },
       {
         "date": "2027-02-15",
         "dayOfWeek": "Monday",
         "reason": "Presidents' Day Observed (No School)",
-        "sourceNote": "Presidents' Day Observed (No School)",
-        "calendarNote": ""
+        "calendarNote": "",
+        "sourceNote": "Presidents' Day Observed (No School)"
       }
     ],
     "notes": [
-      "Q3 begins after Winter Break and a Structured Teacher Planning Day; classes resume Tuesday, January 5, 2027.",
-      "Q3 Unreal is a castle environment production project and a making-of documentary project at the same time.",
-      "Students should capture screen recording or camera footage and update a production log every Q3 class day, including open production days after the formal 16-lesson sequence.",
-      "The formal 16-lesson sequence is scheduled through February 22, 2027. Remaining Q3 days should continue castle polish, pickup footage, documentary editing, critique, and final export routines.",
-      "ACT or other testing notes do not pause or renumber the A/B cycle unless the teacher changes that rule."
+      "A/B labels come from the teacher-provided 2026-2027 Doral Red Rock block calendar.",
+      "January 5, 2027 is A day and January 6, 2027 is B day.",
+      "Q3 Unreal combines castle-environment production with making-of documentary evidence.",
+      "Weekends are excluded and do not appear in noSchoolDates."
     ]
   }
 ]

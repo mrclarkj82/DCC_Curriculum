@@ -1,23 +1,25 @@
 {
   "metadata": {
-    "source": "attached-school-calendar",
-    "sourceFile": "2026-2027 Doral Calendar (List Form).pdf",
+    "source": "teacher-provided-block-calendar",
+    "sourceFile": "Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf",
     "programAreaId": "video-production",
     "quarter": "Q2",
     "startDate": "2026-10-12",
-    "endDate": "2026-11-06",
-    "cycleInference": "No explicit A/B labels in source. Inferred A/B alternation starts 2026-08-13 as A and skips weekends and no-school days. This Q2 unit begins on 2026-10-12, which is an inferred B day.",
+    "endDate": "2026-12-18",
+    "cycleInference": "Uses the A/B labels printed on the teacher-provided 2026-2027 Doral Red Rock block calendar.",
     "lessonCount": 9,
     "scheduledDateCount": 18,
-    "noSchoolDateCount": 2,
+    "noSchoolDateCount": 8,
     "calendarAnomalies": [
       "The source calendar states Year 173 Days, but fixed listed student no-school dates do not reconcile exactly with summary counts. Generated data follows listed dates and notes.",
-      "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher changes that rule.",
       "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.",
       "The Color page and Fairlight page transcript span, approximately 02:50:00-04:53:05, is intentionally excluded from this Q2 plan.",
-      "Q2 now begins with two file organization openers: Video Production File Organization and Video Game Development File Organization. The DaVinci Resolve sequence starts after those openers."
+      "Q2 now begins with two file organization openers: Video Production File Organization and Video Game Development File Organization. The DaVinci Resolve sequence starts after those openers.",
+      "A/B labels were corrected from the teacher-provided block calendar."
     ],
-    "weekendHandling": "Weekends are excluded from instructional scheduling and are not listed in noSchoolDatesDuringSchedule."
+    "weekendHandling": "Weekends are excluded from instructional scheduling and are not listed in noSchoolDatesDuringSchedule.",
+    "activityCount": 8,
+    "scheduledActivityDateCount": 16
   },
   "lessons": [
     {
@@ -28,16 +30,16 @@
       "lessonId": "vp-q2-file-org-01",
       "lessonNumber": 1,
       "lessonTitle": "Video Production File Organization",
-      "notes": "Q2 opens with production file organization before DaVinci Resolve begins. B classes see this first on 2026-10-12; A classes see it on 2026-10-13.",
-      "aDayDate": "2026-10-13",
-      "bDayDate": "2026-10-12",
+      "notes": "Q2 opens with production file organization before DaVinci Resolve begins. A classes see this first on 2026-10-12; B classes see it on 2026-10-13.",
+      "aDayDate": "2026-10-12",
+      "bDayDate": "2026-10-13",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar"
+      "source": "teacher-provided-block-calendar"
     },
     {
       "id": "q2-file-org-video-game-development",
@@ -48,15 +50,15 @@
       "lessonNumber": 2,
       "lessonTitle": "Video Game Development File Organization",
       "notes": "The second Q2 opener applies the same organization habit to game development assets before DaVinci Resolve begins.",
-      "aDayDate": "2026-10-15",
-      "bDayDate": "2026-10-14",
+      "aDayDate": "2026-10-14",
+      "bDayDate": "2026-10-15",
       "aDayCycle": "A",
       "bDayCycle": "B",
-      "aDayCalendarNote": "Conferences (No School for all ES or MS Students)",
-      "bDayCalendarNote": "",
+      "aDayCalendarNote": "",
+      "bDayCalendarNote": "Conference day note applies to ES/MS students only in the source calendar; treated as instructional for DCC high school scheduling.",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar"
+      "source": "teacher-provided-block-calendar"
     },
     {
       "id": "q2-davinci-l01",
@@ -66,15 +68,15 @@
       "lessonId": "vp-q2-l01",
       "lessonNumber": 3,
       "lessonTitle": "DaVinci Resolve Setup and Project Manager",
-      "aDayDate": "2026-10-20",
-      "bDayDate": "2026-10-19",
+      "aDayDate": "2026-10-19",
+      "bDayDate": "2026-10-20",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar",
+      "source": "teacher-provided-block-calendar",
       "notes": "DaVinci Resolve sequence starts after the two Q2 file organization openers."
     },
     {
@@ -85,15 +87,15 @@
       "lessonId": "vp-q2-l02",
       "lessonNumber": 4,
       "lessonTitle": "Media Page, Imports, and Bins",
-      "aDayDate": "2026-10-22",
-      "bDayDate": "2026-10-21",
+      "aDayDate": "2026-10-21",
+      "bDayDate": "2026-10-22",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar",
+      "source": "teacher-provided-block-calendar",
       "notes": ""
     },
     {
@@ -104,15 +106,15 @@
       "lessonId": "vp-q2-l03",
       "lessonNumber": 5,
       "lessonTitle": "Syncing Audio and Timeline Basics",
-      "aDayDate": "2026-10-26",
-      "bDayDate": "2026-10-23",
+      "aDayDate": "2026-10-23",
+      "bDayDate": "2026-10-26",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar",
+      "source": "teacher-provided-block-calendar",
       "notes": ""
     },
     {
@@ -123,15 +125,15 @@
       "lessonId": "vp-q2-l04",
       "lessonNumber": 6,
       "lessonTitle": "Trimming Clips and Building a Rough Cut",
-      "aDayDate": "2026-10-28",
-      "bDayDate": "2026-10-27",
+      "aDayDate": "2026-10-27",
+      "bDayDate": "2026-10-28",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar",
+      "source": "teacher-provided-block-calendar",
       "notes": ""
     },
     {
@@ -142,15 +144,15 @@
       "lessonId": "vp-q2-l05",
       "lessonNumber": 7,
       "lessonTitle": "Quiz 1 and Rough Cut Cleanup",
-      "aDayDate": "2026-11-02",
-      "bDayDate": "2026-10-29",
+      "aDayDate": "2026-10-29",
+      "bDayDate": "2026-11-02",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar",
+      "source": "teacher-provided-block-calendar",
       "notes": ""
     },
     {
@@ -161,15 +163,15 @@
       "lessonId": "vp-q2-l06",
       "lessonNumber": 8,
       "lessonTitle": "Titles, Transitions, and Simple Motion",
-      "aDayDate": "2026-11-04",
-      "bDayDate": "2026-11-03",
+      "aDayDate": "2026-11-03",
+      "bDayDate": "2026-11-04",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar",
+      "source": "teacher-provided-block-calendar",
       "notes": "Renumbered after removing the Color page and Fairlight page transcript span from the Q2 plan."
     },
     {
@@ -180,15 +182,15 @@
       "lessonId": "vp-q2-l07",
       "lessonNumber": 9,
       "lessonTitle": "Quiz 2 and Final Export",
-      "aDayDate": "2026-11-06",
-      "bDayDate": "2026-11-05",
+      "aDayDate": "2026-11-05",
+      "bDayDate": "2026-11-06",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
       "status": "scheduled",
-      "source": "attached-school-calendar",
+      "source": "teacher-provided-block-calendar",
       "notes": "Closing checkpoint now follows titles/transitions and final export only; Color and Fairlight are excluded."
     }
   ],
@@ -210,6 +212,142 @@
       "calendarNote": "",
       "sourceNote": "Nevada Day Observed (No School)",
       "excludedReason": "Nevada Day Observed (No School)"
+    },
+    {
+      "date": "2026-11-11",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Veterans Day Observed (No School)",
+      "excludedReason": "Veterans Day Observed (No School)"
+    },
+    {
+      "date": "2026-11-23",
+      "dayOfWeek": "Monday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-24",
+      "dayOfWeek": "Tuesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-25",
+      "dayOfWeek": "Wednesday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-26",
+      "dayOfWeek": "Thursday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    },
+    {
+      "date": "2026-11-27",
+      "dayOfWeek": "Friday",
+      "cycleDay": null,
+      "isInstructionalDay": false,
+      "calendarNote": "",
+      "sourceNote": "Thanksgiving Break (No School)",
+      "excludedReason": "Thanksgiving Break (No School)"
+    }
+  ],
+  "activities": [
+    {
+      "id": "vp-q2-activity-01",
+      "activityType": "assignment",
+      "title": "1st Video Editing Assignment",
+      "aDayDate": "2026-11-09",
+      "bDayDate": "2026-11-10",
+      "dueLabel": "Due end of class; no archived Classroom due date",
+      "sourceTiming": "Edited Nov 12, 2025",
+      "summary": "Create an exactly 30-second edit with smooth pacing, readable text, balanced audio, and a Drive or YouTube evidence link."
+    },
+    {
+      "id": "vp-q2-activity-02",
+      "activityType": "material",
+      "title": "How to Render in DaVinci",
+      "aDayDate": "2026-11-12",
+      "bDayDate": "2026-11-13",
+      "dueLabel": "Support material; no due date",
+      "sourceTiming": "Posted Nov 14, 2025",
+      "summary": "Use the teacher render demonstration to verify Deliver-page settings, MP4 export, file naming, and final playback."
+    },
+    {
+      "id": "vp-q2-activity-03",
+      "activityType": "assignment",
+      "title": "2nd Video Editing Assignment - The Redo",
+      "aDayDate": "2026-11-16",
+      "bDayDate": "2026-11-17",
+      "dueLabel": "Due end of class; no archived Classroom due date",
+      "sourceTiming": "Posted Dec 1, 2025",
+      "summary": "Rebuild the 30-second edit with noticeably stronger flow, pacing, titles, audio balance, and storytelling."
+    },
+    {
+      "id": "vp-q2-activity-04",
+      "activityType": "assignment",
+      "title": "1st Group Project: The Duel",
+      "aDayDate": "2026-11-18",
+      "bDayDate": "2026-11-19",
+      "dueLabel": "Project launch; continue on following open-studio days",
+      "sourceTiming": "Edited Dec 1, 2025; no archived Classroom due date",
+      "summary": "Plan and produce a 20-30 second visual duel using 6-10 composed shots, music, sound effects, organized files, and rotating production roles."
+    },
+    {
+      "id": "vp-q2-activity-05",
+      "activityType": "assignment",
+      "title": "Group Project 2: The Movie Line Challenge",
+      "aDayDate": "2026-12-07",
+      "bDayDate": "2026-12-04",
+      "dueLabel": "Project launch; continue through the next production blocks",
+      "sourceTiming": "Posted Dec 7, 2025; no archived Classroom due date",
+      "summary": "Create a 30-40 second short film inspired by an assigned movie line while rotating roles and applying composition, music, and sound design."
+    },
+    {
+      "id": "vp-q2-activity-06",
+      "activityType": "make-up",
+      "title": "The Duel Absent Work",
+      "aDayDate": "2026-12-09",
+      "bDayDate": "2026-12-08",
+      "dueLabel": "Make-up option for students absent during The Duel",
+      "sourceTiming": "Posted Dec 9, 2025; no archived Classroom due date",
+      "summary": "Analyze the finished Duel for story, composition, shot variety, editing, sound, file organization, and production decisions while classmates continue project work."
+    },
+    {
+      "id": "vp-q2-activity-07",
+      "activityType": "assessment",
+      "title": "Avatar: Book 1 Water 1-11 Film Study Quiz",
+      "aDayDate": "2026-12-11",
+      "bDayDate": "2026-12-10",
+      "dueLabel": "Due end of class",
+      "sourceTiming": "Posted Dec 11, 2025; archived due date Dec 12, 2025",
+      "summary": "Complete the teacher-provided film-study questions while viewing the assigned episode compilation or approved classroom excerpt."
+    },
+    {
+      "id": "vp-q2-activity-08",
+      "activityType": "assignment",
+      "title": "Group Project 3: The Genre Challenge",
+      "aDayDate": "2026-12-15",
+      "bDayDate": "2026-12-14",
+      "dueLabel": "Project launch; use remaining Q2 blocks for production and critique",
+      "sourceTiming": "Posted Dec 17, 2025; no archived Classroom due date",
+      "summary": "Create a 35-45 second genre short with 6-10 composed shots, role rotation, purposeful pacing, music, sound effects, and a clear visual story."
     }
   ]
 }

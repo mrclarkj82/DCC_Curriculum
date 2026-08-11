@@ -1,18 +1,22 @@
 {
   "metadata": {
     "source": "attached-school-calendar",
-    "sourceFile": "2026-2027 Doral Calendar (List Form).pdf",
+    "sourceFile": "Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf",
     "schoolYear": "2026-2027",
     "classesBegin": "2026-08-12",
     "lastStudentDay": "2027-05-20",
     "scheduleStartDate": "2026-08-13",
-    "cycleInference": "No A/B labels appear in the source calendar. A/B days are inferred across valid instructional weekdays beginning 2026-08-13 as A.",
+    "cycleInference": "Q1 began from the original inferred cycle. Teacher-provided block-calendar labels override Q2 and Q3 schedule dates, including January 5, 2027 as an A day.",
     "validInstructionalDaysFromScheduleStart": 168,
     "validInstructionalDaysInSchoolYearFixedDates": 169,
     "calendarAnomalies": [
       "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20. Contingency days and the TBD ACT testing day help explain why the official count may not reconcile from fixed dates alone.",
-      "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.",
-      "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note."
+      "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.",
+      "The explicit block calendar marks September 24, 2026 as a C day. Q2 and Q3 use the printed A/B labels rather than continuing the earlier inference through that C day.",
+      "The explicit block calendar marks September 24, 2026 as a C day. Q2 and Q3 use the printed A/B labels rather than continuing the earlier inference through that C day.",
+      "The explicit block calendar marks September 24, 2026 as a C day. Q2 and Q3 use the printed A/B labels rather than continuing the earlier inference through that C day.",
+      "The explicit block calendar marks September 24, 2026 as a C day. Q2 and Q3 use the printed A/B labels rather than continuing the earlier inference through that C day.",
+      "The explicit block calendar marks September 24, 2026 as a C day. Q2 and Q3 use the printed A/B labels rather than continuing the earlier inference through that C day."
     ],
     "tbdNotes": [
       "Universal Test Day - ACT Exam: date TBD; no-school for grades 9, 10, and 12; grade 11 takes ACT; grades K-8 attend school; A/B cycle continues regardless."
@@ -652,7 +656,7 @@
     {
       "date": "2026-10-12",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -661,7 +665,7 @@
     {
       "date": "2026-10-13",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -670,7 +674,7 @@
     {
       "date": "2026-10-14",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -679,7 +683,7 @@
     {
       "date": "2026-10-15",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "Conference day note applies to ES/MS students only in the source calendar; treated as instructional for DCC high school scheduling.",
       "sourceNote": "Conferences (No School for all ES or MS Students)",
@@ -715,7 +719,7 @@
     {
       "date": "2026-10-19",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -724,7 +728,7 @@
     {
       "date": "2026-10-20",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -733,7 +737,7 @@
     {
       "date": "2026-10-21",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -742,7 +746,7 @@
     {
       "date": "2026-10-22",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -751,7 +755,7 @@
     {
       "date": "2026-10-23",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -778,7 +782,7 @@
     {
       "date": "2026-10-26",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -787,7 +791,7 @@
     {
       "date": "2026-10-27",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -796,7 +800,7 @@
     {
       "date": "2026-10-28",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -805,7 +809,7 @@
     {
       "date": "2026-10-29",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -841,7 +845,7 @@
     {
       "date": "2026-11-02",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -850,7 +854,7 @@
     {
       "date": "2026-11-03",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -859,7 +863,7 @@
     {
       "date": "2026-11-04",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -868,7 +872,7 @@
     {
       "date": "2026-11-05",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -877,7 +881,7 @@
     {
       "date": "2026-11-06",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -904,7 +908,7 @@
     {
       "date": "2026-11-09",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -913,7 +917,7 @@
     {
       "date": "2026-11-10",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -931,7 +935,7 @@
     {
       "date": "2026-11-12",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -940,7 +944,7 @@
     {
       "date": "2026-11-13",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -967,7 +971,7 @@
     {
       "date": "2026-11-16",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -976,7 +980,7 @@
     {
       "date": "2026-11-17",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -985,7 +989,7 @@
     {
       "date": "2026-11-18",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -994,7 +998,7 @@
     {
       "date": "2026-11-19",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1003,7 +1007,7 @@
     {
       "date": "2026-11-20",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1093,7 +1097,7 @@
     {
       "date": "2026-11-30",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1102,7 +1106,7 @@
     {
       "date": "2026-12-01",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1111,7 +1115,7 @@
     {
       "date": "2026-12-02",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1120,7 +1124,7 @@
     {
       "date": "2026-12-03",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1129,7 +1133,7 @@
     {
       "date": "2026-12-04",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1156,7 +1160,7 @@
     {
       "date": "2026-12-07",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1165,7 +1169,7 @@
     {
       "date": "2026-12-08",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1174,7 +1178,7 @@
     {
       "date": "2026-12-09",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1183,7 +1187,7 @@
     {
       "date": "2026-12-10",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1192,7 +1196,7 @@
     {
       "date": "2026-12-11",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1219,7 +1223,7 @@
     {
       "date": "2026-12-14",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1228,7 +1232,7 @@
     {
       "date": "2026-12-15",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1237,7 +1241,7 @@
     {
       "date": "2026-12-16",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1246,7 +1250,7 @@
     {
       "date": "2026-12-17",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1255,7 +1259,7 @@
     {
       "date": "2026-12-18",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "End of 2nd Grading Period (42 Days/Semester 84 Days)",
       "sourceNote": "End of 2nd Grading Period (42 Days/Semester 84 Days)",
@@ -1417,7 +1421,7 @@
     {
       "date": "2027-01-05",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "Classes Resume",
       "sourceNote": "Classes Resume",
@@ -1426,7 +1430,7 @@
     {
       "date": "2027-01-06",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1435,7 +1439,7 @@
     {
       "date": "2027-01-07",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1444,7 +1448,7 @@
     {
       "date": "2027-01-08",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1471,7 +1475,7 @@
     {
       "date": "2027-01-11",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1480,7 +1484,7 @@
     {
       "date": "2027-01-12",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1489,7 +1493,7 @@
     {
       "date": "2027-01-13",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1498,7 +1502,7 @@
     {
       "date": "2027-01-14",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1507,7 +1511,7 @@
     {
       "date": "2027-01-15",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1543,7 +1547,7 @@
     {
       "date": "2027-01-19",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1552,7 +1556,7 @@
     {
       "date": "2027-01-20",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1561,7 +1565,7 @@
     {
       "date": "2027-01-21",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1570,7 +1574,7 @@
     {
       "date": "2027-01-22",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1597,7 +1601,7 @@
     {
       "date": "2027-01-25",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1606,7 +1610,7 @@
     {
       "date": "2027-01-26",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1615,7 +1619,7 @@
     {
       "date": "2027-01-27",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1624,7 +1628,7 @@
     {
       "date": "2027-01-28",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1633,7 +1637,7 @@
     {
       "date": "2027-01-29",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1660,7 +1664,7 @@
     {
       "date": "2027-02-01",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1669,7 +1673,7 @@
     {
       "date": "2027-02-02",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1678,7 +1682,7 @@
     {
       "date": "2027-02-03",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1687,7 +1691,7 @@
     {
       "date": "2027-02-04",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1696,7 +1700,7 @@
     {
       "date": "2027-02-05",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1723,7 +1727,7 @@
     {
       "date": "2027-02-08",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1732,7 +1736,7 @@
     {
       "date": "2027-02-09",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1741,7 +1745,7 @@
     {
       "date": "2027-02-10",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1750,7 +1754,7 @@
     {
       "date": "2027-02-11",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1795,7 +1799,7 @@
     {
       "date": "2027-02-16",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1804,7 +1808,7 @@
     {
       "date": "2027-02-17",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1813,7 +1817,7 @@
     {
       "date": "2027-02-18",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1822,7 +1826,7 @@
     {
       "date": "2027-02-19",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -1849,7 +1853,7 @@
     {
       "date": "2027-02-22",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",

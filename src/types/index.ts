@@ -381,7 +381,12 @@ export interface LessonSchedulePayload {
   noSchoolDatesDuringSchedule: LessonScheduleSkippedDate[];
 }
 
-export type BlockCalendarDayStatus = 'instructional' | 'no-school' | 'empty' | 'outside-month';
+export type BlockCalendarDayStatus =
+  | 'instructional'
+  | 'activity'
+  | 'no-school'
+  | 'empty'
+  | 'outside-month';
 
 export interface BlockCalendarDay {
   date: string;
@@ -398,6 +403,12 @@ export interface BlockCalendarDay {
   sourceNote: string;
   reason: string;
   activeItemType?: 'lesson';
+  activityId?: string;
+  activityType?: 'assignment' | 'material' | 'assessment' | 'make-up';
+  activityTitle?: string;
+  activitySummary?: string;
+  dueLabel?: string;
+  sourceTiming?: string;
 }
 
 export interface BlockCalendarWeek {
@@ -433,6 +444,8 @@ export interface BlockLessonCalendarPayload {
   summary: {
     lessonCount: number;
     instructionalDateCount: number;
+    activityCount?: number;
+    activityDateCount?: number;
     noSchoolDateCount: number;
     monthCount: number;
   };
