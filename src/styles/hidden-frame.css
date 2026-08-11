@@ -60,13 +60,16 @@
     auto;
 }
 
-.hidden-frame-page--landing {
+.hidden-frame-page--landing,
+.hidden-frame-page--archive {
   transform-origin: center;
   animation: hidden-frame-landing-signal-flicker 8.2s steps(1, end) infinite;
 }
 
 .hidden-frame-page--landing::before,
-.hidden-frame-page--landing::after {
+.hidden-frame-page--landing::after,
+.hidden-frame-page--archive::before,
+.hidden-frame-page--archive::after {
   position: absolute;
   z-index: 4;
   inset: 0;
@@ -75,7 +78,8 @@
   opacity: 0;
 }
 
-.hidden-frame-page--landing::before {
+.hidden-frame-page--landing::before,
+.hidden-frame-page--archive::before {
   background:
     linear-gradient(
       90deg,
@@ -95,7 +99,8 @@
   animation: hidden-frame-landing-static-tear 8.2s steps(1, end) infinite;
 }
 
-.hidden-frame-page--landing::after {
+.hidden-frame-page--landing::after,
+.hidden-frame-page--archive::after {
   background:
     linear-gradient(to bottom, transparent 0 28%, rgba(141, 247, 255, 0.22) 28% 29%, transparent 29%),
     rgba(234, 251, 255, 0.08);
@@ -103,16 +108,35 @@
   animation: hidden-frame-landing-signal-flash 8.2s steps(1, end) infinite;
 }
 
-.hidden-frame-page--landing .hidden-frame-page__overlay {
+.hidden-frame-page--landing .hidden-frame-page__overlay,
+.hidden-frame-page--archive .hidden-frame-page__overlay {
   animation: hidden-frame-landing-overlay-slip 8.2s steps(1, end) infinite;
 }
 
-.hidden-frame-page--landing .hidden-frame-hero__art {
+.hidden-frame-page--landing .hidden-frame-hero__art,
+.hidden-frame-page--archive .recovered-file-card__thumb {
   animation: hidden-frame-landing-art-slip 8.2s steps(1, end) infinite;
 }
 
-.hidden-frame-page--landing .hidden-frame-hero h1 {
+.hidden-frame-page--landing .hidden-frame-hero h1,
+.hidden-frame-page--archive .hidden-frame-section-header h1 {
   animation: hidden-frame-landing-title-fracture 8.2s steps(1, end) infinite;
+}
+
+.hidden-frame-page--archive .recovered-file-card:nth-child(2) .recovered-file-card__thumb {
+  animation-delay: -1.2s;
+}
+
+.hidden-frame-page--archive .recovered-file-card:nth-child(3) .recovered-file-card__thumb {
+  animation-delay: -2.7s;
+}
+
+.hidden-frame-page--archive .recovered-file-card:nth-child(4) .recovered-file-card__thumb {
+  animation-delay: -4.1s;
+}
+
+.hidden-frame-page--archive .recovered-file-card:nth-child(5) .recovered-file-card__thumb {
+  animation-delay: -5.6s;
 }
 
 .hidden-frame-page__inner {
@@ -1034,11 +1058,17 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hidden-frame-page--landing,
+  .hidden-frame-page--archive,
   .hidden-frame-page--landing::before,
   .hidden-frame-page--landing::after,
+  .hidden-frame-page--archive::before,
+  .hidden-frame-page--archive::after,
   .hidden-frame-page--landing .hidden-frame-page__overlay,
+  .hidden-frame-page--archive .hidden-frame-page__overlay,
   .hidden-frame-page--landing .hidden-frame-hero__art,
+  .hidden-frame-page--archive .recovered-file-card__thumb,
   .hidden-frame-page--landing .hidden-frame-hero h1,
+  .hidden-frame-page--archive .hidden-frame-section-header h1,
   .hidden-frame-landing-icon,
   .hidden-frame-landing-icon img,
   .hidden-frame-assignment-marker .hidden-frame-icon,
@@ -1049,9 +1079,13 @@
   }
 
   .hidden-frame-page--landing,
+  .hidden-frame-page--archive,
   .hidden-frame-page--landing .hidden-frame-page__overlay,
+  .hidden-frame-page--archive .hidden-frame-page__overlay,
   .hidden-frame-page--landing .hidden-frame-hero__art,
+  .hidden-frame-page--archive .recovered-file-card__thumb,
   .hidden-frame-page--landing .hidden-frame-hero h1,
+  .hidden-frame-page--archive .hidden-frame-section-header h1,
   .hidden-frame-landing-icon,
   .hidden-frame-landing-icon img {
     transform: none;
@@ -1059,7 +1093,9 @@
   }
 
   .hidden-frame-page--landing::before,
-  .hidden-frame-page--landing::after {
+  .hidden-frame-page--landing::after,
+  .hidden-frame-page--archive::before,
+  .hidden-frame-page--archive::after {
     display: none;
   }
 
