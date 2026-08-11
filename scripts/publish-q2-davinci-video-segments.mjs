@@ -38,6 +38,8 @@ const seedLessons = JSON.parse(
 const expectedLessons = new Map(
   seedLessons.filter((lesson) => lessonIds.includes(lesson.id)).map((lesson) => [lesson.id, lesson]),
 );
+const videosMatch = (actual, expected) =>
+  actual?.url === expected.url && actual?.start === expected.start && actual?.end === expected.end;
 
 if (expectedLessons.size !== lessonIds.length) {
   throw new Error('The lesson seed is missing one or more Q2 DaVinci lessons.');
@@ -59,7 +61,7 @@ for (const lessonId of lessonIds) {
   }
 
   const currentVideo = currentSnapshot.data()?.video;
-  const matches = JSON.stringify(currentVideo) === JSON.stringify(expectedVideo);
+  const matches = videosMatch(currentVideo, expectedVideo);
 
   if (matches) {
     skipped += 1;
@@ -76,7 +78,7 @@ for (const lessonId of lessonIds) {
   await lessonRef.set({ video: expectedVideo }, { merge: true });
   const readBack = (await lessonRef.get()).data()?.video;
 
-  if (JSON.stringify(readBack) !== JSON.stringify(expectedVideo)) {
+  if (!videosMatch(readBack, expectedVideo)) {
     throw new Error(`Read-back verification failed for ${lessonId}`);
   }
 
