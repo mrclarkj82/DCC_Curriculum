@@ -19,7 +19,7 @@ Do not make the project Unreal-only.
 - Website Phase 8 is complete.
 - Phase 9 is Curriculum Completion and ChatGPT Pro Slide Handoff.
 - Phase 9 is a curriculum production, repository organization, website-data integration, and slide-handoff phase.
-- Phase 9 does not include creating PowerPoint files, slide images, generated presentation backgrounds, or slide artwork.
+- Phase 9 may include creating teacher-approved PowerPoint files when the teacher explicitly requests and approves a deck.
 
 ## Assignment Game: The Ember Gate
 
@@ -191,9 +191,9 @@ Where the existing structure uses additional files, preserve them.
 - `slide-brief.md` is the concise automation-oriented brief.
 - `presentation-brief.md` is the premium instructional brief for ChatGPT Pro.
 - Neither brief is student-facing.
-- Codex must not create `.pptx` files.
-- Codex must not use PowerPoint generation tools.
-- Codex must not generate slide artwork or presentation background images.
+- Codex may create `.pptx` files when the teacher explicitly requests and approves the deck.
+- Codex may use presentation-generation tools for teacher-approved decks.
+- Codex may create deck-specific artwork and presentation backgrounds when the teacher requests them.
 - PowerPoint links stay blank until the teacher supplies real Drive links.
 - Slide status must accurately reflect reality, such as `not-created`, `ready-for-chatgpt`, `created`, or another existing accurate enum.
 - Do not mark a slide deck as completed when only a brief exists.
