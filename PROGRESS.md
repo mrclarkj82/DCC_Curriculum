@@ -104,6 +104,7 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-11: Removed the Avatar film-study quiz at the teacher's request and filled every remaining Q2 instructional date through December 18 with explicit project milestones.
 - 2026-08-11: Added an irregular signal-corruption flicker to the assignment-page Hidden Frame marker, including reduced-motion support.
 - 2026-08-11: Added the teacher-provided DaVinci Resolve tutorial URL and exact start/end playback segments to all seven Q2 DaVinci lessons and website seed mirrors.
+- 2026-08-11: Extended the intermittent signal-corruption flicker to the Hidden Frame landing page, including page tears, title and artwork glitches, a broken archive icon, and reduced-motion support.
 
 ## In Progress
 

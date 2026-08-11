@@ -31,8 +31,9 @@ export function HiddenFrameLandingPage() {
               <HiddenFrameIcon
                 destinationPath="/hidden-frame/archive"
                 label="Open hidden frame archive"
-                variant="visible"
+                variant="glitch"
                 size="md"
+                className="hidden-frame-landing-icon"
               />
             </div>
             <HiddenFrameProgress summary={summary} />
