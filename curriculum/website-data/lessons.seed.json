@@ -2538,7 +2538,7 @@
       "source": "DaVinci Resolve Q2 Tutorial Transcript",
       "start": "00:00:00",
       "end": "00:13:16",
-      "url": "",
+      "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=0s",
       "note": "Introduces DaVinci Resolve as an all-in-one post-production tool, system expectations, free versus Studio awareness, Resolve pages, Project Manager, new project creation, project backup/export habits, and first workspace orientation."
     },
     "learningTarget": "I can create a DaVinci Resolve project, identify the main Resolve pages, and explain why project organization matters before editing begins.",
@@ -2608,7 +2608,7 @@
       "source": "DaVinci Resolve Q2 Tutorial Transcript",
       "start": "00:13:16",
       "end": "00:25:47",
-      "url": "",
+      "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=796s",
       "note": "Covers the Media page, media storage, Media Pool, importing clips, changing frame-rate prompts, bins, folder structure, list and thumbnail views, metadata, keywords, and smart-bin awareness."
     },
     "learningTarget": "I can import footage into the Media Pool and organize it with bins so my edit can be built from clean source material.",
@@ -2678,7 +2678,7 @@
       "source": "DaVinci Resolve Q2 Tutorial Transcript",
       "start": "00:25:47",
       "end": "00:35:30",
-      "url": "",
+      "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=1547s",
       "note": "Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness."
     },
     "learningTarget": "I can create a simple Resolve timeline, place clips in order, and explain the difference between source clips and the timeline edit.",
@@ -2752,7 +2752,7 @@
       "source": "DaVinci Resolve Q2 Tutorial Transcript",
       "start": "00:35:30",
       "end": "01:07:04",
-      "url": "",
+      "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=2130s",
       "note": "Covers trimming clip edges, removing excess slate or dead time, choosing story moments, setting in and out points, adding selected ranges to a timeline, insert and append edits, trim mode, ripple trimming, split edits, and keyboard shortcut awareness."
     },
     "learningTarget": "I can trim clips, set in and out points, and build a rough cut that communicates a simple story without unnecessary dead space.",
@@ -2826,7 +2826,7 @@
       "source": "DaVinci Resolve Q2 Tutorial Transcript",
       "start": "01:07:04",
       "end": "01:20:08",
-      "url": "",
+      "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4024s",
       "note": "Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut."
     },
     "learningTarget": "I can show what I know from the first Resolve lessons and clean up a rough cut so it is easier to understand.",
@@ -2897,7 +2897,7 @@
       "source": "DaVinci Resolve Q2 Tutorial Transcript",
       "start": "01:20:08",
       "end": "01:30:41",
-      "url": "",
+      "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4808s",
       "note": "Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit."
     },
     "learningTarget": "I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.",
@@ -2971,7 +2971,7 @@
       "source": "DaVinci Resolve Q2 Tutorial Transcript",
       "start": "04:53:29",
       "end": "05:06:57",
-      "url": "",
+      "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=17609s",
       "note": "Uses Quiz 2 as the closing checkpoint, then covers the Deliver page, render settings, single clip export, codec awareness, H.264/H.265/ProRes comparison, file naming, render queue, multiple versions, and final reflection."
     },
     "learningTarget": "I can complete a final checkpoint and export a small edited video with clear naming, useful render settings, and a reflection on my post-production workflow.",

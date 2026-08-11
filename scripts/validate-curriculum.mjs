@@ -13,6 +13,7 @@ const readAppSeedJson = (fileName) => JSON.parse(readFileSync(join(appSeedDir, f
 
 const programAreas = readJson('programAreas.seed.json');
 const lessons = readJson('lessons.seed.json');
+const appLessons = readAppSeedJson('lessons.seed.json');
 const assignments = readJson('assignments.seed.json');
 const quizzes = readJson('quizzes.seed.json');
 const quizAnswerKeys = readJson('quizAnswerKeys.seed.json');
@@ -104,6 +105,36 @@ assertProgramAreaIds('assignments', assignments);
 assertProgramAreaIds('quizzes', quizzes);
 assertProgramAreaIds('mediaProjects', mediaProjects);
 assertProgramAreaIds('broadcastUpdates', broadcastUpdates);
+
+const q2DaVinciVideoSegments = new Map([
+  ['vp-q2-l01', { start: '00:00:00', end: '00:13:16', startSeconds: 0 }],
+  ['vp-q2-l02', { start: '00:13:16', end: '00:25:47', startSeconds: 796 }],
+  ['vp-q2-l03', { start: '00:25:47', end: '00:35:30', startSeconds: 1547 }],
+  ['vp-q2-l04', { start: '00:35:30', end: '01:07:04', startSeconds: 2130 }],
+  ['vp-q2-l05', { start: '01:07:04', end: '01:20:08', startSeconds: 4024 }],
+  ['vp-q2-l06', { start: '01:20:08', end: '01:30:41', startSeconds: 4808 }],
+  ['vp-q2-l07', { start: '04:53:29', end: '05:06:57', startSeconds: 17609 }],
+]);
+
+for (const [lessonId, segment] of q2DaVinciVideoSegments) {
+  const lesson = lessons.find((record) => record.id === lessonId);
+  assert(lesson, `Q2 DaVinci video segment is missing lesson ${lessonId}`);
+  assert(lesson.video.start === segment.start, `${lessonId} has incorrect video start time`);
+  assert(lesson.video.end === segment.end, `${lessonId} has incorrect video end time`);
+  assert(
+    lesson.video.url.includes('youtu.be/MCDVcQIA3UM'),
+    `${lessonId} does not use the approved DaVinci Resolve video`,
+  );
+  assert(
+    lesson.video.url.includes(`t=${segment.startSeconds}s`),
+    `${lessonId} YouTube page link does not start at ${segment.start}`,
+  );
+}
+
+assert(
+  isSameJson(lessons, appLessons),
+  'src/data/seed/lessons.seed.json must mirror curriculum/website-data/lessons.seed.json',
+);
 
 for (const classRecord of classes) {
   assert(

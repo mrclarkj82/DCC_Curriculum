@@ -7,9 +7,10 @@ Do not invent detailed video production curriculum beyond starter placeholders u
 ## Quarter 2 DaVinci Resolve Tutorial Source
 
 - Raw transcript: `curriculum/source/davinci-resolve-q2-tutorial-transcript.md`
+- Tutorial video: `https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw`
 - Intended use: source material for the Quarter 2 Video Production / DaVinci Resolve tutorial section.
 - Pacing note: this tutorial block should be adapted into roughly four weeks of instruction before later group projects.
-- Status: stored as source material only; not yet converted into student-facing lesson pages, seed data, or website content.
+- Status: converted into seven student-facing DaVinci lessons with exact start/end playback segments; the stored transcript remains the content source of truth.
 
 ## Generated Q2 DaVinci Resolve Curriculum Batch
 

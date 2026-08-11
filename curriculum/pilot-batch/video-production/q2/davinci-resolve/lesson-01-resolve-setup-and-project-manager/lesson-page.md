@@ -19,6 +19,8 @@ What is one problem that can happen if an editor starts cutting video before nam
 
 - Source: DaVinci Resolve Q2 Tutorial Transcript
 - Timestamp range: 00:00:00-00:13:16
+- Assigned segment: [Play 00:00:00-00:13:16 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=0&end=796&autoplay=1)
+- YouTube page: [Open at 00:00:00](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=0s); stop at 00:13:16.
 - Note: Introduces DaVinci Resolve as an all-in-one post-production tool, system expectations, free versus Studio awareness, Resolve pages, Project Manager, new project creation, project backup/export habits, and first workspace orientation.
 - Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
 

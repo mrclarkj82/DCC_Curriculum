@@ -19,6 +19,8 @@ When you have a folder full of random clips, what information helps you find the
 
 - Source: DaVinci Resolve Q2 Tutorial Transcript
 - Timestamp range: 00:13:16-00:25:47
+- Assigned segment: [Play 00:13:16-00:25:47 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=796&end=1547&autoplay=1)
+- YouTube page: [Open at 00:13:16](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=796s); stop at 00:25:47.
 - Note: Covers the Media page, media storage, Media Pool, importing clips, changing frame-rate prompts, bins, folder structure, list and thumbnail views, metadata, keywords, and smart-bin awareness.
 - Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
 

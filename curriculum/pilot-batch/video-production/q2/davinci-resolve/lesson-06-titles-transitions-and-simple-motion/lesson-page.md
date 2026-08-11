@@ -19,6 +19,8 @@ When does a title help a video, and when can it distract from the video?
 
 - Source: DaVinci Resolve Q2 Tutorial Transcript
 - Timestamp range: 01:20:08-01:30:41
+- Assigned segment: [Play 01:20:08-01:30:41 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=4808&end=5441&autoplay=1)
+- YouTube page: [Open at 01:20:08](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4808s); stop at 01:30:41.
 - Note: Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit.
 - Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
 

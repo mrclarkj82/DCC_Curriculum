@@ -10,7 +10,7 @@
     "source": "DaVinci Resolve Q2 Tutorial Transcript",
     "start": "00:25:47",
     "end": "00:35:30",
-    "url": "",
+    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=1547s",
     "note": "Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness."
   },
   "learningTarget": "I can create a simple Resolve timeline, place clips in order, and explain the difference between source clips and the timeline edit.",

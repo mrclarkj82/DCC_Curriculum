@@ -44,7 +44,7 @@ Each Q1 Unreal lesson runs across two valid instructional class days: one A day 
 
 ## Q2 File Organization + DaVinci Resolve Pairing Rule
 
-The Q2 schedule begins Monday, October 12, 2026, which the block calendar labels `A`. The first two Q2 lesson blocks are file-organization openers, followed by seven DaVinci Resolve lessons through November 6. Eight archived Video Production items are then placed from November 9 through December 15 in their prior instructional order. Open dates through December 18 remain available for multi-session filming, editing, critique, recovery, and teacher-selected work.
+The Q2 schedule begins Monday, October 12, 2026, which the block calendar labels `A`. The first two Q2 lesson blocks are file-organization openers, followed by seven DaVinci Resolve lessons through November 6. Seven retained archived Video Production resources then span twelve explicit project checkpoints from November 9 through December 18, filling every remaining instructional date.
 
 ## Q3 Unreal Castle Documentary Pairing Rule
 

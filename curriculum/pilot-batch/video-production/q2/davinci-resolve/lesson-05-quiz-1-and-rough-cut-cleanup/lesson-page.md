@@ -19,6 +19,8 @@ What is one issue in your rough cut that a viewer would notice immediately?
 
 - Source: DaVinci Resolve Q2 Tutorial Transcript
 - Timestamp range: 01:07:04-01:20:08
+- Assigned segment: [Play 01:07:04-01:20:08 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=4024&end=4808&autoplay=1)
+- YouTube page: [Open at 01:07:04](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4024s); stop at 01:20:08.
 - Note: Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut.
 - Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
 

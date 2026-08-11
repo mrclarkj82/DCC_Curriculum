@@ -5,6 +5,7 @@ This folder contains the Quarter 2 Video Production Studio DaVinci Resolve mini-
 ## Source
 
 - Raw transcript: `curriculum/source/davinci-resolve-q2-tutorial-transcript.md`
+- Tutorial video: [DaVinci Resolve full tutorial](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw)
 - Pacing target: a trimmed DaVinci Resolve foundations block before later group projects.
 - School year: 2026-2027
 - Q2 schedule window: October 12, 2026 through November 6, 2026
@@ -20,13 +21,13 @@ DaVinci Resolve starts at Q2 L3 on the teacher schedule, but the DaVinci lesson 
 
 ## DaVinci Lesson Sequence
 
-- vp-q2-l01: DaVinci Resolve Setup and Project Manager
-- vp-q2-l02: Media Page, Imports, and Bins
-- vp-q2-l03: Syncing Audio and Timeline Basics
-- vp-q2-l04: Trimming Clips and Building a Rough Cut
-- vp-q2-l05: Quiz 1 and Rough Cut Cleanup
-- vp-q2-l06: Titles, Transitions, and Simple Motion
-- vp-q2-l07: Quiz 2 and Final Export
+- vp-q2-l01: DaVinci Resolve Setup and Project Manager (`00:00:00-00:13:16`)
+- vp-q2-l02: Media Page, Imports, and Bins (`00:13:16-00:25:47`)
+- vp-q2-l03: Syncing Audio and Timeline Basics (`00:25:47-00:35:30`)
+- vp-q2-l04: Trimming Clips and Building a Rough Cut (`00:35:30-01:07:04`)
+- vp-q2-l05: Quiz 1 and Rough Cut Cleanup (`01:07:04-01:20:08`)
+- vp-q2-l06: Titles, Transitions, and Simple Motion (`01:20:08-01:30:41`)
+- vp-q2-l07: Quiz 2 and Final Export (`04:53:29-05:06:57`)
 
 ## Trimmed Transcript Span
 

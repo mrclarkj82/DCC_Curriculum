@@ -19,6 +19,8 @@ What makes a video clip feel too long, even if the shot itself is useful?
 
 - Source: DaVinci Resolve Q2 Tutorial Transcript
 - Timestamp range: 00:35:30-01:07:04
+- Assigned segment: [Play 00:35:30-01:07:04 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=2130&end=4024&autoplay=1)
+- YouTube page: [Open at 00:35:30](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=2130s); stop at 01:07:04.
 - Note: Covers trimming clip edges, removing excess slate or dead time, choosing story moments, setting in and out points, adding selected ranges to a timeline, insert and append edits, trim mode, ripple trimming, split edits, and keyboard shortcut awareness.
 - Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
 

@@ -19,6 +19,8 @@ Why might camera audio and separate microphone audio need to be matched before e
 
 - Source: DaVinci Resolve Q2 Tutorial Transcript
 - Timestamp range: 00:25:47-00:35:30
+- Assigned segment: [Play 00:25:47-00:35:30 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=1547&end=2130&autoplay=1)
+- YouTube page: [Open at 00:25:47](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=1547s); stop at 00:35:30.
 - Note: Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness.
 - Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
 

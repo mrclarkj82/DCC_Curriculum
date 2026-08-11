@@ -19,6 +19,8 @@ What needs to be true before a project is ready to export for someone else to wa
 
 - Source: DaVinci Resolve Q2 Tutorial Transcript
 - Timestamp range: 04:53:29-05:06:57
+- Assigned segment: [Play 04:53:29-05:06:57 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=17609&end=18417&autoplay=1)
+- YouTube page: [Open at 04:53:29](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=17609s); stop at 05:06:57.
 - Note: Uses Quiz 2 as the closing checkpoint, then covers the Deliver page, render settings, single clip export, codec awareness, H.264/H.265/ProRes comparison, file naming, render queue, multiple versions, and final reflection.
 - Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
 
