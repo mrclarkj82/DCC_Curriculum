@@ -100,8 +100,8 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07: Replaced the teacher submission-management table with a focused image gallery that shows one submitted image and its assignment requirements at a time, with previous/next controls for moving through class work.
 - 2026-08-07: Committed and pushed the submission image gallery in commit `9748c71`, deployed Firebase Hosting target `dcc`, and verified the signed-in A1 Drive image rendered at 1600x1919 with the two assignment requirements and no browser console errors.
 - 2026-08-11: Reviewed the teacher-provided Doral Red Rock block-calendar PDF and corrected Q2/Q3 schedule labels to use its explicit A/B days; January 5, 2027 is now A day.
-- 2026-08-11: Reviewed eight archived `P1 Gated Gangsters` Video Production items and placed them in the Q2 block schedule without copying private Classroom, Drive, Forms, roster, or group-list links.
-- 2026-08-11: Extended the Q2 teacher schedule preview through December 18 with project, material, make-up, assessment, and open-studio blocks.
+- 2026-08-11: Reviewed the archived `P1 Gated Gangsters` Video Production items and placed the seven teacher-retained resources in the Q2 block schedule without copying private Classroom, Drive, Forms, roster, or group-list links.
+- 2026-08-11: Removed the Avatar film-study quiz at the teacher's request and filled every remaining Q2 instructional date through December 18 with explicit project milestones.
 
 ## In Progress
 
@@ -157,7 +157,9 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-07 response-card live asset verification: passed; `https://dcccs.web.app` returned HTTP 200 and served the validated `index-BTAJIptG.js` build.
 - 2026-08-07 live route gate verification: passed; an unsigned browser session was redirected to school Google sign-in as expected.
 - 2026-08-11 explicit block-calendar audit: passed; Q2/Q3 scheduled dates match the teacher-provided printed labels, including `2027-01-05` as A and `2027-01-06` as B.
-- 2026-08-11 archived Q2 activity audit: passed; all eight requested Video Production items appear on one A-day and one B-day schedule cell, with archived timing and due-date distinctions preserved.
+- 2026-08-11 archived Q2 activity audit: superseded by the teacher-directed full-quarter pacing update; seven retained resources now span twelve A/B project checkpoints, and the Avatar film-study quiz is excluded.
+- 2026-08-11 Q2 coverage audit: passed; 18 lesson dates and 24 project-checkpoint dates fill all 42 instructional dates from October 12 through December 18, with no unassigned instructional cells.
+- 2026-08-11 active-schedule removal audit: passed; the Q2 calendar and both website seed mirrors contain no Avatar film-study entry.
 - 2026-08-11 private-link audit: passed; no archived Classroom, Drive, Forms, roster, or group-list URL was added to repository data.
 - 2026-08-11 `npm.cmd run lint`: passed.
 - 2026-08-11 `npm.cmd run build`: passed using Firebase web configuration loaded into process environment only; no `.env.local` was created. Vite reported the existing chunk-size warning.

@@ -421,6 +421,19 @@ const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId
           );
           assert(!day.lessonId, `${label} ${day.date} no-school cell must not include lessonId`);
         }
+
+        if (
+          calendar.quarter === 'Q2' &&
+          day.status === 'empty' &&
+          day.date >= calendar.startDate &&
+          day.date <= calendar.endDate
+        ) {
+          const sourceDay = instructionalDayByDate.get(day.date);
+          assert(
+            !sourceDay?.isInstructionalDay,
+            `${label} leaves Q2 instructional date ${day.date} unassigned`,
+          );
+        }
       }
     }
   }

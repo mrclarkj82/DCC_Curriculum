@@ -26,14 +26,18 @@ A/B method: Uses the day labels printed on the teacher-provided Doral Red Rock b
 
 | Activity | Type | A Day | B Day | Current timing | Archived source timing |
 | --- | --- | --- | --- | --- | --- |
-| 1st Video Editing Assignment | assignment | 2026-11-09 | 2026-11-10 | Due end of class; no archived Classroom due date | Edited Nov 12, 2025 |
-| How to Render in DaVinci | material | 2026-11-12 | 2026-11-13 | Support material; no due date | Posted Nov 14, 2025 |
-| 2nd Video Editing Assignment - The Redo | assignment | 2026-11-16 | 2026-11-17 | Due end of class; no archived Classroom due date | Posted Dec 1, 2025 |
-| 1st Group Project: The Duel | assignment | 2026-11-18 | 2026-11-19 | Project launch; continue on following open-studio days | Edited Dec 1, 2025; no archived Classroom due date |
-| Group Project 2: The Movie Line Challenge | assignment | 2026-12-07 | 2026-12-04 | Project launch; continue through the next production blocks | Posted Dec 7, 2025; no archived Classroom due date |
-| The Duel Absent Work | make-up | 2026-12-09 | 2026-12-08 | Make-up option for students absent during The Duel | Posted Dec 9, 2025; no archived Classroom due date |
-| Avatar: Book 1 Water 1-11 Film Study Quiz | assessment | 2026-12-11 | 2026-12-10 | Due end of class | Posted Dec 11, 2025; archived due date Dec 12, 2025 |
-| Group Project 3: The Genre Challenge | assignment | 2026-12-15 | 2026-12-14 | Project launch; use remaining Q2 blocks for production and critique | Posted Dec 17, 2025; no archived Classroom due date |
+| 1st Video Editing Assignment - Launch and Rough Cut | assignment | 2026-11-09 | 2026-11-10 | Build the exactly 30-second rough cut by the end of class | Edited Nov 12, 2025 |
+| 1st Video Editing Assignment - Polish, Render, and Submit | assignment | 2026-11-12 | 2026-11-13 | Final MP4 and evidence link due by the end of class | Assignment edited Nov 12, 2025; render material posted Nov 14, 2025 |
+| 2nd Video Editing Assignment - The Redo: Revision Plan | assignment | 2026-11-16 | 2026-11-17 | Revision plan and rebuilt rough cut due by the end of class | Posted Dec 1, 2025 |
+| 2nd Video Editing Assignment - The Redo: Final Edit and Critique | assignment | 2026-11-18 | 2026-11-19 | Improved final export and evidence link due by the end of class | Posted Dec 1, 2025 |
+| 1st Group Project: The Duel - Preproduction and Shot Plan | assignment | 2026-11-20 | 2026-11-30 | Concept, roles, locations, and 6-10-shot plan due by the end of class | Edited Dec 1, 2025 |
+| 1st Group Project: The Duel - Production | assignment | 2026-12-01 | 2026-12-02 | Capture all planned footage and organize the production files | Edited Dec 1, 2025 |
+| 1st Group Project: The Duel - Edit, Screen, and Submit | assignment | 2026-12-03 | 2026-12-04 | Final 20-30 second film and evidence link due by the end of class | Duel edited Dec 1, 2025; absent work posted Dec 9, 2025 |
+| Group Project 2: The Movie Line Challenge - Preproduction | assignment | 2026-12-07 | 2026-12-08 | Interpretation, role rotation, and shot plan due by the end of class | Posted Dec 7, 2025 |
+| Group Project 2: The Movie Line Challenge - Production and Edit | assignment | 2026-12-09 | 2026-12-10 | Complete principal photography and assemble the rough cut | Posted Dec 7, 2025 |
+| Group Project 2: The Movie Line Challenge - Final Cut and Screening | assignment | 2026-12-11 | 2026-12-14 | Final 30-40 second film and evidence link due by the end of class | Posted Dec 7, 2025 |
+| Group Project 3: The Genre Challenge - Preproduction and Production | assignment | 2026-12-15 | 2026-12-16 | Genre plan, role rotation, shot list, and footage due by the end of class | Posted Dec 17, 2025 |
+| Group Project 3: The Genre Challenge - Final Edit, Screening, and Submission | assignment | 2026-12-17 | 2026-12-18 | Final 35-45 second genre film and evidence link due by the end of class | Posted Dec 17, 2025 |
 
 ## No-School Weekdays During This Schedule Window
 
