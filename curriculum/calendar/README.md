@@ -26,7 +26,7 @@ The date-list source is `2026-2027 Doral Calendar (List Form).pdf`. The teacher-
 
 ## A/B Rules
 
-1. The original Q1 schedule began from the prior inferred cycle anchored on 2026-08-13 as `A`.
+1. The inferred Q1 cycle remains anchored on 2026-08-13 as `A`, while the Q1 lesson sequence begins on the next `A` day, 2026-08-17.
 2. The teacher-provided block calendar explicitly marks September 24 as a `C` day.
 3. Q2 and Q3 use the printed block-calendar labels rather than continuing the earlier inference through that `C` day.
 4. January 5, 2027 is `A`; January 6 is `B`.
@@ -40,7 +40,7 @@ The website schedule view should render as a Monday-Friday block calendar. Instr
 
 ## Q1 Unreal Pairing Rule
 
-Each Q1 Unreal lesson runs across two valid instructional class days: one A day and one B day. `ue-q1-l01` starts on the first valid A/B pair beginning 2026-08-13. `ue-q1-l02` uses the next valid A/B pair, and so on through `ue-q1-l16`.
+Each Q1 Unreal lesson runs across two valid instructional class days: one A day and one B day. `ue-q1-l01` starts on the valid A/B pair beginning 2026-08-17. `ue-q1-l02` uses the next valid A/B pair, and so on through `ue-q1-l16`, which ends on 2026-10-02.
 
 ## Q2 File Organization + DaVinci Resolve Pairing Rule
 

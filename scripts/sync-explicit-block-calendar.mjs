@@ -294,7 +294,7 @@ for (const cycleMap of [q2CycleMap, q3CycleMap]) {
 
 instructionalDays.metadata.sourceFile = sourceFile;
 instructionalDays.metadata.cycleInference =
-  'Q1 began from the original inferred cycle. Teacher-provided block-calendar labels override Q2 and Q3 schedule dates, including January 5, 2027 as an A day.';
+  'The inferred Q1 cycle remains anchored on 2026-08-13 as A, while the Q1 lesson sequence starts on 2026-08-17. Teacher-provided block-calendar labels override Q2 and Q3 schedule dates, including January 5, 2027 as an A day.';
 instructionalDays.metadata.calendarAnomalies = [
   ...instructionalDays.metadata.calendarAnomalies.filter(
     (note) =>

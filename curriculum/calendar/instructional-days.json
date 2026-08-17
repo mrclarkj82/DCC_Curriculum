@@ -5,9 +5,9 @@
     "schoolYear": "2026-2027",
     "classesBegin": "2026-08-12",
     "lastStudentDay": "2027-05-20",
-    "scheduleStartDate": "2026-08-13",
-    "cycleInference": "Q1 began from the original inferred cycle. Teacher-provided block-calendar labels override Q2 and Q3 schedule dates, including January 5, 2027 as an A day.",
-    "validInstructionalDaysFromScheduleStart": 168,
+    "scheduleStartDate": "2026-08-17",
+    "cycleInference": "The inferred Q1 cycle remains anchored on 2026-08-13 as A, while the Q1 lesson sequence starts on 2026-08-17. Teacher-provided block-calendar labels override Q2 and Q3 schedule dates, including January 5, 2027 as an A day.",
+    "validInstructionalDaysFromScheduleStart": 166,
     "validInstructionalDaysInSchoolYearFixedDates": 169,
     "calendarAnomalies": [
       "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20. Contingency days and the TBD ACT testing day help explain why the official count may not reconcile from fixed dates alone.",
@@ -114,7 +114,7 @@
       "dayOfWeek": "Thursday",
       "cycleDay": "A",
       "isInstructionalDay": true,
-      "calendarNote": "Q1 Unreal A/B lesson schedule starts here.",
+      "calendarNote": "",
       "sourceNote": "",
       "excludedReason": null
     },
@@ -150,7 +150,7 @@
       "dayOfWeek": "Monday",
       "cycleDay": "A",
       "isInstructionalDay": true,
-      "calendarNote": "",
+      "calendarNote": "Q1 Unreal A/B lesson schedule starts here.",
       "sourceNote": "",
       "excludedReason": null
     },
