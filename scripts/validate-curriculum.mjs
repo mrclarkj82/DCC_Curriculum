@@ -20,6 +20,7 @@ const quizAnswerKeys = readJson('quizAnswerKeys.seed.json');
 const mediaProjects = readJson('mediaProjects.seed.json');
 const broadcastUpdates = readJson('broadcastUpdates.seed.json');
 const classes = readJson('classes.seed.json');
+const appClasses = readAppSeedJson('classes.seed.json');
 const lessonSchedule = readJson('lessonSchedule.seed.json');
 const blockLessonCalendar = readJson('blockLessonCalendar.seed.json');
 const blockLessonCalendars = readJson('blockLessonCalendars.seed.json');
@@ -134,6 +135,11 @@ for (const [lessonId, segment] of q2DaVinciVideoSegments) {
 assert(
   isSameJson(lessons, appLessons),
   'src/data/seed/lessons.seed.json must mirror curriculum/website-data/lessons.seed.json',
+);
+
+assert(
+  isSameJson(classes, appClasses),
+  'src/data/seed/classes.seed.json must mirror curriculum/website-data/classes.seed.json',
 );
 
 for (const classRecord of classes) {
