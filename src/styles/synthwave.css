@@ -1363,8 +1363,15 @@
   color: var(--color-neon-cyan);
 }
 
-.response-grid {
-  margin-bottom: var(--space-5);
+.today-mission-stack,
+.today-mission-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-5);
+}
+
+.today-mission-content .span-two {
+  grid-column: auto;
 }
 
 .response-card {

@@ -7,7 +7,6 @@ import { BellRingerResponseCard } from '../responses/BellRingerResponseCard';
 import { ExitTicketResponseCard } from '../responses/ExitTicketResponseCard';
 import { SubmissionPanel } from '../submissions/SubmissionPanel';
 import { RubricTable } from '../RubricTable';
-import { StatusBadge } from '../StatusBadge';
 import { VideoSegmentLinks } from '../VideoSegmentLinks';
 import { VocabularyList } from '../VocabularyList';
 import { getBellRingerPrompt, getExitTicketPrompt } from '../../services/responseService';
@@ -34,26 +33,9 @@ interface StudentTodayExperienceProps {
   viewerMode: ViewerMode;
 }
 
-function LessonMission({
-  lesson,
-  programArea,
-}: {
-  lesson: Lesson;
-  programArea: ProgramArea | null;
-}) {
+function LessonMission({ lesson }: { lesson: Lesson }) {
   return (
     <>
-      <section className="card mission-panel neon-border span-two">
-        <p className="retro-label">Today's Mission</p>
-        <h2>{lesson.title}</h2>
-        <p>{lesson.learningTarget}</p>
-      </section>
-
-      <section className="card mission-panel">
-        <h2>Program Area</h2>
-        <p>{programArea?.title ?? lesson.programAreaId}</p>
-      </section>
-
       <section className="card mission-panel">
         <h2>Video Segment</h2>
         <VideoSegmentLinks video={lesson.video} />
@@ -83,11 +65,6 @@ function LessonMission({
       </section>
 
       <section className="card mission-panel">
-        <h2>Submission Evidence Placeholder</h2>
-        <EvidenceChecklist items={lesson.assignment.evidenceRequired} />
-      </section>
-
-      <section className="card mission-panel">
         <h2>Help / Common Problems</h2>
         <p className="muted">
           If you get stuck, ask for help by naming the exact panel, tool, shortcut, setting, or
@@ -98,26 +75,9 @@ function LessonMission({
   );
 }
 
-function AssignmentMission({
-  assignment,
-  programArea,
-}: {
-  assignment: Assignment;
-  programArea: ProgramArea | null;
-}) {
+function AssignmentMission({ assignment }: { assignment: Assignment }) {
   return (
     <>
-      <section className="card mission-panel neon-border span-two">
-        <p className="retro-label">Assignment</p>
-        <h2>{assignment.title}</h2>
-        <p>{assignment.instructions}</p>
-      </section>
-
-      <section className="card mission-panel">
-        <h2>Program Area</h2>
-        <p>{programArea?.title ?? assignment.programAreaId}</p>
-      </section>
-
       <section className="card mission-panel">
         <h2>Skill Focus</h2>
         <EvidenceChecklist items={assignment.skillFocus} />
@@ -150,26 +110,9 @@ function AssignmentMission({
   );
 }
 
-function MediaProjectMission({
-  project,
-  programArea,
-}: {
-  project: MediaProject;
-  programArea: ProgramArea | null;
-}) {
+function MediaProjectMission({ project }: { project: MediaProject }) {
   return (
     <>
-      <section className="card mission-panel neon-border span-two">
-        <p className="retro-label">Video Production Project</p>
-        <h2>{project.title}</h2>
-        <p>{project.description}</p>
-      </section>
-
-      <section className="card mission-panel">
-        <h2>Program Area</h2>
-        <p>{programArea?.title ?? project.programAreaId}</p>
-      </section>
-
       <section className="card mission-panel">
         <h2>Production Goal</h2>
         <p>{project.projectType}</p>
@@ -208,26 +151,9 @@ function MediaProjectMission({
   );
 }
 
-function BroadcastUpdateMission({
-  update,
-  programArea,
-}: {
-  update: BroadcastUpdate;
-  programArea: ProgramArea | null;
-}) {
+function BroadcastUpdateMission({ update }: { update: BroadcastUpdate }) {
   return (
     <>
-      <section className="card mission-panel neon-border span-two">
-        <p className="retro-label">Broadcast Desk Update</p>
-        <h2>{update.title}</h2>
-        <p>{update.summary}</p>
-      </section>
-
-      <section className="card mission-panel">
-        <h2>Program Area</h2>
-        <p>{programArea?.title ?? update.programAreaId}</p>
-      </section>
-
       <section className="card mission-panel">
         <h2>Dates</h2>
         <dl className="detail-list">
@@ -310,7 +236,6 @@ function PortfolioMission() {
 export function StudentTodayExperience({
   classRecord,
   activeItem,
-  programArea,
   userProfile,
   viewerMode,
 }: StudentTodayExperienceProps) {
@@ -328,33 +253,7 @@ export function StudentTodayExperience({
         : undefined;
 
   return (
-    <>
-      <section className="card mission-panel neon-border">
-        <div className="card-header">
-          <div>
-            <p className="retro-label">Class</p>
-            <h2>
-              {classRecord.name} / {classRecord.period}
-            </h2>
-          </div>
-          <StatusBadge status={activeItem.status ?? 'active'} />
-        </div>
-        <dl className="detail-list">
-          <div>
-            <dt>Program Area</dt>
-            <dd>{programArea?.title ?? classRecord.activeProgramAreaId}</dd>
-          </div>
-          <div>
-            <dt>Active Item Type</dt>
-            <dd>{classRecord.activeItemType}</dd>
-          </div>
-          <div>
-            <dt>Active Item ID</dt>
-            <dd>{classRecord.activeItemId}</dd>
-          </div>
-        </dl>
-      </section>
-
+    <div className="today-mission-stack">
       {isMissingActiveRecord && (
         <EmptyState
           title="Active item not found"
@@ -363,47 +262,27 @@ export function StudentTodayExperience({
       )}
 
       {showResponseCards && (
-        <div className="today-grid response-grid">
-          <BellRingerResponseCard
-            prompt={getBellRingerPrompt(activeItem)}
-            activeItem={activeItem}
-            classRecord={classRecord}
-            userProfile={userProfile}
-            viewerMode={viewerMode}
-          />
-          <ExitTicketResponseCard
-            prompt={getExitTicketPrompt(activeItem)}
-            activeItem={activeItem}
-            classRecord={classRecord}
-            userProfile={userProfile}
-            viewerMode={viewerMode}
-          />
-        </div>
-      )}
-
-      {showResponseCards && (
-        <SubmissionPanel
+        <BellRingerResponseCard
+          prompt={getBellRingerPrompt(activeItem)}
+          activeItem={activeItem}
           classRecord={classRecord}
-          activeItemType={activeItem.type}
-          activeItemId={activeItem.id}
-          target={submissionTarget}
           userProfile={userProfile}
           viewerMode={viewerMode}
         />
       )}
 
-      <div className="today-grid">
+      <div className="today-mission-content">
         {activeItem.type === 'lesson' && record && (
-          <LessonMission lesson={record as Lesson} programArea={programArea} />
+          <LessonMission lesson={record as Lesson} />
         )}
         {activeItem.type === 'assignment' && record && (
-          <AssignmentMission assignment={record as Assignment} programArea={programArea} />
+          <AssignmentMission assignment={record as Assignment} />
         )}
         {activeItem.type === 'mediaProject' && record && (
-          <MediaProjectMission project={record as MediaProject} programArea={programArea} />
+          <MediaProjectMission project={record as MediaProject} />
         )}
         {activeItem.type === 'broadcastUpdate' && record && (
-          <BroadcastUpdateMission update={record as BroadcastUpdate} programArea={programArea} />
+          <BroadcastUpdateMission update={record as BroadcastUpdate} />
         )}
         {activeItem.type === 'quiz' && (
           <QuizMission
@@ -423,6 +302,27 @@ export function StudentTodayExperience({
           />
         )}
       </div>
-    </>
+
+      {showResponseCards && (
+        <SubmissionPanel
+          classRecord={classRecord}
+          activeItemType={activeItem.type}
+          activeItemId={activeItem.id}
+          target={submissionTarget}
+          userProfile={userProfile}
+          viewerMode={viewerMode}
+        />
+      )}
+
+      {showResponseCards && (
+        <ExitTicketResponseCard
+          prompt={getExitTicketPrompt(activeItem)}
+          activeItem={activeItem}
+          classRecord={classRecord}
+          userProfile={userProfile}
+          viewerMode={viewerMode}
+        />
+      )}
+    </div>
   );
 }
