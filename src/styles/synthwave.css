@@ -1630,6 +1630,101 @@
   align-content: start;
 }
 
+.response-effort-pilot-note {
+  margin: var(--space-3) 0 var(--space-4);
+  border: 1px solid rgba(var(--color-neon-orange-rgb), 0.42);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  color: var(--color-text-soft);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-orange-rgb), 0.09),
+      rgba(var(--color-neon-purple-rgb), 0.08)
+    ),
+    rgba(8, 3, 18, 0.62);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.response-effort-pilot-note strong {
+  color: var(--color-neon-orange);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+}
+
+.response-effort-groups {
+  display: grid;
+  gap: 6px;
+}
+
+.response-effort-group {
+  display: grid;
+  gap: 4px;
+  border: 1px solid rgba(var(--color-neon-purple-rgb), 0.3);
+  border-radius: var(--radius-sm);
+  padding: 8px 9px;
+  background: rgba(8, 3, 18, 0.54);
+}
+
+.response-effort-group > span {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.response-effort-group small {
+  display: inline-grid;
+  min-width: 22px;
+  min-height: 22px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 10px;
+}
+
+.response-effort-group p {
+  margin: 0;
+  color: var(--color-text-main);
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.42;
+  overflow-wrap: anywhere;
+}
+
+.response-effort-group--strong {
+  border-color: rgba(var(--color-neon-green-rgb), 0.38);
+  background: rgba(var(--color-neon-green-rgb), 0.06);
+}
+
+.response-effort-group--strong > span {
+  color: var(--color-neon-green);
+}
+
+.response-effort-group--developing {
+  border-color: rgba(var(--color-neon-orange-rgb), 0.4);
+  background: rgba(var(--color-neon-orange-rgb), 0.06);
+}
+
+.response-effort-group--developing > span {
+  color: var(--color-neon-orange);
+}
+
+.response-effort-group--quick-review {
+  border-color: rgba(255, 77, 109, 0.4);
+  background: rgba(255, 77, 109, 0.06);
+}
+
+.response-effort-group--quick-review > span {
+  color: var(--color-danger);
+}
+
 .response-missing-students {
   color: var(--color-danger);
   font-size: 13px;

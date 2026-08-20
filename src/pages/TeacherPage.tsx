@@ -36,6 +36,7 @@ import {
   subscribeToSubmissionsForClassTarget,
 } from '../services/submissionService';
 import { getUsersByIds } from '../services/userManagementService';
+import { groupStudentsByResponseEffort, type ResponseEffortGroups } from '../utils/responseEffort';
 import type {
   ActiveClassItem,
   ActiveItemType,
@@ -237,6 +238,42 @@ interface ClassSelectionPanelProps {
   classRecords: ClassRecord[];
   label: string;
   onSelect: (classId: string) => void;
+}
+
+function ResponseEffortNameGroups({ groups }: { groups: ResponseEffortGroups }) {
+  const categories = [
+    {
+      key: 'strong',
+      label: 'Strong Evidence',
+      names: groups.strong,
+    },
+    {
+      key: 'developing',
+      label: 'Developing',
+      names: groups.developing,
+    },
+    {
+      key: 'quick-review',
+      label: 'Quick Review',
+      names: groups.quickReview,
+    },
+  ] as const;
+
+  return (
+    <div className="response-effort-groups" aria-label="Response effort signals">
+      {categories.map((category) => (
+        <div
+          className={`response-effort-group response-effort-group--${category.key}`}
+          key={category.key}
+        >
+          <span>
+            {category.label} <small>{category.names.length}</small>
+          </span>
+          <p>{category.names.length ? category.names.join(', ') : 'None yet'}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function ClassSelectionPanel({ classRecords, label, onSelect }: ClassSelectionPanelProps) {
@@ -1177,6 +1214,11 @@ export function TeacherPage() {
           <section className="content-section neon-section">
             <p className="retro-label">Daily Response Completion</p>
             <h2>Bell Ringers And Exit Tickets</h2>
+            <p className="response-effort-pilot-note">
+              <strong>Pilot effort signals:</strong> These categories use response length, distinct
+              detail, prompt style, and placeholder checks. They do not change grades or submission
+              status.
+            </p>
             {!selectedResponseClass ? (
               <ClassSelectionPanel
                 classRecords={classRecords}
@@ -1221,6 +1263,28 @@ export function TeacherPage() {
                       .filter((summary) => !summary.exitTicketComplete)
                       .map((summary) => summary.studentName)
                       .sort((firstName, secondName) => firstName.localeCompare(secondName));
+                    const bellRingerEffortGroups = bellRingerPrompt
+                      ? groupStudentsByResponseEffort(
+                          bellRingerPrompt,
+                          summaries
+                            .filter((summary) => summary.bellRingerComplete)
+                            .map((summary) => ({
+                              studentName: summary.studentName,
+                              response: summary.bellRingerResponse?.response ?? '',
+                            })),
+                        )
+                      : null;
+                    const exitTicketEffortGroups = exitTicketPrompt
+                      ? groupStudentsByResponseEffort(
+                          exitTicketPrompt,
+                          summaries
+                            .filter((summary) => summary.exitTicketComplete)
+                            .map((summary) => ({
+                              studentName: summary.studentName,
+                              response: summary.exitTicketResponse?.response ?? '',
+                            })),
+                        )
+                      : null;
 
                     return (
                       <article
@@ -1250,6 +1314,9 @@ export function TeacherPage() {
                             <dd>
                               {bellRingerPrompt ? (
                                 <>
+                                  {bellRingerEffortGroups && (
+                                    <ResponseEffortNameGroups groups={bellRingerEffortGroups} />
+                                  )}
                                   <span
                                     className={`response-missing-students${
                                       bellRingerMissingNames.length
@@ -1258,8 +1325,8 @@ export function TeacherPage() {
                                     }`}
                                   >
                                     {bellRingerMissingNames.length
-                                      ? `Still missing: ${bellRingerMissingNames.join(', ')}`
-                                      : 'Everyone complete'}
+                                      ? `Not submitted: ${bellRingerMissingNames.join(', ')}`
+                                      : 'Everyone submitted'}
                                   </span>
                                   <span className="response-completion-count">
                                     {bellRingerComplete}/{classRecord.studentIds.length}
@@ -1275,6 +1342,9 @@ export function TeacherPage() {
                             <dd>
                               {exitTicketPrompt ? (
                                 <>
+                                  {exitTicketEffortGroups && (
+                                    <ResponseEffortNameGroups groups={exitTicketEffortGroups} />
+                                  )}
                                   <span
                                     className={`response-missing-students${
                                       exitTicketMissingNames.length
@@ -1283,8 +1353,8 @@ export function TeacherPage() {
                                     }`}
                                   >
                                     {exitTicketMissingNames.length
-                                      ? `Still missing: ${exitTicketMissingNames.join(', ')}`
-                                      : 'Everyone complete'}
+                                      ? `Not submitted: ${exitTicketMissingNames.join(', ')}`
+                                      : 'Everyone submitted'}
                                   </span>
                                   <span className="response-completion-count">
                                     {exitTicketComplete}/{classRecord.studentIds.length}
