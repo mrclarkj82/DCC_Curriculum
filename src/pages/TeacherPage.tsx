@@ -1112,6 +1112,14 @@ export function TeacherPage() {
                     const exitTicketComplete = summaries.filter(
                       (summary) => summary.exitTicketComplete,
                     ).length;
+                    const bellRingerMissingNames = summaries
+                      .filter((summary) => !summary.bellRingerComplete)
+                      .map((summary) => summary.studentName)
+                      .sort((firstName, secondName) => firstName.localeCompare(secondName));
+                    const exitTicketMissingNames = summaries
+                      .filter((summary) => !summary.exitTicketComplete)
+                      .map((summary) => summary.studentName)
+                      .sort((firstName, secondName) => firstName.localeCompare(secondName));
 
                     return (
                       <article
@@ -1139,17 +1147,51 @@ export function TeacherPage() {
                           <div>
                             <dt>Bell Ringer Completion</dt>
                             <dd>
-                              {bellRingerPrompt
-                                ? `${bellRingerComplete}/${classRecord.studentIds.length}`
-                                : 'No prompt attached'}
+                              {bellRingerPrompt ? (
+                                <>
+                                  <span
+                                    className={`response-missing-students${
+                                      bellRingerMissingNames.length
+                                        ? ''
+                                        : ' response-missing-students--complete'
+                                    }`}
+                                  >
+                                    {bellRingerMissingNames.length
+                                      ? `Still missing: ${bellRingerMissingNames.join(', ')}`
+                                      : 'Everyone complete'}
+                                  </span>
+                                  <span className="response-completion-count">
+                                    {bellRingerComplete}/{classRecord.studentIds.length}
+                                  </span>
+                                </>
+                              ) : (
+                                'No prompt attached'
+                              )}
                             </dd>
                           </div>
                           <div>
                             <dt>Exit Ticket Completion</dt>
                             <dd>
-                              {exitTicketPrompt
-                                ? `${exitTicketComplete}/${classRecord.studentIds.length}`
-                                : 'No prompt attached'}
+                              {exitTicketPrompt ? (
+                                <>
+                                  <span
+                                    className={`response-missing-students${
+                                      exitTicketMissingNames.length
+                                        ? ''
+                                        : ' response-missing-students--complete'
+                                    }`}
+                                  >
+                                    {exitTicketMissingNames.length
+                                      ? `Still missing: ${exitTicketMissingNames.join(', ')}`
+                                      : 'Everyone complete'}
+                                  </span>
+                                  <span className="response-completion-count">
+                                    {exitTicketComplete}/{classRecord.studentIds.length}
+                                  </span>
+                                </>
+                              ) : (
+                                'No prompt attached'
+                              )}
                             </dd>
                           </div>
                         </dl>
