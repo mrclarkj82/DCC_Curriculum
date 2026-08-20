@@ -63,9 +63,7 @@ export function SubmissionPanel({
   const [submission, setSubmission] = useState<StudentSubmission | null>(null);
   const [links, setLinks] = useState<SubmissionLinkInput[]>(starterLinks);
   const [reflection, setReflection] = useState('');
-  const [evidenceChecklist, setEvidenceChecklist] = useState<SubmissionEvidenceChecklistItem[]>(
-    [],
-  );
+  const [evidenceChecklist, setEvidenceChecklist] = useState<SubmissionEvidenceChecklistItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -75,6 +73,12 @@ export function SubmissionPanel({
     target && classRecord && userProfile?.role === 'student' && !isPreviewMode,
   );
   const isAccepted = submission?.status === 'accepted';
+  const isEvidenceComplete = Boolean(submission && submission.status !== 'needs_revision');
+  const evidenceVisualState = isLoading
+    ? 'loading'
+    : isEvidenceComplete
+      ? 'complete'
+      : 'incomplete';
   const isDisabled = !canUsePanel || isAccepted || isSaving;
   const buttonLabel = useMemo(() => {
     if (isAccepted) {
@@ -204,7 +208,9 @@ export function SubmissionPanel({
   };
 
   return (
-    <section className="card mission-panel neon-border submission-panel">
+    <section
+      className={`card mission-panel neon-border submission-panel submission-panel--${evidenceVisualState}`}
+    >
       <div className="card-header">
         <div>
           <p className="retro-label">Google Drive Evidence</p>
@@ -221,7 +227,9 @@ export function SubmissionPanel({
       )}
 
       {userProfile?.role !== 'student' && !isPreviewMode && (
-        <p className="muted">Submission controls are shown to students. Teachers review work from the Teacher page.</p>
+        <p className="muted">
+          Submission controls are shown to students. Teachers review work from the Teacher page.
+        </p>
       )}
 
       {!classRecord && userProfile?.role === 'student' && (
@@ -252,11 +260,7 @@ export function SubmissionPanel({
           {message && <p className="form-message">{message}</p>}
           {error && <ErrorState message={error} />}
           <form className="submission-form" onSubmit={handleSubmit}>
-            <DriveLinkSubmissionField
-              links={links}
-              disabled={isDisabled}
-              onChange={setLinks}
-            />
+            <DriveLinkSubmissionField links={links} disabled={isDisabled} onChange={setLinks} />
             <SubmissionEvidenceChecklist
               items={evidenceChecklist}
               disabled={isDisabled}

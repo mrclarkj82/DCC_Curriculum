@@ -3669,6 +3669,68 @@
   margin-block: var(--space-6);
 }
 
+/* Today's Mission uses gentle color cues to separate watching from evidence submission. */
+.today-mission-stack .today-video-segment {
+  border-color: rgba(255, 225, 128, 0.28);
+  background-color: rgba(42, 32, 12, 0.82);
+  box-shadow:
+    var(--shadow-panel),
+    0 0 18px rgba(255, 225, 128, 0.1),
+    inset 0 0 42px rgba(255, 225, 128, 0.035);
+}
+
+.today-mission-stack .today-video-segment h2 {
+  color: #fff4c2;
+  text-shadow: 0 0 12px rgba(255, 225, 128, 0.16);
+}
+
+.today-mission-stack .submission-panel {
+  transition:
+    background-color 2800ms ease-in-out,
+    border-color 2800ms ease-in-out,
+    box-shadow 2800ms ease-in-out;
+}
+
+.today-mission-stack .submission-panel > .card-header .retro-label,
+.today-mission-stack .submission-panel > .card-header .submission-kind-pill {
+  transition:
+    color 2800ms ease-in-out,
+    border-color 2800ms ease-in-out,
+    box-shadow 2800ms ease-in-out;
+}
+
+.today-mission-stack .submission-panel--incomplete {
+  border-color: rgba(255, 77, 109, 0.66);
+  background-color: rgba(48, 11, 35, 0.88);
+  box-shadow:
+    var(--shadow-panel),
+    0 0 24px rgba(255, 77, 109, 0.24),
+    inset 0 0 64px rgba(255, 77, 109, 0.1);
+}
+
+.today-mission-stack .submission-panel--incomplete > .card-header .retro-label,
+.today-mission-stack .submission-panel--incomplete > .card-header .submission-kind-pill {
+  color: #ff6079;
+  border-color: rgba(255, 77, 109, 0.58);
+  box-shadow: 0 0 16px rgba(255, 77, 109, 0.24);
+}
+
+.today-mission-stack .submission-panel--complete {
+  border-color: rgba(var(--color-neon-green-rgb), 0.62);
+  background-color: rgba(7, 43, 39, 0.88);
+  box-shadow:
+    var(--shadow-panel),
+    0 0 26px rgba(var(--color-neon-green-rgb), 0.24),
+    inset 0 0 68px rgba(var(--color-neon-green-rgb), 0.1);
+}
+
+.today-mission-stack .submission-panel--complete > .card-header .retro-label,
+.today-mission-stack .submission-panel--complete > .card-header .submission-kind-pill {
+  color: var(--color-neon-green);
+  border-color: rgba(var(--color-neon-green-rgb), 0.58);
+  box-shadow: 0 0 18px rgba(var(--color-neon-green-rgb), 0.24);
+}
+
 .submission-kind-pill,
 .submission-status-badge {
   display: inline-flex;

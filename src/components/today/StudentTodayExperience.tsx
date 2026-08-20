@@ -36,7 +36,7 @@ interface StudentTodayExperienceProps {
 function LessonMission({ lesson }: { lesson: Lesson }) {
   return (
     <>
-      <section className="card mission-panel">
+      <section className="card mission-panel today-video-segment">
         <h2>Video Segment</h2>
         <VideoSegmentLinks video={lesson.video} />
       </section>
@@ -272,9 +272,7 @@ export function StudentTodayExperience({
       )}
 
       <div className="today-mission-content">
-        {activeItem.type === 'lesson' && record && (
-          <LessonMission lesson={record as Lesson} />
-        )}
+        {activeItem.type === 'lesson' && record && <LessonMission lesson={record as Lesson} />}
         {activeItem.type === 'assignment' && record && (
           <AssignmentMission assignment={record as Assignment} />
         )}
