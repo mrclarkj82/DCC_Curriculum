@@ -18,6 +18,7 @@ import {
 import { getClassesForUser } from '../services/classService';
 import { getAllClasses, updateClassActiveItem } from '../services/classManagementService';
 import { firestoreErrorMessage } from '../services/firestoreService';
+import { getLessons } from '../services/lessonService';
 import { getProgramAreas } from '../services/programAreaService';
 import {
   getBellRingerPrompt,
@@ -31,7 +32,7 @@ import {
   getQuizzesByProgramArea,
 } from '../services/quizService';
 import {
-  resolveSubmissionTargetForActiveItem,
+  resolveSubmissionTarget,
   subscribeToSubmissionsForClassTarget,
 } from '../services/submissionService';
 import { getUsersByIds } from '../services/userManagementService';
@@ -39,6 +40,7 @@ import type {
   ActiveClassItem,
   ActiveItemType,
   ClassRecord,
+  Lesson,
   ProgramArea,
   Quiz,
   QuizAttempt,
@@ -303,6 +305,12 @@ export function TeacherPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [selectedResponseClassId, setSelectedResponseClassId] = useState<string | null>(null);
   const [selectedSubmissionClassId, setSelectedSubmissionClassId] = useState<string | null>(null);
+  const [submissionLessons, setSubmissionLessons] = useState<Lesson[]>([]);
+  const [submissionLessonsLoading, setSubmissionLessonsLoading] = useState(false);
+  const [submissionLessonsError, setSubmissionLessonsError] = useState<string | null>(null);
+  const [selectedSubmissionQuarter, setSelectedSubmissionQuarter] = useState('');
+  const [selectedSubmissionLessonId, setSelectedSubmissionLessonId] = useState('');
+  const [submissionsLoading, setSubmissionsLoading] = useState(false);
   const [selectedGradeClassId, setSelectedGradeClassId] = useState<string | null>(null);
   const [selectedGradeQuizId, setSelectedGradeQuizId] = useState<string | null>(null);
   const [expandedGradeAttemptId, setExpandedGradeAttemptId] = useState<string | null>(null);
@@ -567,19 +575,77 @@ export function TeacherPage() {
   }, [activeItemsByClassId, classRecords, dataRefreshVersion, selectedResponseClassId]);
 
   useEffect(() => {
+    const classRecord = classRecords.find((record) => record.id === selectedSubmissionClassId);
+
+    if (!classRecord) {
+      setSubmissionLessons([]);
+      setSubmissionLessonsError(null);
+      setSubmissionLessonsLoading(false);
+      setSelectedSubmissionQuarter('');
+      setSelectedSubmissionLessonId('');
+      return;
+    }
+
+    let didCancel = false;
+    setSubmissionLessons([]);
+    setSubmissionLessonsError(null);
+    setSubmissionLessonsLoading(true);
+    setSelectedSubmissionQuarter('');
+    setSelectedSubmissionLessonId('');
+
+    void getLessons()
+      .then((lessons) => {
+        if (didCancel) {
+          return;
+        }
+
+        const activeLesson = lessons.find(
+          (lesson) =>
+            lesson.id === classRecord.activeItemId ||
+            lesson.assignment?.id === classRecord.activeItemId,
+        );
+        const defaultQuarter = activeLesson?.quarter || lessons[0]?.quarter || '';
+        const defaultLesson =
+          activeLesson || lessons.find((lesson) => lesson.quarter === defaultQuarter) || null;
+
+        setSubmissionLessons(lessons);
+        setSelectedSubmissionQuarter(defaultQuarter);
+        setSelectedSubmissionLessonId(defaultLesson?.id ?? '');
+        setSubmissionLessonsLoading(false);
+      })
+      .catch((error: unknown) => {
+        if (didCancel) {
+          return;
+        }
+
+        setSubmissionLessons([]);
+        setSubmissionLessonsError(
+          firestoreErrorMessage(error, 'Unable to load lessons for submission browsing.'),
+        );
+        setSubmissionLessonsLoading(false);
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, [classRecords, dataRefreshVersion, selectedSubmissionClassId]);
+
+  useEffect(() => {
     const classId = selectedSubmissionClassId;
     const classRecord = classRecords.find((record) => record.id === classId);
-    const activeItem = classRecord ? activeItemsByClassId[classRecord.id] : null;
-    const submissionTarget = activeItem ? resolveSubmissionTargetForActiveItem(activeItem) : null;
+    const lesson = submissionLessons.find((record) => record.id === selectedSubmissionLessonId);
+    const submissionTarget = lesson ? resolveSubmissionTarget('lesson', lesson) : null;
 
     if (!classId || !classRecord || !submissionTarget) {
       setSubmissionsByClassId({});
       setSubmissionErrorsByClassId({});
+      setSubmissionsLoading(false);
       return undefined;
     }
 
     setSubmissionsByClassId({});
     setSubmissionErrorsByClassId({});
+    setSubmissionsLoading(true);
 
     return subscribeToSubmissionsForClassTarget(
       classId,
@@ -588,14 +654,22 @@ export function TeacherPage() {
       (submissions) => {
         setSubmissionsByClassId({ [classId]: submissions });
         setSubmissionErrorsByClassId({});
+        setSubmissionsLoading(false);
       },
       (error) => {
         setSubmissionErrorsByClassId({
           [classId]: firestoreErrorMessage(error, 'Unable to load submissions.'),
         });
+        setSubmissionsLoading(false);
       },
     );
-  }, [activeItemsByClassId, classRecords, dataRefreshVersion, selectedSubmissionClassId]);
+  }, [
+    classRecords,
+    dataRefreshVersion,
+    selectedSubmissionClassId,
+    selectedSubmissionLessonId,
+    submissionLessons,
+  ]);
 
   useEffect(() => {
     const classId = selectedGradeClassId;
@@ -708,6 +782,33 @@ export function TeacherPage() {
   const selectedSubmissionClass = useMemo(
     () => classRecords.find((classRecord) => classRecord.id === selectedSubmissionClassId),
     [classRecords, selectedSubmissionClassId],
+  );
+
+  const submissionQuarters = useMemo(
+    () =>
+      Array.from(new Set(submissionLessons.map((lesson) => lesson.quarter))).sort(
+        (firstQuarter, secondQuarter) => firstQuarter.localeCompare(secondQuarter),
+      ),
+    [submissionLessons],
+  );
+
+  const submissionLessonsForQuarter = useMemo(
+    () =>
+      submissionLessons
+        .filter((lesson) => lesson.quarter === selectedSubmissionQuarter)
+        .sort((firstLesson, secondLesson) => firstLesson.lessonNumber - secondLesson.lessonNumber),
+    [selectedSubmissionQuarter, submissionLessons],
+  );
+
+  const selectedSubmissionLesson = useMemo(
+    () => submissionLessons.find((lesson) => lesson.id === selectedSubmissionLessonId) ?? null,
+    [selectedSubmissionLessonId, submissionLessons],
+  );
+
+  const selectedSubmissionTarget = useMemo(
+    () =>
+      selectedSubmissionLesson ? resolveSubmissionTarget('lesson', selectedSubmissionLesson) : null,
+    [selectedSubmissionLesson],
   );
 
   const selectedGradeClass = useMemo(
@@ -1303,12 +1404,16 @@ export function TeacherPage() {
         {activeTeacherTab === 'submissions' && !!classRecords.length && (
           <section className="content-section neon-section">
             <p className="retro-label">Student Submissions</p>
-            <h2>Submission Image Gallery</h2>
+            <h2>Submission Browser</h2>
             {!selectedSubmissionClass ? (
               <ClassSelectionPanel
                 classRecords={classRecords}
-                label="student images"
-                onSelect={setSelectedSubmissionClassId}
+                label="student submissions"
+                onSelect={(classId) => {
+                  setSelectedSubmissionClassId(classId);
+                  setSelectedSubmissionQuarter('');
+                  setSelectedSubmissionLessonId('');
+                }}
               />
             ) : (
               <>
@@ -1322,55 +1427,108 @@ export function TeacherPage() {
                   <button
                     className="outline-button"
                     type="button"
-                    onClick={() => setSelectedSubmissionClassId(null)}
+                    onClick={() => {
+                      setSelectedSubmissionClassId(null);
+                      setSelectedSubmissionQuarter('');
+                      setSelectedSubmissionLessonId('');
+                    }}
                   >
                     Choose Another Class
                   </button>
                 </div>
-                <div className="response-completion-stack">
-                  {[selectedSubmissionClass].map((classRecord) => {
-                    const activeItem = activeItemsByClassId[classRecord.id];
-                    const submissionTarget = activeItem
-                      ? resolveSubmissionTargetForActiveItem(activeItem)
-                      : null;
-                    const submissions = submissionsByClassId[classRecord.id] ?? [];
-                    const submissionError = submissionErrorsByClassId[classRecord.id];
 
-                    return (
-                      <article
-                        className="card neon-card response-completion-card"
-                        key={classRecord.id}
-                      >
-                        <div className="section-heading-row">
-                          <div>
-                            <p className="retro-label">
-                              {classRecord.name} / {classRecord.period}
-                            </p>
-                            <h3>
-                              {submissionTarget?.title ??
-                                activeItem?.title ??
-                                classRecord.activeItemId}
-                            </h3>
-                          </div>
-                        </div>
+                <div className="submission-browser-filters" aria-label="Submission filters">
+                  <label>
+                    1. Quarter
+                    <select
+                      value={selectedSubmissionQuarter}
+                      disabled={submissionLessonsLoading || !submissionQuarters.length}
+                      onChange={(event) => {
+                        const quarter = event.currentTarget.value;
+                        const firstLesson = submissionLessons.find(
+                          (lesson) => lesson.quarter === quarter,
+                        );
 
-                        {submissionError && <ErrorState message={submissionError} />}
+                        setSelectedSubmissionQuarter(quarter);
+                        setSelectedSubmissionLessonId(firstLesson?.id ?? '');
+                      }}
+                    >
+                      {!submissionQuarters.length && (
+                        <option value="">No quarters available</option>
+                      )}
+                      {submissionQuarters.map((quarter) => (
+                        <option key={quarter} value={quarter}>
+                          {quarter}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-                        {!submissionTarget ? (
-                          <p className="muted">
-                            This active item does not have image-submission requirements.
-                          </p>
-                        ) : (
-                          <SubmissionImageGallery
-                            key={`${classRecord.id}-${submissionTarget.targetId}`}
-                            requirements={submissionTarget.requirements}
-                            submissions={submissions}
-                          />
-                        )}
-                      </article>
-                    );
-                  })}
+                  <label>
+                    2. Lesson Number And Name
+                    <select
+                      value={selectedSubmissionLessonId}
+                      disabled={submissionLessonsLoading || !submissionLessonsForQuarter.length}
+                      onChange={(event) => setSelectedSubmissionLessonId(event.currentTarget.value)}
+                    >
+                      {!submissionLessonsForQuarter.length && (
+                        <option value="">No lessons available</option>
+                      )}
+                      {submissionLessonsForQuarter.map((lesson) => (
+                        <option key={lesson.id} value={lesson.id}>
+                          Lesson {lesson.lessonNumber}: {lesson.title}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                 </div>
+
+                {submissionLessonsLoading && <LoadingState label="Loading lesson browser..." />}
+                {submissionLessonsError && <ErrorState message={submissionLessonsError} />}
+                {!submissionLessonsLoading &&
+                  !submissionLessonsError &&
+                  !submissionLessons.length && (
+                    <EmptyState
+                      title="No lessons available"
+                      message="The DCC course does not have seeded lessons to browse yet."
+                    />
+                  )}
+
+                {selectedSubmissionLesson && selectedSubmissionTarget && (
+                  <article className="card neon-card response-completion-card">
+                    <div className="section-heading-row">
+                      <div>
+                        <p className="retro-label">
+                          {selectedSubmissionQuarter} / Lesson{' '}
+                          {selectedSubmissionLesson.lessonNumber}
+                        </p>
+                        <h3>{selectedSubmissionLesson.title}</h3>
+                        <p className="muted">Evidence target: {selectedSubmissionTarget.title}</p>
+                      </div>
+                      <StatusBadge
+                        status={`${
+                          submissionsByClassId[selectedSubmissionClass.id]?.length ?? 0
+                        }/${selectedSubmissionClass.studentIds.length} submitted`}
+                      />
+                    </div>
+
+                    {submissionErrorsByClassId[selectedSubmissionClass.id] && (
+                      <ErrorState message={submissionErrorsByClassId[selectedSubmissionClass.id]} />
+                    )}
+
+                    {submissionsLoading ? (
+                      <LoadingState label="Loading class submissions..." />
+                    ) : (
+                      <SubmissionImageGallery
+                        key={`${selectedSubmissionClass.id}-${selectedSubmissionTarget.targetId}`}
+                        requirements={selectedSubmissionTarget.requirements}
+                        students={studentsByClassId[selectedSubmissionClass.id] ?? []}
+                        submissions={submissionsByClassId[selectedSubmissionClass.id] ?? []}
+                        totalStudentCount={selectedSubmissionClass.studentIds.length}
+                      />
+                    )}
+                  </article>
+                )}
               </>
             )}
           </section>

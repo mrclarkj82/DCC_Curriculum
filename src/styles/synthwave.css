@@ -1498,6 +1498,52 @@
   gap: var(--space-4);
 }
 
+.submission-browser-filters {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.55fr) minmax(280px, 1.45fr);
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.38);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-cyan-rgb), 0.1),
+      rgba(var(--color-neon-purple-rgb), 0.1)
+    ),
+    rgba(8, 3, 18, 0.64);
+  box-shadow: inset 0 0 24px rgba(var(--color-neon-cyan-rgb), 0.06);
+}
+
+.submission-browser-filters label {
+  display: grid;
+  gap: var(--space-2);
+  color: var(--color-neon-orange);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.submission-browser-filters select {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid rgba(var(--color-neon-cyan-rgb), 0.5);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  color: var(--color-text-main);
+  background: rgba(8, 3, 18, 0.88);
+  font: inherit;
+  text-transform: none;
+}
+
+.submission-browser-filters select:focus-visible {
+  outline: 2px solid var(--color-neon-orange);
+  outline-offset: 2px;
+  box-shadow: var(--glow-orange);
+}
+
 .teacher-drilldown-heading,
 .teacher-drilldown-actions {
   display: flex;
@@ -3803,6 +3849,117 @@
   outline: none;
 }
 
+.submission-gallery-roster {
+  display: grid;
+  gap: var(--space-3);
+  border: 1px solid rgba(var(--color-neon-purple-rgb), 0.42);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-blue-rgb), 0.12),
+      rgba(var(--color-neon-purple-rgb), 0.12)
+    ),
+    rgba(8, 3, 18, 0.7);
+  box-shadow: inset 0 0 28px rgba(var(--color-neon-purple-rgb), 0.08);
+}
+
+.submission-gallery-roster-heading {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.submission-gallery-roster-heading h3,
+.submission-gallery-roster-heading p {
+  margin: 0;
+}
+
+.submission-gallery-roster-heading strong {
+  color: var(--color-neon-cyan);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.submission-gallery-roster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: var(--space-2);
+}
+
+.submission-gallery-student-button {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  min-height: 62px;
+  align-content: center;
+  border: 1px solid rgba(var(--color-neon-purple-rgb), 0.38);
+  border-radius: var(--radius-md);
+  padding: 9px 11px;
+  color: var(--color-text-main);
+  background: rgba(8, 3, 18, 0.72);
+  text-align: left;
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.submission-gallery-student-button span {
+  overflow-wrap: anywhere;
+  font-weight: 800;
+}
+
+.submission-gallery-student-button small {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.submission-gallery-student-button--submitted {
+  cursor: pointer;
+  border-color: rgba(var(--color-neon-green-rgb), 0.42);
+  background: rgba(var(--color-neon-green-rgb), 0.06);
+}
+
+.submission-gallery-student-button--submitted small {
+  color: var(--color-neon-green);
+}
+
+.submission-gallery-student-button--submitted:hover,
+.submission-gallery-student-button--submitted:focus-visible,
+.submission-gallery-student-button--selected {
+  border-color: rgba(var(--color-neon-cyan-rgb), 0.78);
+  box-shadow: var(--glow-cyan);
+  transform: translateY(-1px);
+}
+
+.submission-gallery-student-button--missing:disabled {
+  cursor: default;
+  opacity: 1;
+  border-color: rgba(255, 77, 109, 0.32);
+  color: var(--color-text-soft);
+  background: rgba(255, 77, 109, 0.05);
+}
+
+.submission-gallery-student-button--missing small {
+  color: var(--color-danger);
+}
+
+.submission-gallery-empty {
+  margin: 0;
+  border: 1px dashed rgba(var(--color-neon-purple-rgb), 0.42);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  text-align: center;
+}
+
 .submission-image-gallery:focus-visible {
   border-radius: var(--radius-md);
   outline: 2px solid var(--color-neon-orange);
@@ -4054,6 +4211,10 @@
 }
 
 @media (max-width: 860px) {
+  .submission-browser-filters {
+    grid-template-columns: 1fr;
+  }
+
   .submission-gallery-layout {
     grid-template-columns: 1fr;
   }
