@@ -148,7 +148,7 @@ export function TodayPage() {
     <PageContainer
       eyebrow="Daily Mission Board"
       title="Today's Mission"
-      description="The active class item is loaded from your Firestore class record."
+      description="Your aligned A/B calendar mission is published automatically to your class."
       className="mission-board"
     >
       {classLoading && <LoadingState label="Loading your assigned class..." />}

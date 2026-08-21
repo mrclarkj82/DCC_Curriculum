@@ -2,6 +2,8 @@ import { initializeApp } from 'firebase-admin/app';
 import { FieldValue, Timestamp, getFirestore } from 'firebase-admin/firestore';
 import { HttpsError, onCall } from 'firebase-functions/v2/https';
 
+export { publishScheduledDccMission } from './scheduledMission';
+
 initializeApp();
 
 const studentDomain = 'student.doralacademynv.org';

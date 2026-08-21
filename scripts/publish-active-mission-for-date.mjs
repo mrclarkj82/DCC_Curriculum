@@ -68,12 +68,24 @@ if (!activeItemSnapshot.exists) {
   );
 }
 
+const classCycleFromPeriod = (period) => {
+  const match = String(period ?? '')
+    .trim()
+    .toUpperCase()
+    .match(/^([AB])\s*\d+$/);
+
+  return match?.[1] || null;
+};
 const targetClasses = classSeeds.filter(
-  (classRecord) => classRecord.schoolYear === scheduledDay.schoolYear,
+  (classRecord) =>
+    classRecord.schoolYear === scheduledDay.schoolYear &&
+    classCycleFromPeriod(classRecord.period) === scheduledDay.cycleDay,
 );
 
 if (!targetClasses.length) {
-  throw new Error(`No seeded classes found for school year ${scheduledDay.schoolYear}.`);
+  throw new Error(
+    `No seeded ${scheduledDay.cycleDay}-day classes found for school year ${scheduledDay.schoolYear}.`,
+  );
 }
 
 let changed = 0;

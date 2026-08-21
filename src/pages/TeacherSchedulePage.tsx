@@ -157,7 +157,7 @@ export function TeacherSchedulePage() {
     <PageContainer
       eyebrow="Teacher Schedule Preview"
       title="Curriculum Block Calendars"
-      description="Read-only Monday-Friday macro views generated from the 2026-2027 Doral calendar. These visual schedules do not replace the current Today active item controls."
+      description="Read-only Monday-Friday views generated from the 2026-2027 Doral calendar. Scheduled lessons publish automatically to the matching A- or B-day classes."
       actions={
         <Link className="outline-button" to="/teacher">
           Back To Teacher
@@ -322,8 +322,8 @@ export function TeacherSchedulePage() {
             ))}
           </ul>
           <p className="muted">
-            Teachers still control what students see from the existing Teacher page active item
-            controls. This page is a visual planning view, not a schedule editor.
+            Scheduled lessons publish automatically before class. Teacher active-item controls remain
+            available for activities, make-up days, and intentional same-day overrides.
           </p>
         </section>
       </div>
