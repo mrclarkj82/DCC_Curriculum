@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import { ErrorState } from '../ErrorState';
 import { LoadingState } from '../LoadingState';
 import { firestoreErrorMessage } from '../../services/firestoreService';
+import { submitScheduledLessonResponse } from '../../services/lessonResponseAccessService';
 import {
   submitBellRingerResponse,
   submitExitTicketResponse,
@@ -38,6 +39,9 @@ interface StudentResponseCardProps {
   classRecord: ClassRecord;
   userProfile: UserProfile;
   viewerMode?: ViewerMode;
+  locked?: boolean;
+  lockedMessage?: string;
+  submitMode?: 'active-item' | 'scheduled-lesson';
 }
 
 function formatSavedAt(value: unknown): string {
@@ -76,6 +80,9 @@ export function StudentResponseCard({
   classRecord,
   userProfile,
   viewerMode = 'student',
+  locked = false,
+  lockedMessage = '',
+  submitMode = 'active-item',
 }: StudentResponseCardProps) {
   const [savedResponse, setSavedResponse] = useState<StudentResponse | null>(null);
   const [draftResponse, setDraftResponse] = useState('');
@@ -94,7 +101,7 @@ export function StudentResponseCard({
     setSavedResponse(null);
     setDraftResponse('');
 
-    if (!trimmedPrompt) {
+    if (!trimmedPrompt || locked) {
       setIsLoading(false);
       return undefined;
     }
@@ -138,12 +145,17 @@ export function StudentResponseCard({
           handleResponse,
           handleError,
         );
-  }, [activeItem.id, classRecord.id, isPreviewMode, kind, trimmedPrompt, userProfile.uid]);
+  }, [activeItem.id, classRecord.id, isPreviewMode, kind, locked, trimmedPrompt, userProfile.uid]);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setMessage(null);
     setError(null);
+
+    if (locked) {
+      setError(lockedMessage || 'This response is not available yet.');
+      return;
+    }
 
     if (!draftResponse.trim()) {
       setError('Write a response before saving.');
@@ -176,6 +188,13 @@ export function StudentResponseCard({
           activeItemId: activeItem.id,
           responseKind: kind,
           prompt: trimmedPrompt,
+          response: draftResponse,
+        });
+      } else if (submitMode === 'scheduled-lesson') {
+        await submitScheduledLessonResponse({
+          classId: classRecord.id,
+          lessonId: activeItem.id,
+          responseKind: kind,
           response: draftResponse,
         });
       } else if (kind === 'bellRinger') {
@@ -235,6 +254,7 @@ export function StudentResponseCard({
           Preview Only - saved preview responses stay separate from student completion data.
         </p>
       )}
+      {locked && <p className="form-message">{lockedMessage || 'This response is not available yet.'}</p>}
 
       {isLoading ? (
         <LoadingState label="Loading your saved response..." />
@@ -244,12 +264,14 @@ export function StudentResponseCard({
             id={textareaId}
             label={`${title} response`}
             value={draftResponse}
-            disabled={isSaving}
+            disabled={isSaving || locked}
             onChange={setDraftResponse}
           />
           <div className="button-row">
-            <button className="gradient-button" type="submit" disabled={isSaving}>
-              {isSaving
+            <button className="gradient-button" type="submit" disabled={isSaving || locked}>
+              {locked
+                ? 'Response Locked'
+                : isSaving
                 ? 'Saving...'
                 : isPreviewMode
                   ? savedResponse

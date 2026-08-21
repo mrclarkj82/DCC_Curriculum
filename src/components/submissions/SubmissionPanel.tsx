@@ -30,6 +30,8 @@ interface SubmissionPanelProps {
   target: SubmissionTarget | null;
   userProfile: UserProfile | null;
   viewerMode?: ViewerMode;
+  locked?: boolean;
+  lockedMessage?: string;
 }
 
 const starterLinks: SubmissionLinkInput[] = [{ label: '', url: '' }];
@@ -58,6 +60,8 @@ export function SubmissionPanel({
   target,
   userProfile,
   viewerMode = 'student',
+  locked = false,
+  lockedMessage = '',
 }: SubmissionPanelProps) {
   const isPreviewMode = isTeacherPreviewMode(viewerMode);
   const [submission, setSubmission] = useState<StudentSubmission | null>(null);
@@ -70,7 +74,7 @@ export function SubmissionPanel({
   const [error, setError] = useState<string | null>(null);
 
   const canUsePanel = Boolean(
-    target && classRecord && userProfile?.role === 'student' && !isPreviewMode,
+    target && classRecord && userProfile?.role === 'student' && !isPreviewMode && !locked,
   );
   const isAccepted = submission?.status === 'accepted';
   const isEvidenceComplete = Boolean(submission && submission.status !== 'needs_revision');
@@ -79,8 +83,12 @@ export function SubmissionPanel({
     : isEvidenceComplete
       ? 'complete'
       : 'incomplete';
-  const isDisabled = !canUsePanel || isAccepted || isSaving;
+  const isDisabled = !canUsePanel || isAccepted || isSaving || locked;
   const buttonLabel = useMemo(() => {
+    if (locked) {
+      return 'Evidence Locked';
+    }
+
     if (isAccepted) {
       return 'Accepted';
     }
@@ -94,7 +102,7 @@ export function SubmissionPanel({
     }
 
     return isSaving ? 'Submitting...' : 'Submit Evidence';
-  }, [isAccepted, isSaving, submission]);
+  }, [isAccepted, isSaving, locked, submission]);
 
   useEffect(() => {
     if (!target) {
@@ -223,6 +231,12 @@ export function SubmissionPanel({
         <p className="form-message">
           Teacher preview mode is read-only for submissions. No real student evidence will be
           created from this preview.
+        </p>
+      )}
+
+      {locked && (
+        <p className="form-message">
+          {lockedMessage || 'Google Drive evidence is available from the current lesson mission.'}
         </p>
       )}
 

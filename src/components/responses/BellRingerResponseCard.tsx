@@ -7,6 +7,9 @@ interface BellRingerResponseCardProps {
   classRecord: ClassRecord;
   userProfile: UserProfile;
   viewerMode?: ViewerMode;
+  locked?: boolean;
+  lockedMessage?: string;
+  submitMode?: 'active-item' | 'scheduled-lesson';
 }
 
 export function BellRingerResponseCard({
@@ -15,6 +18,9 @@ export function BellRingerResponseCard({
   classRecord,
   userProfile,
   viewerMode = 'student',
+  locked = false,
+  lockedMessage,
+  submitMode = 'active-item',
 }: BellRingerResponseCardProps) {
   return (
     <StudentResponseCard
@@ -27,6 +33,9 @@ export function BellRingerResponseCard({
       classRecord={classRecord}
       userProfile={userProfile}
       viewerMode={viewerMode}
+      locked={locked}
+      lockedMessage={lockedMessage}
+      submitMode={submitMode}
     />
   );
 }

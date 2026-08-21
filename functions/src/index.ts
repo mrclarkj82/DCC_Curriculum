@@ -1,6 +1,12 @@
 import { initializeApp } from 'firebase-admin/app';
 import { FieldValue, Timestamp, getFirestore } from 'firebase-admin/firestore';
-import { HttpsError, onCall } from 'firebase-functions/v2/https';
+import { HttpsError, onCall, type CallableRequest } from 'firebase-functions/v2/https';
+import {
+  activeSchoolYear,
+  classCycleFromPeriod,
+  dateInTimeZone,
+  schoolTimeZone,
+} from './scheduledMission';
 
 export { publishScheduledDccMission } from './scheduledMission';
 
@@ -12,6 +18,7 @@ const maxQuizAnswers = 100;
 const maxAnswerParts = 20;
 const maxAnswerLength = 4000;
 const maxIdentifierLength = 200;
+const maxResponseLength = 4000;
 const callableOptions = {
   region: 'us-central1' as const,
   invoker: 'public' as const,
@@ -34,6 +41,151 @@ const safeIdPart = (value: string): string =>
 
 const makeQuizAttemptId = (classId: string, quizId: string, uid: string): string =>
   [classId, quizId, uid].map(safeIdPart).join('_');
+
+const makeStudentResponseId = (classId: string, lessonId: string, uid: string): string =>
+  [classId, lessonId, uid].map(safeIdPart).join('_');
+
+type ResponseKind = 'bellRinger' | 'exitTicket';
+type LessonResponseAccessStatus = 'previous' | 'current' | 'future' | 'unscheduled';
+
+interface StudentLessonContext {
+  appRef: FirebaseFirestore.DocumentReference;
+  classData: FirebaseFirestore.DocumentData;
+  lessonData: FirebaseFirestore.DocumentData;
+  userData: FirebaseFirestore.DocumentData;
+}
+
+interface LessonResponseAccess {
+  status: LessonResponseAccessStatus;
+  canRespond: boolean;
+  cycleDay: 'A' | 'B' | null;
+  scheduledDate: string;
+  today: string;
+}
+
+const responsePrompt = (value: unknown): string => {
+  if (typeof value === 'string') {
+    return value.trim();
+  }
+
+  if (value && typeof value === 'object') {
+    return tokenString((value as Record<string, unknown>).prompt).trim();
+  }
+
+  return '';
+};
+
+const getStudentLessonContext = async (
+  request: CallableRequest<unknown>,
+  classId: string,
+  lessonId: string,
+): Promise<StudentLessonContext> => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Please sign in before opening lesson responses.');
+  }
+
+  if (
+    !classId ||
+    !lessonId ||
+    classId.length > maxIdentifierLength ||
+    lessonId.length > maxIdentifierLength
+  ) {
+    throw new HttpsError('invalid-argument', 'Class ID and lesson ID are required.');
+  }
+
+  const appRef = dccAppRef();
+  const userRef = appRef.collection('users').doc(request.auth.uid);
+  const classRef = appRef.collection('classes').doc(classId);
+  const lessonRef = appRef.collection('lessons').doc(lessonId);
+  const [userSnapshot, classSnapshot, lessonSnapshot] = await Promise.all([
+    userRef.get(),
+    classRef.get(),
+    lessonRef.get(),
+  ]);
+
+  if (!userSnapshot.exists || userSnapshot.data()?.role !== 'student') {
+    throw new HttpsError('permission-denied', 'Only student accounts can submit lesson responses.');
+  }
+
+  if (!classSnapshot.exists) {
+    throw new HttpsError('not-found', 'Class record was not found.');
+  }
+
+  if (!lessonSnapshot.exists) {
+    throw new HttpsError('not-found', 'Lesson record was not found.');
+  }
+
+  const userData = userSnapshot.data() ?? {};
+  const classData = classSnapshot.data() ?? {};
+  const lessonData = lessonSnapshot.data() ?? {};
+  const classStudentIds = Array.isArray(classData.studentIds)
+    ? classData.studentIds.map(String)
+    : [];
+  const userClassIds = Array.isArray(userData.classIds) ? userData.classIds.map(String) : [];
+
+  if (!classStudentIds.includes(request.auth.uid) || !userClassIds.includes(classId)) {
+    throw new HttpsError(
+      'permission-denied',
+      'You can only submit lesson responses for your assigned class.',
+    );
+  }
+
+  const authEmail = tokenString(request.auth.token.email).toLowerCase();
+
+  if (tokenString(userData.email).toLowerCase() !== authEmail) {
+    throw new HttpsError('permission-denied', 'Your sign-in email does not match your profile.');
+  }
+
+  return { appRef, classData, lessonData, userData };
+};
+
+const getLessonResponseAccessForClass = async (
+  appRef: FirebaseFirestore.DocumentReference,
+  classData: FirebaseFirestore.DocumentData,
+  lessonId: string,
+): Promise<LessonResponseAccess> => {
+  const cycleDay = classCycleFromPeriod(classData.period);
+  const today = dateInTimeZone(new Date(), schoolTimeZone);
+
+  if (!cycleDay || tokenString(classData.schoolYear) !== activeSchoolYear) {
+    return { status: 'unscheduled', canRespond: false, cycleDay, scheduledDate: '', today };
+  }
+
+  const scheduleSnapshot = await appRef
+    .collection('lessonSchedule')
+    .where('lessonId', '==', lessonId)
+    .limit(2)
+    .get();
+
+  if (scheduleSnapshot.empty) {
+    return { status: 'unscheduled', canRespond: false, cycleDay, scheduledDate: '', today };
+  }
+
+  if (scheduleSnapshot.size !== 1) {
+    throw new HttpsError(
+      'failed-precondition',
+      'This lesson has more than one aligned schedule record.',
+    );
+  }
+
+  const scheduleData = scheduleSnapshot.docs[0].data();
+  const scheduledDate = tokenString(cycleDay === 'A' ? scheduleData.aDayDate : scheduleData.bDayDate);
+
+  if (!scheduledDate) {
+    return { status: 'unscheduled', canRespond: false, cycleDay, scheduledDate: '', today };
+  }
+
+  const status: LessonResponseAccessStatus =
+    scheduledDate < today ? 'previous' : scheduledDate === today ? 'current' : 'future';
+
+  return {
+    status,
+    canRespond: status === 'previous' || status === 'current',
+    cycleDay,
+    scheduledDate,
+    today,
+  };
+};
 
 type AnswerValue = string | string[];
 
@@ -237,6 +389,95 @@ export const joinClassWithCode = onCall(
     });
   },
 );
+
+export const getLessonResponseAccess = onCall(callableOptions, async (request) => {
+  const classId = tokenString(request.data?.classId);
+  const lessonId = tokenString(request.data?.lessonId);
+  const { appRef, classData } = await getStudentLessonContext(request, classId, lessonId);
+
+  return getLessonResponseAccessForClass(appRef, classData, lessonId);
+});
+
+export const submitScheduledLessonResponse = onCall(callableOptions, async (request) => {
+  const classId = tokenString(request.data?.classId);
+  const lessonId = tokenString(request.data?.lessonId);
+  const responseKind = tokenString(request.data?.responseKind) as ResponseKind;
+  const response = tokenString(request.data?.response);
+
+  if (!['bellRinger', 'exitTicket'].includes(responseKind)) {
+    throw new HttpsError('invalid-argument', 'Choose a valid lesson response type.');
+  }
+
+  if (!response || response.length > maxResponseLength) {
+    throw new HttpsError(
+      'invalid-argument',
+      `Write a response between 1 and ${maxResponseLength} characters.`,
+    );
+  }
+
+  const { appRef, classData, lessonData, userData } = await getStudentLessonContext(
+    request,
+    classId,
+    lessonId,
+  );
+  const access = await getLessonResponseAccessForClass(appRef, classData, lessonId);
+
+  if (!access.canRespond) {
+    throw new HttpsError(
+      'failed-precondition',
+      access.status === 'future'
+        ? `This response unlocks on ${access.scheduledDate}.`
+        : 'This lesson is not available for scheduled responses.',
+    );
+  }
+
+  const prompt = responsePrompt(
+    responseKind === 'bellRinger' ? lessonData.bellRinger : lessonData.exitTicket,
+  );
+
+  if (!prompt) {
+    throw new HttpsError('failed-precondition', 'This lesson does not have that response prompt.');
+  }
+
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Please sign in before submitting a response.');
+  }
+
+  const db = getFirestore();
+  const now = Timestamp.now();
+  const uid = request.auth.uid;
+  const authToken = request.auth.token;
+  const responseId = makeStudentResponseId(classId, lessonId, uid);
+  const collectionName =
+    responseKind === 'bellRinger' ? 'bellRingerResponses' : 'exitTicketResponses';
+  const responseRef = appRef.collection(collectionName).doc(responseId);
+
+  await db.runTransaction(async (transaction) => {
+    const existingResponse = await transaction.get(responseRef);
+    const responseData = {
+      id: responseId,
+      uid,
+      studentName: tokenString(userData.displayName) || tokenString(authToken.name),
+      studentEmail: tokenString(authToken.email),
+      classId,
+      programAreaId: tokenString(lessonData.programAreaId),
+      activeItemType: 'lesson',
+      activeItemId: lessonId,
+      prompt,
+      response,
+      status: 'submitted',
+      updatedAt: now,
+    };
+
+    transaction.set(
+      responseRef,
+      existingResponse.exists ? responseData : { ...responseData, createdAt: now },
+      { merge: true },
+    );
+  });
+
+  return { status: 'submitted', updatedAt: now.toMillis() };
+});
 
 export const submitQuizAttempt = onCall(
   callableOptions,

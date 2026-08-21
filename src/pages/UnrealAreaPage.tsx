@@ -1,11 +1,9 @@
-import { AssignmentCard } from '../components/AssignmentCard';
 import { EmptyState } from '../components/EmptyState';
 import { ErrorState } from '../components/ErrorState';
 import { LessonCard } from '../components/LessonCard';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
 import { useAsyncData } from '../hooks/useAsyncData';
-import { getAssignmentsByProgramArea } from '../services/assignmentService';
 import { getLessonsByProgramArea } from '../services/lessonService';
 import { getProgramAreaById } from '../services/programAreaService';
 import { getQuizzesByProgramArea } from '../services/quizService';
@@ -13,23 +11,18 @@ import { getQuizzesByProgramArea } from '../services/quizService';
 export function UnrealAreaPage() {
   const { data, isLoading, error } = useAsyncData(
     async () => {
-      const [area, lessons, assignments, quizzes] = await Promise.all([
+      const [area, lessons, quizzes] = await Promise.all([
         getProgramAreaById('unreal-engine'),
         getLessonsByProgramArea('unreal-engine'),
-        getAssignmentsByProgramArea('unreal-engine'),
         getQuizzesByProgramArea('unreal-engine'),
       ]);
 
-      return { area, lessons, assignments, quizzes };
+      return { area, lessons, quizzes };
     },
     [],
     'Unable to load Unreal Engine Studio content from Firestore.',
   );
   const pilotLessons = data?.lessons.filter((lesson) => lesson.quarter === 'Q1') ?? [];
-  const pilotAssignments =
-    data?.assignments.filter((assignment) =>
-      pilotLessons.some((lesson) => lesson.id === assignment.lessonId),
-    ) ?? [];
   const unrealQuizCount =
     data?.quizzes.filter((quiz) => quiz.programAreaId === 'unreal-engine').length ?? 0;
 
@@ -56,16 +49,6 @@ export function UnrealAreaPage() {
           <div className="card-grid two">
             {pilotLessons.map((lesson) => (
               <LessonCard key={lesson.id} lesson={lesson} />
-            ))}
-          </div>
-        </section>
-
-        <section className="content-section neon-section">
-          <p className="retro-label">Build / Produce</p>
-          <h2>Q1 Unreal Assignments</h2>
-          <div className="card-grid two">
-            {pilotAssignments.map((assignment) => (
-              <AssignmentCard key={assignment.id} assignment={assignment} />
             ))}
           </div>
         </section>

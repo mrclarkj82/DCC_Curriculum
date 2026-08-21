@@ -14,7 +14,7 @@ export function ProgramAreaNav() {
           to={area.defaultRoute}
         >
           <span>{area.shortTitle}</span>
-          <small>{area.supportedContentTypes.join(', ')}</small>
+          <small>{area.supportedContentTypes.filter((type) => type !== 'assignment').join(', ')}</small>
         </NavLink>
       ))}
     </aside>

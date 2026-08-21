@@ -22,7 +22,9 @@ export function ProgramAreaCard({ area }: { area: ProgramArea }) {
         <StatusBadge status={area.status} />
       </div>
       <p>{area.description}</p>
-      <p className="meta-line">{area.supportedContentTypes.join(' / ')}</p>
+      <p className="meta-line">
+        {area.supportedContentTypes.filter((type) => type !== 'assignment').join(' / ')}
+      </p>
       <Link className="outline-button" to={area.defaultRoute}>
         Launch {area.shortTitle}
       </Link>

@@ -59,9 +59,12 @@ function LessonMission({ lesson }: { lesson: Lesson }) {
       </section>
 
       <section className="card mission-panel">
-        <h2>Assignment Summary</h2>
+        <h2>Lesson Assignment</h2>
         <p>{lesson.assignment.title}</p>
-        <Link to={`/assignments/${lesson.assignment.id}`}>Open assignment</Link>
+        <p className="muted">
+          Directions, rubric, and Google Drive evidence are included in the full lesson.
+        </p>
+        <Link to={`/lessons/${lesson.id}`}>Open lesson assignment</Link>
       </section>
 
       <section className="card mission-panel">

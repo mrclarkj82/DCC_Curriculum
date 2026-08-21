@@ -2,8 +2,8 @@ import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 import { logger } from 'firebase-functions';
 import { onSchedule } from 'firebase-functions/v2/scheduler';
 
-const schoolTimeZone = 'America/Los_Angeles';
-const activeSchoolYear = '2026-2027';
+export const schoolTimeZone = 'America/Los_Angeles';
+export const activeSchoolYear = '2026-2027';
 const scheduleOptions = {
   region: 'us-central1' as const,
   schedule: '0 5 * * 1-5',
@@ -13,7 +13,7 @@ const scheduleOptions = {
   timeoutSeconds: 60,
 };
 
-type CycleDay = 'A' | 'B';
+export type CycleDay = 'A' | 'B';
 
 interface ScheduledLesson {
   cycleDay: CycleDay;
@@ -25,7 +25,7 @@ interface ScheduledLesson {
 
 const tokenString = (value: unknown): string => (typeof value === 'string' ? value.trim() : '');
 
-const dateInTimeZone = (value: Date, timeZone: string): string => {
+export const dateInTimeZone = (value: Date, timeZone: string): string => {
   const parts = new Intl.DateTimeFormat('en-US', {
     timeZone,
     year: 'numeric',
@@ -38,7 +38,7 @@ const dateInTimeZone = (value: Date, timeZone: string): string => {
   return `${part('year')}-${part('month')}-${part('day')}`;
 };
 
-const classCycleFromPeriod = (period: unknown): CycleDay | null => {
+export const classCycleFromPeriod = (period: unknown): CycleDay | null => {
   const match = tokenString(period).toUpperCase().match(/^([AB])\s*\d+$/);
   return match ? (match[1] as CycleDay) : null;
 };

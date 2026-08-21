@@ -265,6 +265,16 @@ export type ResponseStatus = 'submitted';
 
 export type ResponseKind = 'bellRinger' | 'exitTicket';
 
+export type LessonResponseAccessStatus = 'previous' | 'current' | 'future' | 'unscheduled';
+
+export interface LessonResponseAccess {
+  status: LessonResponseAccessStatus;
+  canRespond: boolean;
+  cycleDay: 'A' | 'B' | null;
+  scheduledDate: string;
+  today: string;
+}
+
 export type ViewerMode = 'student' | 'teacher-preview';
 
 export type SubmissionTargetType = 'lesson' | 'assignment' | 'mediaProject' | 'broadcastUpdate';

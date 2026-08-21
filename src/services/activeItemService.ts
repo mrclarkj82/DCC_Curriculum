@@ -20,7 +20,6 @@ import { getQuizById, getQuizzesByProgramArea } from './quizService';
 
 export const supportedActiveItemTypes: ActiveItemType[] = [
   'lesson',
-  'assignment',
   'mediaProject',
   'broadcastUpdate',
   'quiz',
