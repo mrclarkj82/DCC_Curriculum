@@ -18,6 +18,7 @@ import { isTeacherPreviewMode } from '../../types';
 
 interface QuizTakingPanelProps {
   quiz: Quiz;
+  lessonId?: string;
   classRecord: ClassRecord;
   userProfile: UserProfile;
   viewerMode: ViewerMode;
@@ -55,6 +56,7 @@ function scoreLabel(attempt: QuizAttempt): string {
 
 export function QuizTakingPanel({
   quiz,
+  lessonId,
   classRecord,
   userProfile,
   viewerMode,
@@ -72,7 +74,7 @@ export function QuizTakingPanel({
     [answers, quiz.questions],
   );
   const canSubmit =
-    isStudent && !isPreview && quiz.isPublished && !attempt && answeredCount === quiz.questions.length;
+    isStudent && !isPreview && quiz.isPublished && answeredCount === quiz.questions.length;
 
   useEffect(() => {
     if (!isStudent || isPreview) {
@@ -121,11 +123,6 @@ export function QuizTakingPanel({
       return;
     }
 
-    if (attempt) {
-      setSubmitError('Your quiz score is already submitted.');
-      return;
-    }
-
     if (answeredCount !== quiz.questions.length) {
       setSubmitError('Answer every question before submitting the quiz.');
       return;
@@ -142,6 +139,7 @@ export function QuizTakingPanel({
       const result = await submitQuizAttempt({
         classId: classRecord.id,
         quizId: quiz.id,
+        lessonId,
         answers: payloadAnswers,
       });
       setAttempt(result.attempt);
@@ -189,8 +187,8 @@ export function QuizTakingPanel({
           <p className="retro-label">Your Score</p>
           <h3>{scoreLabel(attempt)}</h3>
           <p className="muted">
-            Submitted {formatTimestamp(attempt.submittedAt)}. Answer keys stay hidden after
-            submission.
+            Latest score submitted {formatTimestamp(attempt.submittedAt)}. You may change your
+            answers and submit again; answer keys stay hidden.
           </p>
         </div>
       )}
@@ -208,7 +206,7 @@ export function QuizTakingPanel({
         </p>
       )}
 
-      {!attempt && quiz.isPublished && (
+      {quiz.isPublished && (
         <form className="quiz-form" onSubmit={handleSubmit}>
           {quiz.questions.map((question, index) => (
             <fieldset className="quiz-question-card" key={question.id}>
@@ -254,9 +252,9 @@ export function QuizTakingPanel({
           ))}
 
           <button className="gradient-button" type="submit" disabled={!canSubmit || isSubmitting}>
-            {isSubmitting ? 'Grading...' : 'Submit Quiz'}
+            {isSubmitting ? 'Grading...' : attempt ? 'Update Quiz Score' : 'Submit Quiz'}
           </button>
-          {!canSubmit && !attempt && isStudent && !isPreview && (
+          {!canSubmit && isStudent && !isPreview && (
             <p className="muted">Answer every question to unlock submit.</p>
           )}
         </form>

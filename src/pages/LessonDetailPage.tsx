@@ -166,16 +166,6 @@ export function LessonDetailPage() {
   const submissionTarget = assignment
     ? resolveSubmissionTarget('assignment', assignment)
     : resolveSubmissionTarget('lesson', lesson);
-  const evidenceLocked = Boolean(
-    isStudent &&
-      (!classRecord ||
-        classRecord.activeItemType !== 'lesson' ||
-        classRecord.activeItemId !== lesson.id),
-  );
-  const evidenceLockedMessage =
-    responseAccess?.status === 'future'
-      ? 'Google Drive evidence unlocks when this lesson becomes the current class mission.'
-      : 'Google Drive evidence can be edited while this lesson is the current class mission. Ask your teacher to reopen it if you need to revise past work.';
 
   return (
     <PageContainer
@@ -290,6 +280,7 @@ export function LessonDetailPage() {
               {assignment.quizId && (
                 <RelatedQuizPanel
                   quizId={assignment.quizId}
+                  lessonId={lesson.id}
                   classRecord={classRecord}
                   userProfile={userProfile}
                   viewerMode="student"
@@ -306,8 +297,6 @@ export function LessonDetailPage() {
           target={submissionTarget}
           userProfile={userProfile}
           viewerMode="student"
-          locked={evidenceLocked}
-          lockedMessage={evidenceLockedMessage}
         />
 
         {showInteractiveResponses ? (

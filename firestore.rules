@@ -583,7 +583,7 @@ service cloud.firestore {
         && (
           (
             request.resource.data.status == 'submitted'
-            && resource.data.status in ['submitted', 'resubmitted']
+            && resource.data.status in ['submitted', 'resubmitted', 'accepted']
             && request.resource.data.resubmittedAt == resource.data.resubmittedAt
           )
           || (

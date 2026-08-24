@@ -76,21 +76,16 @@ export function SubmissionPanel({
   const canUsePanel = Boolean(
     target && classRecord && userProfile?.role === 'student' && !isPreviewMode && !locked,
   );
-  const isAccepted = submission?.status === 'accepted';
   const isEvidenceComplete = Boolean(submission && submission.status !== 'needs_revision');
   const evidenceVisualState = isLoading
     ? 'loading'
     : isEvidenceComplete
       ? 'complete'
       : 'incomplete';
-  const isDisabled = !canUsePanel || isAccepted || isSaving || locked;
+  const isDisabled = !canUsePanel || isSaving || locked;
   const buttonLabel = useMemo(() => {
     if (locked) {
       return 'Evidence Locked';
-    }
-
-    if (isAccepted) {
-      return 'Accepted';
     }
 
     if (submission?.status === 'needs_revision') {
@@ -102,7 +97,7 @@ export function SubmissionPanel({
     }
 
     return isSaving ? 'Submitting...' : 'Submit Evidence';
-  }, [isAccepted, isSaving, locked, submission]);
+  }, [isSaving, locked, submission]);
 
   useEffect(() => {
     if (!target) {

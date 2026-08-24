@@ -7,6 +7,7 @@ import { QuizTakingPanel } from './QuizTakingPanel';
 
 interface RelatedQuizPanelProps {
   quizId?: string;
+  lessonId?: string;
   classRecord: ClassRecord | null;
   userProfile: UserProfile | null;
   viewerMode: ViewerMode;
@@ -14,6 +15,7 @@ interface RelatedQuizPanelProps {
 
 export function RelatedQuizPanel({
   quizId,
+  lessonId,
   classRecord,
   userProfile,
   viewerMode,
@@ -59,6 +61,7 @@ export function RelatedQuizPanel({
   return (
     <QuizTakingPanel
       quiz={quiz}
+      lessonId={lessonId}
       classRecord={classRecord}
       userProfile={userProfile}
       viewerMode={viewerMode}

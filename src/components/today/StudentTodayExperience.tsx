@@ -297,6 +297,13 @@ export function StudentTodayExperience({
         {relatedQuizId && (
           <RelatedQuizPanel
             quizId={relatedQuizId}
+            lessonId={
+              activeItem.type === 'lesson'
+                ? activeItem.id
+                : activeItem.type === 'assignment' && record
+                  ? (record as Assignment).lessonId
+                  : undefined
+            }
             classRecord={classRecord}
             userProfile={userProfile}
             viewerMode={viewerMode}

@@ -22,6 +22,7 @@ import { getCollectionRecords, getDocumentRecord } from './firestoreService';
 interface SubmitQuizAttemptPayload {
   classId: string;
   quizId: string;
+  lessonId?: string;
   answers: QuizAttemptAnswerInput[];
 }
 

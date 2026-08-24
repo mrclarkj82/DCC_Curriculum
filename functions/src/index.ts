@@ -491,13 +491,15 @@ export const submitQuizAttempt = onCall(
     const email = tokenString(request.auth.token.email);
     const classId = tokenString(request.data?.classId).trim();
     const quizId = tokenString(request.data?.quizId).trim();
+    const lessonId = tokenString(request.data?.lessonId).trim();
     const rawAnswers = request.data?.answers;
 
     if (
       !classId ||
       !quizId ||
       classId.length > maxIdentifierLength ||
-      quizId.length > maxIdentifierLength
+      quizId.length > maxIdentifierLength ||
+      lessonId.length > maxIdentifierLength
     ) {
       throw new HttpsError('invalid-argument', 'Class ID and quiz ID are required.');
     }
@@ -572,10 +574,35 @@ export const submitQuizAttempt = onCall(
 
       const activeItemType = tokenString(classData.activeItemType);
       const activeItemId = tokenString(classData.activeItemId);
-      let isQuizAvailableForActiveItem =
-        activeItemType === 'quiz' && activeItemId === quizId;
+      const quizLessonIds = Array.isArray(quizData.lessonIds)
+        ? quizData.lessonIds.map(String)
+        : [];
+      let isQuizAvailable = false;
 
-      if (!isQuizAvailableForActiveItem && activeItemType === 'lesson' && activeItemId) {
+      if (lessonId) {
+        const lessonSnapshot = await transaction.get(
+          appRef.collection('lessons').doc(lessonId),
+        );
+
+        if (!lessonSnapshot.exists) {
+          throw new HttpsError('not-found', 'The lesson linked to this quiz was not found.');
+        }
+
+        const lessonData = lessonSnapshot.data() ?? {};
+        const assignmentData = lessonData.assignment;
+        const linkedQuizId =
+          assignmentData && typeof assignmentData === 'object'
+            ? tokenString((assignmentData as Record<string, unknown>).quizId)
+            : '';
+
+        isQuizAvailable =
+          tokenString(lessonData.programAreaId) === tokenString(quizData.programAreaId) &&
+          (linkedQuizId === quizId || quizLessonIds.includes(lessonId));
+      } else {
+        isQuizAvailable = activeItemType === 'quiz' && activeItemId === quizId;
+      }
+
+      if (!lessonId && !isQuizAvailable && activeItemType === 'lesson' && activeItemId) {
         const activeLessonSnapshot = await transaction.get(
           appRef.collection('lessons').doc(activeItemId),
         );
@@ -585,26 +612,22 @@ export const submitQuizAttempt = onCall(
           assignmentData && typeof assignmentData === 'object'
             ? tokenString((assignmentData as Record<string, unknown>).quizId)
             : '';
-        const quizLessonIds = Array.isArray(quizData.lessonIds)
-          ? quizData.lessonIds.map(String)
-          : [];
-
-        isQuizAvailableForActiveItem =
+        isQuizAvailable =
           linkedQuizId === quizId || quizLessonIds.includes(activeItemId);
       }
 
-      if (!isQuizAvailableForActiveItem && activeItemType === 'assignment' && activeItemId) {
+      if (!lessonId && !isQuizAvailable && activeItemType === 'assignment' && activeItemId) {
         const activeAssignmentSnapshot = await transaction.get(
           appRef.collection('assignments').doc(activeItemId),
         );
         const activeAssignmentData = activeAssignmentSnapshot.data() ?? {};
-        isQuizAvailableForActiveItem = tokenString(activeAssignmentData.quizId) === quizId;
+        isQuizAvailable = tokenString(activeAssignmentData.quizId) === quizId;
       }
 
-      if (!isQuizAvailableForActiveItem) {
+      if (!isQuizAvailable) {
         throw new HttpsError(
           'failed-precondition',
-          'This quiz is not available for the active class item.',
+          'This quiz is not available for this lesson or class item.',
         );
       }
 
@@ -617,13 +640,6 @@ export const submitQuizAttempt = onCall(
           'failed-precondition',
           'This quiz does not match the active class program area.',
         );
-      }
-
-      if (attemptSnapshot.exists) {
-        return {
-          attempt: quizAttemptFromData(attemptSnapshot.id, attemptSnapshot.data() ?? {}),
-          alreadySubmitted: true,
-        };
       }
 
       const questions = Array.isArray(quizData.questions)
@@ -691,7 +707,9 @@ export const submitQuizAttempt = onCall(
         score,
         percentage,
         status: 'submitted',
-        createdAt: now,
+        createdAt: attemptSnapshot.exists
+          ? attemptSnapshot.data()?.createdAt ?? now
+          : now,
         updatedAt: now,
         submittedAt: now,
       };
@@ -701,16 +719,16 @@ export const submitQuizAttempt = onCall(
         classId,
         quizId,
         incorrectQuestionIds,
-        createdAt: now,
+        ...(attemptSnapshot.exists ? {} : { createdAt: now }),
         updatedAt: now,
       };
 
-      transaction.set(attemptRef, attemptData);
-      transaction.set(attemptDetailRef, attemptDetailData);
+      transaction.set(attemptRef, attemptData, { merge: true });
+      transaction.set(attemptDetailRef, attemptDetailData, { merge: true });
 
       return {
         attempt: quizAttemptFromData(attemptId, attemptData),
-        alreadySubmitted: false,
+        alreadySubmitted: attemptSnapshot.exists,
       };
     });
   },
