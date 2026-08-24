@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { EmptyState } from '../components/EmptyState';
-import { EvidenceChecklist } from '../components/EvidenceChecklist';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
 import { PageContainer } from '../components/PageContainer';
@@ -254,28 +253,8 @@ export function LessonDetailPage() {
             <VocabularyList terms={lesson.vocabulary} />
           </section>
 
-          <section className="card span-two mission-panel">
-            <p className="retro-label">Assignment Inside This Lesson</p>
-            <h2>{assignment?.title ?? lesson.assignment.title}</h2>
-            <p>{assignment?.instructions ?? 'Complete the lesson evidence requirements below.'}</p>
-          </section>
-
           {assignment && (
             <>
-              <section className="card mission-panel">
-                <h2>Skill Focus</h2>
-                <EvidenceChecklist items={assignment.skillFocus} />
-              </section>
-
-              <section className="card span-two mission-panel">
-                <h2>Required Steps</h2>
-                <ol className="ordered-list">
-                  {assignment.requiredSteps.map((step) => (
-                    <li key={step}>{step}</li>
-                  ))}
-                </ol>
-              </section>
-
               {assignment.resources?.length ? (
                 <section className="card span-two mission-panel">
                   <h2>Lesson Resources</h2>
