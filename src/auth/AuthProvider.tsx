@@ -13,6 +13,7 @@ import {
 } from 'react';
 import { isAllowedEmailAccount } from '../config/authConfig';
 import { auth, googleProvider } from '../firebase/client';
+import { checkDccAccountAccess } from '../services/accountAccessService';
 import { createUserProfileIfNeeded, subscribeToUserProfile } from '../services/userService';
 import type { UserProfile, UserRole } from '../types';
 
@@ -88,23 +89,32 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return undefined;
     }
 
-    if (!isAllowedEmailAccount(firebaseUser.email)) {
-      setProfileLoading(false);
-      setUserProfile(null);
-      setAuthError(unauthorizedDomainMessage);
-      void firebaseSignOut(auth);
-      return undefined;
-    }
-
     let unsubscribe: () => void = () => undefined;
     let didCancel = false;
 
     setProfileLoading(true);
     setAuthError(null);
 
-    createUserProfileIfNeeded(firebaseUser)
+    const prepareUserProfile = async () => {
+      const locallyAllowed = isAllowedEmailAccount(firebaseUser.email);
+      const serverAllowed = locallyAllowed ? true : await checkDccAccountAccess();
+
+      if (!serverAllowed) {
+        if (!didCancel) {
+          setProfileLoading(false);
+          setUserProfile(null);
+          setAuthError(unauthorizedDomainMessage);
+        }
+        await firebaseSignOut(auth);
+        return;
+      }
+
+      await createUserProfileIfNeeded(firebaseUser);
+    };
+
+    prepareUserProfile()
       .then(() => {
-        if (didCancel) {
+        if (didCancel || auth.currentUser?.uid !== firebaseUser.uid) {
           return;
         }
 

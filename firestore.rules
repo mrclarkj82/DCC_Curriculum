@@ -27,8 +27,26 @@ service cloud.firestore {
         && request.auth.token.email in get(accessConfigPath()).data.allowedAdminEmails;
     }
 
+    function emailJoinExceptionPath() {
+      return /databases/$(database)/documents/apps/dcc/classJoinEmailExceptions/$(request.auth.token.email);
+    }
+
+    function hasActiveEmailJoinException() {
+      return signedIn()
+        && request.auth.token.email != null
+        && exists(emailJoinExceptionPath())
+        && get(emailJoinExceptionPath()).data.isActive == true
+        && get(emailJoinExceptionPath()).data.classId is string
+        && (
+          !('expiresAt' in get(emailJoinExceptionPath()).data)
+          || get(emailJoinExceptionPath()).data.expiresAt == null
+          || get(emailJoinExceptionPath()).data.expiresAt >= request.time
+        )
+        && exists(/databases/$(database)/documents/apps/dcc/classes/$(get(emailJoinExceptionPath()).data.classId));
+    }
+
     function isAllowedAccount() {
-      return isSchoolDomain() || isBootstrapAdminEmail();
+      return isSchoolDomain() || isBootstrapAdminEmail() || hasActiveEmailJoinException();
     }
 
     function isSelf(userId) {
@@ -901,6 +919,10 @@ service cloud.firestore {
           && canManageJoinCode(resource.data)
           && safeJoinCodeDisable();
         allow delete: if isDccApp(appId) && isAdmin();
+      }
+
+      match /classJoinEmailExceptions/{email} {
+        allow read, write: if false;
       }
 
       match /bellRingerResponses/{responseId} {

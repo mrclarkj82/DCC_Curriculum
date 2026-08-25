@@ -18,7 +18,8 @@ export function ClassJoinForm() {
   const [result, setResult] = useState<JoinClassResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isJoining, setIsJoining] = useState(false);
-  const isStudentAccount = userProfile?.email.toLowerCase().endsWith(`@${studentDomain}`) ?? false;
+  const isSchoolStudentAccount =
+    userProfile?.email.toLowerCase().endsWith(`@${studentDomain}`) ?? false;
   const isStudentRole = userProfile?.role === 'student';
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -26,8 +27,8 @@ export function ClassJoinForm() {
     setResult(null);
     setError(null);
 
-    if (!isStudentAccount || !isStudentRole) {
-      setError('Class codes are only for student school accounts.');
+    if (!isStudentRole) {
+      setError('Class codes are only for approved student accounts.');
       return;
     }
 
@@ -55,7 +56,9 @@ export function ClassJoinForm() {
       <p className="retro-label">Join Your Class</p>
       <h2>Enter your class code</h2>
       <p>Enter the class code your teacher gave you.</p>
-      <p className="muted">You must use your @{studentDomain} school Google account.</p>
+      <p className="muted">
+        Use your @{studentDomain} school Google account or a teacher-approved account exception.
+      </p>
 
       <form className="class-join-form" onSubmit={handleSubmit}>
         <label>
@@ -74,10 +77,10 @@ export function ClassJoinForm() {
         </button>
       </form>
 
-      {!isStudentAccount && (
+      {!isSchoolStudentAccount && isStudentRole && (
         <p className="form-message">
-          This account is not a @{studentDomain} student account. Use your school student Google
-          account to join by code.
+          This account is using a teacher-approved class exception. The class code will work only
+          for the approved class.
         </p>
       )}
 

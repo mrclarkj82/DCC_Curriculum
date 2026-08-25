@@ -33,6 +33,9 @@ const normalizeCode = (value: unknown): string =>
 
 const tokenString = (value: unknown): string => (typeof value === 'string' ? value : '');
 
+const isStudentSchoolEmail = (email: string): boolean =>
+  email.toLowerCase().endsWith(`@${studentDomain}`);
+
 const safeIdPart = (value: string): string =>
   value
     .trim()
@@ -272,6 +275,44 @@ const quizAttemptFromData = (id: string, data: Record<string, unknown>) => ({
     data.submittedAt instanceof Timestamp ? data.submittedAt.toMillis() : data.submittedAt,
 });
 
+export const checkDccAccountAccess = onCall(callableOptions, async (request) => {
+  if (!request.auth) {
+    throw new HttpsError('unauthenticated', 'Please sign in before accessing DCC Creative Studio.');
+  }
+
+  const normalizedEmail = tokenString(request.auth.token.email).trim().toLowerCase();
+
+  if (!normalizedEmail) {
+    return { allowed: false };
+  }
+
+  if (isStudentSchoolEmail(normalizedEmail) || normalizedEmail.endsWith('@doralacademynv.org')) {
+    return { allowed: true };
+  }
+
+  const appRef = dccAppRef();
+  const exceptionSnapshot = await appRef
+    .collection('classJoinEmailExceptions')
+    .doc(normalizedEmail)
+    .get();
+
+  if (!exceptionSnapshot.exists) {
+    return { allowed: false };
+  }
+
+  const exceptionData = exceptionSnapshot.data() ?? {};
+  const classId = tokenString(exceptionData.classId);
+  const expiresAt = exceptionData.expiresAt;
+  const isExpired = expiresAt instanceof Timestamp && expiresAt.toMillis() < Date.now();
+
+  if (exceptionData.isActive !== true || !classId || isExpired) {
+    return { allowed: false };
+  }
+
+  const classSnapshot = await appRef.collection('classes').doc(classId).get();
+  return { allowed: classSnapshot.exists };
+});
+
 export const joinClassWithCode = onCall(
   callableOptions,
   async (request) => {
@@ -283,9 +324,10 @@ export const joinClassWithCode = onCall(
     const authToken = request.auth.token;
     const email = tokenString(request.auth.token.email);
     const normalizedEmail = email.toLowerCase();
+    const isSchoolStudentAccount = isStudentSchoolEmail(normalizedEmail);
 
-    if (!normalizedEmail.endsWith(`@${studentDomain}`)) {
-      throw new HttpsError('permission-denied', 'This code is only for student school accounts.');
+    if (!normalizedEmail) {
+      throw new HttpsError('permission-denied', 'A Google account email is required.');
     }
 
     const code = normalizeCode(request.data?.code);
@@ -327,14 +369,38 @@ export const joinClassWithCode = onCall(
 
       const classId = tokenString(codeData.classId);
       const classRef = appRef.collection('classes').doc(classId);
-      const classSnapshot = await transaction.get(classRef);
+      const emailExceptionRef = appRef
+        .collection('classJoinEmailExceptions')
+        .doc(normalizedEmail);
+      const [classSnapshot, userSnapshot, emailExceptionSnapshot] = await Promise.all([
+        transaction.get(classRef),
+        transaction.get(userRef),
+        transaction.get(emailExceptionRef),
+      ]);
 
       if (!classSnapshot.exists) {
         throw new HttpsError('not-found', 'That class code was not found.');
       }
 
       const classData = classSnapshot.data() ?? {};
-      const userSnapshot = await transaction.get(userRef);
+      const emailExceptionData = emailExceptionSnapshot.data() ?? {};
+      const exceptionExpiresAt = emailExceptionData.expiresAt;
+      const hasClassEmailException =
+        emailExceptionSnapshot.exists &&
+        emailExceptionData.isActive === true &&
+        tokenString(emailExceptionData.classId) === classId &&
+        !(
+          exceptionExpiresAt instanceof Timestamp &&
+          exceptionExpiresAt.toMillis() < now.toMillis()
+        );
+
+      if (!isSchoolStudentAccount && !hasClassEmailException) {
+        throw new HttpsError(
+          'permission-denied',
+          'This class code requires a student school account or a teacher-approved exception.',
+        );
+      }
+
       const userData = userSnapshot.exists ? (userSnapshot.data() ?? {}) : null;
 
       if (userData && userData.role !== 'student') {

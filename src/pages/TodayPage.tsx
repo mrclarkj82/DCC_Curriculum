@@ -111,9 +111,7 @@ export function TodayPage() {
   }
 
   if (!classIds.length) {
-    const canJoinByCode =
-      userProfile.role === 'student' &&
-      userProfile.email.toLowerCase().endsWith('@student.doralacademynv.org');
+    const canJoinByCode = userProfile.role === 'student';
 
     return (
       <PageContainer
