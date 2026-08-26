@@ -84,9 +84,14 @@ const schedule = readJson(schedulePath);
 const instructionalDays = readJson(instructionalDaysPath);
 const instructionalDayByDate = new Map(instructionalDays.days.map((day) => [day.date, day]));
 const firstLesson = schedule.lessons[0];
-const lastLesson = schedule.lessons[schedule.lessons.length - 1];
+const activities = Array.isArray(schedule.activities) ? schedule.activities : [];
 const startDate = firstLesson.aDayDate;
-const endDate = lastLesson.bDayDate;
+const endDate = [
+  ...schedule.lessons.flatMap((lesson) => [lesson.aDayDate, lesson.bDayDate]),
+  ...activities.map((activity) => activity.date),
+]
+  .sort(compareDate)
+  .at(-1);
 const programAreaId = schedule.metadata.programAreaId;
 const quarter = schedule.metadata.quarter;
 
@@ -116,6 +121,36 @@ for (const lesson of schedule.lessons) {
     });
   }
 }
+
+const activityByDate = new Map(
+  activities.map((activity) => {
+    const day = instructionalDayByDate.get(activity.date);
+
+    return [
+      activity.date,
+      {
+        date: activity.date,
+        dayOfWeek: day?.dayOfWeek ?? dayNameForDate(activity.date),
+        cycleDay: activity.cycleDay,
+        status: 'activity',
+        heading: activity.heading || 'Alternate Activity',
+        lessonLabel: '',
+        lessonId: '',
+        lessonTitle: '',
+        programAreaId,
+        calendarNote: day?.calendarNote ?? '',
+        sourceNote: activity.sourceTiming || '',
+        reason: '',
+        activityId: activity.id,
+        activityType: activity.activityType,
+        activityTitle: activity.title,
+        activitySummary: activity.summary,
+        dueLabel: activity.dueLabel,
+        sourceTiming: activity.sourceTiming,
+      },
+    ];
+  }),
+);
 
 const noSchoolDates = instructionalDays.days
   .filter((day) => {
@@ -177,6 +212,12 @@ const months = visibleMonths.map(({ monthIndex, month, year }, monthOffset) => {
         continue;
       }
 
+      const activityDay = activityByDate.get(date);
+      if (activityDay) {
+        days.push(activityDay);
+        continue;
+      }
+
       const noSchoolDay = noSchoolByDate.get(date);
       if (noSchoolDay) {
         days.push({
@@ -230,6 +271,8 @@ const blockCalendar = {
   summary: {
     lessonCount: schedule.lessons.length,
     instructionalDateCount: lessonByDate.size,
+    activityCount: activities.length,
+    activityDateCount: activityByDate.size,
     noSchoolDateCount: noSchoolDates.length,
     monthCount: months.length,
   },
@@ -246,6 +289,8 @@ const updatedSchedule = {
   ...schedule,
   metadata: {
     ...schedule.metadata,
+    startDate,
+    endDate,
     noSchoolDateCount: noSchoolDates.length,
     weekendHandling:
       'Weekends are excluded from instructional scheduling and are not listed in noSchoolDatesDuringSchedule.',
@@ -266,6 +311,10 @@ delete updatedSchedule.skippedDatesDuringSchedule;
 const formatMarkdownCell = (day) => {
   if (day.status === 'instructional') {
     return `**${day.lessonLabel}**<br>${day.cycleDay} Day<br>${day.lessonTitle}<br><code>${day.lessonId}</code>`;
+  }
+
+  if (day.status === 'activity') {
+    return `**${day.heading}**<br>${day.cycleDay} Day<br>${day.activityTitle}<br>${day.dueLabel}`;
   }
 
   if (day.status === 'no-school') {
@@ -313,6 +362,22 @@ for (const lesson of schedule.lessons) {
   lessonScheduleMarkdownLines.push(
     `| ${lesson.lessonNumber} | \`${lesson.lessonId}\` | ${lesson.lessonTitle} | ${lesson.aDayDate} (${lesson.aDayCycle}) | ${lesson.bDayDate} (${lesson.bDayCycle}) | ${lesson.notes || ''} |`,
   );
+}
+
+if (activities.length) {
+  lessonScheduleMarkdownLines.push(
+    '',
+    '## Schedule Exceptions',
+    '',
+    '| Date | Cycle | Activity | Note |',
+    '| --- | --- | --- | --- |',
+  );
+
+  for (const activity of activities) {
+    lessonScheduleMarkdownLines.push(
+      `| ${activity.date} | ${activity.cycleDay} | ${activity.title} | ${activity.summary} |`,
+    );
+  }
 }
 
 lessonScheduleMarkdownLines.push(
