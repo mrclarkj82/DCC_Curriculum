@@ -281,54 +281,108 @@ export function subscribeToResponsesForClassItem(
   onResponses: (responses: ClassItemResponses) => void,
   onError: (error: Error) => void,
 ): Unsubscribe {
-  let bellRingerResponses: BellRingerResponse[] = [];
-  let exitTicketResponses: ExitTicketResponse[] = [];
+  return subscribeToResponsesForClassItems(classId, [activeItemId], onResponses, onError);
+}
 
-  const emitResponses = () => onResponses({ bellRingerResponses, exitTicketResponses });
-
-  const bellRingerUnsubscribe = onSnapshot(
-    query(
-      collection(db, dccCollectionPath(responseCollections.bellRinger)),
-      where('classId', '==', classId),
-      where('activeItemId', '==', activeItemId),
-      limit(500),
-    ),
-    (snapshot) => {
-      bellRingerResponses = snapshot.docs.map((documentSnapshot) =>
-        responseFromData<BellRingerResponse>(
-          documentSnapshot.id,
-          'bellRinger',
-          documentSnapshot.data(),
-        ),
-      );
-      emitResponses();
-    },
-    onError,
+export function subscribeToResponsesForClassItems(
+  classId: string,
+  activeItemIds: string[],
+  onResponses: (responses: ClassItemResponses) => void,
+  onError: (error: Error) => void,
+): Unsubscribe {
+  const itemIds = Array.from(
+    new Set(activeItemIds.map((activeItemId) => activeItemId.trim()).filter(Boolean)),
   );
 
-  const exitTicketUnsubscribe = onSnapshot(
-    query(
-      collection(db, dccCollectionPath(responseCollections.exitTicket)),
-      where('classId', '==', classId),
-      where('activeItemId', '==', activeItemId),
-      limit(500),
-    ),
-    (snapshot) => {
-      exitTicketResponses = snapshot.docs.map((documentSnapshot) =>
-        responseFromData<ExitTicketResponse>(
-          documentSnapshot.id,
-          'exitTicket',
-          documentSnapshot.data(),
-        ),
-      );
-      emitResponses();
-    },
-    onError,
-  );
+  if (!itemIds.length) {
+    onResponses({ bellRingerResponses: [], exitTicketResponses: [] });
+    return () => undefined;
+  }
+
+  const bellRingersByItemId = new Map<string, BellRingerResponse[]>();
+  const exitTicketsByItemId = new Map<string, ExitTicketResponse[]>();
+  const readyQueries = new Set<string>();
+  const queryCount = itemIds.length * 2;
+
+  const mergeLatestResponsePerStudent = <T extends BellRingerResponse | ExitTicketResponse>(
+    responsesByItemId: Map<string, T[]>,
+  ): T[] => {
+    const responsesByUid = new Map<string, T>();
+
+    itemIds.forEach((itemId) => {
+      (responsesByItemId.get(itemId) ?? []).forEach((response) => {
+        responsesByUid.set(response.uid, response);
+      });
+    });
+
+    return Array.from(responsesByUid.values());
+  };
+
+  const emitResponses = () => {
+    if (readyQueries.size !== queryCount) {
+      return;
+    }
+
+    onResponses({
+      bellRingerResponses: mergeLatestResponsePerStudent(bellRingersByItemId),
+      exitTicketResponses: mergeLatestResponsePerStudent(exitTicketsByItemId),
+    });
+  };
+
+  const unsubscribes = itemIds.flatMap((activeItemId) => {
+    const bellRingerUnsubscribe = onSnapshot(
+      query(
+        collection(db, dccCollectionPath(responseCollections.bellRinger)),
+        where('classId', '==', classId),
+        where('activeItemId', '==', activeItemId),
+        limit(500),
+      ),
+      (snapshot) => {
+        bellRingersByItemId.set(
+          activeItemId,
+          snapshot.docs.map((documentSnapshot) =>
+            responseFromData<BellRingerResponse>(
+              documentSnapshot.id,
+              'bellRinger',
+              documentSnapshot.data(),
+            ),
+          ),
+        );
+        readyQueries.add(`bellRinger:${activeItemId}`);
+        emitResponses();
+      },
+      onError,
+    );
+
+    const exitTicketUnsubscribe = onSnapshot(
+      query(
+        collection(db, dccCollectionPath(responseCollections.exitTicket)),
+        where('classId', '==', classId),
+        where('activeItemId', '==', activeItemId),
+        limit(500),
+      ),
+      (snapshot) => {
+        exitTicketsByItemId.set(
+          activeItemId,
+          snapshot.docs.map((documentSnapshot) =>
+            responseFromData<ExitTicketResponse>(
+              documentSnapshot.id,
+              'exitTicket',
+              documentSnapshot.data(),
+            ),
+          ),
+        );
+        readyQueries.add(`exitTicket:${activeItemId}`);
+        emitResponses();
+      },
+      onError,
+    );
+
+    return [bellRingerUnsubscribe, exitTicketUnsubscribe];
+  });
 
   return () => {
-    bellRingerUnsubscribe();
-    exitTicketUnsubscribe();
+    unsubscribes.forEach((unsubscribe) => unsubscribe());
   };
 }
 

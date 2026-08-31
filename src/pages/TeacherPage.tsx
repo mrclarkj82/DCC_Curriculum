@@ -21,9 +21,7 @@ import { firestoreErrorMessage } from '../services/firestoreService';
 import { getLessons } from '../services/lessonService';
 import { getProgramAreas } from '../services/programAreaService';
 import {
-  getBellRingerPrompt,
-  getExitTicketPrompt,
-  subscribeToResponsesForClassItem,
+  subscribeToResponsesForClassItems,
   type ClassItemResponses,
 } from '../services/responseService';
 import {
@@ -341,6 +339,12 @@ export function TeacherPage() {
   const [formError, setFormError] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
   const [selectedResponseClassId, setSelectedResponseClassId] = useState<string | null>(null);
+  const [responseLessons, setResponseLessons] = useState<Lesson[]>([]);
+  const [responseLessonsLoading, setResponseLessonsLoading] = useState(false);
+  const [responseLessonsError, setResponseLessonsError] = useState<string | null>(null);
+  const [selectedResponseQuarter, setSelectedResponseQuarter] = useState('');
+  const [selectedResponseLessonId, setSelectedResponseLessonId] = useState('');
+  const [responsesLoading, setResponsesLoading] = useState(false);
   const [selectedSubmissionClassId, setSelectedSubmissionClassId] = useState<string | null>(null);
   const [submissionLessons, setSubmissionLessons] = useState<Lesson[]>([]);
   const [submissionLessonsLoading, setSubmissionLessonsLoading] = useState(false);
@@ -583,33 +587,101 @@ export function TeacherPage() {
   }, [classRecords, selectedDataClassIds]);
 
   useEffect(() => {
+    const classRecord = classRecords.find((record) => record.id === selectedResponseClassId);
+
+    if (!classRecord) {
+      setResponseLessons([]);
+      setResponseLessonsError(null);
+      setResponseLessonsLoading(false);
+      setSelectedResponseQuarter('');
+      setSelectedResponseLessonId('');
+      return;
+    }
+
+    let didCancel = false;
+    setResponseLessons([]);
+    setResponseLessonsError(null);
+    setResponseLessonsLoading(true);
+    setSelectedResponseQuarter('');
+    setSelectedResponseLessonId('');
+
+    void getLessons()
+      .then((lessons) => {
+        if (didCancel) {
+          return;
+        }
+
+        const activeLesson = lessons.find(
+          (lesson) =>
+            lesson.id === classRecord.activeItemId ||
+            lesson.assignment?.id === classRecord.activeItemId,
+        );
+        const defaultQuarter = activeLesson?.quarter || lessons[0]?.quarter || '';
+        const defaultLesson =
+          activeLesson || lessons.find((lesson) => lesson.quarter === defaultQuarter) || null;
+
+        setResponseLessons(lessons);
+        setSelectedResponseQuarter(defaultQuarter);
+        setSelectedResponseLessonId(defaultLesson?.id ?? '');
+        setResponseLessonsLoading(false);
+      })
+      .catch((error: unknown) => {
+        if (didCancel) {
+          return;
+        }
+
+        setResponseLessons([]);
+        setResponseLessonsError(
+          firestoreErrorMessage(error, 'Unable to load lessons for response browsing.'),
+        );
+        setResponseLessonsLoading(false);
+      });
+
+    return () => {
+      didCancel = true;
+    };
+  }, [classRecords, dataRefreshVersion, selectedResponseClassId]);
+
+  useEffect(() => {
     const classId = selectedResponseClassId;
     const classRecord = classRecords.find((record) => record.id === classId);
-    const activeItem = classRecord ? activeItemsByClassId[classRecord.id] : null;
+    const lesson = responseLessons.find((record) => record.id === selectedResponseLessonId);
 
-    if (!classId || !classRecord || !activeItem) {
+    if (!classId || !classRecord || !lesson) {
       setResponsesByClassId({});
       setResponseErrorsByClassId({});
+      setResponsesLoading(false);
       return undefined;
     }
 
     setResponsesByClassId({});
     setResponseErrorsByClassId({});
+    setResponsesLoading(true);
 
-    return subscribeToResponsesForClassItem(
+    const responseItemIds = [lesson.assignment?.id ?? '', lesson.id];
+
+    return subscribeToResponsesForClassItems(
       classId,
-      activeItem.id,
+      responseItemIds,
       (responses) => {
         setResponsesByClassId({ [classId]: responses });
         setResponseErrorsByClassId({});
+        setResponsesLoading(false);
       },
       (error) => {
         setResponseErrorsByClassId({
           [classId]: firestoreErrorMessage(error, 'Unable to load response completion data.'),
         });
+        setResponsesLoading(false);
       },
     );
-  }, [activeItemsByClassId, classRecords, dataRefreshVersion, selectedResponseClassId]);
+  }, [
+    classRecords,
+    dataRefreshVersion,
+    responseLessons,
+    selectedResponseClassId,
+    selectedResponseLessonId,
+  ]);
 
   useEffect(() => {
     const classRecord = classRecords.find((record) => record.id === selectedSubmissionClassId);
@@ -814,6 +886,27 @@ export function TeacherPage() {
   const selectedResponseClass = useMemo(
     () => classRecords.find((classRecord) => classRecord.id === selectedResponseClassId),
     [classRecords, selectedResponseClassId],
+  );
+
+  const responseQuarters = useMemo(
+    () =>
+      Array.from(new Set(responseLessons.map((lesson) => lesson.quarter))).sort(
+        (firstQuarter, secondQuarter) => firstQuarter.localeCompare(secondQuarter),
+      ),
+    [responseLessons],
+  );
+
+  const responseLessonsForQuarter = useMemo(
+    () =>
+      responseLessons
+        .filter((lesson) => lesson.quarter === selectedResponseQuarter)
+        .sort((firstLesson, secondLesson) => firstLesson.lessonNumber - secondLesson.lessonNumber),
+    [responseLessons, selectedResponseQuarter],
+  );
+
+  const selectedResponseLesson = useMemo(
+    () => responseLessons.find((lesson) => lesson.id === selectedResponseLessonId) ?? null,
+    [responseLessons, selectedResponseLessonId],
   );
 
   const selectedSubmissionClass = useMemo(
@@ -1223,7 +1316,11 @@ export function TeacherPage() {
               <ClassSelectionPanel
                 classRecords={classRecords}
                 label="daily responses"
-                onSelect={setSelectedResponseClassId}
+                onSelect={(classId) => {
+                  setSelectedResponseClassId(classId);
+                  setSelectedResponseQuarter('');
+                  setSelectedResponseLessonId('');
+                }}
               />
             ) : (
               <>
@@ -1237,235 +1334,296 @@ export function TeacherPage() {
                   <button
                     className="outline-button"
                     type="button"
-                    onClick={() => setSelectedResponseClassId(null)}
+                    onClick={() => {
+                      setSelectedResponseClassId(null);
+                      setSelectedResponseQuarter('');
+                      setSelectedResponseLessonId('');
+                    }}
                   >
                     Choose Another Class
                   </button>
                 </div>
-                <div className="response-completion-stack">
-                  {[selectedResponseClass].map((classRecord) => {
-                    const activeItem = activeItemsByClassId[classRecord.id];
-                    const responseError = responseErrorsByClassId[classRecord.id];
-                    const summaries = completionSummariesByClassId[classRecord.id] ?? [];
-                    const bellRingerPrompt = getBellRingerPrompt(activeItem);
-                    const exitTicketPrompt = getExitTicketPrompt(activeItem);
-                    const bellRingerComplete = summaries.filter(
-                      (summary) => summary.bellRingerComplete,
-                    ).length;
-                    const exitTicketComplete = summaries.filter(
-                      (summary) => summary.exitTicketComplete,
-                    ).length;
-                    const bellRingerMissingNames = summaries
-                      .filter((summary) => !summary.bellRingerComplete)
-                      .map((summary) => summary.studentName)
-                      .sort((firstName, secondName) => firstName.localeCompare(secondName));
-                    const exitTicketMissingNames = summaries
-                      .filter((summary) => !summary.exitTicketComplete)
-                      .map((summary) => summary.studentName)
-                      .sort((firstName, secondName) => firstName.localeCompare(secondName));
-                    const bellRingerEffortGroups = bellRingerPrompt
-                      ? groupStudentsByResponseEffort(
-                          bellRingerPrompt,
-                          summaries
-                            .filter((summary) => summary.bellRingerComplete)
-                            .map((summary) => ({
-                              studentName: summary.studentName,
-                              response: summary.bellRingerResponse?.response ?? '',
-                            })),
-                        )
-                      : null;
-                    const exitTicketEffortGroups = exitTicketPrompt
-                      ? groupStudentsByResponseEffort(
-                          exitTicketPrompt,
-                          summaries
-                            .filter((summary) => summary.exitTicketComplete)
-                            .map((summary) => ({
-                              studentName: summary.studentName,
-                              response: summary.exitTicketResponse?.response ?? '',
-                            })),
-                        )
-                      : null;
 
-                    return (
-                      <article
-                        className="card neon-card response-completion-card"
-                        key={classRecord.id}
-                      >
-                        <div className="section-heading-row">
-                          <div>
-                            <p className="retro-label">
-                              {classRecord.name} / {classRecord.period}
-                            </p>
-                            <h3>{activeItem?.title ?? classRecord.activeItemId}</h3>
-                          </div>
-                          <StatusBadge status={`${classRecord.studentIds.length} students`} />
-                        </div>
+                <div className="submission-browser-filters" aria-label="Response filters">
+                  <label>
+                    1. Quarter
+                    <select
+                      value={selectedResponseQuarter}
+                      disabled={responseLessonsLoading || !responseQuarters.length}
+                      onChange={(event) => {
+                        const quarter = event.currentTarget.value;
+                        const firstLesson = responseLessons.find(
+                          (lesson) => lesson.quarter === quarter,
+                        );
 
-                        <dl className="detail-list response-summary-list">
-                          <div>
-                            <dt>Active Item</dt>
-                            <dd>
-                              {activeItemTypeLabels[classRecord.activeItemType]} /{' '}
-                              {classRecord.activeItemId}
-                            </dd>
-                          </div>
-                          <div>
-                            <dt>Bell Ringer Completion</dt>
-                            <dd>
-                              {bellRingerPrompt ? (
-                                <>
-                                  {bellRingerEffortGroups && (
-                                    <ResponseEffortNameGroups groups={bellRingerEffortGroups} />
-                                  )}
-                                  <span
-                                    className={`response-missing-students${
-                                      bellRingerMissingNames.length
-                                        ? ''
-                                        : ' response-missing-students--complete'
-                                    }`}
-                                  >
-                                    {bellRingerMissingNames.length
-                                      ? `Not submitted: ${bellRingerMissingNames.join(', ')}`
-                                      : 'Everyone submitted'}
-                                  </span>
-                                  <span className="response-completion-count">
-                                    {bellRingerComplete}/{classRecord.studentIds.length}
-                                  </span>
-                                </>
-                              ) : (
-                                'No prompt attached'
-                              )}
-                            </dd>
-                          </div>
-                          <div>
-                            <dt>Exit Ticket Completion</dt>
-                            <dd>
-                              {exitTicketPrompt ? (
-                                <>
-                                  {exitTicketEffortGroups && (
-                                    <ResponseEffortNameGroups groups={exitTicketEffortGroups} />
-                                  )}
-                                  <span
-                                    className={`response-missing-students${
-                                      exitTicketMissingNames.length
-                                        ? ''
-                                        : ' response-missing-students--complete'
-                                    }`}
-                                  >
-                                    {exitTicketMissingNames.length
-                                      ? `Not submitted: ${exitTicketMissingNames.join(', ')}`
-                                      : 'Everyone submitted'}
-                                  </span>
-                                  <span className="response-completion-count">
-                                    {exitTicketComplete}/{classRecord.studentIds.length}
-                                  </span>
-                                </>
-                              ) : (
-                                'No prompt attached'
-                              )}
-                            </dd>
-                          </div>
-                        </dl>
+                        setSelectedResponseQuarter(quarter);
+                        setSelectedResponseLessonId(firstLesson?.id ?? '');
+                      }}
+                    >
+                      {!responseQuarters.length && <option value="">No quarters available</option>}
+                      {responseQuarters.map((quarter) => (
+                        <option key={quarter} value={quarter}>
+                          {quarter}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
 
-                        {responseError && <ErrorState message={responseError} />}
-
-                        {!classRecord.studentIds.length ? (
-                          <p className="muted">No students are assigned to this class yet.</p>
-                        ) : (
-                          <div className="table-scroll">
-                            <table className="management-table response-table">
-                              <thead>
-                                <tr>
-                                  <th className="response-student-column" scope="col">
-                                    Student
-                                  </th>
-                                  <th className="response-question-column" scope="col">
-                                    <span className="response-column-label">Bell Ringer</span>
-                                    <span className="response-column-prompt">
-                                      {bellRingerPrompt || 'No bell ringer prompt attached.'}
-                                    </span>
-                                  </th>
-                                  <th className="response-question-column" scope="col">
-                                    <span className="response-column-label">Exit Ticket</span>
-                                    <span className="response-column-prompt">
-                                      {exitTicketPrompt || 'No exit ticket prompt attached.'}
-                                    </span>
-                                  </th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {summaries.map((summary) => {
-                                  const responseKey = `${classRecord.id}-${summary.uid}`;
-                                  const bellRingerStatus = !bellRingerPrompt
-                                    ? 'no prompt'
-                                    : summary.bellRingerComplete
-                                      ? 'submitted'
-                                      : 'pending';
-                                  const exitTicketStatus = !exitTicketPrompt
-                                    ? 'no prompt'
-                                    : summary.exitTicketComplete
-                                      ? 'submitted'
-                                      : 'pending';
-
-                                  return (
-                                    <tr key={responseKey}>
-                                      <td>
-                                        <strong>{summary.studentName}</strong>
-                                        {summary.studentEmail && (
-                                          <p className="meta-line">{summary.studentEmail}</p>
-                                        )}
-                                      </td>
-                                      <td className="response-answer-cell">
-                                        {bellRingerPrompt ? (
-                                          <>
-                                            <div className="response-answer-meta">
-                                              <StatusBadge status={bellRingerStatus} />
-                                              <span>
-                                                {formatTimestamp(summary.bellRingerUpdatedAt)}
-                                              </span>
-                                            </div>
-                                            <p className="response-answer-text">
-                                              {summary.bellRingerResponse?.response ||
-                                                'No response submitted yet.'}
-                                            </p>
-                                          </>
-                                        ) : (
-                                          <p className="response-answer-text muted">
-                                            No prompt attached.
-                                          </p>
-                                        )}
-                                      </td>
-                                      <td className="response-answer-cell">
-                                        {exitTicketPrompt ? (
-                                          <>
-                                            <div className="response-answer-meta">
-                                              <StatusBadge status={exitTicketStatus} />
-                                              <span>
-                                                {formatTimestamp(summary.exitTicketUpdatedAt)}
-                                              </span>
-                                            </div>
-                                            <p className="response-answer-text">
-                                              {summary.exitTicketResponse?.response ||
-                                                'No response submitted yet.'}
-                                            </p>
-                                          </>
-                                        ) : (
-                                          <p className="response-answer-text muted">
-                                            No prompt attached.
-                                          </p>
-                                        )}
-                                      </td>
-                                    </tr>
-                                  );
-                                })}
-                              </tbody>
-                            </table>
-                          </div>
-                        )}
-                      </article>
-                    );
-                  })}
+                  <label>
+                    2. Lesson Number And Name
+                    <select
+                      value={selectedResponseLessonId}
+                      disabled={responseLessonsLoading || !responseLessonsForQuarter.length}
+                      onChange={(event) => setSelectedResponseLessonId(event.currentTarget.value)}
+                    >
+                      {!responseLessonsForQuarter.length && (
+                        <option value="">No lessons available</option>
+                      )}
+                      {responseLessonsForQuarter.map((lesson) => (
+                        <option key={lesson.id} value={lesson.id}>
+                          Lesson {lesson.lessonNumber}: {lesson.title}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
                 </div>
+
+                {responseLessonsLoading && <LoadingState label="Loading response browser..." />}
+                {responseLessonsError && <ErrorState message={responseLessonsError} />}
+                {!responseLessonsLoading && !responseLessonsError && !responseLessons.length && (
+                  <EmptyState
+                    title="No lessons available"
+                    message="The DCC course does not have seeded lessons to browse yet."
+                  />
+                )}
+
+                {responsesLoading && selectedResponseLesson && (
+                  <LoadingState label="Loading student responses..." />
+                )}
+
+                {selectedResponseLesson && !responsesLoading && (
+                  <div className="response-completion-stack">
+                    {[selectedResponseClass].map((classRecord) => {
+                      const responseError = responseErrorsByClassId[classRecord.id];
+                      const summaries = completionSummariesByClassId[classRecord.id] ?? [];
+                      const bellRingerPrompt = selectedResponseLesson.bellRinger.prompt.trim();
+                      const exitTicketPrompt = selectedResponseLesson.exitTicket.trim();
+                      const bellRingerComplete = summaries.filter(
+                        (summary) => summary.bellRingerComplete,
+                      ).length;
+                      const exitTicketComplete = summaries.filter(
+                        (summary) => summary.exitTicketComplete,
+                      ).length;
+                      const bellRingerMissingNames = summaries
+                        .filter((summary) => !summary.bellRingerComplete)
+                        .map((summary) => summary.studentName)
+                        .sort((firstName, secondName) => firstName.localeCompare(secondName));
+                      const exitTicketMissingNames = summaries
+                        .filter((summary) => !summary.exitTicketComplete)
+                        .map((summary) => summary.studentName)
+                        .sort((firstName, secondName) => firstName.localeCompare(secondName));
+                      const bellRingerEffortGroups = bellRingerPrompt
+                        ? groupStudentsByResponseEffort(
+                            bellRingerPrompt,
+                            summaries
+                              .filter((summary) => summary.bellRingerComplete)
+                              .map((summary) => ({
+                                studentName: summary.studentName,
+                                response: summary.bellRingerResponse?.response ?? '',
+                              })),
+                          )
+                        : null;
+                      const exitTicketEffortGroups = exitTicketPrompt
+                        ? groupStudentsByResponseEffort(
+                            exitTicketPrompt,
+                            summaries
+                              .filter((summary) => summary.exitTicketComplete)
+                              .map((summary) => ({
+                                studentName: summary.studentName,
+                                response: summary.exitTicketResponse?.response ?? '',
+                              })),
+                          )
+                        : null;
+
+                      return (
+                        <article
+                          className="card neon-card response-completion-card"
+                          key={classRecord.id}
+                        >
+                          <div className="section-heading-row">
+                            <div>
+                              <p className="retro-label">
+                                {selectedResponseQuarter} / Lesson{' '}
+                                {selectedResponseLesson.lessonNumber}
+                              </p>
+                              <h3>{selectedResponseLesson.title}</h3>
+                            </div>
+                            <StatusBadge status={`${classRecord.studentIds.length} students`} />
+                          </div>
+
+                          <dl className="detail-list response-summary-list">
+                            <div>
+                              <dt>Selected Lesson</dt>
+                              <dd>Lesson / {selectedResponseLesson.id}</dd>
+                            </div>
+                            <div>
+                              <dt>Bell Ringer Completion</dt>
+                              <dd>
+                                {bellRingerPrompt ? (
+                                  <>
+                                    {bellRingerEffortGroups && (
+                                      <ResponseEffortNameGroups groups={bellRingerEffortGroups} />
+                                    )}
+                                    <span
+                                      className={`response-missing-students${
+                                        bellRingerMissingNames.length
+                                          ? ''
+                                          : ' response-missing-students--complete'
+                                      }`}
+                                    >
+                                      {bellRingerMissingNames.length
+                                        ? `Not submitted: ${bellRingerMissingNames.join(', ')}`
+                                        : 'Everyone submitted'}
+                                    </span>
+                                    <span className="response-completion-count">
+                                      {bellRingerComplete}/{classRecord.studentIds.length}
+                                    </span>
+                                  </>
+                                ) : (
+                                  'No prompt attached'
+                                )}
+                              </dd>
+                            </div>
+                            <div>
+                              <dt>Exit Ticket Completion</dt>
+                              <dd>
+                                {exitTicketPrompt ? (
+                                  <>
+                                    {exitTicketEffortGroups && (
+                                      <ResponseEffortNameGroups groups={exitTicketEffortGroups} />
+                                    )}
+                                    <span
+                                      className={`response-missing-students${
+                                        exitTicketMissingNames.length
+                                          ? ''
+                                          : ' response-missing-students--complete'
+                                      }`}
+                                    >
+                                      {exitTicketMissingNames.length
+                                        ? `Not submitted: ${exitTicketMissingNames.join(', ')}`
+                                        : 'Everyone submitted'}
+                                    </span>
+                                    <span className="response-completion-count">
+                                      {exitTicketComplete}/{classRecord.studentIds.length}
+                                    </span>
+                                  </>
+                                ) : (
+                                  'No prompt attached'
+                                )}
+                              </dd>
+                            </div>
+                          </dl>
+
+                          {responseError && <ErrorState message={responseError} />}
+
+                          {!classRecord.studentIds.length ? (
+                            <p className="muted">No students are assigned to this class yet.</p>
+                          ) : (
+                            <div className="table-scroll">
+                              <table className="management-table response-table">
+                                <thead>
+                                  <tr>
+                                    <th className="response-student-column" scope="col">
+                                      Student
+                                    </th>
+                                    <th className="response-question-column" scope="col">
+                                      <span className="response-column-label">Bell Ringer</span>
+                                      <span className="response-column-prompt">
+                                        {bellRingerPrompt || 'No bell ringer prompt attached.'}
+                                      </span>
+                                    </th>
+                                    <th className="response-question-column" scope="col">
+                                      <span className="response-column-label">Exit Ticket</span>
+                                      <span className="response-column-prompt">
+                                        {exitTicketPrompt || 'No exit ticket prompt attached.'}
+                                      </span>
+                                    </th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {summaries.map((summary) => {
+                                    const responseKey = `${classRecord.id}-${summary.uid}`;
+                                    const bellRingerStatus = !bellRingerPrompt
+                                      ? 'no prompt'
+                                      : summary.bellRingerComplete
+                                        ? 'submitted'
+                                        : 'pending';
+                                    const exitTicketStatus = !exitTicketPrompt
+                                      ? 'no prompt'
+                                      : summary.exitTicketComplete
+                                        ? 'submitted'
+                                        : 'pending';
+
+                                    return (
+                                      <tr key={responseKey}>
+                                        <td>
+                                          <strong>{summary.studentName}</strong>
+                                          {summary.studentEmail && (
+                                            <p className="meta-line">{summary.studentEmail}</p>
+                                          )}
+                                        </td>
+                                        <td className="response-answer-cell">
+                                          {bellRingerPrompt ? (
+                                            <>
+                                              <div className="response-answer-meta">
+                                                <StatusBadge status={bellRingerStatus} />
+                                                <span>
+                                                  {formatTimestamp(summary.bellRingerUpdatedAt)}
+                                                </span>
+                                              </div>
+                                              <p className="response-answer-text">
+                                                {summary.bellRingerResponse?.response ||
+                                                  'No response submitted yet.'}
+                                              </p>
+                                            </>
+                                          ) : (
+                                            <p className="response-answer-text muted">
+                                              No prompt attached.
+                                            </p>
+                                          )}
+                                        </td>
+                                        <td className="response-answer-cell">
+                                          {exitTicketPrompt ? (
+                                            <>
+                                              <div className="response-answer-meta">
+                                                <StatusBadge status={exitTicketStatus} />
+                                                <span>
+                                                  {formatTimestamp(summary.exitTicketUpdatedAt)}
+                                                </span>
+                                              </div>
+                                              <p className="response-answer-text">
+                                                {summary.exitTicketResponse?.response ||
+                                                  'No response submitted yet.'}
+                                              </p>
+                                            </>
+                                          ) : (
+                                            <p className="response-answer-text muted">
+                                              No prompt attached.
+                                            </p>
+                                          )}
+                                        </td>
+                                      </tr>
+                                    );
+                                  })}
+                                </tbody>
+                              </table>
+                            </div>
+                          )}
+                        </article>
+                      );
+                    })}
+                  </div>
+                )}
               </>
             )}
           </section>
