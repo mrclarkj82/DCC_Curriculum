@@ -2,10 +2,7 @@ import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { ErrorState } from '../ErrorState';
 import { LoadingState } from '../LoadingState';
 import { StatusBadge } from '../StatusBadge';
-import {
-  submitQuizAttempt,
-  subscribeToQuizAttempt,
-} from '../../services/quizService';
+import { submitQuizAttempt, subscribeToQuizAttempt } from '../../services/quizService';
 import type {
   ClassRecord,
   Quiz,
@@ -67,14 +64,26 @@ export function QuizTakingPanel({
   const [attemptError, setAttemptError] = useState<string | null>(null);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRetaking, setIsRetaking] = useState(false);
   const isPreview = isTeacherPreviewMode(viewerMode);
   const isStudent = userProfile.role === 'student';
+  const quizOpenForAnswers = !attempt || isRetaking;
   const answeredCount = useMemo(
     () => quiz.questions.filter((question) => answers[question.id]?.trim()).length,
     [answers, quiz.questions],
   );
   const canSubmit =
-    isStudent && !isPreview && quiz.isPublished && answeredCount === quiz.questions.length;
+    isStudent &&
+    !isPreview &&
+    quiz.isPublished &&
+    quizOpenForAnswers &&
+    answeredCount === quiz.questions.length;
+
+  useEffect(() => {
+    setAnswers({});
+    setSubmitError(null);
+    setIsRetaking(false);
+  }, [classRecord.id, quiz.id, userProfile.uid]);
 
   useEffect(() => {
     if (!isStudent || isPreview) {
@@ -107,6 +116,12 @@ export function QuizTakingPanel({
       ...current,
       [questionId]: selectedAnswer,
     }));
+  };
+
+  const handleStartRetake = () => {
+    setAnswers({});
+    setSubmitError(null);
+    setIsRetaking(true);
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -144,6 +159,7 @@ export function QuizTakingPanel({
       });
       setAttempt(result.attempt);
       setAnswers({});
+      setIsRetaking(false);
     } catch (error) {
       setSubmitError(error instanceof Error ? error.message : 'Unable to submit quiz.');
     } finally {
@@ -158,7 +174,17 @@ export function QuizTakingPanel({
           <p className="retro-label">Self-Grading Quiz</p>
           <h2>{quiz.title}</h2>
         </div>
-        <StatusBadge status={attempt ? 'submitted' : quiz.isPublished ? 'open' : 'not published'} />
+        <StatusBadge
+          status={
+            isRetaking
+              ? 'retake in progress'
+              : attempt
+                ? 'submitted'
+                : quiz.isPublished
+                  ? 'open'
+                  : 'not published'
+          }
+        />
       </div>
 
       <dl className="detail-list quiz-summary-list">
@@ -169,7 +195,9 @@ export function QuizTakingPanel({
         <div>
           <dt>Answered</dt>
           <dd>
-            {attempt ? `${attempt.answeredCount}/${attempt.questionCount}` : `${answeredCount}/${quiz.questions.length}`}
+            {attempt && !isRetaking
+              ? `${attempt.answeredCount}/${attempt.questionCount}`
+              : `${answeredCount}/${quiz.questions.length}`}
           </dd>
         </div>
         <div>
@@ -187,8 +215,8 @@ export function QuizTakingPanel({
           <p className="retro-label">Your Score</p>
           <h3>{scoreLabel(attempt)}</h3>
           <p className="muted">
-            Latest score submitted {formatTimestamp(attempt.submittedAt)}. You may change your
-            answers and submit again; answer keys stay hidden.
+            Latest score submitted {formatTimestamp(attempt.submittedAt)}. Use the Retake Quiz
+            button at the bottom when you are ready to try again. Answer keys stay hidden.
           </p>
         </div>
       )}
@@ -228,7 +256,7 @@ export function QuizTakingPanel({
                           name={question.id}
                           value={choice}
                           checked={answers[question.id] === choice}
-                          disabled={isSubmitting || isPreview || !isStudent}
+                          disabled={isSubmitting || isPreview || !isStudent || !quizOpenForAnswers}
                           onChange={(event) =>
                             handleAnswerChange(question.id, event.currentTarget.value)
                           }
@@ -243,7 +271,7 @@ export function QuizTakingPanel({
                   Answer
                   <input
                     value={answers[question.id] ?? ''}
-                    disabled={isSubmitting || isPreview || !isStudent}
+                    disabled={isSubmitting || isPreview || !isStudent || !quizOpenForAnswers}
                     onChange={(event) => handleAnswerChange(question.id, event.target.value)}
                   />
                 </label>
@@ -251,10 +279,21 @@ export function QuizTakingPanel({
             </fieldset>
           ))}
 
-          <button className="gradient-button" type="submit" disabled={!canSubmit || isSubmitting}>
-            {isSubmitting ? 'Grading...' : attempt ? 'Update Quiz Score' : 'Submit Quiz'}
-          </button>
-          {!canSubmit && isStudent && !isPreview && (
+          {attempt && !isRetaking ? (
+            <button
+              className="gradient-button"
+              type="button"
+              disabled={isSubmitting || !isStudent || isPreview}
+              onClick={handleStartRetake}
+            >
+              Retake Quiz
+            </button>
+          ) : (
+            <button className="gradient-button" type="submit" disabled={!canSubmit || isSubmitting}>
+              {isSubmitting ? 'Grading...' : isRetaking ? 'Submit Retake' : 'Submit Quiz'}
+            </button>
+          )}
+          {quizOpenForAnswers && !canSubmit && isStudent && !isPreview && (
             <p className="muted">Answer every question to unlock submit.</p>
           )}
         </form>
