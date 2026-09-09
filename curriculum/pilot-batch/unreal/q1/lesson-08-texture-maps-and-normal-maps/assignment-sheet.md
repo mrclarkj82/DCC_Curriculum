@@ -12,6 +12,12 @@ I can import texture maps and connect base color, roughness, and normal maps cor
 - Roughness and Normal maps carry non-color data
 - Texture Coordinate and Multiply nodes can adjust tiling or scale
 
+## UE6 Article Assignment
+
+1. Read [Unreal Engine 6 Will Merge UE5 and UEFN into a Single Unified Engine](https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-?utm_source=chatgpt.com).
+2. Complete the five-question multiple-choice article check in DCC Creative Studio.
+3. Submit the quiz score before moving on to the material-build evidence.
+
 ## Required Steps
 
 1. Import or locate a base color texture.

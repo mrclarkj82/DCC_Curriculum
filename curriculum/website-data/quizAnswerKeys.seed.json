@@ -738,5 +738,39 @@
         "explanation": "This checks whether students can name real pre-export checks that affect the viewer or submission workflow."
       }
     ]
+  },
+  {
+    "id": "ue-q1-article-quiz-01",
+    "quizId": "ue-q1-article-quiz-01",
+    "programAreaId": "unreal-engine",
+    "title": "UE6 Unified Engine Article Check",
+    "questionCount": 5,
+    "answers": [
+      {
+        "questionId": "ue-q1-article-quiz-01-q01",
+        "correctAnswer": "Verse",
+        "explanation": "The article says UE6's programming model will shift from C++ toward Verse."
+      },
+      {
+        "questionId": "ue-q1-article-quiz-01-q02",
+        "correctAnswer": "Once the UE6 framework is sufficiently mature",
+        "explanation": "Epic says the older Blueprints and Actors systems will be deprecated only after the UE6 framework is sufficiently mature, with conversion tools promised."
+      },
+      {
+        "questionId": "ue-q1-article-quiz-01-q03",
+        "correctAnswer": "Make content, code, and economies portable across games, ecosystems, and engines",
+        "explanation": "The interoperability plan is intended to let creative and technical work move across games, ecosystems, and engines through open standards."
+      },
+      {
+        "questionId": "ue-q1-article-quiz-01-q04",
+        "correctAnswer": "Using an open UE6 model for Fortnite cosmetics that can work across games",
+        "explanation": "Epic's first proof of concept is an open UE6 cosmetics model that lets compatible outfits work in Fortnite and other games."
+      },
+      {
+        "questionId": "ue-q1-article-quiz-01-q05",
+        "correctAnswer": "Late 2027",
+        "explanation": "The article says UE6 Early Access is expected in late 2027."
+      }
+    ]
   }
 ]

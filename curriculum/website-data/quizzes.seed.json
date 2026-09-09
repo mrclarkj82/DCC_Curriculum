@@ -1613,5 +1613,88 @@
         "tag": "workflow"
       }
     ]
+  },
+  {
+    "id": "ue-q1-article-quiz-01",
+    "programAreaId": "unreal-engine",
+    "title": "UE6 Unified Engine Article Check",
+    "quarter": "Q1",
+    "lessonIds": [
+      "ue-q1-l08"
+    ],
+    "status": "pilot-ready",
+    "isPublished": true,
+    "questions": [
+      {
+        "id": "ue-q1-article-quiz-01-q01",
+        "type": "multiple-choice",
+        "text": "According to the article, which programming language is part of Unreal Engine 6's planned programming-model shift?",
+        "choices": [
+          "Python",
+          "Verse",
+          "JavaScript",
+          "C#"
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l08",
+        "tag": "ue6-programming-model"
+      },
+      {
+        "id": "ue-q1-article-quiz-01-q02",
+        "type": "multiple-choice",
+        "text": "When does Epic say Blueprints and the Actors system will eventually be deprecated?",
+        "choices": [
+          "As soon as UE6 Early Access begins",
+          "After every UE5 project is deleted",
+          "Before conversion tools are available",
+          "Once the UE6 framework is sufficiently mature"
+        ],
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l08",
+        "tag": "ue6-framework-transition"
+      },
+      {
+        "id": "ue-q1-article-quiz-01-q03",
+        "type": "multiple-choice",
+        "text": "What is one major goal of Epic's open-standards plan for UE6?",
+        "choices": [
+          "Make content, code, and economies portable across games, ecosystems, and engines",
+          "Limit Unreal projects to Fortnite-only releases",
+          "Prevent developers from sharing assets between tools",
+          "Replace all game-development teams with AI tools"
+        ],
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l08",
+        "tag": "interoperability"
+      },
+      {
+        "id": "ue-q1-article-quiz-01-q04",
+        "type": "multiple-choice",
+        "text": "What does the article identify as Epic's first proof of concept for cross-game interoperability?",
+        "choices": [
+          "Moving all Unreal projects into mobile apps",
+          "Replacing every material with a shared shader",
+          "Using an open UE6 model for Fortnite cosmetics that can work across games",
+          "Giving every developer the same Fortnite island"
+        ],
+        "difficulty": "medium",
+        "lessonId": "ue-q1-l08",
+        "tag": "fortnite-cosmetics"
+      },
+      {
+        "id": "ue-q1-article-quiz-01-q05",
+        "type": "multiple-choice",
+        "text": "When does the article say Unreal Engine 6 Early Access is expected?",
+        "choices": [
+          "Early 2027",
+          "Late 2027",
+          "Late 2026",
+          "Early 2028"
+        ],
+        "difficulty": "easy",
+        "lessonId": "ue-q1-l08",
+        "tag": "ue6-early-access"
+      }
+    ]
   }
 ]

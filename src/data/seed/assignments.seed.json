@@ -368,6 +368,7 @@
     "id": "ue-q1-a08",
     "programAreaId": "unreal-engine",
     "lessonId": "ue-q1-l08",
+    "quizId": "ue-q1-article-quiz-01",
     "title": "Texture Map Material Build",
     "skillFocus": [
       "Texture assets appear in the Content Drawer",
@@ -376,7 +377,14 @@
       "Roughness and Normal maps carry non-color data",
       "Texture Coordinate and Multiply nodes can adjust tiling or scale"
     ],
-    "instructions": "Import or use provided texture maps, check basic texture settings, create a material using base color, roughness, and normal maps, then adjust tiling or scale using texture coordinates or a multiply node.",
+    "instructions": "Read the linked Unreal Engine 6 article and complete the five-question article check. Then import or use provided texture maps, check basic texture settings, create a material using base color, roughness, and normal maps, and adjust tiling or scale using texture coordinates or a multiply node.",
+    "resources": [
+      {
+        "label": "Read: Unreal Engine 6 Will Merge UE5 and UEFN",
+        "url": "https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-?utm_source=chatgpt.com",
+        "description": "Game Developer article used for the five-question assignment."
+      }
+    ],
     "requiredSteps": [
       "Import or locate a base color texture.",
       "Import or locate a roughness texture.",

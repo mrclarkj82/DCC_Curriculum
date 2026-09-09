@@ -45,6 +45,12 @@ What is the difference between color detail and surface depth detail?
 
 Students import or use provided texture maps, check basic texture settings, create a material using base color, roughness, and normal maps, then adjust tiling/scale using texture coordinates or a multiply node.
 
+## UE6 Article Assignment
+
+- Read [Unreal Engine 6 Will Merge UE5 and UEFN into a Single Unified Engine](https://www.gamedeveloper.com/programming/unreal-engine-6-will-merge-ue5-and-uefn-into-a-single-unified-engine-?utm_source=chatgpt.com).
+- Complete the five-question self-grading article check embedded in this lesson.
+- Submit all five answers before continuing to the material-build evidence.
+
 ## Submission Checklist
 
 - Screenshot of imported texture assets.

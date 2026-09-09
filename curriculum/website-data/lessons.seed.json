@@ -567,6 +567,7 @@
     },
     "assignment": {
       "id": "ue-q1-a08",
+      "quizId": "ue-q1-article-quiz-01",
       "title": "Texture Map Material Build",
       "submissionType": "screenshot-set-and-reflection",
       "evidenceRequired": [
