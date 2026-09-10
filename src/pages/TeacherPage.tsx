@@ -165,6 +165,53 @@ function formatQuizScore(attempt: QuizAttempt | undefined): string {
   return `${attempt.score}/${attempt.questionCount} (${Math.round(attempt.percentage)}%)`;
 }
 
+const gradeNameCollator = new Intl.Collator(undefined, {
+  sensitivity: 'base',
+  numeric: true,
+});
+
+const nameSuffixes = new Set(['jr', 'jr.', 'sr', 'sr.', 'ii', 'iii', 'iv', 'v']);
+
+function gradeRosterNameSortParts(name: string): [lastName: string, remainingName: string] {
+  const normalizedName = name.trim().replace(/\s+/g, ' ');
+
+  if (!normalizedName) {
+    return ['', ''];
+  }
+
+  const commaIndex = normalizedName.indexOf(',');
+
+  if (commaIndex >= 0) {
+    return [
+      normalizedName.slice(0, commaIndex).trim(),
+      normalizedName.slice(commaIndex + 1).trim(),
+    ];
+  }
+
+  const nameParts = normalizedName.split(' ');
+  let lastNameIndex = nameParts.length - 1;
+
+  if (lastNameIndex > 0 && nameSuffixes.has(nameParts[lastNameIndex].toLowerCase())) {
+    lastNameIndex -= 1;
+  }
+
+  return [
+    nameParts[lastNameIndex],
+    nameParts.filter((_, index) => index !== lastNameIndex).join(' '),
+  ];
+}
+
+function compareGradeRosterNames(firstName: string, secondName: string): number {
+  const [firstLastName, firstRemainingName] = gradeRosterNameSortParts(firstName);
+  const [secondLastName, secondRemainingName] = gradeRosterNameSortParts(secondName);
+
+  return (
+    gradeNameCollator.compare(firstLastName, secondLastName) ||
+    gradeNameCollator.compare(firstRemainingName, secondRemainingName) ||
+    gradeNameCollator.compare(firstName, secondName)
+  );
+}
+
 function normalizedPeriodToken(period: string): string {
   return period
     .trim()
@@ -1834,6 +1881,34 @@ export function TeacherPage() {
                 const attemptsByUid = new Map(
                   selectedGradeAttempts.map((attempt) => [attempt.uid, attempt]),
                 );
+                const gradeStudentsByUid = new Map(
+                  selectedGradeStudents.map((student) => [student.uid, student]),
+                );
+                const orderedGradeStudentIds = [...selectedGradeClass.studentIds].sort(
+                  (firstUid, secondUid) => {
+                    const firstStudent = gradeStudentsByUid.get(firstUid);
+                    const secondStudent = gradeStudentsByUid.get(secondUid);
+                    const firstAttempt = attemptsByUid.get(firstUid);
+                    const secondAttempt = attemptsByUid.get(secondUid);
+                    const firstName =
+                      firstStudent?.displayName ||
+                      firstAttempt?.studentName ||
+                      firstStudent?.email ||
+                      firstAttempt?.studentEmail ||
+                      firstUid;
+                    const secondName =
+                      secondStudent?.displayName ||
+                      secondAttempt?.studentName ||
+                      secondStudent?.email ||
+                      secondAttempt?.studentEmail ||
+                      secondUid;
+
+                    return (
+                      compareGradeRosterNames(firstName, secondName) ||
+                      gradeNameCollator.compare(firstUid, secondUid)
+                    );
+                  },
+                );
                 const averagePercentage = selectedGradeAttempts.length
                   ? Math.round(
                       selectedGradeAttempts.reduce(
@@ -1923,10 +1998,8 @@ export function TeacherPage() {
                               </tr>
                             </thead>
                             <tbody>
-                              {selectedGradeClass.studentIds.map((uid) => {
-                                const student = selectedGradeStudents.find(
-                                  (nextStudent) => nextStudent.uid === uid,
-                                );
+                              {orderedGradeStudentIds.map((uid) => {
+                                const student = gradeStudentsByUid.get(uid);
                                 const attempt = attemptsByUid.get(uid);
                                 const isGradeAttemptExpanded =
                                   attempt && expandedGradeAttemptId === attempt.id;
