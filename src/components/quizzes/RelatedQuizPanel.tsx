@@ -2,13 +2,14 @@ import { ErrorState } from '../ErrorState';
 import { LoadingState } from '../LoadingState';
 import { useAsyncData } from '../../hooks/useAsyncData';
 import { getQuizById } from '../../services/quizService';
-import type { ClassRecord, UserProfile, ViewerMode } from '../../types';
+import type { ClassRecord, ResourceLink, UserProfile, ViewerMode } from '../../types';
 import { QuizTakingPanel } from './QuizTakingPanel';
 
 interface RelatedQuizPanelProps {
   quizId?: string;
   lessonId?: string;
   classRecord: ClassRecord | null;
+  resources?: ResourceLink[];
   userProfile: UserProfile | null;
   viewerMode: ViewerMode;
 }
@@ -17,10 +18,15 @@ export function RelatedQuizPanel({
   quizId,
   lessonId,
   classRecord,
+  resources,
   userProfile,
   viewerMode,
 }: RelatedQuizPanelProps) {
-  const { data: quiz, isLoading, error } = useAsyncData(
+  const {
+    data: quiz,
+    isLoading,
+    error,
+  } = useAsyncData(
     () => (quizId ? getQuizById(quizId) : Promise.resolve(null)),
     [quizId],
     'Unable to load the linked quiz from Firestore.',
@@ -63,6 +69,7 @@ export function RelatedQuizPanel({
       quiz={quiz}
       lessonId={lessonId}
       classRecord={classRecord}
+      resources={resources}
       userProfile={userProfile}
       viewerMode={viewerMode}
     />

@@ -8,6 +8,7 @@ import type {
   Quiz,
   QuizAttempt,
   QuizAttemptAnswerInput,
+  ResourceLink,
   UserProfile,
   ViewerMode,
 } from '../../types';
@@ -17,6 +18,7 @@ interface QuizTakingPanelProps {
   quiz: Quiz;
   lessonId?: string;
   classRecord: ClassRecord;
+  resources?: ResourceLink[];
   userProfile: UserProfile;
   viewerMode: ViewerMode;
 }
@@ -55,6 +57,7 @@ export function QuizTakingPanel({
   quiz,
   lessonId,
   classRecord,
+  resources,
   userProfile,
   viewerMode,
 }: QuizTakingPanelProps) {
@@ -233,6 +236,25 @@ export function QuizTakingPanel({
           score.
         </p>
       )}
+
+      {quiz.isPublished && resources?.length ? (
+        <div className="quiz-resource-block">
+          <p className="retro-label">Read Before Answering</p>
+          <div className="resource-link-list">
+            {resources.map((resource) => (
+              <a
+                className="secondary-button"
+                href={resource.url}
+                key={resource.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {resource.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       {quiz.isPublished && (
         <form className="quiz-form" onSubmit={handleSubmit}>

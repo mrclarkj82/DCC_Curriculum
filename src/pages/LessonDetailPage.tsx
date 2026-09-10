@@ -245,7 +245,7 @@ export function LessonDetailPage() {
 
           {assignment && (
             <>
-              {assignment.resources?.length ? (
+              {assignment.resources?.length && !assignment.quizId ? (
                 <section className="card span-two mission-panel">
                   <h2>Lesson Resources</h2>
                   <div className="resource-link-list">
@@ -282,6 +282,7 @@ export function LessonDetailPage() {
                   quizId={assignment.quizId}
                   lessonId={lesson.id}
                   classRecord={classRecord}
+                  resources={assignment.resources}
                   userProfile={userProfile}
                   viewerMode="student"
                 />

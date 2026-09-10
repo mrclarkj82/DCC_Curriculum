@@ -1095,6 +1095,22 @@
   letter-spacing: 0;
 }
 
+.quiz-resource-block {
+  display: grid;
+  gap: var(--space-2);
+  border: 1px solid rgba(var(--color-neon-orange-rgb), 0.5);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(var(--color-neon-orange-rgb), 0.12),
+      rgba(var(--color-neon-pink-rgb), 0.08)
+    ),
+    rgba(8, 3, 18, 0.72);
+  box-shadow: 0 0 18px rgba(var(--color-neon-orange-rgb), 0.2);
+}
+
 .quiz-form {
   display: grid;
   gap: var(--space-4);
