@@ -3996,6 +3996,28 @@
   text-transform: uppercase;
 }
 
+.submission-gallery-roster-note {
+  margin: 0;
+  font-size: 13px;
+}
+
+.submission-gallery-roster-group {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.submission-gallery-roster-group h4 {
+  margin: 0;
+  color: var(--color-neon-cyan);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.submission-gallery-roster-group h4 span {
+  color: var(--color-text-muted);
+}
+
 .submission-gallery-roster-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -4039,12 +4061,24 @@
   background: rgba(var(--color-neon-green-rgb), 0.06);
 }
 
+.submission-gallery-student-button--graded {
+  cursor: pointer;
+  border-color: rgba(var(--color-neon-purple-rgb), 0.4);
+  background: rgba(var(--color-neon-purple-rgb), 0.06);
+}
+
+.submission-gallery-student-button--graded small {
+  color: var(--color-neon-cyan);
+}
+
 .submission-gallery-student-button--submitted small {
   color: var(--color-neon-green);
 }
 
 .submission-gallery-student-button--submitted:hover,
 .submission-gallery-student-button--submitted:focus-visible,
+.submission-gallery-student-button--graded:hover,
+.submission-gallery-student-button--graded:focus-visible,
 .submission-gallery-student-button--selected {
   border-color: rgba(var(--color-neon-cyan-rgb), 0.78);
   box-shadow: var(--glow-cyan);
@@ -4092,6 +4126,36 @@
 .submission-gallery-student h3,
 .submission-gallery-student p {
   margin: 0;
+}
+
+.submission-gallery-graded-toggle {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: var(--space-2);
+  color: var(--color-neon-green);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.submission-gallery-graded-toggle input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-neon-green);
+  cursor: pointer;
+}
+
+.submission-gallery-graded-toggle:has(input:disabled) {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.submission-gallery-grading-error {
+  margin: 0;
+  color: var(--color-danger);
 }
 
 .submission-gallery-student h3 {

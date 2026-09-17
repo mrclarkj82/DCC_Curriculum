@@ -332,6 +332,8 @@ export interface StudentSubmission {
   teacherFeedback: string;
   reviewedBy: string;
   reviewedAt: unknown | null;
+  gradedBy: string;
+  gradedAt: unknown | null;
   createdAt?: unknown;
   updatedAt?: unknown;
   submittedAt?: unknown;

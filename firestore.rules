@@ -441,6 +441,8 @@ service cloud.firestore {
         'teacherFeedback',
         'reviewedBy',
         'reviewedAt',
+        'gradedBy',
+        'gradedAt',
         'createdAt',
         'updatedAt',
         'submittedAt',
@@ -567,6 +569,8 @@ service cloud.firestore {
         && request.resource.data.textResponse is string
         && request.resource.data.textResponse.size() <= 8000
         && request.resource.data.evidenceChecklist is list
+        && request.resource.data.gradedBy == ''
+        && request.resource.data.gradedAt == null
         && request.resource.data.updatedAt == request.time;
     }
 
@@ -637,6 +641,24 @@ service cloud.firestore {
         && request.resource.data.reviewedBy == request.auth.uid
         && request.resource.data.reviewedAt == request.time
         && request.resource.data.updatedAt == request.time;
+    }
+
+    function safeSubmissionGradedUpdate() {
+      return canReviewSubmission(resource.data)
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'gradedBy',
+          'gradedAt'
+        ])
+        && (
+          (
+            request.resource.data.gradedBy == request.auth.uid
+            && request.resource.data.gradedAt == request.time
+          )
+          || (
+            request.resource.data.gradedBy == ''
+            && request.resource.data.gradedAt == null
+          )
+        );
     }
 
     function teacherPreviewResponseAllowedKeys(responseData) {
@@ -946,6 +968,7 @@ service cloud.firestore {
           && (
             safeStudentSubmissionUpdate(submissionId)
             || safeSubmissionReviewUpdate()
+            || safeSubmissionGradedUpdate()
           );
         allow delete: if false;
       }

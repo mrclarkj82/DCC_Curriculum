@@ -1800,6 +1800,7 @@ export function TeacherPage() {
                         students={studentsByClassId[selectedSubmissionClass.id] ?? []}
                         submissions={submissionsByClassId[selectedSubmissionClass.id] ?? []}
                         totalStudentCount={selectedSubmissionClass.studentIds.length}
+                        teacherUid={userProfile?.uid ?? ''}
                       />
                     )}
                   </article>

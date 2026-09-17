@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState, type KeyboardEvent } from 'react';
+import { setSubmissionGraded } from '../../services/submissionService';
 import type { StudentSubmission, SubmissionDriveLink, UserProfile } from '../../types';
 
 interface SubmissionImageGalleryProps {
@@ -6,6 +7,7 @@ interface SubmissionImageGalleryProps {
   students: UserProfile[];
   submissions: StudentSubmission[];
   totalStudentCount: number;
+  teacherUid: string;
 }
 
 interface SubmissionImageSlide {
@@ -152,11 +154,14 @@ export function SubmissionImageGallery({
   students,
   submissions,
   totalStudentCount,
+  teacherUid,
 }: SubmissionImageGalleryProps) {
   const slides = useMemo(() => slidesFromSubmissions(submissions), [submissions]);
   const roster = useMemo(() => rosterFromStudents(students, submissions), [students, submissions]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageFailed, setImageFailed] = useState(false);
+  const [gradingSubmissionId, setGradingSubmissionId] = useState<string | null>(null);
+  const [gradingError, setGradingError] = useState<string | null>(null);
   const currentSlide = slides[currentIndex] ?? null;
   const currentStudentSlideIndices = currentSlide
     ? slides.flatMap((slide, index) =>
@@ -197,12 +202,71 @@ export function SubmissionImageGallery({
   };
 
   const submittedStudentCount = new Set(submissions.map((submission) => submission.uid)).size;
+  const needsGrading = roster.filter((entry) => entry.submission && !entry.submission.gradedAt);
+  const graded = roster.filter((entry) => entry.submission?.gradedAt);
+  const missing = roster.filter((entry) => !entry.submission);
   const studentName = currentSlide
     ? currentSlide.submission.studentName ||
       currentSlide.submission.studentEmail ||
       currentSlide.submission.uid
     : '';
   const canShowImage = Boolean(currentSlide?.imageUrl) && !imageFailed;
+
+  const markGraded = async (submission: StudentSubmission, isGraded: boolean) => {
+    setGradingError(null);
+    setGradingSubmissionId(submission.id);
+
+    try {
+      await setSubmissionGraded(submission.id, teacherUid, isGraded);
+    } catch (error) {
+      setGradingError(
+        error instanceof Error ? error.message : 'Could not update the grading check.',
+      );
+    } finally {
+      setGradingSubmissionId(null);
+    }
+  };
+
+  const rosterGroup = (label: string, entries: SubmissionRosterEntry[]) =>
+    entries.length ? (
+      <div className="submission-gallery-roster-group" key={label}>
+        <h4>
+          {label} <span>({entries.length})</span>
+        </h4>
+        <div className="submission-gallery-roster-grid">
+          {entries.map((entry) => {
+            const firstSlideIndex = slides.findIndex((slide) => slide.submission.uid === entry.uid);
+            const isSelected = currentSlide?.submission.uid === entry.uid;
+
+            return (
+              <button
+                className={`submission-gallery-student-button${
+                  !entry.submission
+                    ? ' submission-gallery-student-button--missing'
+                    : entry.submission.gradedAt
+                      ? ' submission-gallery-student-button--graded'
+                      : ' submission-gallery-student-button--submitted'
+                }${isSelected ? ' submission-gallery-student-button--selected' : ''}`}
+                type="button"
+                key={entry.uid}
+                disabled={!entry.submission || firstSlideIndex < 0}
+                aria-pressed={isSelected}
+                onClick={() => setCurrentIndex(firstSlideIndex)}
+              >
+                <span>{entry.studentName}</span>
+                <small>
+                  {entry.submission
+                    ? entry.submission.gradedAt
+                      ? 'Graded'
+                      : entry.submission.status.replace('_', ' ')
+                    : 'No submission'}
+                </small>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    ) : null;
 
   return (
     <section
@@ -218,36 +282,16 @@ export function SubmissionImageGallery({
             <h3>Everyone In This Class</h3>
           </div>
           <strong>
-            {submittedStudentCount}/{totalStudentCount} submitted
+            {submittedStudentCount}/{totalStudentCount} submitted · {needsGrading.length} to grade
           </strong>
         </header>
-
-        <div className="submission-gallery-roster-grid">
-          {roster.map((entry) => {
-            const firstSlideIndex = slides.findIndex((slide) => slide.submission.uid === entry.uid);
-            const isSelected = currentSlide?.submission.uid === entry.uid;
-
-            return (
-              <button
-                className={`submission-gallery-student-button${
-                  entry.submission
-                    ? ' submission-gallery-student-button--submitted'
-                    : ' submission-gallery-student-button--missing'
-                }${isSelected ? ' submission-gallery-student-button--selected' : ''}`}
-                type="button"
-                key={entry.uid}
-                disabled={!entry.submission || firstSlideIndex < 0}
-                aria-pressed={isSelected}
-                onClick={() => setCurrentIndex(firstSlideIndex)}
-              >
-                <span>{entry.studentName}</span>
-                <small>
-                  {entry.submission ? entry.submission.status.replace('_', ' ') : 'No submission'}
-                </small>
-              </button>
-            );
-          })}
-        </div>
+        <p className="muted submission-gallery-roster-note">
+          Check a student as graded after reviewing their evidence. Updated submissions return to
+          “Needs grading.”
+        </p>
+        {rosterGroup('Needs grading', needsGrading)}
+        {rosterGroup('Graded', graded)}
+        {rosterGroup('No submission', missing)}
       </section>
 
       {!currentSlide ? (
@@ -271,6 +315,23 @@ export function SubmissionImageGallery({
               <p className="muted">
                 Evidence {currentStudentImageNumber} of {currentStudentSlideIndices.length}
               </p>
+              <label className="submission-gallery-graded-toggle">
+                <input
+                  type="checkbox"
+                  checked={Boolean(currentSlide.submission.gradedAt)}
+                  disabled={!teacherUid || gradingSubmissionId !== null}
+                  onChange={(event) =>
+                    void markGraded(currentSlide.submission, event.currentTarget.checked)
+                  }
+                />
+                <span>
+                  {gradingSubmissionId === currentSlide.submission.id
+                    ? 'Saving…'
+                    : currentSlide.submission.gradedAt
+                      ? 'Graded'
+                      : 'Mark as graded'}
+                </span>
+              </label>
             </div>
             <button
               className="outline-button submission-gallery-nav-button"
@@ -281,6 +342,11 @@ export function SubmissionImageGallery({
               Next &rarr;
             </button>
           </header>
+          {gradingError && (
+            <p className="submission-gallery-grading-error" role="alert">
+              {gradingError}
+            </p>
+          )}
 
           <div
             className="submission-gallery-evidence-strip"

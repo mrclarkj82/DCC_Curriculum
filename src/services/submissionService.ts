@@ -310,6 +310,8 @@ function submissionFromData(id: string, data: Record<string, unknown>): StudentS
     teacherFeedback: String(data.teacherFeedback ?? ''),
     reviewedBy: String(data.reviewedBy ?? ''),
     reviewedAt: data.reviewedAt ?? null,
+    gradedBy: String(data.gradedBy ?? ''),
+    gradedAt: data.gradedAt ?? null,
     createdAt: data.createdAt,
     updatedAt: data.updatedAt,
     submittedAt: data.submittedAt,
@@ -384,6 +386,8 @@ async function writeSubmission(
     textResponse: payload.textResponse.trim(),
     evidenceChecklist: payload.evidenceChecklist,
     status,
+    gradedBy: '',
+    gradedAt: null,
     updatedAt: serverTimestamp(),
   };
 
@@ -515,6 +519,17 @@ export async function updateSubmissionReviewStatus({
     reviewedBy,
     reviewedAt: serverTimestamp(),
     updatedAt: serverTimestamp(),
+  });
+}
+
+export async function setSubmissionGraded(
+  submissionId: string,
+  teacherUid: string,
+  graded: boolean,
+): Promise<void> {
+  await updateDoc(doc(db, dccDocumentPath('submissions', submissionId)), {
+    gradedBy: graded ? teacherUid : '',
+    gradedAt: graded ? serverTimestamp() : null,
   });
 }
 
