@@ -610,7 +610,7 @@ service cloud.firestore {
           )
           || (
             request.resource.data.status == 'resubmitted'
-            && resource.data.status == 'needs_revision'
+            && resource.data.status in ['submitted', 'resubmitted', 'needs_revision', 'accepted']
             && request.resource.data.resubmittedAt == request.time
           )
         );

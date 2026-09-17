@@ -4141,6 +4141,14 @@
   text-transform: uppercase;
 }
 
+.submission-gallery-grading-state {
+  color: var(--color-neon-orange);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .submission-gallery-graded-toggle input {
   width: 18px;
   height: 18px;

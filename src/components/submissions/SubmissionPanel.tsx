@@ -9,7 +9,6 @@ import {
   resubmitWork,
   submitWork,
   subscribeToSubmission,
-  updateSubmission,
   type SubmissionLinkInput,
 } from '../../services/submissionService';
 import type {
@@ -93,7 +92,7 @@ export function SubmissionPanel({
     }
 
     if (submission) {
-      return isSaving ? 'Saving...' : 'Update Evidence';
+      return isSaving ? 'Resubmitting...' : 'Resubmit Evidence';
     }
 
     return isSaving ? 'Submitting...' : 'Submit Evidence';
@@ -191,12 +190,9 @@ export function SubmissionPanel({
         evidenceChecklist,
       };
 
-      if (submission?.status === 'needs_revision') {
+      if (submission) {
         await resubmitWork(payload);
-        setMessage('Evidence resubmitted for teacher review.');
-      } else if (submission) {
-        await updateSubmission(payload);
-        setMessage('Submission updated.');
+        setMessage('Evidence resubmitted and queued for teacher grading.');
       } else {
         await submitWork(payload);
         setMessage('Evidence submitted.');

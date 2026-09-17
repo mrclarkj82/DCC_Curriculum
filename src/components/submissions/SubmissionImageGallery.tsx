@@ -258,7 +258,7 @@ export function SubmissionImageGallery({
                   {entry.submission
                     ? entry.submission.gradedAt
                       ? 'Graded'
-                      : entry.submission.status.replace('_', ' ')
+                      : `Needs grading · ${entry.submission.status.replace('_', ' ')}`
                     : 'No submission'}
                 </small>
               </button>
@@ -314,6 +314,11 @@ export function SubmissionImageGallery({
               <h3>{studentName}</h3>
               <p className="muted">
                 Evidence {currentStudentImageNumber} of {currentStudentSlideIndices.length}
+              </p>
+              <p className="submission-gallery-grading-state">
+                {currentSlide.submission.gradedAt
+                  ? 'Graded'
+                  : `Needs grading · ${currentSlide.submission.status.replace('_', ' ')}`}
               </p>
               <label className="submission-gallery-graded-toggle">
                 <input

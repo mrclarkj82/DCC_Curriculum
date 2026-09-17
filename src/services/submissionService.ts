@@ -453,10 +453,6 @@ export async function submitWork(payload: SubmissionWritePayload): Promise<void>
   await writeSubmission(payload, 'submitted');
 }
 
-export async function updateSubmission(payload: SubmissionWritePayload): Promise<void> {
-  await writeSubmission(payload, 'submitted');
-}
-
 export async function resubmitWork(payload: SubmissionWritePayload): Promise<void> {
   await writeSubmission(payload, 'resubmitted');
 }
