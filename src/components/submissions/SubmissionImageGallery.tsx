@@ -11,6 +11,7 @@ interface SubmissionImageGalleryProps {
 interface SubmissionImageSlide {
   id: string;
   imageUrl: string | null;
+  drivePreviewUrl: string | null;
   link: SubmissionDriveLink | null;
   submission: StudentSubmission;
 }
@@ -24,6 +25,11 @@ interface SubmissionRosterEntry {
 function googleDriveFileId(url: string): string | null {
   try {
     const parsedUrl = new URL(url);
+
+    if (parsedUrl.hostname !== 'drive.google.com') {
+      return null;
+    }
+
     const filePathMatch = parsedUrl.pathname.match(/\/file\/d\/([^/]+)/i);
 
     if (filePathMatch?.[1]) {
@@ -35,6 +41,11 @@ function googleDriveFileId(url: string): string | null {
   } catch {
     return null;
   }
+}
+
+function drivePreviewUrl(link: SubmissionDriveLink): string | null {
+  const fileId = googleDriveFileId(link.url);
+  return fileId ? `https://drive.google.com/file/d/${encodeURIComponent(fileId)}/preview` : null;
 }
 
 function imagePreviewUrl(link: SubmissionDriveLink): string | null {
@@ -66,20 +77,49 @@ function slidesFromSubmissions(submissions: StudentSubmission[]): SubmissionImag
     )
     .flatMap((submission) => {
       const links = [...submission.driveLinks, ...submission.otherLinks];
-      const imageLinks = links
-        .map((link) => ({ imageUrl: imagePreviewUrl(link), link }))
-        .filter((entry) => entry.imageUrl !== null);
-      const displayedLinks = imageLinks.length
-        ? imageLinks
-        : [{ imageUrl: null, link: links[0] ?? null }];
+      const displayedLinks = links.length ? links : [null];
 
-      return displayedLinks.map((entry, linkIndex) => ({
+      return displayedLinks.map((link, linkIndex) => ({
         id: `${submission.id}-${linkIndex}`,
-        imageUrl: entry.imageUrl,
-        link: entry.link,
+        imageUrl: link ? imagePreviewUrl(link) : null,
+        drivePreviewUrl: link ? drivePreviewUrl(link) : null,
+        link,
         submission,
       }));
     });
+}
+
+interface EvidenceThumbnailProps {
+  slide: SubmissionImageSlide;
+  index: number;
+  selected: boolean;
+  onSelect: () => void;
+}
+
+function EvidenceThumbnail({ slide, index, selected, onSelect }: EvidenceThumbnailProps) {
+  const [previewFailed, setPreviewFailed] = useState(false);
+
+  return (
+    <button
+      className={`submission-gallery-evidence-button${selected ? ' submission-gallery-evidence-button--selected' : ''}`}
+      type="button"
+      aria-pressed={selected}
+      aria-label={`View evidence ${index + 1}: ${slide.link?.label || 'submitted link'}`}
+      onClick={onSelect}
+    >
+      {slide.imageUrl && !previewFailed ? (
+        <img src={slide.imageUrl} alt="" loading="lazy" onError={() => setPreviewFailed(true)} />
+      ) : (
+        <span className="submission-gallery-evidence-placeholder" aria-hidden="true">
+          {index + 1}
+        </span>
+      )}
+      <span className="submission-gallery-evidence-caption">
+        <strong>Evidence {index + 1}</strong>
+        <small>{slide.link?.label || 'Submitted evidence'}</small>
+      </span>
+    </button>
+  );
 }
 
 function rosterFromStudents(
@@ -118,6 +158,12 @@ export function SubmissionImageGallery({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageFailed, setImageFailed] = useState(false);
   const currentSlide = slides[currentIndex] ?? null;
+  const currentStudentSlideIndices = currentSlide
+    ? slides.flatMap((slide, index) =>
+        slide.submission.uid === currentSlide.submission.uid ? [index] : [],
+      )
+    : [];
+  const currentStudentImageNumber = currentStudentSlideIndices.indexOf(currentIndex) + 1;
 
   useEffect(() => {
     setCurrentIndex((index) => Math.min(index, Math.max(slides.length - 1, 0)));
@@ -128,11 +174,14 @@ export function SubmissionImageGallery({
   }, [currentSlide?.id]);
 
   const move = (direction: -1 | 1) => {
-    if (slides.length < 2) {
+    if (currentStudentSlideIndices.length < 2) {
       return;
     }
 
-    setCurrentIndex((index) => (index + direction + slides.length) % slides.length);
+    const nextPosition =
+      (currentStudentImageNumber - 1 + direction + currentStudentSlideIndices.length) %
+      currentStudentSlideIndices.length;
+    setCurrentIndex(currentStudentSlideIndices[nextPosition]);
   };
 
   const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
@@ -211,7 +260,7 @@ export function SubmissionImageGallery({
             <button
               className="outline-button submission-gallery-nav-button"
               type="button"
-              disabled={slides.length < 2}
+              disabled={currentStudentSlideIndices.length < 2}
               onClick={() => move(-1)}
             >
               &larr; Previous
@@ -220,18 +269,34 @@ export function SubmissionImageGallery({
               <p className="retro-label">Student Submission</p>
               <h3>{studentName}</h3>
               <p className="muted">
-                {currentIndex + 1} of {slides.length}
+                Evidence {currentStudentImageNumber} of {currentStudentSlideIndices.length}
               </p>
             </div>
             <button
               className="outline-button submission-gallery-nav-button"
               type="button"
-              disabled={slides.length < 2}
+              disabled={currentStudentSlideIndices.length < 2}
               onClick={() => move(1)}
             >
               Next &rarr;
             </button>
           </header>
+
+          <div
+            className="submission-gallery-evidence-strip"
+            role="group"
+            aria-label={`${studentName}'s evidence links`}
+          >
+            {currentStudentSlideIndices.map((slideIndex, index) => (
+              <EvidenceThumbnail
+                key={slides[slideIndex].id}
+                slide={slides[slideIndex]}
+                index={index}
+                selected={slideIndex === currentIndex}
+                onSelect={() => setCurrentIndex(slideIndex)}
+              />
+            ))}
+          </div>
 
           <div className="submission-gallery-layout">
             <figure className="submission-gallery-image-frame">
@@ -244,20 +309,35 @@ export function SubmissionImageGallery({
                   decoding="async"
                   onError={() => setImageFailed(true)}
                 />
+              ) : currentSlide.drivePreviewUrl ? (
+                <div className="submission-gallery-drive-preview">
+                  <iframe
+                    src={currentSlide.drivePreviewUrl}
+                    title={`${studentName}'s submitted image ${currentStudentImageNumber}`}
+                    loading="lazy"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                  />
+                  <p className="muted">
+                    If Drive cannot display this preview, open the original link below while signed
+                    in to the account with access.
+                  </p>
+                </div>
               ) : (
                 <div className="submission-gallery-image-fallback">
                   <p>Image preview unavailable.</p>
-                  {currentSlide.link && (
-                    <a
-                      className="secondary-button"
-                      href={currentSlide.link.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Open Submitted Evidence
-                    </a>
-                  )}
                 </div>
+              )}
+              {currentSlide.link && (
+                <figcaption className="submission-gallery-open-original">
+                  <a
+                    className="secondary-button"
+                    href={currentSlide.link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Open Original Evidence {currentStudentImageNumber}
+                  </a>
+                </figcaption>
               )}
             </figure>
 

@@ -4102,6 +4102,64 @@
   min-width: 140px;
 }
 
+.submission-gallery-evidence-strip {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding: var(--space-2);
+}
+
+.submission-gallery-evidence-button {
+  display: grid;
+  flex: 0 0 150px;
+  gap: var(--space-2);
+  min-width: 0;
+  border: 1px solid rgba(var(--color-neon-purple-rgb), 0.45);
+  border-radius: var(--radius-md);
+  padding: var(--space-2);
+  color: var(--color-text-main);
+  background: rgba(8, 3, 18, 0.72);
+  text-align: left;
+  cursor: pointer;
+}
+
+.submission-gallery-evidence-button:hover,
+.submission-gallery-evidence-button:focus-visible,
+.submission-gallery-evidence-button--selected {
+  border-color: rgba(var(--color-neon-cyan-rgb), 0.8);
+  box-shadow: var(--glow-cyan);
+}
+
+.submission-gallery-evidence-button img,
+.submission-gallery-evidence-placeholder {
+  width: 100%;
+  height: 84px;
+  border-radius: var(--radius-md);
+  object-fit: contain;
+  background: rgba(3, 2, 10, 0.9);
+}
+
+.submission-gallery-evidence-placeholder {
+  display: grid;
+  place-items: center;
+  color: var(--color-neon-orange);
+  font-family: var(--font-display);
+  font-size: 28px;
+}
+
+.submission-gallery-evidence-caption {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.submission-gallery-evidence-caption small {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .submission-gallery-layout {
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(260px, 0.8fr);
@@ -4111,6 +4169,7 @@
 
 .submission-gallery-image-frame {
   display: flex;
+  flex-direction: column;
   min-height: 520px;
   align-items: center;
   justify-content: center;
@@ -4129,9 +4188,38 @@
 .submission-gallery-image {
   display: block;
   width: 100%;
-  height: 100%;
-  max-height: 72vh;
+  flex: 1;
+  min-height: 0;
+  max-height: 68vh;
   object-fit: contain;
+}
+
+.submission-gallery-drive-preview {
+  display: grid;
+  flex: 1;
+  gap: var(--space-2);
+  width: 100%;
+  min-height: 420px;
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.submission-gallery-drive-preview iframe {
+  width: 100%;
+  min-height: 360px;
+  border: 0;
+  border-radius: var(--radius-md);
+}
+
+.submission-gallery-drive-preview p {
+  margin: 0;
+}
+
+.submission-gallery-open-original {
+  width: 100%;
+  border-top: 1px solid rgba(var(--color-neon-cyan-rgb), 0.3);
+  padding: var(--space-3);
+  text-align: center;
 }
 
 .submission-gallery-image-fallback {

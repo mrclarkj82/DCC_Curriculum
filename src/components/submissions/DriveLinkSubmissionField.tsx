@@ -15,9 +15,7 @@ export function DriveLinkSubmissionField({
 }: DriveLinkSubmissionFieldProps) {
   const updateLink = (index: number, field: keyof SubmissionLinkInput, value: string) => {
     onChange(
-      links.map((link, linkIndex) =>
-        linkIndex === index ? { ...link, [field]: value } : link,
-      ),
+      links.map((link, linkIndex) => (linkIndex === index ? { ...link, [field]: value } : link)),
     );
   };
 
@@ -32,7 +30,7 @@ export function DriveLinkSubmissionField({
         <p className="retro-label">Evidence Links</p>
         <p className="muted">
           Upload evidence to Google Drive first, make sure your teacher can view it, then paste the
-          link here. Google Docs and YouTube links are also accepted.
+          link here. Google Docs, YouTube, and direct image links are also accepted.
         </p>
       </div>
 
@@ -49,7 +47,7 @@ export function DriveLinkSubmissionField({
               />
             </label>
             <label>
-              Google Drive / Docs / YouTube URL
+              Google Drive / Docs / YouTube / Image URL
               <input
                 type="url"
                 value={link.url}

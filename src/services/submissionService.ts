@@ -205,15 +205,25 @@ function linkTypeForUrl(url: string): SubmissionDriveLink['type'] {
 }
 
 export function isAcceptedSubmissionUrl(url: string): boolean {
-  const normalizedUrl = url.trim().toLowerCase();
+  try {
+    const parsedUrl = new URL(url.trim());
 
-  return (
-    normalizedUrl.startsWith('https://drive.google.com/') ||
-    normalizedUrl.startsWith('https://docs.google.com/') ||
-    normalizedUrl.startsWith('https://youtube.com/') ||
-    normalizedUrl.startsWith('https://www.youtube.com/') ||
-    normalizedUrl.startsWith('https://youtu.be/')
-  );
+    if (parsedUrl.protocol !== 'https:') {
+      return false;
+    }
+
+    return (
+      [
+        'drive.google.com',
+        'docs.google.com',
+        'youtube.com',
+        'www.youtube.com',
+        'youtu.be',
+      ].includes(parsedUrl.hostname) || /\.(avif|gif|jpe?g|png|webp)$/i.test(parsedUrl.pathname)
+    );
+  } catch {
+    return false;
+  }
 }
 
 function normalizeLinks(links: SubmissionLinkInput[]): {
@@ -228,14 +238,14 @@ function normalizeLinks(links: SubmissionLinkInput[]): {
     .filter((link) => link.url);
 
   if (!normalizedLinks.length) {
-    throw new Error('Add at least one Google Drive, Google Docs, or YouTube evidence link.');
+    throw new Error('Add at least one Google Drive, Google Docs, YouTube, or direct image link.');
   }
 
   const invalidLink = normalizedLinks.find((link) => !isAcceptedSubmissionUrl(link.url));
 
   if (invalidLink) {
     throw new Error(
-      `Unsupported link: ${invalidLink.url}. Paste a Google Drive, Google Docs, YouTube, or youtu.be link.`,
+      `Unsupported link: ${invalidLink.url}. Paste a Google Drive, Google Docs, YouTube, or direct image URL.`,
     );
   }
 
