@@ -4,7 +4,7 @@ Source: `2026-2027 Doral Calendar (List Form).pdf`
 
 Start date: **2026-08-17**
 
-A/B method: The source calendar does not explicitly mark A/B days, so cycle days are inferred. Thursday, August 13, 2026 anchors the cycle as `A`; the lesson sequence starts on the next `A` day, Monday, August 17, 2026. The cycle alternates across valid instructional weekdays only, excluding weekends and actual weekday no-school dates.
+Cycle method: Q1 is inferred from the August 13 A-day anchor through September 23. Teacher confirmation sets September 24 as `C` and September 25 as `B`; the remaining Q1 dates alternate from that B-day restart.
 
 Weekends are not listed as skipped dates. The no-school list below contains only actual weekday non-student days from the school calendar.
 
@@ -24,16 +24,17 @@ Weekends are not listed as skipped dates. The no-school list below contains only
 | 10 | `ue-q1-l10` | Master Materials | 2026-09-16 (A) | 2026-09-15 (B) |  |
 | 11 | `ue-q1-l11` | Importing Static Meshes | 2026-09-18 (A) | 2026-09-17 (B) |  |
 | 12 | `ue-q1-l12` | Migrating Assets Between Projects | 2026-09-23 (A) | 2026-09-22 (B) |  |
-| 13 | `ue-q1-l13` | Quiz 3 and Lumen Lighting | 2026-09-25 (A) | 2026-09-24 (B) |  |
-| 14 | `ue-q1-l14` | Light Types and Scene Lighting | 2026-09-29 (A) | 2026-09-28 (B) |  |
-| 15 | `ue-q1-l15` | Landscapes | 2026-10-01 (A) | 2026-09-30 (B) |  |
-| 16 | `ue-q1-l16` | Foliage, Mini-World, and Blueprint Preview | 2026-10-05 (A) | 2026-10-02 (B) |  |
+| 13 | `ue-q1-l13` | Quiz 3 and Lumen Lighting | 2026-09-28 (A) | 2026-09-25 (B) |  |
+| 14 | `ue-q1-l14` | Light Types and Scene Lighting | 2026-09-30 (A) | 2026-09-29 (B) |  |
+| 15 | `ue-q1-l15` | Landscapes | 2026-10-02 (A) | 2026-10-01 (B) |  |
+| 16 | `ue-q1-l16` | Foliage, Mini-World, and Blueprint Preview | 2026-10-06 (A) | 2026-10-05 (B) |  |
 
 ## Schedule Exceptions
 
 | Date | Cycle | Activity | Note |
 | --- | --- | --- | --- |
 | 2026-08-27 | A | Substitute Day — Alternate Activity | Teacher-directed alternate work replaces the Unreal curriculum lesson for this A day. |
+| 2026-09-24 | C | Halo Gameplay + Written Assignment | DGD students play Halo and complete the teacher-provided written assignment. |
 
 ## No-School Weekdays During This Q1 Schedule Window
 
@@ -49,5 +50,6 @@ Weekends are not listed as skipped dates. The no-school list below contains only
 - Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
 - October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.
 - August 27, 2026 is an A-day curriculum pause for substitute-led alternate work. A-day Lesson 5 and every later Q1 A-day lesson move forward one A-day slot; all B-day lesson dates remain unchanged.
+- September 24, 2026 is a C-day curriculum pause for Halo gameplay and the teacher-provided written assignment. September 25 resumes as B day, so Q1 Lessons 13-16 shift forward and conclude on October 6.
 - Weekends are excluded from instructional scheduling but are not listed as no-school dates.
 - No-school dates list actual weekday non-student days only.

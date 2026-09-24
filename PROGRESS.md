@@ -107,6 +107,7 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 - 2026-08-11: Extended the intermittent signal-corruption flicker to the Hidden Frame landing page, including page tears, title and artwork glitches, a broken archive icon, and reduced-motion support.
 - 2026-08-11: Extended the Hidden Frame signal-corruption flicker to the archive hub, including page tears, title fracture, staggered recovered-file thumbnail glitches, and reduced-motion support.
 - 2026-08-11: Updated repository presentation policy at the teacher's request so explicitly approved PowerPoint decks, presentation tooling, and deck-specific artwork are allowed.
+- 2026-09-24: Corrected the Q1 calendar so September 24 is a C day, September 25 is a B day, and the remaining Q1 A/B lessons shift accordingly; added Halo gameplay plus the teacher-provided written assignment as the September 24 DGD activity.
 
 ## In Progress
 

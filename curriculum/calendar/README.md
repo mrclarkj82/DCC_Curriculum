@@ -4,11 +4,11 @@ This folder contains the data source and generated schedule files used to map DC
 
 ## Source Of Truth
 
-The date-list source is `2026-2027 Doral Calendar (List Form).pdf`. The teacher-provided `Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf` supplies the explicit A/B labels used by the Q2 and Q3 schedules. Source notes are preserved in `school-calendar.source.md`.
+The date-list source is `2026-2027 Doral Calendar (List Form).pdf`. The teacher-provided `Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf` supplies the printed cycle labels, and current teacher directions override those files when the live schedule changes. Source notes are preserved in `school-calendar.source.md`.
 
 ## Generated Files
 
-- `instructional-days.json`: every date from 2026-08-03 through 2027-05-26 with instructional status, source notes, excluded reasons, and schedule cycle days. Q2 and Q3 dates use the explicit block-calendar labels.
+- `instructional-days.json`: every date from 2026-08-03 through 2027-05-26 with instructional status, source notes, excluded reasons, and schedule cycle days. The September 24 C-day correction applies to the remainder of Q1; Q2 and Q3 use the explicit block-calendar labels.
 - `q1-unreal-block-calendar.json`: machine-readable Monday-Friday block calendar for the Q1 Unreal schedule.
 - `q1-unreal-block-calendar.md`: human-readable block calendar view with lesson labels as calendar cell headings.
 - `q1-unreal-lesson-schedule.json`: machine-readable Q1 Unreal lesson schedule with metadata and weekday no-school notes.
@@ -27,8 +27,8 @@ The date-list source is `2026-2027 Doral Calendar (List Form).pdf`. The teacher-
 ## A/B Rules
 
 1. The inferred Q1 cycle remains anchored on 2026-08-13 as `A`, while the Q1 lesson sequence begins on the next `A` day, 2026-08-17.
-2. The teacher-provided block calendar explicitly marks September 24 as a `C` day.
-3. Q2 and Q3 use the printed block-calendar labels rather than continuing the earlier inference through that `C` day.
+2. The teacher confirmed September 24 as a `C` day and September 25 as a `B` day. The remaining Q1 dates alternate from that B-day restart.
+3. Q2 and Q3 use the printed block-calendar labels rather than extending the Q1 inference.
 4. January 5, 2027 is `A`; January 6 is `B`.
 5. Saturdays, Sundays, and no-school days are never scheduled as A/B class meetings.
 
@@ -40,7 +40,7 @@ The website schedule view should render as a Monday-Friday block calendar. Instr
 
 ## Q1 Unreal Pairing Rule
 
-Each Q1 Unreal lesson runs across two valid instructional class days: one A day and one B day. `ue-q1-l01` starts on the valid A/B pair beginning 2026-08-17. `ue-q1-l02` uses the next valid A/B pair, and so on through `ue-q1-l16`, which ends on 2026-10-02.
+Each Q1 Unreal lesson runs across two valid instructional class days: one A day and one B day. `ue-q1-l01` starts on the valid A/B pair beginning 2026-08-17. September 24 is a C-day pause for Halo gameplay and the teacher-provided written assignment. The paired lesson sequence resumes on September 25 (B) and runs through `ue-q1-l16` on 2026-10-06 (A).
 
 ## Q2 File Organization + DaVinci Resolve Pairing Rule
 

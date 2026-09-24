@@ -435,8 +435,8 @@ const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId
             `${label} ${day.date} activity cell has unsupported activityType ${day.activityType}`,
           );
           assert(
-            day.cycleDay === 'A' || day.cycleDay === 'B',
-            `${label} ${day.date} activity cell must have A/B cycleDay`,
+            day.cycleDay === 'A' || day.cycleDay === 'B' || day.cycleDay === 'C',
+            `${label} ${day.date} activity cell must have A/B/C cycleDay`,
           );
           assert(!day.lessonId, `${label} ${day.date} activity cell must not include lessonId`);
 

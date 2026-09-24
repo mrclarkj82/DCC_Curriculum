@@ -294,14 +294,15 @@ for (const cycleMap of [q2CycleMap, q3CycleMap]) {
 
 instructionalDays.metadata.sourceFile = sourceFile;
 instructionalDays.metadata.cycleInference =
-  'The inferred Q1 cycle remains anchored on 2026-08-13 as A, while the Q1 lesson sequence starts on 2026-08-17. Teacher-provided block-calendar labels override Q2 and Q3 schedule dates, including January 5, 2027 as an A day.';
+  'The inferred Q1 cycle remains anchored on 2026-08-13 as A through September 23. The teacher-confirmed C day on September 24 and B day on September 25 shift the remaining Q1 labels. Teacher-provided block-calendar labels govern Q2 and Q3, including January 5, 2027 as an A day.';
 instructionalDays.metadata.calendarAnomalies = [
   ...instructionalDays.metadata.calendarAnomalies.filter(
     (note) =>
       !note.includes('ACT testing does not pause or renumber') &&
-      !note.includes('The explicit block calendar marks September 24, 2026 as a C day'),
+      !note.includes('The explicit block calendar marks September 24, 2026 as a C day') &&
+      !note.includes('September 24, 2026 is a teacher-confirmed C day'),
   ),
-  'The explicit block calendar marks September 24, 2026 as a C day. Q2 and Q3 use the printed A/B labels rather than continuing the earlier inference through that C day.',
+  'September 24, 2026 is a teacher-confirmed C day, September 25 is a B day, and the remaining Q1 A/B labels shift accordingly before Q2 begins from the printed block calendar.',
 ];
 
 const noSchoolDatesBetween = (startDate, endDate) =>

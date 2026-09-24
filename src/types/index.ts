@@ -403,7 +403,7 @@ export type BlockCalendarDayStatus =
 export interface BlockCalendarDay {
   date: string;
   dayOfWeek: string;
-  cycleDay: 'A' | 'B' | null;
+  cycleDay: 'A' | 'B' | 'C' | null;
   status: BlockCalendarDayStatus;
   heading: string;
   lessonLabel: string;

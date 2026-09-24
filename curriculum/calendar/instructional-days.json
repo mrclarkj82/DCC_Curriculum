@@ -6,13 +6,13 @@
     "classesBegin": "2026-08-12",
     "lastStudentDay": "2027-05-20",
     "scheduleStartDate": "2026-08-17",
-    "cycleInference": "The inferred Q1 cycle remains anchored on 2026-08-13 as A, while the Q1 lesson sequence starts on 2026-08-17. Teacher-provided block-calendar labels override Q2 and Q3 schedule dates, including January 5, 2027 as an A day.",
+    "cycleInference": "The inferred Q1 cycle remains anchored on 2026-08-13 as A through September 23. The teacher-confirmed C day on September 24 and B day on September 25 shift the remaining Q1 labels. Teacher-provided block-calendar labels govern Q2 and Q3, including January 5, 2027 as an A day.",
     "validInstructionalDaysFromScheduleStart": 166,
     "validInstructionalDaysInSchoolYearFixedDates": 169,
     "calendarAnomalies": [
       "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20. Contingency days and the TBD ACT testing day help explain why the official count may not reconcile from fixed dates alone.",
       "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.",
-      "The explicit block calendar marks September 24, 2026 as a C day. Q2 and Q3 use the printed A/B labels rather than continuing the earlier inference through that C day."
+      "September 24, 2026 is a teacher-confirmed C day, September 25 is a B day, and the remaining Q1 A/B labels shift accordingly before Q2 begins from the printed block calendar."
     ],
     "tbdNotes": [
       "Universal Test Day - ACT Exam: date TBD; no-school for grades 9, 10, and 12; grade 11 takes ACT; grades K-8 attend school; A/B cycle continues regardless."
@@ -490,16 +490,16 @@
     {
       "date": "2026-09-24",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "C",
       "isInstructionalDay": true,
-      "calendarNote": "",
-      "sourceNote": "",
+      "calendarNote": "C Day",
+      "sourceNote": "Teacher-confirmed C day; September 25 resumes as a B day.",
       "excludedReason": null
     },
     {
       "date": "2026-09-25",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -526,7 +526,7 @@
     {
       "date": "2026-09-28",
       "dayOfWeek": "Monday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -535,7 +535,7 @@
     {
       "date": "2026-09-29",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -544,7 +544,7 @@
     {
       "date": "2026-09-30",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -553,7 +553,7 @@
     {
       "date": "2026-10-01",
       "dayOfWeek": "Thursday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -562,7 +562,7 @@
     {
       "date": "2026-10-02",
       "dayOfWeek": "Friday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -589,7 +589,7 @@
     {
       "date": "2026-10-05",
       "dayOfWeek": "Monday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -598,7 +598,7 @@
     {
       "date": "2026-10-06",
       "dayOfWeek": "Tuesday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -607,7 +607,7 @@
     {
       "date": "2026-10-07",
       "dayOfWeek": "Wednesday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -616,7 +616,7 @@
     {
       "date": "2026-10-08",
       "dayOfWeek": "Thursday",
-      "cycleDay": "B",
+      "cycleDay": "A",
       "isInstructionalDay": true,
       "calendarNote": "",
       "sourceNote": "",
@@ -625,7 +625,7 @@
     {
       "date": "2026-10-09",
       "dayOfWeek": "Friday",
-      "cycleDay": "A",
+      "cycleDay": "B",
       "isInstructionalDay": true,
       "calendarNote": "End of 1st Grading Period (42 Days)",
       "sourceNote": "End of 1st Grading Period (42 Days)",
