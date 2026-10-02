@@ -1,3 +1,4 @@
+import { validateLessonDates } from './lib/validate-lesson-dates.mjs';
 import { existsSync, readFileSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { join, resolve } from 'node:path';
@@ -252,40 +253,7 @@ function validateSeeds(data) {
       lessonIds.has(scheduleItem.lessonId),
       `Lesson schedule ${scheduleItem.id} references missing lesson ${scheduleItem.lessonId}`,
     );
-    assert(scheduleItem.aDayDate, `Lesson schedule ${scheduleItem.id} is missing aDayDate`);
-    assert(scheduleItem.bDayDate, `Lesson schedule ${scheduleItem.id} is missing bDayDate`);
-    assert(
-      scheduleItem.aDayCycle === 'A',
-      `Lesson schedule ${scheduleItem.id} aDayCycle must be A`,
-    );
-    assert(
-      scheduleItem.bDayCycle === 'B',
-      `Lesson schedule ${scheduleItem.id} bDayCycle must be B`,
-    );
-    assert(
-      !isWeekend(scheduleItem.aDayDate),
-      `Lesson schedule ${scheduleItem.id} A day falls on a weekend`,
-    );
-    assert(
-      !isWeekend(scheduleItem.bDayDate),
-      `Lesson schedule ${scheduleItem.id} B day falls on a weekend`,
-    );
-
-    const aDay = instructionalDayByDate.get(scheduleItem.aDayDate);
-    const bDay = instructionalDayByDate.get(scheduleItem.bDayDate);
-
-    assert(aDay, `Lesson schedule ${scheduleItem.id} A day is not in instructional-days.json`);
-    assert(bDay, `Lesson schedule ${scheduleItem.id} B day is not in instructional-days.json`);
-    assert(aDay.isInstructionalDay, `Lesson schedule ${scheduleItem.id} A day is not instructional`);
-    assert(bDay.isInstructionalDay, `Lesson schedule ${scheduleItem.id} B day is not instructional`);
-    assert(
-      aDay.cycleDay === 'A',
-      `Lesson schedule ${scheduleItem.id} A day does not match cycle A`,
-    );
-    assert(
-      bDay.cycleDay === 'B',
-      `Lesson schedule ${scheduleItem.id} B day does not match cycle B`,
-    );
+    validateLessonDates(scheduleItem, instructionalDayByDate);
   }
 
   const warnings = [];

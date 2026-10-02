@@ -63,13 +63,12 @@ const getWeekEnd = (date) => addDays(getWeekStart(date), 4);
 const getMonthEnd = (year, monthIndex) => new Date(Date.UTC(year, monthIndex + 1, 0));
 
 const makeCycleMap = (aDates, bDates) =>
-  new Map([
-    ...aDates.map((date) => [date, 'A']),
-    ...bDates.map((date) => [date, 'B']),
-  ]);
+  new Map([...aDates.map((date) => [date, 'A']), ...bDates.map((date) => [date, 'B'])]);
 
 const q2CycleMap = makeCycleMap(
   [
+    '2026-10-06',
+    '2026-10-08',
     '2026-10-12',
     '2026-10-14',
     '2026-10-19',
@@ -93,6 +92,8 @@ const q2CycleMap = makeCycleMap(
     '2026-12-17',
   ],
   [
+    '2026-10-07',
+    '2026-10-09',
     '2026-10-13',
     '2026-10-15',
     '2026-10-20',
@@ -158,6 +159,29 @@ const q3CycleMap = makeCycleMap(
 
 const q2Activities = [
   {
+    id: 'vp-q2-export-practice',
+    activityType: 'material',
+    title: 'DaVinci Export Practice and Troubleshooting',
+    aDayDate: '2026-11-03',
+    bDayDate: '2026-11-04',
+    dueLabel: 'Verify playback of the practice export and resolve missing media or export issues',
+    sourceTiming: 'October 2, 2026 schedule adjustment',
+    summary:
+      'Use the completed foundations edit to practice rendering and checking playback. Revisit file organization, relink missing media, and troubleshoot export settings with teacher support.',
+  },
+  {
+    id: 'vp-q2-project-readiness',
+    activityType: 'material',
+    title: 'Video Project Readiness and Peer Feedback',
+    aDayDate: '2026-11-05',
+    bDayDate: '2026-11-06',
+    dueLabel:
+      'Check organized media, readable titles, pacing, and audio before the first video project',
+    sourceTiming: 'October 2, 2026 schedule adjustment',
+    summary:
+      'Review the foundations edit with a partner, apply focused feedback, and check project folders and export readiness before the first 30-second video assignment. Extend by comparing two pacing choices.',
+  },
+  {
     id: 'vp-q2-checkpoint-01',
     activityType: 'assignment',
     title: '1st Video Editing Assignment - Launch and Rough Cut',
@@ -165,7 +189,8 @@ const q2Activities = [
     bDayDate: '2026-11-10',
     dueLabel: 'Build the exactly 30-second rough cut by the end of class',
     sourceTiming: 'Edited Nov 12, 2025',
-    summary: 'Import and organize the provided media, assemble an exactly 30-second timeline, and complete a rough pacing check before polishing.',
+    summary:
+      'Import and organize the provided media, assemble an exactly 30-second timeline, and complete a rough pacing check before polishing.',
   },
   {
     id: 'vp-q2-checkpoint-02',
@@ -175,7 +200,8 @@ const q2Activities = [
     bDayDate: '2026-11-13',
     dueLabel: 'Final MP4 and evidence link due by the end of class',
     sourceTiming: 'Assignment edited Nov 12, 2025; render material posted Nov 14, 2025',
-    summary: 'Polish pacing, readable text, and audio balance, then use How to Render in DaVinci to export, verify playback, and submit evidence.',
+    summary:
+      'Polish pacing, readable text, and audio balance, then use How to Render in DaVinci to export, verify playback, and submit evidence.',
   },
   {
     id: 'vp-q2-checkpoint-03',
@@ -185,7 +211,8 @@ const q2Activities = [
     bDayDate: '2026-11-17',
     dueLabel: 'Revision plan and rebuilt rough cut due by the end of class',
     sourceTiming: 'Posted Dec 1, 2025',
-    summary: 'Review the first edit, identify specific improvements, and rebuild the 30-second sequence with stronger flow, pacing, titles, and storytelling.',
+    summary:
+      'Review the first edit, identify specific improvements, and rebuild the 30-second sequence with stronger flow, pacing, titles, and storytelling.',
   },
   {
     id: 'vp-q2-checkpoint-04',
@@ -195,7 +222,8 @@ const q2Activities = [
     bDayDate: '2026-11-19',
     dueLabel: 'Improved final export and evidence link due by the end of class',
     sourceTiming: 'Posted Dec 1, 2025',
-    summary: 'Finish the improved edit, export and verify the MP4, compare it with the first version, and participate in a focused peer critique.',
+    summary:
+      'Finish the improved edit, export and verify the MP4, compare it with the first version, and participate in a focused peer critique.',
   },
   {
     id: 'vp-q2-checkpoint-05',
@@ -205,7 +233,8 @@ const q2Activities = [
     bDayDate: '2026-11-30',
     dueLabel: 'Concept, roles, locations, and 6-10-shot plan due by the end of class',
     sourceTiming: 'Edited Dec 1, 2025',
-    summary: 'Assign rotating production roles and plan a safe 20-30 second visual duel with clear story beats, composed shots, music, and sound effects.',
+    summary:
+      'Assign rotating production roles and plan a safe 20-30 second visual duel with clear story beats, composed shots, music, and sound effects.',
   },
   {
     id: 'vp-q2-checkpoint-06',
@@ -215,7 +244,8 @@ const q2Activities = [
     bDayDate: '2026-12-02',
     dueLabel: 'Capture all planned footage and organize the production files',
     sourceTiming: 'Edited Dec 1, 2025',
-    summary: 'Film the planned 6-10 shots, rotate responsibilities, monitor continuity and safety, and organize footage for the edit.',
+    summary:
+      'Film the planned 6-10 shots, rotate responsibilities, monitor continuity and safety, and organize footage for the edit.',
   },
   {
     id: 'vp-q2-checkpoint-07',
@@ -225,7 +255,8 @@ const q2Activities = [
     bDayDate: '2026-12-04',
     dueLabel: 'Final 20-30 second film and evidence link due by the end of class',
     sourceTiming: 'Duel edited Dec 1, 2025; absent work posted Dec 9, 2025',
-    summary: 'Edit, sound-design, export, screen, and submit the Duel. Students absent from production complete The Duel Absent Work analysis instead.',
+    summary:
+      'Edit, sound-design, export, screen, and submit the Duel. Students absent from production complete The Duel Absent Work analysis instead.',
   },
   {
     id: 'vp-q2-checkpoint-08',
@@ -235,7 +266,8 @@ const q2Activities = [
     bDayDate: '2026-12-08',
     dueLabel: 'Interpretation, role rotation, and shot plan due by the end of class',
     sourceTiming: 'Posted Dec 7, 2025',
-    summary: 'Interpret the assigned movie line, develop a clear 30-40 second story, assign roles, and create a practical production plan.',
+    summary:
+      'Interpret the assigned movie line, develop a clear 30-40 second story, assign roles, and create a practical production plan.',
   },
   {
     id: 'vp-q2-checkpoint-09',
@@ -245,7 +277,8 @@ const q2Activities = [
     bDayDate: '2026-12-10',
     dueLabel: 'Complete principal photography and assemble the rough cut',
     sourceTiming: 'Posted Dec 7, 2025',
-    summary: 'Capture the planned footage, rotate production roles, organize media, and assemble a rough cut with intentional composition and pacing.',
+    summary:
+      'Capture the planned footage, rotate production roles, organize media, and assemble a rough cut with intentional composition and pacing.',
   },
   {
     id: 'vp-q2-checkpoint-10',
@@ -255,7 +288,8 @@ const q2Activities = [
     bDayDate: '2026-12-14',
     dueLabel: 'Final 30-40 second film and evidence link due by the end of class',
     sourceTiming: 'Posted Dec 7, 2025',
-    summary: 'Polish the edit with music and sound design, export and verify the final film, screen it for feedback, and submit the evidence link.',
+    summary:
+      'Polish the edit with music and sound design, export and verify the final film, screen it for feedback, and submit the evidence link.',
   },
   {
     id: 'vp-q2-checkpoint-11',
@@ -265,7 +299,8 @@ const q2Activities = [
     bDayDate: '2026-12-16',
     dueLabel: 'Genre plan, role rotation, shot list, and footage due by the end of class',
     sourceTiming: 'Posted Dec 17, 2025',
-    summary: 'Choose a clear genre approach, plan a 35-45 second visual story with 6-10 shots, rotate roles, and capture the required footage.',
+    summary:
+      'Choose a clear genre approach, plan a 35-45 second visual story with 6-10 shots, rotate roles, and capture the required footage.',
   },
   {
     id: 'vp-q2-checkpoint-12',
@@ -275,7 +310,8 @@ const q2Activities = [
     bDayDate: '2026-12-18',
     dueLabel: 'Final 35-45 second genre film and evidence link due by the end of class',
     sourceTiming: 'Posted Dec 17, 2025',
-    summary: 'Complete the edit with purposeful pacing, music, and sound effects, screen the film, reflect on the genre choices, and submit evidence.',
+    summary:
+      'Complete the edit with purposeful pacing, music, and sound effects, screen the film, reflect on the genre choices, and submit evidence.',
   },
 ];
 
@@ -327,6 +363,19 @@ const noSchoolDatesBetween = (startDate, endDate) =>
 const reconcileSchedule = (path, cycleMap, options = {}) => {
   const schedule = readJson(path);
 
+  if (options.startDate) {
+    schedule.metadata.startDate = options.startDate;
+    for (const cycle of ['A', 'B']) {
+      const dates = [...cycleMap]
+        .filter(([date, day]) => day === cycle && date >= options.startDate)
+        .map(([date]) => date)
+        .sort();
+      schedule.lessons.forEach((lesson, index) => {
+        lesson[cycle === 'A' ? 'aDayDate' : 'bDayDate'] = dates[index];
+      });
+    }
+  }
+
   for (const lesson of schedule.lessons) {
     const dates = [lesson.aDayDate, lesson.bDayDate];
     const aDayDate = dates.find((date) => cycleMap.get(date) === 'A');
@@ -345,8 +394,8 @@ const reconcileSchedule = (path, cycleMap, options = {}) => {
     lesson.source = 'teacher-provided-block-calendar';
     lesson.notes = (lesson.notes || '')
       .replace(
-        'B classes see this first on 2026-10-12; A classes see it on 2026-10-13.',
-        'A classes see this first on 2026-10-12; B classes see it on 2026-10-13.',
+        /[AB] classes see this first on 2026-10-12; [AB] classes see it on 2026-10-13\./,
+        'A classes see this first on 2026-10-06; B classes see it on 2026-10-07. The teacher moved the Video Production start ahead of the grading-period boundary.',
       )
       .replace('begins on an inferred B day', 'begins on the printed A day');
   }
@@ -376,6 +425,16 @@ const reconcileSchedule = (path, cycleMap, options = {}) => {
       ? 'A/B labels were corrected from the teacher-provided block calendar; January 5, 2027 is A day.'
       : 'A/B labels were corrected from the teacher-provided block calendar.',
   ];
+  if (options.startDate) {
+    const adjustmentNote =
+      'Teacher direction on October 2, 2026 moves the Video Production start to October 6 (A) and October 7 (B), before the October 9 Q1 grading-period boundary. Project deadlines remain unchanged; November 3-6 provides export practice and project readiness.';
+    schedule.metadata.calendarAnomalies = [
+      ...schedule.metadata.calendarAnomalies.filter(
+        (note) => !note.startsWith('Teacher direction on October 2, 2026'),
+      ),
+      adjustmentNote,
+    ];
+  }
   schedule.noSchoolDatesDuringSchedule = noSchoolDatesBetween(
     schedule.metadata.startDate,
     schedule.metadata.endDate,
@@ -389,6 +448,7 @@ const reconcileSchedule = (path, cycleMap, options = {}) => {
 };
 
 const q2Schedule = reconcileSchedule(paths.q2Schedule, q2CycleMap, {
+  startDate: '2026-10-06',
   endDate: '2026-12-18',
   activities: q2Activities,
 });
@@ -464,7 +524,10 @@ const buildBlockCalendar = ({ schedule, endDate, activities = [], notes }) => {
         lessonTitle: '',
         programAreaId,
         calendarNote: sourceDay?.calendarNote || '',
-        sourceNote: 'Archived P1 Gated Gangsters classwork reviewed by teacher request.',
+        sourceNote:
+          activity.sourceTiming === 'October 2, 2026 schedule adjustment'
+            ? 'Studio practice time gained by the teacher-directed October 6 Video Production start.'
+            : 'Archived P1 Gated Gangsters classwork reviewed by teacher request.',
         reason: '',
         activityId: activity.id,
         activityType: activity.activityType,
@@ -480,9 +543,7 @@ const buildBlockCalendar = ({ schedule, endDate, activities = [], notes }) => {
     Date.UTC(parseDate(startDate).getUTCFullYear(), parseDate(startDate).getUTCMonth(), 1),
   );
   const lastDate = parseDate(endDate);
-  const lastMonthDate = new Date(
-    Date.UTC(lastDate.getUTCFullYear(), lastDate.getUTCMonth(), 1),
-  );
+  const lastMonthDate = new Date(Date.UTC(lastDate.getUTCFullYear(), lastDate.getUTCMonth(), 1));
   const blockNoSchoolDates = noSchoolDatesBetween(formatDate(firstMonthDate), endDate).map(
     (day) => ({
       date: day.date,
@@ -527,7 +588,9 @@ const buildBlockCalendar = ({ schedule, endDate, activities = [], notes }) => {
         const date = formatDate(current);
 
         if (current.getUTCMonth() !== monthIndex) {
-          days.push(makeEmptyCell(date, 'outside-month', `Outside ${month} ${year}`, programAreaId));
+          days.push(
+            makeEmptyCell(date, 'outside-month', `Outside ${month} ${year}`, programAreaId),
+          );
           continue;
         }
 
@@ -609,6 +672,8 @@ const q2Block = buildBlockCalendar({
   notes: [
     'A/B labels come from the teacher-provided 2026-2027 Doral Red Rock block calendar.',
     'Q2 begins with two file-organization openers and seven DaVinci Resolve lessons.',
+    'Teacher direction on October 2 moves the Video Production opener to October 6 (A) and October 7 (B), ahead of the October 9 Q1 grading-period boundary. DaVinci Resolve begins October 12 (A) and October 13 (B).',
+    'The four gained class days on November 3-6 support export practice and project readiness; archived project deadlines remain unchanged.',
     'Seven retained archived Video Production resources are organized into twelve project checkpoints after the DaVinci sequence.',
     'Every remaining Q2 instructional date is assigned to production, editing, critique, make-up support, screening, or submission work.',
     'Weekends are excluded and do not appear in noSchoolDates.',
@@ -704,7 +769,7 @@ const renderScheduleMarkdown = (schedule, title, activities = []) => {
   if (activities.length) {
     lines.push(
       '',
-      '## Archived Video Production Activities',
+      '## Video Production Activities and Studio Support',
       '',
       '| Activity | Type | A Day | B Day | Current timing | Archived source timing |',
       '| --- | --- | --- | --- | --- | --- |',

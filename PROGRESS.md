@@ -205,3 +205,30 @@ This table records the pre-Phase-9 audit baseline. Current completion status is 
 ## Final Status
 
 Phase 9 repository work is complete. The Q1 Unreal video links, Error 153 repair, student Today response-card fix, and student evidence-panel fix are committed, pushed, deployed, security-tested, and live-verified.
+
+## October 2, 2026: Video Production Start Adjustment
+
+- Teacher direction: begin Video Production Tuesday, October 6, 2026.
+- Video Production File Organization now runs October 6 (A) / October 7 (B); Video Game Development File Organization follows October 8 (A) / October 9 (B).
+- The seven DaVinci Resolve lessons move forward two A/B lesson pairs, beginning October 12 (A) / October 13 (B) and ending October 29 (A) / November 2 (B).
+- November 3-6 provides export practice and project-readiness support. All twelve archived project checkpoints keep their existing November 9-December 18 dates and deadlines.
+- Q2 unit labels and lesson IDs remain stable even though the opener now precedes the October 9 Q1 grading-period boundary.
+- Q1 ends October 5 for B classes. The October 6 A-day Unreal Lesson 16 slot is cleared for Video Production; its content remains available and is deferred to the next Unreal unit. The replacement date is explicitly marked needs-teacher-review rather than invented.
+- Updated JSON/Markdown calendars, website/app seed mirrors, calendar documentation, and the foundations README. Added explicit deferred-cycle validation and duplicate lesson-date rejection to protect the daily mission scheduler.
+
+Acceptance criteria:
+
+- Passed: October 6 has exactly one scheduled lesson, Video Production File Organization, with the matching B-day lesson October 7.
+- Passed: all 46 instructional dates from October 6 through December 18 are covered; weekends and actual no-school weekdays have no scheduled work.
+- Passed: original video-project deadlines, lesson IDs, quiz references, and submission requirements are preserved.
+- Passed: Q1/Q2 calendars and seed mirrors agree; schedule generators are idempotent. Six invalid date/deferral cases are rejected.
+
+Validation and publishing:
+
+- Passed: npm run build, npm run lint, npm run validate:curriculum, npm run seed:curriculum -- --dry-run (skipped=160, created=0, updated=0, failed=0), and git diff --check. Build retains the existing bundle-size warning.
+- Initial build prerequisite failed because six VITE_FIREBASE values were absent. Restored the existing DCC web app's public SDK configuration to ignored .env.local; the final npm build passed.
+- Initial fallback pnpm attempts failed with ERR_PNPM_META_FETCH_FAIL / ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY. Used the installed npm runtime for the final checks and removed the newly created temporary pnpm store.
+- Published and read-back verified thirteen changed records only under apps/dcc/lessonSchedule, including the previous Q1 C-day correction; no class active items or student work were written.
+- Deployed only Hosting target dcc (dcccs). Verified https://dcccs.web.app returned HTTP 200 and served the exact validated build.
+- Verified live schedule queries return exactly one correct lesson on October 2, 5, 6, 7, 12, and 13. The October 6/7 opener and October 12/13 DaVinci start are ready for the existing daily mission publisher.
+- Preserved unrelated local presentation work and earlier PROGRESS.md edits outside this milestone's commit.

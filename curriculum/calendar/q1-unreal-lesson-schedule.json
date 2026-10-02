@@ -5,16 +5,16 @@
     "programAreaId": "unreal-engine",
     "quarter": "Q1",
     "startDate": "2026-08-17",
-    "endDate": "2026-10-06",
+    "endDate": "2026-10-05",
     "cycleInference": "The Q1 cycle is inferred from the 2026-08-13 A-day anchor through September 23. Teacher confirmation sets September 24 as C and September 25 as B, shifting the remaining Q1 A/B dates.",
     "lessonCount": 16,
-    "scheduledDateCount": 32,
+    "scheduledDateCount": 31,
     "calendarAnomalies": [
       "The source calendar states Year 173 Days, but the fixed listed student no-school dates produce 169 instructional weekdays for 2026-08-12 through 2027-05-20. Contingency days and the TBD ACT testing day help explain why the official count may not reconcile from fixed dates alone.",
       "Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.",
       "October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.",
       "August 27, 2026 is an A-day curriculum pause for substitute-led alternate work. A-day Lesson 5 and every later Q1 A-day lesson move forward one A-day slot; all B-day lesson dates remain unchanged.",
-      "September 24, 2026 is a C-day curriculum pause for Halo gameplay and the teacher-provided written assignment. September 25 resumes as B day, so Q1 Lessons 13-16 shift forward and conclude on October 6."
+      "September 24, 2026 is a C-day curriculum pause for Halo gameplay and the teacher-provided written assignment. September 25 resumes as B day, so Q1 Lessons 13-16 shift forward. The later October 2 teacher direction starts Video Production on October 6; Q1 ends October 5 with the A-day Lesson 16 session deferred for teacher review."
     ],
     "noSchoolDateCount": 3,
     "weekendHandling": "Weekends are excluded from instructional scheduling and are not listed in noSchoolDatesDuringSchedule."
@@ -313,16 +313,19 @@
       "lessonId": "ue-q1-l16",
       "lessonNumber": 16,
       "lessonTitle": "Foliage, Mini-World, and Blueprint Preview",
-      "aDayDate": "2026-10-06",
+      "aDayDate": "",
       "bDayDate": "2026-10-05",
       "aDayCycle": "A",
       "bDayCycle": "B",
       "aDayCalendarNote": "",
       "bDayCalendarNote": "",
       "activeItemType": "lesson",
-      "status": "scheduled",
+      "status": "needs-teacher-review",
       "source": "attached-school-calendar",
-      "notes": ""
+      "notes": "Video Production begins October 6 (A). The A-day Foliage, Mini-World, and Blueprint Preview session is deferred to the next Unreal unit; its replacement date needs teacher review. B classes retain October 5.",
+      "deferredCycles": [
+        "A"
+      ]
     }
   ],
   "activities": [

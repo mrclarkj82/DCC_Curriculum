@@ -2,7 +2,7 @@
 
 Source: `Doral_Red_Rock_26-27_Block_Calendar_(8_5_x_11_in)_(2).pdf`
 
-Start date: **2026-10-12**
+Start date: **2026-10-06**
 
 End date: **2026-12-18**
 
@@ -12,20 +12,22 @@ A/B method: Uses the day labels printed on the teacher-provided Doral Red Rock b
 
 | Lesson | Lesson ID | Title | A Day | B Day | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 1 | `vp-q2-file-org-01` | Video Production File Organization | 2026-10-12 (A) | 2026-10-13 (B) | Q2 opens with production file organization before DaVinci Resolve begins. A classes see this first on 2026-10-12; B classes see it on 2026-10-13. |
-| 2 | `ue-q2-file-org-01` | Video Game Development File Organization | 2026-10-14 (A) | 2026-10-15 (B) | The second Q2 opener applies the same organization habit to game development assets before DaVinci Resolve begins. |
-| 3 | `vp-q2-l01` | DaVinci Resolve Setup and Project Manager | 2026-10-19 (A) | 2026-10-20 (B) | DaVinci Resolve sequence starts after the two Q2 file organization openers. |
-| 4 | `vp-q2-l02` | Media Page, Imports, and Bins | 2026-10-21 (A) | 2026-10-22 (B) |  |
-| 5 | `vp-q2-l03` | Syncing Audio and Timeline Basics | 2026-10-23 (A) | 2026-10-26 (B) |  |
-| 6 | `vp-q2-l04` | Trimming Clips and Building a Rough Cut | 2026-10-27 (A) | 2026-10-28 (B) |  |
-| 7 | `vp-q2-l05` | Quiz 1 and Rough Cut Cleanup | 2026-10-29 (A) | 2026-11-02 (B) |  |
-| 8 | `vp-q2-l06` | Titles, Transitions, and Simple Motion | 2026-11-03 (A) | 2026-11-04 (B) | Renumbered after removing the Color page and Fairlight page transcript span from the Q2 plan. |
-| 9 | `vp-q2-l07` | Quiz 2 and Final Export | 2026-11-05 (A) | 2026-11-06 (B) | Closing checkpoint now follows titles/transitions and final export only; Color and Fairlight are excluded. |
+| 1 | `vp-q2-file-org-01` | Video Production File Organization | 2026-10-06 (A) | 2026-10-07 (B) | Q2 opens with production file organization before DaVinci Resolve begins. A classes see this first on 2026-10-06; B classes see it on 2026-10-07. The teacher moved the Video Production start ahead of the grading-period boundary. |
+| 2 | `ue-q2-file-org-01` | Video Game Development File Organization | 2026-10-08 (A) | 2026-10-09 (B) | The second Q2 opener applies the same organization habit to game development assets before DaVinci Resolve begins. |
+| 3 | `vp-q2-l01` | DaVinci Resolve Setup and Project Manager | 2026-10-12 (A) | 2026-10-13 (B) | DaVinci Resolve sequence starts after the two Q2 file organization openers. |
+| 4 | `vp-q2-l02` | Media Page, Imports, and Bins | 2026-10-14 (A) | 2026-10-15 (B) |  |
+| 5 | `vp-q2-l03` | Syncing Audio and Timeline Basics | 2026-10-19 (A) | 2026-10-20 (B) |  |
+| 6 | `vp-q2-l04` | Trimming Clips and Building a Rough Cut | 2026-10-21 (A) | 2026-10-22 (B) |  |
+| 7 | `vp-q2-l05` | Quiz 1 and Rough Cut Cleanup | 2026-10-23 (A) | 2026-10-26 (B) |  |
+| 8 | `vp-q2-l06` | Titles, Transitions, and Simple Motion | 2026-10-27 (A) | 2026-10-28 (B) | Renumbered after removing the Color page and Fairlight page transcript span from the Q2 plan. |
+| 9 | `vp-q2-l07` | Quiz 2 and Final Export | 2026-10-29 (A) | 2026-11-02 (B) | Closing checkpoint now follows titles/transitions and final export only; Color and Fairlight are excluded. |
 
-## Archived Video Production Activities
+## Video Production Activities and Studio Support
 
 | Activity | Type | A Day | B Day | Current timing | Archived source timing |
 | --- | --- | --- | --- | --- | --- |
+| DaVinci Export Practice and Troubleshooting | material | 2026-11-03 | 2026-11-04 | Verify playback of the practice export and resolve missing media or export issues | October 2, 2026 schedule adjustment |
+| Video Project Readiness and Peer Feedback | material | 2026-11-05 | 2026-11-06 | Check organized media, readable titles, pacing, and audio before the first video project | October 2, 2026 schedule adjustment |
 | 1st Video Editing Assignment - Launch and Rough Cut | assignment | 2026-11-09 | 2026-11-10 | Build the exactly 30-second rough cut by the end of class | Edited Nov 12, 2025 |
 | 1st Video Editing Assignment - Polish, Render, and Submit | assignment | 2026-11-12 | 2026-11-13 | Final MP4 and evidence link due by the end of class | Assignment edited Nov 12, 2025; render material posted Nov 14, 2025 |
 | 2nd Video Editing Assignment - The Redo: Revision Plan | assignment | 2026-11-16 | 2026-11-17 | Revision plan and rebuilt rough cut due by the end of class | Posted Dec 1, 2025 |
@@ -59,3 +61,4 @@ A/B method: Uses the day labels printed on the teacher-provided Doral Red Rock b
 - The Color page and Fairlight page transcript span, approximately 02:50:00-04:53:05, is intentionally excluded from this Q2 plan.
 - Q2 now begins with two file organization openers: Video Production File Organization and Video Game Development File Organization. The DaVinci Resolve sequence starts after those openers.
 - A/B labels were corrected from the teacher-provided block calendar.
+- Teacher direction on October 2, 2026 moves the Video Production start to October 6 (A) and October 7 (B), before the October 9 Q1 grading-period boundary. Project deadlines remain unchanged; November 3-6 provides export practice and project readiness.

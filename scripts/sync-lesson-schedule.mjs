@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { applicationDefault, initializeApp } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
+import { validateLessonDates } from './lib/validate-lesson-dates.mjs';
 
 const root = process.cwd();
 const dryRun = process.argv.includes('--dry-run');
@@ -15,11 +16,17 @@ const loadProjectId = () => {
   return existsSync(firebasercPath) ? readJson(firebasercPath).projects?.default : undefined;
 };
 const matchesSeed = (liveRecord, seedRecord) =>
-  Object.entries(seedRecord).every(([key, value]) =>
-    JSON.stringify(liveRecord?.[key]) === JSON.stringify(value),
+  Object.entries(seedRecord).every(
+    ([key, value]) => JSON.stringify(liveRecord?.[key]) === JSON.stringify(value),
   );
 
 const schedule = readJson(schedulePath);
+const instructionalDayByDate = new Map(
+  readJson(join(root, 'curriculum', 'calendar', 'instructional-days.json')).days.map((day) => [
+    day.date,
+    day,
+  ]),
+);
 
 if (!Array.isArray(schedule) || !schedule.length) {
   throw new Error('The aligned lesson schedule seed is empty or invalid.');
@@ -31,16 +38,21 @@ if (new Set(ids).size !== ids.length) {
   throw new Error('The aligned lesson schedule contains duplicate IDs.');
 }
 
+const scheduledDates = new Set();
 for (const record of schedule) {
   if (
     !record.id ||
     !record.lessonId ||
     !record.programAreaId ||
-    !record.aDayDate ||
-    !record.bDayDate ||
     record.activeItemType !== 'lesson'
   ) {
     throw new Error(`Invalid aligned schedule record ${record.id || '(missing id)'}.`);
+  }
+  for (const { date } of validateLessonDates(record, instructionalDayByDate)) {
+    if (scheduledDates.has(date)) {
+      throw new Error(`Multiple lessons are scheduled for ${date}.`);
+    }
+    scheduledDates.add(date);
   }
 }
 

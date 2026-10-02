@@ -8,7 +8,7 @@ This folder contains the Quarter 2 Video Production Studio DaVinci Resolve mini-
 - Tutorial video: [DaVinci Resolve full tutorial](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw)
 - Pacing target: a trimmed DaVinci Resolve foundations block before later group projects.
 - School year: 2026-2027
-- Q2 schedule window: October 12, 2026 through November 6, 2026
+- Foundations schedule window: October 6, 2026 through November 2, 2026; export practice and project readiness continue November 3-6. The teacher-directed early start precedes the October 9 Q1 grading-period boundary.
 
 ## Q2 Openers
 
@@ -17,7 +17,7 @@ The full Q2 schedule now begins with two file organization lesson blocks before 
 - Q2 L1: Video Production File Organization (`vp-q2-file-org-01`)
 - Q2 L2: Video Game Development File Organization (`ue-q2-file-org-01`)
 
-DaVinci Resolve starts at Q2 L3 on the teacher schedule, but the DaVinci lesson IDs remain stable so quiz and assignment references do not break.
+DaVinci Resolve starts October 12 (A) / October 13 (B) at Q2 L3 on the teacher schedule, but the DaVinci lesson IDs remain stable so quiz and assignment references do not break.
 
 ## DaVinci Lesson Sequence
 

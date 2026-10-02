@@ -40,11 +40,11 @@ The website schedule view should render as a Monday-Friday block calendar. Instr
 
 ## Q1 Unreal Pairing Rule
 
-Each Q1 Unreal lesson runs across two valid instructional class days: one A day and one B day. `ue-q1-l01` starts on the valid A/B pair beginning 2026-08-17. September 24 is a C-day pause for Halo gameplay and the teacher-provided written assignment. The paired lesson sequence resumes on September 25 (B) and runs through `ue-q1-l16` on 2026-10-06 (A).
+Each Q1 Unreal lesson runs across two valid instructional class days: one A day and one B day. `ue-q1-l01` starts on the valid A/B pair beginning 2026-08-17. September 24 is a C-day pause for Halo gameplay and the teacher-provided written assignment. The paired lesson sequence resumes on September 25 (B) and runs through `ue-q1-l16` on October 5 (B). The teacher-directed October 6 Video Production start replaces the A-day Lesson 16 slot. Its content remains available and is deferred to the next Unreal unit, with the replacement date marked `needs-teacher-review`. A blank date is allowed only for an explicitly documented deferred cycle; every remaining date must match an instructional A/B day.
 
 ## Q2 File Organization + DaVinci Resolve Pairing Rule
 
-The Q2 schedule begins Monday, October 12, 2026, which the block calendar labels `A`. The first two Q2 lesson blocks are file-organization openers, followed by seven DaVinci Resolve lessons through November 6. Seven retained archived Video Production resources then span twelve explicit project checkpoints from November 9 through December 18, filling every remaining instructional date.
+The Video Production sequence begins Tuesday, October 6, 2026 (A), with the matching B-day opener on October 7, ahead of the October 9 Q1 grading-period boundary. The stable Q2 unit labels and lesson IDs are retained. File-organization openers run October 6-9, followed by seven DaVinci Resolve lessons from October 12 through November 2. November 3-6 provides export practice and project readiness. Seven retained archived Video Production resources span twelve project checkpoints from November 9 through December 18; their deadlines are unchanged. All 46 instructional dates in the expanded window are assigned.
 
 ## Q3 Unreal Castle Documentary Pairing Rule
 

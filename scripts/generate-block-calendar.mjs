@@ -102,6 +102,7 @@ for (const lesson of schedule.lessons) {
     { date: lesson.aDayDate, cycleDay: lesson.aDayCycle, calendarNote: lesson.aDayCalendarNote },
     { date: lesson.bDayDate, cycleDay: lesson.bDayCycle, calendarNote: lesson.bDayCalendarNote },
   ]) {
+    if (!slot.date) continue;
     const day = instructionalDayByDate.get(slot.date);
     lessonByDate.set(slot.date, {
       date: slot.date,
@@ -173,8 +174,12 @@ const noSchoolDates = instructionalDays.days
 const noSchoolByDate = new Map(noSchoolDates.map((day) => [day.date, day]));
 
 const visibleMonths = [];
-let monthCursor = new Date(Date.UTC(parseDate(startDate).getUTCFullYear(), parseDate(startDate).getUTCMonth(), 1));
-const endMonth = new Date(Date.UTC(parseDate(endDate).getUTCFullYear(), parseDate(endDate).getUTCMonth(), 1));
+let monthCursor = new Date(
+  Date.UTC(parseDate(startDate).getUTCFullYear(), parseDate(startDate).getUTCMonth(), 1),
+);
+const endMonth = new Date(
+  Date.UTC(parseDate(endDate).getUTCFullYear(), parseDate(endDate).getUTCMonth(), 1),
+);
 
 while (monthCursor <= endMonth) {
   visibleMonths.push({
@@ -194,7 +199,11 @@ const months = visibleMonths.map(({ monthIndex, month, year }, monthOffset) => {
   const lastWeekEnd = getWeekEnd(lastVisibleDate);
   const weeks = [];
 
-  for (let weekCursor = firstWeekStart; weekCursor <= lastWeekEnd; weekCursor = addDays(weekCursor, 7)) {
+  for (
+    let weekCursor = firstWeekStart;
+    weekCursor <= lastWeekEnd;
+    weekCursor = addDays(weekCursor, 7)
+  ) {
     const days = [];
 
     for (let dayOffset = 0; dayOffset < 5; dayOffset += 1) {
@@ -291,6 +300,7 @@ const updatedSchedule = {
     ...schedule.metadata,
     startDate,
     endDate,
+    scheduledDateCount: lessonByDate.size,
     noSchoolDateCount: noSchoolDates.length,
     weekendHandling:
       'Weekends are excluded from instructional scheduling and are not listed in noSchoolDatesDuringSchedule.',
@@ -360,7 +370,7 @@ const lessonScheduleMarkdownLines = [
 
 for (const lesson of schedule.lessons) {
   lessonScheduleMarkdownLines.push(
-    `| ${lesson.lessonNumber} | \`${lesson.lessonId}\` | ${lesson.lessonTitle} | ${lesson.aDayDate} (${lesson.aDayCycle}) | ${lesson.bDayDate} (${lesson.bDayCycle}) | ${lesson.notes || ''} |`,
+    `| ${lesson.lessonNumber} | \`${lesson.lessonId}\` | ${lesson.lessonTitle} | ${lesson.aDayDate || 'Deferred'} (${lesson.aDayCycle}) | ${lesson.bDayDate || 'Deferred'} (${lesson.bDayCycle}) | ${lesson.notes || ''} |`,
   );
 }
 

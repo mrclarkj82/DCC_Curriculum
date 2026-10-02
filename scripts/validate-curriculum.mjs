@@ -1,3 +1,4 @@
+import { validateLessonDates } from './lib/validate-lesson-dates.mjs';
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
@@ -31,7 +32,9 @@ const q1UnrealCalendarSchedule = readCalendarJson('q1-unreal-lesson-schedule.jso
 const q1UnrealBlockCalendar = readCalendarJson('q1-unreal-block-calendar.json');
 const q2DaVinciCalendarSchedule = readCalendarJson('q2-davinci-resolve-lesson-schedule.json');
 const q2DaVinciBlockCalendar = readCalendarJson('q2-davinci-resolve-block-calendar.json');
-const q3UnrealCalendarSchedule = readCalendarJson('q3-unreal-castle-documentary-lesson-schedule.json');
+const q3UnrealCalendarSchedule = readCalendarJson(
+  'q3-unreal-castle-documentary-lesson-schedule.json',
+);
 const q3UnrealBlockCalendar = readCalendarJson('q3-unreal-castle-documentary-block-calendar.json');
 
 const programAreaIds = new Set(programAreas.map((area) => area.id));
@@ -152,8 +155,14 @@ for (const classRecord of classes) {
     `Class ${classRecord.id} uses unsupported activeItemType ${classRecord.activeItemType}`,
   );
   assert(classRecord.activeItemId, `Class ${classRecord.id} is missing activeItemId`);
-  assert(Array.isArray(classRecord.teacherIds), `Class ${classRecord.id} teacherIds must be an array`);
-  assert(Array.isArray(classRecord.studentIds), `Class ${classRecord.id} studentIds must be an array`);
+  assert(
+    Array.isArray(classRecord.teacherIds),
+    `Class ${classRecord.id} teacherIds must be an array`,
+  );
+  assert(
+    Array.isArray(classRecord.studentIds),
+    `Class ${classRecord.id} studentIds must be an array`,
+  );
 
   if (classRecord.activeItemType === 'lesson') {
     assert(
@@ -210,10 +219,7 @@ for (const assignment of assignments.filter((item) => item.programAreaId === 'un
   }
 }
 
-assert(
-  Array.isArray(instructionalDays.days),
-  'instructional-days.json must include a days array',
-);
+assert(Array.isArray(instructionalDays.days), 'instructional-days.json must include a days array');
 
 for (const instructionalDay of instructionalDays.days) {
   assert(instructionalDay.date, 'Instructional day record is missing date');
@@ -227,25 +233,19 @@ const q1UnrealSchedule = lessonSchedule.filter(
   (item) => item.programAreaId === 'unreal-engine' && item.quarter === 'Q1',
 );
 const q1UnrealLessonNumbers = new Set(q1UnrealSchedule.map((item) => item.lessonNumber));
-const q1UnrealScheduleByLessonId = new Map(
-  q1UnrealSchedule.map((item) => [item.lessonId, item]),
-);
+const q1UnrealScheduleByLessonId = new Map(q1UnrealSchedule.map((item) => [item.lessonId, item]));
 const q2DaVinciSchedule = lessonSchedule.filter(
   (item) =>
     item.quarter === 'Q2' &&
     (item.id.startsWith('q2-file-org-') || item.id.startsWith('q2-davinci-l')),
 );
 const q2DaVinciLessonNumbers = new Set(q2DaVinciSchedule.map((item) => item.lessonNumber));
-const q2DaVinciScheduleByLessonId = new Map(
-  q2DaVinciSchedule.map((item) => [item.lessonId, item]),
-);
+const q2DaVinciScheduleByLessonId = new Map(q2DaVinciSchedule.map((item) => [item.lessonId, item]));
 const q3UnrealSchedule = lessonSchedule.filter(
   (item) => item.programAreaId === 'unreal-engine' && item.quarter === 'Q3',
 );
 const q3UnrealLessonNumbers = new Set(q3UnrealSchedule.map((item) => item.lessonNumber));
-const q3UnrealScheduleByLessonId = new Map(
-  q3UnrealSchedule.map((item) => [item.lessonId, item]),
-);
+const q3UnrealScheduleByLessonId = new Map(q3UnrealSchedule.map((item) => [item.lessonId, item]));
 
 for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
   assert(
@@ -281,28 +281,15 @@ for (const scheduleItem of lessonSchedule) {
     lessonIds.has(scheduleItem.lessonId),
     `Lesson schedule ${scheduleItem.id} references missing lesson ${scheduleItem.lessonId}`,
   );
-  assert(scheduleItem.aDayDate, `Lesson schedule ${scheduleItem.id} is missing aDayDate`);
-  assert(scheduleItem.bDayDate, `Lesson schedule ${scheduleItem.id} is missing bDayDate`);
-  assert(scheduleItem.aDayCycle === 'A', `Lesson schedule ${scheduleItem.id} aDayCycle must be A`);
-  assert(scheduleItem.bDayCycle === 'B', `Lesson schedule ${scheduleItem.id} bDayCycle must be B`);
-  assert(
-    !isWeekend(scheduleItem.aDayDate),
-    `Lesson schedule ${scheduleItem.id} A day falls on a weekend`,
-  );
-  assert(
-    !isWeekend(scheduleItem.bDayDate),
-    `Lesson schedule ${scheduleItem.id} B day falls on a weekend`,
-  );
+  validateLessonDates(scheduleItem, instructionalDayByDate);
+}
 
-  const aDay = instructionalDayByDate.get(scheduleItem.aDayDate);
-  const bDay = instructionalDayByDate.get(scheduleItem.bDayDate);
-
-  assert(aDay, `Lesson schedule ${scheduleItem.id} A day is not in instructional-days.json`);
-  assert(bDay, `Lesson schedule ${scheduleItem.id} B day is not in instructional-days.json`);
-  assert(aDay.isInstructionalDay, `Lesson schedule ${scheduleItem.id} A day is not instructional`);
-  assert(bDay.isInstructionalDay, `Lesson schedule ${scheduleItem.id} B day is not instructional`);
-  assert(aDay.cycleDay === 'A', `Lesson schedule ${scheduleItem.id} A day does not match cycle A`);
-  assert(bDay.cycleDay === 'B', `Lesson schedule ${scheduleItem.id} B day does not match cycle B`);
+const scheduledLessonDates = new Set();
+for (const lesson of lessonSchedule) {
+  for (const { date } of validateLessonDates(lesson, instructionalDayByDate)) {
+    assert(!scheduledLessonDates.has(date), `Multiple lessons are scheduled for ${date}`);
+    scheduledLessonDates.add(date);
+  }
 }
 
 const assertNoWeekendDateList = (label, records) => {
@@ -442,7 +429,10 @@ const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId
 
           const sourceDay = instructionalDayByDate.get(day.date);
           assert(sourceDay, `${label} ${day.date} activity is missing from instructional-days`);
-          assert(sourceDay.isInstructionalDay, `${label} ${day.date} activity is not instructional`);
+          assert(
+            sourceDay.isInstructionalDay,
+            `${label} ${day.date} activity is not instructional`,
+          );
           assert(
             sourceDay.cycleDay === day.cycleDay,
             `${label} ${day.date} activity cycleDay does not match instructional-days`,
@@ -477,8 +467,9 @@ const validateBlockLessonCalendar = (label, calendar, expectedScheduleByLessonId
 
   for (const [lessonId, scheduleItem] of expectedScheduleByLessonId) {
     assert(
-      lessonDateCounts.get(lessonId) === 2,
-      `${label} maps ${lessonId} to ${lessonDateCounts.get(lessonId) ?? 0} class dates, expected 2`,
+      lessonDateCounts.get(lessonId) ===
+        [scheduleItem.aDayDate, scheduleItem.bDayDate].filter(Boolean).length,
+      `${label} maps ${lessonId} to ${lessonDateCounts.get(lessonId) ?? 0} class dates, expected ${[scheduleItem.aDayDate, scheduleItem.bDayDate].filter(Boolean).length}`,
     );
     assert(
       lessonDateCounts.has(scheduleItem.lessonId),

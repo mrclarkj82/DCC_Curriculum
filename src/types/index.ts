@@ -359,6 +359,7 @@ export interface LessonScheduleItem {
   bDayDate: string;
   aDayCycle: 'A';
   bDayCycle: 'B';
+  deferredCycles?: Array<'A' | 'B'>;
   aDayCalendarNote: string;
   bDayCalendarNote: string;
   activeItemType: 'lesson';

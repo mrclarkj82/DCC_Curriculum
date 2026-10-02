@@ -27,7 +27,7 @@ Weekends are not listed as skipped dates. The no-school list below contains only
 | 13 | `ue-q1-l13` | Quiz 3 and Lumen Lighting | 2026-09-28 (A) | 2026-09-25 (B) |  |
 | 14 | `ue-q1-l14` | Light Types and Scene Lighting | 2026-09-30 (A) | 2026-09-29 (B) |  |
 | 15 | `ue-q1-l15` | Landscapes | 2026-10-02 (A) | 2026-10-01 (B) |  |
-| 16 | `ue-q1-l16` | Foliage, Mini-World, and Blueprint Preview | 2026-10-06 (A) | 2026-10-05 (B) |  |
+| 16 | `ue-q1-l16` | Foliage, Mini-World, and Blueprint Preview | Deferred (A) | 2026-10-05 (B) | Video Production begins October 6 (A). The A-day Foliage, Mini-World, and Blueprint Preview session is deferred to the next Unreal unit; its replacement date needs teacher review. B classes retain October 5. |
 
 ## Schedule Exceptions
 
@@ -50,6 +50,6 @@ Weekends are not listed as skipped dates. The no-school list below contains only
 - Universal Test Day has no fixed date in the source calendar and is preserved as an unscheduled TBD note. ACT testing does not pause or renumber the A/B cycle unless the teacher explicitly changes that rule.
 - October 15 conferences are marked no school for ES/MS students only; DCC high school scheduling treats the date as instructional and preserves the note.
 - August 27, 2026 is an A-day curriculum pause for substitute-led alternate work. A-day Lesson 5 and every later Q1 A-day lesson move forward one A-day slot; all B-day lesson dates remain unchanged.
-- September 24, 2026 is a C-day curriculum pause for Halo gameplay and the teacher-provided written assignment. September 25 resumes as B day, so Q1 Lessons 13-16 shift forward and conclude on October 6.
+- September 24, 2026 is a C-day curriculum pause for Halo gameplay and the teacher-provided written assignment. September 25 resumes as B day, so Q1 Lessons 13-16 shift forward. The later October 2 teacher direction starts Video Production on October 6; Q1 ends October 5 with the A-day Lesson 16 session deferred for teacher review.
 - Weekends are excluded from instructional scheduling but are not listed as no-school dates.
 - No-school dates list actual weekday non-student days only.
