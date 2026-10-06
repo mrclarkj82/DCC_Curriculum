@@ -321,3 +321,22 @@ Validation and publishing:
 - Schedule dry run reviewed twenty-two changes, including four new lesson schedule records. Published only apps/dcc/lessonSchedule; follow-up reports changed=0, unchanged=45. No class active item, quiz, security rule, game route, or student-work record was written.
 - Deployed only Hosting target dcc (dcccs). Live https://dcccs.web.app serves the exact validated bundle, SHA-256 8f2ded8d3dc38f477e33126f03a4f1756722c7bce8ca6543a6eca0afa71cf4a7, with all four new IDs, shifted dates, and both original openers.
 - Preserved unrelated presentation work and earlier local PROGRESS.md edits outside this milestone. No downloaded media, machine transcript, credentials, student data, fake Drive links, or new decks are included.
+
+## 2026-10-06 — Q2 lessons on the Video Production page
+
+- Corrected the Video Production page to load the current Firestore-backed Quarter 2 DaVinci Resolve Foundations lessons instead of legacy Broadcast Desk and production-project starter cards.
+- Kept the two original file-organization assignments first, followed by all eleven DaVinci lessons in lessonNumber order: Media/Edit foundations, Cut, three Fusion lessons, then final export. Student instructions explain the watch/pause/practice/evidence routine and the excluded Color/Fairlight chapters.
+- Removed the obsolete starter sections and future submission/showcase placeholders from this page. Existing records, authenticated lesson routes, class access, and link-only evidence submission protections are preserved.
+
+Acceptance criteria:
+
+- Passed: the signed-in live page shows exactly thirteen ordered lesson links, including both original openers and all eleven Q2 DaVinci lessons; no Broadcast Update or Media Project links remain on this page.
+- Passed: the Fusion 1 link opens the assigned tutorial segment, practical assignment directions, evidence checklist, and lesson reflection. Read-only browser verification created no submission or student response.
+- Passed: reversed curriculum inputs produce the correct eleven-lesson sequence without mutating the input; non-foundations lessons are excluded.
+
+Validation and publishing:
+
+- Passed: Firebase environment validation, TypeScript/Vite production build, full ESLint, curriculum validation, formatting, focused lesson-order verification, and git diff --check. Used existing Node script executables because npm is unavailable. The build retains the existing bundle-size warning.
+- No seed records or Firestore data changed; no seed dry run was required.
+- Deployed only Hosting target dcc (dcccs). Live https://dcccs.web.app/areas/video-production serves the exact validated bundle, SHA-256 b92616d3eb6cc1cd4aa64cd561d5bc6878a5c367462f5bfcf61994b492afd717. Confirmed all thirteen rendered lesson links in the browser and saved a full-page proof screenshot outside the repository.
+- Preserved unrelated presentation work and earlier PROGRESS.md changes. Concurrent third-opener edits to the two source files remain in the working tree; only the reviewed, deployed two-opener/Q2 page version is staged for this milestone.
