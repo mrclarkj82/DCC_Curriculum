@@ -252,3 +252,21 @@ Validation and publishing:
 - Curriculum seed records are unchanged; no Firestore write or curriculum-seed dry run is needed for this display fix.
 - Deployed only Hosting target dcc (dcccs). Verified https://dcccs.web.app returned HTTP 200 and served the exact validated production bundle (SHA-256 matched the local build).
 - Preserved unrelated local presentation work and earlier PROGRESS.md edits outside this milestone's commit.
+
+## 2026-10-06 — Video Production opening assignments
+
+- Added the two existing file-organization lesson cards as the first section of the Video Production page: File 1 (Video Production) followed by File 2 (Video Game Development).
+- The ordered lesson IDs live in a separate data file. Lesson content still loads from Firestore, including the cross-program File 2 record; later DaVinci lessons are not added to this page.
+- Existing authenticated lesson routes, assignment resources, response windows, and evidence submission protections are preserved.
+
+Acceptance criteria:
+
+- Passed: exactly the two requested opener lesson IDs appear in the new section, in File 1 / File 2 order, before broadcast updates and production projects.
+- Passed: both live lesson records and their linked assignment records exist under apps/dcc; each assignment has its existing ZIP and written-instruction resources.
+
+Validation and publishing:
+
+- Passed: Firebase environment validation, TypeScript/Vite production build, full ESLint check, curriculum validation, Prettier check, and git diff --check. Used the existing script executables through Node because npm is unavailable in this shell. The build retains the existing bundle-size warning.
+- No curriculum seed data changed; no Firestore write or seed dry run was required.
+- Deployed only Hosting target dcc (dcccs). The live Video Production URL returned HTTP 200 and served the exact validated production bundle, including both opener lesson IDs.
+- Preserved unrelated local presentation work and earlier PROGRESS.md edits outside this milestone's commit.
