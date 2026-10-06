@@ -6,7 +6,7 @@ I can trim clips, set in and out points, and build a rough cut that communicates
 
 ## Watch, Pause, Practice
 
-Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. Assigned segment: 00:35:30-01:07:04.
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment. Assigned segment: 00:35:30-01:07:04.
 
 - After edge trimming: play the edit and check that you removed dead time without cutting the useful action.
 - After source in/out points: identify two clips whose selected ranges you used.
@@ -27,7 +27,7 @@ Project: LastName_FirstName_ResolveFoundations. Timeline: Foundations_MiniEdit. 
 
 ## Evidence and Submission
 
-For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 - A Google Docs or Drive link containing a screenshot of the 30-60 second rough cut timeline with at least four clips and its runtime visible.
 - In the same evidence document, name two source clips on which you set in/out points and explain what you kept.

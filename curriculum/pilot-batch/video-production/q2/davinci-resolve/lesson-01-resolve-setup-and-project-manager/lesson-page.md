@@ -22,11 +22,11 @@ What is one problem that can happen if an editor starts cutting video before nam
 - Assigned segment: [Play 00:00:00-00:13:16 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=0&end=796&autoplay=1)
 - YouTube page: [Open at 00:00:00](https://youtu.be/MCDVcQIA3UM?t=0s); stop at 00:13:16.
 - Note: Introduces DaVinci Resolve as an all-in-one post-production tool, system expectations, free versus Studio awareness, Resolve pages, Project Manager, new project creation, project backup/export habits, and first workspace orientation.
-- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+- Cut and three Fusion lessons are required before final export. Watch the assigned bounded segments, including viewing-only awareness of optional Studio features; no paid feature or hardware is required.
 
 ## Follow Along in Resolve
 
-Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment.
 
 - After the free/Studio explanation: identify the version installed on your classroom computer; paid features are not required.
 - After project creation: compare the name in your Project Manager with the required naming format.
@@ -58,7 +58,7 @@ Open the assigned tutorial segment and your own DaVinci Resolve project together
 
 ## Submission Checklist
 
-For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 - A Google Docs or Drive link containing a screenshot of your named Resolve project or Project Manager entry.
 - In the same evidence document or folder, one-sentence purpose notes for four Resolve pages.

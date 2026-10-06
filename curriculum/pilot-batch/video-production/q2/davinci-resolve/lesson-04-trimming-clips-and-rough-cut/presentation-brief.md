@@ -203,7 +203,7 @@ Rough Cut Story Sequence
 
 Required evidence:
 Google Drive link to a screenshot of the rough cut timeline.
-Google Drive or YouTube link to a short exported rough cut not required before Lesson 7.
+Google Drive or YouTube link to a short exported rough cut not required before the final export lesson.
 Short reflection naming at least three tools or shortcuts used.
 
 Do not create a generic marketing deck. Make it classroom-ready for students using DaVinci Resolve.
@@ -211,7 +211,7 @@ Do not create a generic marketing deck. Make it classroom-ready for students usi
 
 ## Follow-Along and Evidence Revision (October 6, 2026)
 
-Use 00:35:30-01:07:04 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+Use 00:35:30-01:07:04 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment. For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 ### Pause-and-Practice Prompts
 
@@ -244,4 +244,4 @@ Extension: Duplicate the timeline and create a second pacing version, then compa
 
 Teacher check: Verify runtime, four clips, absence of accidental gaps, and evidence of two selected source ranges. Do not grade a student's shortcut mapping against the instructor's custom keys.
 
-Use the existing 90-minute block. Cut, Fusion, Color, and Fairlight chapters are not assigned. Do not require a Studio-only tool, a new community account, or a video export before Lesson 7. No deck is created by this brief revision.
+Use the existing 90-minute block. Cut and Fusion are assigned; Color-page and Fairlight chapters are excluded. Do not require Studio-only tools, Speed Editor hardware, a new community account, or a video export before the final export lesson (sequence 11, stable ID vp-q2-l07). No deck is created by this brief revision.

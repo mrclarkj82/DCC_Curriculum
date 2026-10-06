@@ -118,6 +118,10 @@ const q2DaVinciVideoSegments = new Map([
   ['vp-q2-l05', { start: '01:07:04', end: '01:20:08', startSeconds: 4024 }],
   ['vp-q2-l06', { start: '01:20:08', end: '01:30:41', startSeconds: 4808 }],
   ['vp-q2-l07', { start: '04:53:29', end: '05:06:57', startSeconds: 17609 }],
+  ['vp-q2-l08', { start: '01:30:41', end: '01:43:14', startSeconds: 5441 }],
+  ['vp-q2-l09', { start: '01:43:14', end: '02:02:05', startSeconds: 6194 }],
+  ['vp-q2-l10', { start: '02:02:05', end: '02:27:02', startSeconds: 7325 }],
+  ['vp-q2-l11', { start: '02:27:02', end: '02:50:28', startSeconds: 8822 }],
 ]);
 
 for (const [lessonId, segment] of q2DaVinciVideoSegments) {
@@ -254,7 +258,8 @@ for (let lessonNumber = 1; lessonNumber <= 16; lessonNumber += 1) {
   );
 }
 
-for (let lessonNumber = 1; lessonNumber <= 9; lessonNumber += 1) {
+assert(q2DaVinciSchedule.length === 13, 'Q2 must contain two openers and eleven DaVinci lessons');
+for (let lessonNumber = 1; lessonNumber <= 13; lessonNumber += 1) {
   assert(
     q2DaVinciLessonNumbers.has(lessonNumber),
     `Q2 DaVinci Resolve lesson schedule is missing lesson ${lessonNumber}`,

@@ -1,5 +1,6 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { isDeepStrictEqual } from 'node:util';
 import { applicationDefault, initializeApp } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 import { validateLessonDates } from './lib/validate-lesson-dates.mjs';
@@ -8,6 +9,7 @@ const root = process.cwd();
 const dryRun = process.argv.includes('--dry-run');
 const confirmSync = process.env.CONFIRM_SCHEDULE_SYNC === 'true';
 const namespace = (process.env.FIRESTORE_NAMESPACE || 'apps/dcc').replace(/^\/+|\/+$/g, '');
+if (namespace !== 'apps/dcc') throw new Error('DCC schedule sync must use apps/dcc.');
 const schedulePath = join(root, 'curriculum', 'website-data', 'lessonSchedule.seed.json');
 
 const readJson = (path) => JSON.parse(readFileSync(path, 'utf8'));
@@ -16,9 +18,7 @@ const loadProjectId = () => {
   return existsSync(firebasercPath) ? readJson(firebasercPath).projects?.default : undefined;
 };
 const matchesSeed = (liveRecord, seedRecord) =>
-  Object.entries(seedRecord).every(
-    ([key, value]) => JSON.stringify(liveRecord?.[key]) === JSON.stringify(value),
-  );
+  Object.entries(seedRecord).every(([key, value]) => isDeepStrictEqual(liveRecord?.[key], value));
 
 const schedule = readJson(schedulePath);
 const instructionalDayByDate = new Map(

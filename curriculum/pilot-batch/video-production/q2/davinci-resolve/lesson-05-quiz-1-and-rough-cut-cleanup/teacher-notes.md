@@ -7,11 +7,11 @@
 - Unit: DaVinci Resolve Foundations
 - Assigned video: 01:07:04-01:20:08 (about 14 minutes)
 - Class length: 90-minute A/B block
-- Existing scheduled dates are unchanged.
+- Scheduled dates: 2026-10-23 (A) / 2026-10-26 (B).
 
 ## Before Class
 
-The creator directs viewers to a free community for the tutorial media. Before Lesson 1, supply an approved local practice-media folder and confirm it includes clips for the edit and, if available, the separate audio-sync example. Do not require students to create a community account. No direct public ZIP URL was verified.
+The creator directs viewers to a free community for the tutorial media. Before Lesson 1, supply an approved local practice-media folder and confirm it includes clips for the edit and, if available, the separate audio-sync example. Do not require students to create a community account. No direct public ZIP URL was verified. Include the Fusion wide shot, house exterior, alien plate, and ship plate when available, or provide approved equivalent foreground/background and moving footage. Confirm source-specific color-management settings before the Fusion atmosphere lesson.
 
 - Confirm Resolve opens, the previous project/media path remains available, and students can access DCC and approved evidence links.
 - Preview only the assigned segment. Adapt instructions to the installed version; no Studio-only feature is required.
@@ -27,7 +27,7 @@ The creator directs viewers to a free community for the tutorial media. Before L
 - 75-85: save, capture the required evidence, submit links, and write the reflection.
 - 85-90: exit ticket and reopen/save-location check.
 
-If setup or a pause takes longer, reduce the extension and nonessential demonstrations before evidence capture. Use the November 3-6 support blocks for unfinished exports or troubleshooting; do not move later project deadlines.
+If setup or a pause takes longer, reduce the extension and nonessential demonstrations before evidence capture. Use the November 16-19, 2026 support blocks for unfinished exports or troubleshooting. Later project dates follow the teacher-approved extended calendar.
 
 ## Pause-and-Check Prompts
 
@@ -63,6 +63,6 @@ Duplicate the timeline before comparing two fades, audio levels, or speed choice
 ## Assessment and Boundaries
 
 - The DCC Quiz 1 and Quiz 2 records remain unpublished drafts. When a checkpoint is required, assign an in-class/paper assessment or use the named teacher checkoff; do not tell students an unavailable online quiz is required.
-- Basic audio levels and fades in the Edit page are included. Fairlight chapter work is excluded. Cut/Fusion/Color chapters remain outside the teacher-confirmed shorter foundations scope.
+- Cut and Fusion are included. Color-page and Fairlight chapters are excluded; basic Edit-page audio and Fusion effect/color nodes remain included. Studio-only features and Speed Editor hardware are not required.
 - Evidence uses existing Google Docs/Drive/approved YouTube links and the DCC submission workflow. Do not require raw website uploads or community accounts.
 - Existing slide links and actual slide status are preserved. Review decks against the clarified checklist; no new deck was created.

@@ -22,11 +22,11 @@ What is one issue in your rough cut that a viewer would notice immediately?
 - Assigned segment: [Play 01:07:04-01:20:08 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=4024&end=4808&autoplay=1)
 - YouTube page: [Open at 01:07:04](https://youtu.be/MCDVcQIA3UM?t=4024s); stop at 01:20:08.
 - Note: Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut.
-- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+- Cut and three Fusion lessons are required before final export. Watch the assigned bounded segments, including viewing-only awareness of optional Studio features; no paid feature or hardware is required.
 
 ## Follow Along in Resolve
 
-Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment.
 
 - After the prepared-bin example: confirm you are still improving your own saved rough cut.
 - After an audio level/fade change: listen to the relevant edit and compare it with the previous version.
@@ -58,7 +58,7 @@ Open the assigned tutorial segment and your own DaVinci Resolve project together
 
 ## Submission Checklist
 
-For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 - A Google Docs or Drive link containing the teacher-assigned Quiz 1 result or a dated note of the teacher checkpoint/checkoff.
 - In the same evidence document or folder, a screenshot of the cleaned timeline and a screenshot or note of the audio/Inspector setting checked.

@@ -22,11 +22,11 @@ When does a title help a video, and when can it distract from the video?
 - Assigned segment: [Play 01:20:08-01:30:41 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=4808&end=5441&autoplay=1)
 - YouTube page: [Open at 01:20:08](https://youtu.be/MCDVcQIA3UM?t=4808s); stop at 01:30:41.
 - Note: Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit.
-- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+- Cut and three Fusion lessons are required before final export. Watch the assigned bounded segments, including viewing-only awareness of optional Studio features; no paid feature or hardware is required.
 
 ## Follow Along in Resolve
 
-Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment.
 
 - After adding text: read the title at normal viewer size and check its spelling.
 - After adjusting the Inspector: play the title for its full duration and check its position and contrast.
@@ -59,7 +59,7 @@ Open the assigned tutorial segment and your own DaVinci Resolve project together
 
 ## Submission Checklist
 
-For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 - A Google Docs or Drive link containing a screenshot of your title/lower third selected in the timeline, with its text or Inspector controls visible.
 - In the same evidence document, note your title's duration and explain one readability check and your transition or clean-cut choice.

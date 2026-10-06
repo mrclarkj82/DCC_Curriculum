@@ -23,7 +23,15 @@ const assignmentFields = [
   'submissionType',
 ];
 
-if (plan.lessons.length !== 7 || plan.videoId !== 'MCDVcQIA3UM') {
+const expectedIds = Array.from(
+  { length: 11 },
+  (_, i) => `vp-q2-l${String(i + 1).padStart(2, '0')}`,
+);
+if (
+  plan.lessons.length !== 11 ||
+  expectedIds.some((id) => !plan.lessons.some((item) => item.id === id)) ||
+  plan.videoId !== 'MCDVcQIA3UM'
+) {
   throw new Error('Refusing to publish an unexpected DaVinci foundations scope.');
 }
 initializeApp({ credential: applicationDefault(), projectId });
@@ -40,8 +48,20 @@ const targets = plan.lessons.flatMap((item) => {
     throw new Error(`Missing or mismatched foundations records for ${item.id}`);
   }
   return [
-    { type: 'lessons', id: lesson.id, record: lesson, fields: ['video', 'assignment'] },
-    { type: 'assignments', id: assignment.id, record: assignment, fields: assignmentFields },
+    {
+      type: 'lessons',
+      id: lesson.id,
+      record: lesson,
+      fields: ['video', 'assignment', 'lessonNumber'],
+      allowCreate: Boolean(item.lesson),
+    },
+    {
+      type: 'assignments',
+      id: assignment.id,
+      record: assignment,
+      fields: assignmentFields,
+      allowCreate: Boolean(item.assignment),
+    },
   ];
 });
 const refs = targets.map((target) => db.doc(`apps/dcc/${target.type}/${target.id}`));
@@ -50,21 +70,22 @@ const changes = [];
 for (let index = 0; index < targets.length; index += 1) {
   const target = targets[index];
   const snapshot = snapshots[index];
-  if (!snapshot.exists)
+  if (!snapshot.exists && !target.allowCreate)
     throw new Error(`Refusing to create a partial missing record: ${snapshot.ref.path}`);
-  const current = snapshot.data();
-  const payload = Object.fromEntries(target.fields.map((field) => [field, target.record[field]]));
-  if (target.type === 'lessons') {
+  const current = snapshot.data() ?? {};
+  const fields = snapshot.exists ? target.fields : Object.keys(target.record);
+  const payload = Object.fromEntries(fields.map((field) => [field, target.record[field]]));
+  if (snapshot.exists && target.type === 'lessons') {
     payload.video = { ...current.video, ...payload.video };
     payload.assignment = { ...current.assignment, ...payload.assignment };
   }
-  const changedFields = target.fields.filter(
+  const changedFields = fields.filter(
     (field) => !isDeepStrictEqual(current[field], payload[field]),
   );
   if (changedFields.length) {
-    changes.push({ ref: snapshot.ref, payload, fields: target.fields });
+    changes.push({ ref: snapshot.ref, payload, fields, create: !snapshot.exists });
     console.log(
-      `${publish ? 'update' : 'would update'} ${snapshot.ref.path}: ${changedFields.join(', ')}`,
+      `${publish ? '' : 'would '}${snapshot.exists ? 'update' : 'create'} ${snapshot.ref.path}: ${changedFields.join(', ')}`,
     );
   }
 }
@@ -83,9 +104,9 @@ if (publish && changes.length) {
   }
 }
 console.log(
-  `${publish ? 'Publish' : 'Dry run'} complete: changed=${changes.length} unchanged=${targets.length - changes.length} failed=0`,
+  `${publish ? 'Publish' : 'Dry run'} complete: changed=${changes.length} created=${changes.filter((x) => x.create).length} unchanged=${targets.length - changes.length} failed=0`,
 );
 if (!publish)
   console.log(
-    'No writes. Set CONFIRM_DAVINCI_FOUNDATIONS=true to publish only these fourteen DCC content records.',
+    'No writes. Set CONFIRM_DAVINCI_FOUNDATIONS=true to publish only these twenty-two DCC content records.',
   );

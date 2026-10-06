@@ -1,0 +1,71 @@
+{
+  "id": "vp-q2-l11",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 10,
+  "title": "Fusion 3: Compositing and Motion",
+  "status": "draft-pilot",
+  "video": {
+    "start": "02:27:02",
+    "end": "02:50:28",
+    "note": "Alien/ship plates, polygon inversion, Transform and node order, a moving graphic using keyframes or Tracker, and a Magic Mask demonstration. Magic Mask is viewing-only; no Studio-only feature is required.",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=8822s"
+  },
+  "learningTarget": "I can combine two visual elements using a mask and Transform, then make a graphic follow motion with a tracker or manual keyframes.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What clues would make a person or graphic look pasted into a shot instead of belonging there?"
+  },
+  "vocabulary": [
+    {
+      "term": "Composite",
+      "definition": "An image built by combining two or more visual elements."
+    },
+    {
+      "term": "Plate",
+      "definition": "A source shot used as one layer of a visual-effects composite."
+    },
+    {
+      "term": "Transform",
+      "definition": "A node that changes an image's position, size, or rotation."
+    },
+    {
+      "term": "Invert",
+      "definition": "Reversing which part of a mask is included or excluded."
+    },
+    {
+      "term": "Tracker",
+      "definition": "A tool that follows a visible feature over time to drive motion."
+    },
+    {
+      "term": "Match move",
+      "definition": "Using tracked movement to attach a foreground element to a moving shot."
+    }
+  ],
+  "slides": {
+    "title": "Fusion 3: Compositing and Motion",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "vp-q2-a11",
+    "title": "Two-Element Composite and Moving Graphic",
+    "evidenceRequired": [
+      "A Google Docs or Drive link with the two-element composite and connected mask/Transform/Merge node flow.",
+      "In the same document, beginning/middle/end captures of the moving graphic and notes identifying the motion method and one corrected drift or alignment issue.",
+      "A 2-3 sentence DCC reflection explaining a compositing decision and how playback verified the motion."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain one mask/Transform decision and how you checked or corrected the graphic's motion.",
+    "submissionType": "google-drive-link-and-reflection"
+  },
+  "exitTicket": "Which node places your foreground, and how did you check that your moving graphic stays attached?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "vp-q2-l11"
+  ]
+}

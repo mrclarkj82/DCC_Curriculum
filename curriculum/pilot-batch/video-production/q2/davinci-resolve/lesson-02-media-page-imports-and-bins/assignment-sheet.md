@@ -6,7 +6,7 @@ I can import footage into the Media Pool and organize it with bins so my edit ca
 
 ## Watch, Pause, Practice
 
-Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. Assigned segment: 00:13:16-00:25:47.
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment. Assigned segment: 00:13:16-00:25:47.
 
 - After import: confirm the clip appears in your Media Pool and plays in the viewer.
 - After dragging folders: confirm the folder names survived as bins.
@@ -27,7 +27,7 @@ Project: LastName_FirstName_ResolveFoundations. Timeline: Foundations_MiniEdit. 
 
 ## Evidence and Submission
 
-For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 - A Google Docs or Drive link containing a Media Pool screenshot with at least three organized bins.
 - In the same evidence document or folder, a screenshot or notes showing two metadata/description entries on different clips.

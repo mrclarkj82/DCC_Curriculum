@@ -2970,7 +2970,7 @@
     "programAreaId": "video-production",
     "quarter": "Q2",
     "unit": "DaVinci Resolve Foundations",
-    "lessonNumber": 7,
+    "lessonNumber": 11,
     "title": "Quiz 2 and Final Export",
     "status": "draft-pilot",
     "video": {
@@ -3042,6 +3042,286 @@
       "q2",
       "resolve-foundations",
       "lesson-07"
+    ]
+  },
+  {
+    "id": "vp-q2-l08",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 7,
+    "title": "Cut Page: Fast Assembly and Edit Decisions",
+    "status": "draft-pilot",
+    "video": {
+      "start": "01:30:41",
+      "end": "01:43:14",
+      "note": "Source Tape, overview/detail timelines, highlighted edit points, Smart Insert, trimming, and returning to Edit. Speed Editor hardware is demonstrated but is not required.",
+      "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+      "url": "https://youtu.be/MCDVcQIA3UM?t=5441s"
+    },
+    "learningTarget": "I can use the Cut page to assemble and trim a short sequence, then explain when Cut or Edit is the better workflow.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What would you simplify in your editing workflow if a news update had to be ready in ten minutes?"
+    },
+    "vocabulary": [
+      {
+        "term": "Source Tape",
+        "definition": "A Cut-page view that lets you browse clips from a bin as one continuous source."
+      },
+      {
+        "term": "Dual timeline",
+        "definition": "An overview and a detailed view of the same sequence, not two separate edits."
+      },
+      {
+        "term": "Smart Insert",
+        "definition": "An insert action that uses the highlighted nearest edit point."
+      },
+      {
+        "term": "Edit indicator",
+        "definition": "The highlight that shows which edit point a Cut-page action will affect."
+      },
+      {
+        "term": "Ripple trim",
+        "definition": "A trim that closes or opens time by moving later clips."
+      }
+    ],
+    "slides": {
+      "title": "Cut Page: Fast Assembly and Edit Decisions",
+      "url": "",
+      "status": "ready-for-chatgpt"
+    },
+    "assignment": {
+      "id": "vp-q2-a08",
+      "title": "Cut Page Assembly and Workflow Comparison",
+      "evidenceRequired": [
+        "A Google Docs or Drive link with a Cut-page screenshot showing four clips and both timeline views.",
+        "In the same document, record the Smart Insert location, one trim, and a two-sentence comparison of Cut and Edit.",
+        "A 2-3 sentence DCC reflection explaining which workflow you would use for a fast classroom news update and why."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain where Smart Insert placed your clip and which page you would choose for a fast classroom news update.",
+      "submissionType": "google-drive-link-and-reflection"
+    },
+    "exitTicket": "Where did Smart Insert put your clip, and when would you choose Cut instead of Edit?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "vp-q2-l08"
+    ]
+  },
+  {
+    "id": "vp-q2-l09",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 8,
+    "title": "Fusion 1: Nodes, Viewers, and Image Flow",
+    "status": "draft-pilot",
+    "video": {
+      "start": "01:43:14",
+      "end": "02:02:05",
+      "note": "General page workflow, a separate Fusion practice timeline, clip-level composition, viewers, connections, Blur and Color Corrector examples. Students build a simple node chain first.",
+      "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+      "url": "https://youtu.be/MCDVcQIA3UM?t=6194s"
+    },
+    "learningTarget": "I can build and explain a simple MediaIn-to-effect-to-MediaOut node flow and verify the result on the Edit page.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "If a picture passes through a blur before reaching the screen, what would each step in that flowchart do?"
+    },
+    "vocabulary": [
+      {
+        "term": "Node",
+        "definition": "A tool or image source represented as a box in a Fusion flow."
+      },
+      {
+        "term": "MediaIn",
+        "definition": "An image entering the Fusion composition from timeline or media sources."
+      },
+      {
+        "term": "MediaOut",
+        "definition": "The final image sent back to the timeline."
+      },
+      {
+        "term": "Connection",
+        "definition": "A link carrying an image or mask between nodes."
+      },
+      {
+        "term": "Viewer",
+        "definition": "A panel that can display the output of a selected node."
+      },
+      {
+        "term": "Bypass",
+        "definition": "Temporarily disabling a tool to compare the result with the original."
+      }
+    ],
+    "slides": {
+      "title": "Fusion 1: Nodes, Viewers, and Image Flow",
+      "url": "",
+      "status": "ready-for-chatgpt"
+    },
+    "assignment": {
+      "id": "vp-q2-a09",
+      "title": "Fusion Image-Flow Checkpoint",
+      "evidenceRequired": [
+        "A Google Docs or Drive link with a Fusion screenshot showing MediaIn, one effect, MediaOut, and the output viewer.",
+        "In the same document, explain the three nodes and include an enabled/bypassed comparison or paired screenshots.",
+        "A 2-3 sentence DCC reflection explaining how image flow and node viewers helped you find or prevent an error."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, trace your image through the three nodes and explain how the viewers helped you check the result.",
+      "submissionType": "google-drive-link-and-reflection"
+    },
+    "exitTicket": "Trace your image from MediaIn to MediaOut and explain what your effect node changes.",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "vp-q2-l09"
+    ]
+  },
+  {
+    "id": "vp-q2-l10",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 9,
+    "title": "Fusion 2: Merges, Masks, and Atmosphere",
+    "status": "draft-pilot",
+    "video": {
+      "start": "02:02:05",
+      "end": "02:27:02",
+      "note": "Fusion demo color-management setup, Fast Noise smoke, Merge inputs, polygon masks, soft edges, day-to-night compositing, and animated fog. Core work is one masked atmospheric composite; complex day-to-night branches are an extension.",
+      "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+      "url": "https://youtu.be/MCDVcQIA3UM?t=7325s"
+    },
+    "learningTarget": "I can combine two images with a Merge, limit an effect with a mask, and animate a small atmospheric change.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "How could you add fog to one part of an image while keeping the rest clear?"
+    },
+    "vocabulary": [
+      {
+        "term": "Merge",
+        "definition": "A node that combines a foreground image with a background image."
+      },
+      {
+        "term": "Foreground/background",
+        "definition": "The image placed over another image and the image underneath it."
+      },
+      {
+        "term": "Mask",
+        "definition": "A shape or image that limits where a tool affects the result."
+      },
+      {
+        "term": "Polygon",
+        "definition": "A mask made from connected points and curve handles."
+      },
+      {
+        "term": "Fast Noise",
+        "definition": "A generated texture that can provide smoke or fog patterns."
+      },
+      {
+        "term": "Soft edge",
+        "definition": "A gradual mask boundary that helps an effect blend into the shot."
+      }
+    ],
+    "slides": {
+      "title": "Fusion 2: Merges, Masks, and Atmosphere",
+      "url": "",
+      "status": "ready-for-chatgpt"
+    },
+    "assignment": {
+      "id": "vp-q2-a10",
+      "title": "Masked Atmosphere Composite",
+      "evidenceRequired": [
+        "A Google Docs or Drive link with a screenshot of the working MediaIn/Fast Noise/Merge/mask flow and output.",
+        "In the same document, two frame captures of the animated change and labels identifying foreground, background, and the mask job.",
+        "A 2-3 sentence DCC reflection explaining why the masked atmosphere supports the shot and how you checked its motion."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain what your mask limits, why the atmosphere belongs in the shot, and how you verified the animated change.",
+      "submissionType": "google-drive-link-and-reflection"
+    },
+    "exitTicket": "What job does your mask limit, and what would change if you swapped your Merge inputs?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "vp-q2-l10"
+    ]
+  },
+  {
+    "id": "vp-q2-l11",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "unit": "DaVinci Resolve Foundations",
+    "lessonNumber": 10,
+    "title": "Fusion 3: Compositing and Motion",
+    "status": "draft-pilot",
+    "video": {
+      "start": "02:27:02",
+      "end": "02:50:28",
+      "note": "Alien/ship plates, polygon inversion, Transform and node order, a moving graphic using keyframes or Tracker, and a Magic Mask demonstration. Magic Mask is viewing-only; no Studio-only feature is required.",
+      "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+      "url": "https://youtu.be/MCDVcQIA3UM?t=8822s"
+    },
+    "learningTarget": "I can combine two visual elements using a mask and Transform, then make a graphic follow motion with a tracker or manual keyframes.",
+    "bellRinger": {
+      "type": "short-response",
+      "prompt": "What clues would make a person or graphic look pasted into a shot instead of belonging there?"
+    },
+    "vocabulary": [
+      {
+        "term": "Composite",
+        "definition": "An image built by combining two or more visual elements."
+      },
+      {
+        "term": "Plate",
+        "definition": "A source shot used as one layer of a visual-effects composite."
+      },
+      {
+        "term": "Transform",
+        "definition": "A node that changes an image's position, size, or rotation."
+      },
+      {
+        "term": "Invert",
+        "definition": "Reversing which part of a mask is included or excluded."
+      },
+      {
+        "term": "Tracker",
+        "definition": "A tool that follows a visible feature over time to drive motion."
+      },
+      {
+        "term": "Match move",
+        "definition": "Using tracked movement to attach a foreground element to a moving shot."
+      }
+    ],
+    "slides": {
+      "title": "Fusion 3: Compositing and Motion",
+      "url": "",
+      "status": "ready-for-chatgpt"
+    },
+    "assignment": {
+      "id": "vp-q2-a11",
+      "title": "Two-Element Composite and Moving Graphic",
+      "evidenceRequired": [
+        "A Google Docs or Drive link with the two-element composite and connected mask/Transform/Merge node flow.",
+        "In the same document, beginning/middle/end captures of the moving graphic and notes identifying the motion method and one corrected drift or alignment issue.",
+        "A 2-3 sentence DCC reflection explaining a compositing decision and how playback verified the motion."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain one mask/Transform decision and how you checked or corrected the graphic's motion.",
+      "submissionType": "google-drive-link-and-reflection"
+    },
+    "exitTicket": "Which node places your foreground, and how did you check that your moving graphic stays attached?",
+    "tags": [
+      "video-production",
+      "davinci-resolve",
+      "q2",
+      "resolve-foundations",
+      "vp-q2-l11"
     ]
   }
 ]

@@ -1,0 +1,71 @@
+{
+  "id": "vp-q2-l10",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 9,
+  "title": "Fusion 2: Merges, Masks, and Atmosphere",
+  "status": "draft-pilot",
+  "video": {
+    "start": "02:02:05",
+    "end": "02:27:02",
+    "note": "Fusion demo color-management setup, Fast Noise smoke, Merge inputs, polygon masks, soft edges, day-to-night compositing, and animated fog. Core work is one masked atmospheric composite; complex day-to-night branches are an extension.",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=7325s"
+  },
+  "learningTarget": "I can combine two images with a Merge, limit an effect with a mask, and animate a small atmospheric change.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "How could you add fog to one part of an image while keeping the rest clear?"
+  },
+  "vocabulary": [
+    {
+      "term": "Merge",
+      "definition": "A node that combines a foreground image with a background image."
+    },
+    {
+      "term": "Foreground/background",
+      "definition": "The image placed over another image and the image underneath it."
+    },
+    {
+      "term": "Mask",
+      "definition": "A shape or image that limits where a tool affects the result."
+    },
+    {
+      "term": "Polygon",
+      "definition": "A mask made from connected points and curve handles."
+    },
+    {
+      "term": "Fast Noise",
+      "definition": "A generated texture that can provide smoke or fog patterns."
+    },
+    {
+      "term": "Soft edge",
+      "definition": "A gradual mask boundary that helps an effect blend into the shot."
+    }
+  ],
+  "slides": {
+    "title": "Fusion 2: Merges, Masks, and Atmosphere",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "vp-q2-a10",
+    "title": "Masked Atmosphere Composite",
+    "evidenceRequired": [
+      "A Google Docs or Drive link with a screenshot of the working MediaIn/Fast Noise/Merge/mask flow and output.",
+      "In the same document, two frame captures of the animated change and labels identifying foreground, background, and the mask job.",
+      "A 2-3 sentence DCC reflection explaining why the masked atmosphere supports the shot and how you checked its motion."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain what your mask limits, why the atmosphere belongs in the shot, and how you verified the animated change.",
+    "submissionType": "google-drive-link-and-reflection"
+  },
+  "exitTicket": "What job does your mask limit, and what would change if you swapped your Merge inputs?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "vp-q2-l10"
+  ]
+}

@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const root = process.cwd();
@@ -8,6 +8,7 @@ const writeJson = (path, value) =>
 const plan = readJson('curriculum/source/davinci-resolve-foundations-plan.json');
 const lessons = readJson('curriculum/website-data/lessons.seed.json');
 const assignments = readJson('curriculum/website-data/assignments.seed.json');
+const schedule = readJson('curriculum/calendar/q2-davinci-resolve-lesson-schedule.json');
 const lessonRoot = 'curriculum/pilot-batch/video-production/q2/davinci-resolve';
 const bullets = (items) => items.map((item) => `- ${item}`).join('\n');
 const numbered = (items) => items.map((item, index) => `${index + 1}. ${item}`).join('\n');
@@ -15,8 +16,38 @@ const seconds = (time) => time.split(':').reduce((total, value) => total * 60 + 
 const routine = `${plan.studentRoutine} ${plan.submissionRoutine}`;
 
 for (const item of plan.lessons) {
-  const lesson = lessons.find((record) => record.id === item.id);
-  const assignment = assignments.find((record) => record.id === item.assignmentId);
+  let lesson = lessons.find((record) => record.id === item.id);
+  let assignment = assignments.find((record) => record.id === item.assignmentId);
+  if (!lesson && item.lesson) {
+    lesson = {
+      id: item.id,
+      programAreaId: 'video-production',
+      quarter: 'Q2',
+      unit: 'DaVinci Resolve Foundations',
+      lessonNumber: item.sequence,
+      title: item.lesson.title,
+      status: 'draft-pilot',
+      video: { start: item.start, end: item.end, note: item.lesson.note },
+      learningTarget: item.lesson.learningTarget,
+      bellRinger: item.lesson.bellRinger,
+      vocabulary: item.lesson.vocabulary,
+      slides: { title: item.lesson.title, url: '', status: 'ready-for-chatgpt' },
+      assignment: { id: item.assignmentId, title: item.assignment.title },
+      exitTicket: item.lesson.exitTicket,
+      tags: ['video-production', 'davinci-resolve', 'q2', 'resolve-foundations', item.id],
+    };
+    lessons.push(lesson);
+  }
+  if (!assignment && item.assignment) {
+    assignment = {
+      id: item.assignmentId,
+      programAreaId: 'video-production',
+      lessonId: item.id,
+      title: item.assignment.title,
+      skillFocus: item.assignment.skillFocus,
+    };
+    assignments.push(assignment);
+  }
   if (!lesson || !assignment || lesson.assignment.id !== assignment.id) {
     throw new Error(`Missing or mismatched foundations records for ${item.id}`);
   }
@@ -31,6 +62,7 @@ for (const item of plan.lessons) {
   }
 
   lesson.video.source = 'Casey Faris / Ground Control: Introduction to DaVinci Resolve';
+  lesson.lessonNumber = item.sequence;
   lesson.video.url = `https://youtu.be/${plan.videoId}?t=${seconds(item.start)}s`;
   lesson.assignment.evidenceRequired = item.evidenceRequired;
   lesson.assignment.reflectionPrompt = item.reflectionPrompt;
@@ -79,9 +111,12 @@ for (const item of plan.lessons) {
   ];
 
   const dir = `${lessonRoot}/${item.folder}`;
+  mkdirSync(join(root, dir), { recursive: true });
   const writeMarkdown = (file, text) => writeFileSync(join(root, dir, file), `${text.trim()}\n`);
   const videoMinutes = Math.ceil((seconds(item.end) - seconds(item.start)) / 60);
   const naming = `LastName_FirstName_${item.assignmentId.toUpperCase()}_Description`;
+  const scheduled = schedule.lessons.find((record) => record.lessonId === item.id);
+  if (!scheduled) throw new Error(`Missing scheduled foundations lesson ${item.id}`);
   const watchUrl = lesson.video.url;
   const exactUrl = `https://www.youtube.com/embed/${plan.videoId}?start=${seconds(item.start)}&end=${seconds(item.end)}&autoplay=1`;
 
@@ -112,7 +147,7 @@ ${lesson.bellRinger.prompt}
 - Assigned segment: [Play ${item.start}-${item.end} only](${exactUrl})
 - YouTube page: [Open at ${item.start}](${watchUrl}); stop at ${item.end}.
 - Note: ${lesson.video.note}
-- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+- ${plan.scopeNote}
 
 ## Follow Along in Resolve
 
@@ -223,7 +258,7 @@ ${item.extension}
 - Unit: DaVinci Resolve Foundations
 - Assigned video: ${item.start}-${item.end} (about ${videoMinutes} minutes)
 - Class length: 90-minute A/B block
-- Existing scheduled dates are unchanged.
+- Scheduled dates: ${scheduled.aDayDate} (A) / ${scheduled.bDayDate} (B).
 
 ## Before Class
 
@@ -243,7 +278,7 @@ ${item.id === 'vp-q2-l07' ? "- The instructor discusses QuickTime and several co
 - 75-85: save, capture the required evidence, submit links, and write the reflection.
 - 85-90: exit ticket and reopen/save-location check.
 
-If setup or a pause takes longer, reduce the extension and nonessential demonstrations before evidence capture. Use the November 3-6 support blocks for unfinished exports or troubleshooting; do not move later project deadlines.
+If setup or a pause takes longer, reduce the extension and nonessential demonstrations before evidence capture. Use the ${plan.supportDates} support blocks for unfinished exports or troubleshooting. Later project dates follow the teacher-approved extended calendar.
 
 ## Pause-and-Check Prompts
 
@@ -270,7 +305,7 @@ ${item.extension}
 ## Assessment and Boundaries
 
 - The DCC Quiz 1 and Quiz 2 records remain unpublished drafts. When a checkpoint is required, assign an in-class/paper assessment or use the named teacher checkoff; do not tell students an unavailable online quiz is required.
-- Basic audio levels and fades in the Edit page are included. Fairlight chapter work is excluded. Cut/Fusion/Color chapters remain outside the teacher-confirmed shorter foundations scope.
+- Cut and Fusion are included. Color-page and Fairlight chapters are excluded; basic Edit-page audio and Fusion effect/color nodes remain included. Studio-only features and Speed Editor hardware are not required.
 - Evidence uses existing Google Docs/Drive/approved YouTube links and the DCC submission workflow. Do not require raw website uploads or community accounts.
 - Existing slide links and actual slide status are preserved. Review decks against the clarified checklist; no new deck was created.
 `,
@@ -330,17 +365,25 @@ Extension: ${item.extension}
 
 Teacher check: ${item.teacherCheck}
 
-Use the existing 90-minute block. Cut, Fusion, Color, and Fairlight chapters are not assigned. Do not require a Studio-only tool, a new community account, or a video export before Lesson 7. No deck is created by this brief revision.
+Use the existing 90-minute block. Cut and Fusion are assigned; Color-page and Fairlight chapters are excluded. Do not require Studio-only tools, Speed Editor hardware, a new community account, or a video export before the final export lesson (sequence 11, stable ID vp-q2-l07). No deck is created by this brief revision.
 `;
   for (const file of ['slide-brief.md', 'presentation-brief.md']) {
-    let brief = readFileSync(join(root, dir, file), 'utf8');
+    let brief = existsSync(join(root, dir, file))
+      ? readFileSync(join(root, dir, file), 'utf8')
+      : file === 'slide-brief.md'
+        ? `# Slide Brief: ${lesson.title}\n\nCreate a concise 9-slide classroom deck for a 90-minute high school block. This teacher-facing brief is ready for ChatGPT; no deck exists yet.\n\n## Slide Sequence\n\n1. Target and evidence goal.\n2. Bell ringer: ${lesson.bellRinger.prompt}\n3. Why this workflow helps a video production team.\n4. Vocabulary: ${lesson.vocabulary.map((x) => x.term).join(', ')}.\n5. Annotated Resolve interface and a simple before/after.\n6. Short teacher demonstration with pause checks.\n7. One common error and a concrete repair.\n8. Independent practice and evidence checklist.\n9. Reflection and exit ticket: ${lesson.exitTicket}\n\n## Visual and Speaker-Note Guidance\n\nUse the DCC synthwave palette, large readable interface callouts, and an original flow diagram. Keep paragraphs off slides. Include teacher demo notes and the selected tutorial link as the source. Use screenshots/placeholders without student data.\n`
+        : `# Presentation Brief: ${lesson.title}\n\nPrepare a premium 15-20 slide teacher-led deck for a 90-minute high school block. This teacher-facing brief is ready for ChatGPT; no deck exists yet.\n\n## Lesson Overview\n\n- Lesson ID: ${lesson.id}\n- Learning target: ${lesson.learningTarget}\n- Video range: ${item.start}-${item.end}\n- Scheduled dates: ${scheduled.aDayDate} (A) / ${scheduled.bDayDate} (B)\n\n## Big Idea and Hook\n\n${lesson.bellRinger.prompt} Connect the answer to a real classroom news, film, or effects workflow. Explain each action before students repeat it in their saved project.\n\n## Prerequisites\n\nStudents have completed Media/Edit foundations and can save a project, select a timeline clip, and share an evidence Doc. Review the prior checkpoint before starting.\n\n## Vocabulary and Misconceptions\n\n${bullets(lesson.vocabulary.map((x) => `${x.term}: ${x.definition}`))}\n\nDo not equate watching with doing. Explain that different page views share timeline work, nodes must connect to the final output, and paid tools are optional.\n\n## Recommended Narrative\n\nTarget/hook; real production use; vocabulary; interface map; original image-flow or timeline diagram; short demo; pause and predict; practice; compare before/after; diagnose a mistake; minimum evidence; intervention; extension; reflection; exit ticket.\n\n## Visual System and Accessibility\n\nUse dark purple, neon cyan/magenta/blue/orange accents, readable type, and clearly labeled arrows. Add alt text to screenshots and diagrams. Keep screenshots free of student data and supply editable placeholders when authentic screenshots are unavailable.\n\n## Teacher Notes and Sources\n\nInclude practical demo instructions, expected student responses, checks for understanding, and a source block in speaker notes. Source: teacher-selected Casey Faris tutorial https://www.youtube.com/watch?v=${plan.videoId}, the local supplied transcript, and the Whisper source audit. No deck is created by this brief.\n`;
     brief = brief.replace(
       /\n## Follow-Along and Evidence Revision \(October 6, 2026\)[\s\S]*$/,
       '',
     );
     brief = brief.replace(/Lessons 06-08/g, 'titles, transitions, and final export readiness');
     brief = brief.replace(/VP-Q2-A09/g, 'VP-Q2-A07');
-    brief = brief.replace(/if teacher requests export/g, 'not required before Lesson 7');
+    brief = brief.replace(
+      /if teacher requests export/g,
+      'not required before the final export lesson',
+    );
+    brief = brief.replace(/before Lesson 7/g, 'before the final export lesson');
     writeMarkdown(file, `${brief.trim()}\n\n${revision}`);
   }
 }
@@ -350,5 +393,5 @@ for (const base of ['curriculum/website-data', 'src/data/seed']) {
   writeJson(`${base}/assignments.seed.json`, assignments);
 }
 console.log(
-  'Synchronized seven DaVinci follow-along lessons, assignments, artifacts, and seed mirrors.',
+  `Synchronized ${plan.lessons.length} DaVinci follow-along lessons, assignments, artifacts, and seed mirrors.`,
 );

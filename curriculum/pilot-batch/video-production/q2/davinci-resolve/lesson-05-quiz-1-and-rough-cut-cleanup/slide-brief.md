@@ -27,7 +27,7 @@ Keep the deck focused on one practical workflow. Students should spend most of t
 
 ## Follow-Along and Evidence Revision (October 6, 2026)
 
-Use 01:07:04-01:20:08 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+Use 01:07:04-01:20:08 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment. For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 ### Pause-and-Practice Prompts
 
@@ -60,4 +60,4 @@ Extension: Duplicate the timeline before comparing two fades, audio levels, or s
 
 Teacher check: The current website Quiz 1 is an unpublished draft with no assigned quiz link. Provide a paper/in-class quiz or use the stated teacher checkoff; do not imply an online quiz score exists. Listen to a sample of the student's cut.
 
-Use the existing 90-minute block. Cut, Fusion, Color, and Fairlight chapters are not assigned. Do not require a Studio-only tool, a new community account, or a video export before Lesson 7. No deck is created by this brief revision.
+Use the existing 90-minute block. Cut and Fusion are assigned; Color-page and Fairlight chapters are excluded. Do not require Studio-only tools, Speed Editor hardware, a new community account, or a video export before the final export lesson (sequence 11, stable ID vp-q2-l07). No deck is created by this brief revision.

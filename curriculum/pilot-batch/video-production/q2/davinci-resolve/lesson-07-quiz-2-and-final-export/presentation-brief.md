@@ -213,7 +213,7 @@ Do not create a generic marketing deck. Make it classroom-ready for students usi
 
 ## Follow-Along and Evidence Revision (October 6, 2026)
 
-Use 04:53:29-05:06:57 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+Use 04:53:29-05:06:57 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment. For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 ### Pause-and-Practice Prompts
 
@@ -224,8 +224,8 @@ Use 04:53:29-05:06:57 from the approved video. Open the assigned tutorial segmen
 ### Current Required Student Workflow
 
 1. Complete the teacher-assigned Quiz 2 checkpoint for titles, transitions, and export readiness. If no quiz is assigned, show your readable title and explain your intended export format to your teacher for a checkoff.
-2. Open your polished 30-60 second mini-edit. Jump directly to 04:53:29 and stop at 05:06:57; do not work through the intervening Cut, Fusion, Color, or Fairlight chapters.
-3. Play the full edit and check its beginning/middle/end, title readability, basic Edit-page audio, and absence of accidental gaps.
+2. Open your polished 30-60 second mini-edit after the Cut and Fusion checkpoints. Jump directly to 04:53:29 and stop at 05:06:57; skip the intervening Color-page and Fairlight chapters.
+3. Play the full edit and check its beginning/middle/end, title readability, basic Edit-page audio, and absence of accidental gaps. Review the saved Cut/Fusion practice work; keep a Fusion effect in the final story only when it helps the viewer.
 4. On the Deliver page, follow the render-settings and queue demonstrations. Make a single-clip MP4/H.264 review export using the project's frame rate and a resolution supported by your source footage and classroom computer.
 5. Save the movie as LastName_FirstName_VP-Q2-A07_Final in your approved Exports folder, add it to the render queue, render, and play the exported file outside Resolve to confirm that picture and sound work.
 6. Place the exported video in Google Drive or an approved YouTube location and submit its share link in DCC. Also submit an evidence Doc/Drive link with your Deliver/render-queue screenshot and quiz result or dated teacher checkoff; complete the reflection and exit ticket.
@@ -246,4 +246,4 @@ Extension: Compare a smaller review copy with a higher-quality archive export an
 
 Teacher check: The current website Quiz 2 is an unpublished draft with no assigned quiz link. Use a teacher-provided assessment/checkoff. Open the submitted video link and verify actual playback; a render-queue screenshot alone is not a final movie.
 
-Use the existing 90-minute block. Cut, Fusion, Color, and Fairlight chapters are not assigned. Do not require a Studio-only tool, a new community account, or a video export before Lesson 7. No deck is created by this brief revision.
+Use the existing 90-minute block. Cut and Fusion are assigned; Color-page and Fairlight chapters are excluded. Do not require Studio-only tools, Speed Editor hardware, a new community account, or a video export before the final export lesson (sequence 11, stable ID vp-q2-l07). No deck is created by this brief revision.

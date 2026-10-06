@@ -1,20 +1,23 @@
 {
   "videoId": "MCDVcQIA3UM",
   "sourceUrl": "https://www.youtube.com/watch?v=MCDVcQIA3UM",
-  "scope": "Teacher confirmed the shorter seven-lesson foundations scope on October 6, 2026. Keep the existing instructional dates and require practical follow-along work in every lesson.",
-  "fairlightRange": { "start": "04:16:55", "end": "04:53:00" },
+  "scope": "Teacher directed inclusion of the Cut and Fusion pages on October 6, 2026, and approved extending the calendar and moving later projects. Eleven practical lessons cover Media, Edit, Cut, Fusion, and Deliver. Color-page and Fairlight chapters remain excluded.",
+  "fairlightRange": {
+    "start": "04:16:55",
+    "end": "04:53:00"
+  },
   "unassignedRange": {
-    "start": "01:30:41",
+    "start": "02:50:28",
     "end": "04:53:29",
-    "reason": "The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit. Basic audio levels and fades on the Edit page remain included."
+    "reason": "Skip the Color-page and Fairlight chapters. Fusion color/effect nodes and basic Edit-page audio remain included."
   },
   "practiceMedia": {
     "creatorUrl": "https://www.skool.com/groundcontrol/about",
     "status": "needs-teacher-review",
-    "teacherAction": "The creator directs viewers to a free community for the tutorial media. Before Lesson 1, supply an approved local practice-media folder and confirm it includes clips for the edit and, if available, the separate audio-sync example. Do not require students to create a community account. No direct public ZIP URL was verified."
+    "teacherAction": "The creator directs viewers to a free community for the tutorial media. Before Lesson 1, supply an approved local practice-media folder and confirm it includes clips for the edit and, if available, the separate audio-sync example. Do not require students to create a community account. No direct public ZIP URL was verified. Include the Fusion wide shot, house exterior, alien plate, and ship plate when available, or provide approved equivalent foreground/background and moving footage. Confirm source-specific color-management settings before the Fusion atmosphere lesson."
   },
-  "studentRoutine": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.",
-  "submissionRoutine": "For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
+  "studentRoutine": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment.",
+  "submissionRoutine": "For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.",
   "lessons": [
     {
       "id": "vp-q2-l01",
@@ -44,7 +47,8 @@
       "reflectionPrompt": "In 2-3 sentences, explain how you named and saved your project and how those choices will prevent lost work.",
       "intervention": "Use an already installed Resolve workspace and a teacher-created project if startup fails. Have the student identify pages and capture their own naming/save evidence. Record the machine issue rather than requiring an installation during class.",
       "extension": "Export a small project backup to the approved local folder and explain how a project backup differs from an exported movie.",
-      "teacherCheck": "Verify the project opens again with the correct name; page notes must describe jobs, not simply repeat button names."
+      "teacherCheck": "Verify the project opens again with the correct name; page notes must describe jobs, not simply repeat button names.",
+      "sequence": 1
     },
     {
       "id": "vp-q2-l02",
@@ -74,7 +78,8 @@
       "reflectionPrompt": "In 2-3 sentences, name one bin or note choice you made and explain how it will make a particular clip easier to find next class.",
       "intervention": "Provide four to six manageable clips in an approved local folder. Model one import and one bin, then require the student to complete the remaining bins and two notes.",
       "extension": "Plan a smart bin or a consistent keyword system that could find interviews or selected takes.",
-      "teacherCheck": "Check bin count and meaningful notes. A desktop folder screenshot alone does not prove organization inside Resolve."
+      "teacherCheck": "Check bin count and meaningful notes. A desktop folder screenshot alone does not prove organization inside Resolve.",
+      "sequence": 2
     },
     {
       "id": "vp-q2-l03",
@@ -104,7 +109,8 @@
       "reflectionPrompt": "In 2-3 sentences, explain the order of your four clips and what you want the viewer to understand from that sequence.",
       "intervention": "Use four prepared clips and a suggested beginning/middle/end order. Assess the student's own timeline and labels; separate audio-sync media is optional when the approved set does not include it.",
       "extension": "Use a slate or a visible action and waveform spike to check a sync point, then explain why playback is the final check.",
-      "teacherCheck": "Check four clips on the actual timeline, not just four items in the Media Pool. Labels must match the student's workspace."
+      "teacherCheck": "Check four clips on the actual timeline, not just four items in the Media Pool. Labels must match the student's workspace.",
+      "sequence": 3
     },
     {
       "id": "vp-q2-l04",
@@ -134,7 +140,8 @@
       "reflectionPrompt": "In 2-3 sentences, name three tools or editing actions you used, then explain which trim most improved your story or pacing.",
       "intervention": "Limit the edit to four clips and 30 seconds. Model one in/out selection and one ripple trim. A clear simple cut takes priority over recreating every shortcut demonstration.",
       "extension": "Duplicate the timeline and create a second pacing version, then compare how clip length changes the viewer's experience.",
-      "teacherCheck": "Verify runtime, four clips, absence of accidental gaps, and evidence of two selected source ranges. Do not grade a student's shortcut mapping against the instructor's custom keys."
+      "teacherCheck": "Verify runtime, four clips, absence of accidental gaps, and evidence of two selected source ranges. Do not grade a student's shortcut mapping against the instructor's custom keys.",
+      "sequence": 4
     },
     {
       "id": "vp-q2-l05",
@@ -164,7 +171,8 @@
       "reflectionPrompt": "In 2-3 sentences, explain one cleanup decision, name the audio or Inspector control you checked, and describe how playback helped you judge the result.",
       "intervention": "Prioritize one visible cleanup decision and one basic Edit-page audio check. Allow a teacher demonstration checkoff instead of an unavailable online quiz.",
       "extension": "Duplicate the timeline before comparing two fades, audio levels, or speed choices; keep the version that makes the story clearer.",
-      "teacherCheck": "The current website Quiz 1 is an unpublished draft with no assigned quiz link. Provide a paper/in-class quiz or use the stated teacher checkoff; do not imply an online quiz score exists. Listen to a sample of the student's cut."
+      "teacherCheck": "The current website Quiz 1 is an unpublished draft with no assigned quiz link. Provide a paper/in-class quiz or use the stated teacher checkoff; do not imply an online quiz score exists. Listen to a sample of the student's cut.",
+      "sequence": 5
     },
     {
       "id": "vp-q2-l06",
@@ -194,7 +202,314 @@
       "reflectionPrompt": "In 2-3 sentences, explain what your title tells the viewer, how you made it readable, and why you chose a transition or a clean cut.",
       "intervention": "Use a basic static text title, a teacher-approved font, and one safe placement example. Assess spelling, readability, and timing before optional animation.",
       "extension": "Animate a title position with two keyframes or write a reusable lower-third style guide; keep the motion readable.",
-      "teacherCheck": "A static title and clean cuts can meet the core requirement. Basic title work stays in the Edit page; a Fusion chapter or Studio-only effect is not required."
+      "teacherCheck": "A static title and clean cuts can meet the core requirement. Basic title work stays in the Edit page; a Fusion chapter or Studio-only effect is not required.",
+      "sequence": 6
+    },
+    {
+      "id": "vp-q2-l08",
+      "assignmentId": "vp-q2-a08",
+      "folder": "lesson-08-cut-page-fast-assembly",
+      "start": "01:30:41",
+      "end": "01:43:14",
+      "lesson": {
+        "title": "Cut Page: Fast Assembly and Edit Decisions",
+        "learningTarget": "I can use the Cut page to assemble and trim a short sequence, then explain when Cut or Edit is the better workflow.",
+        "bellRinger": {
+          "type": "short-response",
+          "prompt": "What would you simplify in your editing workflow if a news update had to be ready in ten minutes?"
+        },
+        "vocabulary": [
+          {
+            "term": "Source Tape",
+            "definition": "A Cut-page view that lets you browse clips from a bin as one continuous source."
+          },
+          {
+            "term": "Dual timeline",
+            "definition": "An overview and a detailed view of the same sequence, not two separate edits."
+          },
+          {
+            "term": "Smart Insert",
+            "definition": "An insert action that uses the highlighted nearest edit point."
+          },
+          {
+            "term": "Edit indicator",
+            "definition": "The highlight that shows which edit point a Cut-page action will affect."
+          },
+          {
+            "term": "Ripple trim",
+            "definition": "A trim that closes or opens time by moving later clips."
+          }
+        ],
+        "exitTicket": "Where did Smart Insert put your clip, and when would you choose Cut instead of Edit?",
+        "note": "Source Tape, overview/detail timelines, highlighted edit points, Smart Insert, trimming, and returning to Edit. Speed Editor hardware is demonstrated but is not required."
+      },
+      "assignment": {
+        "title": "Cut Page Assembly and Workflow Comparison",
+        "skillFocus": [
+          "source browsing",
+          "Cut page assembly",
+          "edit-point awareness",
+          "trimming",
+          "workflow choice"
+        ]
+      },
+      "rubricFocus": "A separate Cut practice timeline contains four clips, a checked Smart Insert and trim, and an accurate Cut/Edit comparison.",
+      "requiredSteps": [
+        "Reopen your ResolveFoundations project. Duplicate the existing mini-edit or create a separate four-clip timeline named Foundations_CutPractice so your polished edit stays available.",
+        "Watch 01:30:41-01:43:14 in short portions. Pause at Source Tape, the dual timeline, and Smart Insert to repeat the actions with your own media.",
+        "Browse a bin using Source Tape. Use the overview timeline to move to an edit, then use the detail timeline to inspect that same edit.",
+        "Select a source range, identify the highlighted edit point, and use Smart Insert once. Check where the clip landed; undo and repeat if the placement was unintended.",
+        "Trim and reorder the practice sequence into a clear 30-60 second, four-clip edit. Switch to Edit and verify that you are seeing the same timeline. Use mouse/keyboard controls; a Speed Editor is not required.",
+        "Save. Submit a Cut-page screenshot with both timeline views, a note about your Smart Insert and trim, and a two-sentence Cut/Edit workflow comparison in your evidence Doc. Submit the link and DCC reflection."
+      ],
+      "pauseChecks": [
+        "After Source Tape: find one usable source range without opening every clip separately.",
+        "Before Smart Insert: point to the highlighted edit point and predict the placement.",
+        "After returning to Edit: confirm the timeline name and edits match the Cut page."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link with a Cut-page screenshot showing four clips and both timeline views.",
+        "In the same document, record the Smart Insert location, one trim, and a two-sentence comparison of Cut and Edit.",
+        "A 2-3 sentence DCC reflection explaining which workflow you would use for a fast classroom news update and why."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain where Smart Insert placed your clip and which page you would choose for a fast classroom news update.",
+      "intervention": "Use four supplied clips and a duplicate timeline. Model the highlighted edit point before a single Smart Insert, then check the result in Edit. Skip hardware-specific demonstrations.",
+      "extension": "Assemble the same four clips once in Cut and once in Edit. Compare the number of actions and clarity of the result without treating speed alone as quality.",
+      "teacherCheck": "Check the actual shared timeline in Cut and Edit and ask the student to predict a Smart Insert. No Speed Editor purchase or shortcut mapping is required.",
+      "sequence": 7
+    },
+    {
+      "id": "vp-q2-l09",
+      "assignmentId": "vp-q2-a09",
+      "folder": "lesson-09-fusion-nodes-and-image-flow",
+      "start": "01:43:14",
+      "end": "02:02:05",
+      "lesson": {
+        "title": "Fusion 1: Nodes, Viewers, and Image Flow",
+        "learningTarget": "I can build and explain a simple MediaIn-to-effect-to-MediaOut node flow and verify the result on the Edit page.",
+        "bellRinger": {
+          "type": "short-response",
+          "prompt": "If a picture passes through a blur before reaching the screen, what would each step in that flowchart do?"
+        },
+        "vocabulary": [
+          {
+            "term": "Node",
+            "definition": "A tool or image source represented as a box in a Fusion flow."
+          },
+          {
+            "term": "MediaIn",
+            "definition": "An image entering the Fusion composition from timeline or media sources."
+          },
+          {
+            "term": "MediaOut",
+            "definition": "The final image sent back to the timeline."
+          },
+          {
+            "term": "Connection",
+            "definition": "A link carrying an image or mask between nodes."
+          },
+          {
+            "term": "Viewer",
+            "definition": "A panel that can display the output of a selected node."
+          },
+          {
+            "term": "Bypass",
+            "definition": "Temporarily disabling a tool to compare the result with the original."
+          }
+        ],
+        "exitTicket": "Trace your image from MediaIn to MediaOut and explain what your effect node changes.",
+        "note": "General page workflow, a separate Fusion practice timeline, clip-level composition, viewers, connections, Blur and Color Corrector examples. Students build a simple node chain first."
+      },
+      "assignment": {
+        "title": "Fusion Image-Flow Checkpoint",
+        "skillFocus": [
+          "Fusion interface",
+          "node connections",
+          "viewers",
+          "effect comparison",
+          "timeline verification"
+        ]
+      },
+      "rubricFocus": "A connected MediaIn-effect-MediaOut chain produces a visible result in Edit, and the student explains each node in the flow.",
+      "requiredSteps": [
+        "Keep the same saved ResolveFoundations project. Create a separate timeline named Foundations_FusionPractice using the teacher-supplied Fusion demo clips or approved substitute footage.",
+        "Watch 01:43:14-02:02:05. Pause after entering Fusion and after each connection/viewer demonstration. Select one practice clip before opening Fusion.",
+        "Locate MediaIn and MediaOut, the node workspace, viewers, Inspector, and clip frame range. Load MediaIn in one viewer and MediaOut in the other so you can compare input and output.",
+        "Insert one Blur or Color Corrector node between MediaIn and MediaOut. Check that both connections exist and make a small visible change in its Inspector.",
+        "Compare the effect enabled and bypassed, then return to Edit and verify the same clip shows the result. Keep the effect subtle or restore the original after documenting the comparison.",
+        "Save. Submit a screenshot of the connected node chain and output, a short explanation of each node, and a before/after comparison in your evidence Doc. Submit its link and the DCC reflection; no export is required."
+      ],
+      "pauseChecks": [
+        "After opening Fusion: confirm you are working on the intended practice clip rather than the entire timeline.",
+        "After inserting a node: trace an unbroken connection from MediaIn through the effect to MediaOut.",
+        "After switching to Edit: check that the same clip shows the Fusion result without a separate render."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link with a Fusion screenshot showing MediaIn, one effect, MediaOut, and the output viewer.",
+        "In the same document, explain the three nodes and include an enabled/bypassed comparison or paired screenshots.",
+        "A 2-3 sentence DCC reflection explaining how image flow and node viewers helped you find or prevent an error."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, trace your image through the three nodes and explain how the viewers helped you check the result.",
+      "intervention": "Use one short clip and a three-node Blur chain. Model input/output connections and viewing one node at a time before adding any branches.",
+      "extension": "Add a second simple effect and change the order. Predict the result, compare it in the viewer, and restore a purposeful version.",
+      "teacherCheck": "Ask the student to trace the actual connections and show MediaOut in Edit. A screenshot of disconnected boxes does not demonstrate a working effect.",
+      "sequence": 8
+    },
+    {
+      "id": "vp-q2-l10",
+      "assignmentId": "vp-q2-a10",
+      "folder": "lesson-10-fusion-merges-masks-and-atmosphere",
+      "start": "02:02:05",
+      "end": "02:27:02",
+      "lesson": {
+        "title": "Fusion 2: Merges, Masks, and Atmosphere",
+        "learningTarget": "I can combine two images with a Merge, limit an effect with a mask, and animate a small atmospheric change.",
+        "bellRinger": {
+          "type": "short-response",
+          "prompt": "How could you add fog to one part of an image while keeping the rest clear?"
+        },
+        "vocabulary": [
+          {
+            "term": "Merge",
+            "definition": "A node that combines a foreground image with a background image."
+          },
+          {
+            "term": "Foreground/background",
+            "definition": "The image placed over another image and the image underneath it."
+          },
+          {
+            "term": "Mask",
+            "definition": "A shape or image that limits where a tool affects the result."
+          },
+          {
+            "term": "Polygon",
+            "definition": "A mask made from connected points and curve handles."
+          },
+          {
+            "term": "Fast Noise",
+            "definition": "A generated texture that can provide smoke or fog patterns."
+          },
+          {
+            "term": "Soft edge",
+            "definition": "A gradual mask boundary that helps an effect blend into the shot."
+          }
+        ],
+        "exitTicket": "What job does your mask limit, and what would change if you swapped your Merge inputs?",
+        "note": "Fusion demo color-management setup, Fast Noise smoke, Merge inputs, polygon masks, soft edges, day-to-night compositing, and animated fog. Core work is one masked atmospheric composite; complex day-to-night branches are an extension."
+      },
+      "assignment": {
+        "title": "Masked Atmosphere Composite",
+        "skillFocus": [
+          "Merge inputs",
+          "masks",
+          "Fast Noise",
+          "soft edges",
+          "keyframes",
+          "composite playback"
+        ]
+      },
+      "rubricFocus": "A Merge combines footage with a generated atmosphere layer, a connected mask limits it, and two keyframes produce a checked change.",
+      "requiredSteps": [
+        "Open Foundations_FusionPractice and select a wide or house shot. Before copying tutorial color-management settings, confirm the teacher-provided settings match your footage; do not guess a camera input profile.",
+        "Watch 02:02:05-02:27:02. Pause after the Fast Noise, Merge, mask, and fog-animation demonstrations. Watch the day-to-night example to understand branching; recreating every branch is an extension.",
+        "Generate a subtle smoke or fog layer with Fast Noise. Use a Merge to combine your footage as background with the atmosphere as foreground, then connect the Merge output to MediaOut.",
+        "Draw and connect a polygon or ellipse mask to limit the atmosphere to a purposeful area. Soften its edge and adjust opacity/detail so important action remains visible.",
+        "Animate one atmosphere or mask position using at least two keyframes. Scrub and play the beginning, middle, and end, then return to Edit to verify the effect in the timeline.",
+        "Save. Submit the labeled node flow and composite screenshot, two frame captures showing the animated change, and a note explaining the mask and Merge inputs. Submit the evidence link and DCC reflection; no export is required."
+      ],
+      "pauseChecks": [
+        "After Merge wiring: identify the background, foreground, and final output; inspect each in a viewer.",
+        "After connecting the mask: show which area is affected and which area stays clear.",
+        "After keyframes: scrub two different frames and verify that a small change actually occurs."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link with a screenshot of the working MediaIn/Fast Noise/Merge/mask flow and output.",
+        "In the same document, two frame captures of the animated change and labels identifying foreground, background, and the mask job.",
+        "A 2-3 sentence DCC reflection explaining why the masked atmosphere supports the shot and how you checked its motion."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain what your mask limits, why the atmosphere belongs in the shot, and how you verified the animated change.",
+      "intervention": "Use one short static shot, one Fast Noise layer, one Merge, and one ellipse mask. Make a small two-keyframe move; skip the advanced day-to-night branches.",
+      "extension": "Recreate a restrained day-to-night treatment using separate sky/ground branches and explain how changing the mask or node order changes the composite.",
+      "teacherCheck": "Check real foreground/background wiring, the mask connection, and two distinct keyframe values. Match source color settings to the supplied media instead of applying the instructor's camera profile to every clip.",
+      "sequence": 9
+    },
+    {
+      "id": "vp-q2-l11",
+      "assignmentId": "vp-q2-a11",
+      "folder": "lesson-11-fusion-compositing-and-motion",
+      "start": "02:27:02",
+      "end": "02:50:28",
+      "lesson": {
+        "title": "Fusion 3: Compositing and Motion",
+        "learningTarget": "I can combine two visual elements using a mask and Transform, then make a graphic follow motion with a tracker or manual keyframes.",
+        "bellRinger": {
+          "type": "short-response",
+          "prompt": "What clues would make a person or graphic look pasted into a shot instead of belonging there?"
+        },
+        "vocabulary": [
+          {
+            "term": "Composite",
+            "definition": "An image built by combining two or more visual elements."
+          },
+          {
+            "term": "Plate",
+            "definition": "A source shot used as one layer of a visual-effects composite."
+          },
+          {
+            "term": "Transform",
+            "definition": "A node that changes an image's position, size, or rotation."
+          },
+          {
+            "term": "Invert",
+            "definition": "Reversing which part of a mask is included or excluded."
+          },
+          {
+            "term": "Tracker",
+            "definition": "A tool that follows a visible feature over time to drive motion."
+          },
+          {
+            "term": "Match move",
+            "definition": "Using tracked movement to attach a foreground element to a moving shot."
+          }
+        ],
+        "exitTicket": "Which node places your foreground, and how did you check that your moving graphic stays attached?",
+        "note": "Alien/ship plates, polygon inversion, Transform and node order, a moving graphic using keyframes or Tracker, and a Magic Mask demonstration. Magic Mask is viewing-only; no Studio-only feature is required."
+      },
+      "assignment": {
+        "title": "Two-Element Composite and Moving Graphic",
+        "skillFocus": [
+          "two-image composite",
+          "polygon/invert",
+          "Transform",
+          "node order",
+          "tracking or keyframes",
+          "motion verification"
+        ]
+      },
+      "rubricFocus": "A masked two-element composite uses a purposeful Transform, and a graphic follows motion across a short checked range without paid tools.",
+      "requiredSteps": [
+        "Continue in Foundations_FusionPractice. Use the supplied alien/ship pair and moving wide shot, or teacher-approved foreground/background and moving footage. Keep the original sources available.",
+        "Watch 02:27:02-02:50:28 in short portions. Pause at the two-image setup, polygon/invert and Transform, then the moving-graphic demonstration. The Magic Mask demonstration is viewing-only; do not buy Studio or require that tool.",
+        "Build a two-element composite with a Merge and a polygon mask. For the ship example, invert the cockpit mask to reveal the alien. With substitute footage, explain which area the mask reveals and why.",
+        "Use a Transform to fit the inserted element. Check its scale, position, mask edge, and node order at the beginning and end. Keep additional lighting/color branches optional.",
+        "On a short moving shot, add a simple visible text label or frame. Make it follow a subject using the regular Tracker/Match Move demonstration or manual position keyframes. Check at least the beginning, middle, and end and correct visible drift.",
+        "Save. Submit the composite/node-flow screenshot, three frame captures showing the moving graphic, and notes about your Transform, mask, and motion method. Submit the evidence link and DCC reflection; no export is required today."
+      ],
+      "pauseChecks": [
+        "After the mask: confirm the intended foreground/background is visible rather than a black or missing output.",
+        "After Transform: inspect placement at more than one frame and keep the node order purposeful.",
+        "After tracking/keyframes: inspect beginning, middle, and end for drift; stop before the Color-page setup at 02:50:28."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link with the two-element composite and connected mask/Transform/Merge node flow.",
+        "In the same document, beginning/middle/end captures of the moving graphic and notes identifying the motion method and one corrected drift or alignment issue.",
+        "A 2-3 sentence DCC reflection explaining a compositing decision and how playback verified the motion."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain one mask/Transform decision and how you checked or corrected the graphic's motion.",
+      "intervention": "Use a simple static two-element composite with a broad mask and a short, clearly moving shot. Use manual position keyframes if tracking is unreliable. Reduce the clip duration before adding complex lighting or paid features.",
+      "extension": "Add a reusable tracked mask or compare corrections placed before and after Merge. Explain why the selected node order is appropriate. Studio-only demonstrations remain optional.",
+      "teacherCheck": "Inspect the saved composite and motion in playback, including at least three positions. Manual keyframes meet the target when accurate; an unavailable Magic Mask is not a missing requirement.",
+      "sequence": 10
     },
     {
       "id": "vp-q2-l07",
@@ -205,8 +520,8 @@
       "end": "05:06:57",
       "requiredSteps": [
         "Complete the teacher-assigned Quiz 2 checkpoint for titles, transitions, and export readiness. If no quiz is assigned, show your readable title and explain your intended export format to your teacher for a checkoff.",
-        "Open your polished 30-60 second mini-edit. Jump directly to 04:53:29 and stop at 05:06:57; do not work through the intervening Cut, Fusion, Color, or Fairlight chapters.",
-        "Play the full edit and check its beginning/middle/end, title readability, basic Edit-page audio, and absence of accidental gaps.",
+        "Open your polished 30-60 second mini-edit after the Cut and Fusion checkpoints. Jump directly to 04:53:29 and stop at 05:06:57; skip the intervening Color-page and Fairlight chapters.",
+        "Play the full edit and check its beginning/middle/end, title readability, basic Edit-page audio, and absence of accidental gaps. Review the saved Cut/Fusion practice work; keep a Fusion effect in the final story only when it helps the viewer.",
         "On the Deliver page, follow the render-settings and queue demonstrations. Make a single-clip MP4/H.264 review export using the project's frame rate and a resolution supported by your source footage and classroom computer.",
         "Save the movie as LastName_FirstName_VP-Q2-A07_Final in your approved Exports folder, add it to the render queue, render, and play the exported file outside Resolve to confirm that picture and sound work.",
         "Place the exported video in Google Drive or an approved YouTube location and submit its share link in DCC. Also submit an evidence Doc/Drive link with your Deliver/render-queue screenshot and quiz result or dated teacher checkoff; complete the reflection and exit ticket."
@@ -224,7 +539,10 @@
       "reflectionPrompt": "In 2-3 sentences, explain one editing decision, describe how you verified the exported movie, and name one skill you will use in the next video project.",
       "intervention": "Use a teacher-approved MP4/H.264 preset and a 30-second four-clip edit. If rendering fails, capture the error and settings for teacher review; mark the final video as needing revision rather than substituting a timeline screenshot for a successful export.",
       "extension": "Compare a smaller review copy with a higher-quality archive export and explain when each is useful.",
-      "teacherCheck": "The current website Quiz 2 is an unpublished draft with no assigned quiz link. Use a teacher-provided assessment/checkoff. Open the submitted video link and verify actual playback; a render-queue screenshot alone is not a final movie."
+      "teacherCheck": "The current website Quiz 2 is an unpublished draft with no assigned quiz link. Use a teacher-provided assessment/checkoff. Open the submitted video link and verify actual playback; a render-queue screenshot alone is not a final movie.",
+      "sequence": 11
     }
-  ]
+  ],
+  "scopeNote": "Cut and three Fusion lessons are required before final export. Watch the assigned bounded segments, including viewing-only awareness of optional Studio features; no paid feature or hardware is required.",
+  "supportDates": "November 16-19, 2026"
 }

@@ -614,5 +614,69 @@
       "Blackmagic Design, DaVinci Resolve Training: https://www.blackmagicdesign.com/products/davinciresolve/training"
     ],
     "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l08",
+    "title": "Cut Page: Fast Assembly and Edit Decisions",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-08-cut-page-fast-assembly/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-08-cut-page-fast-assembly/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l08_cut-page-fast-assembly-and-edit-decisions.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Teacher-selected Casey Faris tutorial: https://www.youtube.com/watch?v=MCDVcQIA3UM",
+      "DaVinci Resolve supplied transcript and local Whisper source audit."
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l09",
+    "title": "Fusion 1: Nodes, Viewers, and Image Flow",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-09-fusion-nodes-and-image-flow/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-09-fusion-nodes-and-image-flow/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l09_fusion-1-nodes-viewers-and-image-flow.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Teacher-selected Casey Faris tutorial: https://www.youtube.com/watch?v=MCDVcQIA3UM",
+      "DaVinci Resolve supplied transcript and local Whisper source audit."
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l10",
+    "title": "Fusion 2: Merges, Masks, and Atmosphere",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-10-fusion-merges-masks-and-atmosphere/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-10-fusion-merges-masks-and-atmosphere/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l10_fusion-2-merges-masks-and-atmosphere.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Teacher-selected Casey Faris tutorial: https://www.youtube.com/watch?v=MCDVcQIA3UM",
+      "DaVinci Resolve supplied transcript and local Whisper source audit."
+    ],
+    "status": "ready-for-chatgpt"
+  },
+  {
+    "lessonId": "vp-q2-l11",
+    "title": "Fusion 3: Compositing and Motion",
+    "programAreaId": "video-production",
+    "quarter": "Q2",
+    "presentationBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-11-fusion-compositing-and-motion/presentation-brief.md",
+    "slideBriefPath": "curriculum/pilot-batch/video-production/q2/davinci-resolve/lesson-11-fusion-compositing-and-motion/slide-brief.md",
+    "expectedFileName": "DCC_vp-q2-l11_fusion-3-compositing-and-motion.pptx",
+    "expectedSlideCountRange": "15-20",
+    "visualStyle": "DCC premium synthwave classroom deck: dark purple base, neon cyan, magenta, blue, orange accents, readable text, teacher speaker notes, accessible alt text.",
+    "citationSources": [
+      "Teacher-selected Casey Faris tutorial: https://www.youtube.com/watch?v=MCDVcQIA3UM",
+      "DaVinci Resolve supplied transcript and local Whisper source audit."
+    ],
+    "status": "ready-for-chatgpt"
   }
 ]

@@ -62,261 +62,26 @@ const getWeekStart = (date) => addDays(date, -((date.getUTCDay() + 6) % 7));
 const getWeekEnd = (date) => addDays(getWeekStart(date), 4);
 const getMonthEnd = (year, monthIndex) => new Date(Date.UTC(year, monthIndex + 1, 0));
 
-const makeCycleMap = (aDates, bDates) =>
-  new Map([...aDates.map((date) => [date, 'A']), ...bDates.map((date) => [date, 'B'])]);
-
-const q2CycleMap = makeCycleMap(
-  [
-    '2026-10-06',
-    '2026-10-08',
-    '2026-10-12',
-    '2026-10-14',
-    '2026-10-19',
-    '2026-10-21',
-    '2026-10-23',
-    '2026-10-27',
-    '2026-10-29',
-    '2026-11-03',
-    '2026-11-05',
-    '2026-11-09',
-    '2026-11-12',
-    '2026-11-16',
-    '2026-11-18',
-    '2026-11-20',
-    '2026-12-01',
-    '2026-12-03',
-    '2026-12-07',
-    '2026-12-09',
-    '2026-12-11',
-    '2026-12-15',
-    '2026-12-17',
-  ],
-  [
-    '2026-10-07',
-    '2026-10-09',
-    '2026-10-13',
-    '2026-10-15',
-    '2026-10-20',
-    '2026-10-22',
-    '2026-10-26',
-    '2026-10-28',
-    '2026-11-02',
-    '2026-11-04',
-    '2026-11-06',
-    '2026-11-10',
-    '2026-11-13',
-    '2026-11-17',
-    '2026-11-19',
-    '2026-11-30',
-    '2026-12-02',
-    '2026-12-04',
-    '2026-12-08',
-    '2026-12-10',
-    '2026-12-14',
-    '2026-12-16',
-    '2026-12-18',
-  ],
-);
-
-const q3CycleMap = makeCycleMap(
-  [
-    '2027-01-05',
-    '2027-01-07',
-    '2027-01-11',
-    '2027-01-13',
-    '2027-01-15',
-    '2027-01-20',
-    '2027-01-22',
-    '2027-01-26',
-    '2027-01-28',
-    '2027-02-01',
-    '2027-02-03',
-    '2027-02-05',
-    '2027-02-09',
-    '2027-02-11',
-    '2027-02-17',
-    '2027-02-19',
-  ],
-  [
-    '2027-01-06',
-    '2027-01-08',
-    '2027-01-12',
-    '2027-01-14',
-    '2027-01-19',
-    '2027-01-21',
-    '2027-01-25',
-    '2027-01-27',
-    '2027-01-29',
-    '2027-02-02',
-    '2027-02-04',
-    '2027-02-08',
-    '2027-02-10',
-    '2027-02-16',
-    '2027-02-18',
-    '2027-02-22',
-  ],
-);
-
-const q2Activities = [
-  {
-    id: 'vp-q2-export-practice',
-    activityType: 'material',
-    title: 'DaVinci Export Practice and Troubleshooting',
-    aDayDate: '2026-11-03',
-    bDayDate: '2026-11-04',
-    dueLabel: 'Verify playback of the practice export and resolve missing media or export issues',
-    sourceTiming: 'October 2, 2026 schedule adjustment',
-    summary:
-      'Use the completed foundations edit to practice rendering and checking playback. Revisit file organization, relink missing media, and troubleshoot export settings with teacher support.',
-  },
-  {
-    id: 'vp-q2-project-readiness',
-    activityType: 'material',
-    title: 'Video Project Readiness and Peer Feedback',
-    aDayDate: '2026-11-05',
-    bDayDate: '2026-11-06',
-    dueLabel:
-      'Check organized media, readable titles, pacing, and audio before the first video project',
-    sourceTiming: 'October 2, 2026 schedule adjustment',
-    summary:
-      'Review the foundations edit with a partner, apply focused feedback, and check project folders and export readiness before the first 30-second video assignment. Extend by comparing two pacing choices.',
-  },
-  {
-    id: 'vp-q2-checkpoint-01',
-    activityType: 'assignment',
-    title: '1st Video Editing Assignment - Launch and Rough Cut',
-    aDayDate: '2026-11-09',
-    bDayDate: '2026-11-10',
-    dueLabel: 'Build the exactly 30-second rough cut by the end of class',
-    sourceTiming: 'Edited Nov 12, 2025',
-    summary:
-      'Import and organize the provided media, assemble an exactly 30-second timeline, and complete a rough pacing check before polishing.',
-  },
-  {
-    id: 'vp-q2-checkpoint-02',
-    activityType: 'assignment',
-    title: '1st Video Editing Assignment - Polish, Render, and Submit',
-    aDayDate: '2026-11-12',
-    bDayDate: '2026-11-13',
-    dueLabel: 'Final MP4 and evidence link due by the end of class',
-    sourceTiming: 'Assignment edited Nov 12, 2025; render material posted Nov 14, 2025',
-    summary:
-      'Polish pacing, readable text, and audio balance, then use How to Render in DaVinci to export, verify playback, and submit evidence.',
-  },
-  {
-    id: 'vp-q2-checkpoint-03',
-    activityType: 'assignment',
-    title: '2nd Video Editing Assignment - The Redo: Revision Plan',
-    aDayDate: '2026-11-16',
-    bDayDate: '2026-11-17',
-    dueLabel: 'Revision plan and rebuilt rough cut due by the end of class',
-    sourceTiming: 'Posted Dec 1, 2025',
-    summary:
-      'Review the first edit, identify specific improvements, and rebuild the 30-second sequence with stronger flow, pacing, titles, and storytelling.',
-  },
-  {
-    id: 'vp-q2-checkpoint-04',
-    activityType: 'assignment',
-    title: '2nd Video Editing Assignment - The Redo: Final Edit and Critique',
-    aDayDate: '2026-11-18',
-    bDayDate: '2026-11-19',
-    dueLabel: 'Improved final export and evidence link due by the end of class',
-    sourceTiming: 'Posted Dec 1, 2025',
-    summary:
-      'Finish the improved edit, export and verify the MP4, compare it with the first version, and participate in a focused peer critique.',
-  },
-  {
-    id: 'vp-q2-checkpoint-05',
-    activityType: 'assignment',
-    title: '1st Group Project: The Duel - Preproduction and Shot Plan',
-    aDayDate: '2026-11-20',
-    bDayDate: '2026-11-30',
-    dueLabel: 'Concept, roles, locations, and 6-10-shot plan due by the end of class',
-    sourceTiming: 'Edited Dec 1, 2025',
-    summary:
-      'Assign rotating production roles and plan a safe 20-30 second visual duel with clear story beats, composed shots, music, and sound effects.',
-  },
-  {
-    id: 'vp-q2-checkpoint-06',
-    activityType: 'assignment',
-    title: '1st Group Project: The Duel - Production',
-    aDayDate: '2026-12-01',
-    bDayDate: '2026-12-02',
-    dueLabel: 'Capture all planned footage and organize the production files',
-    sourceTiming: 'Edited Dec 1, 2025',
-    summary:
-      'Film the planned 6-10 shots, rotate responsibilities, monitor continuity and safety, and organize footage for the edit.',
-  },
-  {
-    id: 'vp-q2-checkpoint-07',
-    activityType: 'assignment',
-    title: '1st Group Project: The Duel - Edit, Screen, and Submit',
-    aDayDate: '2026-12-03',
-    bDayDate: '2026-12-04',
-    dueLabel: 'Final 20-30 second film and evidence link due by the end of class',
-    sourceTiming: 'Duel edited Dec 1, 2025; absent work posted Dec 9, 2025',
-    summary:
-      'Edit, sound-design, export, screen, and submit the Duel. Students absent from production complete The Duel Absent Work analysis instead.',
-  },
-  {
-    id: 'vp-q2-checkpoint-08',
-    activityType: 'assignment',
-    title: 'Group Project 2: The Movie Line Challenge - Preproduction',
-    aDayDate: '2026-12-07',
-    bDayDate: '2026-12-08',
-    dueLabel: 'Interpretation, role rotation, and shot plan due by the end of class',
-    sourceTiming: 'Posted Dec 7, 2025',
-    summary:
-      'Interpret the assigned movie line, develop a clear 30-40 second story, assign roles, and create a practical production plan.',
-  },
-  {
-    id: 'vp-q2-checkpoint-09',
-    activityType: 'assignment',
-    title: 'Group Project 2: The Movie Line Challenge - Production and Edit',
-    aDayDate: '2026-12-09',
-    bDayDate: '2026-12-10',
-    dueLabel: 'Complete principal photography and assemble the rough cut',
-    sourceTiming: 'Posted Dec 7, 2025',
-    summary:
-      'Capture the planned footage, rotate production roles, organize media, and assemble a rough cut with intentional composition and pacing.',
-  },
-  {
-    id: 'vp-q2-checkpoint-10',
-    activityType: 'assignment',
-    title: 'Group Project 2: The Movie Line Challenge - Final Cut and Screening',
-    aDayDate: '2026-12-11',
-    bDayDate: '2026-12-14',
-    dueLabel: 'Final 30-40 second film and evidence link due by the end of class',
-    sourceTiming: 'Posted Dec 7, 2025',
-    summary:
-      'Polish the edit with music and sound design, export and verify the final film, screen it for feedback, and submit the evidence link.',
-  },
-  {
-    id: 'vp-q2-checkpoint-11',
-    activityType: 'assignment',
-    title: 'Group Project 3: The Genre Challenge - Preproduction and Production',
-    aDayDate: '2026-12-15',
-    bDayDate: '2026-12-16',
-    dueLabel: 'Genre plan, role rotation, shot list, and footage due by the end of class',
-    sourceTiming: 'Posted Dec 17, 2025',
-    summary:
-      'Choose a clear genre approach, plan a 35-45 second visual story with 6-10 shots, rotate roles, and capture the required footage.',
-  },
-  {
-    id: 'vp-q2-checkpoint-12',
-    activityType: 'assignment',
-    title: 'Group Project 3: The Genre Challenge - Final Edit, Screening, and Submission',
-    aDayDate: '2026-12-17',
-    bDayDate: '2026-12-18',
-    dueLabel: 'Final 35-45 second genre film and evidence link due by the end of class',
-    sourceTiming: 'Posted Dec 17, 2025',
-    summary:
-      'Complete the edit with purposeful pacing, music, and sound effects, screen the film, reflect on the genre choices, and submit evidence.',
-  },
-];
-
+// Keep the existing instructional-day labels authoritative when extending dates.
 const instructionalDays = readJson(paths.instructionalDays);
 const instructionalDayByDate = new Map(instructionalDays.days.map((day) => [day.date, day]));
+const q2Source = readJson(paths.q2Schedule);
+const q3Source = readJson(paths.q3Schedule);
+const cycleMapBetween = (start, end) =>
+  new Map(
+    instructionalDays.days
+      .filter(
+        (day) =>
+          day.isInstructionalDay &&
+          ['A', 'B'].includes(day.cycleDay) &&
+          day.date >= start &&
+          day.date <= end,
+      )
+      .map((day) => [day.date, day.cycleDay]),
+  );
+const q2CycleMap = cycleMapBetween(q2Source.metadata.startDate, q2Source.metadata.endDate);
+const q3CycleMap = cycleMapBetween(q3Source.metadata.startDate, q3Source.metadata.endDate);
+const q2Activities = q2Source.activities ?? [];
 
 for (const cycleMap of [q2CycleMap, q3CycleMap]) {
   for (const [date, cycleDay] of cycleMap) {
@@ -425,9 +190,8 @@ const reconcileSchedule = (path, cycleMap, options = {}) => {
       ? 'A/B labels were corrected from the teacher-provided block calendar; January 5, 2027 is A day.'
       : 'A/B labels were corrected from the teacher-provided block calendar.',
   ];
-  if (options.startDate) {
-    const adjustmentNote =
-      'Teacher direction on October 2, 2026 moves the Video Production start to October 6 (A) and October 7 (B), before the October 9 Q1 grading-period boundary. Project deadlines remain unchanged; November 3-6 provides export practice and project readiness.';
+  if (options.adjustmentNote) {
+    const adjustmentNote = options.adjustmentNote;
     schedule.metadata.calendarAnomalies = [
       ...schedule.metadata.calendarAnomalies.filter(
         (note) => !note.startsWith('Teacher direction on October 2, 2026'),
@@ -448,8 +212,8 @@ const reconcileSchedule = (path, cycleMap, options = {}) => {
 };
 
 const q2Schedule = reconcileSchedule(paths.q2Schedule, q2CycleMap, {
-  startDate: '2026-10-06',
-  endDate: '2026-12-18',
+  startDate: q2Source.metadata.startDate,
+  endDate: q2Source.metadata.endDate,
   activities: q2Activities,
 });
 const q3Schedule = reconcileSchedule(paths.q3Schedule, q3CycleMap);
@@ -667,15 +431,15 @@ const buildBlockCalendar = ({ schedule, endDate, activities = [], notes }) => {
 
 const q2Block = buildBlockCalendar({
   schedule: q2Schedule,
-  endDate: '2026-12-18',
+  endDate: q2Schedule.metadata.endDate,
   activities: q2Activities,
   notes: [
     'A/B labels come from the teacher-provided 2026-2027 Doral Red Rock block calendar.',
-    'Q2 begins with two file-organization openers and seven DaVinci Resolve lessons.',
+    'Q2 begins with two file-organization openers and eleven DaVinci Resolve lessons including Cut and Fusion.',
     'Teacher direction on October 2 moves the Video Production opener to October 6 (A) and October 7 (B), ahead of the October 9 Q1 grading-period boundary. DaVinci Resolve begins October 12 (A) and October 13 (B).',
-    'The four gained class days on November 3-6 support export practice and project readiness; archived project deadlines remain unchanged.',
+    'Teacher direction on October 6 extends the unit: final export November 12/13, support November 16-19, and twelve later project checkpoints November 20-January 14.',
     'Seven retained archived Video Production resources are organized into twelve project checkpoints after the DaVinci sequence.',
-    'Every remaining Q2 instructional date is assigned to production, editing, critique, make-up support, screening, or submission work.',
+    'All 54 instructional dates from October 6 through January 14 are assigned. Stable Q2 unit labels extend into January; the next Unreal sequence moves to prevent overlap.',
     'Weekends are excluded and do not appear in noSchoolDates.',
   ],
 });
@@ -685,7 +449,7 @@ const q3Block = buildBlockCalendar({
   endDate: q3Schedule.metadata.endDate,
   notes: [
     'A/B labels come from the teacher-provided 2026-2027 Doral Red Rock block calendar.',
-    'January 5, 2027 is A day and January 6, 2027 is B day.',
+    'The shifted Unreal sequence begins January 15 (A) / January 19 (B) and ends March 4. Existing instructional-day labels are retained, including B-first pairs after February 22.',
     'Q3 Unreal combines castle-environment production with making-of documentary evidence.',
     'Weekends are excluded and do not appear in noSchoolDates.',
   ],

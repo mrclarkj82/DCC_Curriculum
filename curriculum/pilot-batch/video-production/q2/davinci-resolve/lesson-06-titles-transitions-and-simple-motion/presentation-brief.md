@@ -204,7 +204,7 @@ Title and Transition Polish Pass
 
 Required evidence:
 Google Drive link to a screenshot showing the title or lower third selected in the timeline.
-Google Drive or YouTube link to a short clip preview not required before Lesson 7.
+Google Drive or YouTube link to a short clip preview not required before the final export lesson.
 Short reflection explaining why the title or transition supports the story.
 
 Do not create a generic marketing deck. Make it classroom-ready for students using DaVinci Resolve.
@@ -212,7 +212,7 @@ Do not create a generic marketing deck. Make it classroom-ready for students usi
 
 ## Follow-Along and Evidence Revision (October 6, 2026)
 
-Use 01:20:08-01:30:41 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+Use 01:20:08-01:30:41 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment. For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 ### Pause-and-Practice Prompts
 
@@ -245,4 +245,4 @@ Extension: Animate a title position with two keyframes or write a reusable lower
 
 Teacher check: A static title and clean cuts can meet the core requirement. Basic title work stays in the Edit page; a Fusion chapter or Studio-only effect is not required.
 
-Use the existing 90-minute block. Cut, Fusion, Color, and Fairlight chapters are not assigned. Do not require a Studio-only tool, a new community account, or a video export before Lesson 7. No deck is created by this brief revision.
+Use the existing 90-minute block. Cut and Fusion are assigned; Color-page and Fairlight chapters are excluded. Do not require Studio-only tools, Speed Editor hardware, a new community account, or a video export before the final export lesson (sequence 11, stable ID vp-q2-l07). No deck is created by this brief revision.

@@ -22,11 +22,11 @@ When you have a folder full of random clips, what information helps you find the
 - Assigned segment: [Play 00:13:16-00:25:47 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=796&end=1547&autoplay=1)
 - YouTube page: [Open at 00:13:16](https://youtu.be/MCDVcQIA3UM?t=796s); stop at 00:25:47.
 - Note: Covers the Media page, media storage, Media Pool, importing clips, changing frame-rate prompts, bins, folder structure, list and thumbnail views, metadata, keywords, and smart-bin awareness.
-- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+- Cut and three Fusion lessons are required before final export. Watch the assigned bounded segments, including viewing-only awareness of optional Studio features; no paid feature or hardware is required.
 
 ## Follow Along in Resolve
 
-Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment.
 
 - After import: confirm the clip appears in your Media Pool and plays in the viewer.
 - After dragging folders: confirm the folder names survived as bins.
@@ -58,7 +58,7 @@ Open the assigned tutorial segment and your own DaVinci Resolve project together
 
 ## Submission Checklist
 
-For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
 - A Google Docs or Drive link containing a Media Pool screenshot with at least three organized bins.
 - In the same evidence document or folder, a screenshot or notes showing two metadata/description entries on different clips.

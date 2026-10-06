@@ -44,11 +44,11 @@ Each Q1 Unreal lesson runs across two valid instructional class days: one A day 
 
 ## Q2 File Organization + DaVinci Resolve Pairing Rule
 
-The Video Production sequence begins Tuesday, October 6, 2026 (A), with the matching B-day opener on October 7, ahead of the October 9 Q1 grading-period boundary. The stable Q2 unit labels and lesson IDs are retained. File-organization openers run October 6-9, followed by seven DaVinci Resolve lessons from October 12 through November 2. November 3-6 provides export practice and project readiness. Seven retained archived Video Production resources span twelve project checkpoints from November 9 through December 18; their deadlines are unchanged. All 46 instructional dates in the expanded window are assigned.
+The Video Production sequence begins Tuesday, October 6, 2026 (A), with the matching B-day opener on October 7, ahead of the October 9 Q1 grading-period boundary. The stable Q2 unit labels and lesson IDs are retained. File-organization openers run October 6-9, followed by eleven DaVinci lessons through November 13, including Cut and three Fusion lessons. November 16-19 provides export support and project readiness. The teacher approved moving all twelve project checkpoints to November 20-January 14 while preserving their order and block allocation. All 54 instructional dates in that extended window are assigned. Q2 unit labels remain stable even after the December 18 grading boundary.
 
 ## Q3 Unreal Castle Documentary Pairing Rule
 
-The Q3 Unreal Castle Documentary schedule begins Tuesday, January 5, 2027, which the block calendar explicitly labels `A`. January 6 is `B`. The formal sixteen-lesson sequence runs through February 22, skips January 18, February 12, and February 15 no-school days, and follows the printed A/B labels.
+The following Q3 Unreal Castle Documentary sequence now starts January 15, 2027 (A) / January 19 (B) after the teacher-approved Video Production extension. Its sixteen lesson pairs finish March 4; remaining project work continues through March 11. Existing instructional-day cycle labels are preserved, including B-first pairs after February 22. No physical school-day cycle label is changed to accommodate the lesson shift.
 
 Every Q3 instructional day should keep the dual focus: students build their Unreal castle project while also recording screen capture, camera footage, production log notes, and behind-the-scenes evidence for a making-of documentary about the castle being created. After the formal sixteen-lesson sequence, the rest of Q3 remains open Unreal production, critique, documentary editing, final polish, and export/submission time through March 11, 2027.
 
@@ -61,4 +61,4 @@ Every Q3 instructional day should keep the dual focus: students build their Unre
 
 ## Q2 DaVinci Trim Note
 
-The Color page and Fairlight page transcript span, approximately `02:50:00-04:53:05`, is excluded from the active Q2 DaVinci Resolve portion and website schedule preview.
+The Color page and Fairlight page transcript span, `02:50:28-04:53:29`, is excluded from the active Q2 DaVinci Resolve portion and website schedule preview.

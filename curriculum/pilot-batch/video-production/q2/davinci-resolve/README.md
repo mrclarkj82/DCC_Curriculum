@@ -1,69 +1,53 @@
 # Q2 DaVinci Resolve Foundations
 
-This folder contains the Quarter 2 Video Production Studio DaVinci Resolve mini-unit.
-
-## Source
-
-- Raw transcript: `curriculum/source/davinci-resolve-q2-tutorial-transcript.md`
-- Tutorial video: [DaVinci Resolve full tutorial](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw)
-- Pacing target: a trimmed DaVinci Resolve foundations block before later group projects.
-- School year: 2026-2027
-- Foundations schedule window: October 6, 2026 through November 2, 2026; export practice and project readiness continue November 3-6. The teacher-directed early start precedes the October 9 Q1 grading-period boundary.
+The teacher-selected [Casey Faris tutorial](https://www.youtube.com/watch?v=MCDVcQIA3UM) is the source for eleven practical lessons. The October 6 direction adds Cut and Fusion and extends the calendar. Color-page and Fairlight chapters remain excluded.
 
 ## Q2 Openers
 
-The full Q2 schedule now begins with two file organization lesson blocks before the DaVinci Resolve sequence:
+The first two assignments remain Video Production File Organization (vp-q2-file-org-01), October 6/7, and Video Game Development File Organization (ue-q2-file-org-01), October 8/9. Only these two opener cards are listed first on the Video Production page.
 
-- Q2 L1: Video Production File Organization (`vp-q2-file-org-01`)
-- Q2 L2: Video Game Development File Organization (`ue-q2-file-org-01`)
+## DaVinci Sequence and Dates
 
-DaVinci Resolve starts October 12 (A) / October 13 (B) at Q2 L3 on the teacher schedule, but the DaVinci lesson IDs remain stable so quiz and assignment references do not break.
+| Sequence | Stable lesson ID | Lesson | Tutorial range | A / B dates |
+| --- | --- | --- | --- | --- |
+| 1 | vp-q2-l01 | DaVinci Resolve Setup and Project Manager | 00:00:00-00:13:16 | 2026-10-12 / 2026-10-13 |
+| 2 | vp-q2-l02 | Media Page, Imports, and Bins | 00:13:16-00:25:47 | 2026-10-14 / 2026-10-15 |
+| 3 | vp-q2-l03 | Syncing Audio and Timeline Basics | 00:25:47-00:35:30 | 2026-10-19 / 2026-10-20 |
+| 4 | vp-q2-l04 | Trimming Clips and Building a Rough Cut | 00:35:30-01:07:04 | 2026-10-21 / 2026-10-22 |
+| 5 | vp-q2-l05 | Quiz 1 and Rough Cut Cleanup | 01:07:04-01:20:08 | 2026-10-23 / 2026-10-26 |
+| 6 | vp-q2-l06 | Titles, Transitions, and Simple Motion | 01:20:08-01:30:41 | 2026-10-27 / 2026-10-28 |
+| 7 | vp-q2-l08 | Cut Page: Fast Assembly and Edit Decisions | 01:30:41-01:43:14 | 2026-10-29 / 2026-11-02 |
+| 8 | vp-q2-l09 | Fusion 1: Nodes, Viewers, and Image Flow | 01:43:14-02:02:05 | 2026-11-03 / 2026-11-04 |
+| 9 | vp-q2-l10 | Fusion 2: Merges, Masks, and Atmosphere | 02:02:05-02:27:02 | 2026-11-05 / 2026-11-06 |
+| 10 | vp-q2-l11 | Fusion 3: Compositing and Motion | 02:27:02-02:50:28 | 2026-11-09 / 2026-11-10 |
+| 11 | vp-q2-l07 | Quiz 2 and Final Export | 04:53:29-05:06:57 | 2026-11-12 / 2026-11-13 |
 
-## DaVinci Lesson Sequence
+The four new IDs are appended without replacing existing IDs or submission targets. The existing final-export ID vp-q2-l07 is now sequence 11; its assignment remains vp-q2-a07. Existing slide links/status remain accurate. The four new slide briefs are ready for ChatGPT, with blank deck links.
 
-- vp-q2-l01: DaVinci Resolve Setup and Project Manager (`00:00:00-00:13:16`)
-- vp-q2-l02: Media Page, Imports, and Bins (`00:13:16-00:25:47`)
-- vp-q2-l03: Syncing Audio and Timeline Basics (`00:25:47-00:35:30`)
-- vp-q2-l04: Trimming Clips and Building a Rough Cut (`00:35:30-01:07:04`)
-- vp-q2-l05: Quiz 1 and Rough Cut Cleanup (`01:07:04-01:20:08`)
-- vp-q2-l06: Titles, Transitions, and Simple Motion (`01:20:08-01:30:41`)
-- vp-q2-l07: Quiz 2 and Final Export (`04:53:29-05:06:57`)
+## Follow Along and Submit Work
 
-## Trimmed Tutorial Span
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action, and check the result before continuing. Keep the same saved project through all eleven lessons and use separate Cut/Fusion practice timelines where directed. Watching alone does not complete the assignment.
 
-The longer middle span, `01:30:41-04:53:29`, is intentionally excluded. It contains the longer Cut, Fusion, Color, and Fairlight chapters. Basic audio levels and fades taught on the Edit page remain included.
+For Lessons 1-10, collect the required screenshots and short notes in one Google Doc or approved Drive folder, submit its share link in DCC, complete the evidence checklist, and type the reflection. No exported movie is required for these checkpoints. The final export lesson (sequence 11; stable ID vp-q2-l07) requires a playable video link and export-settings evidence. Save project work locally; DCC collects evidence links, not raw uploads.
 
-## Quizzes
+The new Cut checkpoint requires a four-clip practice edit and workflow comparison. Fusion checkpoints require a working node chain, a masked animated atmosphere, then a two-element composite and moving graphic. Evidence shows the student's own work. Tracker or manual position keyframes are acceptable; Magic Mask is viewing-only and Speed Editor hardware is not required.
 
-- vp-q2-quiz-01: draft covering lessons 01-04 for the Lesson 05 checkpoint.
-- vp-q2-quiz-02: draft covering Lesson 06 plus final export readiness for the Lesson 07 checkpoint.
+The mini-edit remains Foundations_MiniEdit. Use Foundations_CutPractice and Foundations_FusionPractice for demonstrations without losing the polished story edit. All work stays in LastName_FirstName_ResolveFoundations.
 
-Both records remain unpublished. Use a teacher-provided assessment or the lesson's named teacher checkoff until an online quiz is assigned.
+## Extended Calendar
 
-## Classroom Boundary
+Final export runs November 12/13; troubleshooting and project-readiness support runs November 16-19. All twelve later project checkpoints move, preserving their order and time allocation, from November 20 through January 14. Thanksgiving, winter break, January 4 planning day, and all other no-school weekdays are skipped. No weekend is scheduled.
 
-This unit teaches post-production foundations in DaVinci Resolve. It does not add raw website uploads, in-browser editing, video hosting, grading workflows beyond quiz score collection, or portfolio workflows.
+The Q2 unit label stays stable while the unit extends past the December 18 grading boundary. The following Unreal castle/documentary sequence moves to January 15 (A) / January 19 (B) through March 4 so it does not overlap video production. Existing source A/B labels are retained; some March lesson pairs run B first. March 5-11 remains available for final documentary work.
 
-## October 6 Follow-Along Revision
+## Media and Checkpoints
 
-The teacher confirmed the shorter seven-lesson foundations scope. Use the assigned ranges above; the longer Cut, Fusion, Color, and Fairlight chapters are outside this unit. Basic audio levels and fades on the Edit page remain included. Keep the current October 12-November 2 lesson dates and November 3-6 support blocks.
+Practice-media handoff: **needs-teacher-review**. The creator's [community information page](https://www.skool.com/groundcontrol/about) requires community access; no direct public ZIP was verified. The teacher supplies approved local footage, including Fusion plates and a moving shot or suitable substitutes. Students do not need another account. Match source-specific color-management settings to the supplied footage.
 
-Students keep one project, `LastName_FirstName_ResolveFoundations`, and one working timeline, `Foundations_MiniEdit`. Each lesson follows **watch a short demonstration, pause, repeat the action, check the result, save, and submit evidence**. Watching alone is not completed work.
+The two existing online quizzes remain unpublished drafts. Use a teacher-provided assessment or the named checkoff; no online score is invented. Final export readiness still uses the existing Quiz 2/checkoff and includes review of the saved Cut/Fusion work.
 
-| Lesson | Minimum checkpoint |
-| --- | --- |
-| 1 | Named project screenshot and purpose notes for four Resolve pages |
-| 2 | Media Pool screenshot with three bins and two useful clip notes |
-| 3 | Four-clip timeline screenshot, workspace labels, and sync result or explanation |
-| 4 | 30-60 second four-clip rough cut screenshot, runtime, and two source in/out selections |
-| 5 | Cleaned timeline, an audio/Inspector check, and assigned quiz result or teacher checkoff |
-| 6 | Readable title screenshot and explanation of timing and transition/clean-cut choice |
-| 7 | Playable final 30-60 second video link, export-settings screenshot, and assigned quiz result or teacher checkoff |
+## Source and Maintenance
 
-Every checkpoint includes a 2-3 sentence reflection in DCC. Lessons 1-6 use screenshots/notes in one Google Doc or approved Drive folder; no video export is required. Lesson 7 requires an exported movie shared through Google Drive or approved YouTube. Evidence links and a reflection are submitted through the existing DCC workflow.
+The supplied transcript is curriculum/source/davinci-resolve-q2-tutorial-transcript.md. Full-video Whisper analysis and the selected transition checks are documented in curriculum/source/davinci-resolve-whisper-audit.md. The current plan is curriculum/source/davinci-resolve-foundations-plan.json.
 
-**Practice-media handoff: needs-teacher-review.** The creator's current description directs viewers to the [Ground Control community](https://www.skool.com/groundcontrol/about) for media. This requires community access and is not a direct public ZIP link. The teacher must supply an approved local folder before class; students do not need another account. Separate sync media is optional when the supplied set does not include it.
-
-Both website quizzes remain unpublished drafts. Use a teacher-provided assessment or the named teacher checkoff; students are not required to find an unavailable online quiz.
-
-The detailed plan is stored in `curriculum/source/davinci-resolve-foundations-plan.json`. Run `node scripts/sync-q2-davinci-foundations.mjs` to synchronize lesson/assignment seed mirrors and all seven required lesson artifacts. Existing slide links and actual slide status remain accurate; the briefs are revised, but no deck has been created or updated by this change.
+Run node scripts/sync-explicit-block-calendar.mjs to synchronize approved dates/calendar mirrors, then node scripts/sync-q2-davinci-foundations.mjs to synchronize all eleven lesson/assignment records and seven required artifacts per lesson. No PowerPoint is created by these scripts.

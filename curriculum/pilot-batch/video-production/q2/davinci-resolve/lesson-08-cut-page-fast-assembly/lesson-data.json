@@ -1,0 +1,67 @@
+{
+  "id": "vp-q2-l08",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 7,
+  "title": "Cut Page: Fast Assembly and Edit Decisions",
+  "status": "draft-pilot",
+  "video": {
+    "start": "01:30:41",
+    "end": "01:43:14",
+    "note": "Source Tape, overview/detail timelines, highlighted edit points, Smart Insert, trimming, and returning to Edit. Speed Editor hardware is demonstrated but is not required.",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=5441s"
+  },
+  "learningTarget": "I can use the Cut page to assemble and trim a short sequence, then explain when Cut or Edit is the better workflow.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "What would you simplify in your editing workflow if a news update had to be ready in ten minutes?"
+  },
+  "vocabulary": [
+    {
+      "term": "Source Tape",
+      "definition": "A Cut-page view that lets you browse clips from a bin as one continuous source."
+    },
+    {
+      "term": "Dual timeline",
+      "definition": "An overview and a detailed view of the same sequence, not two separate edits."
+    },
+    {
+      "term": "Smart Insert",
+      "definition": "An insert action that uses the highlighted nearest edit point."
+    },
+    {
+      "term": "Edit indicator",
+      "definition": "The highlight that shows which edit point a Cut-page action will affect."
+    },
+    {
+      "term": "Ripple trim",
+      "definition": "A trim that closes or opens time by moving later clips."
+    }
+  ],
+  "slides": {
+    "title": "Cut Page: Fast Assembly and Edit Decisions",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "vp-q2-a08",
+    "title": "Cut Page Assembly and Workflow Comparison",
+    "evidenceRequired": [
+      "A Google Docs or Drive link with a Cut-page screenshot showing four clips and both timeline views.",
+      "In the same document, record the Smart Insert location, one trim, and a two-sentence comparison of Cut and Edit.",
+      "A 2-3 sentence DCC reflection explaining which workflow you would use for a fast classroom news update and why."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain where Smart Insert placed your clip and which page you would choose for a fast classroom news update.",
+    "submissionType": "google-drive-link-and-reflection"
+  },
+  "exitTicket": "Where did Smart Insert put your clip, and when would you choose Cut instead of Edit?",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "vp-q2-l08"
+  ]
+}

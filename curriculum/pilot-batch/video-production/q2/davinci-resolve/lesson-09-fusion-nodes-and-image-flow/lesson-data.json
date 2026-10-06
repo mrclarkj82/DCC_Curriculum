@@ -1,0 +1,71 @@
+{
+  "id": "vp-q2-l09",
+  "programAreaId": "video-production",
+  "quarter": "Q2",
+  "unit": "DaVinci Resolve Foundations",
+  "lessonNumber": 8,
+  "title": "Fusion 1: Nodes, Viewers, and Image Flow",
+  "status": "draft-pilot",
+  "video": {
+    "start": "01:43:14",
+    "end": "02:02:05",
+    "note": "General page workflow, a separate Fusion practice timeline, clip-level composition, viewers, connections, Blur and Color Corrector examples. Students build a simple node chain first.",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=6194s"
+  },
+  "learningTarget": "I can build and explain a simple MediaIn-to-effect-to-MediaOut node flow and verify the result on the Edit page.",
+  "bellRinger": {
+    "type": "short-response",
+    "prompt": "If a picture passes through a blur before reaching the screen, what would each step in that flowchart do?"
+  },
+  "vocabulary": [
+    {
+      "term": "Node",
+      "definition": "A tool or image source represented as a box in a Fusion flow."
+    },
+    {
+      "term": "MediaIn",
+      "definition": "An image entering the Fusion composition from timeline or media sources."
+    },
+    {
+      "term": "MediaOut",
+      "definition": "The final image sent back to the timeline."
+    },
+    {
+      "term": "Connection",
+      "definition": "A link carrying an image or mask between nodes."
+    },
+    {
+      "term": "Viewer",
+      "definition": "A panel that can display the output of a selected node."
+    },
+    {
+      "term": "Bypass",
+      "definition": "Temporarily disabling a tool to compare the result with the original."
+    }
+  ],
+  "slides": {
+    "title": "Fusion 1: Nodes, Viewers, and Image Flow",
+    "url": "",
+    "status": "ready-for-chatgpt"
+  },
+  "assignment": {
+    "id": "vp-q2-a09",
+    "title": "Fusion Image-Flow Checkpoint",
+    "evidenceRequired": [
+      "A Google Docs or Drive link with a Fusion screenshot showing MediaIn, one effect, MediaOut, and the output viewer.",
+      "In the same document, explain the three nodes and include an enabled/bypassed comparison or paired screenshots.",
+      "A 2-3 sentence DCC reflection explaining how image flow and node viewers helped you find or prevent an error."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, trace your image through the three nodes and explain how the viewers helped you check the result.",
+    "submissionType": "google-drive-link-and-reflection"
+  },
+  "exitTicket": "Trace your image from MediaIn to MediaOut and explain what your effect node changes.",
+  "tags": [
+    "video-production",
+    "davinci-resolve",
+    "q2",
+    "resolve-foundations",
+    "vp-q2-l09"
+  ]
+}

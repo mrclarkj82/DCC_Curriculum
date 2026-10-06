@@ -295,3 +295,29 @@ Validation and publishing:
 - Narrow publisher dry run reviewed fourteen existing apps/dcc lesson/assignment records. Published those content fields atomically and verified read-back; the follow-up dry run reports changed=0, unchanged=14, failed=0. No quiz, schedule, class active item, security rule, or student-work records were written.
 - Deployed only Hosting target dcc (dcccs). The live Video Production URL serves the exact validated bundle, SHA-256 efb6f288e5db13cb18ca6e6c395165acf96d94f0ea29d4fefe2c5270fb9d82b7, including assignment directions and both opener IDs.
 - No new deck, fake Drive link, downloaded tutorial media, machine transcript, credentials, or student data is included in this milestone. Preserved unrelated local presentation work and earlier PROGRESS.md edits outside the commit.
+
+## 2026-10-06 — Cut and Fusion expansion with calendar extension
+
+- Teacher direction supersedes the earlier shorter scope: include Cut and Fusion, add more lessons, extend the calendar, and move later projects.
+- Added one Cut lesson and three Fusion lessons using the supplied transcript and completed Whisper analysis: fast assembly (01:30:41-01:43:14), nodes/image flow (01:43:14-02:02:05), merges/masks/atmosphere (02:02:05-02:27:02), and compositing/motion (02:27:02-02:50:28).
+- The unit now has eleven DaVinci lessons. New IDs vp-q2-l08 through vp-q2-l11 retain existing IDs and submission targets; final export remains vp-q2-l07 / vp-q2-a07 at sequence 11. Color-page and Fairlight chapters remain excluded.
+- Every new assignment has six practical steps, evidence, reflection, intervention, extension, a 90-minute teacher plan, and all seven standard lesson artifacts. Students use separate Cut/Fusion practice timelines in their saved project. Speed Editor hardware and Studio-only Magic Mask are not required.
+- Updated the instructional plan, seed mirrors, source audit, unit overview, curriculum validation, and generators. Four new slide handoff entries have real briefs and blank deck URLs; no PowerPoint was created. Existing slide links/status are preserved.
+- Final export moves to November 12/13, support to November 16-19, and all twelve subsequent video-project checkpoints to November 20-January 14 while retaining order and time allocation. The following sixteen Unreal lesson pairs move to January 15 (A) / January 19 (B) through March 4 to prevent overlap.
+- Q2 labels remain stable past the December 18 grading boundary. Physical instructional dates and A/B labels are unchanged, including existing B-first pairs after February 22. Weekends and no-school weekdays are excluded. March 5-11 remains available for documentary polish.
+- Practice-media handoff remains needs-teacher-review: supply approved local Fusion plates and moving footage or suitable substitutes and match source color settings. Students do not need a community account. Quizzes remain unpublished with teacher-assessment/checkoff alternatives.
+
+Acceptance criteria:
+
+- Passed: eleven ordered DaVinci lessons, with Cut and Fusion before final export; exactly the two file-organization openers remain first on the Video Production page.
+- Passed: all 77 standard lesson artifacts exist; lesson/assignment mirrors and local lesson data agree; original lesson IDs, slides, unrelated seed records, Q1 schedule, and physical calendar labels are preserved.
+- Passed: all 54 instructional dates from October 6-January 14 are assigned; no overlap with shifted Unreal lessons, weekend meetings, or no-school dates. Calendar/content generators are idempotent.
+
+Validation and publishing:
+
+- Passed: Firebase environment validation, TypeScript/Vite production build, full ESLint, curriculum validation, seed dry run (skipped=172, created=0, updated=0, failed=0), formatting, integrity checks, generation idempotence, and git diff --check. Used existing Node script executables because npm is unavailable. Build retains the existing bundle-size warning.
+- Initial ESLint reported one no-undef error in the temporary expansion helper; adding its explicit node:console import resolved it and full lint passed. An initial idempotence subprocess attempt hit spawnSync node EPERM in the shell wrapper; rerunning with the actual Node executable passed.
+- Content dry run reviewed sixteen changes, including eight new complete lesson/assignment records. Published only the approved DCC content fields and verified read-back. Follow-up reports changed=0, unchanged=22, failed=0.
+- Schedule dry run reviewed twenty-two changes, including four new lesson schedule records. Published only apps/dcc/lessonSchedule; follow-up reports changed=0, unchanged=45. No class active item, quiz, security rule, game route, or student-work record was written.
+- Deployed only Hosting target dcc (dcccs). Live https://dcccs.web.app serves the exact validated bundle, SHA-256 8f2ded8d3dc38f477e33126f03a4f1756722c7bce8ca6543a6eca0afa71cf4a7, with all four new IDs, shifted dates, and both original openers.
+- Preserved unrelated presentation work and earlier local PROGRESS.md edits outside this milestone. No downloaded media, machine transcript, credentials, student data, fake Drive links, or new decks are included.
