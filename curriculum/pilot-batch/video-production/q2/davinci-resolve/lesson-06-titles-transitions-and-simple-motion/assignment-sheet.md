@@ -4,58 +4,51 @@
 
 I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.
 
-## Skill Focus
+## Watch, Pause, Practice
 
-- title design
-- transition restraint
-- inspector controls
-- simple keyframes
-- readability
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. Assigned segment: 01:20:08-01:30:41.
+
+- After adding text: read the title at normal viewer size and check its spelling.
+- After adjusting the Inspector: play the title for its full duration and check its position and contrast.
+- After the motion demonstration: save a readable static title first; attempt keyframes only after the core work is complete.
 
 ## Required Steps
 
-1. Open the edited sequence from earlier lessons.
-2. Add one readable title card or lower third using text controls.
-3. Adjust font size, placement, duration, and contrast so the title is readable.
-4. Add one transition only if it supports the edit.
-5. Optional: animate one title or graphic with a simple position keyframe.
-6. Capture before/after evidence and explain the design choice.
+1. Open the cleaned Foundations_MiniEdit timeline and save.
+2. Watch 01:20:08-01:30:41. Pause after the Effects panel, basic text/title controls, and Inspector/keyframe demonstrations, and try the matching action in your project.
+3. Add one readable title card or lower third using a basic available text title. Check spelling, contrast, placement, and duration during playback.
+4. Use a transition only if it improves the viewer's understanding. A clean cut is acceptable; explain the decision instead of adding a decorative transition to satisfy a count.
+5. If ready, animate one position setting using two keyframes. This is optional. Paid effects and a separate Fusion composition are not required.
+6. Save. Capture the title selected in the timeline with its text controls visible, submit the evidence Doc/Drive link and reflection, and complete the exit ticket. No video export is required today.
 
 ## Naming Convention
 
-Use this format when naming screenshots, exported evidence, or written files: LastName_FirstName_VP-Q2-A07_Description.
+Project: LastName_FirstName_ResolveFoundations. Timeline: Foundations_MiniEdit. Evidence files: LastName_FirstName_VP-Q2-A06_Description. Keep original source media in the approved folder. Save the project at every checkpoint.
 
-## Google Drive / YouTube Link Evidence Requirements
+## Evidence and Submission
 
-Upload screenshots, short screen recordings, exported review files, or written evidence to Google Drive, Google Docs, or YouTube according to teacher directions. Paste share links into DCC Creative Studio. Do not upload raw video files directly to the website.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
 
-- Google Drive link to a screenshot showing the title or lower third selected in the timeline.
-- Google Drive or YouTube link to a short clip preview if teacher requests export.
-- Short reflection explaining why the title or transition supports the story.
-
-## What To Do If Stuck
-
-- Check that the correct Resolve project is open.
-- Use the correct Resolve page for the task before changing random settings.
-- Ask whether the issue is media organization, timeline editing, audio, title, or export.
-- Capture evidence from the actual Resolve workspace, not only the desktop.
-
-## 4-Point Rubric
-
-- 4: Complete, polished, on time, and clearly meets or extends the stated requirements.
-- 3: Complete and meets the stated requirements.
-- 2: Partially complete or missing required evidence.
-- 1: Attempted but incomplete, unclear, or not functional.
-- 0: Not submitted.
-
-## Extension Challenge
-
-Create a simple lower-third style guide with font, size, color, placement, and duration rules.
-
-## Studio Challenge
-
-Make two title versions, then choose the one that is easier to read and less distracting.
+- A Google Docs or Drive link containing a screenshot of your title/lower third selected in the timeline, with its text or Inspector controls visible.
+- In the same evidence document, note your title's duration and explain one readability check and your transition or clean-cut choice.
+- A 2-3 sentence reflection entered in DCC explaining how the title supports the viewer's understanding.
 
 ## Reflection Prompt
 
-How did you make sure your title was readable and not just decorative?
+In 2-3 sentences, explain what your title tells the viewer, how you made it readable, and why you chose a transition or a clean cut.
+
+## What To Do If Stuck
+
+Use a basic static text title, a teacher-approved font, and one safe placement example. Assess spelling, readability, and timing before optional animation.
+
+## 4-Point Rubric
+
+- 4: All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. A readable, correctly spelled title has purposeful placement and timing; the transition or clean-cut choice is explained.
+- 3: Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist.
+- 2: Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear.
+- 1: Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow.
+- 0: No assessable evidence submitted.
+
+## Extension Challenge
+
+Animate a title position with two keyframes or write a reusable lower-third style guide; keep the motion readable.

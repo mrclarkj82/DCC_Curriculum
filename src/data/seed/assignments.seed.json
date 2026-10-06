@@ -1271,45 +1271,52 @@
       "project naming",
       "backup awareness"
     ],
-    "instructions": "I can create a DaVinci Resolve project, identify the main Resolve pages, and explain why project organization matters before editing begins. Complete the required Resolve workflow and submit link-based evidence only.",
+    "instructions": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For this lesson, watch 00:00:00-00:13:16. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
     "requiredSteps": [
-      "Open DaVinci Resolve and locate the Project Manager.",
-      "Create a new project using the class naming convention.",
-      "Identify the Media, Cut, Edit, Fusion, and Deliver pages.",
-      "Write a one-sentence job description for at least four Resolve pages.",
-      "Export or screenshot proof of the project setup according to teacher directions.",
-      "Save and close the project cleanly."
+      "Open the teacher-supplied practice-media folder and DaVinci Resolve. If either is unavailable, ask for help before continuing; do not create another account or buy Resolve Studio.",
+      "Watch 00:00:00-00:13:16. Pause when the instructor opens the Project Manager and repeat the setup in your own workspace.",
+      "Create and name your project LastName_FirstName_ResolveFoundations. Keep this project for the entire unit.",
+      "Locate the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver page buttons. Write one-sentence purpose notes for four pages; recognizing Fairlight does not make its chapter assigned.",
+      "Save the project, capture the project name in the Project Manager or workspace, and reopen it to check that your work was saved.",
+      "Put the screenshot and four purpose notes in your evidence Doc or Drive folder, paste its share link into DCC, and complete the reflection and exit ticket."
     ],
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of the named Resolve project or Project Manager entry.",
-      "Google Drive or Docs link showing four Resolve pages with short purpose notes.",
-      "Short reflection explaining why project setup matters before editing."
+      "A Google Docs or Drive link containing a screenshot of your named Resolve project or Project Manager entry.",
+      "In the same evidence document or folder, one-sentence purpose notes for four Resolve pages.",
+      "A 2-3 sentence reflection entered in DCC explaining how naming and saving the project will prevent lost work."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+        "description": "All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. The named project reopens successfully and four page-purpose notes describe their actual jobs."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete, unclear, or not functional."
+        "description": "Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow."
       },
       {
         "score": 0,
-        "description": "Not submitted."
+        "description": "No assessable evidence submitted."
       }
     ],
-    "extensionChallenge": "Create a one-page Resolve workflow map showing which page you would use for media, editing, titles, and export.",
-    "reflectionPrompt": "Which Resolve page seems most important for your first edit, and why?"
+    "extensionChallenge": "Export a small project backup to the approved local folder and explain how a project backup differs from an exported movie.",
+    "reflectionPrompt": "In 2-3 sentences, explain how you named and saved your project and how those choices will prevent lost work.",
+    "resources": [
+      {
+        "label": "Creator's tutorial practice-media information",
+        "url": "https://www.skool.com/groundcontrol/about",
+        "description": "Use the approved local media folder your teacher supplies. This is the creator's community information page, not a direct ZIP download; students do not need to create another account."
+      }
+    ]
   },
   {
     "id": "vp-q2-a02",
@@ -1323,45 +1330,52 @@
       "footage preview",
       "project structure"
     ],
-    "instructions": "I can import footage into the Media Pool and organize it with bins so my edit can be built from clean source material. Complete the required Resolve workflow and submit link-based evidence only.",
+    "instructions": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For this lesson, watch 00:13:16-00:25:47. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
     "requiredSteps": [
-      "Open the project from Lesson 01.",
-      "Use the Media page or direct import to bring practice footage into the Media Pool.",
-      "Create bins for at least three useful categories, such as A-roll, B-roll, audio, graphics, or selects.",
-      "Move clips into the correct bins without flattening the folder structure.",
-      "Add at least two notes, keywords, or descriptions to help identify clips.",
-      "Capture evidence showing the organized Media Pool."
+      "Reopen LastName_FirstName_ResolveFoundations and locate the teacher-supplied tutorial media. Keep the source files in their approved folder so Resolve can find them next class.",
+      "Watch 00:13:16-00:25:47 in short portions. Pause after importing a clip and repeat the action in your Media Pool.",
+      "Import the provided media while preserving its folders. When following the instructor's folder example, drag folders into the bin list rather than flattening them into the Media Pool.",
+      "Create or organize at least three useful bins, such as footage, audio, graphics, or selects. Preview clips and sort them into the appropriate bins.",
+      "Add at least two useful notes, descriptions, or keyword entries to different clips. Use the list/metadata view to check that the notes are visible.",
+      "Save. Capture the organized bin list and your two notes in the evidence Doc or Drive folder, submit its link in DCC, and complete the reflection and exit ticket."
     ],
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of the Media Pool with organized bins.",
-      "Google Drive or Docs link showing at least two metadata or note entries.",
-      "Short reflection explaining one organization choice that will speed up editing."
+      "A Google Docs or Drive link containing a Media Pool screenshot with at least three organized bins.",
+      "In the same evidence document or folder, a screenshot or notes showing two metadata/description entries on different clips.",
+      "A 2-3 sentence reflection entered in DCC explaining one bin or note choice that will speed up editing."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+        "description": "All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. At least three useful bins and two meaningful clip notes are visible inside Resolve."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete, unclear, or not functional."
+        "description": "Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow."
       },
       {
         "score": 0,
-        "description": "Not submitted."
+        "description": "No assessable evidence submitted."
       }
     ],
-    "extensionChallenge": "Create a smart-bin plan for finding video clips, audio-only clips, interviews, or best takes.",
-    "reflectionPrompt": "Which bin or metadata choice will make your edit easier next class?"
+    "extensionChallenge": "Plan a smart bin or a consistent keyword system that could find interviews or selected takes.",
+    "reflectionPrompt": "In 2-3 sentences, name one bin or note choice you made and explain how it will make a particular clip easier to find next class.",
+    "resources": [
+      {
+        "label": "Creator's tutorial practice-media information",
+        "url": "https://www.skool.com/groundcontrol/about",
+        "description": "Use the approved local media folder your teacher supplies. This is the creator's community information page, not a direct ZIP download; students do not need to create another account."
+      }
+    ]
   },
   {
     "id": "vp-q2-a03",
@@ -1375,45 +1389,52 @@
       "viewer identification",
       "track awareness"
     ],
-    "instructions": "I can create a simple Resolve timeline, place clips in order, and explain the difference between source clips and the timeline edit. Complete the required Resolve workflow and submit link-based evidence only.",
+    "instructions": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For this lesson, watch 00:25:47-00:35:30. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
     "requiredSteps": [
-      "Open the organized Resolve project.",
-      "Confirm the needed practice clips are in the Media Pool.",
-      "Create a new timeline or let Resolve create one from the first clip.",
-      "Add at least four clips to the timeline in a rough story order.",
-      "Identify the source viewer, timeline viewer, playhead, video track, and audio track.",
-      "If audio sync practice media is available, attempt waveform audio sync or document why it is not needed."
+      "Open your saved project and organized Media Pool from Lesson 2.",
+      "Watch 00:25:47-00:35:30. Pause after the waveform-sync demonstration and after the instructor creates a timeline.",
+      "If the teacher supplied a matching video/audio pair, try waveform audio sync and check the result by listening. If no separate audio pair is supplied, use the clip's existing audio and write that explanation in your evidence.",
+      "Create a named timeline, Foundations_MiniEdit, and place at least four clips in a rough story order. Keep linked picture and sound together while experimenting.",
+      "Point out the source viewer, timeline viewer, playhead, video track, and audio track in your own workspace. Play the timeline from start to finish.",
+      "Save. Submit an annotated timeline screenshot or a screenshot with a short label key, include the sync attempt or explanation, and complete the DCC reflection and exit ticket."
     ],
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of a timeline with at least four clips.",
-      "Google Drive or Docs link labeling source viewer, timeline viewer, playhead, and tracks.",
-      "Short reflection explaining one timeline decision."
+      "A Google Docs or Drive link containing a screenshot of Foundations_MiniEdit with at least four clips.",
+      "In the same evidence document or folder, labels for the source viewer, timeline viewer, playhead, video track, and audio track, plus your audio-sync result or explanation.",
+      "A 2-3 sentence reflection entered in DCC explaining the intended order of your clips."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+        "description": "All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. The named timeline has four clips; interface labels are accurate and the audio-sync attempt or explanation is documented."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete, unclear, or not functional."
+        "description": "Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow."
       },
       {
         "score": 0,
-        "description": "Not submitted."
+        "description": "No assessable evidence submitted."
       }
     ],
-    "extensionChallenge": "Use waveforms to identify a clap, slate, or loud sound that could help sync audio.",
-    "reflectionPrompt": "What changed when your clips moved from the Media Pool into the timeline?"
+    "extensionChallenge": "Use a slate or a visible action and waveform spike to check a sync point, then explain why playback is the final check.",
+    "reflectionPrompt": "In 2-3 sentences, explain the order of your four clips and what you want the viewer to understand from that sequence.",
+    "resources": [
+      {
+        "label": "Creator's tutorial practice-media information",
+        "url": "https://www.skool.com/groundcontrol/about",
+        "description": "Use the approved local media folder your teacher supplies. This is the creator's community information page, not a direct ZIP download; students do not need to create another account."
+      }
+    ]
   },
   {
     "id": "vp-q2-a04",
@@ -1427,45 +1448,52 @@
       "ripple awareness",
       "keyboard shortcut practice"
     ],
-    "instructions": "I can trim clips, set in and out points, and build a rough cut that communicates a simple story without unnecessary dead space. Complete the required Resolve workflow and submit link-based evidence only.",
+    "instructions": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For this lesson, watch 00:35:30-01:07:04. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
     "requiredSteps": [
-      "Open the timeline from Lesson 03.",
-      "Trim the beginning and end of clips to remove dead space, slates, or unusable moments.",
-      "Use in and out points on at least two source clips before adding them to the timeline.",
-      "Build a 30-60 second rough cut with a clear order.",
-      "Remove unintended gaps unless there is an intentional pause.",
-      "Capture evidence of the rough cut timeline and write a short editing rationale."
+      "Open Foundations_MiniEdit from Lesson 3 and save before making changes.",
+      "Watch 00:35:30-01:07:04 in short portions. Pause after edge trimming, source in/out points, and ripple/split demonstrations to try each action on your own clips.",
+      "Trim unusable starts, slates, and dead time. Set in and out points on at least two source clips before adding their selected ranges to the timeline.",
+      "Build a 30-60 second rough cut with at least four clips and a clear beginning, middle, and end. Remove unintended timeline gaps.",
+      "Play the whole cut and revise one edit that feels too long or confusing. The instructor's customized Q/W/S keys are examples; use the classroom/default shortcut mapping or menu commands that perform the same actions.",
+      "Save and capture the timeline and runtime. In the evidence Doc, name the two clips for which you selected in/out ranges. Submit the link and a reflection naming three tools or actions you used. No video export is required today."
     ],
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of the rough cut timeline.",
-      "Google Drive or YouTube link to a short exported rough cut if teacher requests export.",
-      "Short reflection naming at least three tools or shortcuts used."
+      "A Google Docs or Drive link containing a screenshot of the 30-60 second rough cut timeline with at least four clips and its runtime visible.",
+      "In the same evidence document, name two source clips on which you set in/out points and explain what you kept.",
+      "A 2-3 sentence reflection entered in DCC naming three tools/actions used and explaining the most useful trim."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+        "description": "All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. The four-clip rough cut is 30-60 seconds, plays without unintended gaps, and documents two selected source ranges."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete, unclear, or not functional."
+        "description": "Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow."
       },
       {
         "score": 0,
-        "description": "Not submitted."
+        "description": "No assessable evidence submitted."
       }
     ],
-    "extensionChallenge": "Create two versions of the same rough cut with different pacing: one calm and one energetic.",
-    "reflectionPrompt": "Which trim made the biggest improvement to the story or pacing?"
+    "extensionChallenge": "Duplicate the timeline and create a second pacing version, then compare how clip length changes the viewer's experience.",
+    "reflectionPrompt": "In 2-3 sentences, name three tools or editing actions you used, then explain which trim most improved your story or pacing.",
+    "resources": [
+      {
+        "label": "Creator's tutorial practice-media information",
+        "url": "https://www.skool.com/groundcontrol/about",
+        "description": "Use the approved local media folder your teacher supplies. This is the creator's community information page, not a direct ZIP download; students do not need to create another account."
+      }
+    ]
   },
   {
     "id": "vp-q2-a05",
@@ -1479,46 +1507,52 @@
       "inspector basics",
       "rough cut evidence"
     ],
-    "instructions": "I can show what I know from the first Resolve lessons and clean up a rough cut so it is easier to understand. Complete the required Resolve workflow and submit link-based evidence only.",
+    "instructions": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For this lesson, watch 01:07:04-01:20:08. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
     "requiredSteps": [
-      "Complete or review Quiz 1 for Lessons 01-04.",
-      "Open the rough cut from Lesson 04.",
-      "Remove accidental gaps, unusable starts, and extra dead time.",
-      "Adjust at least one audio level or fade if the cut needs it.",
-      "Use the inspector to inspect or adjust one selected clip.",
-      "Submit updated rough cut evidence and a short reflection."
+      "Complete the teacher-assigned Quiz 1 checkpoint. If no quiz is assigned, demonstrate your project, bins, four-clip timeline, and one trimming action to your teacher for a checkpoint checkoff.",
+      "Open your own rough cut. Watch 01:07:04-01:20:08 and pause after timeline cleanup, basic audio/fade, and Inspector demonstrations. The instructor switches to a prepared example; continue using your own project.",
+      "Remove an accidental gap or distracting start/end. If your cut is already clean, identify an intentional editing choice and explain why you kept it.",
+      "On the Edit page, adjust one basic audio level or fade where it improves the cut and listen to the result. This is Edit-page audio work; the Fairlight chapter is not assigned.",
+      "Select a clip and use the Inspector to make one purposeful change, or compare a setting and restore it when a change is not needed. Record what you checked.",
+      "Save. Capture the cleaned timeline and one audio/Inspector setting, record the quiz result or teacher checkoff in your evidence Doc, submit its link, and complete the reflection. No video export is required today."
     ],
-    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Quiz 1 completion record or teacher checkoff.",
-      "Google Drive link to a screenshot of the cleaned rough cut timeline.",
-      "Google Drive or YouTube link to the rough cut if teacher requests export.",
-      "Short reflection naming at least three tools or shortcuts used."
+      "A Google Docs or Drive link containing the teacher-assigned Quiz 1 result or a dated note of the teacher checkpoint/checkoff.",
+      "In the same evidence document or folder, a screenshot of the cleaned timeline and a screenshot or note of the audio/Inspector setting checked.",
+      "A 2-3 sentence reflection entered in DCC explaining one cleanup decision and how you checked its effect."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+        "description": "All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. A cleanup decision and an audio or Inspector check are visible, with the assigned checkpoint result or teacher checkoff recorded."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete, unclear, or not functional."
+        "description": "Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow."
       },
       {
         "score": 0,
-        "description": "Not submitted."
+        "description": "No assessable evidence submitted."
       }
     ],
-    "extensionChallenge": "Add one intentional fade only where it improves clarity, then explain why it belongs there.",
-    "reflectionPrompt": "What is the strongest improvement you made to the rough cut today?"
+    "extensionChallenge": "Duplicate the timeline before comparing two fades, audio levels, or speed choices; keep the version that makes the story clearer.",
+    "reflectionPrompt": "In 2-3 sentences, explain one cleanup decision, name the audio or Inspector control you checked, and describe how playback helped you judge the result.",
+    "resources": [
+      {
+        "label": "Creator's tutorial practice-media information",
+        "url": "https://www.skool.com/groundcontrol/about",
+        "description": "Use the approved local media folder your teacher supplies. This is the creator's community information page, not a direct ZIP download; students do not need to create another account."
+      }
+    ]
   },
   {
     "id": "vp-q2-a06",
@@ -1532,45 +1566,52 @@
       "simple keyframes",
       "readability"
     ],
-    "instructions": "I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video. Complete the required Resolve workflow and submit link-based evidence only.",
+    "instructions": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For this lesson, watch 01:20:08-01:30:41. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
     "requiredSteps": [
-      "Open the edited sequence from earlier lessons.",
-      "Add one readable title card or lower third using text controls.",
-      "Adjust font size, placement, duration, and contrast so the title is readable.",
-      "Add one transition only if it supports the edit.",
-      "Optional: animate one title or graphic with a simple position keyframe.",
-      "Capture before/after evidence and explain the design choice."
+      "Open the cleaned Foundations_MiniEdit timeline and save.",
+      "Watch 01:20:08-01:30:41. Pause after the Effects panel, basic text/title controls, and Inspector/keyframe demonstrations, and try the matching action in your project.",
+      "Add one readable title card or lower third using a basic available text title. Check spelling, contrast, placement, and duration during playback.",
+      "Use a transition only if it improves the viewer's understanding. A clean cut is acceptable; explain the decision instead of adding a decorative transition to satisfy a count.",
+      "If ready, animate one position setting using two keyframes. This is optional. Paid effects and a separate Fusion composition are not required.",
+      "Save. Capture the title selected in the timeline with its text controls visible, submit the evidence Doc/Drive link and reflection, and complete the exit ticket. No video export is required today."
     ],
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot showing the title or lower third selected in the timeline.",
-      "Google Drive or YouTube link to a short clip preview if teacher requests export.",
-      "Short reflection explaining why the title or transition supports the story."
+      "A Google Docs or Drive link containing a screenshot of your title/lower third selected in the timeline, with its text or Inspector controls visible.",
+      "In the same evidence document, note your title's duration and explain one readability check and your transition or clean-cut choice.",
+      "A 2-3 sentence reflection entered in DCC explaining how the title supports the viewer's understanding."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+        "description": "All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. A readable, correctly spelled title has purposeful placement and timing; the transition or clean-cut choice is explained."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete, unclear, or not functional."
+        "description": "Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow."
       },
       {
         "score": 0,
-        "description": "Not submitted."
+        "description": "No assessable evidence submitted."
       }
     ],
-    "extensionChallenge": "Create a simple lower-third style guide with font, size, color, placement, and duration rules.",
-    "reflectionPrompt": "How did you make sure your title was readable and not just decorative?"
+    "extensionChallenge": "Animate a title position with two keyframes or write a reusable lower-third style guide; keep the motion readable.",
+    "reflectionPrompt": "In 2-3 sentences, explain what your title tells the viewer, how you made it readable, and why you chose a transition or a clean cut.",
+    "resources": [
+      {
+        "label": "Creator's tutorial practice-media information",
+        "url": "https://www.skool.com/groundcontrol/about",
+        "description": "Use the approved local media folder your teacher supplies. This is the creator's community information page, not a direct ZIP download; students do not need to create another account."
+      }
+    ]
   },
   {
     "id": "vp-q2-a07",
@@ -1584,46 +1625,52 @@
       "codec awareness",
       "final export reflection"
     ],
-    "instructions": "I can complete a final checkpoint and export a small edited video with clear naming, useful render settings, and a reflection on my post-production workflow. Complete the required Resolve workflow and submit link-based evidence only.",
+    "instructions": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For this lesson, watch 04:53:29-05:06:57. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
     "requiredSteps": [
-      "Complete or review Quiz 2 for Lessons 06-08 and export basics.",
-      "Open the polished mini-edit timeline.",
-      "Check that the edit has a beginning, middle, and end.",
-      "Check basic audio, title readability, timeline gaps, and export settings.",
-      "Use the Deliver page or teacher-approved quick export workflow.",
-      "Name the export using the class naming convention and submit a share link or teacher-approved evidence."
+      "Complete the teacher-assigned Quiz 2 checkpoint for titles, transitions, and export readiness. If no quiz is assigned, show your readable title and explain your intended export format to your teacher for a checkoff.",
+      "Open your polished 30-60 second mini-edit. Jump directly to 04:53:29 and stop at 05:06:57; do not work through the intervening Cut, Fusion, Color, or Fairlight chapters.",
+      "Play the full edit and check its beginning/middle/end, title readability, basic Edit-page audio, and absence of accidental gaps.",
+      "On the Deliver page, follow the render-settings and queue demonstrations. Make a single-clip MP4/H.264 review export using the project's frame rate and a resolution supported by your source footage and classroom computer.",
+      "Save the movie as LastName_FirstName_VP-Q2-A07_Final in your approved Exports folder, add it to the render queue, render, and play the exported file outside Resolve to confirm that picture and sound work.",
+      "Place the exported video in Google Drive or an approved YouTube location and submit its share link in DCC. Also submit an evidence Doc/Drive link with your Deliver/render-queue screenshot and quiz result or dated teacher checkoff; complete the reflection and exit ticket."
     ],
-    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
-      "Quiz 2 completion record or teacher checkoff.",
-      "Google Drive or YouTube link to the final exported mini-edit.",
-      "Google Drive link to a screenshot of the Deliver page or render queue.",
-      "Short reflection explaining the most important editing, audio, title, or export decision."
+      "A Google Drive or approved YouTube share link to your playable 30-60 second final mini-edit with at least four clips and a readable title/lower third.",
+      "A Google Docs or Drive link containing a screenshot of the Deliver settings or completed render queue and the teacher-assigned Quiz 2 result or a dated teacher checkpoint/checkoff note.",
+      "A 2-3 sentence reflection entered in DCC explaining one editing decision, one export check, and one skill you will use in the next video project."
     ],
     "rubric": [
       {
         "score": 4,
-        "description": "Complete, polished, on time, and clearly meets or extends the stated requirements."
+        "description": "All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. The submitted 30-60 second movie plays outside Resolve and includes four clips, a readable title, basic audio, and verified export settings."
       },
       {
         "score": 3,
-        "description": "Complete and meets the stated requirements."
+        "description": "Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist."
       },
       {
         "score": 2,
-        "description": "Partially complete or missing required evidence."
+        "description": "Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear."
       },
       {
         "score": 1,
-        "description": "Attempted but incomplete, unclear, or not functional."
+        "description": "Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow."
       },
       {
         "score": 0,
-        "description": "Not submitted."
+        "description": "No assessable evidence submitted."
       }
     ],
-    "extensionChallenge": "Export two versions: one small review copy and one higher-quality archive copy, then compare the purpose of each.",
-    "reflectionPrompt": "Which post-production pass changed your video most: editing, audio, titles, or export?"
+    "extensionChallenge": "Compare a smaller review copy with a higher-quality archive export and explain when each is useful.",
+    "reflectionPrompt": "In 2-3 sentences, explain one editing decision, describe how you verified the exported movie, and name one skill you will use in the next video project.",
+    "resources": [
+      {
+        "label": "Creator's tutorial practice-media information",
+        "url": "https://www.skool.com/groundcontrol/about",
+        "description": "Use the approved local media folder your teacher supplies. This is the creator's community information page, not a direct ZIP download; students do not need to create another account."
+      }
+    ]
   },
   {
     "id": "ue-q3-a05",

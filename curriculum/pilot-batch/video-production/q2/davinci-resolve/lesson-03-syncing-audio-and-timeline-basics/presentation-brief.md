@@ -208,3 +208,40 @@ Short reflection explaining one timeline decision.
 
 Do not create a generic marketing deck. Make it classroom-ready for students using DaVinci Resolve.
 ```
+
+## Follow-Along and Evidence Revision (October 6, 2026)
+
+Use 00:25:47-00:35:30 from the approved video. Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+
+### Pause-and-Practice Prompts
+
+- After sync: listen for matching sound and picture, or document why separate sync media was not available.
+- After timeline creation: show the timeline name and at least four clips.
+- After the viewer/track tour: point to each required part in your own interface.
+
+### Current Required Student Workflow
+
+1. Open your saved project and organized Media Pool from Lesson 2.
+2. Watch 00:25:47-00:35:30. Pause after the waveform-sync demonstration and after the instructor creates a timeline.
+3. If the teacher supplied a matching video/audio pair, try waveform audio sync and check the result by listening. If no separate audio pair is supplied, use the clip's existing audio and write that explanation in your evidence.
+4. Create a named timeline, Foundations_MiniEdit, and place at least four clips in a rough story order. Keep linked picture and sound together while experimenting.
+5. Point out the source viewer, timeline viewer, playhead, video track, and audio track in your own workspace. Play the timeline from start to finish.
+6. Save. Submit an annotated timeline screenshot or a screenshot with a short label key, include the sync attempt or explanation, and complete the DCC reflection and exit ticket.
+
+### Current Evidence Checklist
+
+- A Google Docs or Drive link containing a screenshot of Foundations_MiniEdit with at least four clips.
+- In the same evidence document or folder, labels for the source viewer, timeline viewer, playhead, video track, and audio track, plus your audio-sync result or explanation.
+- A 2-3 sentence reflection entered in DCC explaining the intended order of your clips.
+
+### Reflection and Differentiation
+
+Reflection: In 2-3 sentences, explain the order of your four clips and what you want the viewer to understand from that sequence.
+
+Intervention: Use four prepared clips and a suggested beginning/middle/end order. Assess the student's own timeline and labels; separate audio-sync media is optional when the approved set does not include it.
+
+Extension: Use a slate or a visible action and waveform spike to check a sync point, then explain why playback is the final check.
+
+Teacher check: Check four clips on the actual timeline, not just four items in the Media Pool. Labels must match the student's workspace.
+
+Use the existing 90-minute block. Cut, Fusion, Color, and Fairlight chapters are not assigned. Do not require a Studio-only tool, a new community account, or a video export before Lesson 7. No deck is created by this brief revision.

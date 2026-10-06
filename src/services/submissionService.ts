@@ -124,7 +124,7 @@ export function resolveSubmissionTarget(
       submissionKind: submissionKindFor(lesson.programAreaId, targetType),
       requirements,
       evidenceChecklist: evidenceChecklistFrom(requirements),
-      reflectionPrompt: genericReflectionPrompt,
+      reflectionPrompt: lesson.assignment?.reflectionPrompt || genericReflectionPrompt,
     };
   }
 

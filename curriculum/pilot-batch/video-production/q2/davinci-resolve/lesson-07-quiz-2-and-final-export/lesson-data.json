@@ -7,10 +7,10 @@
   "title": "Quiz 2 and Final Export",
   "status": "draft-pilot",
   "video": {
-    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
     "start": "04:53:29",
     "end": "05:06:57",
-    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=17609s",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=17609s",
     "note": "Uses Quiz 2 as the closing checkpoint, then covers the Deliver page, render settings, single clip export, codec awareness, H.264/H.265/ProRes comparison, file naming, render queue, multiple versions, and final reflection."
   },
   "learningTarget": "I can complete a final checkpoint and export a small edited video with clear naming, useful render settings, and a reflection on my post-production workflow.",
@@ -60,13 +60,13 @@
   "assignment": {
     "id": "vp-q2-a07",
     "title": "Final Resolve Mini-Edit Export",
-    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-or-youtube-link-and-reflection",
     "evidenceRequired": [
-      "Quiz 2 completion record or teacher checkoff.",
-      "Google Drive or YouTube link to the final exported mini-edit.",
-      "Google Drive link to a screenshot of the Deliver page or render queue.",
-      "Short reflection explaining the most important editing, audio, title, or export decision."
-    ]
+      "A Google Drive or approved YouTube share link to your playable 30-60 second final mini-edit with at least four clips and a readable title/lower third.",
+      "A Google Docs or Drive link containing a screenshot of the Deliver settings or completed render queue and the teacher-assigned Quiz 2 result or a dated teacher checkpoint/checkoff note.",
+      "A 2-3 sentence reflection entered in DCC explaining one editing decision, one export check, and one skill you will use in the next video project."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain one editing decision, describe how you verified the exported movie, and name one skill you will use in the next video project."
   },
   "exitTicket": "What export setting or file naming choice do you need to remember for future video projects?",
   "tags": [

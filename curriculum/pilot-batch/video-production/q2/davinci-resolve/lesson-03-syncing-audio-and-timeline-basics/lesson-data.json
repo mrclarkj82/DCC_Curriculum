@@ -7,10 +7,10 @@
   "title": "Syncing Audio and Timeline Basics",
   "status": "draft-pilot",
   "video": {
-    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
     "start": "00:25:47",
     "end": "00:35:30",
-    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=1547s",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=1547s",
     "note": "Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness."
   },
   "learningTarget": "I can create a simple Resolve timeline, place clips in order, and explain the difference between source clips and the timeline edit.",
@@ -56,12 +56,13 @@
   "assignment": {
     "id": "vp-q2-a03",
     "title": "First Timeline Assembly",
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of a timeline with at least four clips.",
-      "Google Drive or Docs link labeling source viewer, timeline viewer, playhead, and tracks.",
-      "Short reflection explaining one timeline decision."
-    ]
+      "A Google Docs or Drive link containing a screenshot of Foundations_MiniEdit with at least four clips.",
+      "In the same evidence document or folder, labels for the source viewer, timeline viewer, playhead, video track, and audio track, plus your audio-sync result or explanation.",
+      "A 2-3 sentence reflection entered in DCC explaining the intended order of your clips."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain the order of your four clips and what you want the viewer to understand from that sequence."
   },
   "exitTicket": "How do the source viewer and timeline viewer help with different editing decisions?",
   "tags": [

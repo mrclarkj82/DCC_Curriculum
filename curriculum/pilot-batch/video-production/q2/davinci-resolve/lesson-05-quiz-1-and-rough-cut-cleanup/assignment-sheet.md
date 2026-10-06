@@ -4,59 +4,51 @@
 
 I can show what I know from the first Resolve lessons and clean up a rough cut so it is easier to understand.
 
-## Skill Focus
+## Watch, Pause, Practice
 
-- checkpoint review
-- timeline cleanup
-- audio level awareness
-- inspector basics
-- rough cut evidence
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. Assigned segment: 01:07:04-01:20:08.
+
+- After the prepared-bin example: confirm you are still improving your own saved rough cut.
+- After an audio level/fade change: listen to the relevant edit and compare it with the previous version.
+- After selecting a clip: show how the Inspector controls the selected clip, not the entire project.
 
 ## Required Steps
 
-1. Complete or review Quiz 1 for Lessons 01-04.
-2. Open the rough cut from Lesson 04.
-3. Remove accidental gaps, unusable starts, and extra dead time.
-4. Adjust at least one audio level or fade if the cut needs it.
-5. Use the inspector to inspect or adjust one selected clip.
-6. Submit updated rough cut evidence and a short reflection.
+1. Complete the teacher-assigned Quiz 1 checkpoint. If no quiz is assigned, demonstrate your project, bins, four-clip timeline, and one trimming action to your teacher for a checkpoint checkoff.
+2. Open your own rough cut. Watch 01:07:04-01:20:08 and pause after timeline cleanup, basic audio/fade, and Inspector demonstrations. The instructor switches to a prepared example; continue using your own project.
+3. Remove an accidental gap or distracting start/end. If your cut is already clean, identify an intentional editing choice and explain why you kept it.
+4. On the Edit page, adjust one basic audio level or fade where it improves the cut and listen to the result. This is Edit-page audio work; the Fairlight chapter is not assigned.
+5. Select a clip and use the Inspector to make one purposeful change, or compare a setting and restore it when a change is not needed. Record what you checked.
+6. Save. Capture the cleaned timeline and one audio/Inspector setting, record the quiz result or teacher checkoff in your evidence Doc, submit its link, and complete the reflection. No video export is required today.
 
 ## Naming Convention
 
-Use this format when naming screenshots, exported evidence, or written files: LastName_FirstName_VP-Q2-A05_Description.
+Project: LastName_FirstName_ResolveFoundations. Timeline: Foundations_MiniEdit. Evidence files: LastName_FirstName_VP-Q2-A05_Description. Keep original source media in the approved folder. Save the project at every checkpoint.
 
-## Google Drive / YouTube Link Evidence Requirements
+## Evidence and Submission
 
-Upload screenshots, short screen recordings, exported review files, or written evidence to Google Drive, Google Docs, or YouTube according to teacher directions. Paste share links into DCC Creative Studio. Do not upload raw video files directly to the website.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
 
-- Quiz 1 completion record or teacher checkoff.
-- Google Drive link to a screenshot of the cleaned rough cut timeline.
-- Google Drive or YouTube link to the rough cut if teacher requests export.
-- Short reflection naming at least three tools or shortcuts used.
-
-## What To Do If Stuck
-
-- Check that the correct Resolve project is open.
-- Use the correct Resolve page for the task before changing random settings.
-- Ask whether the issue is media organization, timeline editing, audio, title, or export.
-- Capture evidence from the actual Resolve workspace, not only the desktop.
-
-## 4-Point Rubric
-
-- 4: Complete, polished, on time, and clearly meets or extends the stated requirements.
-- 3: Complete and meets the stated requirements.
-- 2: Partially complete or missing required evidence.
-- 1: Attempted but incomplete, unclear, or not functional.
-- 0: Not submitted.
-
-## Extension Challenge
-
-Add one intentional fade only where it improves clarity, then explain why it belongs there.
-
-## Studio Challenge
-
-Make the rough cut understandable with no titles, music, or color changes yet.
+- A Google Docs or Drive link containing the teacher-assigned Quiz 1 result or a dated note of the teacher checkpoint/checkoff.
+- In the same evidence document or folder, a screenshot of the cleaned timeline and a screenshot or note of the audio/Inspector setting checked.
+- A 2-3 sentence reflection entered in DCC explaining one cleanup decision and how you checked its effect.
 
 ## Reflection Prompt
 
-What is the strongest improvement you made to the rough cut today?
+In 2-3 sentences, explain one cleanup decision, name the audio or Inspector control you checked, and describe how playback helped you judge the result.
+
+## What To Do If Stuck
+
+Prioritize one visible cleanup decision and one basic Edit-page audio check. Allow a teacher demonstration checkoff instead of an unavailable online quiz.
+
+## 4-Point Rubric
+
+- 4: All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. A cleanup decision and an audio or Inspector check are visible, with the assigned checkpoint result or teacher checkoff recorded.
+- 3: Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist.
+- 2: Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear.
+- 1: Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow.
+- 0: No assessable evidence submitted.
+
+## Extension Challenge
+
+Duplicate the timeline before comparing two fades, audio levels, or speed choices; keep the version that makes the story clearer.

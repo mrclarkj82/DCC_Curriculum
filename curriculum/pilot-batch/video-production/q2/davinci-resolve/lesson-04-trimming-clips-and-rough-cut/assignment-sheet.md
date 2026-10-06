@@ -4,58 +4,51 @@
 
 I can trim clips, set in and out points, and build a rough cut that communicates a simple story without unnecessary dead space.
 
-## Skill Focus
+## Watch, Pause, Practice
 
-- trimming
-- in and out points
-- rough cut sequencing
-- ripple awareness
-- keyboard shortcut practice
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. Assigned segment: 00:35:30-01:07:04.
+
+- After edge trimming: play the edit and check that you removed dead time without cutting the useful action.
+- After source in/out points: identify two clips whose selected ranges you used.
+- After ripple/split practice: check for accidental gaps, then play your 30-60 second sequence.
 
 ## Required Steps
 
-1. Open the timeline from Lesson 03.
-2. Trim the beginning and end of clips to remove dead space, slates, or unusable moments.
-3. Use in and out points on at least two source clips before adding them to the timeline.
-4. Build a 30-60 second rough cut with a clear order.
-5. Remove unintended gaps unless there is an intentional pause.
-6. Capture evidence of the rough cut timeline and write a short editing rationale.
+1. Open Foundations_MiniEdit from Lesson 3 and save before making changes.
+2. Watch 00:35:30-01:07:04 in short portions. Pause after edge trimming, source in/out points, and ripple/split demonstrations to try each action on your own clips.
+3. Trim unusable starts, slates, and dead time. Set in and out points on at least two source clips before adding their selected ranges to the timeline.
+4. Build a 30-60 second rough cut with at least four clips and a clear beginning, middle, and end. Remove unintended timeline gaps.
+5. Play the whole cut and revise one edit that feels too long or confusing. The instructor's customized Q/W/S keys are examples; use the classroom/default shortcut mapping or menu commands that perform the same actions.
+6. Save and capture the timeline and runtime. In the evidence Doc, name the two clips for which you selected in/out ranges. Submit the link and a reflection naming three tools or actions you used. No video export is required today.
 
 ## Naming Convention
 
-Use this format when naming screenshots, exported evidence, or written files: LastName_FirstName_VP-Q2-A04_Description.
+Project: LastName_FirstName_ResolveFoundations. Timeline: Foundations_MiniEdit. Evidence files: LastName_FirstName_VP-Q2-A04_Description. Keep original source media in the approved folder. Save the project at every checkpoint.
 
-## Google Drive / YouTube Link Evidence Requirements
+## Evidence and Submission
 
-Upload screenshots, short screen recordings, exported review files, or written evidence to Google Drive, Google Docs, or YouTube according to teacher directions. Paste share links into DCC Creative Studio. Do not upload raw video files directly to the website.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
 
-- Google Drive link to a screenshot of the rough cut timeline.
-- Google Drive or YouTube link to a short exported rough cut if teacher requests export.
-- Short reflection naming at least three tools or shortcuts used.
-
-## What To Do If Stuck
-
-- Check that the correct Resolve project is open.
-- Use the correct Resolve page for the task before changing random settings.
-- Ask whether the issue is media organization, timeline editing, audio, title, or export.
-- Capture evidence from the actual Resolve workspace, not only the desktop.
-
-## 4-Point Rubric
-
-- 4: Complete, polished, on time, and clearly meets or extends the stated requirements.
-- 3: Complete and meets the stated requirements.
-- 2: Partially complete or missing required evidence.
-- 1: Attempted but incomplete, unclear, or not functional.
-- 0: Not submitted.
-
-## Extension Challenge
-
-Create two versions of the same rough cut with different pacing: one calm and one energetic.
-
-## Studio Challenge
-
-Use only trimming and clip order to make the story clearer before adding titles, effects, or music.
+- A Google Docs or Drive link containing a screenshot of the 30-60 second rough cut timeline with at least four clips and its runtime visible.
+- In the same evidence document, name two source clips on which you set in/out points and explain what you kept.
+- A 2-3 sentence reflection entered in DCC naming three tools/actions used and explaining the most useful trim.
 
 ## Reflection Prompt
 
-Which trim made the biggest improvement to the story or pacing?
+In 2-3 sentences, name three tools or editing actions you used, then explain which trim most improved your story or pacing.
+
+## What To Do If Stuck
+
+Limit the edit to four clips and 30 seconds. Model one in/out selection and one ripple trim. A clear simple cut takes priority over recreating every shortcut demonstration.
+
+## 4-Point Rubric
+
+- 4: All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. The four-clip rough cut is 30-60 seconds, plays without unintended gaps, and documents two selected source ranges.
+- 3: Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist.
+- 2: Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear.
+- 1: Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow.
+- 0: No assessable evidence submitted.
+
+## Extension Challenge
+
+Duplicate the timeline and create a second pacing version, then compare how clip length changes the viewer's experience.

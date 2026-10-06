@@ -4,58 +4,51 @@
 
 I can import footage into the Media Pool and organize it with bins so my edit can be built from clean source material.
 
-## Skill Focus
+## Watch, Pause, Practice
 
-- media import
-- bin organization
-- metadata awareness
-- footage preview
-- project structure
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. Assigned segment: 00:13:16-00:25:47.
+
+- After import: confirm the clip appears in your Media Pool and plays in the viewer.
+- After dragging folders: confirm the folder names survived as bins.
+- After metadata: show two notes that would help another editor identify a useful clip.
 
 ## Required Steps
 
-1. Open the project from Lesson 01.
-2. Use the Media page or direct import to bring practice footage into the Media Pool.
-3. Create bins for at least three useful categories, such as A-roll, B-roll, audio, graphics, or selects.
-4. Move clips into the correct bins without flattening the folder structure.
-5. Add at least two notes, keywords, or descriptions to help identify clips.
-6. Capture evidence showing the organized Media Pool.
+1. Reopen LastName_FirstName_ResolveFoundations and locate the teacher-supplied tutorial media. Keep the source files in their approved folder so Resolve can find them next class.
+2. Watch 00:13:16-00:25:47 in short portions. Pause after importing a clip and repeat the action in your Media Pool.
+3. Import the provided media while preserving its folders. When following the instructor's folder example, drag folders into the bin list rather than flattening them into the Media Pool.
+4. Create or organize at least three useful bins, such as footage, audio, graphics, or selects. Preview clips and sort them into the appropriate bins.
+5. Add at least two useful notes, descriptions, or keyword entries to different clips. Use the list/metadata view to check that the notes are visible.
+6. Save. Capture the organized bin list and your two notes in the evidence Doc or Drive folder, submit its link in DCC, and complete the reflection and exit ticket.
 
 ## Naming Convention
 
-Use this format when naming screenshots, exported evidence, or written files: LastName_FirstName_VP-Q2-A02_Description.
+Project: LastName_FirstName_ResolveFoundations. Timeline: Foundations_MiniEdit. Evidence files: LastName_FirstName_VP-Q2-A02_Description. Keep original source media in the approved folder. Save the project at every checkpoint.
 
-## Google Drive / YouTube Link Evidence Requirements
+## Evidence and Submission
 
-Upload screenshots, short screen recordings, exported review files, or written evidence to Google Drive, Google Docs, or YouTube according to teacher directions. Paste share links into DCC Creative Studio. Do not upload raw video files directly to the website.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
 
-- Google Drive link to a screenshot of the Media Pool with organized bins.
-- Google Drive or Docs link showing at least two metadata or note entries.
-- Short reflection explaining one organization choice that will speed up editing.
-
-## What To Do If Stuck
-
-- Check that the correct Resolve project is open.
-- Use the correct Resolve page for the task before changing random settings.
-- Ask whether the issue is media organization, timeline editing, audio, title, or export.
-- Capture evidence from the actual Resolve workspace, not only the desktop.
-
-## 4-Point Rubric
-
-- 4: Complete, polished, on time, and clearly meets or extends the stated requirements.
-- 3: Complete and meets the stated requirements.
-- 2: Partially complete or missing required evidence.
-- 1: Attempted but incomplete, unclear, or not functional.
-- 0: Not submitted.
-
-## Extension Challenge
-
-Create a smart-bin plan for finding video clips, audio-only clips, interviews, or best takes.
-
-## Studio Challenge
-
-Organize a messy footage folder into a professional assistant-editor style bin structure.
+- A Google Docs or Drive link containing a Media Pool screenshot with at least three organized bins.
+- In the same evidence document or folder, a screenshot or notes showing two metadata/description entries on different clips.
+- A 2-3 sentence reflection entered in DCC explaining one bin or note choice that will speed up editing.
 
 ## Reflection Prompt
 
-Which bin or metadata choice will make your edit easier next class?
+In 2-3 sentences, name one bin or note choice you made and explain how it will make a particular clip easier to find next class.
+
+## What To Do If Stuck
+
+Provide four to six manageable clips in an approved local folder. Model one import and one bin, then require the student to complete the remaining bins and two notes.
+
+## 4-Point Rubric
+
+- 4: All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. At least three useful bins and two meaningful clip notes are visible inside Resolve.
+- 3: Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist.
+- 2: Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear.
+- 1: Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow.
+- 0: No assessable evidence submitted.
+
+## Extension Challenge
+
+Plan a smart bin or a consistent keyword system that could find interviews or selected takes.

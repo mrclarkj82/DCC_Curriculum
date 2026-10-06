@@ -7,10 +7,10 @@
   "title": "Quiz 1 and Rough Cut Cleanup",
   "status": "draft-pilot",
   "video": {
-    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
     "start": "01:07:04",
     "end": "01:20:08",
-    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4024s",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=4024s",
     "note": "Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut."
   },
   "learningTarget": "I can show what I know from the first Resolve lessons and clean up a rough cut so it is easier to understand.",
@@ -52,13 +52,13 @@
   "assignment": {
     "id": "vp-q2-a05",
     "title": "Rough Cut Cleanup and Quiz 1 Checkpoint",
-    "submissionType": "quiz-record-google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Quiz 1 completion record or teacher checkoff.",
-      "Google Drive link to a screenshot of the cleaned rough cut timeline.",
-      "Google Drive or YouTube link to the rough cut if teacher requests export.",
-      "Short reflection naming at least three tools or shortcuts used."
-    ]
+      "A Google Docs or Drive link containing the teacher-assigned Quiz 1 result or a dated note of the teacher checkpoint/checkoff.",
+      "In the same evidence document or folder, a screenshot of the cleaned timeline and a screenshot or note of the audio/Inspector setting checked.",
+      "A 2-3 sentence reflection entered in DCC explaining one cleanup decision and how you checked its effect."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain one cleanup decision, name the audio or Inspector control you checked, and describe how playback helped you judge the result."
   },
   "exitTicket": "What did you clean up today, and how does the rough cut communicate more clearly now?",
   "tags": [

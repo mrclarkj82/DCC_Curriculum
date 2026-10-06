@@ -66,6 +66,7 @@ export interface Lesson {
     title: string;
     submissionType: string;
     evidenceRequired: string[];
+    reflectionPrompt?: string;
   };
   exitTicket: string;
   tags: string[];

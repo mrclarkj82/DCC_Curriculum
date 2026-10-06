@@ -7,10 +7,10 @@
   "title": "DaVinci Resolve Setup and Project Manager",
   "status": "draft-pilot",
   "video": {
-    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
     "start": "00:00:00",
     "end": "00:13:16",
-    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=0s",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=0s",
     "note": "Introduces DaVinci Resolve as an all-in-one post-production tool, system expectations, free versus Studio awareness, Resolve pages, Project Manager, new project creation, project backup/export habits, and first workspace orientation."
   },
   "learningTarget": "I can create a DaVinci Resolve project, identify the main Resolve pages, and explain why project organization matters before editing begins.",
@@ -52,12 +52,13 @@
   "assignment": {
     "id": "vp-q2-a01",
     "title": "Resolve Project Setup Proof",
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of the named Resolve project or Project Manager entry.",
-      "Google Drive or Docs link showing four Resolve pages with short purpose notes.",
-      "Short reflection explaining why project setup matters before editing."
-    ]
+      "A Google Docs or Drive link containing a screenshot of your named Resolve project or Project Manager entry.",
+      "In the same evidence document or folder, one-sentence purpose notes for four Resolve pages.",
+      "A 2-3 sentence reflection entered in DCC explaining how naming and saving the project will prevent lost work."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain how you named and saved your project and how those choices will prevent lost work."
   },
   "exitTicket": "Which Resolve page or startup area did you use today, and what job does it help an editor do?",
   "tags": [

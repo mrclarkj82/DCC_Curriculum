@@ -270,3 +270,28 @@ Validation and publishing:
 - No curriculum seed data changed; no Firestore write or seed dry run was required.
 - Deployed only Hosting target dcc (dcccs). The live Video Production URL returned HTTP 200 and served the exact validated production bundle, including both opener lesson IDs.
 - Preserved unrelated local presentation work and earlier PROGRESS.md edits outside this milestone's commit.
+
+## 2026-10-06 — DaVinci foundations follow-along and evidence
+
+- Installed OpenAI Whisper and CUDA-enabled PyTorch outside the application repository. Processed the full teacher-selected 5:10:55 tutorial locally with the turbo model, producing 5,930 timestamped speech segments. The source audit records the analysis settings and verified segment boundaries; downloaded audio and machine output remain uncommitted working files.
+- Kept the teacher-confirmed shorter seven-lesson foundations scope, existing lesson/assignment IDs, October 12-November 2 dates, November 3-6 support blocks, slide links, and actual slide status. The longer Cut, Fusion, Color, and Fairlight chapters remain unassigned; Lesson 7 begins the Deliver workflow at 04:53:29.
+- Added a structured instructional plan and repeatable synchronization script. Revised all seven required artifacts for each lesson, both lesson/assignment seed mirrors, source notes, and the unit overview.
+- Students use one saved project and timeline, with explicit watch/pause/practice/check/save steps. Lessons 1-6 collect screenshots and notes plus a reflection; Lesson 7 requires a playable 30-60 second MP4/H.264 review export and settings evidence.
+- Assignment directions now render on Today and full lesson pages. Today uses the lesson-specific reflection prompt. Existing auth, class access, response windows, and link-only submission protections are preserved.
+- Both online quizzes remain unpublished drafts. Lesson 5 and Lesson 7 provide teacher-assigned assessment or named teacher-checkoff alternatives.
+- Practice-media handoff is needs-teacher-review: the creator's download requires community access. The teacher must supply an approved local folder; students are not required to create another account.
+
+Acceptance criteria:
+
+- Passed: only the seven existing DaVinci lesson and seven linked assignment records changed in seed data; all other records, schedules, and slide data are preserved.
+- Passed: every assignment includes six practical steps, explicit evidence, and an aligned reflection; all seven actual directions components render the required steps.
+- Passed: no assigned segment overlaps Fairlight, and seed mirrors/local lesson data agree. Regeneration is idempotent.
+- Passed: the Video Production page still lists exactly the two requested file-organization openers first, in the original order.
+
+Validation and publishing:
+
+- Passed: Firebase environment validation, TypeScript/Vite production build, full ESLint, curriculum validation, seed dry run (skipped=160, created=0, updated=0, failed=0), formatting, targeted integrity/render checks, and git diff --check. Invoked existing script executables through Node because npm is unavailable in this shell. The build retains the existing bundle-size warning.
+- Initial full ESLint found 93 errors in third-party JavaScript inside the temporary Whisper environment. Relocated that environment outside the repository without changing lint rules; the complete ESLint check then passed.
+- Narrow publisher dry run reviewed fourteen existing apps/dcc lesson/assignment records. Published those content fields atomically and verified read-back; the follow-up dry run reports changed=0, unchanged=14, failed=0. No quiz, schedule, class active item, security rule, or student-work records were written.
+- Deployed only Hosting target dcc (dcccs). The live Video Production URL serves the exact validated bundle, SHA-256 efb6f288e5db13cb18ca6e6c395165acf96d94f0ea29d4fefe2c5270fb9d82b7, including assignment directions and both opener IDs.
+- No new deck, fake Drive link, downloaded tutorial media, machine transcript, credentials, or student data is included in this milestone. Preserved unrelated local presentation work and earlier PROGRESS.md edits outside the commit.

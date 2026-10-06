@@ -1,31 +1,23 @@
-# Titles, Transitions, and Simple Motion Bell Ringer and Exit Ticket
+# Titles, Transitions, and Simple Motion: Bell Ringer and Exit Ticket
 
-## Bell Ringer Prompt
+## Bell Ringer
 
 When does a title help a video, and when can it distract from the video?
 
-## Expected Student Response Type
+Give students 3-5 minutes for a brief response. Use answers to identify one misconception before opening Resolve.
 
-Short written response in 2-4 sentences. Students should use specific Resolve or video production vocabulary when possible.
-
-## Teacher Look-For Notes
-
-- Students connect the prompt to a visible editing workflow or viewer experience.
-- Students name what they know and what they still need to test.
-- Misconceptions from the bell ringer can become quick demo points before independent work.
-
-## Exit Ticket Prompt
+## Exit Ticket
 
 What title, transition, or motion choice did you add, and why does it belong in the edit?
 
-## Exit Ticket Grading/Checkoff Guidance
+## Teacher Look-Fors
 
-- Complete: names a specific tool, workflow, or decision and explains it clearly.
-- Developing: names a general activity but does not connect it to the lesson target.
-- Needs follow-up: response is missing, too vague, or shows confusion about the lesson target.
+- Connect the response to the lesson target and a specific action the student performed.
+- Ask students to point to their saved project or evidence if the answer is vague.
+- Complete: correct action plus an explanation. Developing: action named with weak explanation. Needs follow-up: missing response or a misconception that needs reteaching.
 
-## Possible Follow-Up Questions
+## Evidence Reflection
 
-- What evidence proves that you used the tool correctly?
-- What would you change if you had ten more minutes?
-- How would this skill matter in a later group project?
+In 2-3 sentences, explain what your title tells the viewer, how you made it readable, and why you chose a transition or a clean cut.
+
+The reflection belongs in the evidence submission. The exit ticket checks the lesson target separately.

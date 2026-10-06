@@ -17,12 +17,29 @@ What is one issue in your rough cut that a viewer would notice immediately?
 
 ## Video Segment
 
-- Source: DaVinci Resolve Q2 Tutorial Transcript
+- Source: Casey Faris / Ground Control: Introduction to DaVinci Resolve
 - Timestamp range: 01:07:04-01:20:08
 - Assigned segment: [Play 01:07:04-01:20:08 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=4024&end=4808&autoplay=1)
-- YouTube page: [Open at 01:07:04](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4024s); stop at 01:20:08.
+- YouTube page: [Open at 01:07:04](https://youtu.be/MCDVcQIA3UM?t=4024s); stop at 01:20:08.
 - Note: Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut.
-- Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
+- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+
+## Follow Along in Resolve
+
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.
+
+- After the prepared-bin example: confirm you are still improving your own saved rough cut.
+- After an audio level/fade change: listen to the relevant edit and compare it with the previous version.
+- After selecting a clip: show how the Inspector controls the selected clip, not the entire project.
+
+## Assignment Directions
+
+1. Complete the teacher-assigned Quiz 1 checkpoint. If no quiz is assigned, demonstrate your project, bins, four-clip timeline, and one trimming action to your teacher for a checkpoint checkoff.
+2. Open your own rough cut. Watch 01:07:04-01:20:08 and pause after timeline cleanup, basic audio/fade, and Inspector demonstrations. The instructor switches to a prepared example; continue using your own project.
+3. Remove an accidental gap or distracting start/end. If your cut is already clean, identify an intentional editing choice and explain why you kept it.
+4. On the Edit page, adjust one basic audio level or fade where it improves the cut and listen to the result. This is Edit-page audio work; the Fairlight chapter is not assigned.
+5. Select a clip and use the Inspector to make one purposeful change, or compare a setting and restore it when a change is not needed. Record what you checked.
+6. Save. Capture the cleaned timeline and one audio/Inspector setting, record the quiz result or teacher checkoff in your evidence Doc, submit its link, and complete the reflection. No video export is required today.
 
 ## Vocabulary
 
@@ -33,44 +50,40 @@ What is one issue in your rough cut that a viewer would notice immediately?
 - Linked clips: Video and audio that stay selected or moved together unless unlinked.
 - Cleanup pass: A focused editing pass that removes obvious problems before adding polish.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 05 - Quiz 1 and Rough Cut Cleanup
 - Slide status: created
 - Slide URL: https://docs.google.com/presentation/d/1vH1nM6PUWkbTrEBAHTm8knYrThI43vm6/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
-## Assignment Summary
-
-Rough Cut Cleanup and Quiz 1 Checkpoint: complete the Resolve workflow for this lesson and submit link-based evidence.
-
 ## Submission Checklist
 
-- Quiz 1 completion record or teacher checkoff.
-- Google Drive link to a screenshot of the cleaned rough cut timeline.
-- Google Drive or YouTube link to the rough cut if teacher requests export.
-- Short reflection naming at least three tools or shortcuts used.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+
+- A Google Docs or Drive link containing the teacher-assigned Quiz 1 result or a dated note of the teacher checkpoint/checkoff.
+- In the same evidence document or folder, a screenshot of the cleaned timeline and a screenshot or note of the audio/Inspector setting checked.
+- A 2-3 sentence reflection entered in DCC explaining one cleanup decision and how you checked its effect.
+
+## Reflection
+
+In 2-3 sentences, explain one cleanup decision, name the audio or Inspector control you checked, and describe how playback helped you judge the result.
+
+## Practice Media
+
+Use the approved local tutorial-media folder your teacher supplies. The [creator's media information page](https://www.skool.com/groundcontrol/about) requires community access and is not a direct public ZIP download. Ask your teacher if the practice files are missing.
 
 ## Extension Challenge
 
-Add one intentional fade only where it improves clarity, then explain why it belongs there.
+Duplicate the timeline before comparing two fades, audio levels, or speed choices; keep the version that makes the story clearer.
 
 ## Exit Ticket
 
 What did you clean up today, and how does the rough cut communicate more clearly now?
 
-## Common Problems and Fixes
+## What To Do If Stuck
 
-- Students may treat quiz day as a day with no production evidence.
-- Students may change clip order randomly instead of fixing the clearest problems first.
-- Students may unlink audio/video without a reason and create sync problems.
-
-## Student-Facing Help
-
-- Save the Resolve project before switching pages or exporting.
-- Keep evidence links in Google Drive, Google Docs, or YouTube according to teacher directions.
-- Use the class naming convention for screenshots, exports, and written evidence.
-- Do not upload raw files directly to the website.
+Prioritize one visible cleanup decision and one basic Edit-page audio check. Allow a teacher demonstration checkoff instead of an unavailable online quiz.
 
 ## Source Alignment Note
 
-This pilot lesson is aligned to DaVinci Resolve Q2 Tutorial Transcript range 01:07:04-01:20:08. Uses the first quiz as an opening checkpoint, then reinforces rough-cut cleanup with timeline navigation, audio level awareness, clip selection, unlinking audio only when needed, fades, the inspector, and a more intentional rough cut.
+Aligned to the teacher-selected video MCDVcQIA3UM, assigned range 01:07:04-01:20:08, and the local transcript. Use the lesson's bounded video link; the standard YouTube page may keep playing beyond the assigned end.

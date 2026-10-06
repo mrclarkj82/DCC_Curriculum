@@ -7,10 +7,10 @@
   "title": "Titles, Transitions, and Simple Motion",
   "status": "draft-pilot",
   "video": {
-    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
     "start": "01:20:08",
     "end": "01:30:41",
-    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4808s",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=4808s",
     "note": "Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit."
   },
   "learningTarget": "I can add a readable title or lower third and use a transition or simple motion choice only when it supports the video.",
@@ -56,12 +56,13 @@
   "assignment": {
     "id": "vp-q2-a06",
     "title": "Title and Transition Polish Pass",
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot showing the title or lower third selected in the timeline.",
-      "Google Drive or YouTube link to a short clip preview if teacher requests export.",
-      "Short reflection explaining why the title or transition supports the story."
-    ]
+      "A Google Docs or Drive link containing a screenshot of your title/lower third selected in the timeline, with its text or Inspector controls visible.",
+      "In the same evidence document, note your title's duration and explain one readability check and your transition or clean-cut choice.",
+      "A 2-3 sentence reflection entered in DCC explaining how the title supports the viewer's understanding."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, explain what your title tells the viewer, how you made it readable, and why you chose a transition or a clean cut."
   },
   "exitTicket": "What title, transition, or motion choice did you add, and why does it belong in the edit?",
   "tags": [

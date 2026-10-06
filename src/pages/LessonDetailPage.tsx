@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { AssignmentDirections } from '../components/AssignmentDirections';
 import { EmptyState } from '../components/EmptyState';
 import { ErrorState } from '../components/ErrorState';
 import { LoadingState } from '../components/LoadingState';
@@ -242,6 +243,8 @@ export function LessonDetailPage() {
 
           {assignment && (
             <>
+              <AssignmentDirections assignment={assignment} />
+
               {assignment.resources?.length && !assignment.quizId ? (
                 <section className="card span-two mission-panel">
                   <h2>Lesson Resources</h2>

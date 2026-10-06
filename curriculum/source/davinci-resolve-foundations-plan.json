@@ -1,0 +1,230 @@
+{
+  "videoId": "MCDVcQIA3UM",
+  "sourceUrl": "https://www.youtube.com/watch?v=MCDVcQIA3UM",
+  "scope": "Teacher confirmed the shorter seven-lesson foundations scope on October 6, 2026. Keep the existing instructional dates and require practical follow-along work in every lesson.",
+  "fairlightRange": { "start": "04:16:55", "end": "04:53:00" },
+  "unassignedRange": {
+    "start": "01:30:41",
+    "end": "04:53:29",
+    "reason": "The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit. Basic audio levels and fades on the Edit page remain included."
+  },
+  "practiceMedia": {
+    "creatorUrl": "https://www.skool.com/groundcontrol/about",
+    "status": "needs-teacher-review",
+    "teacherAction": "The creator directs viewers to a free community for the tutorial media. Before Lesson 1, supply an approved local practice-media folder and confirm it includes clips for the edit and, if available, the separate audio-sync example. Do not require students to create a community account. No direct public ZIP URL was verified."
+  },
+  "studentRoutine": "Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.",
+  "submissionRoutine": "For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.",
+  "lessons": [
+    {
+      "id": "vp-q2-l01",
+      "assignmentId": "vp-q2-a01",
+      "rubricFocus": "The named project reopens successfully and four page-purpose notes describe their actual jobs.",
+      "folder": "lesson-01-resolve-setup-and-project-manager",
+      "start": "00:00:00",
+      "end": "00:13:16",
+      "requiredSteps": [
+        "Open the teacher-supplied practice-media folder and DaVinci Resolve. If either is unavailable, ask for help before continuing; do not create another account or buy Resolve Studio.",
+        "Watch 00:00:00-00:13:16. Pause when the instructor opens the Project Manager and repeat the setup in your own workspace.",
+        "Create and name your project LastName_FirstName_ResolveFoundations. Keep this project for the entire unit.",
+        "Locate the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver page buttons. Write one-sentence purpose notes for four pages; recognizing Fairlight does not make its chapter assigned.",
+        "Save the project, capture the project name in the Project Manager or workspace, and reopen it to check that your work was saved.",
+        "Put the screenshot and four purpose notes in your evidence Doc or Drive folder, paste its share link into DCC, and complete the reflection and exit ticket."
+      ],
+      "pauseChecks": [
+        "After the free/Studio explanation: identify the version installed on your classroom computer; paid features are not required.",
+        "After project creation: compare the name in your Project Manager with the required naming format.",
+        "After the page tour: point to the Media, Edit, and Deliver buttons in your own project."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link containing a screenshot of your named Resolve project or Project Manager entry.",
+        "In the same evidence document or folder, one-sentence purpose notes for four Resolve pages.",
+        "A 2-3 sentence reflection entered in DCC explaining how naming and saving the project will prevent lost work."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain how you named and saved your project and how those choices will prevent lost work.",
+      "intervention": "Use an already installed Resolve workspace and a teacher-created project if startup fails. Have the student identify pages and capture their own naming/save evidence. Record the machine issue rather than requiring an installation during class.",
+      "extension": "Export a small project backup to the approved local folder and explain how a project backup differs from an exported movie.",
+      "teacherCheck": "Verify the project opens again with the correct name; page notes must describe jobs, not simply repeat button names."
+    },
+    {
+      "id": "vp-q2-l02",
+      "assignmentId": "vp-q2-a02",
+      "rubricFocus": "At least three useful bins and two meaningful clip notes are visible inside Resolve.",
+      "folder": "lesson-02-media-page-imports-and-bins",
+      "start": "00:13:16",
+      "end": "00:25:47",
+      "requiredSteps": [
+        "Reopen LastName_FirstName_ResolveFoundations and locate the teacher-supplied tutorial media. Keep the source files in their approved folder so Resolve can find them next class.",
+        "Watch 00:13:16-00:25:47 in short portions. Pause after importing a clip and repeat the action in your Media Pool.",
+        "Import the provided media while preserving its folders. When following the instructor's folder example, drag folders into the bin list rather than flattening them into the Media Pool.",
+        "Create or organize at least three useful bins, such as footage, audio, graphics, or selects. Preview clips and sort them into the appropriate bins.",
+        "Add at least two useful notes, descriptions, or keyword entries to different clips. Use the list/metadata view to check that the notes are visible.",
+        "Save. Capture the organized bin list and your two notes in the evidence Doc or Drive folder, submit its link in DCC, and complete the reflection and exit ticket."
+      ],
+      "pauseChecks": [
+        "After import: confirm the clip appears in your Media Pool and plays in the viewer.",
+        "After dragging folders: confirm the folder names survived as bins.",
+        "After metadata: show two notes that would help another editor identify a useful clip."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link containing a Media Pool screenshot with at least three organized bins.",
+        "In the same evidence document or folder, a screenshot or notes showing two metadata/description entries on different clips.",
+        "A 2-3 sentence reflection entered in DCC explaining one bin or note choice that will speed up editing."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, name one bin or note choice you made and explain how it will make a particular clip easier to find next class.",
+      "intervention": "Provide four to six manageable clips in an approved local folder. Model one import and one bin, then require the student to complete the remaining bins and two notes.",
+      "extension": "Plan a smart bin or a consistent keyword system that could find interviews or selected takes.",
+      "teacherCheck": "Check bin count and meaningful notes. A desktop folder screenshot alone does not prove organization inside Resolve."
+    },
+    {
+      "id": "vp-q2-l03",
+      "assignmentId": "vp-q2-a03",
+      "rubricFocus": "The named timeline has four clips; interface labels are accurate and the audio-sync attempt or explanation is documented.",
+      "folder": "lesson-03-syncing-audio-and-timeline-basics",
+      "start": "00:25:47",
+      "end": "00:35:30",
+      "requiredSteps": [
+        "Open your saved project and organized Media Pool from Lesson 2.",
+        "Watch 00:25:47-00:35:30. Pause after the waveform-sync demonstration and after the instructor creates a timeline.",
+        "If the teacher supplied a matching video/audio pair, try waveform audio sync and check the result by listening. If no separate audio pair is supplied, use the clip's existing audio and write that explanation in your evidence.",
+        "Create a named timeline, Foundations_MiniEdit, and place at least four clips in a rough story order. Keep linked picture and sound together while experimenting.",
+        "Point out the source viewer, timeline viewer, playhead, video track, and audio track in your own workspace. Play the timeline from start to finish.",
+        "Save. Submit an annotated timeline screenshot or a screenshot with a short label key, include the sync attempt or explanation, and complete the DCC reflection and exit ticket."
+      ],
+      "pauseChecks": [
+        "After sync: listen for matching sound and picture, or document why separate sync media was not available.",
+        "After timeline creation: show the timeline name and at least four clips.",
+        "After the viewer/track tour: point to each required part in your own interface."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link containing a screenshot of Foundations_MiniEdit with at least four clips.",
+        "In the same evidence document or folder, labels for the source viewer, timeline viewer, playhead, video track, and audio track, plus your audio-sync result or explanation.",
+        "A 2-3 sentence reflection entered in DCC explaining the intended order of your clips."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain the order of your four clips and what you want the viewer to understand from that sequence.",
+      "intervention": "Use four prepared clips and a suggested beginning/middle/end order. Assess the student's own timeline and labels; separate audio-sync media is optional when the approved set does not include it.",
+      "extension": "Use a slate or a visible action and waveform spike to check a sync point, then explain why playback is the final check.",
+      "teacherCheck": "Check four clips on the actual timeline, not just four items in the Media Pool. Labels must match the student's workspace."
+    },
+    {
+      "id": "vp-q2-l04",
+      "assignmentId": "vp-q2-a04",
+      "rubricFocus": "The four-clip rough cut is 30-60 seconds, plays without unintended gaps, and documents two selected source ranges.",
+      "folder": "lesson-04-trimming-clips-and-rough-cut",
+      "start": "00:35:30",
+      "end": "01:07:04",
+      "requiredSteps": [
+        "Open Foundations_MiniEdit from Lesson 3 and save before making changes.",
+        "Watch 00:35:30-01:07:04 in short portions. Pause after edge trimming, source in/out points, and ripple/split demonstrations to try each action on your own clips.",
+        "Trim unusable starts, slates, and dead time. Set in and out points on at least two source clips before adding their selected ranges to the timeline.",
+        "Build a 30-60 second rough cut with at least four clips and a clear beginning, middle, and end. Remove unintended timeline gaps.",
+        "Play the whole cut and revise one edit that feels too long or confusing. The instructor's customized Q/W/S keys are examples; use the classroom/default shortcut mapping or menu commands that perform the same actions.",
+        "Save and capture the timeline and runtime. In the evidence Doc, name the two clips for which you selected in/out ranges. Submit the link and a reflection naming three tools or actions you used. No video export is required today."
+      ],
+      "pauseChecks": [
+        "After edge trimming: play the edit and check that you removed dead time without cutting the useful action.",
+        "After source in/out points: identify two clips whose selected ranges you used.",
+        "After ripple/split practice: check for accidental gaps, then play your 30-60 second sequence."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link containing a screenshot of the 30-60 second rough cut timeline with at least four clips and its runtime visible.",
+        "In the same evidence document, name two source clips on which you set in/out points and explain what you kept.",
+        "A 2-3 sentence reflection entered in DCC naming three tools/actions used and explaining the most useful trim."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, name three tools or editing actions you used, then explain which trim most improved your story or pacing.",
+      "intervention": "Limit the edit to four clips and 30 seconds. Model one in/out selection and one ripple trim. A clear simple cut takes priority over recreating every shortcut demonstration.",
+      "extension": "Duplicate the timeline and create a second pacing version, then compare how clip length changes the viewer's experience.",
+      "teacherCheck": "Verify runtime, four clips, absence of accidental gaps, and evidence of two selected source ranges. Do not grade a student's shortcut mapping against the instructor's custom keys."
+    },
+    {
+      "id": "vp-q2-l05",
+      "assignmentId": "vp-q2-a05",
+      "rubricFocus": "A cleanup decision and an audio or Inspector check are visible, with the assigned checkpoint result or teacher checkoff recorded.",
+      "folder": "lesson-05-quiz-1-and-rough-cut-cleanup",
+      "start": "01:07:04",
+      "end": "01:20:08",
+      "requiredSteps": [
+        "Complete the teacher-assigned Quiz 1 checkpoint. If no quiz is assigned, demonstrate your project, bins, four-clip timeline, and one trimming action to your teacher for a checkpoint checkoff.",
+        "Open your own rough cut. Watch 01:07:04-01:20:08 and pause after timeline cleanup, basic audio/fade, and Inspector demonstrations. The instructor switches to a prepared example; continue using your own project.",
+        "Remove an accidental gap or distracting start/end. If your cut is already clean, identify an intentional editing choice and explain why you kept it.",
+        "On the Edit page, adjust one basic audio level or fade where it improves the cut and listen to the result. This is Edit-page audio work; the Fairlight chapter is not assigned.",
+        "Select a clip and use the Inspector to make one purposeful change, or compare a setting and restore it when a change is not needed. Record what you checked.",
+        "Save. Capture the cleaned timeline and one audio/Inspector setting, record the quiz result or teacher checkoff in your evidence Doc, submit its link, and complete the reflection. No video export is required today."
+      ],
+      "pauseChecks": [
+        "After the prepared-bin example: confirm you are still improving your own saved rough cut.",
+        "After an audio level/fade change: listen to the relevant edit and compare it with the previous version.",
+        "After selecting a clip: show how the Inspector controls the selected clip, not the entire project."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link containing the teacher-assigned Quiz 1 result or a dated note of the teacher checkpoint/checkoff.",
+        "In the same evidence document or folder, a screenshot of the cleaned timeline and a screenshot or note of the audio/Inspector setting checked.",
+        "A 2-3 sentence reflection entered in DCC explaining one cleanup decision and how you checked its effect."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain one cleanup decision, name the audio or Inspector control you checked, and describe how playback helped you judge the result.",
+      "intervention": "Prioritize one visible cleanup decision and one basic Edit-page audio check. Allow a teacher demonstration checkoff instead of an unavailable online quiz.",
+      "extension": "Duplicate the timeline before comparing two fades, audio levels, or speed choices; keep the version that makes the story clearer.",
+      "teacherCheck": "The current website Quiz 1 is an unpublished draft with no assigned quiz link. Provide a paper/in-class quiz or use the stated teacher checkoff; do not imply an online quiz score exists. Listen to a sample of the student's cut."
+    },
+    {
+      "id": "vp-q2-l06",
+      "assignmentId": "vp-q2-a06",
+      "rubricFocus": "A readable, correctly spelled title has purposeful placement and timing; the transition or clean-cut choice is explained.",
+      "folder": "lesson-06-titles-transitions-and-simple-motion",
+      "start": "01:20:08",
+      "end": "01:30:41",
+      "requiredSteps": [
+        "Open the cleaned Foundations_MiniEdit timeline and save.",
+        "Watch 01:20:08-01:30:41. Pause after the Effects panel, basic text/title controls, and Inspector/keyframe demonstrations, and try the matching action in your project.",
+        "Add one readable title card or lower third using a basic available text title. Check spelling, contrast, placement, and duration during playback.",
+        "Use a transition only if it improves the viewer's understanding. A clean cut is acceptable; explain the decision instead of adding a decorative transition to satisfy a count.",
+        "If ready, animate one position setting using two keyframes. This is optional. Paid effects and a separate Fusion composition are not required.",
+        "Save. Capture the title selected in the timeline with its text controls visible, submit the evidence Doc/Drive link and reflection, and complete the exit ticket. No video export is required today."
+      ],
+      "pauseChecks": [
+        "After adding text: read the title at normal viewer size and check its spelling.",
+        "After adjusting the Inspector: play the title for its full duration and check its position and contrast.",
+        "After the motion demonstration: save a readable static title first; attempt keyframes only after the core work is complete."
+      ],
+      "evidenceRequired": [
+        "A Google Docs or Drive link containing a screenshot of your title/lower third selected in the timeline, with its text or Inspector controls visible.",
+        "In the same evidence document, note your title's duration and explain one readability check and your transition or clean-cut choice.",
+        "A 2-3 sentence reflection entered in DCC explaining how the title supports the viewer's understanding."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain what your title tells the viewer, how you made it readable, and why you chose a transition or a clean cut.",
+      "intervention": "Use a basic static text title, a teacher-approved font, and one safe placement example. Assess spelling, readability, and timing before optional animation.",
+      "extension": "Animate a title position with two keyframes or write a reusable lower-third style guide; keep the motion readable.",
+      "teacherCheck": "A static title and clean cuts can meet the core requirement. Basic title work stays in the Edit page; a Fusion chapter or Studio-only effect is not required."
+    },
+    {
+      "id": "vp-q2-l07",
+      "assignmentId": "vp-q2-a07",
+      "rubricFocus": "The submitted 30-60 second movie plays outside Resolve and includes four clips, a readable title, basic audio, and verified export settings.",
+      "folder": "lesson-07-quiz-2-and-final-export",
+      "start": "04:53:29",
+      "end": "05:06:57",
+      "requiredSteps": [
+        "Complete the teacher-assigned Quiz 2 checkpoint for titles, transitions, and export readiness. If no quiz is assigned, show your readable title and explain your intended export format to your teacher for a checkoff.",
+        "Open your polished 30-60 second mini-edit. Jump directly to 04:53:29 and stop at 05:06:57; do not work through the intervening Cut, Fusion, Color, or Fairlight chapters.",
+        "Play the full edit and check its beginning/middle/end, title readability, basic Edit-page audio, and absence of accidental gaps.",
+        "On the Deliver page, follow the render-settings and queue demonstrations. Make a single-clip MP4/H.264 review export using the project's frame rate and a resolution supported by your source footage and classroom computer.",
+        "Save the movie as LastName_FirstName_VP-Q2-A07_Final in your approved Exports folder, add it to the render queue, render, and play the exported file outside Resolve to confirm that picture and sound work.",
+        "Place the exported video in Google Drive or an approved YouTube location and submit its share link in DCC. Also submit an evidence Doc/Drive link with your Deliver/render-queue screenshot and quiz result or dated teacher checkoff; complete the reflection and exit ticket."
+      ],
+      "pauseChecks": [
+        "After render settings: check output folder, file name, single-clip export, frame rate, MP4 format, and H.264 codec.",
+        "After adding to the queue: check the queued job before starting the render.",
+        "After rendering: open the exported movie outside Resolve and watch it from beginning to end before submitting."
+      ],
+      "evidenceRequired": [
+        "A Google Drive or approved YouTube share link to your playable 30-60 second final mini-edit with at least four clips and a readable title/lower third.",
+        "A Google Docs or Drive link containing a screenshot of the Deliver settings or completed render queue and the teacher-assigned Quiz 2 result or a dated teacher checkpoint/checkoff note.",
+        "A 2-3 sentence reflection entered in DCC explaining one editing decision, one export check, and one skill you will use in the next video project."
+      ],
+      "reflectionPrompt": "In 2-3 sentences, explain one editing decision, describe how you verified the exported movie, and name one skill you will use in the next video project.",
+      "intervention": "Use a teacher-approved MP4/H.264 preset and a 30-second four-clip edit. If rendering fails, capture the error and settings for teacher review; mark the final video as needing revision rather than substituting a timeline screenshot for a successful export.",
+      "extension": "Compare a smaller review copy with a higher-quality archive export and explain when each is useful.",
+      "teacherCheck": "The current website Quiz 2 is an unpublished draft with no assigned quiz link. Use a teacher-provided assessment/checkoff. Open the submitted video link and verify actual playback; a render-queue screenshot alone is not a final movie."
+    }
+  ]
+}

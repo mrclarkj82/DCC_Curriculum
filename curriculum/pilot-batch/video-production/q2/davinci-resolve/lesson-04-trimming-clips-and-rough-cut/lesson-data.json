@@ -7,10 +7,10 @@
   "title": "Trimming Clips and Building a Rough Cut",
   "status": "draft-pilot",
   "video": {
-    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
     "start": "00:35:30",
     "end": "01:07:04",
-    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=2130s",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=2130s",
     "note": "Covers trimming clip edges, removing excess slate or dead time, choosing story moments, setting in and out points, adding selected ranges to a timeline, insert and append edits, trim mode, ripple trimming, split edits, and keyboard shortcut awareness."
   },
   "learningTarget": "I can trim clips, set in and out points, and build a rough cut that communicates a simple story without unnecessary dead space.",
@@ -56,12 +56,13 @@
   "assignment": {
     "id": "vp-q2-a04",
     "title": "Rough Cut Story Sequence",
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of the rough cut timeline.",
-      "Google Drive or YouTube link to a short exported rough cut if teacher requests export.",
-      "Short reflection naming at least three tools or shortcuts used."
-    ]
+      "A Google Docs or Drive link containing a screenshot of the 30-60 second rough cut timeline with at least four clips and its runtime visible.",
+      "In the same evidence document, name two source clips on which you set in/out points and explain what you kept.",
+      "A 2-3 sentence reflection entered in DCC naming three tools/actions used and explaining the most useful trim."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, name three tools or editing actions you used, then explain which trim most improved your story or pacing."
   },
   "exitTicket": "Name one trimming tool or shortcut you used today and explain what it changed in your rough cut.",
   "tags": [

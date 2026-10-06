@@ -17,12 +17,29 @@ Why might camera audio and separate microphone audio need to be matched before e
 
 ## Video Segment
 
-- Source: DaVinci Resolve Q2 Tutorial Transcript
+- Source: Casey Faris / Ground Control: Introduction to DaVinci Resolve
 - Timestamp range: 00:25:47-00:35:30
 - Assigned segment: [Play 00:25:47-00:35:30 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=1547&end=2130&autoplay=1)
-- YouTube page: [Open at 00:25:47](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=1547s); stop at 00:35:30.
+- YouTube page: [Open at 00:25:47](https://youtu.be/MCDVcQIA3UM?t=1547s); stop at 00:35:30.
 - Note: Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness.
-- Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
+- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+
+## Follow Along in Resolve
+
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.
+
+- After sync: listen for matching sound and picture, or document why separate sync media was not available.
+- After timeline creation: show the timeline name and at least four clips.
+- After the viewer/track tour: point to each required part in your own interface.
+
+## Assignment Directions
+
+1. Open your saved project and organized Media Pool from Lesson 2.
+2. Watch 00:25:47-00:35:30. Pause after the waveform-sync demonstration and after the instructor creates a timeline.
+3. If the teacher supplied a matching video/audio pair, try waveform audio sync and check the result by listening. If no separate audio pair is supplied, use the clip's existing audio and write that explanation in your evidence.
+4. Create a named timeline, Foundations_MiniEdit, and place at least four clips in a rough story order. Keep linked picture and sound together while experimenting.
+5. Point out the source viewer, timeline viewer, playhead, video track, and audio track in your own workspace. Play the timeline from start to finish.
+6. Save. Submit an annotated timeline screenshot or a screenshot with a short label key, include the sync attempt or explanation, and complete the DCC reflection and exit ticket.
 
 ## Vocabulary
 
@@ -34,43 +51,40 @@ Why might camera audio and separate microphone audio need to be matched before e
 - Playhead: The marker that shows the current time position in a clip or timeline.
 - Track: A horizontal lane in the timeline that holds video or audio clips.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 03 - Syncing Audio and Timeline Basics
 - Slide status: created
 - Slide URL: https://docs.google.com/presentation/d/1Jt6u4zaKjznFGwO5BWn9RJjqbA5J2W5Z/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
-## Assignment Summary
-
-First Timeline Assembly: complete the Resolve workflow for this lesson and submit link-based evidence.
-
 ## Submission Checklist
 
-- Google Drive link to a screenshot of a timeline with at least four clips.
-- Google Drive or Docs link labeling source viewer, timeline viewer, playhead, and tracks.
-- Short reflection explaining one timeline decision.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+
+- A Google Docs or Drive link containing a screenshot of Foundations_MiniEdit with at least four clips.
+- In the same evidence document or folder, labels for the source viewer, timeline viewer, playhead, video track, and audio track, plus your audio-sync result or explanation.
+- A 2-3 sentence reflection entered in DCC explaining the intended order of your clips.
+
+## Reflection
+
+In 2-3 sentences, explain the order of your four clips and what you want the viewer to understand from that sequence.
+
+## Practice Media
+
+Use the approved local tutorial-media folder your teacher supplies. The [creator's media information page](https://www.skool.com/groundcontrol/about) requires community access and is not a direct public ZIP download. Ask your teacher if the practice files are missing.
 
 ## Extension Challenge
 
-Use waveforms to identify a clap, slate, or loud sound that could help sync audio.
+Use a slate or a visible action and waveform spike to check a sync point, then explain why playback is the final check.
 
 ## Exit Ticket
 
 How do the source viewer and timeline viewer help with different editing decisions?
 
-## Common Problems and Fixes
+## What To Do If Stuck
 
-- Students may confuse previewing a clip with editing it into the timeline.
-- Students may not notice whether they are watching the source viewer or timeline viewer.
-- Students may ignore waveforms even when audio gives useful editing clues.
-
-## Student-Facing Help
-
-- Save the Resolve project before switching pages or exporting.
-- Keep evidence links in Google Drive, Google Docs, or YouTube according to teacher directions.
-- Use the class naming convention for screenshots, exports, and written evidence.
-- Do not upload raw files directly to the website.
+Use four prepared clips and a suggested beginning/middle/end order. Assess the student's own timeline and labels; separate audio-sync media is optional when the approved set does not include it.
 
 ## Source Alignment Note
 
-This pilot lesson is aligned to DaVinci Resolve Q2 Tutorial Transcript range 00:25:47-00:35:30. Introduces audio sync using waveform matching, switching to the Edit page, source viewer versus timeline viewer, adding clips to a timeline, playhead movement, track basics, and waveform awareness.
+Aligned to the teacher-selected video MCDVcQIA3UM, assigned range 00:25:47-00:35:30, and the local transcript. Use the lesson's bounded video link; the standard YouTube page may keep playing beyond the assigned end.

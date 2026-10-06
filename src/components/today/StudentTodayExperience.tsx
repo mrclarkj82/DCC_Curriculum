@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
+import { AssignmentDirections } from '../AssignmentDirections';
 import { EmptyState } from '../EmptyState';
+import { ErrorState } from '../ErrorState';
+import { LoadingState } from '../LoadingState';
 import { EvidenceChecklist } from '../EvidenceChecklist';
 import { QuizTakingPanel } from '../quizzes/QuizTakingPanel';
 import { RelatedQuizPanel } from '../quizzes/RelatedQuizPanel';
@@ -9,6 +12,8 @@ import { SubmissionPanel } from '../submissions/SubmissionPanel';
 import { RubricTable } from '../RubricTable';
 import { VideoSegmentCard } from '../VideoSegmentCard';
 import { VocabularyList } from '../VocabularyList';
+import { useAsyncData } from '../../hooks/useAsyncData';
+import { getAssignmentById } from '../../services/assignmentService';
 import { getBellRingerPrompt, getExitTicketPrompt } from '../../services/responseService';
 import { resolveSubmissionTargetForActiveItem } from '../../services/submissionService';
 import type {
@@ -34,6 +39,16 @@ interface StudentTodayExperienceProps {
 }
 
 function LessonMission({ lesson }: { lesson: Lesson }) {
+  const {
+    data: assignment,
+    isLoading,
+    error,
+  } = useAsyncData(
+    () => getAssignmentById(lesson.assignment.id),
+    [lesson.assignment.id],
+    'Unable to load the assignment directions. Open the full lesson or ask your teacher for help.',
+  );
+
   return (
     <>
       <VideoSegmentCard video={lesson.video} className="today-video-segment" />
@@ -59,10 +74,18 @@ function LessonMission({ lesson }: { lesson: Lesson }) {
         <h2>Lesson Assignment</h2>
         <p>{lesson.assignment.title}</p>
         <p className="muted">
-          Directions, rubric, and Google Drive evidence are included in the full lesson.
+          Follow the assignment directions below. The full lesson also includes resources and the
+          rubric.
         </p>
         <Link to={`/lessons/${lesson.id}`}>Open lesson assignment</Link>
       </section>
+
+      {isLoading && <LoadingState label="Loading assignment directions..." />}
+      {error && <ErrorState message={error} />}
+      {assignment?.id === lesson.assignment.id && <AssignmentDirections assignment={assignment} />}
+      {!isLoading && !error && !assignment && (
+        <p className="form-message">Ask your teacher for the missing assignment directions.</p>
+      )}
 
       <section className="card mission-panel">
         <h2>Help / Common Problems</h2>

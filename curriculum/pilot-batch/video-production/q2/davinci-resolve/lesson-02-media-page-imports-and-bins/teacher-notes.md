@@ -5,48 +5,64 @@
 - Lesson ID: vp-q2-l02
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
-- Transcript range: 00:13:16-00:25:47
-- Source file: curriculum/source/davinci-resolve-q2-tutorial-transcript.md
-- Status: draft-pilot
+- Assigned video: 00:13:16-00:25:47 (about 13 minutes)
+- Class length: 90-minute A/B block
+- Existing scheduled dates are unchanged.
 
-## Pacing Notes
+## Before Class
 
-This lesson is designed for one A/B block meeting. Keep the demo tight and prioritize hands-on Resolve time. If the class is behind, reduce the extension challenge before reducing evidence capture.
+The creator directs viewers to a free community for the tutorial media. Before Lesson 1, supply an approved local practice-media folder and confirm it includes clips for the edit and, if available, the separate audio-sync example. Do not require students to create a community account. No direct public ZIP URL was verified.
 
-## Teacher Setup
+- Confirm Resolve opens, the previous project/media path remains available, and students can access DCC and approved evidence links.
+- Preview only the assigned segment. Adapt instructions to the installed version; no Studio-only feature is required.
+- Explain that students build and document their own work rather than submitting the instructor's screen.
 
-- Confirm DaVinci Resolve opens on student machines.
-- Confirm practice media is available locally or through the teacher-approved source.
-- Confirm students can save work in the expected local or network location.
-- Confirm students can submit Google Drive, Google Docs, or YouTube links through DCC Creative Studio.
 
-## Demo Checklist
+## 90-Minute Block
 
-1. Open the project from Lesson 01.
-2. Use the Media page or direct import to bring practice footage into the Media Pool.
-3. Create bins for at least three useful categories, such as A-roll, B-roll, audio, graphics, or selects.
-4. Move clips into the correct bins without flattening the folder structure.
-5. Add at least two notes, keywords, or descriptions to help identify clips.
-6. Capture evidence showing the organized Media Pool.
+- 0-5: brief bell ringer and readiness check.
+- 5-10: show the target, minimum deliverable, and evidence example.
+- 10-65: alternate short tutorial demonstrations with pause-and-repeat practice in each student's project. This includes the 13-minute video, not an additional 13-minute lecture.
+- 65-75: finish the core workflow, play/check the result, and give targeted intervention.
+- 75-85: save, capture the required evidence, submit links, and write the reflection.
+- 85-90: exit ticket and reopen/save-location check.
 
-## Watch For
+If setup or a pause takes longer, reduce the extension and nonessential demonstrations before evidence capture. Use the November 3-6 support blocks for unfinished exports or troubleshooting; do not move later project deadlines.
 
-- Students may think viewing footage in Media Storage means it has been imported.
-- Students may drag folders into the wrong panel and lose folder organization.
-- Students may treat bins as decoration instead of a workflow tool.
+## Pause-and-Check Prompts
+
+- After import: confirm the clip appears in your Media Pool and plays in the viewer.
+- After dragging folders: confirm the folder names survived as bins.
+- After metadata: show two notes that would help another editor identify a useful clip.
+
+## Required Workflow
+
+1. Reopen LastName_FirstName_ResolveFoundations and locate the teacher-supplied tutorial media. Keep the source files in their approved folder so Resolve can find them next class.
+2. Watch 00:13:16-00:25:47 in short portions. Pause after importing a clip and repeat the action in your Media Pool.
+3. Import the provided media while preserving its folders. When following the instructor's folder example, drag folders into the bin list rather than flattening them into the Media Pool.
+4. Create or organize at least three useful bins, such as footage, audio, graphics, or selects. Preview clips and sort them into the appropriate bins.
+5. Add at least two useful notes, descriptions, or keyword entries to different clips. Use the list/metadata view to check that the notes are visible.
+6. Save. Capture the organized bin list and your two notes in the evidence Doc or Drive folder, submit its link in DCC, and complete the reflection and exit ticket.
 
 ## Evidence Review
 
-- Google Drive link to a screenshot of the Media Pool with organized bins.
-- Google Drive or Docs link showing at least two metadata or note entries.
-- Short reflection explaining one organization choice that will speed up editing.
+- A Google Docs or Drive link containing a Media Pool screenshot with at least three organized bins.
+- In the same evidence document or folder, a screenshot or notes showing two metadata/description entries on different clips.
+- A 2-3 sentence reflection entered in DCC explaining one bin or note choice that will speed up editing.
 
-## Differentiation
+Check bin count and meaningful notes. A desktop folder screenshot alone does not prove organization inside Resolve.
 
-- Support: provide a small prepared media folder and a screenshot checklist.
-- Core: require students to complete the workflow and reflection independently.
-- Extension: ask students to compare two creative choices and justify the stronger one.
+## Intervention
 
-## Safety And Privacy
+Provide four to six manageable clips in an approved local folder. Model one import and one bin, then require the student to complete the remaining bins and two notes.
 
-Use approved practice media or teacher-approved student-created footage only. Do not require students to upload raw private media directly to the website. Evidence should use approved share links and avoid exposing student personal data.
+## Extension
+
+Plan a smart bin or a consistent keyword system that could find interviews or selected takes.
+
+## Assessment and Boundaries
+
+- The DCC Quiz 1 and Quiz 2 records remain unpublished drafts. When a checkpoint is required, assign an in-class/paper assessment or use the named teacher checkoff; do not tell students an unavailable online quiz is required.
+- Basic audio levels and fades in the Edit page are included. Fairlight chapter work is excluded. Cut/Fusion/Color chapters remain outside the teacher-confirmed shorter foundations scope.
+- Evidence uses existing Google Docs/Drive/approved YouTube links and the DCC submission workflow. Do not require raw website uploads or community accounts.
+- Existing slide links and actual slide status are preserved. Review decks against the clarified checklist; no new deck was created.

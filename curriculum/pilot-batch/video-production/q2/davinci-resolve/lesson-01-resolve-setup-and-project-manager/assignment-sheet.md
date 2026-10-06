@@ -4,58 +4,51 @@
 
 I can create a DaVinci Resolve project, identify the main Resolve pages, and explain why project organization matters before editing begins.
 
-## Skill Focus
+## Watch, Pause, Practice
 
-- project setup
-- workspace orientation
-- page navigation
-- project naming
-- backup awareness
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment. Assigned segment: 00:00:00-00:13:16.
+
+- After the free/Studio explanation: identify the version installed on your classroom computer; paid features are not required.
+- After project creation: compare the name in your Project Manager with the required naming format.
+- After the page tour: point to the Media, Edit, and Deliver buttons in your own project.
 
 ## Required Steps
 
-1. Open DaVinci Resolve and locate the Project Manager.
-2. Create a new project using the class naming convention.
-3. Identify the Media, Cut, Edit, Fusion, and Deliver pages.
-4. Write a one-sentence job description for at least four Resolve pages.
-5. Export or screenshot proof of the project setup according to teacher directions.
-6. Save and close the project cleanly.
+1. Open the teacher-supplied practice-media folder and DaVinci Resolve. If either is unavailable, ask for help before continuing; do not create another account or buy Resolve Studio.
+2. Watch 00:00:00-00:13:16. Pause when the instructor opens the Project Manager and repeat the setup in your own workspace.
+3. Create and name your project LastName_FirstName_ResolveFoundations. Keep this project for the entire unit.
+4. Locate the Media, Cut, Edit, Fusion, Color, Fairlight, and Deliver page buttons. Write one-sentence purpose notes for four pages; recognizing Fairlight does not make its chapter assigned.
+5. Save the project, capture the project name in the Project Manager or workspace, and reopen it to check that your work was saved.
+6. Put the screenshot and four purpose notes in your evidence Doc or Drive folder, paste its share link into DCC, and complete the reflection and exit ticket.
 
 ## Naming Convention
 
-Use this format when naming screenshots, exported evidence, or written files: LastName_FirstName_VP-Q2-A01_Description.
+Project: LastName_FirstName_ResolveFoundations. Timeline: Foundations_MiniEdit. Evidence files: LastName_FirstName_VP-Q2-A01_Description. Keep original source media in the approved folder. Save the project at every checkpoint.
 
-## Google Drive / YouTube Link Evidence Requirements
+## Evidence and Submission
 
-Upload screenshots, short screen recordings, exported review files, or written evidence to Google Drive, Google Docs, or YouTube according to teacher directions. Paste share links into DCC Creative Studio. Do not upload raw video files directly to the website.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
 
-- Google Drive link to a screenshot of the named Resolve project or Project Manager entry.
-- Google Drive or Docs link showing four Resolve pages with short purpose notes.
-- Short reflection explaining why project setup matters before editing.
-
-## What To Do If Stuck
-
-- Check that the correct Resolve project is open.
-- Use the correct Resolve page for the task before changing random settings.
-- Ask whether the issue is media organization, timeline editing, audio, title, or export.
-- Capture evidence from the actual Resolve workspace, not only the desktop.
-
-## 4-Point Rubric
-
-- 4: Complete, polished, on time, and clearly meets or extends the stated requirements.
-- 3: Complete and meets the stated requirements.
-- 2: Partially complete or missing required evidence.
-- 1: Attempted but incomplete, unclear, or not functional.
-- 0: Not submitted.
-
-## Extension Challenge
-
-Create a one-page Resolve workflow map showing which page you would use for media, editing, titles, and export.
-
-## Studio Challenge
-
-Design a naming convention for a class editing project and explain how it prevents lost work.
+- A Google Docs or Drive link containing a screenshot of your named Resolve project or Project Manager entry.
+- In the same evidence document or folder, one-sentence purpose notes for four Resolve pages.
+- A 2-3 sentence reflection entered in DCC explaining how naming and saving the project will prevent lost work.
 
 ## Reflection Prompt
 
-Which Resolve page seems most important for your first edit, and why?
+In 2-3 sentences, explain how you named and saved your project and how those choices will prevent lost work.
+
+## What To Do If Stuck
+
+Use an already installed Resolve workspace and a teacher-created project if startup fails. Have the student identify pages and capture their own naming/save evidence. Record the machine issue rather than requiring an installation during class.
+
+## 4-Point Rubric
+
+- 4: All required Resolve actions and evidence are complete, and the reflection explains a thoughtful improvement. The named project reopens successfully and four page-purpose notes describe their actual jobs.
+- 3: Required Resolve actions, evidence, and reflection are complete and meet the stated lesson checklist.
+- 2: Work is partly complete, or a required screenshot, note, playback check, or reflection is missing or unclear.
+- 1: Some work was attempted, but the evidence does not yet demonstrate the required Resolve workflow.
+- 0: No assessable evidence submitted.
+
+## Extension Challenge
+
+Export a small project backup to the approved local folder and explain how a project backup differs from an exported movie.

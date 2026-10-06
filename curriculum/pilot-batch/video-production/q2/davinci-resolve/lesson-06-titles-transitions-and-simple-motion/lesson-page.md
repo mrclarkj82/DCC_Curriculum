@@ -3,7 +3,7 @@
 - Program area: Video Production Studio
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
-- Lesson number: 7
+- Lesson number: 6
 - Lesson ID: vp-q2-l06
 - Status: draft-pilot
 
@@ -17,12 +17,29 @@ When does a title help a video, and when can it distract from the video?
 
 ## Video Segment
 
-- Source: DaVinci Resolve Q2 Tutorial Transcript
+- Source: Casey Faris / Ground Control: Introduction to DaVinci Resolve
 - Timestamp range: 01:20:08-01:30:41
 - Assigned segment: [Play 01:20:08-01:30:41 only](https://www.youtube.com/embed/MCDVcQIA3UM?start=4808&end=5441&autoplay=1)
-- YouTube page: [Open at 01:20:08](https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=4808s); stop at 01:30:41.
+- YouTube page: [Open at 01:20:08](https://youtu.be/MCDVcQIA3UM?t=4808s); stop at 01:30:41.
 - Note: Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit.
-- Verification note: Timestamp range is based on the stored DaVinci Resolve tutorial transcript. Teacher may trim the segment if class time is tight.
+- Use only the assigned segment. The longer Cut, Fusion, Color, and Fairlight chapters are outside this foundations unit.
+
+## Follow Along in Resolve
+
+Open the assigned tutorial segment and your own DaVinci Resolve project together. Watch a short demonstration, pause, repeat the action in your project, and check the result before continuing. Keep using the same saved project across all seven lessons. Watching the video alone does not complete the assignment.
+
+- After adding text: read the title at normal viewer size and check its spelling.
+- After adjusting the Inspector: play the title for its full duration and check its position and contrast.
+- After the motion demonstration: save a readable static title first; attempt keyframes only after the core work is complete.
+
+## Assignment Directions
+
+1. Open the cleaned Foundations_MiniEdit timeline and save.
+2. Watch 01:20:08-01:30:41. Pause after the Effects panel, basic text/title controls, and Inspector/keyframe demonstrations, and try the matching action in your project.
+3. Add one readable title card or lower third using a basic available text title. Check spelling, contrast, placement, and duration during playback.
+4. Use a transition only if it improves the viewer's understanding. A clean cut is acceptable; explain the decision instead of adding a decorative transition to satisfy a count.
+5. If ready, animate one position setting using two keyframes. This is optional. Paid effects and a separate Fusion composition are not required.
+6. Save. Capture the title selected in the timeline with its text controls visible, submit the evidence Doc/Drive link and reflection, and complete the exit ticket. No video export is required today.
 
 ## Vocabulary
 
@@ -34,43 +51,40 @@ When does a title help a video, and when can it distract from the video?
 - Keyframe: A point in time that stores a value so an effect or property can change over time.
 - Inspector: The panel used to adjust selected titles, clips, transitions, and effects.
 
-## Teacher Slides Placeholder
+## Teacher Slides
 
 - Slide deck title: Lesson 06 - Titles, Transitions, and Simple Motion
 - Slide status: created
 - Slide URL: https://docs.google.com/presentation/d/17VCMFPLZ9qz722hMM5mkbwqgotik79KZ/edit?usp=sharing&ouid=107038757575028800661&rtpof=true&sd=true
 
-## Assignment Summary
-
-Title and Transition Polish Pass: complete the Resolve workflow for this lesson and submit link-based evidence.
-
 ## Submission Checklist
 
-- Google Drive link to a screenshot showing the title or lower third selected in the timeline.
-- Google Drive or YouTube link to a short clip preview if teacher requests export.
-- Short reflection explaining why the title or transition supports the story.
+For Lessons 1-6, collect the required screenshots and short notes in one Google Doc or approved Drive folder, paste the share link into DCC, complete the evidence checklist, and type the reflection. An exported video is not required for these checkpoints. Lesson 7 requires a final exported video link plus an export-settings screenshot. Save project work locally; DCC collects evidence links, not raw project or media uploads.
+
+- A Google Docs or Drive link containing a screenshot of your title/lower third selected in the timeline, with its text or Inspector controls visible.
+- In the same evidence document, note your title's duration and explain one readability check and your transition or clean-cut choice.
+- A 2-3 sentence reflection entered in DCC explaining how the title supports the viewer's understanding.
+
+## Reflection
+
+In 2-3 sentences, explain what your title tells the viewer, how you made it readable, and why you chose a transition or a clean cut.
+
+## Practice Media
+
+Use the approved local tutorial-media folder your teacher supplies. The [creator's media information page](https://www.skool.com/groundcontrol/about) requires community access and is not a direct public ZIP download. Ask your teacher if the practice files are missing.
 
 ## Extension Challenge
 
-Create a simple lower-third style guide with font, size, color, placement, and duration rules.
+Animate a title position with two keyframes or write a reusable lower-third style guide; keep the motion readable.
 
 ## Exit Ticket
 
 What title, transition, or motion choice did you add, and why does it belong in the edit?
 
-## Common Problems and Fixes
+## What To Do If Stuck
 
-- Students may use flashy transitions instead of motivated cuts.
-- Students may make titles too small, too fast, or low contrast.
-- Students may add motion without checking if it improves communication.
-
-## Student-Facing Help
-
-- Save the Resolve project before switching pages or exporting.
-- Keep evidence links in Google Drive, Google Docs, or YouTube according to teacher directions.
-- Use the class naming convention for screenshots, exports, and written evidence.
-- Do not upload raw files directly to the website.
+Use a basic static text title, a teacher-approved font, and one safe placement example. Assess spelling, readability, and timing before optional animation.
 
 ## Source Alignment Note
 
-This pilot lesson is aligned to DaVinci Resolve Q2 Tutorial Transcript range 01:20:08-01:30:41. Covers the Effects panel, transitions, generators, titles, Fusion titles awareness, basic text title controls, inspector adjustments, position settings, simple keyframes, and using titles or motion only where they support the edit.
+Aligned to the teacher-selected video MCDVcQIA3UM, assigned range 01:20:08-01:30:41, and the local transcript. Use the lesson's bounded video link; the standard YouTube page may keep playing beyond the assigned end.

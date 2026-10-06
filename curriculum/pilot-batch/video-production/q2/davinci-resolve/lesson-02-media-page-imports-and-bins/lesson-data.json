@@ -7,10 +7,10 @@
   "title": "Media Page, Imports, and Bins",
   "status": "draft-pilot",
   "video": {
-    "source": "DaVinci Resolve Q2 Tutorial Transcript",
+    "source": "Casey Faris / Ground Control: Introduction to DaVinci Resolve",
     "start": "00:13:16",
     "end": "00:25:47",
-    "url": "https://youtu.be/MCDVcQIA3UM?si=WY3OFMRiphvjjsGw&t=796s",
+    "url": "https://youtu.be/MCDVcQIA3UM?t=796s",
     "note": "Covers the Media page, media storage, Media Pool, importing clips, changing frame-rate prompts, bins, folder structure, list and thumbnail views, metadata, keywords, and smart-bin awareness."
   },
   "learningTarget": "I can import footage into the Media Pool and organize it with bins so my edit can be built from clean source material.",
@@ -52,12 +52,13 @@
   "assignment": {
     "id": "vp-q2-a02",
     "title": "Organized Media Pool",
-    "submissionType": "google-drive-or-youtube-link-and-reflection",
+    "submissionType": "google-drive-link-and-reflection",
     "evidenceRequired": [
-      "Google Drive link to a screenshot of the Media Pool with organized bins.",
-      "Google Drive or Docs link showing at least two metadata or note entries.",
-      "Short reflection explaining one organization choice that will speed up editing."
-    ]
+      "A Google Docs or Drive link containing a Media Pool screenshot with at least three organized bins.",
+      "In the same evidence document or folder, a screenshot or notes showing two metadata/description entries on different clips.",
+      "A 2-3 sentence reflection entered in DCC explaining one bin or note choice that will speed up editing."
+    ],
+    "reflectionPrompt": "In 2-3 sentences, name one bin or note choice you made and explain how it will make a particular clip easier to find next class."
   },
   "exitTicket": "What is the difference between media sitting on the computer and media imported into the Resolve Media Pool?",
   "tags": [

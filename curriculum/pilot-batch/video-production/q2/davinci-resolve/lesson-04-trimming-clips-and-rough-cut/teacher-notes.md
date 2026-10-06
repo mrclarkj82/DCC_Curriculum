@@ -5,48 +5,64 @@
 - Lesson ID: vp-q2-l04
 - Quarter: Q2
 - Unit: DaVinci Resolve Foundations
-- Transcript range: 00:35:30-01:07:04
-- Source file: curriculum/source/davinci-resolve-q2-tutorial-transcript.md
-- Status: draft-pilot
+- Assigned video: 00:35:30-01:07:04 (about 32 minutes)
+- Class length: 90-minute A/B block
+- Existing scheduled dates are unchanged.
 
-## Pacing Notes
+## Before Class
 
-This lesson is designed for one A/B block meeting. Keep the demo tight and prioritize hands-on Resolve time. If the class is behind, reduce the extension challenge before reducing evidence capture.
+The creator directs viewers to a free community for the tutorial media. Before Lesson 1, supply an approved local practice-media folder and confirm it includes clips for the edit and, if available, the separate audio-sync example. Do not require students to create a community account. No direct public ZIP URL was verified.
 
-## Teacher Setup
+- Confirm Resolve opens, the previous project/media path remains available, and students can access DCC and approved evidence links.
+- Preview only the assigned segment. Adapt instructions to the installed version; no Studio-only feature is required.
+- Explain that students build and document their own work rather than submitting the instructor's screen.
 
-- Confirm DaVinci Resolve opens on student machines.
-- Confirm practice media is available locally or through the teacher-approved source.
-- Confirm students can save work in the expected local or network location.
-- Confirm students can submit Google Drive, Google Docs, or YouTube links through DCC Creative Studio.
 
-## Demo Checklist
+## 90-Minute Block
 
-1. Open the timeline from Lesson 03.
-2. Trim the beginning and end of clips to remove dead space, slates, or unusable moments.
-3. Use in and out points on at least two source clips before adding them to the timeline.
-4. Build a 30-60 second rough cut with a clear order.
-5. Remove unintended gaps unless there is an intentional pause.
-6. Capture evidence of the rough cut timeline and write a short editing rationale.
+- 0-5: brief bell ringer and readiness check.
+- 5-10: show the target, minimum deliverable, and evidence example.
+- 10-65: alternate short tutorial demonstrations with pause-and-repeat practice in each student's project. This includes the 32-minute video, not an additional 32-minute lecture.
+- 65-75: finish the core workflow, play/check the result, and give targeted intervention.
+- 75-85: save, capture the required evidence, submit links, and write the reflection.
+- 85-90: exit ticket and reopen/save-location check.
 
-## Watch For
+If setup or a pause takes longer, reduce the extension and nonessential demonstrations before evidence capture. Use the November 3-6 support blocks for unfinished exports or troubleshooting; do not move later project deadlines.
 
-- Students may add every clip without selecting the best part.
-- Students may leave accidental gaps and think the edit is finished.
-- Students may overuse transitions before the basic cut works.
+## Pause-and-Check Prompts
+
+- After edge trimming: play the edit and check that you removed dead time without cutting the useful action.
+- After source in/out points: identify two clips whose selected ranges you used.
+- After ripple/split practice: check for accidental gaps, then play your 30-60 second sequence.
+
+## Required Workflow
+
+1. Open Foundations_MiniEdit from Lesson 3 and save before making changes.
+2. Watch 00:35:30-01:07:04 in short portions. Pause after edge trimming, source in/out points, and ripple/split demonstrations to try each action on your own clips.
+3. Trim unusable starts, slates, and dead time. Set in and out points on at least two source clips before adding their selected ranges to the timeline.
+4. Build a 30-60 second rough cut with at least four clips and a clear beginning, middle, and end. Remove unintended timeline gaps.
+5. Play the whole cut and revise one edit that feels too long or confusing. The instructor's customized Q/W/S keys are examples; use the classroom/default shortcut mapping or menu commands that perform the same actions.
+6. Save and capture the timeline and runtime. In the evidence Doc, name the two clips for which you selected in/out ranges. Submit the link and a reflection naming three tools or actions you used. No video export is required today.
 
 ## Evidence Review
 
-- Google Drive link to a screenshot of the rough cut timeline.
-- Google Drive or YouTube link to a short exported rough cut if teacher requests export.
-- Short reflection naming at least three tools or shortcuts used.
+- A Google Docs or Drive link containing a screenshot of the 30-60 second rough cut timeline with at least four clips and its runtime visible.
+- In the same evidence document, name two source clips on which you set in/out points and explain what you kept.
+- A 2-3 sentence reflection entered in DCC naming three tools/actions used and explaining the most useful trim.
 
-## Differentiation
+Verify runtime, four clips, absence of accidental gaps, and evidence of two selected source ranges. Do not grade a student's shortcut mapping against the instructor's custom keys.
 
-- Support: provide a small prepared media folder and a screenshot checklist.
-- Core: require students to complete the workflow and reflection independently.
-- Extension: ask students to compare two creative choices and justify the stronger one.
+## Intervention
 
-## Safety And Privacy
+Limit the edit to four clips and 30 seconds. Model one in/out selection and one ripple trim. A clear simple cut takes priority over recreating every shortcut demonstration.
 
-Use approved practice media or teacher-approved student-created footage only. Do not require students to upload raw private media directly to the website. Evidence should use approved share links and avoid exposing student personal data.
+## Extension
+
+Duplicate the timeline and create a second pacing version, then compare how clip length changes the viewer's experience.
+
+## Assessment and Boundaries
+
+- The DCC Quiz 1 and Quiz 2 records remain unpublished drafts. When a checkpoint is required, assign an in-class/paper assessment or use the named teacher checkoff; do not tell students an unavailable online quiz is required.
+- Basic audio levels and fades in the Edit page are included. Fairlight chapter work is excluded. Cut/Fusion/Color chapters remain outside the teacher-confirmed shorter foundations scope.
+- Evidence uses existing Google Docs/Drive/approved YouTube links and the DCC submission workflow. Do not require raw website uploads or community accounts.
+- Existing slide links and actual slide status are preserved. Review decks against the clarified checklist; no new deck was created.
