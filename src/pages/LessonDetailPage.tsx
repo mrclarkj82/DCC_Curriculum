@@ -10,7 +10,7 @@ import { ExitTicketResponseCard } from '../components/responses/ExitTicketRespon
 import { RubricTable } from '../components/RubricTable';
 import { StatusBadge } from '../components/StatusBadge';
 import { SubmissionPanel } from '../components/submissions/SubmissionPanel';
-import { VideoSegmentLinks } from '../components/VideoSegmentLinks';
+import { VideoSegmentCard } from '../components/VideoSegmentCard';
 import { VocabularyList } from '../components/VocabularyList';
 import { HiddenFrameIcon } from '../hidden-frame/components/HiddenFrameIcon';
 import { useAsyncData } from '../hooks/useAsyncData';
@@ -216,10 +216,7 @@ export function LessonDetailPage() {
             </dl>
           </section>
 
-          <section className="card mission-panel">
-            <h2>Video Segment</h2>
-            <VideoSegmentLinks video={lesson.video} />
-          </section>
+          <VideoSegmentCard video={lesson.video} />
 
           <section className="card mission-panel">
             <h2>Watch / Review</h2>

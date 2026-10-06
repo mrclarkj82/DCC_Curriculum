@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Lesson } from '../types';
+import { hasVideoSegment } from '../utils/lessonVideo';
 import { StatusBadge } from './StatusBadge';
 
 export function LessonCard({ lesson }: { lesson: Lesson }) {
@@ -11,7 +12,8 @@ export function LessonCard({ lesson }: { lesson: Lesson }) {
       </div>
       <p>{lesson.learningTarget}</p>
       <p className="meta-line">
-        {lesson.quarter} / Lesson {lesson.lessonNumber} / {lesson.video.start}-{lesson.video.end}
+        {lesson.quarter} / Lesson {lesson.lessonNumber}
+        {hasVideoSegment(lesson.video) && ` / ${lesson.video.start}-${lesson.video.end}`}
       </p>
       <Link className="outline-button" to={`/lessons/${lesson.id}`}>
         Open Lesson

@@ -232,3 +232,23 @@ Validation and publishing:
 - Deployed only Hosting target dcc (dcccs). Verified https://dcccs.web.app returned HTTP 200 and served the exact validated build.
 - Verified live schedule queries return exactly one correct lesson on October 2, 5, 6, 7, 12, and 13. The October 6/7 opener and October 12/13 DaVinci start are ready for the existing daily mission publisher.
 - Preserved unrelated local presentation work and earlier PROGRESS.md edits outside this milestone's commit.
+
+## 2026-10-06 — Hide video segments for lessons without a video
+
+- Replaced the unconditional Video Segment sections on Today and full lesson pages with a shared card that renders only when the lesson has an HTTP(S) link and a valid start/end range.
+- Removed N/A timing from lesson listings. Blank, missing, N/A, and invalid video records produce no video card or placeholder button.
+- Confirmed the October 6/7 Video Production File Organization and October 8/9 Video Game Development File Organization lessons have no instructional video segment. Their existing ZIP downloads and written Google Docs instructions remain in Lesson Resources.
+
+Acceptance criteria:
+
+- Passed: all 18 lessons without instructional video segments render no video card in either card variant, including both lessons assigned October 6–9.
+- Passed: all 23 Q1 Unreal and Q2 DaVinci tutorial lessons retain their assigned playback links with the original start/end values.
+- Passed: lesson listings omit N/A timestamps; ten missing, placeholder, malformed, and invalid-range video cases render no card.
+
+Validation and publishing:
+
+- Passed: the existing build scripts (Firebase environment validation, TypeScript build, and Vite production build), full ESLint check, curriculum validation, targeted rendered-component checks, formatting check, and git diff --check. The build retains the existing bundle-size warning.
+- npm was not available in this shell. Initial pnpm run build/lint/validate:curriculum attempts aborted in the wrapper with ERR_PNPM_META_FETCH_FAIL and ERR_PNPM_ABORTED_REMOVE_MODULES_DIR_NO_TTY before the checks ran. Invoked the repository's existing script executables directly with Node; all final checks passed, and the temporary pnpm store was removed.
+- Curriculum seed records are unchanged; no Firestore write or curriculum-seed dry run is needed for this display fix.
+- Deployed only Hosting target dcc (dcccs). Verified https://dcccs.web.app returned HTTP 200 and served the exact validated production bundle (SHA-256 matched the local build).
+- Preserved unrelated local presentation work and earlier PROGRESS.md edits outside this milestone's commit.

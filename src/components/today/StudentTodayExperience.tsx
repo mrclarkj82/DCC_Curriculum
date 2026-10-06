@@ -7,7 +7,7 @@ import { BellRingerResponseCard } from '../responses/BellRingerResponseCard';
 import { ExitTicketResponseCard } from '../responses/ExitTicketResponseCard';
 import { SubmissionPanel } from '../submissions/SubmissionPanel';
 import { RubricTable } from '../RubricTable';
-import { VideoSegmentLinks } from '../VideoSegmentLinks';
+import { VideoSegmentCard } from '../VideoSegmentCard';
 import { VocabularyList } from '../VocabularyList';
 import { getBellRingerPrompt, getExitTicketPrompt } from '../../services/responseService';
 import { resolveSubmissionTargetForActiveItem } from '../../services/submissionService';
@@ -36,10 +36,7 @@ interface StudentTodayExperienceProps {
 function LessonMission({ lesson }: { lesson: Lesson }) {
   return (
     <>
-      <section className="card mission-panel today-video-segment">
-        <h2>Video Segment</h2>
-        <VideoSegmentLinks video={lesson.video} />
-      </section>
+      <VideoSegmentCard video={lesson.video} className="today-video-segment" />
 
       <section className="card mission-panel">
         <h2>Watch / Review</h2>
